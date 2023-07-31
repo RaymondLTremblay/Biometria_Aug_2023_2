@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 La dama degustando té | Medidas de Tendencia Central</title>
+  <meta name="description" content="Este libro digital es una introdución al estudio de Biometria" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 La dama degustando té | Medidas de Tendencia Central" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 La dama degustando té | Medidas de Tendencia Central" />
+  
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  
+
+<meta name="author" content="RLTremblay" />
+
+
+<meta name="date" content="2023-07-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="inferencias-y-hipótesis.html"/>
+<link rel="next" href="intro.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Biometria</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción al curso de Biometría</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#horario-de-clase"><i class="fa fa-check"></i><b>1.0.1</b> Horario de clase</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#libro-obligatorio."><i class="fa fa-check"></i><b>1.1</b> Libro obligatorio.</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#libros-sugeridos"><i class="fa fa-check"></i><b>1.1.1</b> Libros sugeridos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#programados"><i class="fa fa-check"></i><b>1.1.2</b> Programados</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#prerequisitos"><i class="fa fa-check"></i><b>1.1.3</b> Prerequisitos</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#descripción-del-curso"><i class="fa fa-check"></i><b>1.1.4</b> Descripción del curso</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#objetivos-del-curso"><i class="fa fa-check"></i><b>1.1.5</b> Objetivos del curso</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#puntuacion"><i class="fa fa-check"></i><b>1.1.6</b> Puntuacion:</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#examenes"><i class="fa fa-check"></i><b>1.1.7</b> Examenes:</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#conferencias"><i class="fa fa-check"></i><b>1.1.8</b> Conferencias</a></li>
+<li class="chapter" data-level="1.1.9" data-path="index.html"><a href="index.html#ejercicios"><i class="fa fa-check"></i><b>1.1.9</b> Ejercicios</a></li>
+<li class="chapter" data-level="1.1.10" data-path="index.html"><a href="index.html#faltar-a-clase-y-examen"><i class="fa fa-check"></i><b>1.1.10</b> Faltar a clase y examen:</a></li>
+<li class="chapter" data-level="1.1.11" data-path="index.html"><a href="index.html#derechos-de-estudiantes-con-impedimentos"><i class="fa fa-check"></i><b>1.1.11</b> Derechos de Estudiantes con Impedimentos</a></li>
+<li class="chapter" data-level="1.1.12" data-path="index.html"><a href="index.html#integridad-academica"><i class="fa fa-check"></i><b>1.1.12</b> Integridad academica</a></li>
+<li class="chapter" data-level="1.1.13" data-path="index.html"><a href="index.html#comentario-sobre-grabar-videos-yo-audio-de-las-clases"><i class="fa fa-check"></i><b>1.1.13</b> Comentario sobre grabar videos y/o audio de las clases</a></li>
+<li class="chapter" data-level="1.1.14" data-path="index.html"><a href="index.html#espacio-libre-de-acoso-sexual"><i class="fa fa-check"></i><b>1.1.14</b> Espacio libre de acoso sexual</a></li>
+<li class="chapter" data-level="1.1.15" data-path="index.html"><a href="index.html#protocolo-de-la-clase"><i class="fa fa-check"></i><b>1.1.15</b> Protocolo de la Clase</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html"><i class="fa fa-check"></i><b>2</b> Introducción a la Biometria</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-libro-de-la-clase"><i class="fa fa-check"></i><b>2.1</b> El libro de la clase</a></li>
+<li class="chapter" data-level="2.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-proceso-de-investigación"><i class="fa fa-check"></i><b>2.2</b> El proceso de investigación:</a></li>
+<li class="chapter" data-level="2.3" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-primer-paso"><i class="fa fa-check"></i><b>2.3</b> El primer paso:</a></li>
+<li class="chapter" data-level="2.4" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-segundo-paso"><i class="fa fa-check"></i><b>2.4</b> El segundo paso</a></li>
+<li class="chapter" data-level="2.5" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-tercer-paso"><i class="fa fa-check"></i><b>2.5</b> El tercer paso:</a></li>
+<li class="chapter" data-level="2.6" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-cuarto-paso"><i class="fa fa-check"></i><b>2.6</b> El cuarto paso:</a></li>
+<li class="chapter" data-level="2.7" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-quinto-paso"><i class="fa fa-check"></i><b>2.7</b> El quinto paso:</a></li>
+<li class="chapter" data-level="2.8" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-sexto-paso"><i class="fa fa-check"></i><b>2.8</b> El sexto paso:</a></li>
+<li class="chapter" data-level="2.9" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#tipo-de-error-de-interpretación-en-estadística"><i class="fa fa-check"></i><b>2.9</b> Tipo de error de interpretación en estadística</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#consideramos-los-reality-shows"><i class="fa fa-check"></i><b>2.9.1</b> Consideramos los Reality Shows:</a></li>
+<li class="chapter" data-level="2.9.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#personalidad-de-las-personas"><i class="fa fa-check"></i><b>2.9.2</b> Personalidad de las personas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#cuando-que-una-hipótesis-no-es-una-hipótesis"><i class="fa fa-check"></i><b>2.10</b> Cuando que una hipótesis no es una hipótesis?</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#una-hipótesis-tiene-que-ser-falsificable"><i class="fa fa-check"></i><b>2.10.1</b> Una hipótesis tiene que ser falsificable</a></li>
+<li class="chapter" data-level="2.10.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#ejercicio-1"><i class="fa fa-check"></i><b>2.10.2</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="2.10.3" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#evaluación-de-las-expresiones-falsificables"><i class="fa fa-check"></i><b>2.10.3</b> Evaluación de las expresiones falsificables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-independientes-y-dependientes"><i class="fa fa-check"></i><b>2.11</b> Variables Independientes y Dependientes</a></li>
+<li class="chapter" data-level="2.12" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#niveles-de-mediciones"><i class="fa fa-check"></i><b>2.12</b> Niveles de mediciones</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-continuas"><i class="fa fa-check"></i><b>2.12.1</b> Variables continuas</a></li>
+<li class="chapter" data-level="2.12.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#varriables-discretas"><i class="fa fa-check"></i><b>2.12.2</b> Varriables Discretas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html"><i class="fa fa-check"></i><b>3</b> Población y Muestreos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#qué-es-la-estadística"><i class="fa fa-check"></i><b>3.1</b> ¿Qué es la estadística?</a></li>
+<li class="chapter" data-level="3.2" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-población"><i class="fa fa-check"></i><b>3.2</b> El concepto de población</a></li>
+<li class="chapter" data-level="3.3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-muestreo"><i class="fa fa-check"></i><b>3.3</b> El concepto de muestreo</a></li>
+<li class="chapter" data-level="3.4" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#griego-y-latin"><i class="fa fa-check"></i><b>3.4</b> Griego y Latin</a></li>
+<li class="chapter" data-level="3.5" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-verdad-versus-un-estimado"><i class="fa fa-check"></i><b>3.5</b> La verdad versus un estimado</a></li>
+<li class="chapter" data-level="3.6" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#muestreos-al-azar"><i class="fa fa-check"></i><b>3.6</b> Muestreos al azar</a></li>
+<li class="chapter" data-level="3.7" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#error-de-muestreo-precisión-exactitud-y-sesgos"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Precisión, Exactitud y Sesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Inferencias y Hipótesis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-1"><i class="fa fa-check"></i><b>4.2</b> Ejemplo 1:</a></li>
+<li class="chapter" data-level="4.3" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-2"><i class="fa fa-check"></i><b>4.3</b> Ejemplo 2:</a></li>
+<li class="chapter" data-level="4.4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#inferencias-en-estadística"><i class="fa fa-check"></i><b>4.4</b> Inferencias en estadística</a></li>
+<li class="chapter" data-level="4.5" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#hipótesis"><i class="fa fa-check"></i><b>4.5</b> Hipótesis</a></li>
+<li class="chapter" data-level="4.6" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-valor-de-p"><i class="fa fa-check"></i><b>4.6</b> El valor de p</a></li>
+<li class="chapter" data-level="4.7" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#los-errores-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.7</b> Los errores de tipo I y tipo II</a></li>
+<li class="chapter" data-level="4.8" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-poder-de-las-pruebas-inferenciales-y-lo-parámetros-que-lo-influencia"><i class="fa fa-check"></i><b>4.8</b> El poder de las pruebas inferenciales y lo parámetros que lo influencia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html"><i class="fa fa-check"></i><b>5</b> La dama degustando té</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#definición-de-lo-que-es-la-estadística"><i class="fa fa-check"></i><b>5.1</b> Definición de lo que es la estadística</a></li>
+<li class="chapter" data-level="5.2" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#introducción-a-la-historía-de-la-estadística."><i class="fa fa-check"></i><b>5.2</b> Introducción a la Historía de la Estadística.</a></li>
+<li class="chapter" data-level="5.3" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#gertrude-mary-cox"><i class="fa fa-check"></i><b>5.3</b> Gertrude Mary Cox</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#primera-dama-en-estadística"><i class="fa fa-check"></i><b>5.3.1</b> Primera dama en Estadística</a></li>
+<li class="chapter" data-level="5.3.2" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#revista-biometrics"><i class="fa fa-check"></i><b>5.3.2</b> Revista <em>Biometrics</em></a></li>
+<li class="chapter" data-level="5.3.3" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#libro-diseños-experimentales"><i class="fa fa-check"></i><b>5.3.3</b> Libro: Diseños Experimentales</a></li>
+<li class="chapter" data-level="5.3.4" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#últimas-aportaciones"><i class="fa fa-check"></i><b>5.3.4</b> Últimas aportaciones</a></li>
+<li class="chapter" data-level="5.3.5" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#referencias"><i class="fa fa-check"></i><b>5.3.5</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#algunos-personas-importantes"><i class="fa fa-check"></i><b>5.4</b> Algunos personas importantes</a></li>
+<li class="chapter" data-level="5.5" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#lista-de-estadísticos"><i class="fa fa-check"></i><b>5.5</b> Lista de estadísticos</a></li>
+<li class="chapter" data-level="5.6" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#formula"><i class="fa fa-check"></i><b>5.6</b> Formula</a></li>
+<li class="chapter" data-level="5.7" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#medida-de-tendencia-central"><i class="fa fa-check"></i><b>5.7</b> Medida de tendencia central</a></li>
+<li class="chapter" data-level="5.8" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#calculando-el-promedio"><i class="fa fa-check"></i><b>5.8</b> Calculando el promedio</a></li>
+<li class="chapter" data-level="5.9" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#cuando-el-promedio-no-esta-localizado-en-el-centro"><i class="fa fa-check"></i><b>5.9</b> Cuando el promedio no esta localizado en el centro</a></li>
+<li class="chapter" data-level="5.10" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#la-mediana"><i class="fa fa-check"></i><b>5.10</b> La mediana</a></li>
+<li class="chapter" data-level="5.11" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#con-n-impares"><i class="fa fa-check"></i><b>5.11</b> Con <strong>n</strong> impares</a></li>
+<li class="chapter" data-level="5.12" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#con-n-pares"><i class="fa fa-check"></i><b>5.12</b> Con <strong>n</strong> pares</a></li>
+<li class="chapter" data-level="5.13" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#la-moda"><i class="fa fa-check"></i><b>5.13</b> La moda</a></li>
+<li class="chapter" data-level="5.14" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#cuando-es-que-el-promedio-mediana-y-moda-son-iguales"><i class="fa fa-check"></i><b>5.14</b> Cuando es que el promedio, mediana y moda son iguales?</a></li>
+<li class="chapter" data-level="5.15" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales."><i class="fa fa-check"></i><b>5.15</b> Distribución cuando los tres valores de tendencia centrtal no son iguales.</a></li>
+<li class="chapter" data-level="5.16" data-path="la-dama-degustando-té.html"><a href="la-dama-degustando-té.html#variables-binomial"><i class="fa fa-check"></i><b>5.16</b> Variables binomial</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>6</b> Nombre del capitulo.</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="intro.html"><a href="intro.html#a-section"><i class="fa fa-check"></i><b>6.1</b> A section</a></li>
+<li class="chapter" data-level="6.2" data-path="intro.html"><a href="intro.html#otra-seccion"><i class="fa fa-check"></i><b>6.2</b> Otra seccion</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#a-subsection"><i class="fa fa-check"></i>A subsection</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number"><i class="fa fa-check"></i><b>6.3</b> NOTE the size of font changes with the number <em>#</em></a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number-1"><i class="fa fa-check"></i><b>6.3.1</b> NOTE the size of font changes with the number <em>#</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>7</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>7.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="7.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>7.2</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-epiphyitc-species.html"><a href="appendix-list-of-epiphyitc-species.html"><i class="fa fa-check"></i>(Appendix) List of epiphyitc species</a></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-terrestrial-species.html"><a href="appendix-list-of-terrestrial-species.html"><i class="fa fa-check"></i>(Appendix) List of terrestrial species</a></li>
+<li class="chapter" data-level="8" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>8</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>8.1</b> Footnotes</a></li>
+<li class="chapter" data-level="8.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>8.2</b> Citations</a></li>
+<li class="chapter" data-level="8.3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#links-to-websites"><i class="fa fa-check"></i><b>8.3</b> Links to websites</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>9</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>9.1</b> Equations</a></li>
+<li class="chapter" data-level="9.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>9.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="9.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>9.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>10</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>10.1</b> Publishing</a></li>
+<li class="chapter" data-level="10.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>10.2</b> 404 pages</a></li>
+<li class="chapter" data-level="10.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>10.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Medidas de Tendencia Central</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="la-dama-degustando-té" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> La dama degustando té<a href="la-dama-degustando-té.html#la-dama-degustando-té" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>Era una tarde de verano en Cambridge, Inglaterra, a finales de la década de 1920. Un grupo de profesores universitarios, sus esposas y algunos invitados estaban sentados alrededor de una mesa al aire libre para tomar el té de la tarde. Una de las mujeres insistía en que el té era diferente dependiendo de si el té se vertía en la leche o si la leche se vertía en el té. Las mentes científicas entre los hombres se burlaron de esto como una tontería. ¿Cual podría ser la diferencia? No podían concebir ninguna diferencia en la química de las mezclas que pudieran existir. Un hombre delgado y bajo, con anteojos y una barba de Vandyke que empezaba a ponerse gris, se abalanzó sobre el problema. “Probemos esta propuesta”, dijo emocionado. Comenzó a esbozar un experimento en el que a la señora que insistía en que había una diferencia se le presentaría una secuencia de tazas de té, en algunas de las cuales se había vertido la leche en el té y en otras se había vertido el té en la taza de leche.</em> Cuento del libro de “The Lady Tasting Tea: How Statitics Revolutionized Science in the Twentieth Century” por David Salslburg. Traducido por la pagina de <em>Google Translation</em>.</p>
+<p>Así comienza el libro de Salsburg (2001), para describir el comportamiento de los científicos cuando están animados de su tema y el deseo de resolver un enigma. Esa persona con barba de Vandyke era Ronald Aylmer Fisher (1890 -1962) es reconocido como responsable de la <em>estadística moderna</em> y una de las personas más importante en el área en el siglo 20. Su contribuciones han tenido un impacto en muchas áreas incluyendo la genética mendeliana y la selección natural.</p>
+<div id="definición-de-lo-que-es-la-estadística" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Definición de lo que es la estadística<a href="la-dama-degustando-té.html#definición-de-lo-que-es-la-estadística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La estadística es un área de la ciencia de datos que utiliza valores numéricos para evaluar patrones y inferir situaciones futuras. Esta definición es sencilla, pero incluye muchos temas pero lo más importante es el componente de utilizar datos, resumiendo estos en indices o parámetros y utilizar estos para predecir/inferir el futuro. La palabra estadística usado en el termino más o menos similar a su definición de hoy probablemente origina del alemán <em>Statistik</em> por Gottfried Achenwall (1749). Donde el termino era para la descripción de datos del estado. Es solamente en 1791 por Sir John Sinclair que el termino comenzó a ser utilizado para la descripción de conjuntos de datos en general sin ser limitado a datos de un estado/pais.</p>
+</div>
+<div id="introducción-a-la-historía-de-la-estadística." class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Introducción a la Historía de la Estadística.<a href="la-dama-degustando-té.html#introducción-a-la-historía-de-la-estadística." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Al principio en el siglo 18 el termino estadística era designar la colección información sobre la población y la economía de diferentes regiones o países. En este periodo el objetivo era tabular la información, por ejemplo cuanta gente en un área, cuantas vacas hay, cuanta gente son parte de la nobleza.</p>
+<p>Por ejemplo uno de las primeras encuesta para determinar la estadística de una población fue hecha por John Gaunt (1662) titulado <strong>Natural and Political Observations Made upon the Bills of Mortality</strong> y puede encontrar el libro original aquí <a href="http://www.neonatology.org/pdf/graunt.pdf" class="uri">http://www.neonatology.org/pdf/graunt.pdf</a>. En el libro expone que 1/3 parte de los niños antes de la edad de 16 mueren en Londres, Inglaterra.</p>
+<p>Aquí un extracto de una de estas tablas de las causas de enfermedades y mortandad en Londres en el año 1632. Note que antes de este trabajo esto datos era bien raro y inexistente en la mayoría de las ciudades o países.</p>
+<p>Note algunos causas principales de mortandad, “Aged” (628), que la persona es de edad mayor, y “Abortive and Stillborn” que natimuerto (445). Algunos se considerara raros hoy en día es morir de “grief” o sea de tristeza (11).</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<img src="Graficos/Gaunt_Disease_Casualties_1632.png" alt="Gaunt Disease Tables" width="70%" />
+<p class="caption">
+Figure 5.1: Gaunt Disease Tables
+</p>
+</div>
+<p>El otro componente importante de la estadística fue el desarrollo de las probabilidades en el siglo 17 y 18. La gente le gustaba (como hoy en día) hacer apuestos y jugar cartas para dinero. Entonces mucha gente trataba de entender las diferentes probabilidades de ganar en estos juegos de azar para poder aumentar su probabilidad de ganar en estos juegos.</p>
+<hr />
+</div>
+<div id="gertrude-mary-cox" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Gertrude Mary Cox<a href="la-dama-degustando-té.html#gertrude-mary-cox" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Trabajo presentado por Abimelys Anaya (estudiante de la Universidad de Puerto Rico en Humacao)</p>
+<p><img src="Graficos/COX/Gertrude_Cox.jpg" width="45%" style="float:right; padding:10px" /></p>
+<p><strong>Gertrude Mary Cox</strong> fue una destacada e importante estadística estadounidense. Nació el 13 de enero de 1900 en una granja cerca a Dayton, Iowa; y falleció a los 78 años, el 17 de octubre de 1978 en Durham, Carolina del Norte, a causa de leucemia. Compartiendo su hogar con 3 hermanos, se dice que su familia era muy unida, pero Cox era específicamente más cercana a su madre, Hemma, de quién heredó su pasión por ayudar a los demás.</p>
+<p>Cursó sus primeros estudios en la llamada Perry High School de la misma ciudad. Su amor por los deportes competitivos, hizo que formara parte del equipo de baloncesto en dicha escuela. No fue hasta 1925, luego de haber trabajado un tiempo como diaconisa de la Iglesia Metodista, que sintió interés en continuar estudios graduados en Iowa State College en Ames con concentración en matemáticas, debido a que su cargo en la iglesia requería un grado universitario. Logrando así en 1931, alcanzar una maestría en estadística. Desde ese mismo año hasta el 1933, terminó estudios de posgrado en estadística psicológica en la Universidad de California. Posteriormente, regresa a Iowa, donde participó en la inauguración del Laboratorio de Estadística y comienza su investigación en base al diseño experimental. Fue dicha carrera y el empeño depositado en la misma, quien le permitió dejar una gran aportación en procesos que utilizamos y que conocemos hoy día de esta rama de la ciencia.</p>
+<hr />
+<div id="primera-dama-en-estadística" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Primera dama en Estadística<a href="la-dama-degustando-té.html#primera-dama-en-estadística" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En 1939, la nombraron profesora asistente en Iowa State College y, en 1940, dirigió el primer departamento de Estadística Experimental en la Escuela de Agricultura de la Universidad de Carolina del Norte. Esto la convirtió en la primera mujer directora del recinto. Además, Cox fue la primera mujer jefa del Instituto de Estadística de la Universidad de Carolina del Norte en 1944. Un año más tarde, participó como editora principal de la revista Biometrics durante 10 años, y fundó, en 1947, la ¨International Biometric Society¨. Además, se convirtió en presidenta de la ASA (American Society of Anesthesiologists) en 1956.</p>
+<p><img src="Graficos/COX/Exten_Farm.jpg" width="396" style="display: block; margin: auto;" /></p>
+<hr />
+</div>
+<div id="revista-biometrics" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Revista <em>Biometrics</em><a href="la-dama-degustando-té.html#revista-biometrics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="Graficos/COX/biom.v76.3.cover.jpg" width="45%" style="float:right; padding:10px" /></p>
+<p>La revista<sup>7</sup> fue publicada por la Sociedad Internacional de Biometría en 1945, originalmente bajo el título de <em>Biometrics Bulletin</em>. Sin embargo, en 1947, su nombre fue acortado. Su objetivo principal consiste en publicar artículos sobre la aplicación de la estadística y las matemáticas a las ciencias biológicas. Según una encuesta realizada por especialistas en biometría, obtuvo el quinto lugar entre 40 revistas existentes de estadítica.</p>
+<hr />
+</div>
+<div id="libro-diseños-experimentales" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Libro: Diseños Experimentales<a href="la-dama-degustando-té.html#libro-diseños-experimentales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>¿Qué es el diseño experimental? Este consiste en la identificación y cuantificación de las causas de un efecto provocado sobre otra variable de interés durante un estudio experimental.</p>
+<p>En 1950, Gertrude M. Cox junto a William Cochran, publicó <em>Experimental Design</em>, libro utilizado por años, y que actualmente permanece accesible, como primera referencia para el diseño experimental. En este, podemos encontrar la expansión de sus notas mimeografiadas de las clases de diseño que brindaba a sus estudiantes. El libro enfatiza tres principios: (1) los estadísticos deben participar en la investigación desde las etapas de planificación, es decir, primeros pasos, el establecimiento de los objetivos del experimento y la planificación del análisis; (2) aleatorizar todo lo que se pueda aleatorizar; y (3) utilizar el bloqueo, siempre que sea posible, para reducir los efectos de variabilidad, donde los bloques son grupos homogéneos de unidades experimentales.</p>
+<p>Según menciona Sharon L. Lohr en un artículo para ¨Notices of the American Mathematical Society¨<sup>4</sup>, en él ¨podemos encontrar planos detallados para el cuadrado latino, factorial, factorial fraccional, parcela dividida, celosía, bloque incompleto balanceado y otros diseños. Cada descripción de diseño comenzaba con ejemplos, seguida de una discusión sobre cuándo el diseño era adecuado e instrucciones detalladas de cómo realizar la aleatorización. Luego, vino uno o más estudios de casos detallados, que muestran por qué ese diseño había sido elegido para cada experimento y cómo había sido aleatorizado, tomando al lector paso a paso a través de los cálculos necesarios para construir el análisis de varianza y estimar los errores estándar para diferencias de medias de tratamiento. Los autores también discutieron cómo estimar la eficiencia del diseño en relación con un diseño completamente aleatorio y cómo hacer los cálculos para la estructura desequilibrada que resultó cuando uno o más ejecuciones experimentales tenían datos faltantes¨.</p>
+<hr />
+</div>
+<div id="últimas-aportaciones" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Últimas aportaciones<a href="la-dama-degustando-té.html#últimas-aportaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Gertrude M. Cox se retiró en 1960 del Instituto de Estadística, para dirigir la División de Investigación Estadística del RTI (Research Triangle Institute), donde fue asesora desde el 1965. Finalmente, se dedicó a distribuir sus conocimientos en estadística al exterior. Realizó 23 viajes internacionales, entre los cuales se encontraban los países de Egipto y Tailandia.</p>
+<blockquote>
+<p>Otros reconocimientos</p>
+</blockquote>
+<ul>
+<li><p>1944 - Socia de la Asociación Americana de Estadísticas y del Instituto de Estadísticas Matemáticas.</p></li>
+<li><p>1949 - Primera mujer electa en el Instituto Internacional de Estadística.</p></li>
+<li><p>1957 - Socia de honor de ¨Royal Statistical Society¨.</p></li>
+<li><p>1959 - Recibe premio O. Max Gardner por parte de la Universidad de Carolina del Norte por su “contribución al bienestar de la raza humana”.</p></li>
+<li><p>1975 - Electa en la Academia Nacional de Ciencias.</p></li>
+<li><p>1977 - La universidad de Carolina del Norte, creó una beca de investigación de $200,000 en su honor.</p></li>
+<li><p>Defendió el uso de computadoras electrónicas para el trabajo estadístico.</p></li>
+</ul>
+<hr />
+<p>Sin lugar a dudas, fue pionera de lo que actualmente nos permite, de manera fácil, realizar investigaciones cuantitativas y que son, y han sido desde entonces, de suma importancia para nuestro entendimiento en las ciencias biológicas.</p>
+<hr />
+</div>
+<div id="referencias" class="section level3 hasAnchor" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Referencias<a href="la-dama-degustando-té.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><sup>1</sup> Anderson, R.L. (1900-1978). <em>Gertrude Mary Cox</em>. Recuperado el 13 de septiembre de 2020, de <a href="http://www.nasonline.org/publications/biographical-memoirs/memoir-pdfs/cox-gertrude.pdf" class="uri">http://www.nasonline.org/publications/biographical-memoirs/memoir-pdfs/cox-gertrude.pdf</a></p>
+<p><sup>2</sup> <em>Biometrics (journal)</em>. (2020). Recuperado el 13 de septiembre de 2020, de <a href="https://en.wikipedia.org/wiki/Biometrics_(journal)" class="uri">https://en.wikipedia.org/wiki/Biometrics_(journal)</a></p>
+<p><sup>3</sup> <em>Gertrude Cox</em>. (2020). Recuperado el 13 de septiembre de 2020, de <a href="https://es.wikipedia.org/wiki/Gertrude_Cox" class="uri">https://es.wikipedia.org/wiki/Gertrude_Cox</a></p>
+<p><sup>4</sup> Lohr, S.L. (2019). <em>Gertrude M. Cox and Statistical Design</em>. Recuperado el 13 de septiembre de 2020, de <a href="https://www.ams.org/journals/notices/201903/rnoti-p317.pdf" class="uri">https://www.ams.org/journals/notices/201903/rnoti-p317.pdf</a></p>
+<p><sup>5</sup> Mujeres con ciencia. (2014). <em>Gertrude Cox, la primera dama de la Estadística</em>. Recuperado el 13 de septiembre de 2020, de <a href="https://mujeresconciencia.com/2014/06/09/gertrude-cox-la-primera-dama-de-la-estadistica/" class="uri">https://mujeresconciencia.com/2014/06/09/gertrude-cox-la-primera-dama-de-la-estadistica/</a></p>
+<p><sup>6</sup> Universidad de Colima. (2020). <em>Diseño experimental</em>. Recuperado el 13 de septiembre de 2020, de <a href="https://recursos.ucol.mx/tesis/diseno_experimental.php" class="uri">https://recursos.ucol.mx/tesis/diseno_experimental.php</a></p>
+<p><sup>7</sup> Welsh, A., Ghosh, D., Brewer, M. y Molenberghs, G. (1999-2020). <em>Biometrics, Journal of the International Biometric Society</em>. Recuperado el 13 de septiembre de 2020, de <a href="https://onlinelibrary.wiley.com/journal/15410420" class="uri">https://onlinelibrary.wiley.com/journal/15410420</a></p>
+<hr />
+</div>
+</div>
+<div id="algunos-personas-importantes" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Algunos personas importantes<a href="la-dama-degustando-té.html#algunos-personas-importantes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>Trabajo grupo de 2: 10 puntos. PARTE de las destrezas que estará aprendiendo en adición de conocer un estadístico es como preparar un documento en .Rmd para hacer una documento. Se someterá tanto el documento en .html y .Rmd en MSTeam.<br />
+Se seleccionará uno de las personas abajo y se hará una pequeña biografía sobre esta persona (3 paginas). Debe incluir diferentes componentes.</li>
+<li>Información personal de la persona</li>
+<li>Su carrera de estudio</li>
+<li>Su aportación a la estadística
+<ul>
+<li>Cual método estadístico desarrolló (seleccioné uno para explicar, aunque puede mencionar múltiples).</li>
+<li>Por qué este método fue innovador</li>
+<li>Cuantos papers a publicado (busca en Google scholar)</li>
+<li>Pon una formulas matemáticas con explicaciones de una de las aportaciones en estadística.</li>
+<li>fotos/pintura de la persona</li>
+<li>literatura citada</li>
+</ul></li>
+<li>El trabajo debería ser montado en .Rmd</li>
+</ol>
+</div>
+<div id="lista-de-estadísticos" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Lista de estadísticos<a href="la-dama-degustando-té.html#lista-de-estadísticos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Florence Nightingale</li>
+<li><strong>Gertrude Mary Cox</strong></li>
+<li>Enid Charles</li>
+<li>Grace Wahba</li>
+<li>Ronald Fisher</li>
+<li>Reverand Thomas Bayes</li>
+<li>John Tukey</li>
+<li>Karl Pearson</li>
+<li>Carl Gauss</li>
+<li>Bradley Efron</li>
+<li>Andrey Nikolayevich Kolmogorov</li>
+<li>Pierre-Simon Laplace</li>
+<li>George Box</li>
+<li>Francis Galton</li>
+<li>Andrey Markov</li>
+<li>Samuel S. Wilks</li>
+</ul>
+</div>
+<div id="formula" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Formula<a href="la-dama-degustando-té.html#formula" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vea este enlace.</p>
+<p><a href="https://rpruim.github.io/s341/S19/from-class/MathinRmd.html" class="uri">https://rpruim.github.io/s341/S19/from-class/MathinRmd.html</a></p>
+<p>Localizado en el centro y una linea parte
+<span class="math display">\[\sum_{n=1}^{10} n^2\]</span></p>
+<p>Localizado en la misma linea <span class="math inline">\(\sum_{n=1}^{10} n^2\)</span></p>
+
+<p>Fecha de la ultima revisión</p>
+<pre><code>## [1] &quot;2023-07-31&quot;</code></pre>
+<p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="la-dama-degustando-té.html#cb7-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="la-dama-degustando-té.html#cb7-2" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb7-3"><a href="la-dama-degustando-té.html#cb7-3" tabindex="-1"></a><span class="fu">library</span>(gridExtra) <span class="co"># Un paquete para organizar las figuras de ggplot2</span></span>
+<span id="cb7-4"><a href="la-dama-degustando-té.html#cb7-4" tabindex="-1"></a><span class="fu">library</span>(statip)</span></code></pre></div>
+<hr />
+</div>
+<div id="medida-de-tendencia-central" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Medida de tendencia central<a href="la-dama-degustando-té.html#medida-de-tendencia-central" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La medidas de tendencia central se llaman así, porque el valor indica la distribución de los datos y los indices tiende a estar en <strong>el centro</strong> de la distribución. Hay por lo menos 16 tipos de medidas de tendencias centrales <a href="https://en.wikipedia.org/wiki/Central_tendency" class="uri">https://en.wikipedia.org/wiki/Central_tendency</a>. En este curso estaremos solamente mencionado 3 de estas medidas.</p>
+<ul>
+<li>El promedio a arithmetico</li>
+<li>La mediana</li>
+<li>La moda</li>
+</ul>
+<hr />
+</div>
+<div id="calculando-el-promedio" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Calculando el promedio<a href="la-dama-degustando-té.html#calculando-el-promedio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Aquí creamos una lista de datos con la función <strong>c( )</strong> y con la función <strong>mean</strong> podemos calcular el promedio. El promedio es la suma de los valores divido por la cantidad de valores en la lista.<br />
+<span class="math display">\[\bar{x}=\frac{\sum_{i=1}^{n}x_i}n\]</span></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="la-dama-degustando-té.html#cb8-1" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb8-2"><a href="la-dama-degustando-té.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="la-dama-degustando-té.html#cb8-3" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<hr />
+</div>
+<div id="cuando-el-promedio-no-esta-localizado-en-el-centro" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Cuando el promedio no esta localizado en el centro<a href="la-dama-degustando-té.html#cuando-el-promedio-no-esta-localizado-en-el-centro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Digamos que yo tengo la cantidad de semillas producida por 11 plantas, la primera no produjo semillas, la segunda 2 semillas y subsiguientemente hasta la ultima que tuvo una producción de 1000 semillas. Nota que en este caso el promedio no se encuentra el el centro de los datos, por consecuencia NO es un buen indicador de la tendencia central de los datos. Cuando esto ocurre uno no debería usar el promedio para describir la tendencia central de los datos.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="la-dama-degustando-té.html#cb10-1" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">1000</span>)</span>
+<span id="cb10-2"><a href="la-dama-degustando-té.html#cb10-2" tabindex="-1"></a><span class="fu">sum</span>(x)<span class="sc">/</span><span class="fu">length</span>(x)</span></code></pre></div>
+<pre><code>## [1] 95</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="la-dama-degustando-té.html#cb12-1" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] 95</code></pre>
+<hr />
+</div>
+<div id="la-mediana" class="section level2 hasAnchor" number="5.10">
+<h2><span class="header-section-number">5.10</span> La mediana<a href="la-dama-degustando-té.html#la-mediana" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="con-n-impares" class="section level2 hasAnchor" number="5.11">
+<h2><span class="header-section-number">5.11</span> Con <strong>n</strong> impares<a href="la-dama-degustando-té.html#con-n-impares" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cuando el promedio no es indice adecuado de la tendencia central tenemos dos alternativas, la mediana y la moda. La mediana es el valor en el centro después de haber organizado los datos del más pequeño al más grande.</p>
+<p><span class="math display">\[Mediana\ =\frac{\left({x}_{n+1}\right)^{th}}{2}\]</span>
+Donde <strong>n</strong> es la cantidad de valores en orden del más pequeño al grande. Por consecuencia se selecciona el valor en el centro de todos los valores. Lo que la función de mediana hace es poner los valores en orden y después determina cual es el valor en el centro. Aquí para demostrar los que hace la función 1) creo un una lista de valores, 2) pongo los datos en orden 3) y mirando los valores en orden vemos que el valor <strong>6</strong> es el valor en el centro. Pero este paso no es necesario ya que la función <strong>median</strong> lo hace automaticamente.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="la-dama-degustando-té.html#cb14-1" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">c</span>(<span class="dv">247</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">43626</span>,<span class="dv">26</span>,<span class="dv">23</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">24</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span>
+<span id="cb14-2"><a href="la-dama-degustando-té.html#cb14-2" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">sort</span>(b)</span>
+<span id="cb14-3"><a href="la-dama-degustando-té.html#cb14-3" tabindex="-1"></a><span class="fu">length</span>(b)</span></code></pre></div>
+<pre><code>## [1] 13</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="la-dama-degustando-té.html#cb16-1" tabindex="-1"></a><span class="fu">median</span>(b)</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+</div>
+<div id="con-n-pares" class="section level2 hasAnchor" number="5.12">
+<h2><span class="header-section-number">5.12</span> Con <strong>n</strong> pares<a href="la-dama-degustando-té.html#con-n-pares" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cuando hay una cantidad de datos pares, los dos valores en el centro son sumado y el promedio es calculado.</p>
+<p><span class="math display">\[Mediana\ =\frac{1}{2}* (\frac{\left({x}_{n+1}\right)^{th}}{2}+\frac{\left({x}_{n+1}\right)^{th}}{2})\]</span>
+En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por consecuencia la mediana es el promedio de estos valores.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="la-dama-degustando-té.html#cb18-1" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">c</span>(<span class="dv">247</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">43626</span>,<span class="dv">26</span>,<span class="dv">23</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">24</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>)</span>
+<span id="cb18-2"><a href="la-dama-degustando-té.html#cb18-2" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">sort</span>(b)</span>
+<span id="cb18-3"><a href="la-dama-degustando-té.html#cb18-3" tabindex="-1"></a>b</span></code></pre></div>
+<pre><code>##  [1]     0     1     2     3     4     5     6     7     7    23    24    26
+## [13]   247 43626</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="la-dama-degustando-té.html#cb20-1" tabindex="-1"></a><span class="fu">median</span>(b)</span></code></pre></div>
+<pre><code>## [1] 6.5</code></pre>
+<hr />
+</div>
+<div id="la-moda" class="section level2 hasAnchor" number="5.13">
+<h2><span class="header-section-number">5.13</span> La moda<a href="la-dama-degustando-té.html#la-moda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La moda es el valor más común. Parta encontrar la moda, hay que instalar dos programas. Primero instalar <strong>devtools</strong> y despues correr el siguiente <strong>chunk</strong> para instaslar el package <strong>modeest</strong>, para mode estimates. Quitar <strong>#</strong> para correr la función.</p>
+<p>Activar el packete</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="la-dama-degustando-té.html#cb22-1" tabindex="-1"></a><span class="fu">library</span>(statip)</span></code></pre></div>
+<p>Ya pueden ahora usar la <strong>mfv</strong> para encontrar la moda de conjunto de datos. Lo que vemos es que el valor de <strong>7</strong> es el más comun en la lista de datos.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="la-dama-degustando-té.html#cb23-1" tabindex="-1"></a>statip<span class="sc">::</span><span class="fu">mfv1</span>(b)</span></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<hr />
+</div>
+<div id="cuando-es-que-el-promedio-mediana-y-moda-son-iguales" class="section level2 hasAnchor" number="5.14">
+<h2><span class="header-section-number">5.14</span> Cuando es que el promedio, mediana y moda son iguales?<a href="la-dama-degustando-té.html#cuando-es-que-el-promedio-mediana-y-moda-son-iguales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los tres valores de tendencia central son iguales cuando la distribución es normal, conocida también como en forma de campana. Aquí preparo un lista de datos con distribución normal, y evaluamos donde están los tres valores de tendencia central. Se usa la función <strong>rpois</strong>, para crear un conjunto de datos al azar con 100000, datos, un promedio de 100.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="la-dama-degustando-té.html#cb25-1" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">rpois</span>(<span class="dv">5000</span>, <span class="dv">100</span>)</span>
+<span id="cb25-2"><a href="la-dama-degustando-té.html#cb25-2" tabindex="-1"></a>df1<span class="ot">=</span><span class="fu">data.frame</span>(df)</span>
+<span id="cb25-3"><a href="la-dama-degustando-té.html#cb25-3" tabindex="-1"></a><span class="fu">head</span>(df1, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##    df
+## 1 109
+## 2 135</code></pre>
+<p>Lo que uno observa es que los tres valores son muy cercano uno del otro.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="la-dama-degustando-té.html#cb27-1" tabindex="-1"></a><span class="fu">library</span>(statip)</span>
+<span id="cb27-2"><a href="la-dama-degustando-té.html#cb27-2" tabindex="-1"></a><span class="co">#mean(df1$df)</span></span>
+<span id="cb27-3"><a href="la-dama-degustando-té.html#cb27-3" tabindex="-1"></a><span class="co">#median(df1$df)</span></span>
+<span id="cb27-4"><a href="la-dama-degustando-té.html#cb27-4" tabindex="-1"></a><span class="co">#statip::mfv(df1$df)</span></span></code></pre></div>
+<p>Podemos visualizar estos datos usamos dos gráfico, En el gráfico de la izquierda se ve una distribución normal con las tres lineas (promedio, mediana y moda). En el gráfico de la derecha se observa la misma información pero solamente los valores entre 96 y 101. Se observa que la mediana y el promedio son igual y la moda varia un poco, se encuentra donde la barra es más alta. Se observa que los tres valores son cerca del centro.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="la-dama-degustando-té.html#cb28-1" tabindex="-1"></a>pro<span class="ot">=</span><span class="fu">mean</span>(df1<span class="sc">$</span>df)</span>
+<span id="cb28-2"><a href="la-dama-degustando-té.html#cb28-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(df1<span class="sc">$</span>df)</span>
+<span id="cb28-3"><a href="la-dama-degustando-té.html#cb28-3" tabindex="-1"></a>mod<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv</span>(df1<span class="sc">$</span>df)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="la-dama-degustando-té.html#cb29-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(df))<span class="sc">+</span></span>
+<span id="cb29-2"><a href="la-dama-degustando-té.html#cb29-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb29-3"><a href="la-dama-degustando-té.html#cb29-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> pro), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb29-4"><a href="la-dama-degustando-té.html#cb29-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb29-5"><a href="la-dama-degustando-té.html#cb29-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb29-6"><a href="la-dama-degustando-té.html#cb29-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb29-7"><a href="la-dama-degustando-té.html#cb29-7" tabindex="-1"></a>a</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/g1-1.png" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="la-dama-degustando-té.html#cb30-1" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(df))<span class="sc">+</span></span>
+<span id="cb30-2"><a href="la-dama-degustando-té.html#cb30-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb30-3"><a href="la-dama-degustando-té.html#cb30-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> pro), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-4"><a href="la-dama-degustando-té.html#cb30-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-5"><a href="la-dama-degustando-té.html#cb30-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-6"><a href="la-dama-degustando-té.html#cb30-6" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">94</span>,<span class="dv">105</span>)<span class="sc">+</span></span>
+<span id="cb30-7"><a href="la-dama-degustando-té.html#cb30-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="la-dama-degustando-té.html#cb31-1" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(a,b, <span class="at">ncol=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/together-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales." class="section level2 hasAnchor" number="5.15">
+<h2><span class="header-section-number">5.15</span> Distribución cuando los tres valores de tendencia centrtal no son iguales.<a href="la-dama-degustando-té.html#distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En estas distribuciones uno observa que hay exceso de vaslores pequeños o grande. Esto resulta en que los tres indices de tendencias centrales no se encuentra cerca uno del otro.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="la-dama-degustando-té.html#cb32-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb32-2"><a href="la-dama-degustando-té.html#cb32-2" tabindex="-1"></a>dfb1<span class="ot">=</span><span class="fu">round</span>(<span class="fu">rbeta</span>(<span class="dv">10000</span>, <span class="dv">3</span>,<span class="dv">1</span>, <span class="at">ncp =</span> <span class="dv">0</span>),<span class="dv">3</span>)</span>
+<span id="cb32-3"><a href="la-dama-degustando-té.html#cb32-3" tabindex="-1"></a>dfb1<span class="ot">=</span><span class="fu">tibble</span>(dfb1)</span>
+<span id="cb32-4"><a href="la-dama-degustando-té.html#cb32-4" tabindex="-1"></a><span class="co">#head(dfb)</span></span>
+<span id="cb32-5"><a href="la-dama-degustando-té.html#cb32-5" tabindex="-1"></a>df2<span class="ot">=</span> <span class="fu">round</span>(<span class="fu">rbeta</span>(<span class="dv">10000</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="at">ncp =</span> <span class="dv">0</span>),<span class="dv">3</span>)</span>
+<span id="cb32-6"><a href="la-dama-degustando-té.html#cb32-6" tabindex="-1"></a>df2<span class="ot">=</span><span class="fu">tibble</span>(df2)</span>
+<span id="cb32-7"><a href="la-dama-degustando-té.html#cb32-7" tabindex="-1"></a><span class="co">#head(df2)</span></span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>¿Cual es la linea de promedio, moda y mediana en cada gráfico?</li>
+</ol>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="la-dama-degustando-té.html#cb33-1" tabindex="-1"></a>mea<span class="ot">=</span><span class="fu">mean</span>(dfb1<span class="sc">$</span>dfb1)</span>
+<span id="cb33-2"><a href="la-dama-degustando-té.html#cb33-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(dfb1<span class="sc">$</span>dfb1)</span>
+<span id="cb33-3"><a href="la-dama-degustando-té.html#cb33-3" tabindex="-1"></a>mod<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv1</span>(dfb1<span class="sc">$</span>dfb1)</span>
+<span id="cb33-4"><a href="la-dama-degustando-té.html#cb33-4" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="la-dama-degustando-té.html#cb33-5" tabindex="-1"></a>meab<span class="ot">=</span><span class="fu">mean</span>(df2<span class="sc">$</span>df2)</span>
+<span id="cb33-6"><a href="la-dama-degustando-té.html#cb33-6" tabindex="-1"></a>medb<span class="ot">=</span><span class="fu">median</span>(df2<span class="sc">$</span>df2)</span>
+<span id="cb33-7"><a href="la-dama-degustando-té.html#cb33-7" tabindex="-1"></a>modb<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv1</span>(df2<span class="sc">$</span>df2)</span>
+<span id="cb33-8"><a href="la-dama-degustando-té.html#cb33-8" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="la-dama-degustando-té.html#cb33-9" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="la-dama-degustando-té.html#cb33-10" tabindex="-1"></a>SesgadoDerecho<span class="ot">=</span><span class="fu">ggplot</span>(dfb1, <span class="fu">aes</span>(dfb1))<span class="sc">+</span></span>
+<span id="cb33-11"><a href="la-dama-degustando-té.html#cb33-11" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-12"><a href="la-dama-degustando-té.html#cb33-12" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mea), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-13"><a href="la-dama-degustando-té.html#cb33-13" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-14"><a href="la-dama-degustando-té.html#cb33-14" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-15"><a href="la-dama-degustando-té.html#cb33-15" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb33-16"><a href="la-dama-degustando-té.html#cb33-16" tabindex="-1"></a></span>
+<span id="cb33-17"><a href="la-dama-degustando-té.html#cb33-17" tabindex="-1"></a>SesgadoIzquierda<span class="ot">=</span><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(df2))<span class="sc">+</span></span>
+<span id="cb33-18"><a href="la-dama-degustando-té.html#cb33-18" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-19"><a href="la-dama-degustando-té.html#cb33-19" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> meab), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-20"><a href="la-dama-degustando-té.html#cb33-20" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> medb), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-21"><a href="la-dama-degustando-té.html#cb33-21" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> modb), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-22"><a href="la-dama-degustando-té.html#cb33-22" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb33-23"><a href="la-dama-degustando-té.html#cb33-23" tabindex="-1"></a></span>
+<span id="cb33-24"><a href="la-dama-degustando-té.html#cb33-24" tabindex="-1"></a>SesgadoDerecho</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/visual%20beta-1.png" width="672" /></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="la-dama-degustando-té.html#cb34-1" tabindex="-1"></a>SesgadoIzquierda</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/visual%20beta-2.png" width="672" /></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="la-dama-degustando-té.html#cb35-1" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb35-2"><a href="la-dama-degustando-té.html#cb35-2" tabindex="-1"></a><span class="co">#ggarrange(c,d, nrow=2, ncol=1)</span></span>
+<span id="cb35-3"><a href="la-dama-degustando-té.html#cb35-3" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="la-dama-degustando-té.html#cb35-4" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb35-5"><a href="la-dama-degustando-té.html#cb35-5" tabindex="-1"></a><span class="co">#grid.arrange(rectGrob(), rectGrob())</span></span>
+<span id="cb35-6"><a href="la-dama-degustando-té.html#cb35-6" tabindex="-1"></a><span class="co">#marrangeGrob(c,d, nrow=2)</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="la-dama-degustando-té.html#cb36-1" tabindex="-1"></a><span class="co">#c</span></span>
+<span id="cb36-2"><a href="la-dama-degustando-té.html#cb36-2" tabindex="-1"></a><span class="co">#d</span></span>
+<span id="cb36-3"><a href="la-dama-degustando-té.html#cb36-3" tabindex="-1"></a><span class="co">#library(scater)</span></span>
+<span id="cb36-4"><a href="la-dama-degustando-té.html#cb36-4" tabindex="-1"></a><span class="co">#multiplot(c,d, ncol=2)</span></span></code></pre></div>
+<hr />
+</div>
+<div id="variables-binomial" class="section level2 hasAnchor" number="5.16">
+<h2><span class="header-section-number">5.16</span> Variables binomial<a href="la-dama-degustando-té.html#variables-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En el siguiente ejemplo podemos ver claramente que las medidas de tendencias central no son adecuada.</p>
+<p>Primero producimos un conjunto de datos que tiene solamente dos alternativas 0 y 1. Para facilitar los datos e imaginar lo que quiere decir estos datos que cuando es un 0 la persona no tiene hijos y cuando es un 1 tiene hijos.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="la-dama-degustando-té.html#cb37-1" tabindex="-1"></a>dfBin<span class="ot">=</span><span class="fu">replicate</span>(<span class="dv">10000</span>,<span class="fu">rbinom</span>(<span class="fu">length</span>(.<span class="dv">6</span>), <span class="at">size=</span><span class="dv">1</span>,<span class="at">prob =</span><span class="fl">0.6</span>))</span>
+<span id="cb37-2"><a href="la-dama-degustando-té.html#cb37-2" tabindex="-1"></a>dfBin<span class="ot">=</span><span class="fu">data.frame</span>(dfBin)</span>
+<span id="cb37-3"><a href="la-dama-degustando-té.html#cb37-3" tabindex="-1"></a><span class="fu">head</span>(dfBin)</span></code></pre></div>
+<pre><code>##   dfBin
+## 1     1
+## 2     0
+## 3     1
+## 4     0
+## 5     0
+## 6     0</code></pre>
+<p>Ahora vamos a producir el gráfico. Lo que uno observa es que el promedio esta en el centro cerca de .6, pero no hay ningún dato cerca del promedio. El promedio no representa la “tendencia central” de la distribución.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="la-dama-degustando-té.html#cb39-1" tabindex="-1"></a>mea<span class="ot">=</span><span class="fu">mean</span>(dfBin<span class="sc">$</span>dfBin)</span>
+<span id="cb39-2"><a href="la-dama-degustando-té.html#cb39-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(dfBin<span class="sc">$</span>dfBin)</span>
+<span id="cb39-3"><a href="la-dama-degustando-té.html#cb39-3" tabindex="-1"></a>mod<span class="ot">=</span><span class="fu">mfv</span>(dfBin<span class="sc">$</span>dfBin)</span>
+<span id="cb39-4"><a href="la-dama-degustando-té.html#cb39-4" tabindex="-1"></a>mea</span></code></pre></div>
+<pre><code>## [1] 0.6011</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="la-dama-degustando-té.html#cb41-1" tabindex="-1"></a><span class="fu">ggplot</span>(dfBin, <span class="fu">aes</span>(dfBin))<span class="sc">+</span></span>
+<span id="cb41-2"><a href="la-dama-degustando-té.html#cb41-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb41-3"><a href="la-dama-degustando-té.html#cb41-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mea), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb41-4"><a href="la-dama-degustando-té.html#cb41-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb41-5"><a href="la-dama-degustando-té.html#cb41-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb41-6"><a href="la-dama-degustando-té.html#cb41-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/visual%20rbinomial-1.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="inferencias-y-hipótesis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/05_Historia_Breve.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Biometria/blob/main/05_Historia_Breve.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

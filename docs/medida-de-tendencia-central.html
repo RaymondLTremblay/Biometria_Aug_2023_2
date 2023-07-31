@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Medida de tendencia central | Biometria</title>
+  <meta name="description" content="Este libro digital es una introdución al estudio de Biometria" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Medida de tendencia central | Biometria" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Medida de tendencia central | Biometria" />
+  
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  
+
+<meta name="author" content="" />
+
+
+<meta name="date" content="2023-07-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="historia-breve-de-la-estadística.html"/>
+<link rel="next" href="medidas_de_dispersión.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Biometria</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción al curso de Biometría</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#horario-de-clase"><i class="fa fa-check"></i><b>1.0.1</b> Horario de clase</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#libro-obligatorio."><i class="fa fa-check"></i><b>1.1</b> Libro obligatorio.</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#libros-sugeridos"><i class="fa fa-check"></i><b>1.1.1</b> Libros sugeridos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#programados"><i class="fa fa-check"></i><b>1.1.2</b> Programados</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#prerequisitos"><i class="fa fa-check"></i><b>1.1.3</b> Prerequisitos</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#descripción-del-curso"><i class="fa fa-check"></i><b>1.1.4</b> Descripción del curso</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#objetivos-del-curso"><i class="fa fa-check"></i><b>1.1.5</b> Objetivos del curso</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#puntuacion"><i class="fa fa-check"></i><b>1.1.6</b> Puntuacion:</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#examenes"><i class="fa fa-check"></i><b>1.1.7</b> Examenes:</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#conferencias"><i class="fa fa-check"></i><b>1.1.8</b> Conferencias</a></li>
+<li class="chapter" data-level="1.1.9" data-path="index.html"><a href="index.html#ejercicios"><i class="fa fa-check"></i><b>1.1.9</b> Ejercicios</a></li>
+<li class="chapter" data-level="1.1.10" data-path="index.html"><a href="index.html#faltar-a-clase-y-examen"><i class="fa fa-check"></i><b>1.1.10</b> Faltar a clase y examen:</a></li>
+<li class="chapter" data-level="1.1.11" data-path="index.html"><a href="index.html#derechos-de-estudiantes-con-impedimentos"><i class="fa fa-check"></i><b>1.1.11</b> Derechos de Estudiantes con Impedimentos</a></li>
+<li class="chapter" data-level="1.1.12" data-path="index.html"><a href="index.html#integridad-academica"><i class="fa fa-check"></i><b>1.1.12</b> Integridad academica</a></li>
+<li class="chapter" data-level="1.1.13" data-path="index.html"><a href="index.html#comentario-sobre-grabar-videos-yo-audio-de-las-clases"><i class="fa fa-check"></i><b>1.1.13</b> Comentario sobre grabar videos y/o audio de las clases</a></li>
+<li class="chapter" data-level="1.1.14" data-path="index.html"><a href="index.html#espacio-libre-de-acoso-sexual"><i class="fa fa-check"></i><b>1.1.14</b> Espacio libre de acoso sexual</a></li>
+<li class="chapter" data-level="1.1.15" data-path="index.html"><a href="index.html#protocolo-de-la-clase"><i class="fa fa-check"></i><b>1.1.15</b> Protocolo de la Clase</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html"><i class="fa fa-check"></i><b>2</b> Introducción a la Biometria</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-libro-de-la-clase"><i class="fa fa-check"></i><b>2.1</b> El libro de la clase</a></li>
+<li class="chapter" data-level="2.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-proceso-de-investigación"><i class="fa fa-check"></i><b>2.2</b> El proceso de investigación:</a></li>
+<li class="chapter" data-level="2.3" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-primer-paso"><i class="fa fa-check"></i><b>2.3</b> El primer paso:</a></li>
+<li class="chapter" data-level="2.4" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-segundo-paso"><i class="fa fa-check"></i><b>2.4</b> El segundo paso</a></li>
+<li class="chapter" data-level="2.5" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-tercer-paso"><i class="fa fa-check"></i><b>2.5</b> El tercer paso:</a></li>
+<li class="chapter" data-level="2.6" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-cuarto-paso"><i class="fa fa-check"></i><b>2.6</b> El cuarto paso:</a></li>
+<li class="chapter" data-level="2.7" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-quinto-paso"><i class="fa fa-check"></i><b>2.7</b> El quinto paso:</a></li>
+<li class="chapter" data-level="2.8" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-sexto-paso"><i class="fa fa-check"></i><b>2.8</b> El sexto paso:</a></li>
+<li class="chapter" data-level="2.9" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#tipo-de-error-de-interpretación-en-estadística"><i class="fa fa-check"></i><b>2.9</b> Tipo de error de interpretación en estadística</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#consideramos-los-reality-shows"><i class="fa fa-check"></i><b>2.9.1</b> Consideramos los Reality Shows:</a></li>
+<li class="chapter" data-level="2.9.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#personalidad-de-las-personas"><i class="fa fa-check"></i><b>2.9.2</b> Personalidad de las personas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#cuando-que-una-hipótesis-no-es-una-hipótesis"><i class="fa fa-check"></i><b>2.10</b> Cuando que una hipótesis no es una hipótesis?</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#una-hipótesis-tiene-que-ser-falsificable"><i class="fa fa-check"></i><b>2.10.1</b> Una hipótesis tiene que ser falsificable</a></li>
+<li class="chapter" data-level="2.10.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#ejercicio-1"><i class="fa fa-check"></i><b>2.10.2</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="2.10.3" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#evaluación-de-las-expresiones-falsificables"><i class="fa fa-check"></i><b>2.10.3</b> Evaluación de las expresiones falsificables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-independientes-y-dependientes"><i class="fa fa-check"></i><b>2.11</b> Variables Independientes y Dependientes</a></li>
+<li class="chapter" data-level="2.12" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#niveles-de-mediciones"><i class="fa fa-check"></i><b>2.12</b> Niveles de mediciones</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-continuas"><i class="fa fa-check"></i><b>2.12.1</b> Variables continuas</a></li>
+<li class="chapter" data-level="2.12.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#varriables-discretas"><i class="fa fa-check"></i><b>2.12.2</b> Varriables Discretas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html"><i class="fa fa-check"></i><b>3</b> Población y Muestreos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#qué-es-la-estadística"><i class="fa fa-check"></i><b>3.1</b> ¿Qué es la estadística?</a></li>
+<li class="chapter" data-level="3.2" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-población"><i class="fa fa-check"></i><b>3.2</b> El concepto de población</a></li>
+<li class="chapter" data-level="3.3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-muestreo"><i class="fa fa-check"></i><b>3.3</b> El concepto de muestreo</a></li>
+<li class="chapter" data-level="3.4" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#griego-y-latin"><i class="fa fa-check"></i><b>3.4</b> Griego y Latin</a></li>
+<li class="chapter" data-level="3.5" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-verdad-versus-un-estimado"><i class="fa fa-check"></i><b>3.5</b> La verdad versus un estimado</a></li>
+<li class="chapter" data-level="3.6" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#muestreos-al-azar"><i class="fa fa-check"></i><b>3.6</b> Muestreos al azar</a></li>
+<li class="chapter" data-level="3.7" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#error-de-muestreo-precisión-exactitud-y-sesgos"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Precisión, Exactitud y Sesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Inferencias y Hipótesis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-1"><i class="fa fa-check"></i><b>4.2</b> Ejemplo 1:</a></li>
+<li class="chapter" data-level="4.3" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-2"><i class="fa fa-check"></i><b>4.3</b> Ejemplo 2:</a></li>
+<li class="chapter" data-level="4.4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#inferencias-en-estadística"><i class="fa fa-check"></i><b>4.4</b> Inferencias en estadística</a></li>
+<li class="chapter" data-level="4.5" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#hipótesis"><i class="fa fa-check"></i><b>4.5</b> Hipótesis</a></li>
+<li class="chapter" data-level="4.6" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-valor-de-p"><i class="fa fa-check"></i><b>4.6</b> El valor de p</a></li>
+<li class="chapter" data-level="4.7" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#los-errores-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.7</b> Los errores de tipo I y tipo II</a></li>
+<li class="chapter" data-level="4.8" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-poder-de-las-pruebas-inferenciales-y-lo-parámetros-que-lo-influencia"><i class="fa fa-check"></i><b>4.8</b> El poder de las pruebas inferenciales y lo parámetros que lo influencia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html"><i class="fa fa-check"></i><b>5</b> Historia breve de la estadística</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#la-dama-degustando-té"><i class="fa fa-check"></i><b>5.1</b> La dama degustando té</a></li>
+<li class="chapter" data-level="5.2" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#definición-de-lo-que-es-la-estadística"><i class="fa fa-check"></i><b>5.2</b> Definición de lo que es la estadística</a></li>
+<li class="chapter" data-level="5.3" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#introducción-a-la-historía-de-la-estadística."><i class="fa fa-check"></i><b>5.3</b> Introducción a la Historía de la Estadística.</a></li>
+<li class="chapter" data-level="5.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#gertrude-mary-cox"><i class="fa fa-check"></i><b>5.4</b> Gertrude Mary Cox</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#primera-dama-en-estadística"><i class="fa fa-check"></i><b>5.4.1</b> Primera dama en Estadística</a></li>
+<li class="chapter" data-level="5.4.2" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#revista-biometrics"><i class="fa fa-check"></i><b>5.4.2</b> Revista <em>Biometrics</em></a></li>
+<li class="chapter" data-level="5.4.3" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#libro-diseños-experimentales"><i class="fa fa-check"></i><b>5.4.3</b> Libro: Diseños Experimentales</a></li>
+<li class="chapter" data-level="5.4.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#últimas-aportaciones"><i class="fa fa-check"></i><b>5.4.4</b> Últimas aportaciones</a></li>
+<li class="chapter" data-level="5.4.5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#referencias"><i class="fa fa-check"></i><b>5.4.5</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#algunos-personas-importantes"><i class="fa fa-check"></i><b>5.5</b> Algunos personas importantes</a></li>
+<li class="chapter" data-level="5.6" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#lista-de-estadísticos"><i class="fa fa-check"></i><b>5.6</b> Lista de estadísticos</a></li>
+<li class="chapter" data-level="5.7" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#formula"><i class="fa fa-check"></i><b>5.7</b> Formula</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html"><i class="fa fa-check"></i><b>6</b> Medida de tendencia central</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#calculando-el-promedio"><i class="fa fa-check"></i><b>6.1</b> Calculando el promedio</a></li>
+<li class="chapter" data-level="6.2" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#cuando-el-promedio-no-esta-localizado-en-el-centro"><i class="fa fa-check"></i><b>6.2</b> Cuando el promedio no esta localizado en el centro</a></li>
+<li class="chapter" data-level="6.3" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#la-mediana"><i class="fa fa-check"></i><b>6.3</b> La mediana</a></li>
+<li class="chapter" data-level="6.4" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#con-n-impares"><i class="fa fa-check"></i><b>6.4</b> Con <strong>n</strong> impares</a></li>
+<li class="chapter" data-level="6.5" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#con-n-pares"><i class="fa fa-check"></i><b>6.5</b> Con <strong>n</strong> pares</a></li>
+<li class="chapter" data-level="6.6" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#la-moda"><i class="fa fa-check"></i><b>6.6</b> La moda</a></li>
+<li class="chapter" data-level="6.7" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#cuando-es-que-el-promedio-mediana-y-moda-son-iguales"><i class="fa fa-check"></i><b>6.7</b> Cuando es que el promedio, mediana y moda son iguales?</a></li>
+<li class="chapter" data-level="6.8" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales."><i class="fa fa-check"></i><b>6.8</b> Distribución cuando los tres valores de tendencia centrtal no son iguales.</a></li>
+<li class="chapter" data-level="6.9" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#variables-binomial"><i class="fa fa-check"></i><b>6.9</b> Variables binomial</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html"><i class="fa fa-check"></i><b>7</b> Medidas_de_dispersión</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#qué-es-la-dispersión-en-estadística"><i class="fa fa-check"></i><b>7.1</b> Qué es la dispersión en estadística</a></li>
+<li class="chapter" data-level="7.2" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#vizualizando-la-dispersión"><i class="fa fa-check"></i><b>7.2</b> Vizualizando la dispersión</a></li>
+<li class="chapter" data-level="7.3" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-rango"><i class="fa fa-check"></i><b>7.3</b> El rango</a></li>
+<li class="chapter" data-level="7.4" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejemplo-de-la-clase"><i class="fa fa-check"></i><b>7.4</b> Ejemplo de la clase</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#cual-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes"><i class="fa fa-check"></i><b>7.4.1</b> Cual es el rango de la Edad de los padres de los Estudiantes</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-varianza"><i class="fa fa-check"></i><b>7.5</b> La varianza</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#este-indice-se-llama-la-desviación-del-promedio-que-es-la-suma-de-los-cuadrados"><i class="fa fa-check"></i><b>7.5.1</b> Este indice se llama la desviación del promedio que es la suma de los cuadrados</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#calcular-la-varianza-con-var"><i class="fa fa-check"></i><b>7.6</b> Calcular la varianza con <strong>var()</strong></a></li>
+<li class="chapter" data-level="7.7" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-desviación-estandar"><i class="fa fa-check"></i><b>7.7</b> La desviación estandar</a></li>
+<li class="chapter" data-level="7.8" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-rango-intertcuartil."><i class="fa fa-check"></i><b>7.8</b> El rango intertcuartil.</a></li>
+<li class="chapter" data-level="7.9" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-error-estandard"><i class="fa fa-check"></i><b>7.9</b> El error estandard</a></li>
+<li class="chapter" data-level="7.10" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalo-de-confianza-de-95-del-promedio"><i class="fa fa-check"></i><b>7.10</b> El intervalo de confianza de 95% del promedio</a></li>
+<li class="chapter" data-level="7.11" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalos-de-confianza-de-los-datos"><i class="fa fa-check"></i><b>7.11</b> El intervalos de confianza de los datos</a></li>
+<li class="chapter" data-level="7.12" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#rangos-incluidos-en-intervalos-de-confianza"><i class="fa fa-check"></i><b>7.12</b> Rangos incluidos en intervalos de confianza</a></li>
+<li class="chapter" data-level="7.13" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejemplo-del-intervalo-de-confianza"><i class="fa fa-check"></i><b>7.13</b> Ejemplo del intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="7.13.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalo-de-confianza-de-colesterol-en-los-iranis"><i class="fa fa-check"></i><b>7.13.1</b> El intervalo de confianza de colesterol en los Iranis</a></li>
+</ul></li>
+<li class="chapter" data-level="7.14" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#otro-ejemplo-de-los-intevalos-de-confianzas"><i class="fa fa-check"></i><b>7.14</b> Otro ejemplo de los intevalos de confianzas</a>
+<ul>
+<li class="chapter" data-level="7.14.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-altura-de-los-humanos"><i class="fa fa-check"></i><b>7.14.1</b> La altura de los humanos</a></li>
+<li class="chapter" data-level="7.14.2" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejercicio-ahora-prepara-el-mismo-gráfico-para-los-hombres."><i class="fa fa-check"></i><b>7.14.2</b> Ejercicio: Ahora prepara el mismo gráfico para los hombres.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>8</b> Nombre del capitulo.</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="intro.html"><a href="intro.html#a-section"><i class="fa fa-check"></i><b>8.1</b> A section</a></li>
+<li class="chapter" data-level="8.2" data-path="intro.html"><a href="intro.html#otra-seccion"><i class="fa fa-check"></i><b>8.2</b> Otra seccion</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#a-subsection"><i class="fa fa-check"></i>A subsection</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number"><i class="fa fa-check"></i><b>8.3</b> NOTE the size of font changes with the number <em>#</em></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number-1"><i class="fa fa-check"></i><b>8.3.1</b> NOTE the size of font changes with the number <em>#</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>9</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>9.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="9.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>9.2</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-epiphyitc-species.html"><a href="appendix-list-of-epiphyitc-species.html"><i class="fa fa-check"></i>(Appendix) List of epiphyitc species</a></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-terrestrial-species.html"><a href="appendix-list-of-terrestrial-species.html"><i class="fa fa-check"></i>(Appendix) List of terrestrial species</a></li>
+<li class="chapter" data-level="10" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>10</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>10.1</b> Footnotes</a></li>
+<li class="chapter" data-level="10.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>10.2</b> Citations</a></li>
+<li class="chapter" data-level="10.3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#links-to-websites"><i class="fa fa-check"></i><b>10.3</b> Links to websites</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>11</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>11.1</b> Equations</a></li>
+<li class="chapter" data-level="11.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>11.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="11.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>11.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>12</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>12.1</b> Publishing</a></li>
+<li class="chapter" data-level="12.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>12.2</b> 404 pages</a></li>
+<li class="chapter" data-level="12.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>12.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biometria</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="medida-de-tendencia-central" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Medida de tendencia central<a href="medida-de-tendencia-central.html#medida-de-tendencia-central" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>La medidas de tendencia central se llaman así, porque el valor indica la distribución de los datos y los indices tiende a estar en <strong>el centro</strong> de la distribución. Hay por lo menos 16 tipos de medidas de tendencias centrales <a href="https://en.wikipedia.org/wiki/Central_tendency" class="uri">https://en.wikipedia.org/wiki/Central_tendency</a>. En este curso estaremos solamente mencionado 3 de estas medidas.</p>
+<ul>
+<li>El promedio a arithmetico</li>
+<li>La mediana</li>
+<li>La moda</li>
+</ul>
+<hr />
+<div id="calculando-el-promedio" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Calculando el promedio<a href="medida-de-tendencia-central.html#calculando-el-promedio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Aquí creamos una lista de datos con la función <strong>c( )</strong> y con la función <strong>mean</strong> podemos calcular el promedio. El promedio es la suma de los valores divido por la cantidad de valores en la lista.<br />
+<span class="math display">\[\bar{x}=\frac{\sum_{i=1}^{n}x_i}n\]</span></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="medida-de-tendencia-central.html#cb8-1" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</span>
+<span id="cb8-2"><a href="medida-de-tendencia-central.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="medida-de-tendencia-central.html#cb8-3" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<hr />
+</div>
+<div id="cuando-el-promedio-no-esta-localizado-en-el-centro" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Cuando el promedio no esta localizado en el centro<a href="medida-de-tendencia-central.html#cuando-el-promedio-no-esta-localizado-en-el-centro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Digamos que yo tengo la cantidad de semillas producida por 11 plantas, la primera no produjo semillas, la segunda 2 semillas y subsiguientemente hasta la ultima que tuvo una producción de 1000 semillas. Nota que en este caso el promedio no se encuentra el el centro de los datos, por consecuencia NO es un buen indicador de la tendencia central de los datos. Cuando esto ocurre uno no debería usar el promedio para describir la tendencia central de los datos.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="medida-de-tendencia-central.html#cb10-1" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">1000</span>)</span>
+<span id="cb10-2"><a href="medida-de-tendencia-central.html#cb10-2" tabindex="-1"></a><span class="fu">sum</span>(x)<span class="sc">/</span><span class="fu">length</span>(x)</span></code></pre></div>
+<pre><code>## [1] 95</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="medida-de-tendencia-central.html#cb12-1" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div>
+<pre><code>## [1] 95</code></pre>
+<hr />
+</div>
+<div id="la-mediana" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> La mediana<a href="medida-de-tendencia-central.html#la-mediana" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="con-n-impares" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Con <strong>n</strong> impares<a href="medida-de-tendencia-central.html#con-n-impares" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cuando el promedio no es indice adecuado de la tendencia central tenemos dos alternativas, la mediana y la moda. La mediana es el valor en el centro después de haber organizado los datos del más pequeño al más grande.</p>
+<p><span class="math display">\[Mediana\ =\frac{\left({x}_{n+1}\right)^{th}}{2}\]</span>
+Donde <strong>n</strong> es la cantidad de valores en orden del más pequeño al grande. Por consecuencia se selecciona el valor en el centro de todos los valores. Lo que la función de mediana hace es poner los valores en orden y después determina cual es el valor en el centro. Aquí para demostrar los que hace la función 1) creo un una lista de valores, 2) pongo los datos en orden 3) y mirando los valores en orden vemos que el valor <strong>6</strong> es el valor en el centro. Pero este paso no es necesario ya que la función <strong>median</strong> lo hace automaticamente.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="medida-de-tendencia-central.html#cb14-1" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">c</span>(<span class="dv">247</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">43626</span>,<span class="dv">26</span>,<span class="dv">23</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">24</span>,<span class="dv">6</span>,<span class="dv">7</span>)</span>
+<span id="cb14-2"><a href="medida-de-tendencia-central.html#cb14-2" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">sort</span>(b)</span>
+<span id="cb14-3"><a href="medida-de-tendencia-central.html#cb14-3" tabindex="-1"></a><span class="fu">length</span>(b)</span></code></pre></div>
+<pre><code>## [1] 13</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="medida-de-tendencia-central.html#cb16-1" tabindex="-1"></a><span class="fu">median</span>(b)</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+</div>
+<div id="con-n-pares" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Con <strong>n</strong> pares<a href="medida-de-tendencia-central.html#con-n-pares" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Cuando hay una cantidad de datos pares, los dos valores en el centro son sumado y el promedio es calculado.</p>
+<p><span class="math display">\[Mediana\ =\frac{1}{2}* (\frac{\left({x}_{n+1}\right)^{th}}{2}+\frac{\left({x}_{n+1}\right)^{th}}{2})\]</span>
+En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por consecuencia la mediana es el promedio de estos valores.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="medida-de-tendencia-central.html#cb18-1" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">c</span>(<span class="dv">247</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">43626</span>,<span class="dv">26</span>,<span class="dv">23</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">24</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">7</span>)</span>
+<span id="cb18-2"><a href="medida-de-tendencia-central.html#cb18-2" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">sort</span>(b)</span>
+<span id="cb18-3"><a href="medida-de-tendencia-central.html#cb18-3" tabindex="-1"></a>b</span></code></pre></div>
+<pre><code>##  [1]     0     1     2     3     4     5     6     7     7    23    24    26
+## [13]   247 43626</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="medida-de-tendencia-central.html#cb20-1" tabindex="-1"></a><span class="fu">median</span>(b)</span></code></pre></div>
+<pre><code>## [1] 6.5</code></pre>
+<hr />
+</div>
+<div id="la-moda" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> La moda<a href="medida-de-tendencia-central.html#la-moda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La moda es el valor más común. Parta encontrar la moda, hay que instalar dos programas. Primero instalar <strong>devtools</strong> y despues correr el siguiente <strong>chunk</strong> para instaslar el package <strong>modeest</strong>, para mode estimates. Quitar <strong>#</strong> para correr la función.</p>
+<p>Activar el packete</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="medida-de-tendencia-central.html#cb22-1" tabindex="-1"></a><span class="fu">library</span>(statip)</span></code></pre></div>
+<p>Ya pueden ahora usar la <strong>mfv</strong> para encontrar la moda de conjunto de datos. Lo que vemos es que el valor de <strong>7</strong> es el más comun en la lista de datos.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="medida-de-tendencia-central.html#cb23-1" tabindex="-1"></a>statip<span class="sc">::</span><span class="fu">mfv1</span>(b)</span></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<hr />
+</div>
+<div id="cuando-es-que-el-promedio-mediana-y-moda-son-iguales" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Cuando es que el promedio, mediana y moda son iguales?<a href="medida-de-tendencia-central.html#cuando-es-que-el-promedio-mediana-y-moda-son-iguales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los tres valores de tendencia central son iguales cuando la distribución es normal, conocida también como en forma de campana. Aquí preparo un lista de datos con distribución normal, y evaluamos donde están los tres valores de tendencia central. Se usa la función <strong>rpois</strong>, para crear un conjunto de datos al azar con 100000, datos, un promedio de 100.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="medida-de-tendencia-central.html#cb25-1" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">rpois</span>(<span class="dv">5000</span>, <span class="dv">100</span>)</span>
+<span id="cb25-2"><a href="medida-de-tendencia-central.html#cb25-2" tabindex="-1"></a>df1<span class="ot">=</span><span class="fu">data.frame</span>(df)</span>
+<span id="cb25-3"><a href="medida-de-tendencia-central.html#cb25-3" tabindex="-1"></a><span class="fu">head</span>(df1, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>##    df
+## 1 110
+## 2 112</code></pre>
+<p>Lo que uno observa es que los tres valores son muy cercano uno del otro.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="medida-de-tendencia-central.html#cb27-1" tabindex="-1"></a><span class="fu">library</span>(statip)</span>
+<span id="cb27-2"><a href="medida-de-tendencia-central.html#cb27-2" tabindex="-1"></a><span class="co">#mean(df1$df)</span></span>
+<span id="cb27-3"><a href="medida-de-tendencia-central.html#cb27-3" tabindex="-1"></a><span class="co">#median(df1$df)</span></span>
+<span id="cb27-4"><a href="medida-de-tendencia-central.html#cb27-4" tabindex="-1"></a><span class="co">#statip::mfv(df1$df)</span></span></code></pre></div>
+<p>Podemos visualizar estos datos usamos dos gráfico, En el gráfico de la izquierda se ve una distribución normal con las tres lineas (promedio, mediana y moda). En el gráfico de la derecha se observa la misma información pero solamente los valores entre 96 y 101. Se observa que la mediana y el promedio son igual y la moda varia un poco, se encuentra donde la barra es más alta. Se observa que los tres valores son cerca del centro.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="medida-de-tendencia-central.html#cb28-1" tabindex="-1"></a>pro<span class="ot">=</span><span class="fu">mean</span>(df1<span class="sc">$</span>df)</span>
+<span id="cb28-2"><a href="medida-de-tendencia-central.html#cb28-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(df1<span class="sc">$</span>df)</span>
+<span id="cb28-3"><a href="medida-de-tendencia-central.html#cb28-3" tabindex="-1"></a>mod<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv</span>(df1<span class="sc">$</span>df)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="medida-de-tendencia-central.html#cb29-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(df))<span class="sc">+</span></span>
+<span id="cb29-2"><a href="medida-de-tendencia-central.html#cb29-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb29-3"><a href="medida-de-tendencia-central.html#cb29-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> pro), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb29-4"><a href="medida-de-tendencia-central.html#cb29-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb29-5"><a href="medida-de-tendencia-central.html#cb29-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb29-6"><a href="medida-de-tendencia-central.html#cb29-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb29-7"><a href="medida-de-tendencia-central.html#cb29-7" tabindex="-1"></a>a</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/g1-1.png" width="672" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="medida-de-tendencia-central.html#cb30-1" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(df))<span class="sc">+</span></span>
+<span id="cb30-2"><a href="medida-de-tendencia-central.html#cb30-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb30-3"><a href="medida-de-tendencia-central.html#cb30-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> pro), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-4"><a href="medida-de-tendencia-central.html#cb30-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-5"><a href="medida-de-tendencia-central.html#cb30-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-6"><a href="medida-de-tendencia-central.html#cb30-6" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">94</span>,<span class="dv">105</span>)<span class="sc">+</span></span>
+<span id="cb30-7"><a href="medida-de-tendencia-central.html#cb30-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="medida-de-tendencia-central.html#cb31-1" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(a,b, <span class="at">ncol=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/together-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales." class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> Distribución cuando los tres valores de tendencia centrtal no son iguales.<a href="medida-de-tendencia-central.html#distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En estas distribuciones uno observa que hay exceso de vaslores pequeños o grande. Esto resulta en que los tres indices de tendencias centrales no se encuentra cerca uno del otro.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="medida-de-tendencia-central.html#cb32-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb32-2"><a href="medida-de-tendencia-central.html#cb32-2" tabindex="-1"></a>dfb1<span class="ot">=</span><span class="fu">round</span>(<span class="fu">rbeta</span>(<span class="dv">10000</span>, <span class="dv">3</span>,<span class="dv">1</span>, <span class="at">ncp =</span> <span class="dv">0</span>),<span class="dv">3</span>)</span>
+<span id="cb32-3"><a href="medida-de-tendencia-central.html#cb32-3" tabindex="-1"></a>dfb1<span class="ot">=</span><span class="fu">tibble</span>(dfb1)</span>
+<span id="cb32-4"><a href="medida-de-tendencia-central.html#cb32-4" tabindex="-1"></a><span class="co">#head(dfb)</span></span>
+<span id="cb32-5"><a href="medida-de-tendencia-central.html#cb32-5" tabindex="-1"></a>df2<span class="ot">=</span> <span class="fu">round</span>(<span class="fu">rbeta</span>(<span class="dv">10000</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="at">ncp =</span> <span class="dv">0</span>),<span class="dv">3</span>)</span>
+<span id="cb32-6"><a href="medida-de-tendencia-central.html#cb32-6" tabindex="-1"></a>df2<span class="ot">=</span><span class="fu">tibble</span>(df2)</span>
+<span id="cb32-7"><a href="medida-de-tendencia-central.html#cb32-7" tabindex="-1"></a><span class="co">#head(df2)</span></span></code></pre></div>
+<ol style="list-style-type: decimal">
+<li>¿Cual es la linea de promedio, moda y mediana en cada gráfico?</li>
+</ol>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="medida-de-tendencia-central.html#cb33-1" tabindex="-1"></a>mea<span class="ot">=</span><span class="fu">mean</span>(dfb1<span class="sc">$</span>dfb1)</span>
+<span id="cb33-2"><a href="medida-de-tendencia-central.html#cb33-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(dfb1<span class="sc">$</span>dfb1)</span>
+<span id="cb33-3"><a href="medida-de-tendencia-central.html#cb33-3" tabindex="-1"></a>mod<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv1</span>(dfb1<span class="sc">$</span>dfb1)</span>
+<span id="cb33-4"><a href="medida-de-tendencia-central.html#cb33-4" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="medida-de-tendencia-central.html#cb33-5" tabindex="-1"></a>meab<span class="ot">=</span><span class="fu">mean</span>(df2<span class="sc">$</span>df2)</span>
+<span id="cb33-6"><a href="medida-de-tendencia-central.html#cb33-6" tabindex="-1"></a>medb<span class="ot">=</span><span class="fu">median</span>(df2<span class="sc">$</span>df2)</span>
+<span id="cb33-7"><a href="medida-de-tendencia-central.html#cb33-7" tabindex="-1"></a>modb<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv1</span>(df2<span class="sc">$</span>df2)</span>
+<span id="cb33-8"><a href="medida-de-tendencia-central.html#cb33-8" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="medida-de-tendencia-central.html#cb33-9" tabindex="-1"></a></span>
+<span id="cb33-10"><a href="medida-de-tendencia-central.html#cb33-10" tabindex="-1"></a>SesgadoDerecho<span class="ot">=</span><span class="fu">ggplot</span>(dfb1, <span class="fu">aes</span>(dfb1))<span class="sc">+</span></span>
+<span id="cb33-11"><a href="medida-de-tendencia-central.html#cb33-11" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-12"><a href="medida-de-tendencia-central.html#cb33-12" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mea), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-13"><a href="medida-de-tendencia-central.html#cb33-13" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-14"><a href="medida-de-tendencia-central.html#cb33-14" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-15"><a href="medida-de-tendencia-central.html#cb33-15" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb33-16"><a href="medida-de-tendencia-central.html#cb33-16" tabindex="-1"></a></span>
+<span id="cb33-17"><a href="medida-de-tendencia-central.html#cb33-17" tabindex="-1"></a>SesgadoIzquierda<span class="ot">=</span><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(df2))<span class="sc">+</span></span>
+<span id="cb33-18"><a href="medida-de-tendencia-central.html#cb33-18" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-19"><a href="medida-de-tendencia-central.html#cb33-19" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> meab), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-20"><a href="medida-de-tendencia-central.html#cb33-20" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> medb), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-21"><a href="medida-de-tendencia-central.html#cb33-21" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> modb), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb33-22"><a href="medida-de-tendencia-central.html#cb33-22" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb33-23"><a href="medida-de-tendencia-central.html#cb33-23" tabindex="-1"></a></span>
+<span id="cb33-24"><a href="medida-de-tendencia-central.html#cb33-24" tabindex="-1"></a>SesgadoDerecho</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/visual%20beta-1.png" width="672" /></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="medida-de-tendencia-central.html#cb34-1" tabindex="-1"></a>SesgadoIzquierda</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/visual%20beta-2.png" width="672" /></p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="medida-de-tendencia-central.html#cb35-1" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb35-2"><a href="medida-de-tendencia-central.html#cb35-2" tabindex="-1"></a><span class="co">#ggarrange(c,d, nrow=2, ncol=1)</span></span>
+<span id="cb35-3"><a href="medida-de-tendencia-central.html#cb35-3" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="medida-de-tendencia-central.html#cb35-4" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb35-5"><a href="medida-de-tendencia-central.html#cb35-5" tabindex="-1"></a><span class="co">#grid.arrange(rectGrob(), rectGrob())</span></span>
+<span id="cb35-6"><a href="medida-de-tendencia-central.html#cb35-6" tabindex="-1"></a><span class="co">#marrangeGrob(c,d, nrow=2)</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="medida-de-tendencia-central.html#cb36-1" tabindex="-1"></a><span class="co">#c</span></span>
+<span id="cb36-2"><a href="medida-de-tendencia-central.html#cb36-2" tabindex="-1"></a><span class="co">#d</span></span>
+<span id="cb36-3"><a href="medida-de-tendencia-central.html#cb36-3" tabindex="-1"></a><span class="co">#library(scater)</span></span>
+<span id="cb36-4"><a href="medida-de-tendencia-central.html#cb36-4" tabindex="-1"></a><span class="co">#multiplot(c,d, ncol=2)</span></span></code></pre></div>
+<hr />
+</div>
+<div id="variables-binomial" class="section level2 hasAnchor" number="6.9">
+<h2><span class="header-section-number">6.9</span> Variables binomial<a href="medida-de-tendencia-central.html#variables-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En el siguiente ejemplo podemos ver claramente que las medidas de tendencias central no son adecuada.</p>
+<p>Primero producimos un conjunto de datos que tiene solamente dos alternativas 0 y 1. Para facilitar los datos e imaginar lo que quiere decir estos datos que cuando es un 0 la persona no tiene hijos y cuando es un 1 tiene hijos.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="medida-de-tendencia-central.html#cb37-1" tabindex="-1"></a>dfBin<span class="ot">=</span><span class="fu">replicate</span>(<span class="dv">10000</span>,<span class="fu">rbinom</span>(<span class="fu">length</span>(.<span class="dv">6</span>), <span class="at">size=</span><span class="dv">1</span>,<span class="at">prob =</span><span class="fl">0.6</span>))</span>
+<span id="cb37-2"><a href="medida-de-tendencia-central.html#cb37-2" tabindex="-1"></a>dfBin<span class="ot">=</span><span class="fu">data.frame</span>(dfBin)</span>
+<span id="cb37-3"><a href="medida-de-tendencia-central.html#cb37-3" tabindex="-1"></a><span class="fu">head</span>(dfBin)</span></code></pre></div>
+<pre><code>##   dfBin
+## 1     1
+## 2     0
+## 3     0
+## 4     1
+## 5     1
+## 6     1</code></pre>
+<p>Ahora vamos a producir el gráfico. Lo que uno observa es que el promedio esta en el centro cerca de .6, pero no hay ningún dato cerca del promedio. El promedio no representa la “tendencia central” de la distribución.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="medida-de-tendencia-central.html#cb39-1" tabindex="-1"></a>mea<span class="ot">=</span><span class="fu">mean</span>(dfBin<span class="sc">$</span>dfBin)</span>
+<span id="cb39-2"><a href="medida-de-tendencia-central.html#cb39-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(dfBin<span class="sc">$</span>dfBin)</span>
+<span id="cb39-3"><a href="medida-de-tendencia-central.html#cb39-3" tabindex="-1"></a>mod<span class="ot">=</span><span class="fu">mfv</span>(dfBin<span class="sc">$</span>dfBin)</span>
+<span id="cb39-4"><a href="medida-de-tendencia-central.html#cb39-4" tabindex="-1"></a>mea</span></code></pre></div>
+<pre><code>## [1] 0.6222</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="medida-de-tendencia-central.html#cb41-1" tabindex="-1"></a><span class="fu">ggplot</span>(dfBin, <span class="fu">aes</span>(dfBin))<span class="sc">+</span></span>
+<span id="cb41-2"><a href="medida-de-tendencia-central.html#cb41-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb41-3"><a href="medida-de-tendencia-central.html#cb41-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mea), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb41-4"><a href="medida-de-tendencia-central.html#cb41-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb41-5"><a href="medida-de-tendencia-central.html#cb41-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb41-6"><a href="medida-de-tendencia-central.html#cb41-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/visual%20rbinomial-1.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="historia-breve-de-la-estadística.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="medidas_de_dispersión.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/06-Medidas_de_tendencias_centrales.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Biometria/blob/main/06-Medidas_de_tendencias_centrales.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

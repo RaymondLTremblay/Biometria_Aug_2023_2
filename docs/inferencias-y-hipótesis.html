@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Inferencias y Hipótesis | Biometria</title>
+  <meta name="description" content="Este libro digital es una introdución al estudio de Biometria" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Inferencias y Hipótesis | Biometria" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Inferencias y Hipótesis | Biometria" />
+  
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  
+
+<meta name="author" content="" />
+
+
+<meta name="date" content="2023-07-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="población-y-muestreos.html"/>
+<link rel="next" href="historia-breve-de-la-estadística.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Biometria</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción al curso de Biometría</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#horario-de-clase"><i class="fa fa-check"></i><b>1.0.1</b> Horario de clase</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#libro-obligatorio."><i class="fa fa-check"></i><b>1.1</b> Libro obligatorio.</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#libros-sugeridos"><i class="fa fa-check"></i><b>1.1.1</b> Libros sugeridos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#programados"><i class="fa fa-check"></i><b>1.1.2</b> Programados</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#prerequisitos"><i class="fa fa-check"></i><b>1.1.3</b> Prerequisitos</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#descripción-del-curso"><i class="fa fa-check"></i><b>1.1.4</b> Descripción del curso</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#objetivos-del-curso"><i class="fa fa-check"></i><b>1.1.5</b> Objetivos del curso</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#puntuacion"><i class="fa fa-check"></i><b>1.1.6</b> Puntuacion:</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#examenes"><i class="fa fa-check"></i><b>1.1.7</b> Examenes:</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#conferencias"><i class="fa fa-check"></i><b>1.1.8</b> Conferencias</a></li>
+<li class="chapter" data-level="1.1.9" data-path="index.html"><a href="index.html#ejercicios"><i class="fa fa-check"></i><b>1.1.9</b> Ejercicios</a></li>
+<li class="chapter" data-level="1.1.10" data-path="index.html"><a href="index.html#faltar-a-clase-y-examen"><i class="fa fa-check"></i><b>1.1.10</b> Faltar a clase y examen:</a></li>
+<li class="chapter" data-level="1.1.11" data-path="index.html"><a href="index.html#derechos-de-estudiantes-con-impedimentos"><i class="fa fa-check"></i><b>1.1.11</b> Derechos de Estudiantes con Impedimentos</a></li>
+<li class="chapter" data-level="1.1.12" data-path="index.html"><a href="index.html#integridad-academica"><i class="fa fa-check"></i><b>1.1.12</b> Integridad academica</a></li>
+<li class="chapter" data-level="1.1.13" data-path="index.html"><a href="index.html#comentario-sobre-grabar-videos-yo-audio-de-las-clases"><i class="fa fa-check"></i><b>1.1.13</b> Comentario sobre grabar videos y/o audio de las clases</a></li>
+<li class="chapter" data-level="1.1.14" data-path="index.html"><a href="index.html#espacio-libre-de-acoso-sexual"><i class="fa fa-check"></i><b>1.1.14</b> Espacio libre de acoso sexual</a></li>
+<li class="chapter" data-level="1.1.15" data-path="index.html"><a href="index.html#protocolo-de-la-clase"><i class="fa fa-check"></i><b>1.1.15</b> Protocolo de la Clase</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html"><i class="fa fa-check"></i><b>2</b> Introducción a la Biometria</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-libro-de-la-clase"><i class="fa fa-check"></i><b>2.1</b> El libro de la clase</a></li>
+<li class="chapter" data-level="2.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-proceso-de-investigación"><i class="fa fa-check"></i><b>2.2</b> El proceso de investigación:</a></li>
+<li class="chapter" data-level="2.3" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-primer-paso"><i class="fa fa-check"></i><b>2.3</b> El primer paso:</a></li>
+<li class="chapter" data-level="2.4" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-segundo-paso"><i class="fa fa-check"></i><b>2.4</b> El segundo paso</a></li>
+<li class="chapter" data-level="2.5" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-tercer-paso"><i class="fa fa-check"></i><b>2.5</b> El tercer paso:</a></li>
+<li class="chapter" data-level="2.6" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-cuarto-paso"><i class="fa fa-check"></i><b>2.6</b> El cuarto paso:</a></li>
+<li class="chapter" data-level="2.7" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-quinto-paso"><i class="fa fa-check"></i><b>2.7</b> El quinto paso:</a></li>
+<li class="chapter" data-level="2.8" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-sexto-paso"><i class="fa fa-check"></i><b>2.8</b> El sexto paso:</a></li>
+<li class="chapter" data-level="2.9" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#tipo-de-error-de-interpretación-en-estadística"><i class="fa fa-check"></i><b>2.9</b> Tipo de error de interpretación en estadística</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#consideramos-los-reality-shows"><i class="fa fa-check"></i><b>2.9.1</b> Consideramos los Reality Shows:</a></li>
+<li class="chapter" data-level="2.9.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#personalidad-de-las-personas"><i class="fa fa-check"></i><b>2.9.2</b> Personalidad de las personas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#cuando-que-una-hipótesis-no-es-una-hipótesis"><i class="fa fa-check"></i><b>2.10</b> Cuando que una hipótesis no es una hipótesis?</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#una-hipótesis-tiene-que-ser-falsificable"><i class="fa fa-check"></i><b>2.10.1</b> Una hipótesis tiene que ser falsificable</a></li>
+<li class="chapter" data-level="2.10.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#ejercicio-1"><i class="fa fa-check"></i><b>2.10.2</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="2.10.3" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#evaluación-de-las-expresiones-falsificables"><i class="fa fa-check"></i><b>2.10.3</b> Evaluación de las expresiones falsificables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-independientes-y-dependientes"><i class="fa fa-check"></i><b>2.11</b> Variables Independientes y Dependientes</a></li>
+<li class="chapter" data-level="2.12" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#niveles-de-mediciones"><i class="fa fa-check"></i><b>2.12</b> Niveles de mediciones</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-continuas"><i class="fa fa-check"></i><b>2.12.1</b> Variables continuas</a></li>
+<li class="chapter" data-level="2.12.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#varriables-discretas"><i class="fa fa-check"></i><b>2.12.2</b> Varriables Discretas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html"><i class="fa fa-check"></i><b>3</b> Población y Muestreos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#qué-es-la-estadística"><i class="fa fa-check"></i><b>3.1</b> ¿Qué es la estadística?</a></li>
+<li class="chapter" data-level="3.2" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-población"><i class="fa fa-check"></i><b>3.2</b> El concepto de población</a></li>
+<li class="chapter" data-level="3.3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-muestreo"><i class="fa fa-check"></i><b>3.3</b> El concepto de muestreo</a></li>
+<li class="chapter" data-level="3.4" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#griego-y-latin"><i class="fa fa-check"></i><b>3.4</b> Griego y Latin</a></li>
+<li class="chapter" data-level="3.5" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-verdad-versus-un-estimado"><i class="fa fa-check"></i><b>3.5</b> La verdad versus un estimado</a></li>
+<li class="chapter" data-level="3.6" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#muestreos-al-azar"><i class="fa fa-check"></i><b>3.6</b> Muestreos al azar</a></li>
+<li class="chapter" data-level="3.7" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#error-de-muestreo-precisión-exactitud-y-sesgos"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Precisión, Exactitud y Sesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Inferencias y Hipótesis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-1"><i class="fa fa-check"></i><b>4.2</b> Ejemplo 1:</a></li>
+<li class="chapter" data-level="4.3" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-2"><i class="fa fa-check"></i><b>4.3</b> Ejemplo 2:</a></li>
+<li class="chapter" data-level="4.4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#inferencias-en-estadística"><i class="fa fa-check"></i><b>4.4</b> Inferencias en estadística</a></li>
+<li class="chapter" data-level="4.5" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#hipótesis"><i class="fa fa-check"></i><b>4.5</b> Hipótesis</a></li>
+<li class="chapter" data-level="4.6" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-valor-de-p"><i class="fa fa-check"></i><b>4.6</b> El valor de p</a></li>
+<li class="chapter" data-level="4.7" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#los-errores-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.7</b> Los errores de tipo I y tipo II</a></li>
+<li class="chapter" data-level="4.8" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-poder-de-las-pruebas-inferenciales-y-lo-parámetros-que-lo-influencia"><i class="fa fa-check"></i><b>4.8</b> El poder de las pruebas inferenciales y lo parámetros que lo influencia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html"><i class="fa fa-check"></i><b>5</b> Historia breve de la estadística</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#la-dama-degustando-té"><i class="fa fa-check"></i><b>5.1</b> La dama degustando té</a></li>
+<li class="chapter" data-level="5.2" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#definición-de-lo-que-es-la-estadística"><i class="fa fa-check"></i><b>5.2</b> Definición de lo que es la estadística</a></li>
+<li class="chapter" data-level="5.3" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#introducción-a-la-historía-de-la-estadística."><i class="fa fa-check"></i><b>5.3</b> Introducción a la Historía de la Estadística.</a></li>
+<li class="chapter" data-level="5.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#gertrude-mary-cox"><i class="fa fa-check"></i><b>5.4</b> Gertrude Mary Cox</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#primera-dama-en-estadística"><i class="fa fa-check"></i><b>5.4.1</b> Primera dama en Estadística</a></li>
+<li class="chapter" data-level="5.4.2" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#revista-biometrics"><i class="fa fa-check"></i><b>5.4.2</b> Revista <em>Biometrics</em></a></li>
+<li class="chapter" data-level="5.4.3" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#libro-diseños-experimentales"><i class="fa fa-check"></i><b>5.4.3</b> Libro: Diseños Experimentales</a></li>
+<li class="chapter" data-level="5.4.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#últimas-aportaciones"><i class="fa fa-check"></i><b>5.4.4</b> Últimas aportaciones</a></li>
+<li class="chapter" data-level="5.4.5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#referencias"><i class="fa fa-check"></i><b>5.4.5</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#algunos-personas-importantes"><i class="fa fa-check"></i><b>5.5</b> Algunos personas importantes</a></li>
+<li class="chapter" data-level="5.6" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#lista-de-estadísticos"><i class="fa fa-check"></i><b>5.6</b> Lista de estadísticos</a></li>
+<li class="chapter" data-level="5.7" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#formula"><i class="fa fa-check"></i><b>5.7</b> Formula</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html"><i class="fa fa-check"></i><b>6</b> Medida de tendencia central</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#calculando-el-promedio"><i class="fa fa-check"></i><b>6.1</b> Calculando el promedio</a></li>
+<li class="chapter" data-level="6.2" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#cuando-el-promedio-no-esta-localizado-en-el-centro"><i class="fa fa-check"></i><b>6.2</b> Cuando el promedio no esta localizado en el centro</a></li>
+<li class="chapter" data-level="6.3" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#la-mediana"><i class="fa fa-check"></i><b>6.3</b> La mediana</a></li>
+<li class="chapter" data-level="6.4" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#con-n-impares"><i class="fa fa-check"></i><b>6.4</b> Con <strong>n</strong> impares</a></li>
+<li class="chapter" data-level="6.5" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#con-n-pares"><i class="fa fa-check"></i><b>6.5</b> Con <strong>n</strong> pares</a></li>
+<li class="chapter" data-level="6.6" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#la-moda"><i class="fa fa-check"></i><b>6.6</b> La moda</a></li>
+<li class="chapter" data-level="6.7" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#cuando-es-que-el-promedio-mediana-y-moda-son-iguales"><i class="fa fa-check"></i><b>6.7</b> Cuando es que el promedio, mediana y moda son iguales?</a></li>
+<li class="chapter" data-level="6.8" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales."><i class="fa fa-check"></i><b>6.8</b> Distribución cuando los tres valores de tendencia centrtal no son iguales.</a></li>
+<li class="chapter" data-level="6.9" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#variables-binomial"><i class="fa fa-check"></i><b>6.9</b> Variables binomial</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html"><i class="fa fa-check"></i><b>7</b> Medidas_de_dispersión</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#qué-es-la-dispersión-en-estadística"><i class="fa fa-check"></i><b>7.1</b> Qué es la dispersión en estadística</a></li>
+<li class="chapter" data-level="7.2" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#vizualizando-la-dispersión"><i class="fa fa-check"></i><b>7.2</b> Vizualizando la dispersión</a></li>
+<li class="chapter" data-level="7.3" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-rango"><i class="fa fa-check"></i><b>7.3</b> El rango</a></li>
+<li class="chapter" data-level="7.4" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejemplo-de-la-clase"><i class="fa fa-check"></i><b>7.4</b> Ejemplo de la clase</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#cual-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes"><i class="fa fa-check"></i><b>7.4.1</b> Cual es el rango de la Edad de los padres de los Estudiantes</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-varianza"><i class="fa fa-check"></i><b>7.5</b> La varianza</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#este-indice-se-llama-la-desviación-del-promedio-que-es-la-suma-de-los-cuadrados"><i class="fa fa-check"></i><b>7.5.1</b> Este indice se llama la desviación del promedio que es la suma de los cuadrados</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#calcular-la-varianza-con-var"><i class="fa fa-check"></i><b>7.6</b> Calcular la varianza con <strong>var()</strong></a></li>
+<li class="chapter" data-level="7.7" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-desviación-estandar"><i class="fa fa-check"></i><b>7.7</b> La desviación estandar</a></li>
+<li class="chapter" data-level="7.8" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-rango-intertcuartil."><i class="fa fa-check"></i><b>7.8</b> El rango intertcuartil.</a></li>
+<li class="chapter" data-level="7.9" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-error-estandard"><i class="fa fa-check"></i><b>7.9</b> El error estandard</a></li>
+<li class="chapter" data-level="7.10" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalo-de-confianza-de-95-del-promedio"><i class="fa fa-check"></i><b>7.10</b> El intervalo de confianza de 95% del promedio</a></li>
+<li class="chapter" data-level="7.11" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalos-de-confianza-de-los-datos"><i class="fa fa-check"></i><b>7.11</b> El intervalos de confianza de los datos</a></li>
+<li class="chapter" data-level="7.12" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#rangos-incluidos-en-intervalos-de-confianza"><i class="fa fa-check"></i><b>7.12</b> Rangos incluidos en intervalos de confianza</a></li>
+<li class="chapter" data-level="7.13" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejemplo-del-intervalo-de-confianza"><i class="fa fa-check"></i><b>7.13</b> Ejemplo del intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="7.13.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalo-de-confianza-de-colesterol-en-los-iranis"><i class="fa fa-check"></i><b>7.13.1</b> El intervalo de confianza de colesterol en los Iranis</a></li>
+</ul></li>
+<li class="chapter" data-level="7.14" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#otro-ejemplo-de-los-intevalos-de-confianzas"><i class="fa fa-check"></i><b>7.14</b> Otro ejemplo de los intevalos de confianzas</a>
+<ul>
+<li class="chapter" data-level="7.14.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-altura-de-los-humanos"><i class="fa fa-check"></i><b>7.14.1</b> La altura de los humanos</a></li>
+<li class="chapter" data-level="7.14.2" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejercicio-ahora-prepara-el-mismo-gráfico-para-los-hombres."><i class="fa fa-check"></i><b>7.14.2</b> Ejercicio: Ahora prepara el mismo gráfico para los hombres.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>8</b> Nombre del capitulo.</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="intro.html"><a href="intro.html#a-section"><i class="fa fa-check"></i><b>8.1</b> A section</a></li>
+<li class="chapter" data-level="8.2" data-path="intro.html"><a href="intro.html#otra-seccion"><i class="fa fa-check"></i><b>8.2</b> Otra seccion</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#a-subsection"><i class="fa fa-check"></i>A subsection</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number"><i class="fa fa-check"></i><b>8.3</b> NOTE the size of font changes with the number <em>#</em></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number-1"><i class="fa fa-check"></i><b>8.3.1</b> NOTE the size of font changes with the number <em>#</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>9</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>9.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="9.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>9.2</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-epiphyitc-species.html"><a href="appendix-list-of-epiphyitc-species.html"><i class="fa fa-check"></i>(Appendix) List of epiphyitc species</a></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-terrestrial-species.html"><a href="appendix-list-of-terrestrial-species.html"><i class="fa fa-check"></i>(Appendix) List of terrestrial species</a></li>
+<li class="chapter" data-level="10" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>10</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>10.1</b> Footnotes</a></li>
+<li class="chapter" data-level="10.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>10.2</b> Citations</a></li>
+<li class="chapter" data-level="10.3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#links-to-websites"><i class="fa fa-check"></i><b>10.3</b> Links to websites</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>11</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>11.1</b> Equations</a></li>
+<li class="chapter" data-level="11.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>11.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="11.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>11.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>12</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>12.1</b> Publishing</a></li>
+<li class="chapter" data-level="12.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>12.2</b> 404 pages</a></li>
+<li class="chapter" data-level="12.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>12.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biometria</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="inferencias-y-hipótesis" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Inferencias y Hipótesis<a href="inferencias-y-hipótesis.html#inferencias-y-hipótesis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Fecha de la ultima revisión</p>
+<pre><code>## [1] &quot;2023-07-31&quot;</code></pre>
+<p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
+<div id="introducción" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Introducción<a href="inferencias-y-hipótesis.html#introducción" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los parámetros versus un muestreo:</p>
+<p>En algunos instancia se podría calcular el parámetro (por ejemplo el promedio) en otra palabra la población (todos los individuos sin que falte ni uno). Si es así tenemos todos los datos. Por ejemplo si la población es cuantos médicos fueron infectado por el COVID-19 en un hospital especifico entre una fechas delimitada es probable que se puede conseguir la información de cada un los médicos, y se podría calcular la proporción de infectado.</p>
+<p>Pero cuando la población es más grande será necesario tener solamente una muestra de la población, si se usa un método al azar de recolección de los datos uno podría inferir cual es el estado basado en las estadística recolectada.</p>
+</div>
+<div id="ejemplo-1" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Ejemplo 1:<a href="inferencias-y-hipótesis.html#ejemplo-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Por ejemplo en un estudio hecho por la Dra. Patricia Burrowes sobre la frecuencia de una infección común de los coquí ella evaluó la presencia del hongo sobre la piel de estos anfibios y encontró que los individuos en bosque nublado eran más frecuentemente infectado que los del bosque enano. Ella y sus estudiantes muestrearon 299 individuos del bosque nublado y 130 del bosque enano, este esfuerzo fue muy grande. Encontrar los coqui en el campo no fácil y no hay manera de conseguir todas las pequeñas ranas.</p>
+<ol style="list-style-type: decimal">
+<li>Costo potencial en aptitud evolutiva de <em>Batrachochytrium dendrobatidis</em> en <em>Eleutherodactylus coqui</em>, y comentarios sobre el riesgo de infección relacionado con el ambiente”. El tamaño corporal (longitud hocico acloaca) en adultos de <em>Eleutherodactylus coqui</em> infectados y no infectados con <em>Batrachochytrium dendrobatidis</em> (Bd) fue comparado para determinarel costo potencial en aptitud evolutiva de quitridiomicosis en poblaciones resistentes. Los estudios fueron realizados en dos tipos de bosque a diferentes elevaciones, Bosque Nublado (650 m) y Bosque Nublado Enano (850 m), en El Yunque, Puerto Rico. Nuestros resultados demuestran que los machos infectados con Bd son significativamente más pequeños que los no infectados en el Bosque Nuboso, sin embargo no sucede lo mismo en el Bosque Nublado Enano. Aunque las hembras que están infectadas por Bd también son más pequeñas que las no infectadas, este efecto no es estadísticamente significativo. La prevalencia de Bd y la probabilidad de infección por este hongo son significativamente más altas en el Bosque Nublado (44.1%) que en el Bosque Nublado Enano (20.7%) para ambos sexos. Reportamos las diferencias en factores ambientales en estos dos tipos de bosque en Puerto Rico y discutimos las implicaciones en el crecimiento de Bd y la vulnerabilidad de las ranas a la infección por este patógeno.
+&gt;
+&gt; &gt; Burrowes, P. A., A. V. Longo, and C. A. Rodríguez. 2008b. Potential fitness cost of <em>Batrachochytrium dendrobatidis</em> in <em>Eletherodactylus coqui</em>, and comments on environment-related risk of infection. Herpetotropicos 4:51-57.</li>
+</ol>
+</div>
+<div id="ejemplo-2" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Ejemplo 2:<a href="inferencias-y-hipótesis.html#ejemplo-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En este segundo ejemplo se demuestra la eficiencia de dos vacunas para proteger del virus papiloma humano (VPH) que es una causa principal del cáncer del útero. Hay un estimado que 25% de los adultos están infectado por HPV en un momento en su vida (Lowndes, doi: 10.1017/S0950268805005728) y que este cáncer es el segundo más común en el mundo (Bosch et al. 2002, doi: 10.1136/jcp.55.4.244). El siguiente ejemplo demuestra que las vacunas pueden ser muy efectiva.</p>
+<p>¿Qué tan eficaces son las vacunas contra el VPH?</p>
+<p>Las vacunas contra el VPH son altamente eficaces para prevenir la infección por los tipos de VPH a los que atacan cuando las vacunas se administran antes de la exposición inicial al virus — es decir, antes de que el individuo tenga actividad sexual.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>En los estudios que llevaron a la aprobación de Gardasil y de Cervarix, se encontró que estas vacunas proveen casi 100 % de protección contra infecciones persistentes del cuello uterino por los tipos 16 y 18 de VPH y contra los cambios celulares del cuello uterino que pueden causar estas infecciones persistentes.Gardasil 9 es tan eficaz como Gardasil para la prevención de las enfermedades causadas por los cuatro tipos de VPH (6, 11, 16 y 18), según reacciones similares de anticuerpos en participantes de estudios clínicos. Los estudios que llevaron a la aprobación de Gardasil 9 encontraron que es casi 100 % eficaz en la prevención de enfermedades cervicales (de cuello uterino), de vulva y de vagina causadas por los otros cinco tipos de VPH (31, 33, 45, 52 y 58) a los que se dirige (4). En un documento de posición de 2017, la Organización Mundial de la Salud declaró que las vacunas contra el VPH tienen una eficacia equivalente (5). Se ha encontrado que Cervarix provee protección parcial contra algunos otros tipos de VPH que pueden también causar cáncer pero que no están incluidos en la vacuna, un fenómeno llamado protección cruzada (6).
+&gt;</li>
+</ol>
+<blockquote>
+<blockquote>
+<p>Fuente de información: <a href="https://www.cancer.gov/espanol/cancer/causas-prevencion/riesgo/germenes-infecciosos/hoja-informativa-vacuna-vph" class="uri">https://www.cancer.gov/espanol/cancer/causas-prevencion/riesgo/germenes-infecciosos/hoja-informativa-vacuna-vph</a></p>
+</blockquote>
+</blockquote>
+</div>
+<div id="inferencias-en-estadística" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Inferencias en estadística<a href="inferencias-y-hipótesis.html#inferencias-en-estadística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El concepto de inferencias en estadística se refiere al proceso de hacer conclusiones basado en un muestreo. Por ejemplo en el primer ejemplo de la infección de hongos en los coquis, uno podría inferir que la proporción de ranas infectada será igual (o muy similar) en otros bosques nublados y enanos de Puerto Rico.</p>
+</div>
+<div id="hipótesis" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Hipótesis<a href="inferencias-y-hipótesis.html#hipótesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En la sección 6.2 del libro de Havel et al. leer y evaluar la tabla 6.2 para tener unos ejemplos de expresiones que no son una hipótesis y lo que es son. NOTA: importante es el autor menciona aquí son las hipótesis alterna, en otra palabra los que uno piensa que podría ocurrir. Pero esa no es la hipótesis que se prueba, lo que se prueba es la hipótesis NULA, Ho. Cuando se dice la hipótesis NULA es que no hay diferencias entre los grupos. Vea la tabla 6.2 del libro para más ejemplos.</p>
+<p>Ejemplo de hipotesis Nula y Alterna</p>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="21%" />
+<col width="28%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">NULA, Ho</th>
+<th align="center">ALTERNA, Ha</th>
+<th align="center">No es una hipótesis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="right">Tratamiento con la vacuna de Salk no tiene efecto sobre el riesgo de infección de polio en niños</td>
+<td align="center">El efecto de la vacuna Salk reduce el riesgo de infección de polio en los niños</td>
+<td align="center">El polio es malo</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="right">Los Beatles no vendieron más discos que cualquier otros grupos de rock</td>
+<td align="center">Los Beatles vendieron más discos que cualquier otro grupo de rock</td>
+<td align="center">La música delos Beatles es obsoleta</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="el-valor-de-p" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> El valor de p<a href="inferencias-y-hipótesis.html#el-valor-de-p" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El valor de <em>p</em> es la probabilidad de tener una estadística tan extrema si la hipótesis es verdad (en otra palabra la Ho es la correcta). Uno podría decir que es un indice de la evidencia <strong>CONTRA</strong> la hipótesis NULA. PERO NOTA es incorrecto decir que es la probabilidad que la Ho es correcta.</p>
+<p>Antes de comenzar a hacer el estudio se debería <em>a priori</em> tener una decisión cual sera el nivel de <strong>alpha</strong>, <span class="math inline">\(\alpha\)</span> para rechazar la hipótesis nula. Típicamente el valor critico de <span class="math inline">\(\alpha\)</span> es 0.05 o 5%. Esto quiere decir que si uno repite el experimento 100 veces 5 veces la investigación nos va a dar una resultado equivocado. Que se rechaza la Ho cuando se debería aceptar. Esto una vez en cada 20 experimentos con las mismas condiciones. En muchas ramas de investigación como la física el nivel de <span class="math inline">\(\alpha\)</span> es frecuentemente 0.01 o menos.</p>
+</div>
+<div id="los-errores-de-tipo-i-y-tipo-ii" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Los errores de tipo I y tipo II<a href="inferencias-y-hipótesis.html#los-errores-de-tipo-i-y-tipo-ii" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vea el modulo T1.</p>
+</div>
+<div id="el-poder-de-las-pruebas-inferenciales-y-lo-parámetros-que-lo-influencia" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> El poder de las pruebas inferenciales y lo parámetros que lo influencia<a href="inferencias-y-hipótesis.html#el-poder-de-las-pruebas-inferenciales-y-lo-parámetros-que-lo-influencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Si la hipótesis nula es falsa es probable que se podría rechazar con cierta confianza. El complemente de beta, <span class="math inline">\((1-\beta)\)</span> es la prueba de poder. La prueba de poder es la probabilidad de correctamente rechazar la hipótesis nula falsa. Para aclara la <span class="math inline">\(\beta\)</span> es la probabilidad de cometer un error tipo II. El Poder es <span class="math inline">\((1-\beta)\)</span> es la probabilidad de correctamente rechazar una hipótesis nula falsa.</p>
+<p>Evalúa el siguiente gráfico:</p>
+<p>La prueba de poder es influenciada por tres propriedades.</p>
+<ul>
+<li>El nivel del tipo de error I, o sea el <span class="math inline">\(\alpha\)</span>.</li>
+<li>La diferencia entre dos promedios que queremos evaluar.</li>
+<li>El tamaño de muestra (n).</li>
+</ul>
+<p>La linea vertical entrecortada representa el valor critico. El área gris obscuro representa el error <span class="math inline">\(\alpha\)</span>, la probabilidad de rechazar la hipótesis nula cuando debería aceptar la hipótesis nula. El área gris liviano representa el error <span class="math inline">\(\beta\)</span>.</p>
+<p><img src="Graficos/6-1%20Test%20Power%20Increase%20with%20Sample%20Size.jpg" width="50%" /></p>
+<p>Una ilustración de como el <span class="math inline">\(\alpha\)</span> afecta el <span class="math inline">\(\beta\)</span>”</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="población-y-muestreos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="historia-breve-de-la-estadística.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-Inferencias_Hipótesis.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Biometria/blob/main/04-Inferencias_Hipótesis.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

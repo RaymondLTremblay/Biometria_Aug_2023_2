@@ -1,0 +1,90 @@
+# Qué es un diagrama de Ciclo de Vida
+
+Por: Nhora Ospina
+
+## Ejemplos de ciclos de Vida
+
+Escribo algo
+
+## Ejemplos de un ciclo de vida sencillo
+
+Tengo mucho texto que ampliar
+
+## Ejemplo de un ciclo de vida con 3 estadios
+
+```{r}
+library(Rage)
+```
+
+
+
+
+```{r}
+# hidden code to produce figures
+library(DiagrammeR)
+matA <- rbind(
+  c(0.0, 0.0, 3.2),
+  c(0.5, 0.3, 0.8),
+  c(0.0, 0.4, 0.9)
+)
+stages <- c("seedling", "rosette", "flowering")
+title <- NULL
+graph <- expand.grid(to = stages, from = stages)
+graph$trans <- round(c(matA), 3)
+graph <- graph[graph$trans > 0, ]
+nodes <- paste(paste0("'", stages, "'"), collapse = "; ")
+graph$min_len <- (as.numeric(graph$to) - as.numeric(graph$from)) * 3
+graph$col <- c(
+  "PaleGreen4", "PaleGreen4", "PaleGreen4", "Goldenrod1",
+  "MediumOrchid4", "PaleGreen4"
+)
+edges <- paste0("'", graph$from, "'", " -> ", "'", graph$to, "'",
+  "[minlen=", graph$min_len,
+  ",fontsize=", 10,
+  ",color=", graph$col,
+  ",xlabel=", paste("\"", graph$trans),
+  "\"]\n",
+  collapse = ""
+)
+grViz(
+  paste(
+    "
+digraph {
+  {
+    graph[overlap=false];
+    rank=same;
+    node [shape=", "egg", ", fontsize=", 12, "];",
+    nodes, "
+  }",
+    "ordering=out
+  x [style=invis]
+  x -> {", nodes, "} [style=invis]", edges,
+    "labelloc=\"t\";
+  label=\"", title, "\"
+}"
+  )
+)
+
+```
+
+
+## Ejemplo de un cicle de vida con estadio de latencia
+
+```{r}
+plot_life_cycle(matA, stages=stages, fontsize = 0)
+```
+
+
+## Code for color coding figure
+
+http://rich-iannone.github.io/DiagrammeR/
+
+## Ejemplo de un cicle de vida con estadio de post reproducción
+
+
+
+## Ejemplo de un cicle de vida incompleto (y biologicamente erroneos)
+
+
+
+## Referencias

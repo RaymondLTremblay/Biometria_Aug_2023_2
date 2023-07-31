@@ -1,0 +1,32 @@
+---
+title: "Dinamica_Poblacional"
+output: 
+  html_document: 
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+    code_folding: hide
+author: ""
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  Este libro digital es una introdución al estudio de Dinamica Poblacional con ejemplos de la familai Orquidaceae
+link-citations: yes
+#github-repo: rstudio/bookdown-demo
+editor_options: 
+  markdown: 
+    wrap: 72
+# https://statnmap.com/2017-11-13-enable-code-folding-in-bookdown-and-blogdown/ for code folding script    
+---
+
+# Dinámica Poblacional
+
+El estudio de la Dinámica Poblacional tiene como objetivo desarrollar conocimiento los patrones y processos intra-especifica y entre-especies.  Tradicionalmente muchos de los trabajos de dinamica poblacional se enfocarón en los estudios intra-especifica, fomentando una perpestiva que las especies no enteractuan con su ambiente biotico.     
+
+## Objetivo del libro: 
+
+Este libro digital 

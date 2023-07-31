@@ -1,0 +1,333 @@
+# Compadre_Orchid PPM y su uso
+
+## Raymond y Roberto
+
+
+
+```{r}
+library(Rcompadre)
+library(tidyverse)
+library(gt)
+library(kableExtra)
+```
+
+
+## Load data from **COMPADRE**
+
+```{r}
+
+
+load("~/Dropbox/GitHub_Dropbox_Drive/GitHub/Taller_Demo_Peru/Taller_Diagnostico_Poblacional/COMPADRE_v.6.23.5.0.RData")
+
+ALLSp=as_cdb(compadre)  # Un baso critico: Convertir la base de datos anterior COM(P)ADRE (de clase 'list') en la base en un objeto CompadreDB.
+
+names(ALLSp) # Nombre de las variables
+
+
+index_O=ALLSp %>% 
+ filter(Family %in% c("Orchidaceae")) # Extraer la orquídeas de la base de datos. 
+
+
+
+```
+
+
+## Lista de especies de orquídeas en la base de datos de COPADRE 
+
+```{r}
+unique(index_O$SpeciesAccepted)
+```
+
+
+
+## How many unique studies?
+
+To know how long the studies were and be unique I need to select combinations of variables that make it unique.
+
+Subset 
+
+```{r}
+names(index_O)
+SPECIES_O=index_O %>% select(StudyStart, StudyEnd, SpeciesAccepted, YearPublication, Authors, DOI_ISBN, OrganismType, MatrixPopulation,mat) %>% 
+  group_by(SpeciesAccepted, YearPublication, Authors, DOI_ISBN, OrganismType, StudyStart, StudyEnd) %>% 
+  summarize(n_populations = length(unique(MatrixPopulation))) %>% 
+  arrange(desc(n_populations)) %>% 
+  mutate(StudyStart=as.numeric(StudyStart)) %>% 
+  mutate(StudyEnd=as.numeric(StudyEnd)) %>% 
+  drop_na(StudyStart, StudyEnd)
+
+SPECIES_O %>% kable()
+
+
+write_csv(SPECIES_O, "Species_O.csv")
+```
+
+```{r}
+
+SPECIES_O$SpeciesAccepted <- fct_reorder(SPECIES_O$SpeciesAccepted, SPECIES_O$StudyStart, .desc = FALSE)
+
+ggplot(SPECIES_O, aes(SpeciesAccepted, color=OrganismType))+
+  geom_linerange(aes(x= SpeciesAccepted  , ymin=StudyStart, ymax=StudyEnd))+
+  coord_flip()+
+  theme(legend.position = c(0.2, 0.8))+
+  theme(axis.text.x = element_text(color = "grey20", size = 9, angle = 90, hjust = .5, vjust = .5, face = "plain"),
+        axis.text.y = element_text(color = "grey20", size = 7, angle = 0, hjust = 1, vjust = 0, face = "plain"),  
+        axis.title.x = element_text(color = "grey20", size = 12, angle = 0, hjust = .5, vjust = 0, face = "plain"),
+        axis.title.y = element_text(color = "grey20", size = 12, angle = 90, hjust = .5, vjust = .5, face = "plain"))+
+  ylab("")+
+  xlab("")
+
+```
+
+
+
+
+
+```{r}
+
+index_O=index_O %>% 
+  mutate(StudyDuration=as.numeric(StudyDuration))
+
+table(index_O$StudyDuration)
+table(index_O$OrganismType)
+
+ggplot(index_O, aes(StudyDuration, fill=OrganismType))+
+         geom_histogram(colour="white")+
+  facet_wrap(~OrganismType)+
+  theme(legend.position = "none")
+
+ggsave("Duración_Epi_Ter.pdf")
+```
+
+
+
+
+```{r}
+plot(index_O$Lon,index_O$Lat,main = "Location")
+```
+
+
+
+Getting the whole database for orchids
+
+
+
+```{r}
+
+index <- which(compadre$metadata$Family=="Orchidaceae") 
+names(Compadre)
+
+subset(index_O, Family =="Orchidaceae"  &
+             MatrixDimension >2)
+
+
+subset(index_O,DicotMonoc == "Eudicot" & 
+              Country %in% c("USA", "CAN") & 
+              MatrixDimension > 2)
+
+#cdb_compare(index_O,x)
+
+
+x <- subset(index_O,Family == "Orchidaceae")
+
+x_OT=x %>% 
+  group_by(OrganismType)
+```
+
+
+```{r}
+#Orchids_New=as_cdb(index)
+#compadre$mat[index]
+
+Compadre_flagged <- cdb_flag(index_O)
+
+x <- subset(Compadre_flagged, check_NA_A == FALSE & check_ergodic == TRUE)
+
+lambdaVals <- sapply(matA(x), popdemo::eigs, what="lambda")
+summary(lambdaVals)
+hist(lambdaVals, main = "Lambda values")
+```
+
+
+
+```{r}
+
+library(purrr)
+lambdaVals1 <- map_dbl(matA(x), ~popdemo::eigs(.x, what="lambda"))
+ 
+ 
+#Or with popbio, which avoids some warning messages…
+lambdaVals2 <- map_dbl(matA(x), ~popbio::lambda(.x))
+```
+
+```{r}
+x2=x %>% 
+  mutate(OrganismType = case_when(
+    Genus ==  "Caladenia" & OrganismType == "Epiphyte" ~ "Herbaceous perennial",
+    TRUE ~ OrganismType
+  ))
+
+epi=x2 %>% 
+  filter(OrganismType=="Epiphyte")
+
+terr=x2 %>% 
+  filter(OrganismType=="Herbaceous perennial")
+
+
+
+```
+
+Compadre_flagged <- cdb_flag(index_O)
+
+x <- subset(Compadre_flagged, check_NA_A == FALSE & check_ergodic == TRUE)
+
+lambdaVals <- sapply(matA(x), popdemo::eigs, what="lambda")
+summary(lambdaVals)
+hist(lambdaVals, main = "Lambda values")
+
+
+```{r}
+
+Compadre_flagged_epi <- cdb_flag(epi)
+
+x_epi <- subset(Compadre_flagged_epi, check_NA_A == FALSE & check_ergodic == TRUE)
+
+#sapply(matA(x_epi), popdemo::eigs, what="lambda")
+
+library(purrr)
+lambda_epi <- map_dbl(matA(x_epi), ~popdemo::eigs(.x, what="lambda"))
+
+#Or with popbio, which avoids some warning messages…
+lambda_terr <- map_dbl(matA(terr), ~popbio::lambda(.x))
+```
+
+```{r}
+summary(lambda_epi)
+hist(lambda_epi, main = "Lambda values")
+
+summary(lambda_terr)
+hist(lambda_terr, main = "Lambda values")
+```
+
+```{r}
+df_Lamb_epi=as.data.frame(lambda_epi)
+df_Lamb_epi=df_Lamb_epi %>% 
+  add_column(Habit_Type = "Epiphyte") %>% 
+  rename(lambda=lambda_epi)
+
+
+df_Lamb_terr=as.data.frame(lambda_terr)
+df_Lamb_terr=df_Lamb_terr %>% 
+  add_column(Habit_Type = "Terrestrial")%>% 
+  rename(lambda=lambda_terr)
+
+
+ALL_Lambdas=rbind(df_Lamb_epi, df_Lamb_terr)
+```
+
+```{r}
+ggplot(ALL_Lambdas, aes(lambda, fill=Habit_Type ))+
+  geom_histogram(colour="white") + 
+  facet_wrap( ~Habit_Type)
+  
+```
+
+
+
+
+
+The number of populations 
+
+
+```{r}
+x2 %>% 
+  group_by(SpeciesAccepted) %>% 
+  summarize(n_populations = length(unique(MatrixPopulation))) %>% 
+  arrange(desc(n_populations))
+```
+
+
+
+
+```{r}
+
+compadre_replicated_pops <- x2 %>% 
+  group_by(SpeciesAccepted) %>% 
+  mutate(n_pops = length(unique(MatrixPopulation))) %>% 
+  ungroup() %>%
+  subset(n_pops >= 10)
+
+compadre_replicated_pops
+```
+
+
+```{r}
+ggplot2::ggplot(x2, aes(Lon, Lat)) +
+  borders(database = "world", fill = "grey80", col = NA) +
+  geom_point(col = "steelblue", size = 1.8, alpha = 0.8)
+```
+
+
+
+```{r}
+# function to calculate life expectancy
+lifeExpectancy <- function(matU, startLife) {
+  N <- solve(diag(nrow(matU)) - matU)
+  return(colSums(N)[startLife])
+}
+
+compadre_life_expect <- x2 %>%
+  filter(MatrixComposite == "Mean", # filter is the dplyr version of subset
+         MatrixTreatment == "Unmanipulated",
+         MatrixCaptivity == "W",
+         #ProjectionInterval == "1"
+         ) %>% 
+  mutate(StageID = cdb_id_stages(.)) %>%
+  cdb_collapse(columns = "StageID") %>%
+  cdb_flag() %>% 
+  filter(check_NA_U == FALSE,
+         check_zero_U == FALSE,
+         check_singular_U == FALSE) %>% 
+  mutate(matU = matU(.), start_life = mpm_first_active(.)) %>% 
+  mutate(life_expectancy = mapply(lifeExpectancy, matU, start_life)) %>% 
+ # filter(life_expectancy >= 1) %>% 
+  mutate(OrganismType = reorder(OrganismType, life_expectancy, median))
+
+ggplot2::ggplot(compadre_life_expect, aes(OrganismType, life_expectancy)) +
+  geom_boxplot() +
+  scale_y_log10() +
+  coord_flip() +
+  labs(x = NULL, y = "Life expectancy (years)")
+```
+
+
+
+
+```{r}
+library(Rcompadre)
+library(popdemo)
+data(Compadre)
+
+
+Compadre$matA <- matA(Compadre)
+
+# create empty vector to store output
+Compadre$dim <- numeric(nrow(Compadre))
+
+index$dim <- numeric(nrow(index_O))
+
+# loop through all rows of Compadre
+for (i in seq_len(nrow(Compadre))) {
+  Compadre$dim[i] <- nrow(Compadre$matA[[i]])
+}
+
+# function to determine whether matrix 'mat' has any stages with no transitions
+NullStages <- function(mat) any(colSums(mat) == 0)
+
+# apply function to every element of A
+Compadre$null_stages <- sapply(Compadre$matA, NullStages)
+
+NullStages(Compadre$matA[[1]]) # apply function to single element
+Compadre$null_stages <- sapply(matA(Compadre), NullStages)
+```
+

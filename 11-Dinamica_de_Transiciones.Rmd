@@ -1,0 +1,23 @@
+# Dinámica de transiciones
+
+Por: ???
+
+## Definiciones de DT
+
+## Cual es la ventaja de la DT
+
+
+## Como se calcula
+
+
+
+## Paquete de R para calcular la DT
+
+
+## Limitaciones
+
+
+## Referencias
+
+
+## 

@@ -1,0 +1,144 @@
+# ¿Qué es el analisis de dinamica poblacional?
+
+Por: Por RLT, Nhora Ospina, Demetria y Anne .....
+
+El objetivo de la conservación biológica es asegurar que las especies pueden sobrevivir, reproducirse y dejar progenie viable para de una generación a otra. Por consecuencia se necesita que las variables intrinsicas y extrinsicas, bioticas y abioticas de cada especies estén considerado con todas sus interacciones. Naturalmente aunque el concepto es sencillo, tomar en cuanta TODAS las posibles interacciones biológicas y abióticas es imposible.\
+El primer paso a la conservación es considerar el ambiente adecuado para cada especie. Sin duda en los ultimos 50 años en muchos paises ha habido un cambio grande en el repesto y la conservaciones de bosque, pradera, desierto y todos los biomas en general. Por ejemplo el cambio de cobertura de bosque en Puerto Rico ha aumentado de circa de 2-5% en los años 1910 a más 40% en el 2000 [@pares2008agricultural]. En general en Latino América ha habido más reforestación de deforestación [@aide2013deforestation] en los ultimos años, aunque varia mucho entre paises y periodo de tiempo. Para la conservación el primer paso era reconocer que los habitat necesitan ser protegido.\
+Muchos de estos nuevos hábitat son bosque segundarios, fragmentados y dominado por especies introducidas. Estos habitat por consecuencia son mayormente diferentes al ambiente natural antes de los cambios antropogénicos. El resultado, en muchas ocasiones, es que la especies de interes están reducida en números de individuos o fragmentados. Considerando esos remanentes de individuos en el habitat, son suficiente para mantener una población viable? ¿Como que uno decide que una población es viable?
+
+En general, el conceptos de conservación es que si uno proteje los habitat las especies estarán conservadas. Pero lo que no es obvio es que la presencia de muchos individuos no es suficiente para asegurar la supervivencia de una especies a largo tiempo. Un ejemplo bien conocida es la extincción del Dodo en la isla de Mauritius y la casi extinción de una especies de arbol en la familia Sapotaceae, *Calvaria major*. Para que la semillas sean viable necesitan pasar por el tracto digestivo de un pajaro para remover el encocarpo persitente de la semilla que causa "dormancy" en las semillas [@temple1977plant]. Por consecuencia nunca se puede asumir que la presencia de una especies sin tomar en cuenta las interacciones bióticas y abióticas es suficiente para sugerir que no hay riesgo de extincción.
+
+## ¿Qué es el estudio de la dinamica poblacional?
+
+La dinámica poblacional tiene como meta tomar en cuenta todas las etapas/edades de una especies y evaluar cual de esas etapas/edades tiene impacto sobre la supervivencia de la especies. Esas etapas de vida debería considerar las interaciones con sus ambiente biotico y abiotico. La dinamica de población es fundamental en todas las areas de la ecología y evolución. Comprender la dinamica poblacional es la clave para entender la importancia relativa al aceso de los recursos y el efecto de competencia, herbivoria y depredaciones sobre la viablidad de especies. Tradicionalmente los estudios estaban enfocado a evaluar la tabla de vida para el manejo y conservaciones de especies particulares (ref). En años más recientes los estudios se han diversificado para evaluar la interacciones entre especies y su ambiente (ref).
+
+## Definición
+
+Una definición más especifica de los estudios de dinámica poblacional son definidos como los análisis de los factores que afecten el crecimiento, estabilidad y reducción en el tamaño de la población en una serie de tiempo.
+
+Por ejemplo, la dinamica poblacional de especies invasivas incluye un periodo de crecimiento muy lento al comienzo de la colonización de un nuevo sitio y frecuentamente siguido de un crecimiento logarithmico. La figura \@ref(fig:Pop-fig). demuestra el cambio de número de individuos en el tiempo de una especie hipotética.
+
+```{r ggplot2, echo=FALSE}
+library(ggplot2)
+rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bold"),
+        axis.text.x = element_text(colour="grey20",size=15, face="bold"),
+        axis.text.y = element_text(colour="grey20",size=15,face="bold"),  
+        axis.title.x = element_text(colour="grey20",size=15,face="bold"))
+```
+
+```{r Pop-fig, fig.cap='Cambio poblacional en tiempo'}
+ggplot(pressure, aes(temperature, pressure))+
+  geom_point()+
+  rlt_theme+
+  xlab("Tiempo")+
+  ylab("Tamaño poblacional")
+
+```
+
+## El analisis de Dinámica Poblacional y su uso
+
+Determinar el tamaño poblacional en el futuro tiene muchos usos. Se puede dividir sus usos en tres grupos grandes, entender las **1)** interacciones ecológicas, **2)** manejo y conservaciones o **3)** los procesos evolutivos. Los estudios enfocado a la conservación se engloba dentro de un acercamiento de la viablidad de poblaciones. En este libro estaremos dando una introducción a cada uno de estas vertientes, pero nuestros ejemplos son una introducción al tema y no una profundización extensa de cada uno. En la table \@ref(USO) vemos algunos de los usos especificos que se ha dado con la metodología de PPM.
+
+```{r, eval=FALSE, echo=FALSE}
+options(width = 50)
+library(tidyverse)
+library(gt)
+USO_PPM = tribble(~"Categoria de Uso", ~ "Uso especifico", ~"Referencias", ~"Referencias con Oquideas",
+                  "Manejo", "Identificar las etapas or procesos demograficos", "Crouse et al. 1987", "?",
+                  "", "Determinar cuantos individuos en una población es necesario para reducir la extinción", "Shaffer 1981, Armbruster & Lande 1993", "?",
+                  "", "Determinar cuantos individuos se necesita introducir en una sitio para establacer una población viable", "Bustamante 1996", "?",
+                  "", "Determinar cuantos individuos se puede extraer si tener un impacto negativo sobre la viabilidad de una población", "Nantel et al. 1996", "?",
+                  "", "En especies invasivas determinar cuantos y cual etapas se necesita remover para controlar la población", "?", "?",
+                 "", "Determinar cuantas pobalciones se necesita para la viabilidad de una especie al nivel local o global", "Lindenmayer & Possingham 1996", "",
+                 "Evaluación de riesgos", "Evaluar el riesgo de una población", "Samson 1985", "muchos",
+                 "", "Comparando el riesgo relativo de dos o más poblaciones", "Allendrof et al. 1997","?",
+                 
+                 "Interacciones ecologicas", "Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población", "?", "Ospina et al., 2022",
+                 "Procesos y patrones evolutivos", "Cual de los procesos y patrones evolutivos del ciclo de vbida de especies impacta su crecimeinto", "?", "?")
+
+USO_PPM %>% gt()
+```
+
+### Tabla: El uso potencial de la diferentes acercamiento de PPM. {#USO}
+
+NOTA IMPORTANTE: *Evaluar las referencias y añadir referencias tradicionales y recientes*
+
+| Categoria de Uso               | Uso especifico                                                                                                   | Referencias                          | Referencias con Oquideas |
+|:----------------|:-------------------|:----------------|-------------------:|
+| Manejo                         | Identificar las etapas or procesos demograficos claves                                                                 | [@crouse1987stage]                   |                        ? |
+|                                | Determinar cuantos individuos en una población es necesario para reducir la extinción                            | Shaffer 1981 Armbruster & Lande 1993 |                        ? |
+|                                | Determinar cuantos individuos se necesita introducir en una sitio para establecer una población viable           | Bustamante 1996                      |                        ? |
+|                                | Determinar cuantos individuos se puede extraer si tener un impacto negativo sobre la viabilidad de una población | Nantel et al. 1996                   |                        ? |
+|                                | En especies invasivas determinar cuantos y cual etapas se necesita remover para controlar la población           | ?                                    |                        ? |
+|                                | Determinar cuantas pobalciones se necesita para la viabilidad de una especie al nivel local o global             | Lindenmayer & Possingham 1996        |                          |
+| Evaluación de riesgos          | Evaluar el riesgo de una población                                                                               | Samson 1985                          |                   muchos |
+|                                | Comparando el riesgo relativo de dos o más poblaciones                                                           | Allendrof et al. 1997                |                        ? |
+| Interacciones ecologicas       | Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población  | ?                                    |      Ospina et al., 2022 |
+| Procesos y patrones evolutivos | Cual de los procesos y patrones evolutivos del ciclo de vida de especies impacta su crecimiento                 | ?                                    |                        ? |
+
+
+### USO 1: Identificar las etapas or procesos demográficos claves
+
+Identificar y conocer cuales son las etapas de vida más suceptibles a cambios abioticos y bioticos y su impacto sobre la persistencia de una población es necesario para el manejo.  El ejemplo clásico en la literatura usando PPM son los trabajos sobre la dinámica poblacional de la tortuga "boba" o "cabezona" *Caretta caretta* [@crouse1987stage], [@crowder1994predicting].  Crouse y Crowder demostrarón que aun salvando TODOS los huevos de depredación, esa estrategia de manejo antropogenico iba a tener muy poco impacto en el crecimiento de la población.  Lo que econtrarón es que el impacto más grande sobre el crecimiento poblacional provendría de proteger los adultos de las redes de pesca, modificando estas para que las tortugas se pueden escapar y no ahogarse en las redes.  Los trabajos de Crouse y Crowder fueron pioneros en demostrar que uno podía simular diferentes escenarios basado en la historia de vida y evaluar su impacto. 
+
+Ejemplo de orquidea AQUI
+
+### USO 2: Determinar cuantos individuos en una población es necesario para reducir la extinción
+
+El efecto de tamaño poblacional sobre la biología y la probabilidad de extincción es amplia [@shaffer1985population], [@nunney1993assessing], [@harris2022abundance]. ¿Cual es la probablidad de extincción de una población considerando la cantidad de individuos en cada etapa? En general lo que se observa es que menor el tamaño poblacional, N, mayor es el riesgo de extincción. Esa probabilidad de extincción puede variar si algunas etapas del ciclo de vida tiene es muy reducido o su probabilidad de sobrevivir o crecer varia. Consideramos por ejemplo en las orquídeas donde la probabilidad de que las semillas se establece, germina y crezca a a ser un juvenil es muy pequeña.  Por consecuencia una nueva población de orquidea necesita considerar la cantidad de individuos que este presente pero tambien la probabilidad de tener semillas y que estas pueden crecer a ser adultos reproducible. 
+
+
+### USO 3: Determinar cuantos individuos se necesita introducir en una sitio para establecer una población viable 
+
+Naturalmente, más cantidad de individuos re-introducido en un sitio mayor sera la probabilidad que la población sea viable. Pero, como todo hay un limite de tiempo y esfuerzo disponible. Por consecuencia la pregunta debería ser orientado a determinar cual es el minimo de individuos que se deberia introductir para garantizar un x porciento de suceso en el establecimiento de una nueva población. 
+
+En los ultimos años, muchas organizaciones y cientificos han comenzado a hacer re-introducción de especies en su habitat nativo y no. (ref). Algunos programa introduce especies en areas urbanas.  
+
+  - Caladenia 
+  - Korea
+  - one million orchids project
+  - ????
+
+### USO 4: Determinar cuantos individuos se puede extraer sin tener un impacto negativo sobre la viabilidad de una población
+
+Hay tres razones principales para la extracción de individuos de su ambiente natural. 
+
+ 1. Obtener individuos para la conservación *Ex Situ*.
+ 2. Usar un grupo de individuos para su propagación.
+ 3. Extraccíon para la venta sin objetivo de conservación.  
+
+El supuesto de colectores de orquidea de su habitat naturales, tanto para la conservación de *Ex situ* y el uso para la propagación es que el impacto es minimo, y no tendrá impacto a largo plazo para la supervivencia. Regresaremos sobre este punto más tarde. La historia de fanatisismo de recolección de orquideas para la venta es bien conocida ref(). Aun que uno quisiera pensar que estas extracciones son del pasado y no occuren hoy en dia, hay todavia escrupulos que extraen los plantas sin pensar al impacto que tendrá sobre la población o especie.  
+
+Pero la pregunta se tiene que hacer. Cuantos individuos y de que etapas se puede extraer de la población sin tener impacto en el crecimoento poblacional?     
+
+### USO 5:  En especies invasivas determinar cuantos y cual etapas se necesita remover para controlar la población.  
+
+
+### USO 6: Evaluar el riesgo de una población 
+
+
+
+### USO 7:  Determinar cuantas poblaciones se necesita para la viabilidad de una especie al nivel local o global
+
+Dinamica de metapoblaciones.  
+
+
+
+### USO 8: Comparando el riesgo relativo de dos o más poblaciones 
+
+
+
+### USO 9: Evaluar interacciones ecológicas para entender las variables importantes para la supervivencia de una población 
+
+
+### USO 10: Cual de los procesos y patrones evolutivos del ciclo de vida de especies impacta su crecimiento 
+
+
+
+
+
+## Historia de dinamica poblacional en orquideas. 
+
+## Referencias
+
+

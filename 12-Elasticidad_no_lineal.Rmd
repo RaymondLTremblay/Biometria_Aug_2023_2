@@ -1,0 +1,16 @@
+# Elasticidad no lineal
+
+
+## Por : ???
+
+## Transfer function
+
+## Valor biológico
+
+## Métodos de calculo
+
+
+## Paquete de R para calcular le eslaticidad no lineal
+
+
+## Referencias

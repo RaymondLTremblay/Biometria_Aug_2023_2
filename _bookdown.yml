@@ -1,8 +1,8 @@
-book_filename: "Diagnostico_Poblacional"
+book_filename: "Biometria"
 output_dir: docs
 delete_merged_file: true
-edit: https://github.com/RaymondLTremblay/Diagnostico_Poblacional/edit/main/%s
-view: https://github.com/RaymondLTremblay/Diagnostico_Poblacional/blob/main/%s
+edit: https://github.com/RaymondLTremblay/Biometria/edit/main/%s
+view: https://github.com/RaymondLTremblay/Biometria/blob/main/%s
 language:
   ui:
     chapter_name: "Chapter "

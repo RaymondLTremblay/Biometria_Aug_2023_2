@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Supuestos | Biometria</title>
+  <meta name="description" content="Este libro digital es una introdución al estudio de Biometria" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Supuestos | Biometria" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Supuestos | Biometria" />
+  
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  
+
+<meta name="author" content="" />
+
+
+<meta name="date" content="2023-07-31" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="gráficos.html"/>
+<link rel="next" href="intro.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Biometria</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> url: your book url like https://bookdown.org/yihui/bookdown</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#horario-de-clase"><i class="fa fa-check"></i><b>1.0.1</b> Horario de clase</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#libro-obligatorio."><i class="fa fa-check"></i><b>1.1</b> Libro obligatorio.</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#libros-sugeridos"><i class="fa fa-check"></i><b>1.1.1</b> Libros sugeridos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#programados"><i class="fa fa-check"></i><b>1.1.2</b> Programados</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#prerequisitos"><i class="fa fa-check"></i><b>1.1.3</b> Prerequisitos</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#descripción-del-curso"><i class="fa fa-check"></i><b>1.1.4</b> Descripción del curso</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#objetivos-del-curso"><i class="fa fa-check"></i><b>1.1.5</b> Objetivos del curso</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#puntuacion"><i class="fa fa-check"></i><b>1.1.6</b> Puntuacion:</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#examenes"><i class="fa fa-check"></i><b>1.1.7</b> Examenes:</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#conferencias"><i class="fa fa-check"></i><b>1.1.8</b> Conferencias</a></li>
+<li class="chapter" data-level="1.1.9" data-path="index.html"><a href="index.html#ejercicios"><i class="fa fa-check"></i><b>1.1.9</b> Ejercicios</a></li>
+<li class="chapter" data-level="1.1.10" data-path="index.html"><a href="index.html#faltar-a-clase-y-examen"><i class="fa fa-check"></i><b>1.1.10</b> Faltar a clase y examen:</a></li>
+<li class="chapter" data-level="1.1.11" data-path="index.html"><a href="index.html#derechos-de-estudiantes-con-impedimentos"><i class="fa fa-check"></i><b>1.1.11</b> Derechos de Estudiantes con Impedimentos</a></li>
+<li class="chapter" data-level="1.1.12" data-path="index.html"><a href="index.html#integridad-academica"><i class="fa fa-check"></i><b>1.1.12</b> Integridad academica</a></li>
+<li class="chapter" data-level="1.1.13" data-path="index.html"><a href="index.html#comentario-sobre-grabar-videos-yo-audio-de-las-clases"><i class="fa fa-check"></i><b>1.1.13</b> Comentario sobre grabar videos y/o audio de las clases</a></li>
+<li class="chapter" data-level="1.1.14" data-path="index.html"><a href="index.html#espacio-libre-de-acoso-sexual"><i class="fa fa-check"></i><b>1.1.14</b> Espacio libre de acoso sexual</a></li>
+<li class="chapter" data-level="1.1.15" data-path="index.html"><a href="index.html#protocolo-de-la-clase"><i class="fa fa-check"></i><b>1.1.15</b> Protocolo de la Clase</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html"><i class="fa fa-check"></i><b>2</b> Introducción a la Biometria</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-libro-de-la-clase"><i class="fa fa-check"></i><b>2.1</b> El libro de la clase</a></li>
+<li class="chapter" data-level="2.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-proceso-de-investigación"><i class="fa fa-check"></i><b>2.2</b> El proceso de investigación:</a></li>
+<li class="chapter" data-level="2.3" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-primer-paso"><i class="fa fa-check"></i><b>2.3</b> El primer paso:</a></li>
+<li class="chapter" data-level="2.4" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-segundo-paso"><i class="fa fa-check"></i><b>2.4</b> El segundo paso</a></li>
+<li class="chapter" data-level="2.5" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-tercer-paso"><i class="fa fa-check"></i><b>2.5</b> El tercer paso:</a></li>
+<li class="chapter" data-level="2.6" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-cuarto-paso"><i class="fa fa-check"></i><b>2.6</b> El cuarto paso:</a></li>
+<li class="chapter" data-level="2.7" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-quinto-paso"><i class="fa fa-check"></i><b>2.7</b> El quinto paso:</a></li>
+<li class="chapter" data-level="2.8" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-sexto-paso"><i class="fa fa-check"></i><b>2.8</b> El sexto paso:</a></li>
+<li class="chapter" data-level="2.9" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#tipo-de-error-de-interpretación-en-estadística"><i class="fa fa-check"></i><b>2.9</b> Tipo de error de interpretación en estadística</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#consideramos-los-reality-shows"><i class="fa fa-check"></i><b>2.9.1</b> Consideramos los Reality Shows:</a></li>
+<li class="chapter" data-level="2.9.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#personalidad-de-las-personas"><i class="fa fa-check"></i><b>2.9.2</b> Personalidad de las personas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#cuando-que-una-hipótesis-no-es-una-hipótesis"><i class="fa fa-check"></i><b>2.10</b> Cuando que una hipótesis no es una hipótesis?</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#una-hipótesis-tiene-que-ser-falsificable"><i class="fa fa-check"></i><b>2.10.1</b> Una hipótesis tiene que ser falsificable</a></li>
+<li class="chapter" data-level="2.10.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#ejercicio-1"><i class="fa fa-check"></i><b>2.10.2</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="2.10.3" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#evaluación-de-las-expresiones-falsificables"><i class="fa fa-check"></i><b>2.10.3</b> Evaluación de las expresiones falsificables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-independientes-y-dependientes"><i class="fa fa-check"></i><b>2.11</b> Variables Independientes y Dependientes</a></li>
+<li class="chapter" data-level="2.12" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#niveles-de-mediciones"><i class="fa fa-check"></i><b>2.12</b> Niveles de mediciones</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-continuas"><i class="fa fa-check"></i><b>2.12.1</b> Variables continuas</a></li>
+<li class="chapter" data-level="2.12.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#varriables-discretas"><i class="fa fa-check"></i><b>2.12.2</b> Varriables Discretas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html"><i class="fa fa-check"></i><b>3</b> Población y Muestreos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#qué-es-la-estadística"><i class="fa fa-check"></i><b>3.1</b> ¿Qué es la estadística?</a></li>
+<li class="chapter" data-level="3.2" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-población"><i class="fa fa-check"></i><b>3.2</b> El concepto de población</a></li>
+<li class="chapter" data-level="3.3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-muestreo"><i class="fa fa-check"></i><b>3.3</b> El concepto de muestreo</a></li>
+<li class="chapter" data-level="3.4" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#griego-y-latin"><i class="fa fa-check"></i><b>3.4</b> Griego y Latin</a></li>
+<li class="chapter" data-level="3.5" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-verdad-versus-un-estimado"><i class="fa fa-check"></i><b>3.5</b> La verdad versus un estimado</a></li>
+<li class="chapter" data-level="3.6" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#muestreos-al-azar"><i class="fa fa-check"></i><b>3.6</b> Muestreos al azar</a></li>
+<li class="chapter" data-level="3.7" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#error-de-muestreo-precisión-exactitud-y-sesgos"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Precisión, Exactitud y Sesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Inferencias y Hipótesis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-1"><i class="fa fa-check"></i><b>4.2</b> Ejemplo 1:</a></li>
+<li class="chapter" data-level="4.3" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-2"><i class="fa fa-check"></i><b>4.3</b> Ejemplo 2:</a></li>
+<li class="chapter" data-level="4.4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#inferencias-en-estadística"><i class="fa fa-check"></i><b>4.4</b> Inferencias en estadística</a></li>
+<li class="chapter" data-level="4.5" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#hipótesis"><i class="fa fa-check"></i><b>4.5</b> Hipótesis</a></li>
+<li class="chapter" data-level="4.6" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-valor-de-p"><i class="fa fa-check"></i><b>4.6</b> El valor de p</a></li>
+<li class="chapter" data-level="4.7" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#los-errores-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.7</b> Los errores de tipo I y tipo II</a></li>
+<li class="chapter" data-level="4.8" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-poder-de-las-pruebas-inferenciales-y-lo-parámetros-que-lo-influencia"><i class="fa fa-check"></i><b>4.8</b> El poder de las pruebas inferenciales y lo parámetros que lo influencia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html"><i class="fa fa-check"></i><b>5</b> Historia breve de la estadística</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#la-dama-degustando-té"><i class="fa fa-check"></i><b>5.1</b> La dama degustando té</a></li>
+<li class="chapter" data-level="5.2" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#definición-de-lo-que-es-la-estadística"><i class="fa fa-check"></i><b>5.2</b> Definición de lo que es la estadística</a></li>
+<li class="chapter" data-level="5.3" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#introducción-a-la-historía-de-la-estadística."><i class="fa fa-check"></i><b>5.3</b> Introducción a la Historía de la Estadística.</a></li>
+<li class="chapter" data-level="5.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#gertrude-mary-cox"><i class="fa fa-check"></i><b>5.4</b> Gertrude Mary Cox</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#primera-dama-en-estadística"><i class="fa fa-check"></i><b>5.4.1</b> Primera dama en Estadística</a></li>
+<li class="chapter" data-level="5.4.2" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#revista-biometrics"><i class="fa fa-check"></i><b>5.4.2</b> Revista <em>Biometrics</em></a></li>
+<li class="chapter" data-level="5.4.3" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#libro-diseños-experimentales"><i class="fa fa-check"></i><b>5.4.3</b> Libro: Diseños Experimentales</a></li>
+<li class="chapter" data-level="5.4.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#últimas-aportaciones"><i class="fa fa-check"></i><b>5.4.4</b> Últimas aportaciones</a></li>
+<li class="chapter" data-level="5.4.5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#referencias"><i class="fa fa-check"></i><b>5.4.5</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#algunos-personas-importantes"><i class="fa fa-check"></i><b>5.5</b> Algunos personas importantes</a></li>
+<li class="chapter" data-level="5.6" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#lista-de-estadísticos"><i class="fa fa-check"></i><b>5.6</b> Lista de estadísticos</a></li>
+<li class="chapter" data-level="5.7" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#formula"><i class="fa fa-check"></i><b>5.7</b> Formula</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html"><i class="fa fa-check"></i><b>6</b> Medida de tendencia central</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#calculando-el-promedio"><i class="fa fa-check"></i><b>6.1</b> Calculando el promedio</a></li>
+<li class="chapter" data-level="6.2" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#cuando-el-promedio-no-esta-localizado-en-el-centro"><i class="fa fa-check"></i><b>6.2</b> Cuando el promedio no esta localizado en el centro</a></li>
+<li class="chapter" data-level="6.3" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#la-mediana"><i class="fa fa-check"></i><b>6.3</b> La mediana</a></li>
+<li class="chapter" data-level="6.4" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#con-n-impares"><i class="fa fa-check"></i><b>6.4</b> Con <strong>n</strong> impares</a></li>
+<li class="chapter" data-level="6.5" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#con-n-pares"><i class="fa fa-check"></i><b>6.5</b> Con <strong>n</strong> pares</a></li>
+<li class="chapter" data-level="6.6" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#la-moda"><i class="fa fa-check"></i><b>6.6</b> La moda</a></li>
+<li class="chapter" data-level="6.7" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#cuando-es-que-el-promedio-mediana-y-moda-son-iguales"><i class="fa fa-check"></i><b>6.7</b> Cuando es que el promedio, mediana y moda son iguales?</a></li>
+<li class="chapter" data-level="6.8" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales."><i class="fa fa-check"></i><b>6.8</b> Distribución cuando los tres valores de tendencia centrtal no son iguales.</a></li>
+<li class="chapter" data-level="6.9" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#variables-binomial"><i class="fa fa-check"></i><b>6.9</b> Variables binomial</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html"><i class="fa fa-check"></i><b>7</b> Medidas_de_dispersión</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#qué-es-la-dispersión-en-estadística"><i class="fa fa-check"></i><b>7.1</b> Qué es la dispersión en estadística</a></li>
+<li class="chapter" data-level="7.2" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#vizualizando-la-dispersión"><i class="fa fa-check"></i><b>7.2</b> Vizualizando la dispersión</a></li>
+<li class="chapter" data-level="7.3" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-rango"><i class="fa fa-check"></i><b>7.3</b> El rango</a></li>
+<li class="chapter" data-level="7.4" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejemplo-de-la-clase"><i class="fa fa-check"></i><b>7.4</b> Ejemplo de la clase</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#cual-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes"><i class="fa fa-check"></i><b>7.4.1</b> Cual es el rango de la Edad de los padres de los Estudiantes</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-varianza"><i class="fa fa-check"></i><b>7.5</b> La varianza</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#este-indice-se-llama-la-desviación-del-promedio-que-es-la-suma-de-los-cuadrados"><i class="fa fa-check"></i><b>7.5.1</b> Este indice se llama la desviación del promedio que es la suma de los cuadrados</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#calcular-la-varianza-con-var"><i class="fa fa-check"></i><b>7.6</b> Calcular la varianza con <strong>var()</strong></a></li>
+<li class="chapter" data-level="7.7" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-desviación-estandar"><i class="fa fa-check"></i><b>7.7</b> La desviación estandar</a></li>
+<li class="chapter" data-level="7.8" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-rango-intertcuartil."><i class="fa fa-check"></i><b>7.8</b> El rango intertcuartil.</a></li>
+<li class="chapter" data-level="7.9" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-error-estandard"><i class="fa fa-check"></i><b>7.9</b> El error estandard</a></li>
+<li class="chapter" data-level="7.10" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalo-de-confianza-de-95-del-promedio"><i class="fa fa-check"></i><b>7.10</b> El intervalo de confianza de 95% del promedio</a></li>
+<li class="chapter" data-level="7.11" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalos-de-confianza-de-los-datos"><i class="fa fa-check"></i><b>7.11</b> El intervalos de confianza de los datos</a></li>
+<li class="chapter" data-level="7.12" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#rangos-incluidos-en-intervalos-de-confianza"><i class="fa fa-check"></i><b>7.12</b> Rangos incluidos en intervalos de confianza</a></li>
+<li class="chapter" data-level="7.13" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejemplo-del-intervalo-de-confianza"><i class="fa fa-check"></i><b>7.13</b> Ejemplo del intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="7.13.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalo-de-confianza-de-colesterol-en-los-iranis"><i class="fa fa-check"></i><b>7.13.1</b> El intervalo de confianza de colesterol en los Iranis</a></li>
+</ul></li>
+<li class="chapter" data-level="7.14" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#otro-ejemplo-de-los-intevalos-de-confianzas"><i class="fa fa-check"></i><b>7.14</b> Otro ejemplo de los intevalos de confianzas</a>
+<ul>
+<li class="chapter" data-level="7.14.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-altura-de-los-humanos"><i class="fa fa-check"></i><b>7.14.1</b> La altura de los humanos</a></li>
+<li class="chapter" data-level="7.14.2" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejercicio-ahora-prepara-el-mismo-gráfico-para-los-hombres."><i class="fa fa-check"></i><b>7.14.2</b> Ejercicio: Ahora prepara el mismo gráfico para los hombres.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html"><i class="fa fa-check"></i><b>8</b> Estadística Descriptiva</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#estadistica-descriptiva"><i class="fa fa-check"></i><b>8.1</b> Estadistica descriptiva</a></li>
+<li class="chapter" data-level="8.2" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#analisis-con-muchos-datos"><i class="fa fa-check"></i><b>8.2</b> Analisis con muchos datos</a></li>
+<li class="chapter" data-level="8.3" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#remover-los-na-del-análisis"><i class="fa fa-check"></i><b>8.3</b> Remover los <strong>NA</strong> del análisis</a></li>
+<li class="chapter" data-level="8.4" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#resumen-estadístico-de-una-variable"><i class="fa fa-check"></i><b>8.4</b> Resumen estadístico de una variable</a></li>
+<li class="chapter" data-level="8.5" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#resumen-estadístico-de-multiples-variables"><i class="fa fa-check"></i><b>8.5</b> Resumen Estadístico de multiples variables</a></li>
+<li class="chapter" data-level="8.6" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#los-cuantiles"><i class="fa fa-check"></i><b>8.6</b> Los Cuantiles</a></li>
+<li class="chapter" data-level="8.7" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#el-indice-de-oblicuidad-skewness"><i class="fa fa-check"></i><b>8.7</b> El indice de Oblicuidad: Skewness</a></li>
+<li class="chapter" data-level="8.8" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#el-indice-de-curtosis-kurtosis"><i class="fa fa-check"></i><b>8.8</b> El indice de Curtosis: Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="gráficos.html"><a href="gráficos.html"><i class="fa fa-check"></i><b>9</b> Gráficos</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="gráficos.html"><a href="gráficos.html#gráficos-básicos-con-ggplot2"><i class="fa fa-check"></i><b>9.1</b> Gráficos Básicos con ggplot2</a></li>
+<li class="chapter" data-level="9.2" data-path="gráficos.html"><a href="gráficos.html#como-crear-una-gráfica-de-regresión-lineal-usando-ggplot"><i class="fa fa-check"></i><b>9.2</b> Como crear una gráfica de regresión lineal usando ggplot</a></li>
+<li class="chapter" data-level="9.3" data-path="gráficos.html"><a href="gráficos.html#regresión-lineal"><i class="fa fa-check"></i><b>9.3</b> Regresión lineal</a></li>
+<li class="chapter" data-level="9.4" data-path="gráficos.html"><a href="gráficos.html#añadiendo-color-por-grupo-y-otras-bellezas"><i class="fa fa-check"></i><b>9.4</b> Añadiendo color por grupo y otras bellezas</a></li>
+<li class="chapter" data-level="9.5" data-path="gráficos.html"><a href="gráficos.html#salvar-gráficos-con-ggsave"><i class="fa fa-check"></i><b>9.5</b> Salvar gráficos con <strong>ggsave</strong></a></li>
+<li class="chapter" data-level="9.6" data-path="gráficos.html"><a href="gráficos.html#regresión-simple-con-puntos"><i class="fa fa-check"></i><b>9.6</b> Regresión simple con puntos</a></li>
+<li class="chapter" data-level="9.7" data-path="gráficos.html"><a href="gráficos.html#regresión-simple-con-puntos-y-intervalo-de-confianza"><i class="fa fa-check"></i><b>9.7</b> Regresión simple con puntos y intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="gráficos.html"><a href="gráficos.html#cambio-de-color-del-intervalo-de-confianza"><i class="fa fa-check"></i><b>9.7.1</b> Cambio de color del intervalo de confianza</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="gráficos.html"><a href="gráficos.html#regresión-lineal-por-grupo."><i class="fa fa-check"></i><b>9.8</b> Regresión lineal por grupo.</a></li>
+<li class="chapter" data-level="9.9" data-path="gráficos.html"><a href="gráficos.html#histogramas"><i class="fa fa-check"></i><b>9.9</b> Histogramas</a></li>
+<li class="chapter" data-level="9.10" data-path="gráficos.html"><a href="gráficos.html#gráficos-de-caja-box-plots"><i class="fa fa-check"></i><b>9.10</b> Gráficos de caja <strong>box plots</strong></a></li>
+<li class="chapter" data-level="9.11" data-path="gráficos.html"><a href="gráficos.html#gráfico-de-caja-por-grupo"><i class="fa fa-check"></i><b>9.11</b> Gráfico de caja por grupo</a></li>
+<li class="chapter" data-level="9.12" data-path="gráficos.html"><a href="gráficos.html#detección-valores-sesgados-o-átipicos."><i class="fa fa-check"></i><b>9.12</b> Detección valores sesgados o átipicos.</a></li>
+<li class="chapter" data-level="9.13" data-path="gráficos.html"><a href="gráficos.html#gráficos-de-línea-y-intervalo-de-errores"><i class="fa fa-check"></i><b>9.13</b> Gráficos de línea y intervalo de errores</a></li>
+<li class="chapter" data-level="9.14" data-path="gráficos.html"><a href="gráficos.html#la-función-stat_summary-para-calcular-indices-sumativos."><i class="fa fa-check"></i><b>9.14</b> La función <strong>stat_summary</strong> para calcular indices sumativos.</a></li>
+<li class="chapter" data-level="9.15" data-path="gráficos.html"><a href="gráficos.html#diagrama-de-tallo-y-hoja"><i class="fa fa-check"></i><b>9.15</b> Diagrama de tallo y hoja</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="supuestos.html"><a href="supuestos.html"><i class="fa fa-check"></i><b>10</b> Supuestos</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="supuestos.html"><a href="supuestos.html#qué-son-supuestos"><i class="fa fa-check"></i><b>10.1</b> ¿Qué son supuestos?</a></li>
+<li class="chapter" data-level="10.2" data-path="supuestos.html"><a href="supuestos.html#homogeneidad-de-varianza"><i class="fa fa-check"></i><b>10.2</b> Homogeneidad de varianza</a></li>
+<li class="chapter" data-level="10.3" data-path="supuestos.html"><a href="supuestos.html#gráficos-de-cajas-condicionales"><i class="fa fa-check"></i><b>10.3</b> Gráficos de cajas condicionales</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="supuestos.html"><a href="supuestos.html#selección-de-los-datos"><i class="fa fa-check"></i><b>10.3.1</b> Selección de los datos</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="supuestos.html"><a href="supuestos.html#homogeneidad-de-varianza-en-modelos-de-regresión"><i class="fa fa-check"></i><b>10.4</b> Homogeneidad de varianza en modelos de regresión</a></li>
+<li class="chapter" data-level="10.5" data-path="supuestos.html"><a href="supuestos.html#los-residuales-de-student-para-detectar-valores-sesgados"><i class="fa fa-check"></i><b>10.5</b> Los residuales de Student para detectar valores sesgados</a></li>
+<li class="chapter" data-level="10.6" data-path="supuestos.html"><a href="supuestos.html#valores-sesgados-con-la-distancia-de-cook-di"><i class="fa fa-check"></i><b>10.6</b> Valores sesgados con la Distancia de Cook, Di</a></li>
+<li class="chapter" data-level="10.7" data-path="supuestos.html"><a href="supuestos.html#causas-principales-de-los-valores-sesgados"><i class="fa fa-check"></i><b>10.7</b> Causas principales de los valores sesgados</a></li>
+<li class="chapter" data-level="10.8" data-path="supuestos.html"><a href="supuestos.html#supuesto-de-normalidad"><i class="fa fa-check"></i><b>10.8</b> Supuesto de normalidad</a></li>
+<li class="chapter" data-level="10.9" data-path="supuestos.html"><a href="supuestos.html#qplot"><i class="fa fa-check"></i><b>10.9</b> qplot</a></li>
+<li class="chapter" data-level="10.10" data-path="supuestos.html"><a href="supuestos.html#geom_qq-y-geom_qq_line"><i class="fa fa-check"></i><b>10.10</b> geom_qq y geom_qq_line</a></li>
+<li class="chapter" data-level="10.11" data-path="supuestos.html"><a href="supuestos.html#la-distribución-normal"><i class="fa fa-check"></i><b>10.11</b> La distribución normal</a></li>
+<li class="chapter" data-level="10.12" data-path="supuestos.html"><a href="supuestos.html#stat_function"><i class="fa fa-check"></i><b>10.12</b> stat_function</a></li>
+<li class="chapter" data-level="10.13" data-path="supuestos.html"><a href="supuestos.html#visualizando-la-distribuciones-con-geom_density"><i class="fa fa-check"></i><b>10.13</b> Visualizando la distribuciones con <strong>geom_density</strong></a></li>
+<li class="chapter" data-level="10.14" data-path="supuestos.html"><a href="supuestos.html#colinealidad-entre-covariables-con-ggpairs"><i class="fa fa-check"></i><b>10.14</b> Colinealidad entre covariables con <strong>ggpairs</strong></a>
+<ul>
+<li class="chapter" data-level="10.14.1" data-path="supuestos.html"><a href="supuestos.html#tabla-de-correlación-de-kendall"><i class="fa fa-check"></i><b>10.14.1</b> Tabla de correlación de Kendall</a></li>
+<li class="chapter" data-level="10.14.2" data-path="supuestos.html"><a href="supuestos.html#tabla-de-correlación-de-spearman"><i class="fa fa-check"></i><b>10.14.2</b> Tabla de correlación de Spearman</a></li>
+</ul></li>
+<li class="chapter" data-level="10.15" data-path="supuestos.html"><a href="supuestos.html#seleción-de-parámetros-para-correlaciones-cuando-hay-na"><i class="fa fa-check"></i><b>10.15</b> Seleción de parámetros para correlaciones cuando hay NA</a></li>
+<li class="chapter" data-level="10.16" data-path="supuestos.html"><a href="supuestos.html#uso-de-ggally-para-ver-correlaciones"><i class="fa fa-check"></i><b>10.16</b> Uso de GGally para ver correlaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>11</b> Nombre del capitulo.</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="intro.html"><a href="intro.html#a-section"><i class="fa fa-check"></i><b>11.1</b> A section</a></li>
+<li class="chapter" data-level="11.2" data-path="intro.html"><a href="intro.html#otra-seccion"><i class="fa fa-check"></i><b>11.2</b> Otra seccion</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#a-subsection"><i class="fa fa-check"></i>A subsection</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number"><i class="fa fa-check"></i><b>11.3</b> NOTE the size of font changes with the number <em>#</em></a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="intro.html"><a href="intro.html#note-the-size-of-font-changes-with-the-number-1"><i class="fa fa-check"></i><b>11.3.1</b> NOTE the size of font changes with the number <em>#</em></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>12</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>12.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="12.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>12.2</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-epiphyitc-species.html"><a href="appendix-list-of-epiphyitc-species.html"><i class="fa fa-check"></i>(Appendix) List of epiphyitc species</a></li>
+<li class="chapter" data-level="" data-path="appendix-list-of-terrestrial-species.html"><a href="appendix-list-of-terrestrial-species.html"><i class="fa fa-check"></i>(Appendix) List of terrestrial species</a></li>
+<li class="chapter" data-level="13" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>13</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>13.1</b> Footnotes</a></li>
+<li class="chapter" data-level="13.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>13.2</b> Citations</a></li>
+<li class="chapter" data-level="13.3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#links-to-websites"><i class="fa fa-check"></i><b>13.3</b> Links to websites</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>14</b> Blocks</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>14.1</b> Equations</a></li>
+<li class="chapter" data-level="14.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>14.2</b> Theorems and proofs</a></li>
+<li class="chapter" data-level="14.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>14.3</b> Callout blocks</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>15</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>15.1</b> Publishing</a></li>
+<li class="chapter" data-level="15.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>15.2</b> 404 pages</a></li>
+<li class="chapter" data-level="15.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>15.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biometria</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="supuestos" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Supuestos<a href="supuestos.html#supuestos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Añadir los siguientes paquetes, Nota la función de <strong>pacman</strong> para intalar los paquetes. Esta función hace que si le falta un paquete en la lista lo va a instalar sin hacer tener que hacerlo uno por uno. Si quiere hacerlo separado remueve el <strong>#</strong> antes de <strong>install.packages</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="supuestos.html#cb1-1" tabindex="-1"></a><span class="co">#----Install and Load Packages-----</span></span>
+<span id="cb1-2"><a href="supuestos.html#cb1-2" tabindex="-1"></a><span class="co">#install.packages(&quot;car&quot;, dependencies = TRUE)</span></span>
+<span id="cb1-3"><a href="supuestos.html#cb1-3" tabindex="-1"></a><span class="co">#install.packages(&quot;ggplot2&quot;)</span></span>
+<span id="cb1-4"><a href="supuestos.html#cb1-4" tabindex="-1"></a><span class="co">#install.packages(&quot;pastecs&quot;)</span></span>
+<span id="cb1-5"><a href="supuestos.html#cb1-5" tabindex="-1"></a><span class="co">#install.packages(&quot;psych&quot;)</span></span>
+<span id="cb1-6"><a href="supuestos.html#cb1-6" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span></code></pre></div>
+<pre><code>## Loading required package: pacman</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="supuestos.html#cb3-1" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(car, pastecs, psych, ggplot2, ggversa, knitr, GGally, </span>
+<span id="cb3-2"><a href="supuestos.html#cb3-2" tabindex="-1"></a>               tidyverse, kableExtra, reshape2, ggcorrplot, gridExtra)</span>
+<span id="cb3-3"><a href="supuestos.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="supuestos.html#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="supuestos.html#cb3-5" tabindex="-1"></a><span class="co"># Activar los paquetes</span></span>
+<span id="cb3-6"><a href="supuestos.html#cb3-6" tabindex="-1"></a><span class="fu">library</span>(ggversa) <span class="co"># un paquete con datos</span></span>
+<span id="cb3-7"><a href="supuestos.html#cb3-7" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb3-8"><a href="supuestos.html#cb3-8" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb3-9"><a href="supuestos.html#cb3-9" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-10"><a href="supuestos.html#cb3-10" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb3-11"><a href="supuestos.html#cb3-11" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb3-12"><a href="supuestos.html#cb3-12" tabindex="-1"></a><span class="fu">library</span>(ggcorrplot)</span>
+<span id="cb3-13"><a href="supuestos.html#cb3-13" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb3-14"><a href="supuestos.html#cb3-14" tabindex="-1"></a><span class="fu">library</span>(car) <span class="co"># Companion to applied regression</span></span>
+<span id="cb3-15"><a href="supuestos.html#cb3-15" tabindex="-1"></a><span class="fu">library</span>(ggplot2)  <span class="co"># Data Visualization</span></span>
+<span id="cb3-16"><a href="supuestos.html#cb3-16" tabindex="-1"></a><span class="fu">library</span>(pastecs) <span class="co"># Space time Ecological Series</span></span>
+<span id="cb3-17"><a href="supuestos.html#cb3-17" tabindex="-1"></a><span class="fu">library</span>(psych)   <span class="co"># Procedures for Psychological, psychometric and Personality Research</span></span></code></pre></div>
+<hr />
+<div id="qué-son-supuestos" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> ¿Qué son supuestos?<a href="supuestos.html#qué-son-supuestos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La ética en estadística basado en comprobar y cumplir con los supuestos de las pruebas estadística que se usan. La gran mayoría de las pruebas tradicional asume que los datos cumple con algunos supuestos, algunos típicos son.</p>
+<ol style="list-style-type: decimal">
+<li>Distribución normal</li>
+<li>Igualdad de varianza = Homogeneidad de Varianza</li>
+<li>Simetría de las distribuciones</li>
+<li>Datos recolectado al azar</li>
+</ol>
+<p>Cuando no se cumple con los supuestos estamos aumentando la probabilidad de tipo de error 1, es decir rechazar la hipótesis nula cuando se debería aceptar o tipo de error 2, cuando se debería aceptar la alterna cuando se debería rechazar.</p>
+<p>Por consecuencia es <strong>primodial</strong> que cada investigador cumple con evaluar los supuestos de las pruebas que usa y si no cumple que busca métodos alternos. Por ejemplo se puede utilizar métodos de análisis no paramétrica, tambien estadística bayesiana o robusta o como alternativas.</p>
+<p>En el siguiente modulo se habla de como asegurar que los datos cumple con los supuestos básico de las pruebas paramétricas que incluye t-test, ANOVA entre otros.</p>
+<p>Note que aquí el énfasis en este modulo es de evaluar los supuestos con herramientas visual, hay herramientas estadística que son son disponible para cada una de estos supuestos. Vea la sección de estadística para estas alterativas para detalles más completos.</p>
+<hr />
+</div>
+<div id="homogeneidad-de-varianza" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Homogeneidad de varianza<a href="supuestos.html#homogeneidad-de-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La homogeneidad de varianza es un supuesto primordial en el análisis de varianza (ANOVA) y sus vertientes. Este mismo supuesto es también importante en el análisis de regresión simple y multivariable; por ejemplo, en el análisis discriminante (<em>discriminant function analysis</em> en inglés). Utilizaremos los datos de la Becasa de Mar <em>Limosa haemastica</em>, un ave migrante de las costas de las marismas de Argentina, de la base de datos Godwits. Para determinar si la razón de adquisición de comida es diferente entre sexo, tiempo del año, y la combinación de estas dos variables (en otras palabras, las interacciones entre ambas), hay que asumir lo siguiente: 1ro. la varianza en las observaciones entre sexo es similar, 2do. la variación en las tres estaciones es similar, y 3ro. la variación entre los grupos por sexo es similar.</p>
+<hr />
+</div>
+<div id="gráficos-de-cajas-condicionales" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Gráficos de cajas condicionales<a href="supuestos.html#gráficos-de-cajas-condicionales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para el ejemplo BecasaDeMar, se removieron algunos datos del análisis como se explica a continuación. En la variable <strong>SEX</strong>, hay tres categorías: 0 = sexo no identificado, 1 = hembra, y 2 = macho. Se removió la categoría de <strong>no identificado</strong> usando la siguiente función <strong>which</strong>:</p>
+<p><strong>BecasaDeMar=BecasaDeMar[-which(BecasaDeMar$SEX=={0}),]</strong></p>
+<p>Note aquí el <strong>-</strong> (el signo de resta) antes de <strong>which</strong>.</p>
+<p>El siguiente paso, después de remover los individuos no identificados por sexo, es cambiar el nombre de los niveles 1 y 2 a hembra y macho respectivamente. Para evaluar la homogeneidad de varianza entre las estaciones también se le asigna el nombre del periodo: Verano, Pre-migración e Invierno.</p>
+<p>Por ejemplo, con relación al supuesto de homogeneidad, en la figura se nota que hay un poco de variación en la varianza de ciertos grupos, pero en general no habría que preocuparse de una desigualdad como tal, aunque los 4 individuos identificados como puntos en la gráfica en el periodo de verano deberían ser evaluados con más detenimiento para asegurarse que los datos están correctos y que representen datos biológicamente posibles y no error en la toma de los datos o cuando se entraron en la hoja de datos.</p>
+<div id="selección-de-los-datos" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Selección de los datos<a href="supuestos.html#selección-de-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="supuestos.html#cb4-1" tabindex="-1"></a>BecasaDeMar<span class="ot">=</span>Godwits <span class="co"># en el paquete ggversa</span></span>
+<span id="cb4-2"><a href="supuestos.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="supuestos.html#cb4-3" tabindex="-1"></a><span class="fu">head</span>(BecasaDeMar)</span></code></pre></div>
+<pre><code>##   RECORD DAY MONTH YEAR LOCATION AGE SEX PERIOD mgconsumed
+## 1      1   5     1   97        0   0   0      0       0.07
+## 2      2   5     1   97        0   0   0      0       0.16
+## 3      3   5     1   97        0   0   0      0       0.25
+## 4      4   5     1   97        0   0   0      0       0.07
+## 5      5   5     1   97        0   0   0      0       0.14
+## 6      6   5     1   97        0   0   0      0       0.26</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="supuestos.html#cb6-1" tabindex="-1"></a>BecasaDeMar<span class="ot">=</span>BecasaDeMar[<span class="sc">-</span><span class="fu">which</span>(BecasaDeMar<span class="sc">$</span>SEX <span class="sc">==</span><span class="dv">0</span>),]</span>
+<span id="cb6-2"><a href="supuestos.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="supuestos.html#cb6-3" tabindex="-1"></a><span class="co">#unique(BecasaDeMar$SEX)</span></span>
+<span id="cb6-4"><a href="supuestos.html#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="supuestos.html#cb6-5" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="supuestos.html#cb6-6" tabindex="-1"></a>BecasaDeMar<span class="sc">$</span>fSEXO <span class="ot">&lt;-</span> <span class="fu">factor</span>(BecasaDeMar<span class="sc">$</span>SEX,</span>
+<span id="cb6-7"><a href="supuestos.html#cb6-7" tabindex="-1"></a>            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb6-8"><a href="supuestos.html#cb6-8" tabindex="-1"></a>            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Hembra&quot;</span>, <span class="st">&quot;Macho&quot;</span>))</span>
+<span id="cb6-9"><a href="supuestos.html#cb6-9" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="supuestos.html#cb6-10" tabindex="-1"></a><span class="fu">unique</span>(BecasaDeMar<span class="sc">$</span>fSEXO)</span></code></pre></div>
+<pre><code>## [1] Hembra Macho 
+## Levels: Hembra Macho</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="supuestos.html#cb8-1" tabindex="-1"></a>BecasaDeMar<span class="sc">$</span>fPERIODO <span class="ot">&lt;-</span> <span class="fu">factor</span>(BecasaDeMar<span class="sc">$</span>PERIOD,</span>
+<span id="cb8-2"><a href="supuestos.html#cb8-2" tabindex="-1"></a>            <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb8-3"><a href="supuestos.html#cb8-3" tabindex="-1"></a>            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Verano&quot;</span>, <span class="st">&quot;Pre-migración&quot;</span>, <span class="st">&quot;Invierno&quot;</span>))</span>
+<span id="cb8-4"><a href="supuestos.html#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="supuestos.html#cb8-5" tabindex="-1"></a> <span class="fu">head</span>(BecasaDeMar)           </span></code></pre></div>
+<pre><code>##     RECORD DAY MONTH YEAR LOCATION AGE SEX PERIOD mgconsumed  fSEXO
+## 125     53   2     4   97        1   1   1      1       0.07 Hembra
+## 126     67  16     5   97        0   1   1      2       0.18 Hembra
+## 127     69  16     5   97        0   1   1      2       0.39 Hembra
+## 128     77  17     6   97        1   1   1      2       0.07 Hembra
+## 129     78  17     6   97        1   1   1      2       0.10 Hembra
+## 130     79  17     6   97        0   1   1      2       0.08 Hembra
+##          fPERIODO
+## 125 Pre-migración
+## 126      Invierno
+## 127      Invierno
+## 128      Invierno
+## 129      Invierno
+## 130      Invierno</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="supuestos.html#cb10-1" tabindex="-1"></a>BecasaMar <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(BecasaDeMar,</span>
+<span id="cb10-2"><a href="supuestos.html#cb10-2" tabindex="-1"></a>                    <span class="fu">aes</span>(<span class="at">y=</span>mgconsumed, <span class="at">x=</span>fSEXO))</span>
+<span id="cb10-3"><a href="supuestos.html#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="supuestos.html#cb10-4" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="supuestos.html#cb10-5" tabindex="-1"></a>BecasaMar <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">notch=</span><span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb10-6"><a href="supuestos.html#cb10-6" tabindex="-1"></a>            <span class="fu">facet_wrap</span>(<span class="sc">~</span>fPERIODO)<span class="sc">+</span></span>
+<span id="cb10-7"><a href="supuestos.html#cb10-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb10-8"><a href="supuestos.html#cb10-8" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb10-9"><a href="supuestos.html#cb10-9" tabindex="-1"></a>            <span class="fu">xlab</span>(<span class="st">&quot;Sexo de las aves&quot;</span>)<span class="sc">+</span></span>
+<span id="cb10-10"><a href="supuestos.html#cb10-10" tabindex="-1"></a>            <span class="fu">ylab</span>(<span class="st">&quot;Razón de consumo&quot;</span>)</span></code></pre></div>
+<pre><code>## Notch went outside hinges
+## ℹ Do you want `notch = FALSE`?</code></pre>
+<p><img src="Biometria_files/figure-html/BecasaDeMarBP-1.png" width="672" /></p>
+<hr />
+</div>
+</div>
+<div id="homogeneidad-de-varianza-en-modelos-de-regresión" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Homogeneidad de varianza en modelos de regresión<a href="supuestos.html#homogeneidad-de-varianza-en-modelos-de-regresión" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para el análisis de tipo regresión es necesario evaluar la homogeneidad de los datos utilizando los residuales del modelo. Esto lo logramos graficándolos contra los valores estimados (fitted values) y haciendo un gráfico de caja condicional con los residuales. Los residuales tienen que ser similares en todos los grupos. Si la variación de los residuales no es igual, será necesario transformar los datos o usar otras técnicas que no requieran del supuesto de la homogeneidad de varianza; por ejemplo, mínimos cuadrados generalizados (generalized least square, en inglés) o un análisis no paramétrico.</p>
+<p>El gráfico que utilizaremos se llama caja condicional ya que la distribución es condicional al grupo. El residual se calcula como la diferencia entre el valor observado y el valor esperado; en este caso, en la variable de <strong>y</strong>.</p>
+<p>A continuación, completamos el análisis utilizando otra vez los datos de la orquídea <strong>Dipodium</strong>. Primero hay que hacer un análisis de regresión simple usando <strong>lm()</strong> y darle un nombre al análisis o sea el modelo. Subseguientemente uno puede llamar los valores necesarios para hacer el gráfico con <strong>.fitted</strong> y <strong>.resid</strong>.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="supuestos.html#cb12-1" tabindex="-1"></a>dipodium2<span class="ot">=</span>dipodium <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="supuestos.html#cb12-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Number_of_Flowers, Height_Inflo) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="supuestos.html#cb12-3" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb12-4"><a href="supuestos.html#cb12-4" tabindex="-1"></a><span class="fu">head</span>(dipodium2)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 2
+##   Number_of_Flowers Height_Inflo
+##               &lt;int&gt;        &lt;int&gt;
+## 1                11           35
+## 2                19           47
+## 3                18           63
+## 4                24           47
+## 5                25           61
+## 6                17           35</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="supuestos.html#cb14-1" tabindex="-1"></a>modelflower<span class="ot">=</span><span class="fu">lm</span>(Number_of_Flowers<span class="sc">~</span>Height_Inflo,</span>
+<span id="cb14-2"><a href="supuestos.html#cb14-2" tabindex="-1"></a>         <span class="at">data=</span>dipodium2)</span>
+<span id="cb14-3"><a href="supuestos.html#cb14-3" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="supuestos.html#cb14-4" tabindex="-1"></a><span class="fu">summary</span>(modelflower)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = Number_of_Flowers ~ Height_Inflo, data = dipodium2)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -12.7346  -2.4391  -0.0868   2.2087  14.3221 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  -2.19668    1.24384  -1.766   0.0791 .  
+## Height_Inflo  0.45074    0.02368  19.038   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 4.266 on 179 degrees of freedom
+## Multiple R-squared:  0.6694, Adjusted R-squared:  0.6676 
+## F-statistic: 362.5 on 1 and 179 DF,  p-value: &lt; 2.2e-16</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="supuestos.html#cb16-1" tabindex="-1"></a><span class="fu">plot</span>(modelflower)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/Homogeneityvariance-1.png" width="672" /><img src="Biometria_files/figure-html/Homogeneityvariance-2.png" width="672" /><img src="Biometria_files/figure-html/Homogeneityvariance-3.png" width="672" /><img src="Biometria_files/figure-html/Homogeneityvariance-4.png" width="672" /></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="supuestos.html#cb17-1" tabindex="-1"></a><span class="fu">ggplot</span>(dipodium2, <span class="fu">aes</span>(Height_Inflo, Number_of_Flowers))<span class="sc">+</span></span>
+<span id="cb17-2"><a href="supuestos.html#cb17-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)<span class="sc">+</span></span>
+<span id="cb17-3"><a href="supuestos.html#cb17-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/Homogeneityvariance-5.png" width="672" /></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="supuestos.html#cb18-1" tabindex="-1"></a><span class="co">#influence(modelflower)</span></span>
+<span id="cb18-2"><a href="supuestos.html#cb18-2" tabindex="-1"></a><span class="co">#rstandard(modelflower)</span></span>
+<span id="cb18-3"><a href="supuestos.html#cb18-3" tabindex="-1"></a><span class="co">#influence.measures(modelflower)</span></span>
+<span id="cb18-4"><a href="supuestos.html#cb18-4" tabindex="-1"></a><span class="co">#head(fortify(modelflower))</span></span></code></pre></div>
+<p>Lo que observaremos es que la distribución de los residuales luce más o menos uniforme alrededor del promedio de los residuales (el cero). Hay aproximadamente igual cantidad de valores mayor a cero (por encima de la línea en verde) y menor a cero (por debajo de la línea en verde) que están distribuidos a través de la variable en el eje de <strong>X</strong>, o valores estimados. En adición que los residuales (negativos o positivos) no son limitado a sub grupos de de los valores estimados (en la <strong>X</strong>).</p>
+<p>Note que se está aplicando el modelo <strong>modelflower</strong>, y se usan los valores calculados en el modelo <strong>.fitted</strong> y <strong>.resid</strong> para producir el gráfico. Se añade una linea horizontal para identificar el modelo nulo con <strong>geom_hline</strong>.</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="supuestos.html#cb19-1" tabindex="-1"></a>  res<span class="ot">&lt;-</span><span class="fu">ggplot</span>(modelflower, <span class="fu">aes</span>(.fitted, .resid))<span class="sc">+</span></span>
+<span id="cb19-2"><a href="supuestos.html#cb19-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb19-3"><a href="supuestos.html#cb19-3" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="dv">0</span>,</span>
+<span id="cb19-4"><a href="supuestos.html#cb19-4" tabindex="-1"></a>           <span class="at">col=</span><span class="st">&quot;red&quot;</span>, <span class="at">linetype=</span><span class="st">&quot;dashed&quot;</span>)<span class="sc">+</span></span>
+<span id="cb19-5"><a href="supuestos.html#cb19-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb19-6"><a href="supuestos.html#cb19-6" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb19-7"><a href="supuestos.html#cb19-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Valores estimados&quot;</span>)<span class="sc">+</span></span>
+<span id="cb19-8"><a href="supuestos.html#cb19-8" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">&quot;Residuales&quot;</span>)<span class="sc">+</span></span>
+<span id="cb19-9"><a href="supuestos.html#cb19-9" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Residuales vs. Valores Estimados&quot;</span>)</span>
+<span id="cb19-10"><a href="supuestos.html#cb19-10" tabindex="-1"></a>res</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/Homogeneityvariance1-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="los-residuales-de-student-para-detectar-valores-sesgados" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Los residuales de Student para detectar valores sesgados<a href="supuestos.html#los-residuales-de-student-para-detectar-valores-sesgados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A continuación se ilustra otro enfoque para evaluar los residuales. En este caso, para detectar valores sesgados (outliers). Se puede visualizar los residuales se usa los residuales estandarizados divido por la desviación estándar. Valores mayores de 3 serian considerados sesgados. Esta alternativa es apropiada si detectar valores sesgados. Note en la figura que se usa otra vez el modelo <strong>modelflower</strong> y los valores calculados en el modelo <strong>.fitted</strong> y los residuales de student con <strong>.stdresid</strong>. Note ahora también que todos los valores en el eje de <strong>Y</strong> son mayores de cero.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="supuestos.html#cb20-1" tabindex="-1"></a>  ResEst<span class="ot">=</span><span class="fu">ggplot</span>(modelflower,</span>
+<span id="cb20-2"><a href="supuestos.html#cb20-2" tabindex="-1"></a>                 <span class="fu">aes</span>(.fitted, <span class="fu">sqrt</span>(<span class="fu">abs</span>(.stdresid)))) <span class="sc">+</span></span>
+<span id="cb20-3"><a href="supuestos.html#cb20-3" tabindex="-1"></a>                 <span class="fu">geom_point</span>(<span class="at">na.rm=</span><span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb20-4"><a href="supuestos.html#cb20-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb20-5"><a href="supuestos.html#cb20-5" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb20-6"><a href="supuestos.html#cb20-6" tabindex="-1"></a>          <span class="fu">xlab</span>(<span class="st">&quot;Valores estimados&quot;</span>)<span class="sc">+</span></span>
+<span id="cb20-7"><a href="supuestos.html#cb20-7" tabindex="-1"></a>          <span class="fu">ylab</span>(<span class="st">&quot;Residuales estandarizados </span><span class="sc">\n</span><span class="st"> de Student&quot;</span>)<span class="sc">+</span></span>
+<span id="cb20-8"><a href="supuestos.html#cb20-8" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Residuales vs. Valores Estimados&quot;</span>)</span>
+<span id="cb20-9"><a href="supuestos.html#cb20-9" tabindex="-1"></a>ResEst</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/Homogeneityvariance2-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="valores-sesgados-con-la-distancia-de-cook-di" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Valores sesgados con la Distancia de Cook, Di<a href="supuestos.html#valores-sesgados-con-la-distancia-de-cook-di" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Continuando con el tema de evaluar si hay valores que podrían influenciar mucho el análisis, podemos utilizar una de las herramientas para evaluar el peso de cada valor sobre una regresión lineal basada en métodos de los mínimos cuadrados, llamada la <strong>Distancia de Cook</strong>. Este análisis fue desarrollado por R. Dennis Cook en 1977 y tiene como objetivo evaluar cada valor en la matriz de datos y el peso que tiene sobre el resultado (cuando esté este incluido o no en el análisis). Produce un índice para cada uno de los valores sobre el resultado basándose en los valores residuales que se llama la Distancia de Cook. Por lo tanto, ese análisis evalúa el impacto relativo de cada valor sobre el índice. Infortunadamente no está claro cuál es el valor crítico; o sea, qué valor nos puede indicar que se tiene exceso de peso sobre los resultados. Las dos principales sugerencias son: <strong>Distancia de Cook</strong>, Di, es mayor a 1 (sugerido por R. Dennis Cook Cook mismo en 1982); y que la <strong>Di &gt; 4/n</strong>, donde <strong>n</strong> es el número de observaciones (Bollen <em>et al</em>. 1990).</p>
+<p>Para hacer una ilustración, continuaremos con el modelo <strong>modelflower</strong> usando los valores calculados en el modelo anterior. El gráfico se construirá utilizando la opción <strong>seq_along</strong>, para que los valores en el eje de <strong>X</strong> se basen en la secuencia de datos en el archivo y los valores en el eje de <strong>Y</strong> se basen en los valores de la <strong>Distancia de Cook</strong>. En este caso, vemos que todos los valores están muy por debajo de 1, lo que sugiere que ninguno de los valores individuales influenciaría mucho en los resultados aún si estos fuesen excluidos. Si utilizáramos la segunda alternativa de <strong>Di &gt; 4/n</strong>, entonces nos deberían preocupar los 8 valores de Di que son mayores a 4/181=0.022, donde 181 es la cantidad de datos en el archivo. Si se considera esta segunda alternativa, sería necesario evaluar 8 valores en la tabla de datos que pudiesen ser sospechosos (los valores encima de la línea roja). Note que no es que están incorrectos; más bien, este resultado es solamente una herramienta para evaluar valores que <strong>parecen</strong> tener un impacto considerable sobre los resultados.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="supuestos.html#cb21-1" tabindex="-1"></a>  <span class="fu">ggplot</span>(modelflower,</span>
+<span id="cb21-2"><a href="supuestos.html#cb21-2" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="fu">seq_along</span>(.cooksd), .cooksd))<span class="sc">+</span></span>
+<span id="cb21-3"><a href="supuestos.html#cb21-3" tabindex="-1"></a>        <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,</span>
+<span id="cb21-4"><a href="supuestos.html#cb21-4" tabindex="-1"></a>        <span class="at">position=</span><span class="st">&quot;identity&quot;</span>, <span class="at">fill=</span><span class="st">&quot;steelblue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb21-5"><a href="supuestos.html#cb21-5" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span><span class="fl">0.022</span>, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb21-6"><a href="supuestos.html#cb21-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb21-7"><a href="supuestos.html#cb21-7" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb21-8"><a href="supuestos.html#cb21-8" tabindex="-1"></a>        <span class="fu">xlab</span>(<span class="st">&quot;La secuencia de las observaciones&quot;</span>)<span class="sc">+</span></span>
+<span id="cb21-9"><a href="supuestos.html#cb21-9" tabindex="-1"></a>        <span class="fu">ylab</span>(<span class="st">&quot;Distancia de Cook&quot;</span>)<span class="sc">+</span></span>
+<span id="cb21-10"><a href="supuestos.html#cb21-10" tabindex="-1"></a>        <span class="fu">ggtitle</span>(<span class="st">&quot;Distancia de Cook&quot;</span>)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/Cookdistance-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="causas-principales-de-los-valores-sesgados" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Causas principales de los valores sesgados<a href="supuestos.html#causas-principales-de-los-valores-sesgados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los valores que parecen sesgados pueden ser normal de la población estudiada, y por consecuencia en estos casos remoción de estos valores podría resultar en descripción de los resultados incorrectos. Primero hay que evaluar los siguientes posibles causas de valores sesgados. Si algunos de los siguientes son presentes hay que resolver los valores o remover los de la hoja de análisis.</p>
+<ul>
+<li>los valores recolectado son erróneo.</li>
+<li>los valores fueron entrado incorrectamente en la hoja de datos</li>
+<li>los valores recolectado tienen diferente dimensiones, por ejemplo algunos fueron recolectados en cm y otros en mm para la misma variable.</li>
+</ul>
+<hr />
+</div>
+<div id="supuesto-de-normalidad" class="section level2 hasAnchor" number="10.8">
+<h2><span class="header-section-number">10.8</span> Supuesto de normalidad<a href="supuestos.html#supuesto-de-normalidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Hay muchas pruebas estadísticas que asumen que los datos provienen de una distribución normal. Pero no todas las pruebas tienen que satisfacer ese supuesto. Por ejemplo, un Análisis de Componentes Principales o ACP (en inglés, PCA o Principle Component Analysis) o la prueba de t asumen distribución normal. Por el contrario, las pruebas no paramétricas como Wilcoxon, Mann-Whitney, Kruskall Wallis y otras no asumen ese supuesto.</p>
+<p>Una alternativa tradicional para comprobar la normalidad de los datos es mirar el gráfico de QQ; o sea, una visualización para comparar las probabilidades de dos variables en las que se gráfica los cuartiles (recordemos que <strong>Q</strong> viene de cuartil). Si las distribuciones de las dos variables son similares, los puntos aparecerán nítidamente en el gráfico de QQ sobre la línea de <strong>X-Y</strong>. Eso se demostrará a continuación.</p>
+<hr />
+</div>
+<div id="qplot" class="section level2 hasAnchor" number="10.9">
+<h2><span class="header-section-number">10.9</span> qplot<a href="supuestos.html#qplot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En el gráfico se representa el consumo por la Becasa de Mar de la base de datos Godwits, el ave de las marismas de Argentina que hemos analizado anteriormente. En el gráfico se nota que los datos a los extremos no están muy cerca de la línea <strong>X-Y</strong>, lo que sugiere que el consumo por la Becasa de Mar no tiene una distribución normal. La función qplot es la manera más sencilla para generar el gráfico de QQ.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="supuestos.html#cb22-1" tabindex="-1"></a><span class="co"># Note que anteriormente ya habíamos depositado los datos en el data.frame BecasaDeMar</span></span>
+<span id="cb22-2"><a href="supuestos.html#cb22-2" tabindex="-1"></a><span class="fu">ggplot</span>(BecasaDeMar, <span class="fu">aes</span>(<span class="at">sample=</span>mgconsumed))<span class="sc">+</span></span>
+<span id="cb22-3"><a href="supuestos.html#cb22-3" tabindex="-1"></a>  <span class="fu">geom_qq</span>()<span class="sc">+</span></span>
+<span id="cb22-4"><a href="supuestos.html#cb22-4" tabindex="-1"></a>  <span class="fu">geom_qq_line</span>()<span class="sc">+</span></span>
+<span id="cb22-5"><a href="supuestos.html#cb22-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb22-6"><a href="supuestos.html#cb22-6" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">20</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb22-7"><a href="supuestos.html#cb22-7" tabindex="-1"></a>   <span class="fu">xlab</span>(<span class="st">&quot;Valores teóricos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb22-8"><a href="supuestos.html#cb22-8" tabindex="-1"></a>   <span class="fu">ylab</span>(<span class="st">&quot;Valores observados&quot;</span>)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/Becasaqqplot2-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="geom_qq-y-geom_qq_line" class="section level2 hasAnchor" number="10.10">
+<h2><span class="header-section-number">10.10</span> geom_qq y geom_qq_line<a href="supuestos.html#geom_qq-y-geom_qq_line" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A pesar de lo fácil de este enfoque, apreciar si los datos quedan nítidamente alineados sobre una línea no es tan evidente en algunos casos. Por lo tanto, en la siguiente versión del gráfico de QQ producida con la función <strong>geom_qq</strong> y <strong>geom_qq_line</strong> se le añade una línea para mostrar dónde debería estar localizada la gran mayoría de los datos si estos tuvieran una distribución normal. Ahora vemos que claramente muchos de los datos no yacen en la línea. Evidentemente, el trazar la línea teórica ayuda a visualizar la conclusión; en este caso, se podría concluir que el consumo de comida por este pájaro no sigue una distribución normal <span style="color: blue;">la linea azul</span>. En el segundo ejemplo se crea un archivo de datos que tiene una distribución normal y esta ejemplo la gran mayoría de los datos solapen la linea, <span style="color: red;">la linea roja</span></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="supuestos.html#cb23-1" tabindex="-1"></a>a<span class="ot">=</span> <span class="fu">ggplot</span>(Godwits, <span class="fu">aes</span>(<span class="at">sample =</span> mgconsumed)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="supuestos.html#cb23-2" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb23-3"><a href="supuestos.html#cb23-3" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb23-4"><a href="supuestos.html#cb23-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Valores teóricos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb23-5"><a href="supuestos.html#cb23-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Valores observados&quot;</span>)</span>
+<span id="cb23-6"><a href="supuestos.html#cb23-6" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="supuestos.html#cb23-7" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="supuestos.html#cb23-8" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">2000</span>))</span>
+<span id="cb23-9"><a href="supuestos.html#cb23-9" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">sample =</span> y))<span class="sc">+</span> </span>
+<span id="cb23-10"><a href="supuestos.html#cb23-10" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span> </span>
+<span id="cb23-11"><a href="supuestos.html#cb23-11" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">colour=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb23-12"><a href="supuestos.html#cb23-12" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="supuestos.html#cb23-13" tabindex="-1"></a><span class="fu">grid.arrange</span>(a,b,<span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/Becasaqqplot3-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="la-distribución-normal" class="section level2 hasAnchor" number="10.11">
+<h2><span class="header-section-number">10.11</span> La distribución normal<a href="supuestos.html#la-distribución-normal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una segunda alternativa para visualizar si los datos siguen una distribución normal es construir un histograma de los datos y gráficar sobre este la curva normal basándonos en el promedio y la desviación estándar de los mismos datos. Para construir el histograma se usa la función <strong>geom_histogram</strong> y para la distribución teórica normal de estos datos se usa la función <strong>stat_function</strong>. Esto lo demostramos con gráficos adicionales de la Becasa del Mar, donde se representa la razón de consumo y el período en que esto ocurrió. En la Figura (a) vemos la distribución para todos los períodos, y los otros tres en la Figura (b) muestran una distribución para cada uno de los períodos. Se observa en todos los casos que las distribuciones están sesgadas hacia los valores pequeños (hacia la izquierda). Esta visualización nos ayuda a evaluar la normalidad de esos datos. NOta que no es una prueba estadística igual como el gráfico de qqplot.</p>
+<p>Nota la formula para calcular la distribución normal. Hay solamente dos parámetros que necesitamos, el promedio <span class="math inline">\(\mu\)</span> y la desviación estándar <span class="math inline">\(\sigma\)</span>. Todos los otros son constantes, <span class="math inline">\(\pi\)</span>, y e.</p>
+<p><span class="math display">\[P(x)=\frac{1}{{\sigma\sqrt{ 2\pi}}}{e}^{-\frac{{(x-µ)}^{2}}{{2\sigma}^{2}}}\]</span></p>
+<p>Note que en <strong>geom_histogram</strong> se tiene que incluir</p>
+<p><strong>aes(..density..)</strong></p>
+<p>y añadir dentro de la función <strong>stat_function</strong> todo lo siguiente:</p>
+<p>stat_function(fun = dnorm,
+args = list(mean = mean(Godwits<span class="math inline">\(mgconsumed,  na.rm = TRUE),  sd = sd(Godwits\)</span>mgconsumed,
+na.rm = TRUE)),
+colour = “red”, size = 1)</p>
+<p>El parámetro <strong>dnorm</strong> quiere decir densidad de la distribución normal. También se necesitan dos parámetros para calcular el promedio (mean) y la desviación estándar (sd). Con ambos hay que especificar de dónde provienen los datos; en este caso,</p>
+<p><strong>Godwits$mgconsumed</strong></p>
+<p>Además, si hay NA en los datos, hay que añadir <strong>na.rm = TRUE</strong> para excluir los <strong>NA</strong>. Veamos.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="supuestos.html#cb24-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(Godwits, <span class="fu">aes</span>(mgconsumed)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="supuestos.html#cb24-2" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb24-3"><a href="supuestos.html#cb24-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..),</span>
+<span id="cb24-4"><a href="supuestos.html#cb24-4" tabindex="-1"></a>                 <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">fill=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb24-5"><a href="supuestos.html#cb24-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb24-6"><a href="supuestos.html#cb24-6" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb24-7"><a href="supuestos.html#cb24-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Razón de Consumo&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Densidad&quot;</span>) <span class="sc">+</span></span>
+<span id="cb24-8"><a href="supuestos.html#cb24-8" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm,</span>
+<span id="cb24-9"><a href="supuestos.html#cb24-9" tabindex="-1"></a>        <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Godwits<span class="sc">$</span>mgconsumed,</span>
+<span id="cb24-10"><a href="supuestos.html#cb24-10" tabindex="-1"></a>                                <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb24-11"><a href="supuestos.html#cb24-11" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(Godwits<span class="sc">$</span>mgconsumed,<span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb24-12"><a href="supuestos.html#cb24-12" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb24-13"><a href="supuestos.html#cb24-13" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Todos los datos&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="supuestos.html#cb26-1" tabindex="-1"></a>b<span class="ot">=</span> <span class="fu">ggplot</span>(Godwits, <span class="fu">aes</span>(mgconsumed)) <span class="sc">+</span></span>
+<span id="cb26-2"><a href="supuestos.html#cb26-2" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="supuestos.html#cb26-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..),</span>
+<span id="cb26-4"><a href="supuestos.html#cb26-4" tabindex="-1"></a>                 <span class="at">colour=</span><span class="st">&quot;black&quot;</span>, <span class="at">fill=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb26-5"><a href="supuestos.html#cb26-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb26-6"><a href="supuestos.html#cb26-6" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb26-7"><a href="supuestos.html#cb26-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Razón de Consumo&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Densidad&quot;</span>) <span class="sc">+</span></span>
+<span id="cb26-8"><a href="supuestos.html#cb26-8" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span></span>
+<span id="cb26-9"><a href="supuestos.html#cb26-9" tabindex="-1"></a>    <span class="fu">mean</span>(Godwits<span class="sc">$</span>mgconsumed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb26-10"><a href="supuestos.html#cb26-10" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(Godwits<span class="sc">$</span>mgconsumed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb26-11"><a href="supuestos.html#cb26-11" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb26-12"><a href="supuestos.html#cb26-12" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>PERIOD)<span class="sc">+</span></span>
+<span id="cb26-13"><a href="supuestos.html#cb26-13" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Por estación anual&quot;</span>)</span>
+<span id="cb26-14"><a href="supuestos.html#cb26-14" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="supuestos.html#cb26-15" tabindex="-1"></a><span class="fu">grid.arrange</span>(a,b,<span class="at">ncol=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## Warning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.
+## ℹ Please use `after_stat(density)` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<p><img src="Biometria_files/figure-html/density-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="stat_function" class="section level2 hasAnchor" number="10.12">
+<h2><span class="header-section-number">10.12</span> stat_function<a href="supuestos.html#stat_function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Continuaremos con este mismo análisis pero esta vez evaluaremos la distribución del peso de gorriones en un trabajo de captura y recaptura en 6 meses diferentes. Utilizaremos la base de datos <strong>SparrowsElphick</strong>. En la figura (a) observamos un histograma de la distribución de los pesos de estas aves por cada mes. Vemos claramente que hay meses (mayo, septiembre y octubre) en los que se tuvieron muchas menos observaciones. En el segundo gráfico, Figura (b), observamos el histograma y la curva normal para todos los datos sin importar el mes. Igualmente, esta visualización nos ayuda a evaluar la normalidad de los datos.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="supuestos.html#cb28-1" tabindex="-1"></a>Sparrows<span class="ot">=</span>SparrowsElphick</span>
+<span id="cb28-2"><a href="supuestos.html#cb28-2" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="supuestos.html#cb28-3" tabindex="-1"></a>Sparrows<span class="sc">$</span>fMonth<span class="ot">&lt;-</span><span class="fu">factor</span>(Sparrows<span class="sc">$</span>Month,</span>
+<span id="cb28-4"><a href="supuestos.html#cb28-4" tabindex="-1"></a>             <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>),</span>
+<span id="cb28-5"><a href="supuestos.html#cb28-5" tabindex="-1"></a>             <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Mayo&quot;</span>, <span class="st">&quot;Junio&quot;</span>, <span class="st">&quot;Julio&quot;</span>, <span class="st">&quot;Agosto&quot;</span>,</span>
+<span id="cb28-6"><a href="supuestos.html#cb28-6" tabindex="-1"></a>                                   <span class="st">&quot;Sept.&quot;</span>, <span class="st">&quot;Oct.&quot;</span>))</span>
+<span id="cb28-7"><a href="supuestos.html#cb28-7" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="supuestos.html#cb28-8" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(Sparrows, <span class="fu">aes</span>(wt))<span class="sc">+</span></span>
+<span id="cb28-9"><a href="supuestos.html#cb28-9" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth=</span><span class="dv">1</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb28-10"><a href="supuestos.html#cb28-10" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>fMonth)<span class="sc">+</span></span>
+<span id="cb28-11"><a href="supuestos.html#cb28-11" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb28-12"><a href="supuestos.html#cb28-12" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb28-13"><a href="supuestos.html#cb28-13" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Peso&quot;</span>)<span class="sc">+</span></span>
+<span id="cb28-14"><a href="supuestos.html#cb28-14" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Frecuencia&quot;</span>)</span>
+<span id="cb28-15"><a href="supuestos.html#cb28-15" tabindex="-1"></a></span>
+<span id="cb28-16"><a href="supuestos.html#cb28-16" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">ggplot</span>(Sparrows, <span class="fu">aes</span>(wt)) <span class="sc">+</span></span>
+<span id="cb28-17"><a href="supuestos.html#cb28-17" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
+<span id="cb28-18"><a href="supuestos.html#cb28-18" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb28-19"><a href="supuestos.html#cb28-19" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb28-20"><a href="supuestos.html#cb28-20" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..), <span class="at">colour=</span><span class="st">&quot;black&quot;</span>,</span>
+<span id="cb28-21"><a href="supuestos.html#cb28-21" tabindex="-1"></a>                 <span class="at">fill=</span><span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-22"><a href="supuestos.html#cb28-22" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Peso&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Densidad&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-23"><a href="supuestos.html#cb28-23" tabindex="-1"></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, </span>
+<span id="cb28-24"><a href="supuestos.html#cb28-24" tabindex="-1"></a>                <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="fu">mean</span>(Sparrows<span class="sc">$</span>wt, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb28-25"><a href="supuestos.html#cb28-25" tabindex="-1"></a>                            <span class="at">sd =</span> <span class="fu">sd</span>(Sparrows<span class="sc">$</span>wt, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb28-26"><a href="supuestos.html#cb28-26" tabindex="-1"></a>                            <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>)</span>
+<span id="cb28-27"><a href="supuestos.html#cb28-27" tabindex="-1"></a></span>
+<span id="cb28-28"><a href="supuestos.html#cb28-28" tabindex="-1"></a><span class="fu">grid.arrange</span>(a,b,<span class="at">ncol=</span><span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="Biometria_files/figure-html/density3-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="visualizando-la-distribuciones-con-geom_density" class="section level2 hasAnchor" number="10.13">
+<h2><span class="header-section-number">10.13</span> Visualizando la distribuciones con <strong>geom_density</strong><a href="supuestos.html#visualizando-la-distribuciones-con-geom_density" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A continuación se muestra otra alternativa para observar los datos anteriores. Nada más que estos ahora se representan sustituyendo las funciones <strong>geom_histogram</strong> y <strong>stat_function</strong> por <strong>geom_density</strong> para la construcción de curvas de densidad. Otra vez utilizaremos la base de datos <strong>SparrowsElphick</strong>. La curva normal que se genera es tipo gausiana (gaussian en inglés). Nóte que para el segundo conjunto de gráficos, (b), no se le especificó la opción en <strong>kernel</strong> igual a <strong>gaussian</strong> ya que de forma predeterminada la función <strong>geom_density</strong> usa el parámetro <strong>gaussian</strong>; o sea, no es necesario especificarla si eso es lo que se quiere. Una distribución en donde el pico es más alto significa que hay mayor densidad de datos en esa región de la variable en el eje de <strong>X</strong>. Podemos apreciar que la curva de densidad no sigue claramente una distribución normal con respecto a los valores en <strong>X</strong>.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="supuestos.html#cb30-1" tabindex="-1"></a><span class="co"># Note que anteriormente ya habíamos depositado los datos en el data.frame Sparrows:</span></span>
+<span id="cb30-2"><a href="supuestos.html#cb30-2" tabindex="-1"></a>a<span class="ot">=</span> <span class="fu">ggplot</span>(Sparrows, <span class="fu">aes</span>(wt))<span class="sc">+</span></span>
+<span id="cb30-3"><a href="supuestos.html#cb30-3" tabindex="-1"></a><span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">group=</span>fMonth, <span class="at">fill=</span>fMonth),</span>
+<span id="cb30-4"><a href="supuestos.html#cb30-4" tabindex="-1"></a>             <span class="at">kernel=</span><span class="st">&quot;gaussian&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-5"><a href="supuestos.html#cb30-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>fMonth)<span class="sc">+</span></span>
+<span id="cb30-6"><a href="supuestos.html#cb30-6" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill=</span><span class="cn">FALSE</span>)<span class="sc">+</span></span>
+<span id="cb30-7"><a href="supuestos.html#cb30-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb30-8"><a href="supuestos.html#cb30-8" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb30-9"><a href="supuestos.html#cb30-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-10"><a href="supuestos.html#cb30-10" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Peso&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning: The `&lt;scale&gt;` argument of `guides()` cannot be `FALSE`. Use &quot;none&quot; instead as
+## of ggplot2 3.3.4.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="supuestos.html#cb32-1" tabindex="-1"></a>b<span class="ot">=</span> <span class="fu">ggplot</span>(Sparrows, <span class="fu">aes</span>(wt))<span class="sc">+</span></span>
+<span id="cb32-2"><a href="supuestos.html#cb32-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">group=</span>fMonth,</span>
+<span id="cb32-3"><a href="supuestos.html#cb32-3" tabindex="-1"></a>                   <span class="at">fill=</span>fMonth),</span>
+<span id="cb32-4"><a href="supuestos.html#cb32-4" tabindex="-1"></a>               <span class="at">alpha=</span>.<span class="dv">4</span>)<span class="sc">+</span></span>
+<span id="cb32-5"><a href="supuestos.html#cb32-5" tabindex="-1"></a>  <span class="fu">scale_color_discrete</span>()<span class="sc">+</span></span>
+<span id="cb32-6"><a href="supuestos.html#cb32-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.title=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>,<span class="at">face=</span><span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb32-7"><a href="supuestos.html#cb32-7" tabindex="-1"></a>        <span class="at">axis.text=</span><span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>, <span class="at">face=</span><span class="st">&quot;bold&quot;</span>))<span class="sc">+</span></span>
+<span id="cb32-8"><a href="supuestos.html#cb32-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)<span class="sc">+</span></span>
+<span id="cb32-9"><a href="supuestos.html#cb32-9" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Peso&quot;</span>)<span class="sc">+</span></span>
+<span id="cb32-10"><a href="supuestos.html#cb32-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">colour=</span><span class="st">&quot;Mes&quot;</span>)</span>
+<span id="cb32-11"><a href="supuestos.html#cb32-11" tabindex="-1"></a></span>
+<span id="cb32-12"><a href="supuestos.html#cb32-12" tabindex="-1"></a><span class="fu">grid.arrange</span>(a,b,<span class="at">ncol=</span><span class="dv">1</span>)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/density4-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="colinealidad-entre-covariables-con-ggpairs" class="section level2 hasAnchor" number="10.14">
+<h2><span class="header-section-number">10.14</span> Colinealidad entre covariables con <strong>ggpairs</strong><a href="supuestos.html#colinealidad-entre-covariables-con-ggpairs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Hoy en día la cantidad de datos que se obtienen en diferentes estudios puede ser muy impresionante. Muchas veces el objetivo es detectar si unas variables, entre muchas otras, podrían predecir la variable de respuesta. A consecuencia de eso, el problema mayor es tomar en cuenta la colinealidad entre variables explicativas. La colinealidad es simplemente la correlación entre variables en un modelo de análisis de regresión múltiple, en donde las variables predictivas están altamente correlacionadas.</p>
+<p>Un ejemplo sencillo de variables con colinealidad podría incluir la relación entre el largo y ancho de las hojas de una herbácea y cómo estas están correlacionadas con la producción de flores. Es probable que la correlación entre el largo y el ancho de la hoja estén correlacionadas con la producción de las flores de formas muy similares; o sea, con una pendiente que explicaría ambas relaciones de formas similares. Entonces, al añadir ambas variables al modelo de regresión múltiple, no estaríamos explicando variaciones distintas, si no más bien la misma variación. Cuando hay mucha colinealidad entre variables explicativas, se debería seleccionar un subgrupo de estas variables que expliquen variaciones distintas para el modelo y no incluir todas las variables.</p>
+<p>A continuación exploraremos diferentes alternativas para llevar a cabo este tipo de análisis utilizando otra vez los datos de la orquídea <em>Dipodium</em>. En el primer ejemplo, se utiliza la función <strong>cor</strong> para evaluar solo una relación: la correlación entre la distancia de la planta a un árbol y la altura de la planta, dejando otras variables a un lado. Como deseamos el estimado de la correlación solamente, utilizamos un par de variables a la vez para evaluar la correlación entre la distancia de la orquídea al árbol y la altura de la inflorescencia (mostrado más adelante). Concluimos que a mayor distancia del árbol, menor es la altura de la inflorescencia al este análisis arrojar un valor de pendiente de -0.095 como se muestra en el ejemplo.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="supuestos.html#cb33-1" tabindex="-1"></a><span class="fu">cor</span>(dipodium<span class="sc">$</span>Distance, </span>
+<span id="cb33-2"><a href="supuestos.html#cb33-2" tabindex="-1"></a>    dipodium<span class="sc">$</span>Height_Inflo,</span>
+<span id="cb33-3"><a href="supuestos.html#cb33-3" tabindex="-1"></a>    <span class="at">use=</span><span class="st">&quot;pairwise.complete.obs&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] -0.09541256</code></pre>
+<p>Otra alternativa es hacer el análisis de correlación de muchas variables en conjunto. En la tabla, <strong>Correlaciones de Pearson</strong>, se muestra la correlación entre las tres variables siguientes: DBH, cantidad de flores y altura de la inflorescencia. En esa tabla se observa la correlación de Pearson para estos datos. Recordemos que esta correlación asume distribución normal.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="supuestos.html#cb35-1" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">signif</span>(<span class="fu">cor</span>(dipodium[,<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">9</span>)],</span>
+<span id="cb35-2"><a href="supuestos.html#cb35-2" tabindex="-1"></a> <span class="at">use=</span><span class="st">&quot;pairwise.complete.obs&quot;</span>),<span class="dv">2</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+DBH
+</th>
+<th style="text-align:right;">
+Number_of_Flowers
+</th>
+<th style="text-align:right;">
+Height_Inflo
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+DBH
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+-0.035
+</td>
+<td style="text-align:right;">
+-0.10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number_of_Flowers
+</td>
+<td style="text-align:right;">
+-0.035
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+0.82
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Height_Inflo
+</td>
+<td style="text-align:right;">
+-0.100
+</td>
+<td style="text-align:right;">
+0.820
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div id="tabla-de-correlación-de-kendall" class="section level3 hasAnchor" number="10.14.1">
+<h3><span class="header-section-number">10.14.1</span> Tabla de correlación de Kendall<a href="supuestos.html#tabla-de-correlación-de-kendall" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Usando la función <strong>cor</strong> se puede también calcular estimados de correlación sin asumir distribución normal usando los métodos <strong>Kendall</strong> o <strong>Spearman</strong> mostrados en la Tabla siguiente.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="supuestos.html#cb36-1" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">signif</span>(<span class="fu">cor</span>(dipodium[,<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">9</span>)],</span>
+<span id="cb36-2"><a href="supuestos.html#cb36-2" tabindex="-1"></a> <span class="at">method=</span><span class="st">&quot;kendall&quot;</span>,</span>
+<span id="cb36-3"><a href="supuestos.html#cb36-3" tabindex="-1"></a> <span class="at">use=</span><span class="st">&quot;pairwise.complete.obs&quot;</span>),<span class="dv">2</span>), </span>
+<span id="cb36-4"><a href="supuestos.html#cb36-4" tabindex="-1"></a> <span class="at">caption =</span></span>
+<span id="cb36-5"><a href="supuestos.html#cb36-5" tabindex="-1"></a>  <span class="st">&quot;</span><span class="sc">\\</span><span class="st">label{fig:CK}Correlaciones de Kendall&quot;</span>)</span></code></pre></div>
+<table>
+<caption>
+<span id="tab:correlation3">Table 10.1: </span>Correlaciones de Kendall
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+DBH
+</th>
+<th style="text-align:right;">
+Number_of_Flowers
+</th>
+<th style="text-align:right;">
+Height_Inflo
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+DBH
+</td>
+<td style="text-align:right;">
+1.00000
+</td>
+<td style="text-align:right;">
+0.00085
+</td>
+<td style="text-align:right;">
+-0.059
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number_of_Flowers
+</td>
+<td style="text-align:right;">
+0.00085
+</td>
+<td style="text-align:right;">
+1.00000
+</td>
+<td style="text-align:right;">
+0.650
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Height_Inflo
+</td>
+<td style="text-align:right;">
+-0.05900
+</td>
+<td style="text-align:right;">
+0.65000
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="tabla-de-correlación-de-spearman" class="section level3 hasAnchor" number="10.14.2">
+<h3><span class="header-section-number">10.14.2</span> Tabla de correlación de Spearman<a href="supuestos.html#tabla-de-correlación-de-spearman" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="supuestos.html#cb37-1" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">signif</span>(<span class="fu">cor</span>(dipodium[,<span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">9</span>)],</span>
+<span id="cb37-2"><a href="supuestos.html#cb37-2" tabindex="-1"></a> <span class="at">method=</span><span class="st">&quot;spearman&quot;</span>,</span>
+<span id="cb37-3"><a href="supuestos.html#cb37-3" tabindex="-1"></a> <span class="at">use=</span><span class="st">&quot;pairwise.complete.obs&quot;</span>),<span class="dv">1</span>))</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:right;">
+DBH
+</th>
+<th style="text-align:right;">
+Number_of_Flowers
+</th>
+<th style="text-align:right;">
+Height_Inflo
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+DBH
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+-0.002
+</td>
+<td style="text-align:right;">
+-0.08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number_of_Flowers
+</td>
+<td style="text-align:right;">
+-0.002
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+0.80
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Height_Inflo
+</td>
+<td style="text-align:right;">
+-0.080
+</td>
+<td style="text-align:right;">
+0.800
+</td>
+<td style="text-align:right;">
+1.00
+</td>
+</tr>
+</tbody>
+</table>
+<p>En esas tres tablas podemos apreciar un patrón consistente entre todos los métodos; o sea, la altura de la inflorescencia está altamente correlacionada con la cantidad de flores (con coeficientes de correlación de 0.82, 0.65, y 0.81 respectivamente). Note que para facilitar la lectura de los valores, se usó la función <strong>signif</strong> para así identificar solamente los valores significativos del análisis.</p>
+<p>Brevemente recapitulamos, si los datos no siguen una distribución normal, se deberían utilizar los métodos Kendall o Spearman. Si se tienen pocos datos, Kendall tiende a ser una mejor alternativa para determinar el indice de correlación. Se le advierte, sin embargo, que consulte libros de estadística sobre este tema antes que realice un análisis de este tipo ya que la decisión de seleccionar una alternativa sobre otra no es tan sencilla.</p>
+<hr />
+</div>
+</div>
+<div id="seleción-de-parámetros-para-correlaciones-cuando-hay-na" class="section level2 hasAnchor" number="10.15">
+<h2><span class="header-section-number">10.15</span> Seleción de parámetros para correlaciones cuando hay NA<a href="supuestos.html#seleción-de-parámetros-para-correlaciones-cuando-hay-na" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Además, los analísis anteriores utilizados emplearon el parámetro <strong>pairwise.complete.obs</strong>, ya que obviaría los <strong>NA</strong> en las columnas que se utilizan para calcular la correlación. Por lo tanto, la cantidad de pares de datos utilizados para calcular las diferentes correlaciones entre variables puede variar si hay <strong>NA</strong> en el archivo. Tome en consideración que hay otras cuatro alternativas para analizar los datos cuando tenemos <strong>NA</strong> presentes: <strong>everything</strong>, <strong>all.obs</strong>, <strong>complete.obs</strong> y <strong>na.or.complete</strong>. No vamos a discutir esas alternativas en el presente libro. Sería bueno que busque información en R para sus usos. Estas alternativas se discutiran en otros modulos.</p>
+<p>Finalmente, también se utilizó el comando <strong>kable</strong> ya que es una manera efectiva de organizar los resultados en una tabla.</p>
+<hr />
+</div>
+<div id="uso-de-ggally-para-ver-correlaciones" class="section level2 hasAnchor" number="10.16">
+<h2><span class="header-section-number">10.16</span> Uso de GGally para ver correlaciones<a href="supuestos.html#uso-de-ggally-para-ver-correlaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Continuando con el mismo tema, una tercera opción para descubrir la colinealidad entre covariables es utilizar el paquete <strong>GGally</strong>, ya que no solamente nos calcula las correlaciones, si no que también nos permite hacer los gráficos de densidad de la distribución de las variables y un gráfico de dispersión por pares de variables evaluadas.</p>
+<p>En los gráficos de la siguiente Figura observamos los coeficientes de correlación, la distribución de los datos y la visualización de correlación por cada par. Además, vemos el diagrama de caja de los datos cuando hay variables discretas. Note al extremo derecho que la variable <strong>Herbivory</strong> tiene una categoría no identificada, que incluye los <strong>NA</strong>.</p>
+<p>Con la función de <strong>ggpairs</strong> podemos calcular las correlaciones entre las variables y a la misma vez producir todos los gráficos entre las variables y gráficos de distribución de densidad de cada variable. En el gráfico podemos observar en la parte izquierda la distribución de los datos en pares. En la diagonal se observa la densidad de cada una de las variables. En la parte superior derecha se observa el valor de correlación y en el extremo derecho se observan los diagramas de caja de las variables discretas con relación a la variable de la izquierda. Este gráfico es sumamente práctico, ya que produce mucha información con pocos pasos. Desafortunadamente, no hay manera de remover los <strong>NA</strong> al presente. A consecuencia de esto, al extremo derecho uno observa en las cajas abajo una barra con muchos valores (la de la derecha), pero esta representa todos los valores <strong>NA</strong> en la tabla de datos. En este caso, la presencia de herbivoria en las plantas no fue recolectada y en cambio se dejó con un <strong>NA</strong>. Note que aquí no se pueden poner ceros u otros valores. Las alternativas podrían ser <strong>H</strong> para evidenciar la presencia de herbaria y <strong>n</strong> para las plantas donde no hay evidencia de herbivoría.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="supuestos.html#cb38-1" tabindex="-1"></a><span class="fu">names</span>(dipodium) <span class="co"># para ver los nombres de las variables/columnas</span></span></code></pre></div>
+<pre><code>##  [1] &quot;Tree Number&quot;             &quot;Tree species&quot;           
+##  [3] &quot;DBH&quot;                     &quot;Plant number&quot;           
+##  [5] &quot;Ramet number&quot;            &quot;Distance&quot;               
+##  [7] &quot;Orientation&quot;             &quot;Number_of_Flowers&quot;      
+##  [9] &quot;Height_Inflo&quot;            &quot;Herbivory&quot;              
+## [11] &quot;RowPosition_NF&quot;          &quot;Number_Flowers_position&quot;
+## [13] &quot;Number_of_fruits&quot;        &quot;Perc_FR_set&quot;            
+## [15] &quot;pardalinum_or_roseum&quot;    &quot;Fruit_position_effect&quot;  
+## [17] &quot;Frutos_si_o_no&quot;          &quot;P_or_R_Infl_Lenght&quot;     
+## [19] &quot;Num of fruits&quot;           &quot;Species_Name&quot;           
+## [21] &quot;Cardinal orientation&quot;</code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="supuestos.html#cb40-1" tabindex="-1"></a><span class="fu">ggpairs</span>(dipodium[,<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">10</span>)])</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/ggpairs-1.png" width="672" /></p>
+<hr />
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="gráficos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/10-Supuestos.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Biometria/blob/main/10-Supuestos.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

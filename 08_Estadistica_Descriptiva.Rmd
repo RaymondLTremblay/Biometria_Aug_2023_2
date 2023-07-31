@@ -1,0 +1,442 @@
+# Estadística Descriptiva
+
+
+
+```{r, eval=TRUE, echo=FALSE}
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color, 
+      x)
+  } else x
+}
+
+#`r colorize("some words in red", "red")`
+
+
+```
+
+Fecha de la ultima revisión
+```{r echo=FALSE}
+
+Sys.Date()
+```
+
+
+```{r, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
+knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
+```
+
+
+
+Activar los Paquetes
+```{r, warning=FALSE}
+
+library(ggplot2)  # paquete para visualizar los datos
+library(ggversa) # paquete para diferentes conjuntos de datos
+library(modeest) # paquete para calcular la moda 
+
+library(pastecs) # paquete para análisis tiempo-espacial usado en ecología 
+library(psych) # paquete para análisis psicométrica, psicológica y de personalidad 
+library(knitr) # un grupo de función para incluyendo tablas bonitas con kable.
+library(tidyverse)
+library(gridExtra)
+library(e1071)
+
+```
+
+***
+## Estadistica descriptiva
+
+En los módulos de "Medidas de Tendencias Central" y "Medidas de Dispersión" se explicó donde proviene estos parámetros y como calcular estos.  En este módulo aprenderemos diferentes funciones como calcular estos parámetros individualmente y herramienta como calcular todos y otros parámetros todo juntos.  
+
+
+Los indices que veremos aquí incluye
+
+  - el promedio
+  - la mediana
+  - la desviación estándar
+  - el mínimo
+  - el máximo
+  - los cuantiles
+  - el indice Oblicuidad (en ingles "Skewness")
+  - el indice de Curtosis ( en ingles "Kurtosis")
+
+Aqui creamos un conjunto de datos de 100 datos con un promedio de 100 y una desviación estándar de 10. Nota que la función **set.seed()** es que el comienzo la simulación sea igual a cada vez que se corre, y se el mismo resultado.  Esto se añade solamente cuando uno esta enseñando y que los resultados sean consistente.   
+ 
+```{r summary stat, warning=FALSE}
+
+
+
+x=rnorm(100, 100, 10) #(100 datos, x=100, sd=10)
+x=data.frame(x)
+head(x)
+mean(x$x) # el promedio
+sd(x$x) # la desviación estándar
+min(x$x) # el valor mínimo
+max(x$x) # el valor máximo
+```
+
+***
+
+
+  1. Quiz 1:
+    Usa R y construye una lista o data frame con los siguientes datos y calcular el promedio.  Contesta en **MSTeam Form** con tu respuesta.  4, 6, 7, 3, 9, 10, 19, 52. 
+    
+***
+
+
+## Analisis con muchos datos
+
+Usaremos datos que hemos visto en el modulo Producción de Gráficos.  
+
+Se necesita el archivo **DownloadFestival** que se encuentra debajo la pestaña de **Los Datos**. El ejemplo proviene de Field et al. (2014).
+
+
+>  Una bióloga estaba preocupado por los posibles efectos sobre la salud de los que particpan a un festivales de música. Entonces, un año fue al Download Festival en el Reino Unido (Download Festival UK). Ella midió la higiene del los que participaron al concierto n= 810 durante el festival de 3 días. Cada día intentaba encontrar a todas las personas que censó el primer día. Los valores asignado fueron de 0 a 4 sobre el nivel de limpieza por como olia los participantes
+
+>    + 0 = hueles como un cadáver. 
+>    + 4 = hueles a rosas dulces en un fresco día de primavera
+  
+  
+
+
+```{r, warning=FALSE}
+
+library(readr)
+DownloadFestival <- read_csv("Data_files_csv/DownloadFestival.csv")
+
+
+
+dlf=DownloadFestival  #usamos un nombre más corta para facilitar  
+head(dlf) # ver las 3 primeras filas
+
+```
+
+## Remover los **NA** del análisis
+
+Con los datos de los participantes al festival como en algunos diá hay participantes donde no tienen los datos se añadió un **NA**, es estos casos para que el análisis se logra hay que añadir a la función **na.rm=TRUE** que significa remover la **NA**.  Para dar se cuenta remueve **na.rm=TRUE** cuando se usa el "día2" o "día3", y evalúa que pasa.  
+ 
+```{r summary stat 2, warning=FALSE}
+
+
+
+mean(dlf$day2, na.rm=TRUE) # na.rm= na remove
+sd(dlf$day1, na.rm=TRUE)
+min(dlf$day1, na.rm=TRUE)
+max(dlf$day1, na.rm=TRUE)
+median(dlf$day1, na.rm=TRUE)
+
+
+```
+
+***
+
+***
+
+## Resumen estadístico de una variable
+
+Para ver los estadístico mencionado arriba (menos la moda, oblicuidad y curtosis) se puede usar la función **stat.desc()** del paquete **pastecs**. Para facilitar la lectura de los valores se usa la función "round(x, 3), el tres en esta caso representa la cantidad de valores significativos que se demuestra.  Si no usamos **round()** los valores aparece en notación científicas.  
+
+Nota que hay muchos más parámetros calculados.  Aparece en la lista en orden el valor mínimo: min(), el valor máximo: max(), la mediana: median, el promedio: mean, la desviación estándar; std.dev entre otros.  
+
+```{r summary function, warning=FALSE}
+
+library(pastecs)
+stat.desc(dlf[,c("day1")])
+
+
+
+round(stat.desc(dlf[,c("day1")]), 2)  
+```
+
+***
+
+## Resumen Estadístico de multiples variables
+
+Si uno quiere evaluar múltiples variables continua todas juntos se puede usar la misma función pero el componente **c()** se añade todas las variables de interés.   
+
+```{r}
+
+round(stat.desc(dlf[,c("day1","day2","day3")], basic=FALSE,norm=TRUE), digits=3) # round reduce a 3 valores significativo
+```
+
+***
+
+3. Quiz 3:
+    Usa R usa el data.frame **Camas_Hospital** en el paquete **ggversa**.  Contesta en **MSTeam Form** con tu respuesta.  Selecciona la variable **Camas** que representa el "número de camas por 1000 personas en muchos países.  ¿Cual es el rango (range)?  
+
+
+ 
+***
+ 
+## Los Cuantiles
+ 
+ Los cuantiles son los valores a intervalos específicos de una variable aleatoria continua.  Los cuantiles son frecuentemente una mejor interpretación de la distribución cuando los valores no tienen una distribución normal.  Típicamente, la distribución se divide en 4 partes con las siguientes partes (los cuantiles 0.25, 0.50 = la mediana, 0.75) y se define como **cuartiles**. Para meas detalle pueden ver el siguiente enlace <https://en.wikipedia.org/wiki/Quantile>. 
+ 
+ En el siguiente ejemplo se demuestra como tulizar la función **quantiles** y seleccionar los cuantiles deseados con el comopnente de **probs=c(x,x,x)**.  
+ 
+```{r quantiles, warning=FALSE}
+
+quantile(dlf$day1,probs=c(0.05, 0.1, 0.25, 0.5, 0.75, 0.95, 0.99), na.rm=TRUE)
+```
+
+
+Se puede usar también la función **describe** en el paquete **pshych** que le da automáticamente estos cuantiles.  
+
+
+```{r}
+describe(dlf$day1)
+```
+
+
+***
+
+## El indice de Oblicuidad: Skewness
+
+El indice de oblicuidad es un indice que describe la simetría en una distribución alrededor de su promedio. Otra manera de describirlo es el tercer momento, por que los datos se poner a un exponente elevado al ^3. 
+
+La formula es la siguiente.  Lo que se darán cuenta es muy similar a la varianza pero note que las diferencias se poner al ^3. Para meas información vea este enlace <https://en.wikipedia.org/wiki/Skewness>.     
+
+$$\frac{1}{N}\sum_{i=}^N\left(\frac{x_i-\overline{x}}{\sigma}\right)^3$$
+
+Primero voy a crear tres conjuntos de datos
+
++ con distribución normal
++ oblicuidad a la izquierda
++ oblicuidad a la derecha
+
+```{r}
+normal=rnorm(100000, .5, .15)
+obliz=rbeta(100000, 1.5,5)
+obldr=rbeta(100000, 5.5,2)
+
+normal=as.tibble(normal)
+
+obliz=as.tibble(obliz)
+
+obldr=as.tibble(obldr)
+
+```
+
+
+Ahora unimos los data frames y se añade nombres a las columnas
+
+```{r}
+df=cbind(normal, obliz, obldr)
+head(df, n=2)
+df <- setNames(df, c("normal","obliz","obldr"))
+
+head(df, n=2)
+
+```
+El próximo paso es apilar cada columna una sobre la otra.  La razón que queremos esto es que deseamos reproducir las variables en un mismo gráfico 
+
+
+```{r}
+library(tidyverse)
+df2=df%>%
+  gather(key = "Distribución", value="valor", c(normal, obliz, obldr))
+head(df2, n=3)
+# unique(df2$Distribución) # función para ver el nombre de las variables en la columna Distribución
+```
+
+Ahora vamos a ver los datos un gráfico. Vemos que la distribución de los datos son muy diferentes, tanto la distribución en azul y verde están sesgado a unos valores y tienen una cola o valores más grande (azul) o pequeños (verde) que si fuese una distribución normal.   
+
+
+```{r}
+ggplot(df2, (aes(valor, colour=Distribución)))+
+  geom_density()+
+  xlim(-.01,1)
+
+ggsave("Graficos/Skewness.png")
+```
+
+
+Ahora se calcula el indice de oblicuidad y comparamos los valores.  Como regla cuando el nivel de oblicuidad esta entre
+
++ -0.5 y 0.5 se considera dentro de una distribución simétrica (normal).
++ -1.0 y -0.5 o entre 0.5 y 1.o los valores tienen una oblicuidad moderada.
++ Menor de -1.0 o mayor de 1.0 los datos tienen una oblicuidad grande.  
+
+
+Ahora evaluamos la oblicuidad de los tres gráficos. se usa la función de **skewness** en el paquete **e1071**
+
+Para los datos de una distribución normal el valor es muy cerca a cero. Para los datos sesgado a la izquierda el indice de oblicuidad es positivo y el sesgado a derecha es negativo.  
+
+```{r}
+library(e1071)
+e1071::skewness(normal$value) # la oblicuidad de los datos de una distribución normal
+e1071::skewness(obliz$value) # la oblicuidad de los datos sesgado a la izquierda
+e1071::skewness(obldr$value) # la oblicuidad de los datos sesgado a la derecha
+```
+
+
+
+
+***
+
+## El indice de Curtosis: Kurtosis
+
+El indice de curtosis es un índice que describe la cola de la una distribución alrededor de su promedio. Otra manera de describirlo es el cuarto momento, por que los datos se poner a un exponente elevado al ^4. El curtosis mide la propensidad de tener daos atípicos.  
+
+La formula es la siguiente.  Lo que se darán cuenta es muy similar a la varianza pero note que las diferencias se poner al ^4. Para más información vea este enlace <https://www.wikiwand.com/en/Kurtosis>.     
+
+$$\frac{1}{N}\sum_{i=}^N\left(\frac{x_i-\overline{x}}{\sigma}\right)^4$$
+
+Primero voy a crear cuatro conjuntos de datos
+
++ con distribución normal
++ con distribución normal, con cola reducida
++ con distribución normal, con cola extendida
++ distribución uniforme
+ 
+
+```{r}
+library(PearsonDS)
+library(rmutil)
+
+momentsR=c(mean=0, variance=1, skewness=0, kurtosis=2)
+momentsE=c(mean=0, variance=1, skewness=0, kurtosis=4)  
+
+normalR=rpearson(100000, moments=momentsR)
+normalE=rpearson(100000, moments=momentsE)
+
+
+Unif=runif(100000, -2,2)
+normal=rnorm(100000, 0,1)
+laplace=rlaplace(500000, m=0, s=1)
+
+
+normal=as.tibble(normal)
+
+normalR=as.tibble(normalR)
+
+normalE=as.tibble(normalE)
+
+Unif=as.tibble(Unif)
+
+laplace=as.tibble(laplace)
+
+```
+
+
+Ahora unimos los data frames y se añade nombres a las columnas
+
+```{r}
+df=cbind(normal, normalR, normalE, Unif, laplace)
+head(df, n=2)
+df <- setNames(df, c("normal","normalR","normalE", "Unif", "laplace"))
+
+head(df, n=2)
+
+```
+El próximo paso es apilar cada columna una sobre la otra.  La razón que queremos esto es que deseamos reproducir las variables en un mismo gráfico 
+
+
+```{r}
+library(tidyverse)
+df2=df%>%
+  gather(key = "Distribución", value="valor", c(normal, normalR, normalE, Unif, laplace))
+head(df2, n=3)
+# unique(df2$Distribución) #función  para ver el nombre de las variables en la columna Distribución
+```
+
+Ahora vamos a ver los datos en un gráfico. Vemos que la distribución de los datos son muy diferentes, Tiene que concentrar no en el pico de la distribución pero las colas de los datos. Nota la distribución normal que es de color amarillo, y comparar si la colas están por debajo o por encima de esta distribución normal.  
+
+Tanto la distribución uniforme (color rosa) y normal reducido (normalR, color azul) las curvas pasan de bajo la curva normal.  Al contrarío la linea verde y roja son distribuciones que pasan por encima de la curva normal, entonces las colas son más predominante. 
+
+
+```{r}
+whole=ggplot(df2, (aes(valor, colour=Distribución)))+
+  geom_density(adjust=5)+
+  xlim(-5,5)
+
+ggsave("Graficos/curtosis_whole.png")
+
+
+sub=ggplot(df2, (aes(valor, colour=Distribución)))+
+  geom_density()+
+   theme_bw() +
+  scale_x_continuous(limits=c(-5, 1)) + 
+  scale_y_continuous(limits=c(0, .1)) +
+  theme(legend.position= "none")
+
+ggsave("Graficos/curtosis.png")
+
+sub + annotation_custom(
+    ggplotGrob(whole),
+    xmin = -1.8, xmax = 1.4, ymin = 0.005, ymax = 0.075)
+
+
+```
+
+
+Ahora se calcula el indice de curtosis y comparamos los valores.  Como regla el nivel de curtosis esta significativo si los valores de curtosis se enuentra en los siguientes rangos, y se acerca cero no hay curtosis (lo que uno espera para una distribución normal.
+
++ Menor de -1.0 los datos están muy aplanados (Uniforme, normalR).
++ Mayor de 1.0 (la distribución de Laplace).  
+
+
+Ahora evaluamos la oblicuidad de los tres gráficos. se usa la función de **kurtosis** en el paquete **e1071**
+
+Para los datos de una distribución normal el valor es muy cerca a cero. Para los datos que tienen exceso de cola el valor de curtosis es negativos y cuando el valor de curtosis es positivo hay exceso de datos en la cola.
+
+```{r}
+library(e1071)
+e1071::kurtosis(normal$value) # curtosis de los datos de una distribución normal
+e1071::kurtosis(normalR$value) # curtosis de los datos restringido
+e1071::kurtosis(normalE$value) # curtosis de los datos con más colas
+e1071::kurtosis(Unif$value) # curtosis de distribución informe, falta de colas
+e1071::kurtosis(laplace$value) # curtosis de distribución Laplace, exceso de colas
+
+```
+
+Quiz 1
+
+```{r, echo=FALSE, eval=FALSE}
+x=c(4, 6, 7, 3, 9, 10, 19, 52)
+mean(x)
+```
+
+Quiz 2
+
+```{r, echo=FALSE, eval=FALSE}
+y=c(1, NA, 1, 2, 73, 6, 2, 78, 16, 16, 87, 5)
+median(y, na.rm=TRUE)
+```
+
+Quiz 3
+
+```{r, echo=FALSE, eval=FALSE}
+library(ggversa)
+head(Camas_Hospital)
+
+round(stat.desc(Camas_Hospital[,c("Camas")]), 3)
+
+library(e1071)
+
+skewness(Camas_Hospital$Camas)
+kurtosis((Camas_Hospital$Camas))
+```
+
+```{r, echo=FALSE, eval=FALSE}
+ggplot(Camas_Hospital, aes(Camas))+
+  geom_histogram()
+```
+
+
+
+
+```{r}
+dfNormal=data.frame(data=rnorm(1000000))
+head(dfNormal)
+
+ggplot(dfNormal, aes(data))+
+  geom_histogram(colour="white", fill="orange")+
+  xlim(-4, 4)
+
+ggsave("Normal.png")
+```
+

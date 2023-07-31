@@ -1,4 +1,4 @@
-# Introduccion a la Biometria
+# Introducción a la Biometria
 
 
 
@@ -12,7 +12,7 @@ knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
 ```
 
 
-# El libro de la clase
+## El libro de la clase
 
 [Introductory Biological Statistics by Havel, Hampton and Meiners](https://www.amazon.com/Introductory-Biological-Statistics-Fourth-Havel/dp/1478638184/ref=sr_1_1?dchild=1&keywords=Introductory+Biological+Statistics&qid=1594323793&s=books&sr=1-1) Presione en el titulo para dirigirlo a Amazon. 
 
@@ -25,7 +25,7 @@ Fecha de la ultima revisión
 Sys.Date()
 ```
 
-# El proceso de investigación:
+## El proceso de investigación:
 
 En este curso se estará enfatizando los análisis cuantitativo, esto es simplemente que analizamos los datos para llegar a una conclusión o interpretación sobre un tema. Naturalmente el proceso de seleccionar los datos puede ser un reto grande. Como uno selecciona los datos y el desarrollo de la investigación depende del diseño experimental. El diseño es el procedimiento de como uno recolecta los datos y como los vamos a analizar.  En este curso no estaremos evaluando métodos cualitativos de análisis. Este método cuantitativo se refiere a evaluar principalmente opiniones, motivaciones o razones que influencia o impacta una situación.  En los métodos cuantitativos es necesario que los resultados sean de una forma o otra numéricos o categóricos.    
 
@@ -70,7 +70,7 @@ Tomando la información anterior en consideración esto determinará el diseño 
 6. Aceptar o rechazar la hipótesis NULA. 
 
 ***
-# Tipo de error de interpretación en estadística
+## Tipo de error de interpretación en estadística
 
 
 El concepto básico en estadística, y probablemente el más difícil a captar para algunos es que en el mundo existe la *verdad*, pero cuando uno recolecta datos, no necesariamente los datos de la muestra representa la *verdad* o sea la realidad.  Por consecuencia siempre hay una posibilidad que los datos nos engaña, y si nos engaña estamos haciendo un error en rechazar o aceptar la hipótesis nula. Por consecuencia aun que uno tome todas las precauciones para tener un diseño experimental adecuado es posible que los datos no representan el universo de los datos (la verdad). 
@@ -128,11 +128,11 @@ Lo que uno observa es que la gente que son identificado que tiene característic
 
 ## Cuando que una hipótesis no es una hipótesis?
 
-### Una hippotesis tiene que ser falsificable
+### Una hipótesis tiene que ser falsificable
   Esto quiere decir hay que tener un mecanismo para determinar la veracidad de una expresión.  Por ejemplo en las 4 expresiones siguiente hay 2 que no pueden ser falsificable. El concepto de hipótesis falsificable proviene del filósofo Karl Popper en su libro *Logik der Forschung* (1934), traducido al español **La lógica de la investigación científica**. Ahora toma el tiempo de evaluar las siguientes expresiones y trate de determinar si son hipótesis falsificable.  Desafortunademente, en el vocabulario popular el términos hipótesis y teoría se usan para describir cualquier pensamiento que la gente QUISIERA que se verídico. También se hace hipótesis o mejor dicho expresiones que no son falsificable. En nuestra sociedad donde cualquier persona se puede llamar un periodista y especialista en un tema los comentarios no falsificable dominan y resulta en confusión para la gente. Es importante en ciencia que los temas, las áreas de investigación sean falsificable.   
 
 ***
-### Ejercicio #1
+### Ejercicio 1
 
 + Lin Manuel es el mejor actor del mundo
 + Todos la cisnes son blancos
@@ -181,14 +181,14 @@ Lo que uno observa es que la gente que son identificado que tiene característic
 
   - Son valores que son contiguos o por lo menos existe o pudiese existir los valores intermedios. 
   
-  - Ejemplo #1
+  - Ejemplo 1
    - la distancia entre el valor 13 y 15 es igual que 101 y 103, hay dos unidades que los separa. 
    - Aunque no se haya observado el 14 ni el 102 en un recogido de datos estos valores tienen potencialmente existir, en otra palabra estos valores son posibles en el universo de los datos. 
    
-  - Ejemplo #2
+  - Ejemplo 2
     - Si se mide el tamaño de una célula biológicas en micrómetros (µm, $10^{-6}$).  Los valores intermedios y contiguos existen.  Por ejemplo, el largo de las células de *Escherichia coli* (*E. coli*) adulta son de 5.27µm en promedio con una desviación estándar de 0.87µm.  Esto significa que hay células de diferentes tamaños que van de menos de 2µm a más de 10µm de largo, y todos los valores pueden existir en este rango (ref: https://doi.org/10.1098/rsos.160417). Más tarde veremos como se puede llagar a la conclusión que las células varían entre  2µm a más de 10µm de largo, cuando uno tiene solamente el promedio y la desviación estándar.     
   
-   Ejemplo #3
+   Ejemplo 3
    - El número de hermanos, si por ejemplo yo pregunto a seis estudiantes cuantos hermanos tiene. Yo podría tener la siguiente lista. Aunque que no hubo ningún estudiante que tenga 1 hermano o 6 hermanos, es posible esta alternativas.  Note algo especial aquí es que nadie puede tener 2.4 hermanos, los valores tienen que ser números enteros. Cuando son conteos así, la distribución de los datos provienen frecuentemente de una distribución **Poisson** (veremos más tarde).    
     - Números de hermanos (0, 2, 5, 3, 8, 4)
         

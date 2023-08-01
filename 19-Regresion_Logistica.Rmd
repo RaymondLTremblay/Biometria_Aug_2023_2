@@ -1,0 +1,357 @@
+# Regresión Logistica
+
+
+```{r, eval=TRUE, echo=FALSE}
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color, 
+      x)
+  } else x
+}
+
+#`r colorize("some words in red", "red")`
+
+
+```
+
+Fecha de la ultima revisión
+```{r echo=FALSE}
+
+Sys.Date()
+```
+
+```{r, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
+knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
+```
+
+
+```{r}
+library(tidyverse)
+```
+
+
+
+
+Esta regresión es utilizada cuando la variable dependiente tiene solamente dos alternativas (representadas de forma numérica, **0 y 1**) y la variable independiente es una variable continua.
+
+
+
+## *Brassavola cucullata*
+Los datos fueron recolectado de dos pequeñas islas del Caribe, San Eustaquio y Saba.  
+
+*Brassavola cucullata* pertenece a la subtribu Laeliinae y es una especie epífita y rupícola que puede formar grandes racimos de brotes. Cada brote está compuesto por un solo tallo de 3.5-12.5 cm de largo y 1-3.5 mm de diámetro y tiene una sola hoja semi-tereta de 16-35 cm de largo y solo un poco más gruesa que el tallo. Las inflorescencias terminales miden 3-30 mm de largo y suelen tener una sola flor. Las flores son en gran parte blancas con las partes delgadas del perianto que a menudo se vuelven de color amarillo pálido hacia sus ápices. El labelo es ovado-acuminado y fimbriado alrededor de la columna. El cunículo se extiende hacia el ovario inferior y no tiene néctar. Las flores engañosas tienen una fragancia nocturna dulce y espesa, que puede perdurar hasta el día. La producción de frutos depende de los polinizadores. Las cápsulas tardan varios meses en desarrollarse y son pediceladas y picudas (restos de la columna); el cuerpo de la cápsula mide entre 2 y 5 cm de largo y produce muchos miles de semillas polvorientas (Ackerman y Collaborators 2014).
+
+En cada una de las tres poblaciones, etiquetamos todas las plantas de *B. cucullata* que pudimos encontrar. Observamos si cada planta era epífita o epilítica, medimos la altura sobre el suelo, buscamos evidencia de herbivoría foliar, medimos la longitud de la hoja más larga y contamos el número de brotes de hojas, flores y frutos. Si las flores estaban presentes, registramos si habían sido visitadas con éxito o no mediante una inspección visual para la eliminación de polinarios o polinias en el estigma. Estos datos se obtuvieron una vez al año durante la época de floración. Nuestras observaciones en la población de Quill abarcaron 2009-2013, en Boven 2010-2013 y en Saba 2011-2014.
+
+
+
+```{r echo=FALSE, fig.cap="**La especie** *Brasavolla cucullata* **en la isla de San Eustaquio**",fig.show="hold", out.width = "50%"}
+knitr::include_graphics("Graficos/Brass_cucu1.png")
+knitr::include_graphics("Graficos/Brass_cucu2.png")
+```
+***
+
+
+Puede encontrar el manuscrito en este enlace, que evalúa la biología de la orquídea y la posibilidad de extinción y como las cabras impacta su supervivencias.     
+
+<https://www.journals.uchicago.edu/doi/pdf/10.1086/709399> 
+
+
+```{r data19}
+library(readr)
+Student_Brassavola <- read_csv("Data_files_csv/Student_Brassavola.csv")
+completeBrass=na.omit(Student_Brassavola)  # remove NA
+head(completeBrass)
+```
+```{r}
+#library(tidyverse)
+#library(dplyr)
+unique(completeBrass$Fr_Num)
+
+# completeBrass$Fr_Y_N2=ifelse(completeBrass$Fr_Num>0 ,1,0) Metodo de la función base
+
+completeBrass$Fr_Y_N1=ifelse(completeBrass$Fr_Num>0 ,1,0) # Método de dplyr
+
+unique(completeBrass$Fr_Y_N1) # deberia tener solamente dos alternativas, "0" y "1", Frutos no y si
+
+```
+
+
+
+
+Evaluar la tendencias centrales y la dispersión de las variables y cambio de nombre de las variables al español.
+
+
+```{r, cambio de nombres}
+
+Brass=completeBrass%>%
+  dplyr::rename(Isla=Island, Ano=Year, Numero_planta=Pl_Num, 
+         Cant_hojas=Leaf_Num, Largo_Hoja_cm=LLL, 
+         Cant_capullo=Bud_Num, Cant_Flores=Fl_Num, 
+         Cant_Frutos=Fr_Num, BQS=BQS, Flor_si_no=Flowers_Y_N,
+         Frutos_si_no=Fr_Y_N1)
+```
+
+
+```{r, resumir}
+summary(Brass)
+```
+
+***
+
+## La variable de respuesta, **Y**. 
+
+You can also embed plots, for example:
+
+```{r head, echo=FALSE}
+
+library(ggplot2)
+library(latex2exp)
+ggplot(Brass, aes(Flor_si_no))+
+geom_histogram()+
+  labs(y=(TeX("Frecuencias")), x="Planta con Flor Si (1) o No (0)", title = "Frecuencia de plantas con flores o no")
+
+
+
+
+```
+
+
+***
+
+## Modelo Lineal Generalizado
+
+En este modulo se hace una primera introducción a un otro tipo de herramienta para el análisis de datos, denominado **Modelo Lineal Generalizado, GLM**. Lo interesante de esta acercamiento es que aun que uno tiene una variable de respuesta que no cumple con distribución normal hay múltiples opciones para los análisis.  En este modulo solamente se estará presentando el tipo de datos donde la variable de respuesta (Y) es binomial. 
+
+Hay tres componentes en cualquier GLM:
+
+`r colorize("Componente aleatorio:", "deepskyblue4")` se refiere a la distribución de probabilidad de la variable de respuesta (Y); por ejemplo, distribución binomial (0, 1,: Si o NO: Vivo o Muerto). Nota que la variable Y puede tener muchas otras tipo de distribución incluyendo la distribución normal, lognormal, proporción y m,uchos otros.  
+
+`r colorize("Variable predictivas:", "blue")` especifica las variables explicativas $X_1,\ X_2,\ X_3,...X_k$ en el modelo, la combinación lineal se puede expresar con la siguiente forma; por ejemplo, $\beta_0+\beta_1\cdot x_1+\beta_2\cdot x_2,\ ...+\beta_k\cdot x_k2$ como hemos visto en una regresión lineal.
+
+`r colorize("Función de enlace:", "blue")` η o g (μ): especifica el enlace entre componentes aleatorios y sistemáticos. Dice cómo el valor esperado de la respuesta se relaciona con las variables de la ecuación lineal explicativa.
+
+
+## Los supuestos de la regresión logistica.  
+
+> +  El resultado es la variable es binaria o también conocida como dicótoma (sí o no: presente o ausente, 1 o 0).
+> +   Existe una relación lineal entre el logit (p) de la variable de repuesta y las variables predictora.
+> +   No hay valores extremos o valores atípicos en los predictores continuos.
+> +   No hay correlaciones altas (es decir, multicolinealidad) entre los variables predictores (vea modulo de Correlación).
+  
+
+***
+
+## Comparación de modelos lineal y logistico
+
+l primer paso es entender cual es la diferencia entre una regresión lineal y una regresión logística.   Podemos visualizar ambas formula y ver como difieren.  
+
+La regresión lineal: 
+
+$$Y_i=\beta_0+\beta_1X_i+\beta_2X_i$$
+
+***
+
+## Regresión logística:
+
+p=P(Y=1) o sea la probabilidad que p tenga el valor de **1** o  1-p= 1-P(Y=1) que seria el valor de **0** en su conjunto de datos.  
+
+$$\log\frac{p}{1-p}=\beta_0+\beta_1X_i+\beta_2X_i$$
+Nota que la primera ecuación es un modelo que trata de predecir el valor de **Y** en la segunda se estima la probabilidad de que el valor de predictora tenga una valor de 1 o 0.  Las probabilidades van a variar de 0 a 1 o sea de 0% a 100%.  El vocabulario correcto es que las respuesta son binarias también dicho de la distribución de Bernoulli.  
+
+Van a ver en la literatura que la formula se representa tambien de la siguiente forma, donde lo escribe como $logit(p)$.  
+
+$$logit\left(p\right)=\log\frac{p}{1-p}=\beta_0+\beta_1X_i+\beta_2X_i$$
+
+En el siguiente enlace se puede encontrar más información <https://en.wikipedia.org/wiki/Logistic_regression>
+
+Se evalúa tres modelos:
+  1. la probabilidad de tener flores es relacionado a la cantidad de hojas (el tamaño de la planta).
+  2. la probabilidad de tener flores es relacionado a la hoja más larga de la planta (el tamaño de la planta).
+  3. la probabilidad de tener flores es relacionado a la hoja más larga de la planta y a la cantidad de hojas.
+
+***
+### Generalized Linear Model = glm
+
+```{r model}
+BrassModel.1 <- glm(Flor_si_no ~ Cant_hojas,
+                    data = Brass, family = binomial())
+
+summary(BrassModel.1)
+
+BrassModel.2 <- glm(Flor_si_no ~ Largo_Hoja_cm,
+                    data = Brass, family = binomial())
+
+summary(BrassModel.2)
+
+BrassModel.3 <- glm(Flor_si_no ~ Cant_hojas+Largo_Hoja_cm,
+                    data = Brass, family = binomial())
+summary(BrassModel.3)
+
+
+```
+
+### Removiendo el intercepto
+
+
+Si no le interesa el intercepto se añade un "-1" después de la 
+#Los valores de interes en nuestro caso son el intercepto y la pendiente (valor que se encuentra debajo del intercepto).
+
+```{r model bby site surveyed}
+
+names(Brass)
+BrassModel.1.1 <- glm(Flor_si_no ~ Cant_hojas+BQS+Largo_Hoja_cm-1,
+                    data = Brass, family = binomial())
+summary(BrassModel.1.1)
+```
+
+
+
+### Estimado las probabilidades
+
+Predecir el número de frutas usando la ecuación, utilizando los resultados del modelo anterior
+
+$$P(Y)\quad =\quad \frac { 1 }{ 1+{ e }^{ -(b+m*{ x }_{ i }) } }$$
+$$P(Y)\quad =\quad \frac { 1 }{ 1+{ e }^{ -((intercepto)+pendiente*variable.predictora) } }$$
+# Se usa esta ecuacion para predecir un valor de 'Y' especifico para un valor de una variable 'X' de interes.
+
+```{r predicting num fruits}
+
+summary(BrassModel.1)
+
+exp(1) #= e
+e=exp(1) 
+e
+
+
+P_10=1/(1+2.7182818284^-(-3.065 +0.0297*150))
+P_10
+
+P_10=1/(1+exp(1)^-(-3.065 +0.0297*100))
+P_10
+P_25=1/(1+exp(-(-3.065 +0.0297*25)))
+P_25
+
+P_50=1/(1+e^-(-3.065 +0.0297*50))
+P_50
+
+
+P_70=1/(1+e^-(-3.065 +0.0297*70))
+P_70
+
+P_150=1/(1+e^-(-3.065 +0.0297*150))
+P_150
+```
+
+***
+
+## Visualizando una regresión logistica
+
+```{r ggplot binomial}
+names(Brass)
+library(ggplot2)
+ ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
+  geom_point()
+
+```
+
+## Reducir solapamiento de los puntos 
+
+Usar geom_jitter
+
+ggplot(el archivo de datos, aes(las variables continuas))  
+  • geom jitter(alpha, color, fill, shape, size)  
+    ◦ alpha: la intensidad del color 
+    ◦ color: el color de la línea alrededor de las barras
+    ◦ fill: el color de las barras 
+    ◦ linetype: representa el estilo de línea; ver sección “Especificación Estética” 
+    ◦ size: representa el grosor de la línea 
+    ◦ weight: para modificar el valor original; entonces no sería, por ejemplo, el conteo/suma de los valores si no un valor ponderado (promedio ponderado) 
+
+
+```{r jitter}
+
+ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
+  geom_jitter(height = 0.10)
+```
+
+
+
+## Gráfico con ajuste binomial
+
+```{r binomial fit}
+names(Brass)
+
+ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
+  geom_point(alpha=.5) +
+  stat_smooth(method="glm", se=TRUE, method.args = list(family=binomial))
+```
+
+### El modelo de regresión binomial
+
+```{r}
+
+summary(BrassModel.1)
+```
+
+### Vusualizando diferentes grupos
+
+En este gráfico se osbserva el valor de la pendiente, el mismo aumenta cuando el numero de hojas se aproxima a 100 (por ende al acercarnos a este valor el valor de nuestra variable de respuesta es mayor aumenta o es mayor).
+
+
+```{r facet}
+names(Brass)
+ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
+  geom_point(alpha=.5) +
+  stat_smooth(method="glm", se=FALSE, method.args = list(family=binomial))+
+  facet_wrap(~Isla)
+
+```
+
+
+## Solapamiento de los ajustes binomial por grupo
+
+```{r overlap by site}
+
+names(Brass)
+ggplot(Brass, aes(Cant_hojas,Flor_si_no, colour=BQS))+
+  geom_point(alpha=.5) +
+  stat_smooth(method="glm", se=TRUE, method.args = list(family=binomial))
+
+```
+
+
+### Evaluate using the Length of the longest leaf
+
+```{r LLL}
+names(Brass)
+ggplot(Brass, aes(Largo_Hoja_cm,Flor_si_no))+
+  geom_jitter(height = 0.25)
+
+```
+
+
+### Remover el valor sesgado
+
+  El valor se remueve ya que no es posible una hoja de más de un metro
+  
+  
+#### Nota que se hace un subgrupo (subset) de los datos, usando la función subset(el data frame, la condición)
+
+
+```{r LLL90}
+names(Brass)
+ggplot(subset(Brass,Largo_Hoja_cm<90), aes(Largo_Hoja_cm,Flor_si_no, colour=BQS))+
+  geom_jitter(height = 0.10)+
+  stat_smooth(method="glm", se=FALSE, method.args = list(family=binomial))
+```
+
+## Selecionar el mejor modelo
+
+Vea modulo **T16 Criterio de Información**
+
+
+
+

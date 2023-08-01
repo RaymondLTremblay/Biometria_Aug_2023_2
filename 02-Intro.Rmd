@@ -11,6 +11,19 @@ knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message = FALSE)
 knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
 ```
 
+```{r, eval=TRUE, echo=FALSE}
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color, 
+      x)
+  } else x
+}
+
+#`r colorize("some words in red", "red")`
+```
+
 
 ## El libro de la clase
 

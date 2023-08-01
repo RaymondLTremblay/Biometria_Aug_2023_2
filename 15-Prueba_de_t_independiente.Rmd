@@ -1,0 +1,335 @@
+# Prueba de t independiente
+
+```{r, echo=FALSE}
+library(tidyverse)
+
+rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bold"),
+        axis.text.x = element_text(colour="grey20",size=10, face="bold"),
+        axis.text.y = element_text(colour="grey20",size=15,face="bold"),  
+        axis.title.x = element_text(colour="grey20",size=15,face="bold"))+
+  theme(
+  # Remove panel border
+  panel.border = element_blank(),  
+  # Remove panel grid lines
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  # Remove panel background
+  panel.background = element_blank(),
+  # add thicker border lines
+    axis.line.x = element_line(colour = "black", size = 1),
+    axis.line.y = element_line(colour = "black", size = 1)
+  )
+
+# The palette with grey:
+cbPalette1 <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+# The palette with black:
+cbPalette2 <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+# To use for fills, add
+#  scale_fill_manual(values=cbPalette)
+
+# To use for line and point colors, add
+  #scale_colour_manual(values=cbPalette)
+
+```
+
+
+```{r, eval=TRUE, echo=FALSE}
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color, 
+      x)
+  } else x
+}
+
+#`r colorize("some words in red", "red")`
+
+
+```
+
+## Datos dependientes
+
+Si tienes datos que no son independiente, es necesario usar la prueba con datos pareados (paired t-test). Cuando se refiere a datos no independiente es que hay evidencia que los datos pueden estar relacionado de una forma. En el siguiente ejemplo tenemos la altura de los padres y el altura de el hijo.  Hay evidencia que la genética influencia la altura de los humanos, también hay el ambiente.  Si el ambiente (nutrición, etc) es la única variable que tiene influencia sobre la altura pudiese que no se debería encontrar una relación entre la altura del padre y el hijo. Si la genética es la única variable que impacta la altura de los humanos, en este caso deberíamos encontrar una muy fuerte correlación entre la alturas de los padres y los hijos. 
+
+
+Los datos provienen del paquete **UsingR** y el archivo se llama **father.son**
+
+Primero mire los datos y los nombres de las variables. 
+
+
+Paired Two-Sample T-test
+
+
+```{r, data2}
+
+require(Hmisc)
+require(UsingR) # father.son data set
+head(father.son)
+#install.packages("UsingR", dependencies = TRUE)
+```
+
+***
+## Visualizar la correlación
+
+Antes de hacer la prueba es recomendado hacer un gráfico de puntos para visualizar los datos y observar si hay un patrón. Vemos a medida que aumenta la altura de los padres los hijos tienden a estar más altos.  parece que hay una correlación en la altura de los hijos basado en la altura del padre. Por consecuencia la altura de los hijos no son independiente de la altura de los padres.  Aunque hay evidencia que el ambiente, tal como el acceso a recursos (comida, leche, etc) tiene impacto sobre la altura de los humanos, la genética también tiene impacto to sobre la altura de los humanos. 
+
+
+```{r, geompoint2}
+
+
+ggplot(father.son, aes(fheight, sheight))+
+  geom_point()+
+  rlt_theme+
+  xlab("Alturas de los padres")+
+  ylab("Alturas de los hijos")
+```
+
+***
+
+## La prueba de t-pareado
+
+La prueba de t-con datos pareados es la misma que la prueba de t con un grupo, **t.test()**.  
+
+La hipótesis nula es que la diferencia entre los datos dependientes es igual a cero. La **d** se refiere a la diferencia entre los pares de datos.  Nota entonces que el análisis se hace evaluando si el promedio de las diferencias es igual a cero.  Nota que el valor de t es absoluto $\left|t\right|$, un valor negativo es igual que un valor positivo. 
+
+  + Ho: $\overline{x_d}=0$
+  + Ha: $\overline{x_d}≠0$
+
+La prueba de t con datos pareados. 
+
+$$\left|t\right|=\bar{\frac{d}{\frac{s_d}{\sqrt{n}}}}$$
+
+Si el valor absoluto de las estadísticas de la prueba $\begin{array}{l}t=\left|t\right|\\\end{array}$ es mayor que el valor crítico, entonces la diferencia es significativa. El nivel critico del valor **p** corresponde al indicado en la tabla de la prueba tomando en cuanta el grado de libertad, la cantidad de error I y si es de un lado o ambos lados.
+
+
+Las opciones para esta prueba son las siguientes en roja
+
+  + t.test(`r colorize("x", "red")`, `r colorize("y", "red")`,
+    + `r colorize("alternative = c(two.sided, less, greater)", "red")`,
+    +  mu =, `r colorize("paired = FALSE", "red")`, var.equal = FALSE,
+    +  `r colorize("conf.level = 0.95", "red")`, ...).
+
+El resultado:  El valor de $\left|t\right|$ observado es de 11.789, con un grado de libertad de 1077 (n=1078), y un valor de p <0.0001. Por consecuencia se rechaza la hipótesis nula y se acepta la alterna. El intervalo de confianza del promedio es -1.163 a -0.831, con un promedio de -0.99. Esto significa que los padres tiende a estar una pulgada (-0.99) más bajo que los hijos. 
+
+```{r, pairttest2}
+t.test(father.son$fheight, father.son$sheight, paired=TRUE)
+```
+
+***
+## Visualizar la diferencias
+
+
+Podemos visualizar la diferencia entre los hijos y los padres.  Vemos el promedio si no tuviese diferencia (la linea azul), esto es nuestra hipótesis nula, y el estimado (el promedio de la diferencias es rojo, con el intervalo de confianza en las lineas entrecortada).  Si nuestro estimado (el intervalo de confianza de 95%) hubiese incluido la linea azul la prueba no seria significativa, y se aceptaría la hipótesis nula. 
+
+```{r graph3}
+father.son$heightDiff<-father.son$fheight-father.son$sheight # para calcular la diferencia entre el padre y el hijo. 
+ggplot(father.son, aes(x=fheight-sheight))+
+  geom_density()+
+  geom_vline(xintercept = mean(father.son$heightDiff), colour="red")+
+  geom_vline(xintercept = mean(father.son$father.son$heightDiff)+ 2*c(-1,1)*sd(father.son$heightDiff)/sqrt(nrow(father.son)), linetype=2)+
+  geom_vline(xintercept = 0, colour="blue")+
+  rlt_theme+
+  xlab("Diferencia en altura entre padres y hijos")+
+  scale_x_continuous(breaks = round(seq(min(father.son$heightDiff), max(father.son$heightDiff), by = .5),0))+
+  theme(axis.text.x = element_text(angle = 90))
+```
+
+***
+
+### Supuesto de normalidad
+
+Cual metodo para determinar si las diferencias cumple normalidad?
+
+
+
+
+
+
+
+***
+
+## Paired t-test, Números de niños abuela y madre
+
+## Ejercicio de clase
+ 
+
+Vamos a evaluar si la cantidad de hijos cambia entre su abuela y su madre.  
+```{r, abuelamadre2}
+abuela=c(3,3,2, 3, 5, 
+         3,2,3, 4,3,4)
+madre=c(2,2,2, 3,3,
+        3,2, 3, 1,2,2)
+df=data.frame(abuela,madre)
+df
+df$diff=df$abuela-df$madre
+df
+
+mean(df$diff)
+
+t.test(df$abuela,df$madre, paired=TRUE)
+
+```
+
+
+
+***
+
+## Cultivador de Toronjas con parcelas pareadas
+
+Un cultivador heredo 18 parcelas donde hay árboles de toronjas cada una en diferentes municipios.  El quiere saber si al añadir abono, la cosecha de toronjas aumenta.  El podría decidir que de seleccionar 9 de estas parcelas y añadir abono y las otras 9 sin abono.  El problema con este diseño experimental es que es bien conocido que el suelo varia de un sitio a otro y que el clima varia también.  Es más apropiado que el divide cada parcela en 2, y que la mitad recibe el abono y la otra mitad sirva de control (sin abono).  Cual sera el efecto del abono sobre la producción de toronjas en parcelas pareadas en Puerto Rico. 
+
+La cantidad de Toronjas producidas por árbol en fincas pareadas, cada finca tiene una parcela con abono y la otra la otra parcela sin abono. Tenemos 18 diferentes sitios en PR donde se probo el efecto del abono sobre la producción de toronjas, se enseña solamente los primeros 8 pares de valores en la tabla. Cada parcela es del mismo tamaño con la misma cantidad de arboles. Los datos completos están en el próximo chunk.  
+
+```{r, toronja2, eval=FALSE}
+library(tibble)
+library(huxtable)
+Toronja=tribble(
+  ~Fertilizante, ~Sin_Fertilizante, ~Municipio,
+  2250,		1920 , "Utuado",
+ 2410,				2020,  "Cabo Rojo",
+ 2260,				2060,  "Manati",
+ 2200,	 			1960,  "Yabucoa",		
+ 2360,				1960, "Humacao", 
+ 2320,				2140,"Caguas",
+ 2240,				1980, "San Juan",
+ 2300,				1940, "Jayuya",
+ 2090,				1790,"Ponce"
+)
+Toronja
+Toronja$dif_F_NF=Toronja$Fertilizante-Toronja$Sin_Fertilizante
+
+Toronja
+library(ggplot2)
+ggplot(Toronja, aes(dif_F_NF))+
+  geom_histogram()
+
+ggsave("Mi_super_grafico.png")
+
+huxtable(Toronja)%>%
+  theme_article(header_col = TRUE)%>%
+  set_bottom_border(row = 1, col = everywhere, value = 1)%>% 
+  set_caption("La cantidad de toronjas producidas en parceles en diferentes municipios")
+```
+
+> + Primero añadimos los datos en listas y la unimos en un df.  
+> + Se calcula la diferencias de producción de toronjas por parcela.
+> + Cual es el promedio de las diferencias. 
+> + Hacer la prueba de t con datos pareado.
+
+El resultado:  El valor de t-observado es de 8.80, con un grado de libertad de 17 (n=18), y valor de p <0.0001. Por consecuencia se rechaza la hipótesis nula y se acepta la alterna.  El intervalo de confianza del promedio es 198.5 - 323.7, con un promedio de 261. Esto significa que a añadir fertilizante la producción de toronjas aumento de en promedio de 261 toronjas.
+
+```{r, dftoronja2, eval=FALSE}
+Fert=c(2250,2410, 2260,2200, 2360, 
+     2320,2240,2300,2090, 2250,2410, 2260,2200, 2360, 
+     2320,2240,2300,2090)
+#Fert
+SFert=c(1920,2020,2060,1960,
+     1960,2140,1980,1940,2100, 1920,2020,2060,1960,
+     1960,2140,1980,1940,2100)
+#SFert
+df=data.frame(Fert,SFert)
+df$diff_produccion=df$Fert-df$SFert 
+
+mean(df$diff_produccion) # el promedio de las diferencias
+
+
+t.test(df$Fert,df$SFert, paired=TRUE)
+```
+
+***
+
+
+## El número de Hojas por planta en diferentes momentos (tiempo).
+
+
+
+Los datos representa cuantas hojas tenían las **mismas** plantas en diferentes momentos de su muestreo.  Por consecuencia los datos nos son independiente. Los datos provienen de datos recolectados en el Yunque en una pequeña orquídea epifita, *Lepanthes eltoroensis* Stimson.  Aquí una foto de la planta.  
+
+
+
+```{r echo=FALSE, fig.cap="*Lepanthes eltoroensis*",fig.align="center", out.width = '40%'}
+#knitr::include_graphics("Graficos/L_eltoroensis.jpg")
+```
+
+El archivo de datos tiene información sobre la cantidad de hojas que tiene cada una de las plantas marcadas después del huracán Georges (1998).  La plantas fueron muestreado a cada 6 meses comenzando 6 meses después del huracán por 6 años (13 muestreos).  Fueron seguidos 1084 plantas distintas, aunque no todos están muestreados a cada tiempo. Cada fila representa un individuo, si no hay información en un tiempo puede ser que la planta a) no fue encontrada en este muestreo, b) que la planta este muerta o que c) fue antes que la planta creciera (todavía no había germinado). 
+
+```{r, datosLep2, eval=FALSE}
+library(readr)
+Lepanthes_eltoroensis_Georges_STUDENT <- read_csv("Data_files_csv/Lepanthes_eltoroensis_Georges_STUDENT.csv")
+
+Lep=Lepanthes_eltoroensis_Georges_STUDENT
+head(Lep)
+
+library(tidyverse)
+
+length(Lep$T1)
+         
+         
+
+```
+
+***
+1. Compara si la cantidad de hojas por plante es igual entre el primer muestreo (1) y el segundo muestreo (2).  y contesta la siguientes preguntas. 
+
+    Se someterá un documento html en Edmodo contestando las siguientes preguntas.
+    
+`r colorize("Cual son sus conclusiones.", "blue")`
+
+> + ¿Cuantas plantas fueron muestreadas en ambos periodos?
+> + ¿Cual es la hipotesis nula?
+> + ¿Haz la prueba corecta para evaluar la hipotesis?
+> + ¿Cual es el valor de t observado?
+> + ¿Cual es el promedio de diferencias entre un muestreo y el otro?
+> + ¿Cual es el intervalo de confianza del promedio?
+> + ¿Cumple con el supuesto de esta prueba? enseña la evidencia. 
+> + ¿Se acepta o rechaza la hipótesis nula?
+>    - la plantas en el tiempo 2 tienen mayor hojas?
+>    - la plantas en el tiempo 2 tienen menor hojas?
+>    - la plantas tienen la misma cantidad de hojas?
+
+
+
+
+
+```{r paired t-test2, eval=FALSE, echo=FALSE}
+
+model2=t.test(Lep$T2,Lep$T1, paired =TRUE)
+model2
+```
+
+
+
+
+## Anxiedad y Alacranes
+
+Con un indice de Ansiedad. Más alto el número más ansioso.
+
+```{r anxiety2, eval=FALSE}
+picture=c(1,2,5,2,8,4,5,0,7)
+dead=c(15,15,17,10,10,10,18,16,11)
+mean(picture)
+mean(dead)
+alacran=data.frame(picture,dead)
+head(alacran)
+
+t.test(alacran$dead, alacran$picture,paired=FALSE)
+```
+
+
+***
+li
+## Supuestos de la prueba de t con datos pareados.
+
+Los supuestos de la prueba t-pareados.
+
+> + Las variables dependientes sean valores continuos (intervalos o razón).
+> + Qué los individuos sean observaciones independientes.
+> + Qué las diferencias sean normales.
+> + Qué no hay valores atípicos.
+
+
+
+

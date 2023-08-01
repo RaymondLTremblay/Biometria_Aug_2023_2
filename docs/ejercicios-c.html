@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>C Ejercicios C | Biometria</title>
+  <meta name="description" content="Este libro digital es una introdución al estudio de Biometria" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="C Ejercicios C | Biometria" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="C Ejercicios C | Biometria" />
+  
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  
+
+<meta name="author" content="" />
+
+
+<meta name="date" content="2023-08-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ejercicios-b.html"/>
+<link rel="next" href="ejercicios-d.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Biometria</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción al curso de Biometría</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#horario-de-clase"><i class="fa fa-check"></i><b>1.0.1</b> Horario de clase</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#libro-obligatorio."><i class="fa fa-check"></i><b>1.1</b> Libro obligatorio.</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#libros-sugeridos"><i class="fa fa-check"></i><b>1.1.1</b> Libros sugeridos</a></li>
+<li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#programados"><i class="fa fa-check"></i><b>1.1.2</b> Programados</a></li>
+<li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#prerequisitos"><i class="fa fa-check"></i><b>1.1.3</b> Prerequisitos</a></li>
+<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#descripción-del-curso"><i class="fa fa-check"></i><b>1.1.4</b> Descripción del curso</a></li>
+<li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#objetivos-del-curso"><i class="fa fa-check"></i><b>1.1.5</b> Objetivos del curso</a></li>
+<li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#puntuacion"><i class="fa fa-check"></i><b>1.1.6</b> Puntuacion:</a></li>
+<li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#examenes"><i class="fa fa-check"></i><b>1.1.7</b> Examenes:</a></li>
+<li class="chapter" data-level="1.1.8" data-path="index.html"><a href="index.html#conferencias"><i class="fa fa-check"></i><b>1.1.8</b> Conferencias</a></li>
+<li class="chapter" data-level="1.1.9" data-path="index.html"><a href="index.html#ejercicios"><i class="fa fa-check"></i><b>1.1.9</b> Ejercicios</a></li>
+<li class="chapter" data-level="1.1.10" data-path="index.html"><a href="index.html#faltar-a-clase-y-examen"><i class="fa fa-check"></i><b>1.1.10</b> Faltar a clase y examen:</a></li>
+<li class="chapter" data-level="1.1.11" data-path="index.html"><a href="index.html#derechos-de-estudiantes-con-impedimentos"><i class="fa fa-check"></i><b>1.1.11</b> Derechos de Estudiantes con Impedimentos</a></li>
+<li class="chapter" data-level="1.1.12" data-path="index.html"><a href="index.html#integridad-academica"><i class="fa fa-check"></i><b>1.1.12</b> Integridad academica</a></li>
+<li class="chapter" data-level="1.1.13" data-path="index.html"><a href="index.html#comentario-sobre-grabar-videos-yo-audio-de-las-clases"><i class="fa fa-check"></i><b>1.1.13</b> Comentario sobre grabar videos y/o audio de las clases</a></li>
+<li class="chapter" data-level="1.1.14" data-path="index.html"><a href="index.html#espacio-libre-de-acoso-sexual"><i class="fa fa-check"></i><b>1.1.14</b> Espacio libre de acoso sexual</a></li>
+<li class="chapter" data-level="1.1.15" data-path="index.html"><a href="index.html#protocolo-de-la-clase"><i class="fa fa-check"></i><b>1.1.15</b> Protocolo de la Clase</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html"><i class="fa fa-check"></i><b>2</b> Introducción a la Biometria</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-libro-de-la-clase"><i class="fa fa-check"></i><b>2.1</b> El libro de la clase</a></li>
+<li class="chapter" data-level="2.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-proceso-de-investigación"><i class="fa fa-check"></i><b>2.2</b> El proceso de investigación:</a></li>
+<li class="chapter" data-level="2.3" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-primer-paso"><i class="fa fa-check"></i><b>2.3</b> El primer paso:</a></li>
+<li class="chapter" data-level="2.4" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-segundo-paso"><i class="fa fa-check"></i><b>2.4</b> El segundo paso</a></li>
+<li class="chapter" data-level="2.5" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-tercer-paso"><i class="fa fa-check"></i><b>2.5</b> El tercer paso:</a></li>
+<li class="chapter" data-level="2.6" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-cuarto-paso"><i class="fa fa-check"></i><b>2.6</b> El cuarto paso:</a></li>
+<li class="chapter" data-level="2.7" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-quinto-paso"><i class="fa fa-check"></i><b>2.7</b> El quinto paso:</a></li>
+<li class="chapter" data-level="2.8" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#el-sexto-paso"><i class="fa fa-check"></i><b>2.8</b> El sexto paso:</a></li>
+<li class="chapter" data-level="2.9" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#tipo-de-error-de-interpretación-en-estadística"><i class="fa fa-check"></i><b>2.9</b> Tipo de error de interpretación en estadística</a>
+<ul>
+<li class="chapter" data-level="2.9.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#consideramos-los-reality-shows"><i class="fa fa-check"></i><b>2.9.1</b> Consideramos los Reality Shows:</a></li>
+<li class="chapter" data-level="2.9.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#personalidad-de-las-personas"><i class="fa fa-check"></i><b>2.9.2</b> Personalidad de las personas</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#cuando-que-una-hipótesis-no-es-una-hipótesis"><i class="fa fa-check"></i><b>2.10</b> Cuando que una hipótesis no es una hipótesis?</a>
+<ul>
+<li class="chapter" data-level="2.10.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#una-hipótesis-tiene-que-ser-falsificable"><i class="fa fa-check"></i><b>2.10.1</b> Una hipótesis tiene que ser falsificable</a></li>
+<li class="chapter" data-level="2.10.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#ejercicio-1"><i class="fa fa-check"></i><b>2.10.2</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="2.10.3" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#evaluación-de-las-expresiones-falsificables"><i class="fa fa-check"></i><b>2.10.3</b> Evaluación de las expresiones falsificables</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-independientes-y-dependientes"><i class="fa fa-check"></i><b>2.11</b> Variables Independientes y Dependientes</a></li>
+<li class="chapter" data-level="2.12" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#niveles-de-mediciones"><i class="fa fa-check"></i><b>2.12</b> Niveles de mediciones</a>
+<ul>
+<li class="chapter" data-level="2.12.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-continuas"><i class="fa fa-check"></i><b>2.12.1</b> Variables continuas</a></li>
+<li class="chapter" data-level="2.12.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#varriables-discretas"><i class="fa fa-check"></i><b>2.12.2</b> Varriables Discretas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html"><i class="fa fa-check"></i><b>3</b> Población y Muestreos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#qué-es-la-estadística"><i class="fa fa-check"></i><b>3.1</b> ¿Qué es la estadística?</a></li>
+<li class="chapter" data-level="3.2" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-población"><i class="fa fa-check"></i><b>3.2</b> El concepto de población</a></li>
+<li class="chapter" data-level="3.3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-muestreo"><i class="fa fa-check"></i><b>3.3</b> El concepto de muestreo</a></li>
+<li class="chapter" data-level="3.4" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#griego-y-latin"><i class="fa fa-check"></i><b>3.4</b> Griego y Latin</a></li>
+<li class="chapter" data-level="3.5" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-verdad-versus-un-estimado"><i class="fa fa-check"></i><b>3.5</b> La verdad versus un estimado</a></li>
+<li class="chapter" data-level="3.6" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#muestreos-al-azar"><i class="fa fa-check"></i><b>3.6</b> Muestreos al azar</a></li>
+<li class="chapter" data-level="3.7" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#error-de-muestreo-precisión-exactitud-y-sesgos"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Precisión, Exactitud y Sesgos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Inferencias y Hipótesis</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-1"><i class="fa fa-check"></i><b>4.2</b> Ejemplo 1:</a></li>
+<li class="chapter" data-level="4.3" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-2"><i class="fa fa-check"></i><b>4.3</b> Ejemplo 2:</a></li>
+<li class="chapter" data-level="4.4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#inferencias-en-estadística"><i class="fa fa-check"></i><b>4.4</b> Inferencias en estadística</a></li>
+<li class="chapter" data-level="4.5" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#hipótesis"><i class="fa fa-check"></i><b>4.5</b> Hipótesis</a></li>
+<li class="chapter" data-level="4.6" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-valor-de-p"><i class="fa fa-check"></i><b>4.6</b> El valor de p</a></li>
+<li class="chapter" data-level="4.7" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#los-errores-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.7</b> Los errores de tipo I y tipo II</a></li>
+<li class="chapter" data-level="4.8" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-poder-de-las-pruebas-inferenciales-y-lo-parámetros-que-lo-influencia"><i class="fa fa-check"></i><b>4.8</b> El poder de las pruebas inferenciales y lo parámetros que lo influencia</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html"><i class="fa fa-check"></i><b>5</b> Historia breve de la estadística</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#la-dama-degustando-té"><i class="fa fa-check"></i><b>5.1</b> La dama degustando té</a></li>
+<li class="chapter" data-level="5.2" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#definición-de-lo-que-es-la-estadística"><i class="fa fa-check"></i><b>5.2</b> Definición de lo que es la estadística</a></li>
+<li class="chapter" data-level="5.3" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#introducción-a-la-historía-de-la-estadística."><i class="fa fa-check"></i><b>5.3</b> Introducción a la Historía de la Estadística.</a></li>
+<li class="chapter" data-level="5.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#gertrude-mary-cox"><i class="fa fa-check"></i><b>5.4</b> Gertrude Mary Cox</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#primera-dama-en-estadística"><i class="fa fa-check"></i><b>5.4.1</b> Primera dama en Estadística</a></li>
+<li class="chapter" data-level="5.4.2" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#revista-biometrics"><i class="fa fa-check"></i><b>5.4.2</b> Revista <em>Biometrics</em></a></li>
+<li class="chapter" data-level="5.4.3" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#libro-diseños-experimentales"><i class="fa fa-check"></i><b>5.4.3</b> Libro: Diseños Experimentales</a></li>
+<li class="chapter" data-level="5.4.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#últimas-aportaciones"><i class="fa fa-check"></i><b>5.4.4</b> Últimas aportaciones</a></li>
+<li class="chapter" data-level="5.4.5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#referencias"><i class="fa fa-check"></i><b>5.4.5</b> Referencias</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#algunos-personas-importantes"><i class="fa fa-check"></i><b>5.5</b> Algunos personas importantes</a></li>
+<li class="chapter" data-level="5.6" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#lista-de-estadísticos"><i class="fa fa-check"></i><b>5.6</b> Lista de estadísticos</a></li>
+<li class="chapter" data-level="5.7" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#formula"><i class="fa fa-check"></i><b>5.7</b> Formula</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html"><i class="fa fa-check"></i><b>6</b> Medida de tendencia central</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#calculando-el-promedio"><i class="fa fa-check"></i><b>6.1</b> Calculando el promedio</a></li>
+<li class="chapter" data-level="6.2" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#cuando-el-promedio-no-esta-localizado-en-el-centro"><i class="fa fa-check"></i><b>6.2</b> Cuando el promedio no esta localizado en el centro</a></li>
+<li class="chapter" data-level="6.3" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#la-mediana"><i class="fa fa-check"></i><b>6.3</b> La mediana</a></li>
+<li class="chapter" data-level="6.4" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#con-n-impares"><i class="fa fa-check"></i><b>6.4</b> Con <strong>n</strong> impares</a></li>
+<li class="chapter" data-level="6.5" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#con-n-pares"><i class="fa fa-check"></i><b>6.5</b> Con <strong>n</strong> pares</a></li>
+<li class="chapter" data-level="6.6" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#la-moda"><i class="fa fa-check"></i><b>6.6</b> La moda</a></li>
+<li class="chapter" data-level="6.7" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#cuando-es-que-el-promedio-mediana-y-moda-son-iguales"><i class="fa fa-check"></i><b>6.7</b> Cuando es que el promedio, mediana y moda son iguales?</a></li>
+<li class="chapter" data-level="6.8" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales."><i class="fa fa-check"></i><b>6.8</b> Distribución cuando los tres valores de tendencia centrtal no son iguales.</a></li>
+<li class="chapter" data-level="6.9" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#variables-binomial"><i class="fa fa-check"></i><b>6.9</b> Variables binomial</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html"><i class="fa fa-check"></i><b>7</b> Medidas_de_dispersión</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#qué-es-la-dispersión-en-estadística"><i class="fa fa-check"></i><b>7.1</b> Qué es la dispersión en estadística</a></li>
+<li class="chapter" data-level="7.2" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#vizualizando-la-dispersión"><i class="fa fa-check"></i><b>7.2</b> Vizualizando la dispersión</a></li>
+<li class="chapter" data-level="7.3" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-rango"><i class="fa fa-check"></i><b>7.3</b> El rango</a></li>
+<li class="chapter" data-level="7.4" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejemplo-de-la-clase"><i class="fa fa-check"></i><b>7.4</b> Ejemplo de la clase</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#cual-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes"><i class="fa fa-check"></i><b>7.4.1</b> Cual es el rango de la Edad de los padres de los Estudiantes</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-varianza"><i class="fa fa-check"></i><b>7.5</b> La varianza</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#este-indice-se-llama-la-desviación-del-promedio-que-es-la-suma-de-los-cuadrados"><i class="fa fa-check"></i><b>7.5.1</b> Este indice se llama la desviación del promedio que es la suma de los cuadrados</a></li>
+</ul></li>
+<li class="chapter" data-level="7.6" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#calcular-la-varianza-con-var"><i class="fa fa-check"></i><b>7.6</b> Calcular la varianza con <strong>var()</strong></a></li>
+<li class="chapter" data-level="7.7" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-desviación-estandar"><i class="fa fa-check"></i><b>7.7</b> La desviación estandar</a></li>
+<li class="chapter" data-level="7.8" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-rango-intertcuartil."><i class="fa fa-check"></i><b>7.8</b> El rango intertcuartil.</a></li>
+<li class="chapter" data-level="7.9" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-error-estandard"><i class="fa fa-check"></i><b>7.9</b> El error estandard</a></li>
+<li class="chapter" data-level="7.10" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalo-de-confianza-de-95-del-promedio"><i class="fa fa-check"></i><b>7.10</b> El intervalo de confianza de 95% del promedio</a></li>
+<li class="chapter" data-level="7.11" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalos-de-confianza-de-los-datos"><i class="fa fa-check"></i><b>7.11</b> El intervalos de confianza de los datos</a></li>
+<li class="chapter" data-level="7.12" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#rangos-incluidos-en-intervalos-de-confianza"><i class="fa fa-check"></i><b>7.12</b> Rangos incluidos en intervalos de confianza</a></li>
+<li class="chapter" data-level="7.13" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejemplo-del-intervalo-de-confianza"><i class="fa fa-check"></i><b>7.13</b> Ejemplo del intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="7.13.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalo-de-confianza-de-colesterol-en-los-iranis"><i class="fa fa-check"></i><b>7.13.1</b> El intervalo de confianza de colesterol en los Iranis</a></li>
+</ul></li>
+<li class="chapter" data-level="7.14" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#otro-ejemplo-de-los-intevalos-de-confianzas"><i class="fa fa-check"></i><b>7.14</b> Otro ejemplo de los intevalos de confianzas</a>
+<ul>
+<li class="chapter" data-level="7.14.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-altura-de-los-humanos"><i class="fa fa-check"></i><b>7.14.1</b> La altura de los humanos</a></li>
+<li class="chapter" data-level="7.14.2" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejercicio-ahora-prepara-el-mismo-gráfico-para-los-hombres."><i class="fa fa-check"></i><b>7.14.2</b> Ejercicio: Ahora prepara el mismo gráfico para los hombres.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html"><i class="fa fa-check"></i><b>8</b> Estadística Descriptiva</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#estadistica-descriptiva"><i class="fa fa-check"></i><b>8.1</b> Estadistica descriptiva</a></li>
+<li class="chapter" data-level="8.2" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#analisis-con-muchos-datos"><i class="fa fa-check"></i><b>8.2</b> Analisis con muchos datos</a></li>
+<li class="chapter" data-level="8.3" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#remover-los-na-del-análisis"><i class="fa fa-check"></i><b>8.3</b> Remover los <strong>NA</strong> del análisis</a></li>
+<li class="chapter" data-level="8.4" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#resumen-estadístico-de-una-variable"><i class="fa fa-check"></i><b>8.4</b> Resumen estadístico de una variable</a></li>
+<li class="chapter" data-level="8.5" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#resumen-estadístico-de-multiples-variables"><i class="fa fa-check"></i><b>8.5</b> Resumen Estadístico de multiples variables</a></li>
+<li class="chapter" data-level="8.6" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#los-cuantiles"><i class="fa fa-check"></i><b>8.6</b> Los Cuantiles</a></li>
+<li class="chapter" data-level="8.7" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#el-indice-de-oblicuidad-skewness"><i class="fa fa-check"></i><b>8.7</b> El indice de Oblicuidad: Skewness</a></li>
+<li class="chapter" data-level="8.8" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#el-indice-de-curtosis-kurtosis"><i class="fa fa-check"></i><b>8.8</b> El indice de Curtosis: Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="gráficos.html"><a href="gráficos.html"><i class="fa fa-check"></i><b>9</b> Gráficos</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="gráficos.html"><a href="gráficos.html#gráficos-básicos-con-ggplot2"><i class="fa fa-check"></i><b>9.1</b> Gráficos Básicos con ggplot2</a></li>
+<li class="chapter" data-level="9.2" data-path="gráficos.html"><a href="gráficos.html#como-crear-una-gráfica-de-regresión-lineal-usando-ggplot"><i class="fa fa-check"></i><b>9.2</b> Como crear una gráfica de regresión lineal usando ggplot</a></li>
+<li class="chapter" data-level="9.3" data-path="gráficos.html"><a href="gráficos.html#regresión-lineal"><i class="fa fa-check"></i><b>9.3</b> Regresión lineal</a></li>
+<li class="chapter" data-level="9.4" data-path="gráficos.html"><a href="gráficos.html#añadiendo-color-por-grupo-y-otras-bellezas"><i class="fa fa-check"></i><b>9.4</b> Añadiendo color por grupo y otras bellezas</a></li>
+<li class="chapter" data-level="9.5" data-path="gráficos.html"><a href="gráficos.html#salvar-gráficos-con-ggsave"><i class="fa fa-check"></i><b>9.5</b> Salvar gráficos con <strong>ggsave</strong></a></li>
+<li class="chapter" data-level="9.6" data-path="gráficos.html"><a href="gráficos.html#regresión-simple-con-puntos"><i class="fa fa-check"></i><b>9.6</b> Regresión simple con puntos</a></li>
+<li class="chapter" data-level="9.7" data-path="gráficos.html"><a href="gráficos.html#regresión-simple-con-puntos-y-intervalo-de-confianza"><i class="fa fa-check"></i><b>9.7</b> Regresión simple con puntos y intervalo de confianza</a>
+<ul>
+<li class="chapter" data-level="9.7.1" data-path="gráficos.html"><a href="gráficos.html#cambio-de-color-del-intervalo-de-confianza"><i class="fa fa-check"></i><b>9.7.1</b> Cambio de color del intervalo de confianza</a></li>
+</ul></li>
+<li class="chapter" data-level="9.8" data-path="gráficos.html"><a href="gráficos.html#regresión-lineal-por-grupo."><i class="fa fa-check"></i><b>9.8</b> Regresión lineal por grupo.</a></li>
+<li class="chapter" data-level="9.9" data-path="gráficos.html"><a href="gráficos.html#histogramas"><i class="fa fa-check"></i><b>9.9</b> Histogramas</a></li>
+<li class="chapter" data-level="9.10" data-path="gráficos.html"><a href="gráficos.html#gráficos-de-caja-box-plots"><i class="fa fa-check"></i><b>9.10</b> Gráficos de caja <strong>box plots</strong></a></li>
+<li class="chapter" data-level="9.11" data-path="gráficos.html"><a href="gráficos.html#gráfico-de-caja-por-grupo"><i class="fa fa-check"></i><b>9.11</b> Gráfico de caja por grupo</a></li>
+<li class="chapter" data-level="9.12" data-path="gráficos.html"><a href="gráficos.html#detección-valores-sesgados-o-átipicos."><i class="fa fa-check"></i><b>9.12</b> Detección valores sesgados o átipicos.</a></li>
+<li class="chapter" data-level="9.13" data-path="gráficos.html"><a href="gráficos.html#gráficos-de-línea-y-intervalo-de-errores"><i class="fa fa-check"></i><b>9.13</b> Gráficos de línea y intervalo de errores</a></li>
+<li class="chapter" data-level="9.14" data-path="gráficos.html"><a href="gráficos.html#la-función-stat_summary-para-calcular-indices-sumativos."><i class="fa fa-check"></i><b>9.14</b> La función <strong>stat_summary</strong> para calcular indices sumativos.</a></li>
+<li class="chapter" data-level="9.15" data-path="gráficos.html"><a href="gráficos.html#diagrama-de-tallo-y-hoja"><i class="fa fa-check"></i><b>9.15</b> Diagrama de tallo y hoja</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="supuestos.html"><a href="supuestos.html"><i class="fa fa-check"></i><b>10</b> Supuestos</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="supuestos.html"><a href="supuestos.html#qué-son-supuestos"><i class="fa fa-check"></i><b>10.1</b> ¿Qué son supuestos?</a></li>
+<li class="chapter" data-level="10.2" data-path="supuestos.html"><a href="supuestos.html#homogeneidad-de-varianza"><i class="fa fa-check"></i><b>10.2</b> Homogeneidad de varianza</a></li>
+<li class="chapter" data-level="10.3" data-path="supuestos.html"><a href="supuestos.html#gráficos-de-cajas-condicionales"><i class="fa fa-check"></i><b>10.3</b> Gráficos de cajas condicionales</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="supuestos.html"><a href="supuestos.html#selección-de-los-datos"><i class="fa fa-check"></i><b>10.3.1</b> Selección de los datos</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="supuestos.html"><a href="supuestos.html#homogeneidad-de-varianza-en-modelos-de-regresión"><i class="fa fa-check"></i><b>10.4</b> Homogeneidad de varianza en modelos de regresión</a></li>
+<li class="chapter" data-level="10.5" data-path="supuestos.html"><a href="supuestos.html#los-residuales-de-student-para-detectar-valores-sesgados"><i class="fa fa-check"></i><b>10.5</b> Los residuales de Student para detectar valores sesgados</a></li>
+<li class="chapter" data-level="10.6" data-path="supuestos.html"><a href="supuestos.html#valores-sesgados-con-la-distancia-de-cook-di"><i class="fa fa-check"></i><b>10.6</b> Valores sesgados con la Distancia de Cook, Di</a></li>
+<li class="chapter" data-level="10.7" data-path="supuestos.html"><a href="supuestos.html#causas-principales-de-los-valores-sesgados"><i class="fa fa-check"></i><b>10.7</b> Causas principales de los valores sesgados</a></li>
+<li class="chapter" data-level="10.8" data-path="supuestos.html"><a href="supuestos.html#supuesto-de-normalidad"><i class="fa fa-check"></i><b>10.8</b> Supuesto de normalidad</a></li>
+<li class="chapter" data-level="10.9" data-path="supuestos.html"><a href="supuestos.html#qplot"><i class="fa fa-check"></i><b>10.9</b> qplot</a></li>
+<li class="chapter" data-level="10.10" data-path="supuestos.html"><a href="supuestos.html#geom_qq-y-geom_qq_line"><i class="fa fa-check"></i><b>10.10</b> geom_qq y geom_qq_line</a></li>
+<li class="chapter" data-level="10.11" data-path="supuestos.html"><a href="supuestos.html#la-distribución-normal"><i class="fa fa-check"></i><b>10.11</b> La distribución normal</a></li>
+<li class="chapter" data-level="10.12" data-path="supuestos.html"><a href="supuestos.html#stat_function"><i class="fa fa-check"></i><b>10.12</b> stat_function</a></li>
+<li class="chapter" data-level="10.13" data-path="supuestos.html"><a href="supuestos.html#visualizando-la-distribuciones-con-geom_density"><i class="fa fa-check"></i><b>10.13</b> Visualizando la distribuciones con <strong>geom_density</strong></a></li>
+<li class="chapter" data-level="10.14" data-path="supuestos.html"><a href="supuestos.html#colinealidad-entre-covariables-con-ggpairs"><i class="fa fa-check"></i><b>10.14</b> Colinealidad entre covariables con <strong>ggpairs</strong></a>
+<ul>
+<li class="chapter" data-level="10.14.1" data-path="supuestos.html"><a href="supuestos.html#tabla-de-correlación-de-kendall"><i class="fa fa-check"></i><b>10.14.1</b> Tabla de correlación de Kendall</a></li>
+<li class="chapter" data-level="10.14.2" data-path="supuestos.html"><a href="supuestos.html#tabla-de-correlación-de-spearman"><i class="fa fa-check"></i><b>10.14.2</b> Tabla de correlación de Spearman</a></li>
+</ul></li>
+<li class="chapter" data-level="10.15" data-path="supuestos.html"><a href="supuestos.html#seleción-de-parámetros-para-correlaciones-cuando-hay-na"><i class="fa fa-check"></i><b>10.15</b> Seleción de parámetros para correlaciones cuando hay NA</a></li>
+<li class="chapter" data-level="10.16" data-path="supuestos.html"><a href="supuestos.html#uso-de-ggally-para-ver-correlaciones"><i class="fa fa-check"></i><b>10.16</b> Uso de GGally para ver correlaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html"><i class="fa fa-check"></i><b>11</b> Estadística Frecuentista</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste-y-table-de-contingencia"><i class="fa fa-check"></i><b>11.1</b> Bondad de ajuste y Table de Contingencia</a></li>
+<li class="chapter" data-level="11.2" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#qué-son-supuestos-1"><i class="fa fa-check"></i><b>11.2</b> Qué son supuestos</a></li>
+<li class="chapter" data-level="11.3" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#los-supuestos-de-las-pruebas-de-frecuencias."><i class="fa fa-check"></i><b>11.3</b> Los supuestos de las pruebas de frecuencias.</a></li>
+<li class="chapter" data-level="11.4" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#instalar-y-activar-los-siguientes-packages"><i class="fa fa-check"></i><b>11.4</b> Instalar y activar los siguientes packages</a></li>
+<li class="chapter" data-level="11.5" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gregory-mendel-y-sus-guisantes"><i class="fa fa-check"></i><b>11.5</b> Gregory Mendel y sus guisantes</a></li>
+<li class="chapter" data-level="11.6" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste."><i class="fa fa-check"></i><b>11.6</b> Bondad de Ajuste.</a></li>
+<li class="chapter" data-level="11.7" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#primer-ejemplo"><i class="fa fa-check"></i><b>11.7</b> Primer ejemplo</a></li>
+<li class="chapter" data-level="11.8" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#segundo-ejemplo"><i class="fa fa-check"></i><b>11.8</b> Segundo ejemplo</a></li>
+<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste</a></li>
+<li class="chapter" data-level="11.10" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gráfico-de-mosaico"><i class="fa fa-check"></i><b>11.10</b> Gráfico de Mosaico</a></li>
+<li class="chapter" data-level="11.11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia-de-frecuencia."><i class="fa fa-check"></i><b>11.11</b> Prueba de Independencia de frecuencia.</a></li>
+<li class="chapter" data-level="11.12" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-función-crosstable"><i class="fa fa-check"></i><b>11.12</b> La función <em>CrossTable</em></a></li>
+<li class="chapter" data-level="11.13" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#análisis-con-datos-en-formato-de-tabla"><i class="fa fa-check"></i><b>11.13</b> Análisis con datos en formato de tabla</a></li>
+<li class="chapter" data-level="11.14" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia"><i class="fa fa-check"></i><b>11.14</b> Prueba de independencia</a></li>
+<li class="chapter" data-level="11.15" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#el-color-de-pello-es-independiente-del-sexo"><i class="fa fa-check"></i><b>11.15</b> El color de pello es independiente del sexo</a></li>
+<li class="chapter" data-level="11.16" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-exacta-de-fisher"><i class="fa fa-check"></i><b>11.16</b> Prueba de Exacta de Fisher</a>
+<ul>
+<li class="chapter" data-level="11.16.1" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#los-supuestos-de-las-prueba-exacta-de-fisher."><i class="fa fa-check"></i><b>11.16.1</b> Los supuestos de las prueba Exacta de Fisher.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="distribución-normal.html"><a href="distribución-normal.html"><i class="fa fa-check"></i><b>12</b> Distribución Normal</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="distribución-normal.html"><a href="distribución-normal.html#instalar-y-activar-los-siguientes-paquete"><i class="fa fa-check"></i><b>12.1</b> Instalar y activar los siguientes paquete</a></li>
+<li class="chapter" data-level="12.2" data-path="distribución-normal.html"><a href="distribución-normal.html#la-distribución-normal-1"><i class="fa fa-check"></i><b>12.2</b> La distribución normal</a></li>
+<li class="chapter" data-level="12.3" data-path="distribución-normal.html"><a href="distribución-normal.html#evaluando-visualmente-la-distribución"><i class="fa fa-check"></i><b>12.3</b> Evaluando visualmente la distribución</a></li>
+<li class="chapter" data-level="12.4" data-path="distribución-normal.html"><a href="distribución-normal.html#añadiendo-la-distribución-teórica-al-histograma"><i class="fa fa-check"></i><b>12.4</b> Añadiendo la distribución teórica al histograma</a></li>
+<li class="chapter" data-level="12.5" data-path="distribución-normal.html"><a href="distribución-normal.html#evaluando-datos-no-normal"><i class="fa fa-check"></i><b>12.5</b> Evaluando datos no normal</a></li>
+<li class="chapter" data-level="12.6" data-path="distribución-normal.html"><a href="distribución-normal.html#datos-teóricos-con-histograma-y-la-función-de-normalidad"><i class="fa fa-check"></i><b>12.6</b> Datos teóricos con histograma y la función de normalidad</a></li>
+<li class="chapter" data-level="12.7" data-path="distribución-normal.html"><a href="distribución-normal.html#qqplot"><i class="fa fa-check"></i><b>12.7</b> qqplot</a></li>
+<li class="chapter" data-level="12.8" data-path="distribución-normal.html"><a href="distribución-normal.html#pruebas-de-normalidad."><i class="fa fa-check"></i><b>12.8</b> Pruebas de normalidad.</a></li>
+<li class="chapter" data-level="12.9" data-path="distribución-normal.html"><a href="distribución-normal.html#la-prueba-de-shapiro-wilks"><i class="fa fa-check"></i><b>12.9</b> La prueba de Shapiro-Wilks</a></li>
+<li class="chapter" data-level="12.10" data-path="distribución-normal.html"><a href="distribución-normal.html#la-prueba-de-normalidad-de-anderson-darling"><i class="fa fa-check"></i><b>12.10</b> La prueba de normalidad de Anderson-Darling</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html"><i class="fa fa-check"></i><b>13</b> Prueba de una muestra</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#el-promedio-un-estimado"><i class="fa fa-check"></i><b>13.1</b> El promedio, un estimado</a></li>
+<li class="chapter" data-level="13.2" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#ejemplo-9.1-y-9.2."><i class="fa fa-check"></i><b>13.2</b> Ejemplo 9.1 y 9.2.</a></li>
+<li class="chapter" data-level="13.3" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#la-distribución-de-t"><i class="fa fa-check"></i><b>13.3</b> La distribución de t</a></li>
+<li class="chapter" data-level="13.4" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#cuando-es-que-uno-rechaza-la-hipótesis-nula"><i class="fa fa-check"></i><b>13.4</b> Cuando es que uno rechaza la hipótesis nula</a></li>
+<li class="chapter" data-level="13.5" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#el-intervalo-de-confianza-de-mu"><i class="fa fa-check"></i><b>13.5</b> El intervalo de confianza de <span class="math inline">\(\mu\)</span></a></li>
+<li class="chapter" data-level="13.6" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#ejemplo-9.3"><i class="fa fa-check"></i><b>13.6</b> Ejemplo 9.3</a></li>
+<li class="chapter" data-level="13.7" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#los-limites-del-intervalo"><i class="fa fa-check"></i><b>13.7</b> Los limites del intervalo</a></li>
+<li class="chapter" data-level="13.8" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#el-limite-superior"><i class="fa fa-check"></i><b>13.8</b> El limite superior</a></li>
+<li class="chapter" data-level="13.9" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#el-limite-inferior"><i class="fa fa-check"></i><b>13.9</b> El limite inferior</a></li>
+<li class="chapter" data-level="13.10" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#menos-o-más-grados-de-libertad"><i class="fa fa-check"></i><b>13.10</b> Menos o más grados de libertad</a></li>
+<li class="chapter" data-level="13.11" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#muchos-muestreos-y-el-universo"><i class="fa fa-check"></i><b>13.11</b> Muchos muestreos y el universo</a>
+<ul>
+<li class="chapter" data-level="13.11.1" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#quiz-estas-preguntas-la-tienen-que-contestar-en-una-asignación."><i class="fa fa-check"></i><b>13.11.1</b> QUIZ: estas preguntas la tienen que contestar en una asignación.</a></li>
+</ul></li>
+<li class="chapter" data-level="13.12" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#pruebas-de-t-un-muesteo"><i class="fa fa-check"></i><b>13.12</b> Pruebas de t un muesteo</a></li>
+<li class="chapter" data-level="13.13" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#propinas"><i class="fa fa-check"></i><b>13.13</b> Propinas</a></li>
+<li class="chapter" data-level="13.14" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#cómo-graficar-el-resultado-de-una-prueba-t"><i class="fa fa-check"></i><b>13.14</b> ¿Cómo graficar el resultado de una prueba t?</a></li>
+<li class="chapter" data-level="13.15" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#ejercicio-de-práctica-1-amigos-de-facebook"><i class="fa fa-check"></i><b>13.15</b> Ejercicio de práctica 1: Amigos de Facebook</a></li>
+<li class="chapter" data-level="13.16" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#ejercicio-de-práctica-2-dias-de-enfermedades"><i class="fa fa-check"></i><b>13.16</b> Ejercicio de práctica 2: Dias de enfermedades</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html"><i class="fa fa-check"></i><b>14</b> Prueba de t pareados</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#datos-dependientes"><i class="fa fa-check"></i><b>14.1</b> Datos dependientes</a></li>
+<li class="chapter" data-level="14.2" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#visualizar-la-correlación"><i class="fa fa-check"></i><b>14.2</b> Visualizar la correlación</a></li>
+<li class="chapter" data-level="14.3" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#la-prueba-de-t-pareado"><i class="fa fa-check"></i><b>14.3</b> La prueba de t-pareado</a></li>
+<li class="chapter" data-level="14.4" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#visualizar-la-diferencias"><i class="fa fa-check"></i><b>14.4</b> Visualizar la diferencias</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#supuesto-de-normalidad-1"><i class="fa fa-check"></i><b>14.4.1</b> Supuesto de normalidad</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#paired-t-test-números-de-niños-abuela-y-madre"><i class="fa fa-check"></i><b>14.5</b> Paired t-test, Números de niños abuela y madre</a></li>
+<li class="chapter" data-level="14.6" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#ejercicio-de-clase"><i class="fa fa-check"></i><b>14.6</b> Ejercicio de clase</a></li>
+<li class="chapter" data-level="14.7" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#cultivador-de-toronjas-con-parcelas-pareadas"><i class="fa fa-check"></i><b>14.7</b> Cultivador de Toronjas con parcelas pareadas</a></li>
+<li class="chapter" data-level="14.8" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#el-número-de-hojas-por-planta-en-diferentes-momentos-tiempo."><i class="fa fa-check"></i><b>14.8</b> El número de Hojas por planta en diferentes momentos (tiempo).</a></li>
+<li class="chapter" data-level="14.9" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#anxiedad-y-alacranes"><i class="fa fa-check"></i><b>14.9</b> Anxiedad y Alacranes</a></li>
+<li class="chapter" data-level="14.10" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#supuestos-de-la-prueba-de-t-con-datos-pareados."><i class="fa fa-check"></i><b>14.10</b> Supuestos de la prueba de t con datos pareados.</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html"><i class="fa fa-check"></i><b>15</b> Prueba de t independiente</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html#datos-dependientes-1"><i class="fa fa-check"></i><b>15.1</b> Datos dependientes</a></li>
+<li class="chapter" data-level="15.2" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html#visualizar-la-correlación-1"><i class="fa fa-check"></i><b>15.2</b> Visualizar la correlación</a></li>
+<li class="chapter" data-level="15.3" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html#la-prueba-de-t-pareado-1"><i class="fa fa-check"></i><b>15.3</b> La prueba de t-pareado</a></li>
+<li class="chapter" data-level="15.4" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html#visualizar-la-diferencias-1"><i class="fa fa-check"></i><b>15.4</b> Visualizar la diferencias</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html#supuesto-de-normalidad-2"><i class="fa fa-check"></i><b>15.4.1</b> Supuesto de normalidad</a></li>
+</ul></li>
+<li class="chapter" data-level="15.5" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html#paired-t-test-números-de-niños-abuela-y-madre-1"><i class="fa fa-check"></i><b>15.5</b> Paired t-test, Números de niños abuela y madre</a></li>
+<li class="chapter" data-level="15.6" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html#ejercicio-de-clase-1"><i class="fa fa-check"></i><b>15.6</b> Ejercicio de clase</a></li>
+<li class="chapter" data-level="15.7" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html#cultivador-de-toronjas-con-parcelas-pareadas-1"><i class="fa fa-check"></i><b>15.7</b> Cultivador de Toronjas con parcelas pareadas</a></li>
+<li class="chapter" data-level="15.8" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html#el-número-de-hojas-por-planta-en-diferentes-momentos-tiempo.-1"><i class="fa fa-check"></i><b>15.8</b> El número de Hojas por planta en diferentes momentos (tiempo).</a></li>
+<li class="chapter" data-level="15.9" data-path="prueba-de-t-independiente.html"><a href="prueba-de-t-independiente.html#anxiedad-y-alacranes-1"><i class="fa fa-check"></i><b>15.9</b> Anxiedad y Alacranes</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>16</b> ANOVA</a>
+<ul>
+<li class="chapter" data-level="16.0.1" data-path="anova.html"><a href="anova.html#instalar-libreria-si-es-necesario"><i class="fa fa-check"></i><b>16.0.1</b> Instalar libreria si es necesario</a></li>
+<li class="chapter" data-level="16.0.2" data-path="anova.html"><a href="anova.html#activar-libreria"><i class="fa fa-check"></i><b>16.0.2</b> Activar libreria</a></li>
+<li class="chapter" data-level="16.1" data-path="anova.html"><a href="anova.html#anova-1"><i class="fa fa-check"></i><b>16.1</b> ANOVA</a></li>
+<li class="chapter" data-level="16.2" data-path="anova.html"><a href="anova.html#hipótesis-en-anova"><i class="fa fa-check"></i><b>16.2</b> Hipótesis en ANOVA</a></li>
+<li class="chapter" data-level="16.3" data-path="anova.html"><a href="anova.html#crear-un-conjunto-de-datos"><i class="fa fa-check"></i><b>16.3</b> Crear un conjunto de datos</a></li>
+<li class="chapter" data-level="16.4" data-path="anova.html"><a href="anova.html#visualizar-los-datos"><i class="fa fa-check"></i><b>16.4</b> Visualizar los datos</a></li>
+<li class="chapter" data-level="16.5" data-path="anova.html"><a href="anova.html#gráficar-los-datos"><i class="fa fa-check"></i><b>16.5</b> Gráficar los datos</a></li>
+<li class="chapter" data-level="16.6" data-path="anova.html"><a href="anova.html#un-gráfico-con-el-intervalo-de-confianza."><i class="fa fa-check"></i><b>16.6</b> Un gráfico con el intervalo de confianza.</a></li>
+<li class="chapter" data-level="16.7" data-path="anova.html"><a href="anova.html#graficar-con-nuestro-nuevo-data-frame-sum."><i class="fa fa-check"></i><b>16.7</b> Graficar con nuestro nuevo data frame “sum”.</a></li>
+<li class="chapter" data-level="16.8" data-path="anova.html"><a href="anova.html#estadística-descriptiva-de-los-lagos"><i class="fa fa-check"></i><b>16.8</b> Estadística descriptiva de los Lagos</a></li>
+<li class="chapter" data-level="16.9" data-path="anova.html"><a href="anova.html#los-supuestos-de-anova"><i class="fa fa-check"></i><b>16.9</b> Los supuestos de ANOVA</a></li>
+<li class="chapter" data-level="16.10" data-path="anova.html"><a href="anova.html#datos-al-azar"><i class="fa fa-check"></i><b>16.10</b> Datos al azar</a></li>
+<li class="chapter" data-level="16.11" data-path="anova.html"><a href="anova.html#datos-continuos"><i class="fa fa-check"></i><b>16.11</b> 1. Datos Continuos</a></li>
+<li class="chapter" data-level="16.12" data-path="anova.html"><a href="anova.html#la-prueba-de-levenes-test"><i class="fa fa-check"></i><b>16.12</b> 3. La prueba de Levene’s test</a></li>
+<li class="chapter" data-level="16.13" data-path="anova.html"><a href="anova.html#normalidad"><i class="fa fa-check"></i><b>16.13</b> 4. Normalidad</a></li>
+<li class="chapter" data-level="16.14" data-path="anova.html"><a href="anova.html#la-prueba-de-anova"><i class="fa fa-check"></i><b>16.14</b> La prueba de ANOVA</a></li>
+<li class="chapter" data-level="16.15" data-path="anova.html"><a href="anova.html#prueba-de-post-hoc"><i class="fa fa-check"></i><b>16.15</b> PRUEBA de Post-Hoc</a></li>
+<li class="chapter" data-level="16.16" data-path="anova.html"><a href="anova.html#prueba-de-bonferroni"><i class="fa fa-check"></i><b>16.16</b> Prueba de Bonferroni</a></li>
+<li class="chapter" data-level="16.17" data-path="anova.html"><a href="anova.html#prueba-de-tukey"><i class="fa fa-check"></i><b>16.17</b> Prueba de Tukey</a></li>
+<li class="chapter" data-level="16.18" data-path="anova.html"><a href="anova.html#super-heroes-and-injuries"><i class="fa fa-check"></i><b>16.18</b> SUPER HEROES and INJURIES</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="correlación-y-covarianza.html"><a href="correlación-y-covarianza.html"><i class="fa fa-check"></i><b>17</b> Correlación y Covarianza</a></li>
+<li class="chapter" data-level="18" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html"><i class="fa fa-check"></i><b>18</b> Regresión Lineal</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#la-función-lm"><i class="fa fa-check"></i><b>18.1</b> la función lm()</a></li>
+<li class="chapter" data-level="18.2" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#visualización-de-la-regresión"><i class="fa fa-check"></i><b>18.2</b> Visualización de la regresión</a></li>
+<li class="chapter" data-level="18.3" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#el-impacto-de-valores-atípico"><i class="fa fa-check"></i><b>18.3</b> El impacto de valores atípico</a></li>
+<li class="chapter" data-level="18.4" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#la-venta-de-discos-de-música"><i class="fa fa-check"></i><b>18.4</b> La venta de discos de música</a>
+<ul>
+<li class="chapter" data-level="18.4.1" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#supuestos-de-la-regresión-lineal"><i class="fa fa-check"></i><b>18.4.1</b> Supuestos de la regresión lineal</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#cooks-distance"><i class="fa fa-check"></i><b>18.5</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="18.6" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#repaso-de-los-pasos"><i class="fa fa-check"></i><b>18.6</b> Repaso de los PASOS</a></li>
+<li class="chapter" data-level="18.7" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#paso-1"><i class="fa fa-check"></i><b>18.7</b> Paso 1</a>
+<ul>
+<li class="chapter" data-level="18.7.1" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#paso-2"><i class="fa fa-check"></i><b>18.7.1</b> Paso 2</a></li>
+</ul></li>
+<li class="chapter" data-level="18.8" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#paso-3"><i class="fa fa-check"></i><b>18.8</b> Paso 3</a></li>
+<li class="chapter" data-level="18.9" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#alternativa-para-gráficar-los-residuales"><i class="fa fa-check"></i><b>18.9</b> Alternativa para Gráficar los residuales</a>
+<ul>
+<li class="chapter" data-level="18.9.1" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#plot-the-residuals-and-the-fitted-values"><i class="fa fa-check"></i><b>18.9.1</b> Plot the residuals and the fitted values</a></li>
+</ul></li>
+<li class="chapter" data-level="18.10" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#porque-podemos-usar-la-alternativas-anterior"><i class="fa fa-check"></i><b>18.10</b> Porque podemos usar la alternativas anterior</a></li>
+<li class="chapter" data-level="18.11" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#ejercicio-1-1"><i class="fa fa-check"></i><b>18.11</b> Ejercicio #1</a></li>
+<li class="chapter" data-level="18.12" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#ejercicio-2"><i class="fa fa-check"></i><b>18.12</b> Ejercicio #2</a></li>
+<li class="chapter" data-level="18.13" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#datos-sobre-la-orquidea-dipodium"><i class="fa fa-check"></i><b>18.13</b> Datos sobre la orquidea <strong>Dipodium</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="regresión-logistica.html"><a href="regresión-logistica.html"><i class="fa fa-check"></i><b>19</b> Regresión Logistica</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="regresión-logistica.html"><a href="regresión-logistica.html#brassavola-cucullata"><i class="fa fa-check"></i><b>19.1</b> <em>Brassavola cucullata</em></a></li>
+<li class="chapter" data-level="19.2" data-path="regresión-logistica.html"><a href="regresión-logistica.html#la-variable-de-respuesta-y."><i class="fa fa-check"></i><b>19.2</b> La variable de respuesta, <strong>Y</strong>.</a></li>
+<li class="chapter" data-level="19.3" data-path="regresión-logistica.html"><a href="regresión-logistica.html#modelo-lineal-generalizado"><i class="fa fa-check"></i><b>19.3</b> Modelo Lineal Generalizado</a></li>
+<li class="chapter" data-level="19.4" data-path="regresión-logistica.html"><a href="regresión-logistica.html#los-supuestos-de-la-regresión-logistica."><i class="fa fa-check"></i><b>19.4</b> Los supuestos de la regresión logistica.</a></li>
+<li class="chapter" data-level="19.5" data-path="regresión-logistica.html"><a href="regresión-logistica.html#comparación-de-modelos-lineal-y-logistico"><i class="fa fa-check"></i><b>19.5</b> Comparación de modelos lineal y logistico</a></li>
+<li class="chapter" data-level="19.6" data-path="regresión-logistica.html"><a href="regresión-logistica.html#regresión-logística"><i class="fa fa-check"></i><b>19.6</b> Regresión logística:</a>
+<ul>
+<li class="chapter" data-level="19.6.1" data-path="regresión-logistica.html"><a href="regresión-logistica.html#generalized-linear-model-glm"><i class="fa fa-check"></i><b>19.6.1</b> Generalized Linear Model = glm</a></li>
+<li class="chapter" data-level="19.6.2" data-path="regresión-logistica.html"><a href="regresión-logistica.html#removiendo-el-intercepto"><i class="fa fa-check"></i><b>19.6.2</b> Removiendo el intercepto</a></li>
+<li class="chapter" data-level="19.6.3" data-path="regresión-logistica.html"><a href="regresión-logistica.html#estimado-las-probabilidades"><i class="fa fa-check"></i><b>19.6.3</b> Estimado las probabilidades</a></li>
+</ul></li>
+<li class="chapter" data-level="19.7" data-path="regresión-logistica.html"><a href="regresión-logistica.html#visualizando-una-regresión-logistica"><i class="fa fa-check"></i><b>19.7</b> Visualizando una regresión logistica</a></li>
+<li class="chapter" data-level="19.8" data-path="regresión-logistica.html"><a href="regresión-logistica.html#reducir-solapamiento-de-los-puntos"><i class="fa fa-check"></i><b>19.8</b> Reducir solapamiento de los puntos</a></li>
+<li class="chapter" data-level="19.9" data-path="regresión-logistica.html"><a href="regresión-logistica.html#gráfico-con-ajuste-binomial"><i class="fa fa-check"></i><b>19.9</b> Gráfico con ajuste binomial</a>
+<ul>
+<li class="chapter" data-level="19.9.1" data-path="regresión-logistica.html"><a href="regresión-logistica.html#el-modelo-de-regresión-binomial"><i class="fa fa-check"></i><b>19.9.1</b> El modelo de regresión binomial</a></li>
+<li class="chapter" data-level="19.9.2" data-path="regresión-logistica.html"><a href="regresión-logistica.html#vusualizando-diferentes-grupos"><i class="fa fa-check"></i><b>19.9.2</b> Vusualizando diferentes grupos</a></li>
+</ul></li>
+<li class="chapter" data-level="19.10" data-path="regresión-logistica.html"><a href="regresión-logistica.html#solapamiento-de-los-ajustes-binomial-por-grupo"><i class="fa fa-check"></i><b>19.10</b> Solapamiento de los ajustes binomial por grupo</a>
+<ul>
+<li class="chapter" data-level="19.10.1" data-path="regresión-logistica.html"><a href="regresión-logistica.html#evaluate-using-the-length-of-the-longest-leaf"><i class="fa fa-check"></i><b>19.10.1</b> Evaluate using the Length of the longest leaf</a></li>
+<li class="chapter" data-level="19.10.2" data-path="regresión-logistica.html"><a href="regresión-logistica.html#remover-el-valor-sesgado"><i class="fa fa-check"></i><b>19.10.2</b> Remover el valor sesgado</a></li>
+</ul></li>
+<li class="chapter" data-level="19.11" data-path="regresión-logistica.html"><a href="regresión-logistica.html#selecionar-el-mejor-modelo"><i class="fa fa-check"></i><b>19.11</b> Selecionar el mejor modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="selecionando-modelos-con-akaike.html"><a href="selecionando-modelos-con-akaike.html"><i class="fa fa-check"></i><b>20</b> Selecionando modelos con AKAIKE</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="selecionando-modelos-con-akaike.html"><a href="selecionando-modelos-con-akaike.html#datos-hipótesis-y-modelos"><i class="fa fa-check"></i><b>20.1</b> Datos, hipótesis y modelos</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html"><i class="fa fa-check"></i><b>21</b> #Como funciona la selección de modelos?</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#r2"><i class="fa fa-check"></i><b>21.1</b> <span class="math inline">\(R^2\)</span></a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#ejemplo-de-construcción-de-selección-por-r2"><i class="fa fa-check"></i><b>21.1.1</b> Ejemplo de Construcción de selección por <span class="math inline">\(R^2\)</span></a></li>
+</ul></li>
+<li class="chapter" data-level="21.2" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#pruebas-de-modelos-nulos"><i class="fa fa-check"></i><b>21.2</b> Pruebas de modelos nulos</a></li>
+<li class="chapter" data-level="21.3" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#cual-método-es-más-apropriado"><i class="fa fa-check"></i><b>21.3</b> Cual método es más apropriado?</a></li>
+<li class="chapter" data-level="21.4" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#estimación-de-parámetros-y-múltiples-modelos"><i class="fa fa-check"></i><b>21.4</b> Estimación de parámetros y múltiples modelos</a></li>
+<li class="chapter" data-level="21.5" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#selección-de-modelos-entre-muchos"><i class="fa fa-check"></i><b>21.5</b> Selección de Modelos entre muchos</a></li>
+<li class="chapter" data-level="21.6" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#model-averaging"><i class="fa fa-check"></i><b>21.6</b> Model Averaging:</a></li>
+<li class="chapter" data-level="21.7" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#inferencias-de-los-modelos-de-selección"><i class="fa fa-check"></i><b>21.7</b> Inferencias de los modelos de selección</a></li>
+<li class="chapter" data-level="21.8" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#paso-a-paso"><i class="fa fa-check"></i><b>21.8</b> Paso a Paso</a>
+<ul>
+<li class="chapter" data-level="21.8.1" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#primer-paso-construcción-de-los-modelos"><i class="fa fa-check"></i><b>21.8.1</b> Primer paso: Construcción de los modelos</a></li>
+<li class="chapter" data-level="21.8.2" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#limpiar-los-datos"><i class="fa fa-check"></i><b>21.8.2</b> Limpiar los datos</a></li>
+<li class="chapter" data-level="21.8.3" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#construcción-del-modelo"><i class="fa fa-check"></i><b>21.8.3</b> Construcción del modelo</a></li>
+<li class="chapter" data-level="21.8.4" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#seleccionar-los-modelos"><i class="fa fa-check"></i><b>21.8.4</b> Seleccionar los modelos</a></li>
+<li class="chapter" data-level="21.8.5" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#extraer-los-parametros-del-modelo-usando-las-sigueientes-funciones"><i class="fa fa-check"></i><b>21.8.5</b> Extraer los parametros del modelo, usando las sigueientes funciones</a></li>
+<li class="chapter" data-level="21.8.6" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#intervalos-de-confianza"><i class="fa fa-check"></i><b>21.8.6</b> Intervalos de Confianza</a></li>
+<li class="chapter" data-level="21.8.7" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#visualizar-los-coeficientes-con-los-intervalos-de-confianza"><i class="fa fa-check"></i><b>21.8.7</b> Visualizar los coeficientes con los intervalos de confianza</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html"><i class="fa fa-check"></i><b>22</b> Pruebas no parametricas</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#non-parametric-tests"><i class="fa fa-check"></i><b>22.1</b> Non-parametric tests</a></li>
+<li class="chapter" data-level="22.2" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#los-paquetes"><i class="fa fa-check"></i><b>22.2</b> Los paquetes</a></li>
+<li class="chapter" data-level="22.3" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#activating-packages"><i class="fa fa-check"></i><b>22.3</b> Activating packages</a></li>
+<li class="chapter" data-level="22.4" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#wilcoxon-rank-sum-test"><i class="fa fa-check"></i><b>22.4</b> Wilcoxon rank-sum test</a></li>
+<li class="chapter" data-level="22.5" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#the-hypothesis"><i class="fa fa-check"></i><b>22.5</b> The hypothesis:</a></li>
+<li class="chapter" data-level="22.6" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#the-level-of-depression-posterior-to-the-intake-of-alcohol-is-the-same-as-those-which-take-ecstasy."><i class="fa fa-check"></i><b>22.6</b> The level of depression posterior to the intake of alcohol is the same as those which take ecstasy.</a>
+<ul>
+<li class="chapter" data-level="22.6.1" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#is-this-the-null-or-alternate-hipothesis"><i class="fa fa-check"></i><b>22.6.1</b> Is this the null or alternate hipothesis?</a></li>
+</ul></li>
+<li class="chapter" data-level="22.7" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#enter-raw-data"><i class="fa fa-check"></i><b>22.7</b> Enter raw data</a></li>
+<li class="chapter" data-level="22.8" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#or-import-the-data"><i class="fa fa-check"></i><b>22.8</b> Or Import the data</a></li>
+<li class="chapter" data-level="22.9" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#exploratory-analysis"><i class="fa fa-check"></i><b>22.9</b> Exploratory analysis</a></li>
+<li class="chapter" data-level="22.10" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#descriptive-statistics."><i class="fa fa-check"></i><b>22.10</b> Descriptive statistics.</a>
+<ul>
+<li class="chapter" data-level="22.10.1" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#do-a-histogram-by-factor-level-for-anxiety-for-sunday."><i class="fa fa-check"></i><b>22.10.1</b> Do a histogram by factor level for anxiety for Sunday.</a></li>
+</ul></li>
+<li class="chapter" data-level="22.11" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#test-of-equality-of-variance"><i class="fa fa-check"></i><b>22.11</b> Test of equality of variance</a></li>
+<li class="chapter" data-level="22.12" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#wilcoxon-rank-sum-test-1"><i class="fa fa-check"></i><b>22.12</b> Wilcoxon rank-sum test</a></li>
+<li class="chapter" data-level="22.13" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#this-is-how-to-assing-the-rank-by-hand-this-is-an-example-the-scripts-will-do-this-automatically."><i class="fa fa-check"></i><b>22.13</b> This is how to assing the Rank by Hand…… This is an example, the scripts will do this automatically.</a></li>
+<li class="chapter" data-level="22.14" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#wilcoxon-test-a-non-parametric-test"><i class="fa fa-check"></i><b>22.14</b> Wilcoxon test: A non-parametric test</a></li>
+<li class="chapter" data-level="22.15" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#the-following-approach-is-better-because-it-can-deal-with-ties-values-that-are-equal"><i class="fa fa-check"></i><b>22.15</b> the following approach is better because it can deal with ties (values that are equal)</a></li>
+<li class="chapter" data-level="22.16" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#class-excercise"><i class="fa fa-check"></i><b>22.16</b> Class Excercise</a></li>
+<li class="chapter" data-level="22.17" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#how-many-time-have-you-gone-to-disney-and-is-there-a-difference-between-genders"><i class="fa fa-check"></i><b>22.17</b> How many time have you gone to Disney, and is there a difference between genders?</a></li>
+<li class="chapter" data-level="22.18" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#comparing-two-related-conditions-the-wilcoxon-signed-rank-test-similar-to-paired-t-test"><i class="fa fa-check"></i><b>22.18</b> Comparing two related conditions: the Wilcoxon signed-rank test (similar to paired t-test)</a>
+<ul>
+<li class="chapter" data-level="22.18.1" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#do-not-confuse-with-the-wilcoxon-rank-sum-test-similar-to-unpaired-t-test"><i class="fa fa-check"></i><b>22.18.1</b> Do not confuse with the Wilcoxon rank-sum test (similar to unpaired t-test)</a></li>
+</ul></li>
+<li class="chapter" data-level="22.19" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#krukall-wallis-test"><i class="fa fa-check"></i><b>22.19</b> Krukall-Wallis Test</a></li>
+<li class="chapter" data-level="22.20" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#soya-and-the-effect-on-sperm-production-in-human-males."><i class="fa fa-check"></i><b>22.20</b> Soya and the effect on sperm production in human males.</a>
+<ul>
+<li class="chapter" data-level="22.20.1" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#soy-food-and-isoflavone-intake-in-relation-to-semen-quality-parameters-among-men-from-an-infertility-clinic"><i class="fa fa-check"></i><b>22.20.1</b> Soy food and isoflavone intake in relation to semen quality parameters among men from an infertility clinic</a></li>
+</ul></li>
+<li class="chapter" data-level="22.21" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#abstract"><i class="fa fa-check"></i><b>22.21</b> Abstract</a>
+<ul>
+<li class="chapter" data-level="22.21.1" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#background"><i class="fa fa-check"></i><b>22.21.1</b> BACKGROUND:</a></li>
+<li class="chapter" data-level="22.21.2" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#methods"><i class="fa fa-check"></i><b>22.21.2</b> METHODS:</a></li>
+<li class="chapter" data-level="22.21.3" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#results"><i class="fa fa-check"></i><b>22.21.3</b> RESULTS:</a></li>
+<li class="chapter" data-level="22.21.4" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#conclusions"><i class="fa fa-check"></i><b>22.21.4</b> CONCLUSIONS:</a></li>
+</ul></li>
+<li class="chapter" data-level="22.22" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#hacer-un-boxplot-de-los-datos-en-un-nuevo-chunk"><i class="fa fa-check"></i><b>22.22</b> Hacer un boxplot de los datos en un nuevo chunk</a></li>
+<li class="chapter" data-level="22.23" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#kruskall-wallis-test-is-similar-to-an-anova-without-assuming-normal-distribution-or-equality-of-variance."><i class="fa fa-check"></i><b>22.23</b> Kruskall Wallis test is similar to an ANOVA without assuming normal distribution or equality of variance.</a>
+<ul>
+<li class="chapter" data-level="22.23.1" data-path="pruebas-no-parametricas.html"><a href="pruebas-no-parametricas.html#note"><i class="fa fa-check"></i><b>22.23.1</b> Note</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>23</b> Cross-references</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>23.1</b> Chapters and sub-chapters</a></li>
+<li class="chapter" data-level="23.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>23.2</b> Captioned figures and tables</a></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>24</b> Footnotes and citations</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>24.1</b> Footnotes</a></li>
+<li class="chapter" data-level="24.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>24.2</b> Citations</a></li>
+<li class="chapter" data-level="24.3" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#links-to-websites"><i class="fa fa-check"></i><b>24.3</b> Links to websites</a></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>25</b> Sharing your book</a>
+<ul>
+<li class="chapter" data-level="25.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>25.1</b> Publishing</a></li>
+<li class="chapter" data-level="25.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>25.2</b> 404 pages</a></li>
+<li class="chapter" data-level="25.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>25.3</b> Metadata for sharing</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="ejercicios-a.html"><a href="ejercicios-a.html"><i class="fa fa-check"></i><b>A</b> Ejercicios A</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="ejercicios-a.html"><a href="ejercicios-a.html#en-esta-actividad-estarán-comenzando-a-utilizar-la-plataforma-r."><i class="fa fa-check"></i><b>A.1</b> En esta actividad estarán comenzando a utilizar la plataforma R.</a>
+<ul>
+<li class="chapter" data-level="A.1.1" data-path="ejercicios-a.html"><a href="ejercicios-a.html#primer-paso"><i class="fa fa-check"></i><b>A.1.1</b> Primer paso</a></li>
+<li class="chapter" data-level="A.1.2" data-path="ejercicios-a.html"><a href="ejercicios-a.html#segundo-paso"><i class="fa fa-check"></i><b>A.1.2</b> Segundo paso</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="ejercicios-b.html"><a href="ejercicios-b.html"><i class="fa fa-check"></i><b>B</b> Ejercicios B</a>
+<ul>
+<li class="chapter" data-level="B.1" data-path="ejercicios-b.html"><a href="ejercicios-b.html#tarea-para-entregar-fecha-limite-el-24-de-agosto-a-la-media-noche-1159pm"><i class="fa fa-check"></i><b>B.1</b> <span style="color: red;">Tarea para entregar, fecha limite el 24 de agosto a la media noche 11:59pm</span></a></li>
+<li class="chapter" data-level="B.2" data-path="ejercicios-b.html"><a href="ejercicios-b.html#segundo-paso-1"><i class="fa fa-check"></i><b>B.2</b> Segundo paso</a>
+<ul>
+<li class="chapter" data-level="B.2.1" data-path="ejercicios-b.html"><a href="ejercicios-b.html#tercer-paso"><i class="fa fa-check"></i><b>B.2.1</b> Tercer Paso</a></li>
+<li class="chapter" data-level="B.2.2" data-path="ejercicios-b.html"><a href="ejercicios-b.html#cuarto-paso"><i class="fa fa-check"></i><b>B.2.2</b> Cuarto Paso</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="ejercicios-c.html"><a href="ejercicios-c.html"><i class="fa fa-check"></i><b>C</b> Ejercicios C</a>
+<ul>
+<li class="chapter" data-level="C.1" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-de-practica"><i class="fa fa-check"></i><b>C.1</b> Ejercicio de practica</a>
+<ul>
+<li class="chapter" data-level="C.1.1" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-1-2"><i class="fa fa-check"></i><b>C.1.1</b> Ejercicio #1</a></li>
+<li class="chapter" data-level="C.1.2" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-2-1"><i class="fa fa-check"></i><b>C.1.2</b> Ejercicio #2</a></li>
+<li class="chapter" data-level="C.1.3" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-3"><i class="fa fa-check"></i><b>C.1.3</b> Ejercicio #3</a></li>
+<li class="chapter" data-level="C.1.4" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-4"><i class="fa fa-check"></i><b>C.1.4</b> Ejercicio #4</a></li>
+<li class="chapter" data-level="C.1.5" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-5"><i class="fa fa-check"></i><b>C.1.5</b> Ejercicio #5</a></li>
+<li class="chapter" data-level="C.1.6" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-6"><i class="fa fa-check"></i><b>C.1.6</b> Ejercicio #6</a></li>
+<li class="chapter" data-level="C.1.7" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-7"><i class="fa fa-check"></i><b>C.1.7</b> Ejercicio #7</a></li>
+<li class="chapter" data-level="C.1.8" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-8"><i class="fa fa-check"></i><b>C.1.8</b> Ejercicio #8</a></li>
+<li class="chapter" data-level="C.1.9" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-9"><i class="fa fa-check"></i><b>C.1.9</b> Ejercicio #9</a></li>
+<li class="chapter" data-level="C.1.10" data-path="ejercicios-c.html"><a href="ejercicios-c.html#ejercicio-10"><i class="fa fa-check"></i><b>C.1.10</b> Ejercicio #10</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="ejercicios-d.html"><a href="ejercicios-d.html"><i class="fa fa-check"></i><b>D</b> Ejercicios D</a>
+<ul>
+<li class="chapter" data-level="D.1" data-path="ejercicios-d.html"><a href="ejercicios-d.html#anova-exercices"><i class="fa fa-check"></i><b>D.1</b> ANOVA exercices</a>
+<ul>
+<li class="chapter" data-level="D.1.1" data-path="ejercicios-d.html"><a href="ejercicios-d.html#el-estudiante-entregará-el-trabajo-en-el-formato-de-.html-en-msteam."><i class="fa fa-check"></i><b>D.1.1</b> El estudiante entregará el trabajo en el formato de .html en MSTeam.</a></li>
+<li class="chapter" data-level="D.1.2" data-path="ejercicios-d.html"><a href="ejercicios-d.html#los-datos-se-encuentrán-en-la-pestaña-del-website-debajo-los-datos-archivos-de-datos.-el-nombre-del-archivo-se-llama"><i class="fa fa-check"></i><b>D.1.2</b> Los datos se encuentrán en la pestaña del website debajo “Los Datos”, “Archivos de Datos”. El nombre del archivo se llama</a></li>
+<li class="chapter" data-level="D.1.3" data-path="ejercicios-d.html"><a href="ejercicios-d.html#human-mortality-database"><i class="fa fa-check"></i><b>D.1.3</b> Human Mortality Database</a></li>
+<li class="chapter" data-level="D.1.4" data-path="ejercicios-d.html"><a href="ejercicios-d.html#aqui-los-primeras-6-filas-del-df"><i class="fa fa-check"></i><b>D.1.4</b> Aqui los primeras 6 filas del df</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="ejercicios-e.html"><a href="ejercicios-e.html"><i class="fa fa-check"></i><b>E</b> Ejercicios E</a>
+<ul>
+<li class="chapter" data-level="E.1" data-path="ejercicios-e.html"><a href="ejercicios-e.html#anova-excercise-2"><i class="fa fa-check"></i><b>E.1</b> ANOVA Excercise 2</a>
+<ul>
+<li class="chapter" data-level="E.1.1" data-path="ejercicios-e.html"><a href="ejercicios-e.html#superheroes-y-lesiones"><i class="fa fa-check"></i><b>E.1.1</b> Superheroes y Lesiones</a></li>
+<li class="chapter" data-level="E.1.2" data-path="ejercicios-e.html"><a href="ejercicios-e.html#la-preguntas"><i class="fa fa-check"></i><b>E.1.2</b> La preguntas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="F" data-path="ejercicios-f.html"><a href="ejercicios-f.html"><i class="fa fa-check"></i><b>F</b> Ejercicios F</a>
+<ul>
+<li class="chapter" data-level="F.1" data-path="ejercicios-f.html"><a href="ejercicios-f.html#ejercicio-de-corelación"><i class="fa fa-check"></i><b>F.1</b> Ejercicio de Corelación:</a>
+<ul>
+<li class="chapter" data-level="F.1.1" data-path="ejercicios-f.html"><a href="ejercicios-f.html#despues-de-hacer-los-ejercicios-habrá-preguntas-en-msteam-para-contestar."><i class="fa fa-check"></i><b>F.1.1</b> Despues de hacer los ejercicios habrá preguntas en MSTeam para contestar.</a></li>
+<li class="chapter" data-level="F.1.2" data-path="ejercicios-f.html"><a href="ejercicios-f.html#los-datos"><i class="fa fa-check"></i><b>F.1.2</b> Los Datos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="G" data-path="ejercicios-g.html"><a href="ejercicios-g.html"><i class="fa fa-check"></i><b>G</b> Ejercicios G</a>
+<ul>
+<li class="chapter" data-level="G.1" data-path="ejercicios-g.html"><a href="ejercicios-g.html#regresión-logística-1"><i class="fa fa-check"></i><b>G.1</b> Regresión Logística</a>
+<ul>
+<li class="chapter" data-level="G.1.1" data-path="ejercicios-g.html"><a href="ejercicios-g.html#karn-and-penrose-data-set"><i class="fa fa-check"></i><b>G.1.1</b> Karn and Penrose data Set</a></li>
+<li class="chapter" data-level="G.1.2" data-path="ejercicios-g.html"><a href="ejercicios-g.html#los-datos-1"><i class="fa fa-check"></i><b>G.1.2</b> Los Datos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="H" data-path="ejercicios-h.html"><a href="ejercicios-h.html"><i class="fa fa-check"></i><b>H</b> Ejercicios H</a>
+<ul>
+<li class="chapter" data-level="H.1" data-path="ejercicios-h.html"><a href="ejercicios-h.html#bondad-de-ajuste"><i class="fa fa-check"></i><b>H.1</b> Bondad de Ajuste</a>
+<ul>
+<li class="chapter" data-level="H.1.1" data-path="ejercicios-h.html"><a href="ejercicios-h.html#encontrarán-dos-ejercicios-de-los-análisis-de-bondad-de-ajuste."><i class="fa fa-check"></i><b>H.1.1</b> Encontrarán dos ejercicios de los análisis de Bondad de Ajuste.</a></li>
+<li class="chapter" data-level="H.1.2" data-path="ejercicios-h.html"><a href="ejercicios-h.html#ejercicio-1-3"><i class="fa fa-check"></i><b>H.1.2</b> Ejercicio #1</a></li>
+<li class="chapter" data-level="H.1.3" data-path="ejercicios-h.html"><a href="ejercicios-h.html#musaraña"><i class="fa fa-check"></i><b>H.1.3</b> Musaraña</a></li>
+<li class="chapter" data-level="H.1.4" data-path="ejercicios-h.html"><a href="ejercicios-h.html#ejercicio-1-4"><i class="fa fa-check"></i><b>H.1.4</b> Ejercicio #1</a></li>
+<li class="chapter" data-level="H.1.5" data-path="ejercicios-h.html"><a href="ejercicios-h.html#mofetas-y-rabia"><i class="fa fa-check"></i><b>H.1.5</b> Mofetas y rabia</a></li>
+<li class="chapter" data-level="H.1.6" data-path="ejercicios-h.html"><a href="ejercicios-h.html#ahora-contesta-las-preguntas-en-msteam."><i class="fa fa-check"></i><b>H.1.6</b> AHORA contesta las preguntas en MSTeam.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="I" data-path="ejercicios-i.html"><a href="ejercicios-i.html"><i class="fa fa-check"></i><b>I</b> Ejercicios I</a>
+<ul>
+<li class="chapter" data-level="I.1" data-path="ejercicios-i.html"><a href="ejercicios-i.html#evaluación-de-distribución-normal"><i class="fa fa-check"></i><b>I.1</b> Evaluación de distribución normal</a>
+<ul>
+<li class="chapter" data-level="I.1.1" data-path="ejercicios-i.html"><a href="ejercicios-i.html#construir-un-histograma-con-los-siguientes-datos"><i class="fa fa-check"></i><b>I.1.1</b> Construir un histograma con los siguientes datos</a></li>
+<li class="chapter" data-level="I.1.2" data-path="ejercicios-i.html"><a href="ejercicios-i.html#constuye-un-histograma-de-la-distribución-de-los-pesos-de-los-pajaros."><i class="fa fa-check"></i><b>I.1.2</b> Constuye un histograma de la distribución de los pesos de los pajaros.</a></li>
+<li class="chapter" data-level="I.1.3" data-path="ejercicios-i.html"><a href="ejercicios-i.html#qqplot-1"><i class="fa fa-check"></i><b>I.1.3</b> QQPLOT</a></li>
+<li class="chapter" data-level="I.1.4" data-path="ejercicios-i.html"><a href="ejercicios-i.html#shapiro-wilk-test"><i class="fa fa-check"></i><b>I.1.4</b> Shapiro-Wilk test</a></li>
+<li class="chapter" data-level="I.1.5" data-path="ejercicios-i.html"><a href="ejercicios-i.html#anderson-darling"><i class="fa fa-check"></i><b>I.1.5</b> Anderson-Darling</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="J" data-path="ejercicios-j.html"><a href="ejercicios-j.html"><i class="fa fa-check"></i><b>J</b> Ejercicios J</a>
+<ul>
+<li class="chapter" data-level="J.1" data-path="ejercicios-j.html"><a href="ejercicios-j.html#pruebas-de-una-muestra"><i class="fa fa-check"></i><b>J.1</b> Pruebas de una muestra</a>
+<ul>
+<li class="chapter" data-level="J.1.1" data-path="ejercicios-j.html"><a href="ejercicios-j.html#ejercicio-de-práctica-1-amigos-de-facebook-1"><i class="fa fa-check"></i><b>J.1.1</b> Ejercicio de práctica 1: Amigos de Facebook</a></li>
+<li class="chapter" data-level="J.1.2" data-path="ejercicios-j.html"><a href="ejercicios-j.html#ejercicio-de-práctica-2-dias-de-enfermedades-1"><i class="fa fa-check"></i><b>J.1.2</b> Ejercicio de práctica 2: Dias de enfermedades</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="K" data-path="ejercicios-k.html"><a href="ejercicios-k.html"><i class="fa fa-check"></i><b>K</b> Ejercicios K</a>
+<ul>
+<li class="chapter" data-level="K.1" data-path="ejercicios-k.html"><a href="ejercicios-k.html#prueba-de-t-con-datos-pareados."><i class="fa fa-check"></i><b>K.1</b> <strong>prueba de t con datos pareados</strong>.</a>
+<ul>
+<li class="chapter" data-level="K.1.1" data-path="ejercicios-k.html"><a href="ejercicios-k.html#el-siguiente-ejercicio-es-para-una-prueba-corta-donde-tendrán-que-contestar-en-msteam."><i class="fa fa-check"></i><b>K.1.1</b> El siguiente ejercicio es para una prueba corta donde tendrán que contestar en MSTeam.</a></li>
+<li class="chapter" data-level="K.1.2" data-path="ejercicios-k.html"><a href="ejercicios-k.html#calcula-el-promedio-y-la-desviación-estandard-del-número-de-hoja-en-cada-tiempo."><i class="fa fa-check"></i><b>K.1.2</b> 1. Calcula el promedio y la desviación estandard del número de hoja en cada tiempo.</a></li>
+<li class="chapter" data-level="K.1.3" data-path="ejercicios-k.html"><a href="ejercicios-k.html#haz-la-prueba-de-t-con-datos-pareados"><i class="fa fa-check"></i><b>K.1.3</b> 2. Haz la <em>prueba de t-con datos pareados</em></a></li>
+<li class="chapter" data-level="K.1.4" data-path="ejercicios-k.html"><a href="ejercicios-k.html#haz-un-gráficos-histograma-de-las-diferencias-entre-el-tiempo-t12-y-t1."><i class="fa fa-check"></i><b>K.1.4</b> 3. Haz un gráficos “histograma” de las diferencias entre el tiempo T12 y T1.</a></li>
+<li class="chapter" data-level="K.1.5" data-path="ejercicios-k.html"><a href="ejercicios-k.html#determina-si-la-prueba-cumple-con-ellos-supuestos-de-una-prueba-de-t-con-datos-pareados"><i class="fa fa-check"></i><b>K.1.5</b> 4. Determina si la prueba cumple con el/los supuesto(s) de una prueba de t con datos pareados?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="L" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><i class="fa fa-check"></i><b>L</b> Ejercicios sobre <strong>prueba de t con datos independiente</strong></a>
+<ul>
+<li class="chapter" data-level="L.1" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#el-siguiente-ejercicio-es-para-una-prueba-corta-donde-tendrán-que-contestar-en-msteam.-1"><i class="fa fa-check"></i><b>L.1</b> El siguiente ejercicio es para una prueba corta donde tendrán que contestar en MSTeam.</a>
+<ul>
+<li class="chapter" data-level="L.1.1" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#tabla-de-que-es-igg-y-algunos-de-sus-causas"><i class="fa fa-check"></i><b>L.1.1</b> Tabla de que es IgG y algunos de sus causas</a></li>
+<li class="chapter" data-level="L.1.2" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#calcular-el-promedio-y-desviación-estandard-y-el-tamaño-de-muestra-de-los-dos-grupos-del-nivel-de-igg"><i class="fa fa-check"></i><b>L.1.2</b> 1. Calcular el promedio y desviación estandard y el tamaño de muestra de los dos grupos del nivel de IgG</a></li>
+<li class="chapter" data-level="L.1.3" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#hacer-la-prueba-para-evaluar-si-las-mujeres-y-hombres-tienen-un-igg-diferente"><i class="fa fa-check"></i><b>L.1.3</b> 2. Hacer la prueba para evaluar si las mujeres y hombres tienen un IgG diferente</a></li>
+<li class="chapter" data-level="L.1.4" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#haz-un-histograma-de-la-variable-igg-por-genero-a-un-color-diferente-por-gender"><i class="fa fa-check"></i><b>L.1.4</b> 3. Haz un histograma de la variable “IgG” por genero, a) un color diferente por “Gender”</a></li>
+<li class="chapter" data-level="L.1.5" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#determina-si-la-prueba-cumple-con-ellos-supuestos-de-una-prueba-de-t-con-datos-independientes"><i class="fa fa-check"></i><b>L.1.5</b> 4. Determina si la prueba cumple con el/los supuesto(s) de una prueba de t con datos independientes?</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="M" data-path="ejercicios-m.html"><a href="ejercicios-m.html"><i class="fa fa-check"></i><b>M</b> Ejercicios M</a>
+<ul>
+<li class="chapter" data-level="M.1" data-path="ejercicios-m.html"><a href="ejercicios-m.html#ejercicio-de-regresión"><i class="fa fa-check"></i><b>M.1</b> Ejercicio de Regresión</a>
+<ul>
+<li class="chapter" data-level="M.1.1" data-path="ejercicios-m.html"><a href="ejercicios-m.html#fungal-growth"><i class="fa fa-check"></i><b>M.1.1</b> Fungal growth</a></li>
+<li class="chapter" data-level="M.1.2" data-path="ejercicios-m.html"><a href="ejercicios-m.html#contesta-las-preguntas-en-msteam"><i class="fa fa-check"></i><b>M.1.2</b> Contesta las preguntas en MSTeam</a></li>
+<li class="chapter" data-level="M.1.3" data-path="ejercicios-m.html"><a href="ejercicios-m.html#distancia-de-las-estrellas-más-brillantes-de-las-que-son-100-años-luz-o-menos"><i class="fa fa-check"></i><b>M.1.3</b> Distancia de las estrellas más brillantes de las que son 100 años luz o menos</a></li>
+<li class="chapter" data-level="M.1.4" data-path="ejercicios-m.html"><a href="ejercicios-m.html#calcular-el-promedio-mediana-moda-y-rango-de-los-datos-de-las-estrellas-más-cercana-a-la-tierra"><i class="fa fa-check"></i><b>M.1.4</b> Calcular el promedio, mediana, moda y rango de los datos de las estrellas más cercana a la tierra</a></li>
+<li class="chapter" data-level="M.1.5" data-path="ejercicios-m.html"><a href="ejercicios-m.html#los-datos-representan-las-poblaciones-en-1000-en-puerto-rico-en-el-año-2020"><i class="fa fa-check"></i><b>M.1.5</b> Los datos representan las poblaciones (en 1’000) en Puerto Rico en el año 2020</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="N" data-path="ejercicios-n.html"><a href="ejercicios-n.html"><i class="fa fa-check"></i><b>N</b> Ejercicios N</a>
+<ul>
+<li class="chapter" data-level="N.1" data-path="ejercicios-n.html"><a href="ejercicios-n.html#ejercicios-de-tendencia-central"><i class="fa fa-check"></i><b>N.1</b> Ejercicios de tendencia central</a>
+<ul>
+<li class="chapter" data-level="N.1.1" data-path="ejercicios-n.html"><a href="ejercicios-n.html#los-datos-representan-la-cantidad-de-dinero-ganado-por-arttistas-fallecidos-en-milliones-de-dollares"><i class="fa fa-check"></i><b>N.1.1</b> Los datos representan la cantidad de dinero ganado por arttistas (fallecidos) en milliones de dollares</a></li>
+<li class="chapter" data-level="N.1.2" data-path="ejercicios-n.html"><a href="ejercicios-n.html#la-catidad-de-personas-fallecidos-en-acidentes-de-carro-en-año-especifico-en-los-50-estados."><i class="fa fa-check"></i><b>N.1.2</b> La catidad de personas fallecidos en acidentes de carro en año especifico en los 50 estados.</a></li>
+<li class="chapter" data-level="N.1.3" data-path="ejercicios-n.html"><a href="ejercicios-n.html#calcular-el-rango-varianza-desviación-estandard-y-error-estandard"><i class="fa fa-check"></i><b>N.1.3</b> Calcular el rango, varianza, desviación estandard y error estandard</a></li>
+<li class="chapter" data-level="N.1.4" data-path="ejercicios-n.html"><a href="ejercicios-n.html#haz-un-histograma-de-estos-datos"><i class="fa fa-check"></i><b>N.1.4</b> Haz un histograma de estos datos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="O" data-path="ejercicio-o.html"><a href="ejercicio-o.html"><i class="fa fa-check"></i><b>O</b> Ejercicio O</a>
+<ul>
+<li class="chapter" data-level="O.1" data-path="ejercicio-o.html"><a href="ejercicio-o.html#ejercicios-de-dispersión"><i class="fa fa-check"></i><b>O.1</b> Ejercicios de dispersión</a>
+<ul>
+<li class="chapter" data-level="O.1.1" data-path="ejercicio-o.html"><a href="ejercicio-o.html#buscar-la-metadata"><i class="fa fa-check"></i><b>O.1.1</b> Buscar la metadata</a></li>
+<li class="chapter" data-level="O.1.2" data-path="ejercicio-o.html"><a href="ejercicio-o.html#visualizar-la-meta-data"><i class="fa fa-check"></i><b>O.1.2</b> Visualizar la meta data</a></li>
+<li class="chapter" data-level="O.1.3" data-path="ejercicio-o.html"><a href="ejercicio-o.html#buscar-los-datos"><i class="fa fa-check"></i><b>O.1.3</b> Buscar los datos</a></li>
+<li class="chapter" data-level="O.1.4" data-path="ejercicio-o.html"><a href="ejercicio-o.html#ver-el-nombre-de-todos-los-paises-incluido-en-el-archivo"><i class="fa fa-check"></i><b>O.1.4</b> Ver el nombre de todos los paises incluido en el archivo</a></li>
+<li class="chapter" data-level="O.1.5" data-path="ejercicio-o.html"><a href="ejercicio-o.html#importante"><i class="fa fa-check"></i><b>O.1.5</b> Importante</a></li>
+<li class="chapter" data-level="O.1.6" data-path="ejercicio-o.html"><a href="ejercicio-o.html#ejercicio-1-5"><i class="fa fa-check"></i><b>O.1.6</b> Ejercicio 1</a></li>
+<li class="chapter" data-level="O.1.7" data-path="ejercicio-o.html"><a href="ejercicio-o.html#ejercicio-2-2"><i class="fa fa-check"></i><b>O.1.7</b> Ejercicio 2</a></li>
+<li class="chapter" data-level="O.1.8" data-path="ejercicio-o.html"><a href="ejercicio-o.html#discusión"><i class="fa fa-check"></i><b>O.1.8</b> Discusión</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="P" data-path="ejercicios-p.html"><a href="ejercicios-p.html"><i class="fa fa-check"></i><b>P</b> Ejercicios P</a>
+<ul>
+<li class="chapter" data-level="P.1" data-path="ejercicios-p.html"><a href="ejercicios-p.html#ejercicios-de-pruebas-de-frecuencia"><i class="fa fa-check"></i><b>P.1</b> Ejercicios de Pruebas de Frecuencia</a>
+<ul>
+<li class="chapter" data-level="P.1.1" data-path="ejercicios-p.html"><a href="ejercicios-p.html#capitulo-7"><i class="fa fa-check"></i><b>P.1.1</b> Capitulo 7</a></li>
+<li class="chapter" data-level="P.1.2" data-path="ejercicios-p.html"><a href="ejercicios-p.html#ejericico-de-práctica-no-para-someter"><i class="fa fa-check"></i><b>P.1.2</b> Ejericico de Práctica (no para someter)</a></li>
+<li class="chapter" data-level="P.1.3" data-path="ejercicios-p.html"><a href="ejercicios-p.html#ejercicio-para-someter."><i class="fa fa-check"></i><b>P.1.3</b> Ejercicio para someter.</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biometria</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ejercicios-c" class="section level1 hasAnchor" number="28">
+<h1><span class="header-section-number">C</span> Ejercicios C<a href="ejercicios-c.html#ejercicios-c" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="ejercicio-de-practica" class="section level2 hasAnchor" number="28.1">
+<h2><span class="header-section-number">C.1</span> Ejercicio de practica<a href="ejercicios-c.html#ejercicio-de-practica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los siguientes ejercicios son para practicar el uso de R y RStudio. Se asume que Uds. practica lo siguiente. Tiene acceso a R y Rstudio, RMarkdown, el internet, libros. Después de hacer los ejercicios discuta tus resultados con otros estudiantes. Este ejercicio NO tiene puntuación.</p>
+<p>R Practica
+Usa R como una calculadora</p>
+<div id="ejercicio-1-2" class="section level3 hasAnchor" number="28.1.1">
+<h3><span class="header-section-number">C.1.1</span> Ejercicio #1<a href="ejercicios-c.html#ejercicio-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pon esta formula en R correctamente y calcula el resultado.</p>
+<p><span class="math inline">\(1+2(3+4)\)</span></p>
+</div>
+<div id="ejercicio-2-1" class="section level3 hasAnchor" number="28.1.2">
+<h3><span class="header-section-number">C.1.2</span> Ejercicio #2<a href="ejercicios-c.html#ejercicio-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pon esta fomula en R correctamente y calcula el resultado.</p>
+<p><span class="math inline">\(\sqrt{(4+1)(2+1)}\)</span></p>
+</div>
+<div id="ejercicio-3" class="section level3 hasAnchor" number="28.1.3">
+<h3><span class="header-section-number">C.1.3</span> Ejercicio #3<a href="ejercicios-c.html#ejercicio-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Re-esribir esta fomula en R correctamente y calcula el resultado.</p>
+<p><span class="math inline">\((2 + 3) * 4\)</span></p>
+</div>
+<div id="ejercicio-4" class="section level3 hasAnchor" number="28.1.4">
+<h3><span class="header-section-number">C.1.4</span> Ejercicio #4<a href="ejercicios-c.html#ejercicio-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Calcular lo siguiente en R, enseña el codigo y el resultado</p>
+<p><span class="math display">\[\frac{0.25-2}{\sqrt{(0.2(1-0.2)/100})}\]</span></p>
+</div>
+<div id="ejercicio-5" class="section level3 hasAnchor" number="28.1.5">
+<h3><span class="header-section-number">C.1.5</span> Ejercicio #5<a href="ejercicios-c.html#ejercicio-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Asigna una variable a los valores del 2 hasta el 5. Después usando las variable multiplica todos los valores.</p>
+</div>
+<div id="ejercicio-6" class="section level3 hasAnchor" number="28.1.6">
+<h3><span class="header-section-number">C.1.6</span> Ejercicio #6<a href="ejercicios-c.html#ejercicio-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El data set <strong>rivers</strong> se sube con R. Escribe <strong>rivers</strong> en un chunk y determina cual es el ultimo valor del archivo y cual es su posición en la lista.</p>
+</div>
+<div id="ejercicio-7" class="section level3 hasAnchor" number="28.1.7">
+<h3><span class="header-section-number">C.1.7</span> Ejercicio #7<a href="ejercicios-c.html#ejercicio-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Instala y activa el paquete <strong>UsingR</strong> y evalúa los datos que se encuentra en el archivo/data frame <strong>exe.pay</strong>. Calcula cual es el promedio, mínimo y máximo de los datos usando las funciones <em>mean, min y max</em>.</p>
+</div>
+<div id="ejercicio-8" class="section level3 hasAnchor" number="28.1.8">
+<h3><span class="header-section-number">C.1.8</span> Ejercicio #8<a href="ejercicios-c.html#ejercicio-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El data set que se llama <strong>Orange</strong> es un data frame con tres variables. Como se llama las variables?</p>
+</div>
+<div id="ejercicio-9" class="section level3 hasAnchor" number="28.1.9">
+<h3><span class="header-section-number">C.1.9</span> Ejercicio #9<a href="ejercicios-c.html#ejercicio-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Calcula la edad promedia de los arboles de naranja que esta en el archivo <strong>Orange</strong></p>
+</div>
+<div id="ejercicio-10" class="section level3 hasAnchor" number="28.1.10">
+<h3><span class="header-section-number">C.1.10</span> Ejercicio #10<a href="ejercicios-c.html#ejercicio-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Haz un gráfico de puntos entre la x=circunferencia del árbol y la y=edad, y añadele un color diferente a cada árbol.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ejercicios-b.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ejercicios-d.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/APPENDIX.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/RaymondLTremblay/Biometria/blob/main/APPENDIX.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

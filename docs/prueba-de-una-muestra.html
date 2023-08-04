@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-08-01" />
+<meta name="date" content="2023-08-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -793,10 +793,10 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="prueba-de-una-muestra" class="section level1 hasAnchor" number="13">
 <h1><span class="header-section-number">Chapter 13</span> Prueba de una muestra<a href="prueba-de-una-muestra.html#prueba-de-una-muestra" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="prueba-de-una-muestra.html#cb335-1" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb335-2"><a href="prueba-de-una-muestra.html#cb335-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="prueba-de-una-muestra.html#cb338-1" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb338-2"><a href="prueba-de-una-muestra.html#cb338-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <p>Fecha de la ultima revisión</p>
-<pre><code>## [1] &quot;2023-08-01&quot;</code></pre>
+<pre><code>## [1] &quot;2023-08-03&quot;</code></pre>
 <p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
 <hr />
 <div id="el-promedio-un-estimado" class="section level2 hasAnchor" number="13.1">
@@ -812,14 +812,14 @@ div.csl-indent {
 <div id="la-distribución-de-t" class="section level2 hasAnchor" number="13.3">
 <h2><span class="header-section-number">13.3</span> La distribución de t<a href="prueba-de-una-muestra.html#la-distribución-de-t" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Cuando queremos inferir información del promedio o la desviación del universo de un muestreo hay que utilizar la distribución de t. La razón es que la forma de la distribución normal cambia con el tamaño de muestra cuando no sabemos cual es la desviación estándar del universo. A medida que uno reduce el tamaño de muestra la distribución se desvía de una distribución normal. Para tomar esto en cuenta no usamos la distribución normal la de distribución de t, también se dice la distribución de t de estudiante.</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="prueba-de-una-muestra.html#cb337-1" tabindex="-1"></a><span class="fu">ggplot</span>(out,<span class="fu">aes</span>(df1x, val, <span class="at">colour=</span>df) )<span class="sc">+</span></span>
-<span id="cb337-2"><a href="prueba-de-una-muestra.html#cb337-2" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
-<span id="cb337-3"><a href="prueba-de-una-muestra.html#cb337-3" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
-<span id="cb337-4"><a href="prueba-de-una-muestra.html#cb337-4" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">name =</span> <span class="st">&quot;Grado de </span><span class="sc">\n</span><span class="st">libertad&quot;</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;springgreen4&quot;</span>, <span class="st">&quot;black&quot;</span>), </span>
-<span id="cb337-5"><a href="prueba-de-una-muestra.html#cb337-5" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">expression</span>(nu[<span class="dv">1</span>], nu[<span class="dv">2</span>],nu[<span class="dv">5</span>], nu[infinity]))<span class="sc">+</span></span>
-<span id="cb337-6"><a href="prueba-de-una-muestra.html#cb337-6" tabindex="-1"></a>                     <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.8</span>))<span class="sc">+</span></span>
-<span id="cb337-7"><a href="prueba-de-una-muestra.html#cb337-7" tabindex="-1"></a>                     <span class="fu">xlab</span>(<span class="st">&quot;Valores&quot;</span>)<span class="sc">+</span></span>
-<span id="cb337-8"><a href="prueba-de-una-muestra.html#cb337-8" tabindex="-1"></a>                     <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="prueba-de-una-muestra.html#cb340-1" tabindex="-1"></a><span class="fu">ggplot</span>(out,<span class="fu">aes</span>(df1x, val, <span class="at">colour=</span>df) )<span class="sc">+</span></span>
+<span id="cb340-2"><a href="prueba-de-una-muestra.html#cb340-2" tabindex="-1"></a>  <span class="fu">geom_line</span>()<span class="sc">+</span></span>
+<span id="cb340-3"><a href="prueba-de-una-muestra.html#cb340-3" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
+<span id="cb340-4"><a href="prueba-de-una-muestra.html#cb340-4" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">name =</span> <span class="st">&quot;Grado de </span><span class="sc">\n</span><span class="st">libertad&quot;</span>, <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>, <span class="st">&quot;springgreen4&quot;</span>, <span class="st">&quot;black&quot;</span>), </span>
+<span id="cb340-5"><a href="prueba-de-una-muestra.html#cb340-5" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">expression</span>(nu[<span class="dv">1</span>], nu[<span class="dv">2</span>],nu[<span class="dv">5</span>], nu[infinity]))<span class="sc">+</span></span>
+<span id="cb340-6"><a href="prueba-de-una-muestra.html#cb340-6" tabindex="-1"></a>                     <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="fl">0.8</span>))<span class="sc">+</span></span>
+<span id="cb340-7"><a href="prueba-de-una-muestra.html#cb340-7" tabindex="-1"></a>                     <span class="fu">xlab</span>(<span class="st">&quot;Valores&quot;</span>)<span class="sc">+</span></span>
+<span id="cb340-8"><a href="prueba-de-una-muestra.html#cb340-8" tabindex="-1"></a>                     <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)</span></code></pre></div>
 <p><img src="Biometria_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
 <p>Observa que la distribución de t, cuando cambio el tamaño de muestra, (grado de libertad es <span class="math inline">\(\nu=n-1\)</span>). Tiene que observar dos componentes 1. hay menos datos en centrado en el promedio y 2. hay más datos en la colas.</p>
 <p>Se usa la distribución de t para calcular el intervalo de confianza y la hipótesis del promedio de una muestra, debido que la forma de la distribución de t cambia con el tamaño de muestra <span class="math inline">\(\nu=n-1\)</span> y también con la razón de error Tipo I, <span class="math inline">\(\alpha\)</span>.</p>
@@ -848,9 +848,9 @@ div.csl-indent {
 <div id="los-limites-del-intervalo" class="section level2 hasAnchor" number="13.7">
 <h2><span class="header-section-number">13.7</span> Los limites del intervalo<a href="prueba-de-una-muestra.html#los-limites-del-intervalo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Para calcular el intervalo se necesita solamente el valor de t con la tipo de error I de 95% y que corresponde a un tamaño de muestra de 20, <span class="math inline">\(t_{0.05,\ n-1}\)</span>. Para conocer este valor hay que ir a una tabla de la distribución de t (vea p. 217 en el libro) o usar R para calcular el valor. En la tabla busca el error I deseado (0.05) y se busca el grado de libertad <em>n-1</em>, <span class="math inline">\(t_{0.05,\ 19}\)</span>. El valor del libro es <span class="math inline">\(t = 2.093\)</span>. Si se quisiera un Tipo de error I con solamente 1% error el valor seria <span class="math inline">\(t=2.8609\)</span>, (busca la información en la tabla, o usando la función <strong>qt()</strong>).</p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="prueba-de-una-muestra.html#cb338-1" tabindex="-1"></a><span class="fu">abs</span>(<span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">19</span>)) <span class="co"># nota que se usa la mitad de 0.05, por que es una prueba de dos lados. </span></span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="prueba-de-una-muestra.html#cb341-1" tabindex="-1"></a><span class="fu">abs</span>(<span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">19</span>)) <span class="co"># nota que se usa la mitad de 0.05, por que es una prueba de dos lados. </span></span></code></pre></div>
 <pre><code>## [1] 2.093024</code></pre>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="prueba-de-una-muestra.html#cb340-1" tabindex="-1"></a><span class="dv">21</span><span class="sc">+</span><span class="fu">abs</span>(<span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">19</span>)<span class="sc">*</span>(<span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">20</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="prueba-de-una-muestra.html#cb343-1" tabindex="-1"></a><span class="dv">21</span><span class="sc">+</span><span class="fu">abs</span>(<span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">19</span>)<span class="sc">*</span>(<span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">20</span>)))</span></code></pre></div>
 <pre><code>## [1] 21.82371</code></pre>
 <hr />
 </div>
@@ -867,11 +867,11 @@ div.csl-indent {
 <p><span class="math display">\[LL_{0.95}=21-2.093*\left(\frac{1.76}{\sqrt{20}}\right)=20.176\]</span></p>
 <hr />
 <p>El intervalo de confianza del <span class="math inline">\(\mu\)</span> es entre 20.175-21.825 con un 95% de probabilidad.</p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="prueba-de-una-muestra.html#cb342-1" tabindex="-1"></a>UL<span class="ot">=</span><span class="dv">20</span><span class="sc">+</span><span class="fu">abs</span>(<span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">19</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">20</span>))</span>
-<span id="cb342-2"><a href="prueba-de-una-muestra.html#cb342-2" tabindex="-1"></a>LL<span class="ot">=</span><span class="dv">20</span><span class="sc">-</span><span class="fu">abs</span>(<span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">19</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">20</span>))</span>
-<span id="cb342-3"><a href="prueba-de-una-muestra.html#cb342-3" tabindex="-1"></a>UL</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="prueba-de-una-muestra.html#cb345-1" tabindex="-1"></a>UL<span class="ot">=</span><span class="dv">20</span><span class="sc">+</span><span class="fu">abs</span>(<span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">19</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">20</span>))</span>
+<span id="cb345-2"><a href="prueba-de-una-muestra.html#cb345-2" tabindex="-1"></a>LL<span class="ot">=</span><span class="dv">20</span><span class="sc">-</span><span class="fu">abs</span>(<span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">19</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">20</span>))</span>
+<span id="cb345-3"><a href="prueba-de-una-muestra.html#cb345-3" tabindex="-1"></a>UL</span></code></pre></div>
 <pre><code>## [1] 20.82371</code></pre>
-<div class="sourceCode" id="cb344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb344-1"><a href="prueba-de-una-muestra.html#cb344-1" tabindex="-1"></a>LL</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="prueba-de-una-muestra.html#cb347-1" tabindex="-1"></a>LL</span></code></pre></div>
 <pre><code>## [1] 19.17629</code></pre>
 <hr />
 </div>
@@ -879,18 +879,18 @@ div.csl-indent {
 <h2><span class="header-section-number">13.10</span> Menos o más grados de libertad<a href="prueba-de-una-muestra.html#menos-o-más-grados-de-libertad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Nota lo que pasa si uno tiene menos datos o más datos con el intervalo de confianza.</p>
 <p>Con un tamaño de muestra solamente de 5 datos el IC de 95% es entre 17.824-22.185. Por tener menos datos tenemos menos confianza donde se entra el promedio del universo.</p>
-<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="prueba-de-una-muestra.html#cb346-1" tabindex="-1"></a>UL<span class="ot">=</span><span class="dv">21</span><span class="sc">+</span><span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">4</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">5</span>)</span>
-<span id="cb346-2"><a href="prueba-de-una-muestra.html#cb346-2" tabindex="-1"></a>LL<span class="ot">=</span><span class="dv">21</span><span class="sc">-</span><span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">4</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">5</span>)</span>
-<span id="cb346-3"><a href="prueba-de-una-muestra.html#cb346-3" tabindex="-1"></a>UL</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="prueba-de-una-muestra.html#cb349-1" tabindex="-1"></a>UL<span class="ot">=</span><span class="dv">21</span><span class="sc">+</span><span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">4</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">5</span>)</span>
+<span id="cb349-2"><a href="prueba-de-una-muestra.html#cb349-2" tabindex="-1"></a>LL<span class="ot">=</span><span class="dv">21</span><span class="sc">-</span><span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">4</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">5</span>)</span>
+<span id="cb349-3"><a href="prueba-de-una-muestra.html#cb349-3" tabindex="-1"></a>UL</span></code></pre></div>
 <pre><code>## [1] 18.81467</code></pre>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="prueba-de-una-muestra.html#cb348-1" tabindex="-1"></a>LL</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="prueba-de-una-muestra.html#cb351-1" tabindex="-1"></a>LL</span></code></pre></div>
 <pre><code>## [1] 23.18533</code></pre>
 <p>Ahora con en tamaño de muestra de 100. Ahora el intervalo de confianza esta más estrecho 19.651-20.349</p>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="prueba-de-una-muestra.html#cb350-1" tabindex="-1"></a>UL<span class="ot">=</span><span class="dv">21</span><span class="sc">+</span><span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">99</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">100</span>)</span>
-<span id="cb350-2"><a href="prueba-de-una-muestra.html#cb350-2" tabindex="-1"></a>LL<span class="ot">=</span><span class="dv">21</span><span class="sc">-</span><span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">99</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">100</span>)</span>
-<span id="cb350-3"><a href="prueba-de-una-muestra.html#cb350-3" tabindex="-1"></a>UL</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="prueba-de-una-muestra.html#cb353-1" tabindex="-1"></a>UL<span class="ot">=</span><span class="dv">21</span><span class="sc">+</span><span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">99</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">100</span>)</span>
+<span id="cb353-2"><a href="prueba-de-una-muestra.html#cb353-2" tabindex="-1"></a>LL<span class="ot">=</span><span class="dv">21</span><span class="sc">-</span><span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">99</span>)<span class="sc">*</span><span class="fl">1.76</span><span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">100</span>)</span>
+<span id="cb353-3"><a href="prueba-de-una-muestra.html#cb353-3" tabindex="-1"></a>UL</span></code></pre></div>
 <pre><code>## [1] 20.65078</code></pre>
-<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="prueba-de-una-muestra.html#cb352-1" tabindex="-1"></a>LL</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="prueba-de-una-muestra.html#cb355-1" tabindex="-1"></a>LL</span></code></pre></div>
 <pre><code>## [1] 21.34922</code></pre>
 <hr />
 </div>
@@ -932,10 +932,10 @@ Figure 13.1: Su promedio incluye el promedio del universo?
 </ul>
 <p><span class="math display">\[|t|=\frac{\left(\overline{x}-\mu_0\right)}{\frac{s}{\sqrt{n}}}\]</span>
 Sustitución de los valores en la prueba de t.</p>
-<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="prueba-de-una-muestra.html#cb354-1" tabindex="-1"></a>t<span class="ot">=</span><span class="fu">abs</span>((<span class="fl">196.7-209.4</span>)<span class="sc">/</span>((<span class="fl">39.1</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">30</span>)) )</span>
-<span id="cb354-2"><a href="prueba-de-una-muestra.html#cb354-2" tabindex="-1"></a>t <span class="co"># Valor t de observado</span></span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="prueba-de-una-muestra.html#cb357-1" tabindex="-1"></a>t<span class="ot">=</span><span class="fu">abs</span>((<span class="fl">196.7-209.4</span>)<span class="sc">/</span>((<span class="fl">39.1</span>)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="dv">30</span>)) )</span>
+<span id="cb357-2"><a href="prueba-de-una-muestra.html#cb357-2" tabindex="-1"></a>t <span class="co"># Valor t de observado</span></span></code></pre></div>
 <pre><code>## [1] 1.779048</code></pre>
-<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="prueba-de-una-muestra.html#cb356-1" tabindex="-1"></a><span class="fu">abs</span>(<span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">29</span>))  <span class="co"># valor de t-critico, de la tabla</span></span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="prueba-de-una-muestra.html#cb359-1" tabindex="-1"></a><span class="fu">abs</span>(<span class="fu">qt</span>(<span class="fl">0.025</span>, <span class="dv">29</span>))  <span class="co"># valor de t-critico, de la tabla</span></span></code></pre></div>
 <pre><code>## [1] 2.04523</code></pre>
 <hr />
 </div>
@@ -949,8 +949,8 @@ Usamos un conjunto de datos en el paquete <strong>reshape</strong>, que llama <s
 <li>Ho: <span class="math inline">\(\overline{x}=\mu\)</span></li>
 <li>Ha: <span class="math inline">\(\overline{x}≠\mu\)</span></li>
 </ul>
-<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="prueba-de-una-muestra.html#cb358-1" tabindex="-1"></a><span class="fu">data</span>(tips, <span class="at">package=</span><span class="st">&quot;reshape2&quot;</span>)</span>
-<span id="cb358-2"><a href="prueba-de-una-muestra.html#cb358-2" tabindex="-1"></a><span class="fu">head</span>(tips)</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="prueba-de-una-muestra.html#cb361-1" tabindex="-1"></a><span class="fu">data</span>(tips, <span class="at">package=</span><span class="st">&quot;reshape2&quot;</span>)</span>
+<span id="cb361-2"><a href="prueba-de-una-muestra.html#cb361-2" tabindex="-1"></a><span class="fu">head</span>(tips)</span></code></pre></div>
 <pre><code>##   total_bill  tip    sex smoker day   time size
 ## 1      16.99 1.01 Female     No Sun Dinner    2
 ## 2      10.34 1.66   Male     No Sun Dinner    3
@@ -969,7 +969,7 @@ Usamos un conjunto de datos en el paquete <strong>reshape</strong>, que llama <s
 <li><span style="color: red;">conf.level = 0.95</span>, …).</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="prueba-de-una-muestra.html#cb360-1" tabindex="-1"></a><span class="fu">t.test</span>(tips<span class="sc">$</span>tip, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="at">mu=</span><span class="fl">2.5</span>, <span class="at">conf.level =</span> .<span class="dv">95</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="prueba-de-una-muestra.html#cb363-1" tabindex="-1"></a><span class="fu">t.test</span>(tips<span class="sc">$</span>tip, <span class="at">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="at">mu=</span><span class="fl">2.5</span>, <span class="at">conf.level =</span> .<span class="dv">95</span>)</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -999,13 +999,13 @@ Usamos un conjunto de datos en el paquete <strong>reshape</strong>, que llama <s
 </ul>
 </blockquote>
 <p>En este ejemplo observamos que el promedio estimado es por encima del intervalo de confianza (la lineas entrecortadas).</p>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="prueba-de-una-muestra.html#cb362-1" tabindex="-1"></a><span class="co"># construir una distribución normal de los datos</span></span>
-<span id="cb362-2"><a href="prueba-de-una-muestra.html#cb362-2" tabindex="-1"></a>randT<span class="ot">&lt;-</span><span class="fu">rt</span>(<span class="dv">30000</span>, <span class="at">df=</span><span class="fu">NROW</span>(tips)<span class="sc">-</span><span class="dv">1</span>)<span class="sc">+</span><span class="fl">2.5</span></span>
-<span id="cb362-3"><a href="prueba-de-una-muestra.html#cb362-3" tabindex="-1"></a></span>
-<span id="cb362-4"><a href="prueba-de-una-muestra.html#cb362-4" tabindex="-1"></a><span class="co"># Hacer la prueba de t</span></span>
-<span id="cb362-5"><a href="prueba-de-una-muestra.html#cb362-5" tabindex="-1"></a>tipTTest<span class="ot">&lt;-</span><span class="fu">t.test</span>(tips<span class="sc">$</span>tip, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">mu=</span><span class="fl">2.50</span>)</span>
-<span id="cb362-6"><a href="prueba-de-una-muestra.html#cb362-6" tabindex="-1"></a></span>
-<span id="cb362-7"><a href="prueba-de-una-muestra.html#cb362-7" tabindex="-1"></a>tipTTest</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="prueba-de-una-muestra.html#cb365-1" tabindex="-1"></a><span class="co"># construir una distribución normal de los datos</span></span>
+<span id="cb365-2"><a href="prueba-de-una-muestra.html#cb365-2" tabindex="-1"></a>randT<span class="ot">&lt;-</span><span class="fu">rt</span>(<span class="dv">30000</span>, <span class="at">df=</span><span class="fu">NROW</span>(tips)<span class="sc">-</span><span class="dv">1</span>)<span class="sc">+</span><span class="fl">2.5</span></span>
+<span id="cb365-3"><a href="prueba-de-una-muestra.html#cb365-3" tabindex="-1"></a></span>
+<span id="cb365-4"><a href="prueba-de-una-muestra.html#cb365-4" tabindex="-1"></a><span class="co"># Hacer la prueba de t</span></span>
+<span id="cb365-5"><a href="prueba-de-una-muestra.html#cb365-5" tabindex="-1"></a>tipTTest<span class="ot">&lt;-</span><span class="fu">t.test</span>(tips<span class="sc">$</span>tip, <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>, <span class="at">mu=</span><span class="fl">2.50</span>)</span>
+<span id="cb365-6"><a href="prueba-de-una-muestra.html#cb365-6" tabindex="-1"></a></span>
+<span id="cb365-7"><a href="prueba-de-una-muestra.html#cb365-7" tabindex="-1"></a>tipTTest</span></code></pre></div>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -1017,12 +1017,12 @@ Usamos un conjunto de datos en el paquete <strong>reshape</strong>, que llama <s
 ## sample estimates:
 ## mean of x 
 ##  2.998279</code></pre>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="prueba-de-una-muestra.html#cb364-1" tabindex="-1"></a><span class="co"># Graficar los resultados</span></span>
-<span id="cb364-2"><a href="prueba-de-una-muestra.html#cb364-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x=</span>randT))<span class="sc">+</span></span>
-<span id="cb364-3"><a href="prueba-de-una-muestra.html#cb364-3" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x=</span>x), <span class="at">fill=</span><span class="st">&quot;grey&quot;</span>, <span class="at">color=</span><span class="st">&quot;grey&quot;</span>)<span class="sc">+</span> <span class="co"># La densidad de los datos</span></span>
-<span id="cb364-4"><a href="prueba-de-una-muestra.html#cb364-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> tipTTest<span class="sc">$</span>statistic, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span> <span class="co"># El resultado de la prueba estadística</span></span>
-<span id="cb364-5"><a href="prueba-de-una-muestra.html#cb364-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(randT)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>)<span class="sc">*</span><span class="fu">sd</span>(randT), <span class="at">linetype=</span><span class="dv">2</span>)<span class="sc">+</span> <span class="co"># El intervalo de confianza</span></span>
-<span id="cb364-6"><a href="prueba-de-una-muestra.html#cb364-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Promedio de propina&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="prueba-de-una-muestra.html#cb367-1" tabindex="-1"></a><span class="co"># Graficar los resultados</span></span>
+<span id="cb367-2"><a href="prueba-de-una-muestra.html#cb367-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x=</span>randT))<span class="sc">+</span></span>
+<span id="cb367-3"><a href="prueba-de-una-muestra.html#cb367-3" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="fu">aes</span>(<span class="at">x=</span>x), <span class="at">fill=</span><span class="st">&quot;grey&quot;</span>, <span class="at">color=</span><span class="st">&quot;grey&quot;</span>)<span class="sc">+</span> <span class="co"># La densidad de los datos</span></span>
+<span id="cb367-4"><a href="prueba-de-una-muestra.html#cb367-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> tipTTest<span class="sc">$</span>statistic, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span> <span class="co"># El resultado de la prueba estadística</span></span>
+<span id="cb367-5"><a href="prueba-de-una-muestra.html#cb367-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(randT)<span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>)<span class="sc">*</span><span class="fu">sd</span>(randT), <span class="at">linetype=</span><span class="dv">2</span>)<span class="sc">+</span> <span class="co"># El intervalo de confianza</span></span>
+<span id="cb367-6"><a href="prueba-de-una-muestra.html#cb367-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Promedio de propina&quot;</span>)</span></code></pre></div>
 <p><img src="Biometria_files/figure-html/t%20distribution-1.png" width="672" /></p>
 <hr />
 <hr />
@@ -1040,15 +1040,15 @@ Usamos un conjunto de datos en el paquete <strong>reshape</strong>, que llama <s
 <div id="ejercicio-de-práctica-2-dias-de-enfermedades" class="section level2 hasAnchor" number="13.16">
 <h2><span class="header-section-number">13.16</span> Ejercicio de práctica 2: Dias de enfermedades<a href="prueba-de-una-muestra.html#ejercicio-de-práctica-2-dias-de-enfermedades" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Un dueño de una impresa dice que su insiste que la cantidad de días promedio de enfermedades de sus empleados es menor que el promedio nacional de 10. Los datos de 40 empleados sigue. Determina si hay evidencia para creer el comentario del dueño de esta impresa.</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="prueba-de-una-muestra.html#cb365-1" tabindex="-1"></a>dias_E<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb365-2"><a href="prueba-de-una-muestra.html#cb365-2" tabindex="-1"></a>  <span class="sc">~</span>dias_e,</span>
-<span id="cb365-3"><a href="prueba-de-una-muestra.html#cb365-3" tabindex="-1"></a>  <span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,</span>
-<span id="cb365-4"><a href="prueba-de-una-muestra.html#cb365-4" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,</span>
-<span id="cb365-5"><a href="prueba-de-una-muestra.html#cb365-5" tabindex="-1"></a>  <span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">12</span>,<span class="dv">3</span>,</span>
-<span id="cb365-6"><a href="prueba-de-una-muestra.html#cb365-6" tabindex="-1"></a>  <span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,</span>
-<span id="cb365-7"><a href="prueba-de-una-muestra.html#cb365-7" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">11</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">9</span></span>
-<span id="cb365-8"><a href="prueba-de-una-muestra.html#cb365-8" tabindex="-1"></a>)</span>
-<span id="cb365-9"><a href="prueba-de-una-muestra.html#cb365-9" tabindex="-1"></a>dias_E</span></code></pre></div>
+<div class="sourceCode" id="cb368"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb368-1"><a href="prueba-de-una-muestra.html#cb368-1" tabindex="-1"></a>dias_E<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb368-2"><a href="prueba-de-una-muestra.html#cb368-2" tabindex="-1"></a>  <span class="sc">~</span>dias_e,</span>
+<span id="cb368-3"><a href="prueba-de-una-muestra.html#cb368-3" tabindex="-1"></a>  <span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,</span>
+<span id="cb368-4"><a href="prueba-de-una-muestra.html#cb368-4" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,</span>
+<span id="cb368-5"><a href="prueba-de-una-muestra.html#cb368-5" tabindex="-1"></a>  <span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">12</span>,<span class="dv">3</span>,</span>
+<span id="cb368-6"><a href="prueba-de-una-muestra.html#cb368-6" tabindex="-1"></a>  <span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,</span>
+<span id="cb368-7"><a href="prueba-de-una-muestra.html#cb368-7" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">11</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">9</span></span>
+<span id="cb368-8"><a href="prueba-de-una-muestra.html#cb368-8" tabindex="-1"></a>)</span>
+<span id="cb368-9"><a href="prueba-de-una-muestra.html#cb368-9" tabindex="-1"></a>dias_E</span></code></pre></div>
 <pre><code>## # A tibble: 40 × 1
 ##    dias_e
 ##     &lt;dbl&gt;

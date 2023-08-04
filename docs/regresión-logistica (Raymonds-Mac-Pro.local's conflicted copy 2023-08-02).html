@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>A Ejercicios A | Biometria</title>
+  <title>Chapter 19 Regresión Logistica | Biometria</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de Biometria" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="A Ejercicios A | Biometria" />
+  <meta property="og:title" content="Chapter 19 Regresión Logistica | Biometria" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometria" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Ejercicios A | Biometria" />
+  <meta name="twitter:title" content="Chapter 19 Regresión Logistica | Biometria" />
   
   <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometria" />
   
@@ -23,15 +23,15 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-08-03" />
+<meta name="date" content="2023-08-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="references.html"/>
-<link rel="next" href="ejercicios-b.html"/>
+<link rel="prev" href="regresión-lineal-1.html"/>
+<link rel="next" href="selecionando-modelos-con-akaike.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -791,25 +791,403 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ejercicios-a" class="section level1 hasAnchor" number="26">
-<h1><span class="header-section-number">A</span> Ejercicios A<a href="ejercicios-a.html#ejercicios-a" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="en-esta-actividad-estarán-comenzando-a-utilizar-la-plataforma-r." class="section level2 hasAnchor" number="26.1">
-<h2><span class="header-section-number">A.1</span> En esta actividad estarán comenzando a utilizar la plataforma R.<a href="ejercicios-a.html#en-esta-actividad-estarán-comenzando-a-utilizar-la-plataforma-r." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Recuerda que este libro esta disponible gratuitamente en el internet tanto en Español, <a href="https://es.r4ds.hadley.nz/index.html" class="uri">https://es.r4ds.hadley.nz/index.html</a> como en Ingles <a href="https://r4ds.had.co.nz/index.html" class="uri">https://r4ds.had.co.nz/index.html</a>.</p>
-<p>NOTA que si no tiene experiencia esto le va tomar tiempo.</p>
-<div id="primer-paso" class="section level3 hasAnchor" number="26.1.1">
-<h3><span class="header-section-number">A.1.1</span> Primer paso<a href="ejercicios-a.html#primer-paso" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Haber instalado R
-Haber Instalado RStudio
-Haber Instalado RMarkdown en Rstudio</p>
+<div id="regresión-logistica" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">Chapter 19</span> Regresión Logistica<a href="regresión-logistica.html#regresión-logistica" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Fecha de la ultima revisión</p>
+<pre><code>## [1] &quot;2023-08-01&quot;</code></pre>
+<p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="regresión-logistica.html#cb463-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>Esta regresión es utilizada cuando la variable dependiente tiene solamente dos alternativas (representadas de forma numérica, <strong>0 y 1</strong>) y la variable independiente es una variable continua.</p>
+<div id="brassavola-cucullata" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> <em>Brassavola cucullata</em><a href="regresión-logistica.html#brassavola-cucullata" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Los datos fueron recolectado de dos pequeñas islas del Caribe, San Eustaquio y Saba.</p>
+<p><em>Brassavola cucullata</em> pertenece a la subtribu Laeliinae y es una especie epífita y rupícola que puede formar grandes racimos de brotes. Cada brote está compuesto por un solo tallo de 3.5-12.5 cm de largo y 1-3.5 mm de diámetro y tiene una sola hoja semi-tereta de 16-35 cm de largo y solo un poco más gruesa que el tallo. Las inflorescencias terminales miden 3-30 mm de largo y suelen tener una sola flor. Las flores son en gran parte blancas con las partes delgadas del perianto que a menudo se vuelven de color amarillo pálido hacia sus ápices. El labelo es ovado-acuminado y fimbriado alrededor de la columna. El cunículo se extiende hacia el ovario inferior y no tiene néctar. Las flores engañosas tienen una fragancia nocturna dulce y espesa, que puede perdurar hasta el día. La producción de frutos depende de los polinizadores. Las cápsulas tardan varios meses en desarrollarse y son pediceladas y picudas (restos de la columna); el cuerpo de la cápsula mide entre 2 y 5 cm de largo y produce muchos miles de semillas polvorientas (Ackerman y Collaborators 2014).</p>
+<p>En cada una de las tres poblaciones, etiquetamos todas las plantas de <em>B. cucullata</em> que pudimos encontrar. Observamos si cada planta era epífita o epilítica, medimos la altura sobre el suelo, buscamos evidencia de herbivoría foliar, medimos la longitud de la hoja más larga y contamos el número de brotes de hojas, flores y frutos. Si las flores estaban presentes, registramos si habían sido visitadas con éxito o no mediante una inspección visual para la eliminación de polinarios o polinias en el estigma. Estos datos se obtuvieron una vez al año durante la época de floración. Nuestras observaciones en la población de Quill abarcaron 2009-2013, en Boven 2010-2013 y en Saba 2011-2014.</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-173"></span>
+<img src="Graficos/Brass_cucu1.png" alt="**La especie** *Brasavolla cucullata* **en la isla de San Eustaquio**" width="50%" /><img src="Graficos/Brass_cucu2.png" alt="**La especie** *Brasavolla cucullata* **en la isla de San Eustaquio**" width="50%" />
+<p class="caption">
+Figure 19.1: <strong>La especie</strong> <em>Brasavolla cucullata</em> <strong>en la isla de San Eustaquio</strong>
+</p>
 </div>
-<div id="segundo-paso" class="section level3 hasAnchor" number="26.1.2">
-<h3><span class="header-section-number">A.1.2</span> Segundo paso<a href="ejercicios-a.html#segundo-paso" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ol style="list-style-type: decimal">
-<li>Seguir el Capitulo #1, y practicar instalar los paquetes “Packages”, por ejemplo el paquete de “tidyverse”</li>
-<li>Probar las funciones básica de suma, resta, división y multiplicación en R.</li>
-</ol>
+<hr />
+<p>Puede encontrar el manuscrito en este enlace, que evalúa la biología de la orquídea y la posibilidad de extinción y como las cabras impacta su supervivencias.</p>
+<p><a href="https://www.journals.uchicago.edu/doi/pdf/10.1086/709399" class="uri">https://www.journals.uchicago.edu/doi/pdf/10.1086/709399</a></p>
+<div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="regresión-logistica.html#cb464-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb464-2"><a href="regresión-logistica.html#cb464-2" tabindex="-1"></a>Student_Brassavola <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Student_Brassavola.csv&quot;</span>)</span>
+<span id="cb464-3"><a href="regresión-logistica.html#cb464-3" tabindex="-1"></a>completeBrass<span class="ot">=</span><span class="fu">na.omit</span>(Student_Brassavola)  <span class="co"># remove NA</span></span>
+<span id="cb464-4"><a href="regresión-logistica.html#cb464-4" tabindex="-1"></a><span class="fu">head</span>(completeBrass)</span></code></pre></div>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:data19">
+<caption style="caption-side: top; text-align: center;"><span id="tab:data19">Table 19.1: </span> </caption><col><col><col><col><col><col><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Island</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Year</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Pl_Num</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Leaf_Num</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">LLL</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Bud_Num</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Fl_Num</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Fr_Num</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">BQS</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Flowers_Y_N</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Saba</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.01e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">A1701</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">20</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">26</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Saba</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Saba</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.01e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A1702</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Saba</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Saba</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.01e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">A1703</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">5</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">13</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Saba</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Statia</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.01e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">102</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">33</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">31</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Boven</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Statia</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.01e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">102</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">40</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">34</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Boven</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Statia</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.01e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">102</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">10</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">23</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Boven</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td></tr>
+</table>
+
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="regresión-logistica.html#cb465-1" tabindex="-1"></a><span class="co">#library(tidyverse)</span></span>
+<span id="cb465-2"><a href="regresión-logistica.html#cb465-2" tabindex="-1"></a><span class="co">#library(dplyr)</span></span>
+<span id="cb465-3"><a href="regresión-logistica.html#cb465-3" tabindex="-1"></a><span class="fu">unique</span>(completeBrass<span class="sc">$</span>Fr_Num)</span></code></pre></div>
+<pre><code>## [1] 0 2 1 3</code></pre>
+<div class="sourceCode" id="cb467"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb467-1"><a href="regresión-logistica.html#cb467-1" tabindex="-1"></a><span class="co"># completeBrass$Fr_Y_N2=ifelse(completeBrass$Fr_Num&gt;0 ,1,0) Metodo de la función base</span></span>
+<span id="cb467-2"><a href="regresión-logistica.html#cb467-2" tabindex="-1"></a></span>
+<span id="cb467-3"><a href="regresión-logistica.html#cb467-3" tabindex="-1"></a>completeBrass<span class="sc">$</span>Fr_Y_N1<span class="ot">=</span><span class="fu">ifelse</span>(completeBrass<span class="sc">$</span>Fr_Num<span class="sc">&gt;</span><span class="dv">0</span> ,<span class="dv">1</span>,<span class="dv">0</span>) <span class="co"># Método de dplyr</span></span>
+<span id="cb467-4"><a href="regresión-logistica.html#cb467-4" tabindex="-1"></a></span>
+<span id="cb467-5"><a href="regresión-logistica.html#cb467-5" tabindex="-1"></a><span class="fu">unique</span>(completeBrass<span class="sc">$</span>Fr_Y_N1) <span class="co"># deberia tener solamente dos alternativas, &quot;0&quot; y &quot;1&quot;, Frutos no y si</span></span></code></pre></div>
+<pre><code>## [1] 0 1</code></pre>
+<p>Evaluar la tendencias centrales y la dispersión de las variables y cambio de nombre de las variables al español.</p>
+<div class="sourceCode" id="cb469"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb469-1"><a href="regresión-logistica.html#cb469-1" tabindex="-1"></a>Brass<span class="ot">=</span>completeBrass<span class="sc">%&gt;%</span></span>
+<span id="cb469-2"><a href="regresión-logistica.html#cb469-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">Isla=</span>Island, <span class="at">Ano=</span>Year, <span class="at">Numero_planta=</span>Pl_Num, </span>
+<span id="cb469-3"><a href="regresión-logistica.html#cb469-3" tabindex="-1"></a>         <span class="at">Cant_hojas=</span>Leaf_Num, <span class="at">Largo_Hoja_cm=</span>LLL, </span>
+<span id="cb469-4"><a href="regresión-logistica.html#cb469-4" tabindex="-1"></a>         <span class="at">Cant_capullo=</span>Bud_Num, <span class="at">Cant_Flores=</span>Fl_Num, </span>
+<span id="cb469-5"><a href="regresión-logistica.html#cb469-5" tabindex="-1"></a>         <span class="at">Cant_Frutos=</span>Fr_Num, <span class="at">BQS=</span>BQS, <span class="at">Flor_si_no=</span>Flowers_Y_N,</span>
+<span id="cb469-6"><a href="regresión-logistica.html#cb469-6" tabindex="-1"></a>         <span class="at">Frutos_si_no=</span>Fr_Y_N1)</span></code></pre></div>
+<div class="sourceCode" id="cb470"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb470-1"><a href="regresión-logistica.html#cb470-1" tabindex="-1"></a><span class="fu">summary</span>(Brass)</span></code></pre></div>
+<pre><code>##      Isla                Ano       Numero_planta        Cant_hojas    
+##  Length:1436        Min.   :2009   Length:1436        Min.   :  0.00  
+##  Class :character   1st Qu.:2011   Class :character   1st Qu.:  3.00  
+##  Mode  :character   Median :2011   Mode  :character   Median :  7.00  
+##                     Mean   :2011                      Mean   : 16.66  
+##                     3rd Qu.:2012                      3rd Qu.: 17.00  
+##                     Max.   :2014                      Max.   :336.00  
+##  Largo_Hoja_cm     Cant_capullo      Cant_Flores      Cant_Frutos     
+##  Min.   :  0.00   Min.   :0.00000   Min.   :0.0000   Min.   :0.00000  
+##  1st Qu.:  8.50   1st Qu.:0.00000   1st Qu.:0.0000   1st Qu.:0.00000  
+##  Median : 19.00   Median :0.00000   Median :0.0000   Median :0.00000  
+##  Mean   : 18.12   Mean   :0.05153   Mean   :0.1247   Mean   :0.04735  
+##  3rd Qu.: 26.00   3rd Qu.:0.00000   3rd Qu.:0.0000   3rd Qu.:0.00000  
+##  Max.   :108.00   Max.   :4.00000   Max.   :7.0000   Max.   :3.00000  
+##      BQS              Flor_si_no       Frutos_si_no    
+##  Length:1436        Min.   :0.00000   Min.   :0.00000  
+##  Class :character   1st Qu.:0.00000   1st Qu.:0.00000  
+##  Mode  :character   Median :0.00000   Median :0.00000  
+##                     Mean   :0.08705   Mean   :0.03552  
+##                     3rd Qu.:0.00000   3rd Qu.:0.00000  
+##                     Max.   :1.00000   Max.   :1.00000</code></pre>
+<hr />
 </div>
+<div id="la-variable-de-respuesta-y." class="section level2 hasAnchor" number="19.2">
+<h2><span class="header-section-number">19.2</span> La variable de respuesta, <strong>Y</strong>.<a href="regresión-logistica.html#la-variable-de-respuesta-y." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can also embed plots, for example:</p>
+<p><img src="Biometria_files/figure-html/head-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="modelo-lineal-generalizado" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> Modelo Lineal Generalizado<a href="regresión-logistica.html#modelo-lineal-generalizado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En este modulo se hace una primera introducción a un otro tipo de herramienta para el análisis de datos, denominado <strong>Modelo Lineal Generalizado, GLM</strong>. Lo interesante de esta acercamiento es que aun que uno tiene una variable de respuesta que no cumple con distribución normal hay múltiples opciones para los análisis. En este modulo solamente se estará presentando el tipo de datos donde la variable de respuesta (Y) es binomial.</p>
+<p>Hay tres componentes en cualquier GLM:</p>
+<p><span style="color: deepskyblue4;">Componente aleatorio:</span> se refiere a la distribución de probabilidad de la variable de respuesta (Y); por ejemplo, distribución binomial (0, 1,: Si o NO: Vivo o Muerto). Nota que la variable Y puede tener muchas otras tipo de distribución incluyendo la distribución normal, lognormal, proporción y m,uchos otros.</p>
+<p><span style="color: blue;">Variable predictivas:</span> especifica las variables explicativas <span class="math inline">\(X_1,\ X_2,\ X_3,...X_k\)</span> en el modelo, la combinación lineal se puede expresar con la siguiente forma; por ejemplo, <span class="math inline">\(\beta_0+\beta_1\cdot x_1+\beta_2\cdot x_2,\ ...+\beta_k\cdot x_k2\)</span> como hemos visto en una regresión lineal.</p>
+<p><span style="color: blue;">Función de enlace:</span> η o g (μ): especifica el enlace entre componentes aleatorios y sistemáticos. Dice cómo el valor esperado de la respuesta se relaciona con las variables de la ecuación lineal explicativa.</p>
+</div>
+<div id="los-supuestos-de-la-regresión-logistica." class="section level2 hasAnchor" number="19.4">
+<h2><span class="header-section-number">19.4</span> Los supuestos de la regresión logistica.<a href="regresión-logistica.html#los-supuestos-de-la-regresión-logistica." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<ul>
+<li>El resultado es la variable es binaria o también conocida como dicótoma (sí o no: presente o ausente, 1 o 0).</li>
+<li>Existe una relación lineal entre el logit (p) de la variable de repuesta y las variables predictora.</li>
+<li>No hay valores extremos o valores atípicos en los predictores continuos.</li>
+<li>No hay correlaciones altas (es decir, multicolinealidad) entre los variables predictores (vea modulo de Correlación).</li>
+</ul>
+</blockquote>
+<hr />
+</div>
+<div id="comparación-de-modelos-lineal-y-logistico" class="section level2 hasAnchor" number="19.5">
+<h2><span class="header-section-number">19.5</span> Comparación de modelos lineal y logistico<a href="regresión-logistica.html#comparación-de-modelos-lineal-y-logistico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>l primer paso es entender cual es la diferencia entre una regresión lineal y una regresión logística. Podemos visualizar ambas formula y ver como difieren.</p>
+<p>La regresión lineal:</p>
+<p><span class="math display">\[Y_i=\beta_0+\beta_1X_i+\beta_2X_i\]</span></p>
+<hr />
+</div>
+<div id="regresión-logística" class="section level2 hasAnchor" number="19.6">
+<h2><span class="header-section-number">19.6</span> Regresión logística:<a href="regresión-logistica.html#regresión-logística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>p=P(Y=1) o sea la probabilidad que p tenga el valor de <strong>1</strong> o 1-p= 1-P(Y=1) que seria el valor de <strong>0</strong> en su conjunto de datos.</p>
+<p><span class="math display">\[\log\frac{p}{1-p}=\beta_0+\beta_1X_i+\beta_2X_i\]</span>
+Nota que la primera ecuación es un modelo que trata de predecir el valor de <strong>Y</strong> en la segunda se estima la probabilidad de que el valor de predictora tenga una valor de 1 o 0. Las probabilidades van a variar de 0 a 1 o sea de 0% a 100%. El vocabulario correcto es que las respuesta son binarias también dicho de la distribución de Bernoulli.</p>
+<p>Van a ver en la literatura que la formula se representa tambien de la siguiente forma, donde lo escribe como <span class="math inline">\(logit(p)\)</span>.</p>
+<p><span class="math display">\[logit\left(p\right)=\log\frac{p}{1-p}=\beta_0+\beta_1X_i+\beta_2X_i\]</span></p>
+<p>En el siguiente enlace se puede encontrar más información <a href="https://en.wikipedia.org/wiki/Logistic_regression" class="uri">https://en.wikipedia.org/wiki/Logistic_regression</a></p>
+<p>Se evalúa tres modelos:
+1. la probabilidad de tener flores es relacionado a la cantidad de hojas (el tamaño de la planta).
+2. la probabilidad de tener flores es relacionado a la hoja más larga de la planta (el tamaño de la planta).
+3. la probabilidad de tener flores es relacionado a la hoja más larga de la planta y a la cantidad de hojas.</p>
+<hr />
+<div id="generalized-linear-model-glm" class="section level3 hasAnchor" number="19.6.1">
+<h3><span class="header-section-number">19.6.1</span> Generalized Linear Model = glm<a href="regresión-logistica.html#generalized-linear-model-glm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb472"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb472-1"><a href="regresión-logistica.html#cb472-1" tabindex="-1"></a>BrassModel<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Cant_hojas,</span>
+<span id="cb472-2"><a href="regresión-logistica.html#cb472-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb472-3"><a href="regresión-logistica.html#cb472-3" tabindex="-1"></a></span>
+<span id="cb472-4"><a href="regresión-logistica.html#cb472-4" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.1</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Flor_si_no ~ Cant_hojas, family = binomial(), data = Brass)
+## 
+## Coefficients:
+##              Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept) -3.088221   0.134013  -23.04   &lt;2e-16 ***
+## Cant_hojas   0.029925   0.002987   10.02   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 849.11  on 1435  degrees of freedom
+## Residual deviance: 722.57  on 1434  degrees of freedom
+## AIC: 726.57
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+<div class="sourceCode" id="cb474"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb474-1"><a href="regresión-logistica.html#cb474-1" tabindex="-1"></a>BrassModel<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Largo_Hoja_cm,</span>
+<span id="cb474-2"><a href="regresión-logistica.html#cb474-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb474-3"><a href="regresión-logistica.html#cb474-3" tabindex="-1"></a></span>
+<span id="cb474-4"><a href="regresión-logistica.html#cb474-4" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.2</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Flor_si_no ~ Largo_Hoja_cm, family = binomial(), 
+##     data = Brass)
+## 
+## Coefficients:
+##               Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)   -4.96559    0.33283 -14.919   &lt;2e-16 ***
+## Largo_Hoja_cm  0.11451    0.01199   9.553   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 849.11  on 1435  degrees of freedom
+## Residual deviance: 722.30  on 1434  degrees of freedom
+## AIC: 726.3
+## 
+## Number of Fisher Scoring iterations: 6</code></pre>
+<div class="sourceCode" id="cb476"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb476-1"><a href="regresión-logistica.html#cb476-1" tabindex="-1"></a>BrassModel<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Cant_hojas<span class="sc">+</span>Largo_Hoja_cm,</span>
+<span id="cb476-2"><a href="regresión-logistica.html#cb476-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb476-3"><a href="regresión-logistica.html#cb476-3" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.3</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Flor_si_no ~ Cant_hojas + Largo_Hoja_cm, family = binomial(), 
+##     data = Brass)
+## 
+## Coefficients:
+##                Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)   -4.673981   0.330208 -14.155  &lt; 2e-16 ***
+## Cant_hojas     0.019103   0.003132   6.100 1.06e-09 ***
+## Largo_Hoja_cm  0.080198   0.013034   6.153 7.60e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 849.11  on 1435  degrees of freedom
+## Residual deviance: 677.99  on 1433  degrees of freedom
+## AIC: 683.99
+## 
+## Number of Fisher Scoring iterations: 6</code></pre>
+</div>
+<div id="removiendo-el-intercepto" class="section level3 hasAnchor" number="19.6.2">
+<h3><span class="header-section-number">19.6.2</span> Removiendo el intercepto<a href="regresión-logistica.html#removiendo-el-intercepto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Si no le interesa el intercepto se añade un “-1” después de la
+#Los valores de interes en nuestro caso son el intercepto y la pendiente (valor que se encuentra debajo del intercepto).</p>
+<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="regresión-logistica.html#cb478-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
+##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
+##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="regresión-logistica.html#cb480-1" tabindex="-1"></a>BrassModel.<span class="fl">1.1</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Cant_hojas<span class="sc">+</span>BQS<span class="sc">+</span>Largo_Hoja_cm<span class="dv">-1</span>,</span>
+<span id="cb480-2"><a href="regresión-logistica.html#cb480-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb480-3"><a href="regresión-logistica.html#cb480-3" tabindex="-1"></a><span class="fu">summary</span>(BrassModel.<span class="fl">1.1</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Flor_si_no ~ Cant_hojas + BQS + Largo_Hoja_cm - 
+##     1, family = binomial(), data = Brass)
+## 
+## Coefficients:
+##                Estimate Std. Error z value Pr(&gt;|z|)    
+## Cant_hojas     0.020693   0.003221   6.425 1.31e-10 ***
+## BQSBoven      -5.425491   0.428570 -12.660  &lt; 2e-16 ***
+## BQSQuill      -4.704079   0.392591 -11.982  &lt; 2e-16 ***
+## BQSSaba       -4.586157   0.328376 -13.966  &lt; 2e-16 ***
+## Largo_Hoja_cm  0.083145   0.013310   6.247 4.19e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 1990.72  on 1436  degrees of freedom
+## Residual deviance:  668.85  on 1431  degrees of freedom
+## AIC: 678.85
+## 
+## Number of Fisher Scoring iterations: 6</code></pre>
+</div>
+<div id="estimado-las-probabilidades" class="section level3 hasAnchor" number="19.6.3">
+<h3><span class="header-section-number">19.6.3</span> Estimado las probabilidades<a href="regresión-logistica.html#estimado-las-probabilidades" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Predecir el número de frutas usando la ecuación, utilizando los resultados del modelo anterior</p>
+<p><span class="math display">\[P(Y)\quad =\quad \frac { 1 }{ 1+{ e }^{ -(b+m*{ x }_{ i }) } }\]</span>
+<span class="math display">\[P(Y)\quad =\quad \frac { 1 }{ 1+{ e }^{ -((intercepto)+pendiente*variable.predictora) } }\]</span>
+# Se usa esta ecuacion para predecir un valor de ‘Y’ especifico para un valor de una variable ‘X’ de interes.</p>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="regresión-logistica.html#cb482-1" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.1</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Flor_si_no ~ Cant_hojas, family = binomial(), data = Brass)
+## 
+## Coefficients:
+##              Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept) -3.088221   0.134013  -23.04   &lt;2e-16 ***
+## Cant_hojas   0.029925   0.002987   10.02   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 849.11  on 1435  degrees of freedom
+## Residual deviance: 722.57  on 1434  degrees of freedom
+## AIC: 726.57
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="regresión-logistica.html#cb484-1" tabindex="-1"></a><span class="fu">exp</span>(<span class="dv">1</span>) <span class="co">#= e</span></span></code></pre></div>
+<pre><code>## [1] 2.718282</code></pre>
+<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="regresión-logistica.html#cb486-1" tabindex="-1"></a>e<span class="ot">=</span><span class="fu">exp</span>(<span class="dv">1</span>) </span>
+<span id="cb486-2"><a href="regresión-logistica.html#cb486-2" tabindex="-1"></a>e</span></code></pre></div>
+<pre><code>## [1] 2.718282</code></pre>
+<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="regresión-logistica.html#cb488-1" tabindex="-1"></a>P_10<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="fl">+2.7182818284</span><span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">150</span>))</span>
+<span id="cb488-2"><a href="regresión-logistica.html#cb488-2" tabindex="-1"></a>P_10</span></code></pre></div>
+<pre><code>## [1] 0.8005922</code></pre>
+<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="regresión-logistica.html#cb490-1" tabindex="-1"></a>P_10<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="dv">1</span>)<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">100</span>))</span>
+<span id="cb490-2"><a href="regresión-logistica.html#cb490-2" tabindex="-1"></a>P_10</span></code></pre></div>
+<pre><code>## [1] 0.4762678</code></pre>
+<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="regresión-logistica.html#cb492-1" tabindex="-1"></a>P_25<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="sc">-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">25</span>)))</span>
+<span id="cb492-2"><a href="regresión-logistica.html#cb492-2" tabindex="-1"></a>P_25</span></code></pre></div>
+<pre><code>## [1] 0.08927658</code></pre>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="regresión-logistica.html#cb494-1" tabindex="-1"></a>P_50<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">50</span>))</span>
+<span id="cb494-2"><a href="regresión-logistica.html#cb494-2" tabindex="-1"></a>P_50</span></code></pre></div>
+<pre><code>## [1] 0.1707955</code></pre>
+<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="regresión-logistica.html#cb496-1" tabindex="-1"></a>P_70<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">70</span>))</span>
+<span id="cb496-2"><a href="regresión-logistica.html#cb496-2" tabindex="-1"></a>P_70</span></code></pre></div>
+<pre><code>## [1] 0.2717029</code></pre>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="regresión-logistica.html#cb498-1" tabindex="-1"></a>P_150<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">150</span>))</span>
+<span id="cb498-2"><a href="regresión-logistica.html#cb498-2" tabindex="-1"></a>P_150</span></code></pre></div>
+<pre><code>## [1] 0.8005922</code></pre>
+<hr />
+</div>
+</div>
+<div id="visualizando-una-regresión-logistica" class="section level2 hasAnchor" number="19.7">
+<h2><span class="header-section-number">19.7</span> Visualizando una regresión logistica<a href="regresión-logistica.html#visualizando-una-regresión-logistica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="regresión-logistica.html#cb500-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
+##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
+##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="regresión-logistica.html#cb502-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb502-2"><a href="regresión-logistica.html#cb502-2" tabindex="-1"></a> <span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
+<span id="cb502-3"><a href="regresión-logistica.html#cb502-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/ggplot%20binomial-1.png" width="672" /></p>
+</div>
+<div id="reducir-solapamiento-de-los-puntos" class="section level2 hasAnchor" number="19.8">
+<h2><span class="header-section-number">19.8</span> Reducir solapamiento de los puntos<a href="regresión-logistica.html#reducir-solapamiento-de-los-puntos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Usar geom_jitter</p>
+<p>ggplot(el archivo de datos, aes(las variables continuas))<br />
+• geom jitter(alpha, color, fill, shape, size)<br />
+◦ alpha: la intensidad del color
+◦ color: el color de la línea alrededor de las barras
+◦ fill: el color de las barras
+◦ linetype: representa el estilo de línea; ver sección “Especificación Estética”
+◦ size: representa el grosor de la línea
+◦ weight: para modificar el valor original; entonces no sería, por ejemplo, el conteo/suma de los valores si no un valor ponderado (promedio ponderado)</p>
+<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="regresión-logistica.html#cb503-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
+<span id="cb503-2"><a href="regresión-logistica.html#cb503-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.10</span>)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/jitter-1.png" width="672" /></p>
+</div>
+<div id="gráfico-con-ajuste-binomial" class="section level2 hasAnchor" number="19.9">
+<h2><span class="header-section-number">19.9</span> Gráfico con ajuste binomial<a href="regresión-logistica.html#gráfico-con-ajuste-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="regresión-logistica.html#cb504-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
+##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
+##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
+<div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb506-1"><a href="regresión-logistica.html#cb506-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
+<span id="cb506-2"><a href="regresión-logistica.html#cb506-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb506-3"><a href="regresión-logistica.html#cb506-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">TRUE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/binomial%20fit-1.png" width="672" /></p>
+<div id="el-modelo-de-regresión-binomial" class="section level3 hasAnchor" number="19.9.1">
+<h3><span class="header-section-number">19.9.1</span> El modelo de regresión binomial<a href="regresión-logistica.html#el-modelo-de-regresión-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="regresión-logistica.html#cb507-1" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.1</span>)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## glm(formula = Flor_si_no ~ Cant_hojas, family = binomial(), data = Brass)
+## 
+## Coefficients:
+##              Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept) -3.088221   0.134013  -23.04   &lt;2e-16 ***
+## Cant_hojas   0.029925   0.002987   10.02   &lt;2e-16 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## (Dispersion parameter for binomial family taken to be 1)
+## 
+##     Null deviance: 849.11  on 1435  degrees of freedom
+## Residual deviance: 722.57  on 1434  degrees of freedom
+## AIC: 726.57
+## 
+## Number of Fisher Scoring iterations: 5</code></pre>
+</div>
+<div id="vusualizando-diferentes-grupos" class="section level3 hasAnchor" number="19.9.2">
+<h3><span class="header-section-number">19.9.2</span> Vusualizando diferentes grupos<a href="regresión-logistica.html#vusualizando-diferentes-grupos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En este gráfico se osbserva el valor de la pendiente, el mismo aumenta cuando el numero de hojas se aproxima a 100 (por ende al acercarnos a este valor el valor de nuestra variable de respuesta es mayor aumenta o es mayor).</p>
+<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="regresión-logistica.html#cb509-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
+##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
+##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
+<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="regresión-logistica.html#cb511-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
+<span id="cb511-2"><a href="regresión-logistica.html#cb511-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb511-3"><a href="regresión-logistica.html#cb511-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))<span class="sc">+</span></span>
+<span id="cb511-4"><a href="regresión-logistica.html#cb511-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Isla)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/facet-1.png" width="672" /></p>
+</div>
+</div>
+<div id="solapamiento-de-los-ajustes-binomial-por-grupo" class="section level2 hasAnchor" number="19.10">
+<h2><span class="header-section-number">19.10</span> Solapamiento de los ajustes binomial por grupo<a href="regresión-logistica.html#solapamiento-de-los-ajustes-binomial-por-grupo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="regresión-logistica.html#cb512-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
+##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
+##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
+<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="regresión-logistica.html#cb514-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no, <span class="at">colour=</span>BQS))<span class="sc">+</span></span>
+<span id="cb514-2"><a href="regresión-logistica.html#cb514-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb514-3"><a href="regresión-logistica.html#cb514-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">TRUE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/overlap%20by%20site-1.png" width="672" /></p>
+<div id="evaluate-using-the-length-of-the-longest-leaf" class="section level3 hasAnchor" number="19.10.1">
+<h3><span class="header-section-number">19.10.1</span> Evaluate using the Length of the longest leaf<a href="regresión-logistica.html#evaluate-using-the-length-of-the-longest-leaf" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="regresión-logistica.html#cb515-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
+##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
+##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
+<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="regresión-logistica.html#cb517-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Largo_Hoja_cm,Flor_si_no))<span class="sc">+</span></span>
+<span id="cb517-2"><a href="regresión-logistica.html#cb517-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.25</span>)</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/LLL-1.png" width="672" /></p>
+</div>
+<div id="remover-el-valor-sesgado" class="section level3 hasAnchor" number="19.10.2">
+<h3><span class="header-section-number">19.10.2</span> Remover el valor sesgado<a href="regresión-logistica.html#remover-el-valor-sesgado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>El valor se remueve ya que no es posible una hoja de más de un metro</p>
+<div id="nota-que-se-hace-un-subgrupo-subset-de-los-datos-usando-la-función-subsetel-data-frame-la-condición" class="section level4 hasAnchor" number="19.10.2.1">
+<h4><span class="header-section-number">19.10.2.1</span> Nota que se hace un subgrupo (subset) de los datos, usando la función subset(el data frame, la condición)<a href="regresión-logistica.html#nota-que-se-hace-un-subgrupo-subset-de-los-datos-usando-la-función-subsetel-data-frame-la-condición" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb518"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb518-1"><a href="regresión-logistica.html#cb518-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
+##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
+##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
+<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="regresión-logistica.html#cb520-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(Brass,Largo_Hoja_cm<span class="sc">&lt;</span><span class="dv">90</span>), <span class="fu">aes</span>(Largo_Hoja_cm,Flor_si_no, <span class="at">colour=</span>BQS))<span class="sc">+</span></span>
+<span id="cb520-2"><a href="regresión-logistica.html#cb520-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.10</span>)<span class="sc">+</span></span>
+<span id="cb520-3"><a href="regresión-logistica.html#cb520-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))</span></code></pre></div>
+<p><img src="Biometria_files/figure-html/LLL90-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+<div id="selecionar-el-mejor-modelo" class="section level2 hasAnchor" number="19.11">
+<h2><span class="header-section-number">19.11</span> Selecionar el mejor modelo<a href="regresión-logistica.html#selecionar-el-mejor-modelo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vea modulo <strong>T16 Criterio de Información</strong></p>
+
 </div>
 </div>
             </section>
@@ -817,8 +1195,8 @@ Haber Instalado RMarkdown en Rstudio</p>
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ejercicios-b.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="regresión-lineal-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="selecionando-modelos-con-akaike.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -849,7 +1227,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/APPENDIX.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/19-Regresion_Logistica.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -857,7 +1235,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/RaymondLTremblay/Biometria/blob/main/APPENDIX.Rmd",
+"link": "https://github.com/RaymondLTremblay/Biometria/blob/main/19-Regresion_Logistica.Rmd",
 "text": null
 },
 "download": null,

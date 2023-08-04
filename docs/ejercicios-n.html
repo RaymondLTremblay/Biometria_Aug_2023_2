@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-08-01" />
+<meta name="date" content="2023-08-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -799,23 +799,23 @@ div.csl-indent {
 <h3><span class="header-section-number">N.1.1</span> Los datos representan la cantidad de dinero ganado por arttistas (fallecidos) en milliones de dollares<a href="ejercicios-n.html#los-datos-representan-la-cantidad-de-dinero-ganado-por-arttistas-fallecidos-en-milliones-de-dollares" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="calcular-el-promedio-mediana-moda-de-los-datos-de-las-estrellas-más-cercana-a-la-tierra" class="section level4 hasAnchor" number="39.1.1.1">
 <h4><span class="header-section-number">N.1.1.1</span> Calcular el promedio, mediana, moda de los datos de las estrellas más cercana a la tierra<a href="ejercicios-n.html#calcular-el-promedio-mediana-moda-de-los-datos-de-las-estrellas-más-cercana-a-la-tierra" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb630"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb630-1"><a href="ejercicios-n.html#cb630-1" tabindex="-1"></a>Dinero_Artista<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb630-2"><a href="ejercicios-n.html#cb630-2" tabindex="-1"></a>  <span class="sc">~</span>Artista, <span class="sc">~</span>Dinero,</span>
-<span id="cb630-3"><a href="ejercicios-n.html#cb630-3" tabindex="-1"></a> <span class="st">&quot;Kurt Corbain&quot;</span>, <span class="dv">50</span>,</span>
-<span id="cb630-4"><a href="ejercicios-n.html#cb630-4" tabindex="-1"></a> <span class="st">&quot;Elvis Presley&quot;</span>,<span class="dv">42</span>,</span>
-<span id="cb630-5"><a href="ejercicios-n.html#cb630-5" tabindex="-1"></a> <span class="st">&quot;Charles Chultz&quot;</span>, <span class="dv">35</span>,</span>
-<span id="cb630-6"><a href="ejercicios-n.html#cb630-6" tabindex="-1"></a> <span class="st">&quot;John Lennon&quot;</span>, <span class="dv">24</span>,</span>
-<span id="cb630-7"><a href="ejercicios-n.html#cb630-7" tabindex="-1"></a> <span class="st">&quot;Ray Charles&quot;</span>, <span class="dv">10</span>,</span>
-<span id="cb630-8"><a href="ejercicios-n.html#cb630-8" tabindex="-1"></a> <span class="st">&quot;Marilyn Monroe&quot;</span>,<span class="dv">8</span>,</span>
-<span id="cb630-9"><a href="ejercicios-n.html#cb630-9" tabindex="-1"></a> <span class="st">&quot;Johny Cash&quot;</span>,<span class="dv">8</span>,</span>
-<span id="cb630-10"><a href="ejercicios-n.html#cb630-10" tabindex="-1"></a> <span class="st">&quot;J.R.R. Tolkein&quot;</span>, <span class="dv">7</span>,</span>
-<span id="cb630-11"><a href="ejercicios-n.html#cb630-11" tabindex="-1"></a> <span class="st">&quot;George Harrison&quot;</span>, <span class="dv">7</span>,</span>
-<span id="cb630-12"><a href="ejercicios-n.html#cb630-12" tabindex="-1"></a> <span class="st">&quot;Bob Marley&quot;</span>,<span class="dv">7</span>,</span>
-<span id="cb630-13"><a href="ejercicios-n.html#cb630-13" tabindex="-1"></a> <span class="st">&quot;Albert Einstein&quot;</span> ,<span class="dv">20</span>,</span>
-<span id="cb630-14"><a href="ejercicios-n.html#cb630-14" tabindex="-1"></a> <span class="st">&quot;And Wharhol&quot;</span>,<span class="dv">19</span></span>
-<span id="cb630-15"><a href="ejercicios-n.html#cb630-15" tabindex="-1"></a>)</span>
-<span id="cb630-16"><a href="ejercicios-n.html#cb630-16" tabindex="-1"></a></span>
-<span id="cb630-17"><a href="ejercicios-n.html#cb630-17" tabindex="-1"></a><span class="fu">gt</span>(Dinero_Artista)</span></code></pre></div>
+<div class="sourceCode" id="cb633"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb633-1"><a href="ejercicios-n.html#cb633-1" tabindex="-1"></a>Dinero_Artista<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb633-2"><a href="ejercicios-n.html#cb633-2" tabindex="-1"></a>  <span class="sc">~</span>Artista, <span class="sc">~</span>Dinero,</span>
+<span id="cb633-3"><a href="ejercicios-n.html#cb633-3" tabindex="-1"></a> <span class="st">&quot;Kurt Corbain&quot;</span>, <span class="dv">50</span>,</span>
+<span id="cb633-4"><a href="ejercicios-n.html#cb633-4" tabindex="-1"></a> <span class="st">&quot;Elvis Presley&quot;</span>,<span class="dv">42</span>,</span>
+<span id="cb633-5"><a href="ejercicios-n.html#cb633-5" tabindex="-1"></a> <span class="st">&quot;Charles Chultz&quot;</span>, <span class="dv">35</span>,</span>
+<span id="cb633-6"><a href="ejercicios-n.html#cb633-6" tabindex="-1"></a> <span class="st">&quot;John Lennon&quot;</span>, <span class="dv">24</span>,</span>
+<span id="cb633-7"><a href="ejercicios-n.html#cb633-7" tabindex="-1"></a> <span class="st">&quot;Ray Charles&quot;</span>, <span class="dv">10</span>,</span>
+<span id="cb633-8"><a href="ejercicios-n.html#cb633-8" tabindex="-1"></a> <span class="st">&quot;Marilyn Monroe&quot;</span>,<span class="dv">8</span>,</span>
+<span id="cb633-9"><a href="ejercicios-n.html#cb633-9" tabindex="-1"></a> <span class="st">&quot;Johny Cash&quot;</span>,<span class="dv">8</span>,</span>
+<span id="cb633-10"><a href="ejercicios-n.html#cb633-10" tabindex="-1"></a> <span class="st">&quot;J.R.R. Tolkein&quot;</span>, <span class="dv">7</span>,</span>
+<span id="cb633-11"><a href="ejercicios-n.html#cb633-11" tabindex="-1"></a> <span class="st">&quot;George Harrison&quot;</span>, <span class="dv">7</span>,</span>
+<span id="cb633-12"><a href="ejercicios-n.html#cb633-12" tabindex="-1"></a> <span class="st">&quot;Bob Marley&quot;</span>,<span class="dv">7</span>,</span>
+<span id="cb633-13"><a href="ejercicios-n.html#cb633-13" tabindex="-1"></a> <span class="st">&quot;Albert Einstein&quot;</span> ,<span class="dv">20</span>,</span>
+<span id="cb633-14"><a href="ejercicios-n.html#cb633-14" tabindex="-1"></a> <span class="st">&quot;And Wharhol&quot;</span>,<span class="dv">19</span></span>
+<span id="cb633-15"><a href="ejercicios-n.html#cb633-15" tabindex="-1"></a>)</span>
+<span id="cb633-16"><a href="ejercicios-n.html#cb633-16" tabindex="-1"></a></span>
+<span id="cb633-17"><a href="ejercicios-n.html#cb633-17" tabindex="-1"></a><span class="fu">gt</span>(Dinero_Artista)</span></code></pre></div>
 <div id="vaqqvburiz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#vaqqvburiz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -1305,17 +1305,17 @@ div.csl-indent {
 </div>
 <div id="haz-un-histograma-de-estos-datos" class="section level3 hasAnchor" number="39.1.4">
 <h3><span class="header-section-number">N.1.4</span> Haz un histograma de estos datos<a href="ejercicios-n.html#haz-un-histograma-de-estos-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb631"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb631-1"><a href="ejercicios-n.html#cb631-1" tabindex="-1"></a>Fallecidos_Carro<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb631-2"><a href="ejercicios-n.html#cb631-2" tabindex="-1"></a>  <span class="sc">~</span>Fallecidos,</span>
-<span id="cb631-3"><a href="ejercicios-n.html#cb631-3" tabindex="-1"></a>  <span class="dv">778</span>,<span class="dv">309</span>,<span class="dv">1110</span>,<span class="dv">324</span>,<span class="dv">705</span>,<span class="dv">1067</span>,<span class="dv">826</span>,<span class="dv">76</span>,<span class="dv">205</span>,<span class="dv">152</span>,<span class="dv">218</span>,<span class="dv">492</span>,</span>
-<span id="cb631-4"><a href="ejercicios-n.html#cb631-4" tabindex="-1"></a>  <span class="dv">65</span>,<span class="dv">186</span>,<span class="dv">712</span>,<span class="dv">193</span>,<span class="dv">262</span>,<span class="dv">452</span>,<span class="dv">875</span>,<span class="dv">82</span>,</span>
-<span id="cb631-5"><a href="ejercicios-n.html#cb631-5" tabindex="-1"></a>  <span class="dv">730</span>,<span class="dv">1185</span>,<span class="dv">2707</span>,<span class="dv">1279</span>,<span class="dv">390</span>,<span class="dv">305</span>,<span class="dv">123</span>,<span class="dv">948</span>,<span class="dv">343</span>,<span class="dv">602</span>,</span>
-<span id="cb631-6"><a href="ejercicios-n.html#cb631-6" tabindex="-1"></a>  <span class="dv">69</span>,<span class="dv">451</span>,<span class="dv">951</span>,<span class="dv">104</span>,<span class="dv">985</span>,<span class="dv">155</span>,<span class="dv">450</span>,<span class="dv">2080</span>,<span class="dv">565</span>,<span class="dv">875</span>,</span>
-<span id="cb631-7"><a href="ejercicios-n.html#cb631-7" tabindex="-1"></a>  <span class="dv">414</span>,<span class="dv">981</span>,<span class="dv">2786</span>,<span class="dv">82</span>,<span class="dv">793</span>,<span class="dv">214</span>,<span class="dv">130</span>,<span class="dv">396</span>,<span class="dv">620</span>,<span class="dv">797</span></span>
-<span id="cb631-8"><a href="ejercicios-n.html#cb631-8" tabindex="-1"></a></span>
-<span id="cb631-9"><a href="ejercicios-n.html#cb631-9" tabindex="-1"></a>)</span>
-<span id="cb631-10"><a href="ejercicios-n.html#cb631-10" tabindex="-1"></a></span>
-<span id="cb631-11"><a href="ejercicios-n.html#cb631-11" tabindex="-1"></a><span class="fu">gt</span>(Fallecidos_Carro)</span></code></pre></div>
+<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb634-1"><a href="ejercicios-n.html#cb634-1" tabindex="-1"></a>Fallecidos_Carro<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb634-2"><a href="ejercicios-n.html#cb634-2" tabindex="-1"></a>  <span class="sc">~</span>Fallecidos,</span>
+<span id="cb634-3"><a href="ejercicios-n.html#cb634-3" tabindex="-1"></a>  <span class="dv">778</span>,<span class="dv">309</span>,<span class="dv">1110</span>,<span class="dv">324</span>,<span class="dv">705</span>,<span class="dv">1067</span>,<span class="dv">826</span>,<span class="dv">76</span>,<span class="dv">205</span>,<span class="dv">152</span>,<span class="dv">218</span>,<span class="dv">492</span>,</span>
+<span id="cb634-4"><a href="ejercicios-n.html#cb634-4" tabindex="-1"></a>  <span class="dv">65</span>,<span class="dv">186</span>,<span class="dv">712</span>,<span class="dv">193</span>,<span class="dv">262</span>,<span class="dv">452</span>,<span class="dv">875</span>,<span class="dv">82</span>,</span>
+<span id="cb634-5"><a href="ejercicios-n.html#cb634-5" tabindex="-1"></a>  <span class="dv">730</span>,<span class="dv">1185</span>,<span class="dv">2707</span>,<span class="dv">1279</span>,<span class="dv">390</span>,<span class="dv">305</span>,<span class="dv">123</span>,<span class="dv">948</span>,<span class="dv">343</span>,<span class="dv">602</span>,</span>
+<span id="cb634-6"><a href="ejercicios-n.html#cb634-6" tabindex="-1"></a>  <span class="dv">69</span>,<span class="dv">451</span>,<span class="dv">951</span>,<span class="dv">104</span>,<span class="dv">985</span>,<span class="dv">155</span>,<span class="dv">450</span>,<span class="dv">2080</span>,<span class="dv">565</span>,<span class="dv">875</span>,</span>
+<span id="cb634-7"><a href="ejercicios-n.html#cb634-7" tabindex="-1"></a>  <span class="dv">414</span>,<span class="dv">981</span>,<span class="dv">2786</span>,<span class="dv">82</span>,<span class="dv">793</span>,<span class="dv">214</span>,<span class="dv">130</span>,<span class="dv">396</span>,<span class="dv">620</span>,<span class="dv">797</span></span>
+<span id="cb634-8"><a href="ejercicios-n.html#cb634-8" tabindex="-1"></a></span>
+<span id="cb634-9"><a href="ejercicios-n.html#cb634-9" tabindex="-1"></a>)</span>
+<span id="cb634-10"><a href="ejercicios-n.html#cb634-10" tabindex="-1"></a></span>
+<span id="cb634-11"><a href="ejercicios-n.html#cb634-11" tabindex="-1"></a><span class="fu">gt</span>(Fallecidos_Carro)</span></code></pre></div>
 <div id="klznqtwvmr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#klznqtwvmr table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';

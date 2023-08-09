@@ -40,14 +40,13 @@ editor_options:
 
 **Hora de consulta con Estudiantes**:
 
- - L & W 9:00 - 10:30
- - L & W 1:00 - 4:30
- - J 1:00 - 2:00    
+ - L & W 1:00 - 4:00pm    
 
 ***
 
 ***
-## Libro obligatorio. 
+## Libro obligatorio:
+
 Aquí dos sitios donde pueden conseguir el libro
 
 - [Havel et al - Introductory Biological Statistics, 4 edition](https://www.amazon.com/Introductory-Biological-Statistics-Fourth-Havel/dp/1478638184/ref=sr_1_1?dchild=1&keywords=Introductory+Biological+Statistics&qid=1594323793&s=books&sr=1-1)

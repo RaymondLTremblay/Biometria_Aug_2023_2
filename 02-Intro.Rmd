@@ -4,6 +4,7 @@
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message = FALSE)
+#knitr::opts_chunk$set(fig.width = 8, collapse = TRUE)
 ```
 
 
@@ -215,7 +216,7 @@ Lo que uno observa es que la gente que son identificado que tiene característic
 ### Varriables Discretas
 
 - Categórica o Discreta
-  - Variables Nominales]
+  - Variables Nominales
       - Hombres y Mujeres
       - Omnívoro, vegetariano, vegano, carnívoro
           
@@ -223,12 +224,14 @@ Lo que uno observa es que la gente que son identificado que tiene característic
   - Datos donde hay un orden en los valores
       - primero, segundo, tercero, etc. 
       - A, B, C, D, F (nota de estudiantes)
+      - pequeño, mediano, grande
  
-- Variable Binomio
+- Variable Binomial
   - Tiene solamente dos alternativas
       - Vivo o muerto
       - Vive en PR o No vive en PR
       - Esta embrazada o No esta embarazada
+      - Tiene flores o no tiene flores
 
 ***
 

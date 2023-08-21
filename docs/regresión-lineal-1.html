@@ -5,25 +5,25 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 18 Regresión Lineal | Biometria</title>
-  <meta name="description" content="Este libro digital es una introdución al estudio de Biometria" />
+  <meta name="description" content="Este libro digital es una introdución al estudio de Biometría" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 18 Regresión Lineal | Biometria" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de Biometría" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 18 Regresión Lineal | Biometria" />
   
-  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometria" />
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de Biometría" />
   
 
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-08-16" />
+<meta name="date" content="2023-08-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -49,6 +49,7 @@
 
 
 
+<link href="libs/codefolding-lua-1.1/codefolding-lua.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
@@ -84,39 +85,38 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  {  background-color: #f8f8f8; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <style type="text/css">
@@ -794,24 +794,28 @@ div.csl-indent {
 <div id="regresión-lineal-1" class="section level1 hasAnchor" number="18">
 <h1><span class="header-section-number">Chapter 18</span> Regresión Lineal<a href="regresión-lineal-1.html#regresión-lineal-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Fecha de la ultima revisión</p>
-<pre><code>## [1] &quot;2023-08-16&quot;</code></pre>
+<pre><code>## [1] &quot;2023-08-21&quot;</code></pre>
 <p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
 <hr />
 <p>Activar las librerias, averiguar que TIENE instalado estos paquetes</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="regresión-lineal-1.html#cb436-1" tabindex="-1"></a><span class="fu">library</span>(QuantPsyc)</span>
 <span id="cb436-2"><a href="regresión-lineal-1.html#cb436-2" tabindex="-1"></a><span class="fu">library</span>(car)</span>
 <span id="cb436-3"><a href="regresión-lineal-1.html#cb436-3" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
 <span id="cb436-4"><a href="regresión-lineal-1.html#cb436-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb436-5"><a href="regresión-lineal-1.html#cb436-5" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb436-6"><a href="regresión-lineal-1.html#cb436-6" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span></code></pre></div>
+</details>
 <hr />
 <p>La regresión lineal es el modelo básico de evaluar si hay una relación <em>lineal</em> o sea <em>recta</em> entre dos variable. Esta relación entre las variables puedes ser positiva o negativa. Hay otro tipos de regresión, que incluye regresión no lineal tal como cuadrática <span class="math display">\[x^2\]</span> o cúbica <span class="math display">\[x^3\]</span>, logarítmica <span class="math display">\[log(x)\]</span> entre muchas otras alternativas.</p>
 <p>Aquí estaremos evaluando solamente la regresión lineal</p>
 <p>Primero paso es subir los datos:</p>
 <p>El números de barres en un bario y la cantidad de asesinados en este barrio (Datos ficticios)</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="regresión-lineal-1.html#cb437-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb437-2"><a href="regresión-lineal-1.html#cb437-2" tabindex="-1"></a>pubs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/pubs.csv&quot;</span>)</span>
 <span id="cb437-3"><a href="regresión-lineal-1.html#cb437-3" tabindex="-1"></a>pubs</span></code></pre></div>
+</details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:data18">
 <caption style="caption-side: top; text-align: center;"><span id="tab:data18">Table 18.1: </span> </caption><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">pubs</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">mortality</th></tr>
@@ -833,10 +837,12 @@ div.csl-indent {
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">500</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1e+04</td></tr>
 </table>
 
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="regresión-lineal-1.html#cb438-1" tabindex="-1"></a><span class="co"># Cambiamos los nombres de las columnas</span></span>
 <span id="cb438-2"><a href="regresión-lineal-1.html#cb438-2" tabindex="-1"></a></span>
 <span id="cb438-3"><a href="regresión-lineal-1.html#cb438-3" tabindex="-1"></a>pubs<span class="ot">=</span>pubs<span class="sc">%&gt;%</span></span>
 <span id="cb438-4"><a href="regresión-lineal-1.html#cb438-4" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">barres=</span>pubs, <span class="at">mortalidad=</span>mortality)</span></code></pre></div>
+</details>
 <hr />
 <div id="la-función-lm" class="section level2 hasAnchor" number="18.1">
 <h2><span class="header-section-number">18.1</span> la función lm()<a href="regresión-lineal-1.html#la-función-lm" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -847,6 +853,7 @@ div.csl-indent {
 <p>Ho: la pendiente <span class="math inline">\(\beta\)</span> es igual a cero Ha: la pendiente, <span class="math inline">\(\alpha\)</span> no es igual a cero. Entonces la relación entre las dos variables es o positiva o negativa.</p>
 <p>Ahora evaluamos los resultados de la regresión entre el número de barres en un vecindarios y la mortalidad en este mismo sector. Se observa que los coeficientes de la linea son <span class="math inline">\(y=3352+14.3*x\)</span>. Entonce el intercepto en cero comienza en 3352 fatalidades y por cada bar suplementario hay 14.3 más fatalidad.</p>
 <p>Ahora para determinar si estos valores son significativo hay que evaluar el valor de <strong>p</strong> en cada linea. La hipótesis nula del intercepto tiene un valor de p =0.005, que sugiere que se debería rechazar la hipótesis nula, y por consecuencia aceptamos la hipótesis alterna. La pendiente tiene un valor de p=0.015 y también se rechaza la hipotesis nula.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="regresión-lineal-1.html#cb439-1" tabindex="-1"></a>pubReg <span class="ot">&lt;-</span> <span class="fu">lm</span>(mortalidad<span class="sc">~</span>barres, <span class="at">data =</span> pubs) </span>
 <span id="cb439-2"><a href="regresión-lineal-1.html#cb439-2" tabindex="-1"></a></span>
 <span id="cb439-3"><a href="regresión-lineal-1.html#cb439-3" tabindex="-1"></a><span class="co">#summary(pubReg) # Si no se acuerda de la funcíon que sigue</span></span>
@@ -860,6 +867,7 @@ div.csl-indent {
 <span id="cb439-11"><a href="regresión-lineal-1.html#cb439-11" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
 <span id="cb439-12"><a href="regresión-lineal-1.html#cb439-12" tabindex="-1"></a>  )</span>
 <span id="cb439-13"><a href="regresión-lineal-1.html#cb439-13" tabindex="-1"></a>)</span></code></pre></div>
+</details>
 <table style="border-collapse:collapse; border:none;">
 <tr>
 <th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; font-weight: bold; ">
@@ -942,15 +950,18 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <div id="visualización-de-la-regresión" class="section level2 hasAnchor" number="18.2">
 <h2><span class="header-section-number">18.2</span> Visualización de la regresión<a href="regresión-lineal-1.html#visualización-de-la-regresión" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Se observa que hay un aumento en fatalidades con aumento en el número de barres. Pero nota el valor a la derecha que parece ser muy atípico comparado a los otros.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="regresión-lineal-1.html#cb440-1" tabindex="-1"></a><span class="fu">ggplot</span>(pubs, <span class="fu">aes</span>(<span class="at">x=</span>barres, <span class="at">y=</span>mortalidad))<span class="sc">+</span></span>
 <span id="cb440-2"><a href="regresión-lineal-1.html#cb440-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)<span class="sc">+</span> <span class="co"># modelo lineal</span></span>
 <span id="cb440-3"><a href="regresión-lineal-1.html#cb440-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+</details>
 <p><img src="Biometria_files/figure-html/unnamed-chunk-161-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="el-impacto-de-valores-atípico" class="section level2 hasAnchor" number="18.3">
 <h2><span class="header-section-number">18.3</span> El impacto de valores atípico<a href="regresión-lineal-1.html#el-impacto-de-valores-atípico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En cierta ocasiones valores fuera de lo normal pueden hacer grandes cambios en el resultado, en este caso la regresión. ¿Cual es el efecto del valor grande? Removemos ese valor del archivo de datos y revaluamos el modelo (la regresión lineal). Nota que ahora el modelo es sumamente diferente <span class="math inline">\(y=-163.7+103.2*x\)</span>. ¿Ahora se rechaza las dos hipótesis?</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb441"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb441-1"><a href="regresión-lineal-1.html#cb441-1" tabindex="-1"></a>pubsnew <span class="ot">&lt;-</span> pubs[ <span class="fu">which</span>(pubs<span class="sc">$</span>barres<span class="sc">&lt;</span><span class="dv">80</span>), ]  <span class="co"># remover el valor grande</span></span>
 <span id="cb441-2"><a href="regresión-lineal-1.html#cb441-2" tabindex="-1"></a></span>
 <span id="cb441-3"><a href="regresión-lineal-1.html#cb441-3" tabindex="-1"></a>pubsnew<span class="ot">=</span>pubsnew <span class="sc">%&gt;%</span> </span>
@@ -969,6 +980,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <span id="cb441-16"><a href="regresión-lineal-1.html#cb441-16" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
 <span id="cb441-17"><a href="regresión-lineal-1.html#cb441-17" tabindex="-1"></a>  )</span>
 <span id="cb441-18"><a href="regresión-lineal-1.html#cb441-18" tabindex="-1"></a>)</span></code></pre></div>
+</details>
 <table style="border-collapse:collapse; border:none;">
 <tr>
 <th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; font-weight: bold; ">
@@ -1046,9 +1058,11 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 </td>
 </tr>
 </table>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="regresión-lineal-1.html#cb442-1" tabindex="-1"></a><span class="fu">ggplot</span>(pubsnew,<span class="fu">aes</span>(<span class="at">x=</span>barres, <span class="at">y=</span>mortalidad))<span class="sc">+</span></span>
 <span id="cb442-2"><a href="regresión-lineal-1.html#cb442-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)<span class="sc">+</span></span>
 <span id="cb442-3"><a href="regresión-lineal-1.html#cb442-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+</details>
 <p><img src="Biometria_files/figure-html/remover%20valores-1.png" width="672" /></p>
 <hr />
 </div>
@@ -1056,9 +1070,11 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <h2><span class="header-section-number">18.4</span> La venta de discos de música<a href="regresión-lineal-1.html#la-venta-de-discos-de-música" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ahora un set de datos más complejo y más realista a los que uno encontraría en un estudio de en medicina, sociología o ecológica.</p>
 <p>Los datos representa la cantidad de dinero dedicado a la promoción de diferentes CD’s de una compañia de música y la cantidad de CD (CD/downloads) vendido. El la primera linea se observa la cantidad de libras esterlina, <strong>£</strong> (UK) dedicado a la promoción del album de música, en la primera linea vemos que se gasto £10,256, y después la cantidad de CD vendido fue 330.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="regresión-lineal-1.html#cb443-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb443-2"><a href="regresión-lineal-1.html#cb443-2" tabindex="-1"></a>Album_Sales_1_new <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Album_Sales_1_new.csv&quot;</span>)</span>
 <span id="cb443-3"><a href="regresión-lineal-1.html#cb443-3" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
+</details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:advertizing and sales">
 <caption style="caption-side: top; text-align: center;">(#tab:advertizing and sales) </caption><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">adverts</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">sales</th></tr>
@@ -1076,20 +1092,26 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">569&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">170</td></tr>
 </table>
 
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="regresión-lineal-1.html#cb444-1" tabindex="-1"></a><span class="fu">length</span>(Album_Sales_1_new<span class="sc">$</span>adverts)  <span class="co"># cuantas files de datos hay en el data frame</span></span></code></pre></div>
+</details>
 <pre><code>## [1] 200</code></pre>
 <p>Comenzamos con hacer un gráfico entre las dos variables. Nota que en la parte de <strong>geom_smooth()</strong>, tiene que incluir <strong>method=lm</strong>, esto significa que el método de construir la linea usara la regresión lineal. Se añade a la función lineal <span class="math inline">\(\epsilon\)</span> que representa los errores de los valores al comparar con la linea que representa el mejor modelo.</p>
 <p><span class="math display">\[Y_{ i }=\beta _{ 0 }+\beta _{ 1 }X_{ i }+\epsilon _{ i }\]</span> Recuerda que <span class="math inline">\(\beta _{ 0 }\)</span> es el intercepto y el <span class="math inline">\(\beta _{ 1 }X_{ i }\)</span> es la pendiente. El área sombreada es el área de 95 de intervalo de confianza. Esto quiere decir que la mejor linea, intercepto y pendiente podría variar en este rango si repetimos el experimento. Nota aquí todas las alternativas, añadí los dos extremos, con una pendiente mayor (roja) y una menor (violeta). Cada punto representa la venta de CD con su correspondiente cantidad dedicada a la promoción. Los <span class="math inline">\(epsilon\)</span> seria la diferencia entre la mejor linea y el valor original, esto se llama tambien los residuales.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="regresión-lineal-1.html#cb446-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb446-2"><a href="regresión-lineal-1.html#cb446-2" tabindex="-1"></a><span class="fu">ggplot</span>(Album_Sales_1_new,<span class="fu">aes</span>(<span class="at">x=</span>adverts, <span class="at">y=</span>sales))<span class="sc">+</span></span>
 <span id="cb446-3"><a href="regresión-lineal-1.html#cb446-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
 <span id="cb446-4"><a href="regresión-lineal-1.html#cb446-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
 <span id="cb446-5"><a href="regresión-lineal-1.html#cb446-5" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">120</span>, <span class="at">xend=</span><span class="dv">2250</span>, <span class="at">yend=</span><span class="dv">380</span>), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
 <span id="cb446-6"><a href="regresión-lineal-1.html#cb446-6" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">150</span>, <span class="at">xend=</span><span class="dv">2250</span>, <span class="at">yend=</span><span class="dv">320</span>), <span class="at">colour=</span><span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
+</details>
 <p><img src="Biometria_files/figure-html/advertizing%20graph-1.png" width="672" /></p>
 <p>El modelo lineal con la función <strong>lm()</strong>. ¿Como interpretas los coeficientes y si estos son significativos, si se rechaza la hipótesis nula?</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="regresión-lineal-1.html#cb447-1" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span>
 <span id="cb447-2"><a href="regresión-lineal-1.html#cb447-2" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
+</details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:sales model">
 <caption style="caption-side: top; text-align: center;">(#tab:sales model) </caption><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">adverts</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">sales</th></tr>
@@ -1107,6 +1129,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">569&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">170</td></tr>
 </table>
 
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="regresión-lineal-1.html#cb448-1" tabindex="-1"></a>model1<span class="ot">=</span><span class="fu">lm</span>(sales<span class="sc">~</span>adverts, Album_Sales_1_new)</span>
 <span id="cb448-2"><a href="regresión-lineal-1.html#cb448-2" tabindex="-1"></a></span>
 <span id="cb448-3"><a href="regresión-lineal-1.html#cb448-3" tabindex="-1"></a><span class="co">#summary(model1)</span></span>
@@ -1120,6 +1143,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <span id="cb448-11"><a href="regresión-lineal-1.html#cb448-11" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
 <span id="cb448-12"><a href="regresión-lineal-1.html#cb448-12" tabindex="-1"></a>  )</span>
 <span id="cb448-13"><a href="regresión-lineal-1.html#cb448-13" tabindex="-1"></a>)</span></code></pre></div>
+</details>
 <table style="border-collapse:collapse; border:none;">
 <tr>
 <th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; font-weight: bold; ">
@@ -1207,7 +1231,9 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <li><p>En el cuarto gráfico evaluar si hay valores que tienen mucho peso si se incluyen o no en el análisis. Estos van a ser identificado</p></li>
 </ol>
 <p>En el presente gráfico hay tres valores que hay que evaluar (1,42,169), estos valores se tiene que asegurar que son correctos. Siempre es bueno remover los valores sesgados y rehacer el análisis para observar cuan diferente son los resultas.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="regresión-lineal-1.html#cb449-1" tabindex="-1"></a><span class="fu">plot</span>(model1)  <span class="co"># Evaluar los supuestos, 1. Igualdad de varianza, 2. Normalidad, 4. Datos sesgados (Cook&#39;s Distance)</span></span></code></pre></div>
+</details>
 <p><img src="Biometria_files/figure-html/unnamed-chunk-162-1.png" width="672" /><img src="Biometria_files/figure-html/unnamed-chunk-162-2.png" width="672" /><img src="Biometria_files/figure-html/unnamed-chunk-162-3.png" width="672" /><img src="Biometria_files/figure-html/unnamed-chunk-162-4.png" width="672" /></p>
 <hr />
 </div>
@@ -1220,10 +1246,14 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <p>Others have indicated that D_i&gt;4/n, where n is the number of observations, might be used.</p>
 <p>Aqui enseño como añadir 1. los valores de “cook.distance” a su archivo 2. Añadir una columna de “secuencia” de los datos 3. Crear una gráfica de las distancia de Cook.<br />
 4. Which values have Di larger than 1, which values have Cook’s distances larger 4/n?</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="regresión-lineal-1.html#cb450-1" tabindex="-1"></a><span class="dv">4</span><span class="sc">/</span><span class="fu">length</span>(Album_Sales_1_new<span class="sc">$</span>adverts)</span></code></pre></div>
+</details>
 <pre><code>## [1] 0.02</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="regresión-lineal-1.html#cb452-1" tabindex="-1"></a>Album_Sales_1_new<span class="sc">$</span>cooks.distance<span class="ot">&lt;-</span><span class="fu">cooks.distance</span>(model1)</span>
 <span id="cb452-2"><a href="regresión-lineal-1.html#cb452-2" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
+</details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:Cook distance">
 <caption style="caption-side: top; text-align: center;">(#tab:Cook distance) </caption><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">adverts</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">sales</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">cooks.distance</th></tr>
@@ -1241,8 +1271,10 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">569&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">170</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.000207</td></tr>
 </table>
 
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="regresión-lineal-1.html#cb453-1" tabindex="-1"></a>Album_Sales_1_new<span class="sc">$</span>sequence<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">200</span>)</span>
 <span id="cb453-2"><a href="regresión-lineal-1.html#cb453-2" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
+</details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:Cook distance">
 <caption style="caption-side: top; text-align: center;">(#tab:Cook distance) </caption><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">adverts</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">sales</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">cooks.distance</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">sequence</th></tr>
@@ -1260,7 +1292,9 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">569&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">170</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.000207</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6</td></tr>
 </table>
 
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="regresión-lineal-1.html#cb454-1" tabindex="-1"></a><span class="fu">tail</span>(Album_Sales_1_new)</span></code></pre></div>
+</details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:Cook distance">
 <caption style="caption-side: top; text-align: center;">(#tab:Cook distance) </caption><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">adverts</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">sales</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">cooks.distance</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">sequence</th></tr>
@@ -1278,9 +1312,11 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">786&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">110</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.00649&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">200</td></tr>
 </table>
 
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="regresión-lineal-1.html#cb455-1" tabindex="-1"></a><span class="fu">ggplot</span>(Album_Sales_1_new, <span class="fu">aes</span>(sequence, cooks.distance))<span class="sc">+</span></span>
 <span id="cb455-2"><a href="regresión-lineal-1.html#cb455-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
 <span id="cb455-3"><a href="regresión-lineal-1.html#cb455-3" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="dv">4</span><span class="sc">/</span><span class="fu">length</span>(Album_Sales_1_new<span class="sc">$</span>adverts), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>))</span></code></pre></div>
+</details>
 <p><img src="Biometria_files/figure-html/Cook%20distance-1.png" width="672" /></p>
 <hr />
 </div>
@@ -1315,8 +1351,10 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <li><p>Normalidad, qqplot</p></li>
 <li><p>Valores sesgados, la prueba de Cook’s</p></li>
 </ol>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="regresión-lineal-1.html#cb456-1" tabindex="-1"></a>advertizingReg <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales<span class="sc">~</span>adverts, <span class="at">data =</span> Album_Sales_1_new)</span>
 <span id="cb456-2"><a href="regresión-lineal-1.html#cb456-2" tabindex="-1"></a><span class="fu">summary</span>(advertizingReg)</span></code></pre></div>
+</details>
 <pre><code>## 
 ## Call:
 ## lm(formula = sales ~ adverts, data = Album_Sales_1_new)
@@ -1335,6 +1373,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 ## Residual standard error: 65.99 on 198 degrees of freedom
 ## Multiple R-squared:  0.3346, Adjusted R-squared:  0.3313 
 ## F-statistic: 99.59 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="regresión-lineal-1.html#cb458-1" tabindex="-1"></a><span class="fu">tab_model</span>(</span>
 <span id="cb458-2"><a href="regresión-lineal-1.html#cb458-2" tabindex="-1"></a>  advertizingReg,<span class="at">show.df =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb458-3"><a href="regresión-lineal-1.html#cb458-3" tabindex="-1"></a>  <span class="at">CSS =</span> <span class="fu">list</span>(</span>
@@ -1344,6 +1383,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <span id="cb458-7"><a href="regresión-lineal-1.html#cb458-7" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
 <span id="cb458-8"><a href="regresión-lineal-1.html#cb458-8" tabindex="-1"></a>  )</span>
 <span id="cb458-9"><a href="regresión-lineal-1.html#cb458-9" tabindex="-1"></a>)</span></code></pre></div>
+</details>
 <table style="border-collapse:collapse; border:none;">
 <tr>
 <th style="border-top: double; text-align:center; font-style:italic; font-weight:normal; padding:0.2cm; border-bottom:1px solid black; font-weight: bold; ">
@@ -1435,16 +1475,20 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <h4><span class="header-section-number">18.9.1.2</span> Definition of Residuals<a href="regresión-lineal-1.html#definition-of-residuals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>A quantity remaining after other things have been subtracted or allowed for. <strong>FROM Wikipedia</strong></p>
 <p>A residual (or fitting deviation), on the other hand, is an observable estimate of the unobservable statistical error.</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="regresión-lineal-1.html#cb459-1" tabindex="-1"></a><span class="co"># &quot;advertizingReg&quot;, nota que este no es un data frame pero un modelo</span></span>
 <span id="cb459-2"><a href="regresión-lineal-1.html#cb459-2" tabindex="-1"></a><span class="co"># The main figure</span></span>
 <span id="cb459-3"><a href="regresión-lineal-1.html#cb459-3" tabindex="-1"></a><span class="fu">ggplot</span>(Album_Sales_1_new,<span class="fu">aes</span>(<span class="at">x=</span>adverts, <span class="at">y=</span>sales))<span class="sc">+</span></span>
 <span id="cb459-4"><a href="regresión-lineal-1.html#cb459-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
 <span id="cb459-5"><a href="regresión-lineal-1.html#cb459-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+</details>
 <p><img src="Biometria_files/figure-html/evaluate%20the%20residuals-1.png" width="672" /></p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="regresión-lineal-1.html#cb460-1" tabindex="-1"></a><span class="co"># Graficando los residuales, metodo 1</span></span>
 <span id="cb460-2"><a href="regresión-lineal-1.html#cb460-2" tabindex="-1"></a><span class="fu">ggplot</span>(model1, <span class="fu">aes</span>(<span class="at">x=</span>.fitted, <span class="at">y=</span>.resid))<span class="sc">+</span></span>
 <span id="cb460-3"><a href="regresión-lineal-1.html#cb460-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
 <span id="cb460-4"><a href="regresión-lineal-1.html#cb460-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)</span></code></pre></div>
+</details>
 <p><img src="Biometria_files/figure-html/evaluate%20the%20residuals-2.png" width="672" /></p>
 </div>
 </div>
@@ -1453,11 +1497,15 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <h2><span class="header-section-number">18.10</span> Porque podemos usar la alternativas anterior<a href="regresión-lineal-1.html#porque-podemos-usar-la-alternativas-anterior" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Cuando R corre un analisis, hace muchos calculos y guarda parate de estos calculos como lista de datos.</p>
 <p>Para ver algunos de los valores calculado uno pone el nombre del modelo y la añade el <strong>$</strong> y deberia aparecer la lista de los valores calculados. o otra alternativa es usar la función ls() = list() para ver el nombre de las variables</p>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb461"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb461-1"><a href="regresión-lineal-1.html#cb461-1" tabindex="-1"></a><span class="fu">ls</span>(model1)</span></code></pre></div>
+</details>
 <pre><code>##  [1] &quot;assign&quot;        &quot;call&quot;          &quot;coefficients&quot;  &quot;df.residual&quot;  
 ##  [5] &quot;effects&quot;       &quot;fitted.values&quot; &quot;model&quot;         &quot;qr&quot;           
 ##  [9] &quot;rank&quot;          &quot;residuals&quot;     &quot;terms&quot;         &quot;xlevels&quot;</code></pre>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="regresión-lineal-1.html#cb463-1" tabindex="-1"></a><span class="co"># model1$residuals  # Por ejemplo para ver los residuales del modelo</span></span></code></pre></div>
+</details>
 <hr />
 </div>
 <div id="ejercicio-1-1" class="section level2 hasAnchor" number="18.11">
@@ -1470,10 +1518,12 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <li><p>Evalúa el modelo de regresión entre las dos variables</p></li>
 <li><p>Evalúa los supuestos</p></li>
 </ul>
+<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb464"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb464-1"><a href="regresión-lineal-1.html#cb464-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb464-2"><a href="regresión-lineal-1.html#cb464-2" tabindex="-1"></a>Alturas_Humanos <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Alturas_Humanos.csv&quot;</span>)</span>
 <span id="cb464-3"><a href="regresión-lineal-1.html#cb464-3" tabindex="-1"></a></span>
 <span id="cb464-4"><a href="regresión-lineal-1.html#cb464-4" tabindex="-1"></a><span class="fu">head</span>(Alturas_Humanos)</span></code></pre></div>
+</details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-164">
 <caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-164">Table 18.2: </span> </caption><col><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Genero</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Altura_cm</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Peso_kg</th></tr>

@@ -1,27 +1,30 @@
 ---
 title: "Biometria"
-output: 
-  html_document: 
-    theme: spacelab
-    toc: yes
-    toc_float: yes
+output:
+  bookdown::gitbook:
+    highlight: tango
     code_folding: hide
+
+
+    
 author: ""
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
+
 description: |
-  Este libro digital es una introdución al estudio de Biometria
+  Este libro digital es una introdución al estudio de Biometría
 link-citations: yes
-#github-repo: rstudio/bookdown-demo
+
 editor_options: 
   markdown: 
     wrap: 72
-# https://statnmap.com/2017-11-13-enable-code-folding-in-bookdown-and-blogdown/ for code folding script    
+
+
 ---
+
+
 
 # Introducción al curso de Biometría
 

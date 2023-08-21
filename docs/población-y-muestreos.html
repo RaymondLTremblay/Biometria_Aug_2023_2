@@ -209,7 +209,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.12" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#niveles-de-mediciones"><i class="fa fa-check"></i><b>2.12</b> Niveles de mediciones</a>
 <ul>
 <li class="chapter" data-level="2.12.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-continuas"><i class="fa fa-check"></i><b>2.12.1</b> Variables continuas</a></li>
-<li class="chapter" data-level="2.12.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#varriables-discretas"><i class="fa fa-check"></i><b>2.12.2</b> Varriables Discretas</a></li>
+<li class="chapter" data-level="2.12.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-discretas"><i class="fa fa-check"></i><b>2.12.2</b> Variables Discretas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html"><i class="fa fa-check"></i><b>3</b> Población y Muestreos</a>
@@ -220,7 +220,11 @@ div.csl-indent {
 <li class="chapter" data-level="3.4" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#griego-y-latin"><i class="fa fa-check"></i><b>3.4</b> Griego y Latin</a></li>
 <li class="chapter" data-level="3.5" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-verdad-versus-un-estimado"><i class="fa fa-check"></i><b>3.5</b> La verdad versus un estimado</a></li>
 <li class="chapter" data-level="3.6" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#muestreos-al-azar"><i class="fa fa-check"></i><b>3.6</b> Muestreos al azar</a></li>
-<li class="chapter" data-level="3.7" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#error-de-muestreo-precisión-exactitud-y-sesgos"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Precisión, Exactitud y Sesgos</a></li>
+<li class="chapter" data-level="3.7" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#error-de-muestreo-exactitud-y-precisión"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Exactitud y Precisión</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-exactitud-se-refiere-a-cuan-cerca-es-el-valor-medido-al-valor-real-de-la-variable-de-interes.-cuan-es-el-largo-de-la-hoja"><i class="fa fa-check"></i><b>3.7.1</b> La exactitud se refiere a cuan cerca es el valor medido al valor real de la variable de interes. Cuan es el largo de la hoja</a></li>
+<li class="chapter" data-level="3.7.2" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-precisión-es-un-estimado-de-cuan-cerca-cada-valor-es-uno-del-otro.-hablando-de-la-mismo-individuo-o-variable."><i class="fa fa-check"></i><b>3.7.2</b> La precisión es un estimado de cuan cerca cada valor es uno del otro. Hablando de la mismo individuo o variable.</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Inferencias y Hipótesis</a>
 <ul>
@@ -798,22 +802,25 @@ div.csl-indent {
 <p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
 <div id="qué-es-la-estadística" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> ¿Qué es la estadística?<a href="población-y-muestreos.html#qué-es-la-estadística" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Usando la definición de Snedecor y Cochran (1989) la estadística son las técnicas para la “recolección, análisis y la habilidad de tener una conclusión de los datos”. También pudiésemos decir que la estadística es el estudio de la incertidumbre.</p>
+<ul>
+<li><p>Usando la definición de Snedecor y Cochran (1989) la estadística son las técnicas para la “recolección, análisis y la habilidad de tener una conclusión de los datos”.</p></li>
+<li><p>También pudiésemos decir que la estadística es el estudio de la incertidumbre.</p></li>
+</ul>
 </div>
 <div id="el-concepto-de-población" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> El concepto de población<a href="población-y-muestreos.html#el-concepto-de-población" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Este concepto en estadística es sumamente diferente a la visión popular. En el concepto popular, social y geográfico una población es un conjunto de individuos de una especie o un concepto nacionalista (por ejemplos los Argentinos, o puertoriqueños). Típicamente se refiere a un grupo de individuos en un país, estado. El concepto de población en estadística es diferente en que se refiere a <strong>TODOS</strong> en el universo. Por consecuencia se fuésemos hacer un estudio de la población de puertoriqueños, tendríamos que incluir a todos ellos irrelevante de donde vive en el planeta. Por consecuencia el concepto de población en estadística siempre se refiere a todos los individuos sin que falte ni uno. Pudiésemos modificar nuestro estudio y decir que se va a estudiar una población más reducida. Por ejemplo la población de los puertoriqueños que viven en Puerto Rico en tal fecha. Aun así seria imposible recolectar datos de cada uno, porque siempre habrá algún individuo que no vamos a poder recolectar los datos. Por consecuencia el concepto de población es uno teórico.</p>
+<p>Estos conceptos en estadística es sumamente diferente a la visión popular. En el concepto popular, social y geográfico una población es un conjunto de individuos de una especie o un concepto nacionalista (por ejemplos los Argentinos, o puertoriqueños). Típicamente se refiere a un grupo de individuos en un país, estado. El concepto de población en estadística es diferente en que se refiere a <strong>TODOS</strong> en el universo. Por consecuencia se fuésemos hacer un estudio de la <strong>población</strong> de puertoriqueños, tendríamos que incluir a todos ellos irrelevante de donde vive en el planeta. Por consecuencia el concepto de población en estadística siempre se refiere a todos los individuos <strong>sin que falte ni uno</strong>. Pudiésemos modificar nuestro estudio y decir que se va a estudiar una población más reducida. Por ejemplo la población de los puertoriqueños que viven en Puerto Rico en tal fecha. Aun así seria imposible recolectar datos de cada uno, porque siempre habrá algún individuo que no vamos a poder recolectar los datos. Por consecuencia el <strong>concepto de población</strong> es uno teórico.</p>
 <hr />
 </div>
 <div id="el-concepto-de-muestreo" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> El concepto de muestreo<a href="población-y-muestreos.html#el-concepto-de-muestreo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Un muestreo es el subgrupo de la población, donde el objetivo es que este muestro sea representativo de la población. Por ejemplo un hace una recolección de información para saber cual es el nivel de estrés que la pandemia de COVID-19 tiene sobre los estudiantes universitarios. Seria un trabajo fenomenal recolectar datos sobre <strong>TODOS</strong> los estudiantes, pero su podría recolectar información sobre un subgrupo de ellos con la espera que los datos represente la población de estudiantes universitarios.</p>
+<p>Un muestreo es el subgrupo de la población, donde el objetivo es que este muestro sea representativo de la población. Por ejemplo uno hace una recolección de información para saber cual es el nivel de estrés durante la pandemia de COVID-19 que tuvo los estudiantes universitarios. Seria un trabajo fenomenal recolectar datos sobre <strong>TODOS</strong> los estudiantes, pero su podría recolectar información sobre un subgrupo de ellos con la espera que los datos represente la población de estudiantes universitarios.</p>
 <hr />
 </div>
 <div id="griego-y-latin" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Griego y Latin<a href="población-y-muestreos.html#griego-y-latin" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Cuando uno quiere referir a la población/parámetro uno utiliza las letras del alfabeto griego y cuando nos referimos a un muestreo se usa la letra del alfabeto en latín.</p>
-<p>En la siguiente tabla se observa algunos de los variables que veremos en los módulos siguientes. En los próximos módulos regresaremos al significado de estos parámetros.</p>
+<p>En la siguiente tabla se observa algunos de las variables que veremos en los módulos siguientes. En los próximos módulos regresaremos al significado de estos parámetros.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="población-y-muestreos.html#cb3-1" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb3-2"><a href="población-y-muestreos.html#cb3-2" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
@@ -899,7 +906,7 @@ Proporción
 </div>
 <div id="la-verdad-versus-un-estimado" class="section level2 hasAnchor" number="3.5">
 <h2><span class="header-section-number">3.5</span> La verdad versus un estimado<a href="población-y-muestreos.html#la-verdad-versus-un-estimado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Cuando uno hace una investigación esta buscando la “verdad” en otra palabra estamos a la búsqueda de la información de la población. Desafortunadamente raramente podemos tener TODA los datos por consecuencia esperamos que la muestra sea una buena representación de la “verdad”. Por consecuencia se espera que el promedio de la muestra se acerca a promedio del universo (la verdad). Matemáticamente uno lo puede escribir de la siguiente manera <span class="math inline">\(\overline{x}\approx\mu\)</span>. El gran problema en la ciencia es que nunca estamos 100% seguro de los trabajos de investigación porque nunca sabemos el <span class="math inline">\(\mu\)</span>. Este valor es casi siempre desconocido.</p>
+<p>Cuando uno hace una investigación esta buscando la “verdad” en otra palabra estamos a la búsqueda de la información de la población. Desafortunadamente, raramente podemos tener TODA los datos, por consecuencia esperamos que la muestra sea una buena representación de la “verdad”. Se espera que el promedio de la muestra se acerca a promedio del universo (la verdad). Matemáticamente uno lo puede escribir de la siguiente manera <span class="math inline">\(\overline{x}\approx\mu\)</span>. El gran problema en la ciencia es que nunca estamos 100% seguro de los trabajos de investigación porque nunca sabemos el <span class="math inline">\(\mu\)</span>. Este valor es casi siempre desconocido.</p>
 </div>
 <div id="muestreos-al-azar" class="section level2 hasAnchor" number="3.6">
 <h2><span class="header-section-number">3.6</span> Muestreos al azar<a href="población-y-muestreos.html#muestreos-al-azar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -918,9 +925,16 @@ Proporción
 </ul>
 </blockquote>
 </div>
-<div id="error-de-muestreo-precisión-exactitud-y-sesgos" class="section level2 hasAnchor" number="3.7">
-<h2><span class="header-section-number">3.7</span> Error de muestreo: Precisión, Exactitud y Sesgos<a href="población-y-muestreos.html#error-de-muestreo-precisión-exactitud-y-sesgos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="error-de-muestreo-exactitud-y-precisión" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Error de muestreo: Exactitud y Precisión<a href="población-y-muestreos.html#error-de-muestreo-exactitud-y-precisión" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="la-exactitud-se-refiere-a-cuan-cerca-es-el-valor-medido-al-valor-real-de-la-variable-de-interes.-cuan-es-el-largo-de-la-hoja" class="section level3 hasAnchor" number="3.7.1">
+<h3><span class="header-section-number">3.7.1</span> La exactitud se refiere a cuan cerca es el valor medido al valor real de la variable de interes. Cuan es el largo de la hoja<a href="población-y-muestreos.html#la-exactitud-se-refiere-a-cuan-cerca-es-el-valor-medido-al-valor-real-de-la-variable-de-interes.-cuan-es-el-largo-de-la-hoja" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="la-precisión-es-un-estimado-de-cuan-cerca-cada-valor-es-uno-del-otro.-hablando-de-la-mismo-individuo-o-variable." class="section level3 hasAnchor" number="3.7.2">
+<h3><span class="header-section-number">3.7.2</span> La precisión es un estimado de cuan cerca cada valor es uno del otro. Hablando de la mismo individuo o variable.<a href="población-y-muestreos.html#la-precisión-es-un-estimado-de-cuan-cerca-cada-valor-es-uno-del-otro.-hablando-de-la-mismo-individuo-o-variable." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="Graficos/Accuracy_precision.png" width="100%" /></p>
 
+</div>
 </div>
 </div>
             </section>

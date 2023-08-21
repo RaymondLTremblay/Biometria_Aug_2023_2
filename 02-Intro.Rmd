@@ -213,7 +213,7 @@ Lo que uno observa es que la gente que son identificado que tiene característic
    - El número de hermanos, si por ejemplo yo pregunto a seis estudiantes cuantos hermanos tiene. Yo podría tener la siguiente lista. Aunque que no hubo ningún estudiante que tenga 1 hermano o 6 hermanos, es posible esta alternativas.  Note algo especial aquí es que nadie puede tener 2.4 hermanos, los valores tienen que ser números enteros. Cuando son conteos así, la distribución de los datos provienen de una distribución **Poisson** (veremos más tarde).    
     - Números de hermanos (0, 2, 5, 3, 8, 4)
         
-### Varriables Discretas
+### Variables Discretas
 
 - Categórica o Discreta
   - Variables Nominales

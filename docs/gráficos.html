@@ -209,7 +209,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.12" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#niveles-de-mediciones"><i class="fa fa-check"></i><b>2.12</b> Niveles de mediciones</a>
 <ul>
 <li class="chapter" data-level="2.12.1" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-continuas"><i class="fa fa-check"></i><b>2.12.1</b> Variables continuas</a></li>
-<li class="chapter" data-level="2.12.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#varriables-discretas"><i class="fa fa-check"></i><b>2.12.2</b> Varriables Discretas</a></li>
+<li class="chapter" data-level="2.12.2" data-path="introducción-a-la-biometria.html"><a href="introducción-a-la-biometria.html#variables-discretas"><i class="fa fa-check"></i><b>2.12.2</b> Variables Discretas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html"><i class="fa fa-check"></i><b>3</b> Población y Muestreos</a>
@@ -220,7 +220,11 @@ div.csl-indent {
 <li class="chapter" data-level="3.4" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#griego-y-latin"><i class="fa fa-check"></i><b>3.4</b> Griego y Latin</a></li>
 <li class="chapter" data-level="3.5" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-verdad-versus-un-estimado"><i class="fa fa-check"></i><b>3.5</b> La verdad versus un estimado</a></li>
 <li class="chapter" data-level="3.6" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#muestreos-al-azar"><i class="fa fa-check"></i><b>3.6</b> Muestreos al azar</a></li>
-<li class="chapter" data-level="3.7" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#error-de-muestreo-precisión-exactitud-y-sesgos"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Precisión, Exactitud y Sesgos</a></li>
+<li class="chapter" data-level="3.7" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#error-de-muestreo-exactitud-y-precisión"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Exactitud y Precisión</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-exactitud-se-refiere-a-cuan-cerca-es-el-valor-medido-al-valor-real-de-la-variable-de-interes.-cuan-es-el-largo-de-la-hoja"><i class="fa fa-check"></i><b>3.7.1</b> La exactitud se refiere a cuan cerca es el valor medido al valor real de la variable de interes. Cuan es el largo de la hoja</a></li>
+<li class="chapter" data-level="3.7.2" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-precisión-es-un-estimado-de-cuan-cerca-cada-valor-es-uno-del-otro.-hablando-de-la-mismo-individuo-o-variable."><i class="fa fa-check"></i><b>3.7.2</b> La precisión es un estimado de cuan cerca cada valor es uno del otro. Hablando de la mismo individuo o variable.</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Inferencias y Hipótesis</a>
 <ul>
@@ -876,7 +880,7 @@ div.csl-indent {
 <span id="cb218-5"><a href="gráficos.html#cb218-5" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Basic geom_point and linear regression&quot;</span>)<span class="sc">+</span></span>
 <span id="cb218-6"><a href="gráficos.html#cb218-6" tabindex="-1"></a>  rlt_theme</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="salvar-gráficos-con-ggsave" class="section level2 hasAnchor" number="9.5">
@@ -904,7 +908,7 @@ div.csl-indent {
 <span id="cb221-3"><a href="gráficos.html#cb221-3" tabindex="-1"></a>          <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;Red&quot;</span>)<span class="sc">+</span> </span>
 <span id="cb221-4"><a href="gráficos.html#cb221-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Exam Anxiety&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Exam Performance %&quot;</span>) </span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-83-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
 <div id="cambio-de-color-del-intervalo-de-confianza" class="section level3 hasAnchor" number="9.7.1">
 <h3><span class="header-section-number">9.7.1</span> Cambio de color del intervalo de confianza<a href="gráficos.html#cambio-de-color-del-intervalo-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -913,7 +917,7 @@ div.csl-indent {
 <span id="cb222-3"><a href="gráficos.html#cb222-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;Red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">&quot;orange&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb222-4"><a href="gráficos.html#cb222-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Exam Anxiety&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Exam Performance %&quot;</span>) </span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-84-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
 <hr />
 </div>
 </div>
@@ -927,7 +931,7 @@ div.csl-indent {
 <span id="cb223-4"><a href="gráficos.html#cb223-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Exam Anxiety Score&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Exam Performance %&quot;</span>)<span class="sc">+</span></span>
 <span id="cb223-5"><a href="gráficos.html#cb223-5" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Basic geom_point and linear regression&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-85-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="histogramas" class="section level2 hasAnchor" number="9.9">
@@ -1126,7 +1130,7 @@ div.csl-indent {
 <span id="cb244-4"><a href="gráficos.html#cb244-4" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> mean_cl_boot, <span class="at">geom =</span> <span class="st">&quot;errorbar&quot;</span>, <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb244-5"><a href="gráficos.html#cb244-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Intervention&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Mean Number of Hiccups&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
 </div>
 <div id="diagrama-de-tallo-y-hoja" class="section level2 hasAnchor" number="9.15">
 <h2><span class="header-section-number">9.15</span> Diagrama de tallo y hoja<a href="gráficos.html#diagrama-de-tallo-y-hoja" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1161,7 +1165,7 @@ div.csl-indent {
 <div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="gráficos.html#cb247-1" tabindex="-1"></a><span class="fu">ggplot</span>(Exam_Anxiety, <span class="fu">aes</span>(Anxiety))<span class="sc">+</span></span>
 <span id="cb247-2"><a href="gráficos.html#cb247-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
 <p>Stem leaf for two groups</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="gráficos.html#cb248-1" tabindex="-1"></a><span class="co">#library(aplpack)</span></span></code></pre></div>

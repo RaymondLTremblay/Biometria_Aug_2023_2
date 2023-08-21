@@ -29,17 +29,19 @@ knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
 
 ## ¿Qué es la estadística?
 
-Usando la definición de Snedecor y Cochran (1989) la estadística  son las técnicas para la "recolección, análisis y la habilidad de tener una conclusión de los datos".  También pudiésemos decir que la estadística es el estudio de la incertidumbre.  
+- Usando la definición de Snedecor y Cochran (1989) la estadística  son las técnicas para la "recolección, análisis y la habilidad de tener una conclusión de los datos".  
+
+- También pudiésemos decir que la estadística es el estudio de la incertidumbre.  
 
 
 ## El concepto de población
 
-Este concepto en estadística es sumamente diferente a la visión popular. En el concepto popular, social y geográfico una población es un conjunto de individuos de una especie o un concepto nacionalista (por ejemplos los Argentinos, o puertoriqueños). Típicamente se refiere a un grupo de individuos en un país, estado.  El concepto de población en estadística es diferente en que se refiere a **TODOS** en el universo.   Por consecuencia se fuésemos hacer un estudio de la población de puertoriqueños, tendríamos que incluir a todos ellos irrelevante de donde vive en el planeta.  Por consecuencia el concepto de población en estadística siempre se refiere a todos los individuos sin que falte ni uno.  Pudiésemos modificar nuestro estudio y decir que se va a estudiar una población más reducida. Por ejemplo la población de los puertoriqueños que viven en Puerto Rico en tal fecha.   Aun así seria imposible recolectar datos de cada uno, porque siempre habrá algún individuo que no vamos a poder recolectar los datos.  Por consecuencia el concepto de población es uno teórico.  
+Estos conceptos en estadística es sumamente diferente a la visión popular. En el concepto popular, social y geográfico una población es un conjunto de individuos de una especie o un concepto nacionalista (por ejemplos los Argentinos, o puertoriqueños). Típicamente se refiere a un grupo de individuos en un país, estado.  El concepto de población en estadística es diferente en que se refiere a **TODOS** en el universo.   Por consecuencia se fuésemos hacer un estudio de la **población** de puertoriqueños, tendríamos que incluir a todos ellos irrelevante de donde vive en el planeta.  Por consecuencia el concepto de población en estadística siempre se refiere a todos los individuos **sin que falte ni uno**.  Pudiésemos modificar nuestro estudio y decir que se va a estudiar una población más reducida. Por ejemplo la población de los puertoriqueños que viven en Puerto Rico en tal fecha.   Aun así seria imposible recolectar datos de cada uno, porque siempre habrá algún individuo que no vamos a poder recolectar los datos.  Por consecuencia el **concepto de población** es uno teórico.  
 
 ***
 ## El concepto de muestreo
 
-Un muestreo es el subgrupo de la población, donde el objetivo es que este muestro sea representativo de la población.  Por ejemplo un hace una recolección de información para saber cual es el nivel de estrés que la pandemia de COVID-19 tiene sobre los estudiantes universitarios. Seria un trabajo fenomenal recolectar datos sobre **TODOS** los estudiantes, pero su podría recolectar información sobre un subgrupo de ellos con la espera que los datos represente la población de estudiantes universitarios. 
+Un muestreo es el subgrupo de la población, donde el objetivo es que este muestro sea representativo de la población.  Por ejemplo uno hace una recolección de información para saber cual es el nivel de estrés durante la pandemia de COVID-19 que tuvo los estudiantes universitarios. Seria un trabajo fenomenal recolectar datos sobre **TODOS** los estudiantes, pero su podría recolectar información sobre un subgrupo de ellos con la espera que los datos represente la población de estudiantes universitarios. 
 
 
 ***
@@ -48,7 +50,7 @@ Un muestreo es el subgrupo de la población, donde el objetivo es que este muest
 
 Cuando uno quiere referir a la población/parámetro uno utiliza las letras del alfabeto griego y cuando nos referimos a un muestreo se usa la letra del alfabeto en latín.  
 
-En la siguiente tabla se observa algunos de los variables que veremos en los módulos siguientes. En los próximos módulos regresaremos al significado de estos parámetros. 
+En la siguiente tabla se observa algunos de las variables que veremos en los módulos siguientes. En los próximos módulos regresaremos al significado de estos parámetros. 
 
 
 ```{r width}
@@ -65,7 +67,7 @@ kable(df, escape=FALSE)
 
 ## La verdad versus un estimado
 
-Cuando uno hace una investigación esta buscando la "verdad" en otra palabra estamos a la búsqueda de la información de la población. Desafortunadamente raramente podemos tener TODA los datos por consecuencia esperamos que la muestra sea una buena representación de la "verdad". Por consecuencia se espera que el promedio de la muestra se acerca a promedio del universo (la verdad). Matemáticamente uno lo puede escribir de la siguiente manera  $\overline{x}\approx\mu$. El gran problema en la ciencia es que nunca estamos 100% seguro de los trabajos de investigación porque nunca sabemos el $\mu$.  Este valor es casi siempre desconocido.  
+Cuando uno hace una investigación esta buscando la "verdad" en otra palabra estamos a la búsqueda de la información de la población. Desafortunadamente, raramente podemos tener TODA los datos, por consecuencia esperamos que la muestra sea una buena representación de la "verdad". Se espera que el promedio de la muestra se acerca a promedio del universo (la verdad). Matemáticamente uno lo puede escribir de la siguiente manera  $\overline{x}\approx\mu$. El gran problema en la ciencia es que nunca estamos 100% seguro de los trabajos de investigación porque nunca sabemos el $\mu$.  Este valor es casi siempre desconocido.  
 
 
 
@@ -86,6 +88,13 @@ Pregunta corta:  Explica el sesgo de los diferentes métodos, como se podría me
 >  + Se muestrea gente de multiples edades y distribuido por toda la isla
 >
     
-## Error de muestreo: Precisión, Exactitud y Sesgos
+## Error de muestreo: Exactitud y Precisión
+
+### La exactitud se refiere a cuan cerca es el valor medido al valor real de la variable de interes.  Cuan es el largo de la hoja 
+
+### La precisión es un estimado de cuan cerca cada valor es uno del otro.  Hablando de la mismo individuo o variable.
 
 
+```{r, echo=FALSE, fig.show = "hold", out.width = "100%", fig.align = "default"}
+knitr::include_graphics(c("Graficos/Accuracy_precision.png"))
+```

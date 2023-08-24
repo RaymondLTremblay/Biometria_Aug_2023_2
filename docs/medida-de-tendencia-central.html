@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-08-21" />
+<meta name="date" content="2023-08-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -869,14 +869,22 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 </div>
 <div id="la-moda" class="section level2 hasAnchor" number="6.6">
 <h2><span class="header-section-number">6.6</span> La moda<a href="medida-de-tendencia-central.html#la-moda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>La moda es el valor más común. Parta encontrar la moda, hay que instalar dos programas. Primero instalar <strong>devtools</strong> y despues correr el siguiente <strong>chunk</strong> para instaslar el package <strong>modeest</strong>, para mode estimates. Quitar <strong>#</strong> para correr la función.</p>
-<p>Activar el packete</p>
+<p>La moda es el valor más común. Parta encontrar la moda, correr una función ya que no existe ningun paquete que tiene esa alternativa.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="medida-de-tendencia-central.html#cb22-1" tabindex="-1"></a><span class="fu">library</span>(statip)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="medida-de-tendencia-central.html#cb22-1" tabindex="-1"></a><span class="co"># Create mode() function to calculate mode</span></span>
+<span id="cb22-2"><a href="medida-de-tendencia-central.html#cb22-2" tabindex="-1"></a>mode <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na.rm =</span> <span class="cn">FALSE</span>) {</span>
+<span id="cb22-3"><a href="medida-de-tendencia-central.html#cb22-3" tabindex="-1"></a>  </span>
+<span id="cb22-4"><a href="medida-de-tendencia-central.html#cb22-4" tabindex="-1"></a>  <span class="cf">if</span>(na.rm){ <span class="co">#if na.rm is TRUE, remove NA values from input x</span></span>
+<span id="cb22-5"><a href="medida-de-tendencia-central.html#cb22-5" tabindex="-1"></a>    x <span class="ot">=</span> x[<span class="sc">!</span><span class="fu">is.na</span>(x)]</span>
+<span id="cb22-6"><a href="medida-de-tendencia-central.html#cb22-6" tabindex="-1"></a>  }</span>
+<span id="cb22-7"><a href="medida-de-tendencia-central.html#cb22-7" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="medida-de-tendencia-central.html#cb22-8" tabindex="-1"></a>  val <span class="ot">&lt;-</span> <span class="fu">unique</span>(x)</span>
+<span id="cb22-9"><a href="medida-de-tendencia-central.html#cb22-9" tabindex="-1"></a>  <span class="fu">return</span>(val[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(x, val)))])</span>
+<span id="cb22-10"><a href="medida-de-tendencia-central.html#cb22-10" tabindex="-1"></a>}</span></code></pre></div>
 </details>
-<p>Ya pueden ahora usar la <strong>mfv</strong> para encontrar la moda de conjunto de datos. Lo que vemos es que el valor de <strong>7</strong> es el más comun en la lista de datos.</p>
+<p>Ya pueden ahora usar la <strong>mode</strong> para encontrar la moda del conjunto de datos. Lo que vemos es que el valor de <strong>7</strong> es el más comun en la lista de datos.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="medida-de-tendencia-central.html#cb23-1" tabindex="-1"></a>statip<span class="sc">::</span><span class="fu">mfv1</span>(b)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="medida-de-tendencia-central.html#cb23-1" tabindex="-1"></a><span class="fu">mode</span>(b)</span></code></pre></div>
 </details>
 <pre><code>## [1] 7</code></pre>
 <hr />
@@ -894,52 +902,39 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 ## 2 106</code></pre>
 <p>Lo que uno observa es que los tres valores son muy cercano uno del otro.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="medida-de-tendencia-central.html#cb27-1" tabindex="-1"></a><span class="fu">library</span>(statip)</span>
-<span id="cb27-2"><a href="medida-de-tendencia-central.html#cb27-2" tabindex="-1"></a><span class="co">#mean(df1$df)</span></span>
-<span id="cb27-3"><a href="medida-de-tendencia-central.html#cb27-3" tabindex="-1"></a><span class="co">#median(df1$df)</span></span>
-<span id="cb27-4"><a href="medida-de-tendencia-central.html#cb27-4" tabindex="-1"></a><span class="co">#statip::mfv(df1$df)</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="medida-de-tendencia-central.html#cb27-1" tabindex="-1"></a><span class="co">#mean(df1$df)</span></span>
+<span id="cb27-2"><a href="medida-de-tendencia-central.html#cb27-2" tabindex="-1"></a><span class="co">#median(df1$df)</span></span>
+<span id="cb27-3"><a href="medida-de-tendencia-central.html#cb27-3" tabindex="-1"></a><span class="co">#mode(df1$df)</span></span></code></pre></div>
 </details>
 <p>Podemos visualizar estos datos usamos dos gráfico, En el gráfico de la izquierda se ve una distribución normal con las tres lineas (promedio, mediana y moda). En el gráfico de la derecha se observa la misma información pero solamente los valores entre 96 y 101. Se observa que la mediana y el promedio son igual y la moda varia un poco, se encuentra donde la barra es más alta. Se observa que los tres valores son cerca del centro.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="medida-de-tendencia-central.html#cb28-1" tabindex="-1"></a>pro<span class="ot">=</span><span class="fu">mean</span>(df1<span class="sc">$</span>df)</span>
 <span id="cb28-2"><a href="medida-de-tendencia-central.html#cb28-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(df1<span class="sc">$</span>df)</span>
-<span id="cb28-3"><a href="medida-de-tendencia-central.html#cb28-3" tabindex="-1"></a>mod99<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv</span>(df1<span class="sc">$</span>df)</span>
+<span id="cb28-3"><a href="medida-de-tendencia-central.html#cb28-3" tabindex="-1"></a>mod99<span class="ot">=</span><span class="fu">mode</span>(df1<span class="sc">$</span>df)</span>
 <span id="cb28-4"><a href="medida-de-tendencia-central.html#cb28-4" tabindex="-1"></a>mod99</span></code></pre></div>
 </details>
 <pre><code>## [1] 102</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="medida-de-tendencia-central.html#cb30-1" tabindex="-1"></a><span class="fu">table</span>(df1<span class="sc">$</span>df)</span></code></pre></div>
-</details>
-<pre><code>## 
-##  67  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86 
-##   1   2   3   1   3   4   6   4   8   6  18  15  27  22  28  34  36  51  72  74 
-##  87  88  89  90  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 
-##  80 109  91 137 143 136 162 162 201 175 186 202 186 212 211 219 176 184 172 186 
-## 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 
-## 136 154 121 128  88  86  82  75  74  53  50  39  32  29  22  16  14  13   6   7 
-## 127 128 129 130 131 132 133 135 137 139 
-##   6   6   6   2   3   1   2   1   2   1</code></pre>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="medida-de-tendencia-central.html#cb32-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(df))<span class="sc">+</span></span>
-<span id="cb32-2"><a href="medida-de-tendencia-central.html#cb32-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb32-3"><a href="medida-de-tendencia-central.html#cb32-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> pro), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb32-4"><a href="medida-de-tendencia-central.html#cb32-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb32-5"><a href="medida-de-tendencia-central.html#cb32-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod99), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
-<span id="cb32-6"><a href="medida-de-tendencia-central.html#cb32-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb32-7"><a href="medida-de-tendencia-central.html#cb32-7" tabindex="-1"></a>a</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="medida-de-tendencia-central.html#cb30-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(df))<span class="sc">+</span></span>
+<span id="cb30-2"><a href="medida-de-tendencia-central.html#cb30-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb30-3"><a href="medida-de-tendencia-central.html#cb30-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> pro), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-4"><a href="medida-de-tendencia-central.html#cb30-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-5"><a href="medida-de-tendencia-central.html#cb30-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod99), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb30-6"><a href="medida-de-tendencia-central.html#cb30-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb30-7"><a href="medida-de-tendencia-central.html#cb30-7" tabindex="-1"></a>a</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/g1-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="medida-de-tendencia-central.html#cb33-1" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(df))<span class="sc">+</span></span>
-<span id="cb33-2"><a href="medida-de-tendencia-central.html#cb33-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
-<span id="cb33-3"><a href="medida-de-tendencia-central.html#cb33-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> pro), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb33-4"><a href="medida-de-tendencia-central.html#cb33-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb33-5"><a href="medida-de-tendencia-central.html#cb33-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod99), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
-<span id="cb33-6"><a href="medida-de-tendencia-central.html#cb33-6" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">94</span>,<span class="dv">105</span>)<span class="sc">+</span></span>
-<span id="cb33-7"><a href="medida-de-tendencia-central.html#cb33-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="medida-de-tendencia-central.html#cb31-1" tabindex="-1"></a>b<span class="ot">=</span><span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(df))<span class="sc">+</span></span>
+<span id="cb31-2"><a href="medida-de-tendencia-central.html#cb31-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
+<span id="cb31-3"><a href="medida-de-tendencia-central.html#cb31-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> pro), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb31-4"><a href="medida-de-tendencia-central.html#cb31-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb31-5"><a href="medida-de-tendencia-central.html#cb31-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod99), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb31-6"><a href="medida-de-tendencia-central.html#cb31-6" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">94</span>,<span class="dv">105</span>)<span class="sc">+</span></span>
+<span id="cb31-7"><a href="medida-de-tendencia-central.html#cb31-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="medida-de-tendencia-central.html#cb34-1" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(a,b, <span class="at">ncol=</span><span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="medida-de-tendencia-central.html#cb32-1" tabindex="-1"></a>gridExtra<span class="sc">::</span><span class="fu">grid.arrange</span>(a,b, <span class="at">ncol=</span><span class="dv">1</span>)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/together-1.png" width="672" /></p>
 <hr />
@@ -948,61 +943,61 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <h2><span class="header-section-number">6.8</span> Distribución cuando los tres valores de tendencia centrtal no son iguales.<a href="medida-de-tendencia-central.html#distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En estas distribuciones uno observa que hay exceso de vaslores pequeños o grande. Esto resulta en que los tres indices de tendencias centrales no se encuentra cerca uno del otro.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="medida-de-tendencia-central.html#cb35-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb35-2"><a href="medida-de-tendencia-central.html#cb35-2" tabindex="-1"></a>dfb1<span class="ot">=</span><span class="fu">round</span>(<span class="fu">rbeta</span>(<span class="dv">10000</span>, <span class="dv">3</span>,<span class="dv">1</span>, <span class="at">ncp =</span> <span class="dv">0</span>),<span class="dv">3</span>)</span>
-<span id="cb35-3"><a href="medida-de-tendencia-central.html#cb35-3" tabindex="-1"></a>dfb1<span class="ot">=</span><span class="fu">tibble</span>(dfb1)</span>
-<span id="cb35-4"><a href="medida-de-tendencia-central.html#cb35-4" tabindex="-1"></a><span class="co">#head(dfb)</span></span>
-<span id="cb35-5"><a href="medida-de-tendencia-central.html#cb35-5" tabindex="-1"></a>df2<span class="ot">=</span> <span class="fu">round</span>(<span class="fu">rbeta</span>(<span class="dv">10000</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="at">ncp =</span> <span class="dv">0</span>),<span class="dv">3</span>)</span>
-<span id="cb35-6"><a href="medida-de-tendencia-central.html#cb35-6" tabindex="-1"></a>df2<span class="ot">=</span><span class="fu">tibble</span>(df2)</span>
-<span id="cb35-7"><a href="medida-de-tendencia-central.html#cb35-7" tabindex="-1"></a><span class="co">#head(df2)</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="medida-de-tendencia-central.html#cb33-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb33-2"><a href="medida-de-tendencia-central.html#cb33-2" tabindex="-1"></a>dfb1<span class="ot">=</span><span class="fu">round</span>(<span class="fu">rbeta</span>(<span class="dv">10000</span>, <span class="dv">3</span>,<span class="dv">1</span>, <span class="at">ncp =</span> <span class="dv">0</span>),<span class="dv">3</span>)</span>
+<span id="cb33-3"><a href="medida-de-tendencia-central.html#cb33-3" tabindex="-1"></a>dfb1<span class="ot">=</span><span class="fu">tibble</span>(dfb1)</span>
+<span id="cb33-4"><a href="medida-de-tendencia-central.html#cb33-4" tabindex="-1"></a><span class="co">#head(dfb)</span></span>
+<span id="cb33-5"><a href="medida-de-tendencia-central.html#cb33-5" tabindex="-1"></a>df2<span class="ot">=</span> <span class="fu">round</span>(<span class="fu">rbeta</span>(<span class="dv">10000</span>, <span class="dv">1</span>,<span class="dv">3</span>, <span class="at">ncp =</span> <span class="dv">0</span>),<span class="dv">3</span>)</span>
+<span id="cb33-6"><a href="medida-de-tendencia-central.html#cb33-6" tabindex="-1"></a>df2<span class="ot">=</span><span class="fu">tibble</span>(df2)</span>
+<span id="cb33-7"><a href="medida-de-tendencia-central.html#cb33-7" tabindex="-1"></a><span class="co">#head(df2)</span></span></code></pre></div>
 </details>
 <ol style="list-style-type: decimal">
 <li>¿Cual es la linea de promedio, moda y mediana en cada gráfico?</li>
 </ol>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="medida-de-tendencia-central.html#cb36-1" tabindex="-1"></a>mea<span class="ot">=</span><span class="fu">mean</span>(dfb1<span class="sc">$</span>dfb1)</span>
-<span id="cb36-2"><a href="medida-de-tendencia-central.html#cb36-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(dfb1<span class="sc">$</span>dfb1)</span>
-<span id="cb36-3"><a href="medida-de-tendencia-central.html#cb36-3" tabindex="-1"></a>mod<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv1</span>(dfb1<span class="sc">$</span>dfb1)</span>
-<span id="cb36-4"><a href="medida-de-tendencia-central.html#cb36-4" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="medida-de-tendencia-central.html#cb36-5" tabindex="-1"></a>meab<span class="ot">=</span><span class="fu">mean</span>(df2<span class="sc">$</span>df2)</span>
-<span id="cb36-6"><a href="medida-de-tendencia-central.html#cb36-6" tabindex="-1"></a>medb<span class="ot">=</span><span class="fu">median</span>(df2<span class="sc">$</span>df2)</span>
-<span id="cb36-7"><a href="medida-de-tendencia-central.html#cb36-7" tabindex="-1"></a>modb<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv1</span>(df2<span class="sc">$</span>df2)</span>
-<span id="cb36-8"><a href="medida-de-tendencia-central.html#cb36-8" tabindex="-1"></a></span>
-<span id="cb36-9"><a href="medida-de-tendencia-central.html#cb36-9" tabindex="-1"></a></span>
-<span id="cb36-10"><a href="medida-de-tendencia-central.html#cb36-10" tabindex="-1"></a>SesgadoDerecho<span class="ot">=</span><span class="fu">ggplot</span>(dfb1, <span class="fu">aes</span>(dfb1))<span class="sc">+</span></span>
-<span id="cb36-11"><a href="medida-de-tendencia-central.html#cb36-11" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
-<span id="cb36-12"><a href="medida-de-tendencia-central.html#cb36-12" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mea), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb36-13"><a href="medida-de-tendencia-central.html#cb36-13" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb36-14"><a href="medida-de-tendencia-central.html#cb36-14" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
-<span id="cb36-15"><a href="medida-de-tendencia-central.html#cb36-15" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb36-16"><a href="medida-de-tendencia-central.html#cb36-16" tabindex="-1"></a></span>
-<span id="cb36-17"><a href="medida-de-tendencia-central.html#cb36-17" tabindex="-1"></a>SesgadoIzquierda<span class="ot">=</span><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(df2))<span class="sc">+</span></span>
-<span id="cb36-18"><a href="medida-de-tendencia-central.html#cb36-18" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
-<span id="cb36-19"><a href="medida-de-tendencia-central.html#cb36-19" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> meab), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb36-20"><a href="medida-de-tendencia-central.html#cb36-20" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> medb), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb36-21"><a href="medida-de-tendencia-central.html#cb36-21" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> modb), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
-<span id="cb36-22"><a href="medida-de-tendencia-central.html#cb36-22" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb36-23"><a href="medida-de-tendencia-central.html#cb36-23" tabindex="-1"></a></span>
-<span id="cb36-24"><a href="medida-de-tendencia-central.html#cb36-24" tabindex="-1"></a>SesgadoDerecho</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="medida-de-tendencia-central.html#cb34-1" tabindex="-1"></a>mea<span class="ot">=</span><span class="fu">mean</span>(dfb1<span class="sc">$</span>dfb1)</span>
+<span id="cb34-2"><a href="medida-de-tendencia-central.html#cb34-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(dfb1<span class="sc">$</span>dfb1)</span>
+<span id="cb34-3"><a href="medida-de-tendencia-central.html#cb34-3" tabindex="-1"></a>mod<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv1</span>(dfb1<span class="sc">$</span>dfb1)</span>
+<span id="cb34-4"><a href="medida-de-tendencia-central.html#cb34-4" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="medida-de-tendencia-central.html#cb34-5" tabindex="-1"></a>meab<span class="ot">=</span><span class="fu">mean</span>(df2<span class="sc">$</span>df2)</span>
+<span id="cb34-6"><a href="medida-de-tendencia-central.html#cb34-6" tabindex="-1"></a>medb<span class="ot">=</span><span class="fu">median</span>(df2<span class="sc">$</span>df2)</span>
+<span id="cb34-7"><a href="medida-de-tendencia-central.html#cb34-7" tabindex="-1"></a>modb<span class="ot">=</span>statip<span class="sc">::</span><span class="fu">mfv1</span>(df2<span class="sc">$</span>df2)</span>
+<span id="cb34-8"><a href="medida-de-tendencia-central.html#cb34-8" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="medida-de-tendencia-central.html#cb34-9" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="medida-de-tendencia-central.html#cb34-10" tabindex="-1"></a>SesgadoDerecho<span class="ot">=</span><span class="fu">ggplot</span>(dfb1, <span class="fu">aes</span>(dfb1))<span class="sc">+</span></span>
+<span id="cb34-11"><a href="medida-de-tendencia-central.html#cb34-11" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb34-12"><a href="medida-de-tendencia-central.html#cb34-12" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mea), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb34-13"><a href="medida-de-tendencia-central.html#cb34-13" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb34-14"><a href="medida-de-tendencia-central.html#cb34-14" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb34-15"><a href="medida-de-tendencia-central.html#cb34-15" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb34-16"><a href="medida-de-tendencia-central.html#cb34-16" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="medida-de-tendencia-central.html#cb34-17" tabindex="-1"></a>SesgadoIzquierda<span class="ot">=</span><span class="fu">ggplot</span>(df2, <span class="fu">aes</span>(df2))<span class="sc">+</span></span>
+<span id="cb34-18"><a href="medida-de-tendencia-central.html#cb34-18" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb34-19"><a href="medida-de-tendencia-central.html#cb34-19" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> meab), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb34-20"><a href="medida-de-tendencia-central.html#cb34-20" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> medb), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb34-21"><a href="medida-de-tendencia-central.html#cb34-21" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> modb), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb34-22"><a href="medida-de-tendencia-central.html#cb34-22" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb34-23"><a href="medida-de-tendencia-central.html#cb34-23" tabindex="-1"></a></span>
+<span id="cb34-24"><a href="medida-de-tendencia-central.html#cb34-24" tabindex="-1"></a>SesgadoDerecho</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/visual%20beta-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="medida-de-tendencia-central.html#cb37-1" tabindex="-1"></a>SesgadoIzquierda</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="medida-de-tendencia-central.html#cb35-1" tabindex="-1"></a>SesgadoIzquierda</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/visual%20beta-2.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="medida-de-tendencia-central.html#cb38-1" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
-<span id="cb38-2"><a href="medida-de-tendencia-central.html#cb38-2" tabindex="-1"></a><span class="co">#ggarrange(c,d, nrow=2, ncol=1)</span></span>
-<span id="cb38-3"><a href="medida-de-tendencia-central.html#cb38-3" tabindex="-1"></a></span>
-<span id="cb38-4"><a href="medida-de-tendencia-central.html#cb38-4" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
-<span id="cb38-5"><a href="medida-de-tendencia-central.html#cb38-5" tabindex="-1"></a><span class="co">#grid.arrange(rectGrob(), rectGrob())</span></span>
-<span id="cb38-6"><a href="medida-de-tendencia-central.html#cb38-6" tabindex="-1"></a><span class="co">#marrangeGrob(c,d, nrow=2)</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="medida-de-tendencia-central.html#cb36-1" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb36-2"><a href="medida-de-tendencia-central.html#cb36-2" tabindex="-1"></a><span class="co">#ggarrange(c,d, nrow=2, ncol=1)</span></span>
+<span id="cb36-3"><a href="medida-de-tendencia-central.html#cb36-3" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="medida-de-tendencia-central.html#cb36-4" tabindex="-1"></a><span class="fu">library</span>(grid)</span>
+<span id="cb36-5"><a href="medida-de-tendencia-central.html#cb36-5" tabindex="-1"></a><span class="co">#grid.arrange(rectGrob(), rectGrob())</span></span>
+<span id="cb36-6"><a href="medida-de-tendencia-central.html#cb36-6" tabindex="-1"></a><span class="co">#marrangeGrob(c,d, nrow=2)</span></span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="medida-de-tendencia-central.html#cb39-1" tabindex="-1"></a><span class="co">#c</span></span>
-<span id="cb39-2"><a href="medida-de-tendencia-central.html#cb39-2" tabindex="-1"></a><span class="co">#d</span></span>
-<span id="cb39-3"><a href="medida-de-tendencia-central.html#cb39-3" tabindex="-1"></a><span class="co">#library(scater)</span></span>
-<span id="cb39-4"><a href="medida-de-tendencia-central.html#cb39-4" tabindex="-1"></a><span class="co">#multiplot(c,d, ncol=2)</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="medida-de-tendencia-central.html#cb37-1" tabindex="-1"></a><span class="co">#c</span></span>
+<span id="cb37-2"><a href="medida-de-tendencia-central.html#cb37-2" tabindex="-1"></a><span class="co">#d</span></span>
+<span id="cb37-3"><a href="medida-de-tendencia-central.html#cb37-3" tabindex="-1"></a><span class="co">#library(scater)</span></span>
+<span id="cb37-4"><a href="medida-de-tendencia-central.html#cb37-4" tabindex="-1"></a><span class="co">#multiplot(c,d, ncol=2)</span></span></code></pre></div>
 </details>
 <hr />
 </div>
@@ -1011,9 +1006,9 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <p>En el siguiente ejemplo podemos ver claramente que las medidas de tendencias central no son adecuada.</p>
 <p>Primero producimos un conjunto de datos que tiene solamente dos alternativas 0 y 1. Para facilitar los datos e imaginar lo que quiere decir estos datos que cuando es un 0 la persona no tiene hijos y cuando es un 1 tiene hijos.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="medida-de-tendencia-central.html#cb40-1" tabindex="-1"></a>dfBin<span class="ot">=</span><span class="fu">replicate</span>(<span class="dv">10000</span>,<span class="fu">rbinom</span>(<span class="fu">length</span>(.<span class="dv">6</span>), <span class="at">size=</span><span class="dv">1</span>,<span class="at">prob =</span><span class="fl">0.6</span>))</span>
-<span id="cb40-2"><a href="medida-de-tendencia-central.html#cb40-2" tabindex="-1"></a>dfBin<span class="ot">=</span><span class="fu">data.frame</span>(dfBin)</span>
-<span id="cb40-3"><a href="medida-de-tendencia-central.html#cb40-3" tabindex="-1"></a><span class="fu">head</span>(dfBin)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="medida-de-tendencia-central.html#cb38-1" tabindex="-1"></a>dfBin<span class="ot">=</span><span class="fu">replicate</span>(<span class="dv">10000</span>,<span class="fu">rbinom</span>(<span class="fu">length</span>(.<span class="dv">6</span>), <span class="at">size=</span><span class="dv">1</span>,<span class="at">prob =</span><span class="fl">0.6</span>))</span>
+<span id="cb38-2"><a href="medida-de-tendencia-central.html#cb38-2" tabindex="-1"></a>dfBin<span class="ot">=</span><span class="fu">data.frame</span>(dfBin)</span>
+<span id="cb38-3"><a href="medida-de-tendencia-central.html#cb38-3" tabindex="-1"></a><span class="fu">head</span>(dfBin)</span></code></pre></div>
 </details>
 <pre><code>##   dfBin
 ## 1     0
@@ -1024,19 +1019,19 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 ## 6     0</code></pre>
 <p>Ahora vamos a producir el gráfico. Lo que uno observa es que el promedio esta en el centro cerca de .6, pero no hay ningún dato cerca del promedio. El promedio no representa la “tendencia central” de la distribución.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="medida-de-tendencia-central.html#cb42-1" tabindex="-1"></a>mea<span class="ot">=</span><span class="fu">mean</span>(dfBin<span class="sc">$</span>dfBin)</span>
-<span id="cb42-2"><a href="medida-de-tendencia-central.html#cb42-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(dfBin<span class="sc">$</span>dfBin)</span>
-<span id="cb42-3"><a href="medida-de-tendencia-central.html#cb42-3" tabindex="-1"></a>mod<span class="ot">=</span><span class="fu">mfv</span>(dfBin<span class="sc">$</span>dfBin)</span>
-<span id="cb42-4"><a href="medida-de-tendencia-central.html#cb42-4" tabindex="-1"></a>mea</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="medida-de-tendencia-central.html#cb40-1" tabindex="-1"></a>mea<span class="ot">=</span><span class="fu">mean</span>(dfBin<span class="sc">$</span>dfBin)</span>
+<span id="cb40-2"><a href="medida-de-tendencia-central.html#cb40-2" tabindex="-1"></a>med<span class="ot">=</span><span class="fu">median</span>(dfBin<span class="sc">$</span>dfBin)</span>
+<span id="cb40-3"><a href="medida-de-tendencia-central.html#cb40-3" tabindex="-1"></a>mod<span class="ot">=</span><span class="fu">mode</span>(dfBin<span class="sc">$</span>dfBin)</span>
+<span id="cb40-4"><a href="medida-de-tendencia-central.html#cb40-4" tabindex="-1"></a>mea</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.5999</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="medida-de-tendencia-central.html#cb44-1" tabindex="-1"></a><span class="fu">ggplot</span>(dfBin, <span class="fu">aes</span>(dfBin))<span class="sc">+</span></span>
-<span id="cb44-2"><a href="medida-de-tendencia-central.html#cb44-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
-<span id="cb44-3"><a href="medida-de-tendencia-central.html#cb44-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mea), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb44-4"><a href="medida-de-tendencia-central.html#cb44-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb44-5"><a href="medida-de-tendencia-central.html#cb44-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
-<span id="cb44-6"><a href="medida-de-tendencia-central.html#cb44-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="medida-de-tendencia-central.html#cb42-1" tabindex="-1"></a><span class="fu">ggplot</span>(dfBin, <span class="fu">aes</span>(dfBin))<span class="sc">+</span></span>
+<span id="cb42-2"><a href="medida-de-tendencia-central.html#cb42-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb42-3"><a href="medida-de-tendencia-central.html#cb42-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mea), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb42-4"><a href="medida-de-tendencia-central.html#cb42-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> med), <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb42-5"><a href="medida-de-tendencia-central.html#cb42-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mod), <span class="at">colour=</span><span class="st">&quot;green&quot;</span>)<span class="sc">+</span></span>
+<span id="cb42-6"><a href="medida-de-tendencia-central.html#cb42-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/visual%20rbinomial-1.png" width="672" /></p>
 

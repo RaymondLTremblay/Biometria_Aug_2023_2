@@ -28,7 +28,6 @@ colorize <- function(x, color) {
 library(ggplot2)
 library(Hmisc)
 library(gridExtra) # Un paquete para organizar las figuras de ggplot2
-library(statip)
 ```
 
 ***
@@ -108,24 +107,33 @@ median(b)
 
 ## La moda
 
-La moda es el valor más común. Parta encontrar la moda, hay que instalar dos programas.  Primero instalar **devtools** y despues correr el siguiente **chunk** para instaslar el package **modeest**, para mode estimates.   Quitar **#** para correr la función.   
-
-
-
-
-Activar el packete 
-
+La moda es el valor más común. Parta encontrar la moda, correr una función ya que no existe ningun paquete que tiene esa alternativa.
 
 ```{r}
-library(statip)
+
+# Create mode() function to calculate mode
+mode <- function(x, na.rm = FALSE) {
+  
+  if(na.rm){ #if na.rm is TRUE, remove NA values from input x
+    x = x[!is.na(x)]
+  }
+
+  val <- unique(x)
+  return(val[which.max(tabulate(match(x, val)))])
+}
+
 ```
 
 
-Ya pueden ahora usar la **mfv** para encontrar la moda de conjunto de datos. Lo que vemos es que el valor de **7** es el más comun en la lista de datos.   
+
+
+
+
+Ya pueden ahora usar la **mode** para encontrar la moda del conjunto de datos. Lo que vemos es que el valor de **7** es el más comun en la lista de datos.   
 
 
 ```{r, mode}
-statip::mfv1(b)
+mode(b)
 ```
 
 ***
@@ -145,10 +153,10 @@ head(df1, n=2)
 Lo que uno observa es que los tres valores son muy cercano uno del otro.   
 
 ```{r, parameter poisson}
-library(statip)
+
 #mean(df1$df)
 #median(df1$df)
-#statip::mfv(df1$df)
+#mode(df1$df)
 ```
 
 Podemos visualizar estos datos usamos dos gráfico, En el gráfico de la izquierda se ve una distribución normal con las tres lineas (promedio, mediana y moda).  En el gráfico de la derecha se observa la misma información pero solamente los valores entre 96 y 101. Se observa que la mediana y el promedio son igual y la moda varia un poco, se encuentra donde la barra es más alta.    Se observa que los tres valores son cerca del centro.  
@@ -158,9 +166,8 @@ Podemos visualizar estos datos usamos dos gráfico, En el gráfico de la izquier
 
 pro=mean(df1$df)
 med=median(df1$df)
-mod99=statip::mfv(df1$df)
+mod99=mode(df1$df)
 mod99
-table(df1$df)
 ```
 
 ```{r, g1}
@@ -273,7 +280,7 @@ Ahora vamos a producir el gráfico. Lo que uno observa es que el promedio esta e
 ```{r, visual rbinomial}
 mea=mean(dfBin$dfBin)
 med=median(dfBin$dfBin)
-mod=mfv(dfBin$dfBin)
+mod=mode(dfBin$dfBin)
 mea
 
 

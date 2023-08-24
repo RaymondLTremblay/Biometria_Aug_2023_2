@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-08-21" />
+<meta name="date" content="2023-08-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -832,15 +832,15 @@ div.csl-indent {
 <h3><span class="header-section-number">J.1.2</span> Ejercicio de práctica 2: Dias de enfermedades<a href="ejercicios-j.html#ejercicio-de-práctica-2-dias-de-enfermedades-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Un dueño de una impresa dice que su insiste que la cantidad de días promedio de enfermedades de sus empleados es menor que el promedio nacional de 10. Los datos de 40 empleados sigue. Determina si hay evidencia para creer el comentario del dueño de esta impresa.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb627"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb627-1"><a href="ejercicios-j.html#cb627-1" tabindex="-1"></a>dias_E<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb627-2"><a href="ejercicios-j.html#cb627-2" tabindex="-1"></a>  <span class="sc">~</span>dias_e,</span>
-<span id="cb627-3"><a href="ejercicios-j.html#cb627-3" tabindex="-1"></a>  <span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,</span>
-<span id="cb627-4"><a href="ejercicios-j.html#cb627-4" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,</span>
-<span id="cb627-5"><a href="ejercicios-j.html#cb627-5" tabindex="-1"></a>  <span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">12</span>,<span class="dv">3</span>,</span>
-<span id="cb627-6"><a href="ejercicios-j.html#cb627-6" tabindex="-1"></a>  <span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,</span>
-<span id="cb627-7"><a href="ejercicios-j.html#cb627-7" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">11</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">9</span></span>
-<span id="cb627-8"><a href="ejercicios-j.html#cb627-8" tabindex="-1"></a>)</span>
-<span id="cb627-9"><a href="ejercicios-j.html#cb627-9" tabindex="-1"></a>dias_E</span></code></pre></div>
+<div class="sourceCode" id="cb625"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb625-1"><a href="ejercicios-j.html#cb625-1" tabindex="-1"></a>dias_E<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb625-2"><a href="ejercicios-j.html#cb625-2" tabindex="-1"></a>  <span class="sc">~</span>dias_e,</span>
+<span id="cb625-3"><a href="ejercicios-j.html#cb625-3" tabindex="-1"></a>  <span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,</span>
+<span id="cb625-4"><a href="ejercicios-j.html#cb625-4" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,</span>
+<span id="cb625-5"><a href="ejercicios-j.html#cb625-5" tabindex="-1"></a>  <span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">12</span>,<span class="dv">3</span>,</span>
+<span id="cb625-6"><a href="ejercicios-j.html#cb625-6" tabindex="-1"></a>  <span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,</span>
+<span id="cb625-7"><a href="ejercicios-j.html#cb625-7" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">11</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">9</span></span>
+<span id="cb625-8"><a href="ejercicios-j.html#cb625-8" tabindex="-1"></a>)</span>
+<span id="cb625-9"><a href="ejercicios-j.html#cb625-9" tabindex="-1"></a>dias_E</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-245">
 <caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-245">Table J.1: </span> </caption><col><tr>

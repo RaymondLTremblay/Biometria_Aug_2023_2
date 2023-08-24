@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-08-21" />
+<meta name="date" content="2023-08-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -801,9 +801,9 @@ div.csl-indent {
 <h2><span class="header-section-number">H.1</span> Bondad de Ajuste<a href="ejercicios-h.html#bondad-de-ajuste" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb622"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb622-1"><a href="ejercicios-h.html#cb622-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb622-2"><a href="ejercicios-h.html#cb622-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb622-3"><a href="ejercicios-h.html#cb622-3" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span></code></pre></div>
+<div class="sourceCode" id="cb620"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb620-1"><a href="ejercicios-h.html#cb620-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb620-2"><a href="ejercicios-h.html#cb620-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb620-3"><a href="ejercicios-h.html#cb620-3" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span></code></pre></div>
 </details>
 <div id="encontrarán-dos-ejercicios-de-los-análisis-de-bondad-de-ajuste." class="section level3 hasAnchor" number="33.1.1">
 <h3><span class="header-section-number">H.1.1</span> Encontrarán dos ejercicios de los análisis de Bondad de Ajuste.<a href="ejercicios-h.html#encontrarán-dos-ejercicios-de-los-análisis-de-bondad-de-ajuste." class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -817,15 +817,15 @@ div.csl-indent {
 <p><img src="Graficos/musarana.jpg" width="50%" /></p>
 <p>Photo from: <a href="https://www.laguiadelvaron.com/wp-content/uploads/2020/08/reaparece-musarana-elefante-www.laguiadelvaron-1.jpg" class="uri">https://www.laguiadelvaron.com/wp-content/uploads/2020/08/reaparece-musarana-elefante-www.laguiadelvaron-1.jpg</a></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb623"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb623-1"><a href="ejercicios-h.html#cb623-1" tabindex="-1"></a>musaraña<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb623-2"><a href="ejercicios-h.html#cb623-2" tabindex="-1"></a>  <span class="sc">~</span>Tipo_comida, <span class="sc">~</span>frecuencia,</span>
-<span id="cb623-3"><a href="ejercicios-h.html#cb623-3" tabindex="-1"></a>  <span class="st">&quot;C1&quot;</span>, <span class="dv">13</span>,</span>
-<span id="cb623-4"><a href="ejercicios-h.html#cb623-4" tabindex="-1"></a>  <span class="st">&quot;C2&quot;</span>, <span class="dv">26</span>,</span>
-<span id="cb623-5"><a href="ejercicios-h.html#cb623-5" tabindex="-1"></a>  <span class="st">&quot;C3&quot;</span>, <span class="dv">39</span>,</span>
-<span id="cb623-6"><a href="ejercicios-h.html#cb623-6" tabindex="-1"></a>  <span class="st">&quot;C4&quot;</span>, <span class="dv">14</span>,</span>
-<span id="cb623-7"><a href="ejercicios-h.html#cb623-7" tabindex="-1"></a>  <span class="st">&quot;C5&quot;</span>, <span class="dv">28</span></span>
-<span id="cb623-8"><a href="ejercicios-h.html#cb623-8" tabindex="-1"></a>)</span>
-<span id="cb623-9"><a href="ejercicios-h.html#cb623-9" tabindex="-1"></a><span class="fu">gt</span>(musaraña)</span></code></pre></div>
+<div class="sourceCode" id="cb621"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb621-1"><a href="ejercicios-h.html#cb621-1" tabindex="-1"></a>musaraña<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb621-2"><a href="ejercicios-h.html#cb621-2" tabindex="-1"></a>  <span class="sc">~</span>Tipo_comida, <span class="sc">~</span>frecuencia,</span>
+<span id="cb621-3"><a href="ejercicios-h.html#cb621-3" tabindex="-1"></a>  <span class="st">&quot;C1&quot;</span>, <span class="dv">13</span>,</span>
+<span id="cb621-4"><a href="ejercicios-h.html#cb621-4" tabindex="-1"></a>  <span class="st">&quot;C2&quot;</span>, <span class="dv">26</span>,</span>
+<span id="cb621-5"><a href="ejercicios-h.html#cb621-5" tabindex="-1"></a>  <span class="st">&quot;C3&quot;</span>, <span class="dv">39</span>,</span>
+<span id="cb621-6"><a href="ejercicios-h.html#cb621-6" tabindex="-1"></a>  <span class="st">&quot;C4&quot;</span>, <span class="dv">14</span>,</span>
+<span id="cb621-7"><a href="ejercicios-h.html#cb621-7" tabindex="-1"></a>  <span class="st">&quot;C5&quot;</span>, <span class="dv">28</span></span>
+<span id="cb621-8"><a href="ejercicios-h.html#cb621-8" tabindex="-1"></a>)</span>
+<span id="cb621-9"><a href="ejercicios-h.html#cb621-9" tabindex="-1"></a><span class="fu">gt</span>(musaraña)</span></code></pre></div>
 </details>
 <div id="kaallxmnzb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#kaallxmnzb table {
@@ -1326,13 +1326,13 @@ div.csl-indent {
 <p><img src="Graficos/Skunk.jpeg" width="50%" /></p>
 <p>Photo from: <a href="https://www.britannica.com/animal/skunk" class="uri">https://www.britannica.com/animal/skunk</a></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb625"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb625-1"><a href="ejercicios-h.html#cb625-1" tabindex="-1"></a>mofetas<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb625-2"><a href="ejercicios-h.html#cb625-2" tabindex="-1"></a>  <span class="sc">~</span>TRegion, <span class="sc">~</span>con_rabia, <span class="sc">~</span>sin_rabia,</span>
-<span id="cb625-3"><a href="ejercicios-h.html#cb625-3" tabindex="-1"></a>  <span class="st">&quot;Region1&quot;</span>, <span class="dv">14</span>, <span class="dv">29</span>,</span>
-<span id="cb625-4"><a href="ejercicios-h.html#cb625-4" tabindex="-1"></a>  <span class="st">&quot;Region2&quot;</span>, <span class="dv">12</span>, <span class="dv">38</span></span>
-<span id="cb625-5"><a href="ejercicios-h.html#cb625-5" tabindex="-1"></a>  </span>
-<span id="cb625-6"><a href="ejercicios-h.html#cb625-6" tabindex="-1"></a>)</span>
-<span id="cb625-7"><a href="ejercicios-h.html#cb625-7" tabindex="-1"></a><span class="fu">gt</span>(mofetas)</span></code></pre></div>
+<div class="sourceCode" id="cb623"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb623-1"><a href="ejercicios-h.html#cb623-1" tabindex="-1"></a>mofetas<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb623-2"><a href="ejercicios-h.html#cb623-2" tabindex="-1"></a>  <span class="sc">~</span>TRegion, <span class="sc">~</span>con_rabia, <span class="sc">~</span>sin_rabia,</span>
+<span id="cb623-3"><a href="ejercicios-h.html#cb623-3" tabindex="-1"></a>  <span class="st">&quot;Region1&quot;</span>, <span class="dv">14</span>, <span class="dv">29</span>,</span>
+<span id="cb623-4"><a href="ejercicios-h.html#cb623-4" tabindex="-1"></a>  <span class="st">&quot;Region2&quot;</span>, <span class="dv">12</span>, <span class="dv">38</span></span>
+<span id="cb623-5"><a href="ejercicios-h.html#cb623-5" tabindex="-1"></a>  </span>
+<span id="cb623-6"><a href="ejercicios-h.html#cb623-6" tabindex="-1"></a>)</span>
+<span id="cb623-7"><a href="ejercicios-h.html#cb623-7" tabindex="-1"></a><span class="fu">gt</span>(mofetas)</span></code></pre></div>
 </details>
 <div id="oyxhisgick" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#oyxhisgick table {

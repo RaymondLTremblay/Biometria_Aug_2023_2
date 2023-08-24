@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-08-21" />
+<meta name="date" content="2023-08-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -804,9 +804,9 @@ div.csl-indent {
 <p>Primero mire los datos y los nombres de las variables.</p>
 <p>Paired Two-Sample T-test</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="prueba-de-t-independiente.html#cb390-1" tabindex="-1"></a><span class="fu">require</span>(Hmisc)</span>
-<span id="cb390-2"><a href="prueba-de-t-independiente.html#cb390-2" tabindex="-1"></a><span class="fu">require</span>(UsingR) <span class="co"># father.son data set</span></span>
-<span id="cb390-3"><a href="prueba-de-t-independiente.html#cb390-3" tabindex="-1"></a><span class="fu">head</span>(father.son)</span></code></pre></div>
+<div class="sourceCode" id="cb388"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb388-1"><a href="prueba-de-t-independiente.html#cb388-1" tabindex="-1"></a><span class="fu">require</span>(Hmisc)</span>
+<span id="cb388-2"><a href="prueba-de-t-independiente.html#cb388-2" tabindex="-1"></a><span class="fu">require</span>(UsingR) <span class="co"># father.son data set</span></span>
+<span id="cb388-3"><a href="prueba-de-t-independiente.html#cb388-3" tabindex="-1"></a><span class="fu">head</span>(father.son)</span></code></pre></div>
 </details>
 <pre><code>##    fheight  sheight heightDiff
 ## 1 65.04851 59.77827    5.27024
@@ -816,7 +816,7 @@ div.csl-indent {
 ## 5 61.13723 64.28113   -3.14390
 ## 6 63.02254 64.24221   -1.21967</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="prueba-de-t-independiente.html#cb392-1" tabindex="-1"></a><span class="co">#install.packages(&quot;UsingR&quot;, dependencies = TRUE)</span></span></code></pre></div>
+<div class="sourceCode" id="cb390"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb390-1"><a href="prueba-de-t-independiente.html#cb390-1" tabindex="-1"></a><span class="co">#install.packages(&quot;UsingR&quot;, dependencies = TRUE)</span></span></code></pre></div>
 </details>
 <hr />
 </div>
@@ -824,11 +824,11 @@ div.csl-indent {
 <h2><span class="header-section-number">15.2</span> Visualizar la correlación<a href="prueba-de-t-independiente.html#visualizar-la-correlación-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Antes de hacer la prueba es recomendado hacer un gráfico de puntos para visualizar los datos y observar si hay un patrón. Vemos a medida que aumenta la altura de los padres los hijos tienden a estar más altos. parece que hay una correlación en la altura de los hijos basado en la altura del padre. Por consecuencia la altura de los hijos no son independiente de la altura de los padres. Aunque hay evidencia que el ambiente, tal como el acceso a recursos (comida, leche, etc) tiene impacto sobre la altura de los humanos, la genética también tiene impacto to sobre la altura de los humanos.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="prueba-de-t-independiente.html#cb393-1" tabindex="-1"></a><span class="fu">ggplot</span>(father.son, <span class="fu">aes</span>(fheight, sheight))<span class="sc">+</span></span>
-<span id="cb393-2"><a href="prueba-de-t-independiente.html#cb393-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb393-3"><a href="prueba-de-t-independiente.html#cb393-3" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
-<span id="cb393-4"><a href="prueba-de-t-independiente.html#cb393-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Alturas de los padres&quot;</span>)<span class="sc">+</span></span>
-<span id="cb393-5"><a href="prueba-de-t-independiente.html#cb393-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Alturas de los hijos&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="prueba-de-t-independiente.html#cb391-1" tabindex="-1"></a><span class="fu">ggplot</span>(father.son, <span class="fu">aes</span>(fheight, sheight))<span class="sc">+</span></span>
+<span id="cb391-2"><a href="prueba-de-t-independiente.html#cb391-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb391-3"><a href="prueba-de-t-independiente.html#cb391-3" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
+<span id="cb391-4"><a href="prueba-de-t-independiente.html#cb391-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Alturas de los padres&quot;</span>)<span class="sc">+</span></span>
+<span id="cb391-5"><a href="prueba-de-t-independiente.html#cb391-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Alturas de los hijos&quot;</span>)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/geompoint2-1.png" width="672" /></p>
 <hr />
@@ -855,7 +855,7 @@ div.csl-indent {
 </ul>
 <p>El resultado: El valor de <span class="math inline">\(\left|t\right|\)</span> observado es de 11.789, con un grado de libertad de 1077 (n=1078), y un valor de p &lt;0.0001. Por consecuencia se rechaza la hipótesis nula y se acepta la alterna. El intervalo de confianza del promedio es -1.163 a -0.831, con un promedio de -0.99. Esto significa que los padres tiende a estar una pulgada (-0.99) más bajo que los hijos.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="prueba-de-t-independiente.html#cb394-1" tabindex="-1"></a><span class="fu">t.test</span>(father.son<span class="sc">$</span>fheight, father.son<span class="sc">$</span>sheight, <span class="at">paired=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb392"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb392-1"><a href="prueba-de-t-independiente.html#cb392-1" tabindex="-1"></a><span class="fu">t.test</span>(father.son<span class="sc">$</span>fheight, father.son<span class="sc">$</span>sheight, <span class="at">paired=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Paired t-test
@@ -874,16 +874,16 @@ div.csl-indent {
 <h2><span class="header-section-number">15.4</span> Visualizar la diferencias<a href="prueba-de-t-independiente.html#visualizar-la-diferencias-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Podemos visualizar la diferencia entre los hijos y los padres. Vemos el promedio si no tuviese diferencia (la linea azul), esto es nuestra hipótesis nula, y el estimado (el promedio de la diferencias es rojo, con el intervalo de confianza en las lineas entrecortada). Si nuestro estimado (el intervalo de confianza de 95%) hubiese incluido la linea azul la prueba no seria significativa, y se aceptaría la hipótesis nula.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb396"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb396-1"><a href="prueba-de-t-independiente.html#cb396-1" tabindex="-1"></a>father.son<span class="sc">$</span>heightDiff<span class="ot">&lt;-</span>father.son<span class="sc">$</span>fheight<span class="sc">-</span>father.son<span class="sc">$</span>sheight <span class="co"># para calcular la diferencia entre el padre y el hijo. </span></span>
-<span id="cb396-2"><a href="prueba-de-t-independiente.html#cb396-2" tabindex="-1"></a><span class="fu">ggplot</span>(father.son, <span class="fu">aes</span>(<span class="at">x=</span>fheight<span class="sc">-</span>sheight))<span class="sc">+</span></span>
-<span id="cb396-3"><a href="prueba-de-t-independiente.html#cb396-3" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
-<span id="cb396-4"><a href="prueba-de-t-independiente.html#cb396-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(father.son<span class="sc">$</span>heightDiff), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb396-5"><a href="prueba-de-t-independiente.html#cb396-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(father.son<span class="sc">$</span>father.son<span class="sc">$</span>heightDiff)<span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">sd</span>(father.son<span class="sc">$</span>heightDiff)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">nrow</span>(father.son)), <span class="at">linetype=</span><span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb396-6"><a href="prueba-de-t-independiente.html#cb396-6" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb396-7"><a href="prueba-de-t-independiente.html#cb396-7" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
-<span id="cb396-8"><a href="prueba-de-t-independiente.html#cb396-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Diferencia en altura entre padres y hijos&quot;</span>)<span class="sc">+</span></span>
-<span id="cb396-9"><a href="prueba-de-t-independiente.html#cb396-9" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">round</span>(<span class="fu">seq</span>(<span class="fu">min</span>(father.son<span class="sc">$</span>heightDiff), <span class="fu">max</span>(father.son<span class="sc">$</span>heightDiff), <span class="at">by =</span> .<span class="dv">5</span>),<span class="dv">0</span>))<span class="sc">+</span></span>
-<span id="cb396-10"><a href="prueba-de-t-independiente.html#cb396-10" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb394"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb394-1"><a href="prueba-de-t-independiente.html#cb394-1" tabindex="-1"></a>father.son<span class="sc">$</span>heightDiff<span class="ot">&lt;-</span>father.son<span class="sc">$</span>fheight<span class="sc">-</span>father.son<span class="sc">$</span>sheight <span class="co"># para calcular la diferencia entre el padre y el hijo. </span></span>
+<span id="cb394-2"><a href="prueba-de-t-independiente.html#cb394-2" tabindex="-1"></a><span class="fu">ggplot</span>(father.son, <span class="fu">aes</span>(<span class="at">x=</span>fheight<span class="sc">-</span>sheight))<span class="sc">+</span></span>
+<span id="cb394-3"><a href="prueba-de-t-independiente.html#cb394-3" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb394-4"><a href="prueba-de-t-independiente.html#cb394-4" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(father.son<span class="sc">$</span>heightDiff), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb394-5"><a href="prueba-de-t-independiente.html#cb394-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(father.son<span class="sc">$</span>father.son<span class="sc">$</span>heightDiff)<span class="sc">+</span> <span class="dv">2</span><span class="sc">*</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span><span class="fu">sd</span>(father.son<span class="sc">$</span>heightDiff)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">nrow</span>(father.son)), <span class="at">linetype=</span><span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb394-6"><a href="prueba-de-t-independiente.html#cb394-6" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb394-7"><a href="prueba-de-t-independiente.html#cb394-7" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
+<span id="cb394-8"><a href="prueba-de-t-independiente.html#cb394-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Diferencia en altura entre padres y hijos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb394-9"><a href="prueba-de-t-independiente.html#cb394-9" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">round</span>(<span class="fu">seq</span>(<span class="fu">min</span>(father.son<span class="sc">$</span>heightDiff), <span class="fu">max</span>(father.son<span class="sc">$</span>heightDiff), <span class="at">by =</span> .<span class="dv">5</span>),<span class="dv">0</span>))<span class="sc">+</span></span>
+<span id="cb394-10"><a href="prueba-de-t-independiente.html#cb394-10" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>))</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/graph3-1.png" width="672" /></p>
 <hr />
@@ -900,12 +900,12 @@ div.csl-indent {
 <h2><span class="header-section-number">15.6</span> Ejercicio de clase<a href="prueba-de-t-independiente.html#ejercicio-de-clase-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vamos a evaluar si la cantidad de hijos cambia entre su abuela y su madre.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="prueba-de-t-independiente.html#cb397-1" tabindex="-1"></a>abuela<span class="ot">=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, </span>
-<span id="cb397-2"><a href="prueba-de-t-independiente.html#cb397-2" tabindex="-1"></a>         <span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
-<span id="cb397-3"><a href="prueba-de-t-independiente.html#cb397-3" tabindex="-1"></a>madre<span class="ot">=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>, <span class="dv">3</span>,<span class="dv">3</span>,</span>
-<span id="cb397-4"><a href="prueba-de-t-independiente.html#cb397-4" tabindex="-1"></a>        <span class="dv">3</span>,<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb397-5"><a href="prueba-de-t-independiente.html#cb397-5" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">data.frame</span>(abuela,madre)</span>
-<span id="cb397-6"><a href="prueba-de-t-independiente.html#cb397-6" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="prueba-de-t-independiente.html#cb395-1" tabindex="-1"></a>abuela<span class="ot">=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, </span>
+<span id="cb395-2"><a href="prueba-de-t-independiente.html#cb395-2" tabindex="-1"></a>         <span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">4</span>)</span>
+<span id="cb395-3"><a href="prueba-de-t-independiente.html#cb395-3" tabindex="-1"></a>madre<span class="ot">=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>, <span class="dv">3</span>,<span class="dv">3</span>,</span>
+<span id="cb395-4"><a href="prueba-de-t-independiente.html#cb395-4" tabindex="-1"></a>        <span class="dv">3</span>,<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb395-5"><a href="prueba-de-t-independiente.html#cb395-5" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">data.frame</span>(abuela,madre)</span>
+<span id="cb395-6"><a href="prueba-de-t-independiente.html#cb395-6" tabindex="-1"></a>df</span></code></pre></div>
 </details>
 <pre><code>##    abuela madre
 ## 1       3     2
@@ -920,8 +920,8 @@ div.csl-indent {
 ## 10      3     2
 ## 11      4     2</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="prueba-de-t-independiente.html#cb399-1" tabindex="-1"></a>df<span class="sc">$</span>diff<span class="ot">=</span>df<span class="sc">$</span>abuela<span class="sc">-</span>df<span class="sc">$</span>madre</span>
-<span id="cb399-2"><a href="prueba-de-t-independiente.html#cb399-2" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="prueba-de-t-independiente.html#cb397-1" tabindex="-1"></a>df<span class="sc">$</span>diff<span class="ot">=</span>df<span class="sc">$</span>abuela<span class="sc">-</span>df<span class="sc">$</span>madre</span>
+<span id="cb397-2"><a href="prueba-de-t-independiente.html#cb397-2" tabindex="-1"></a>df</span></code></pre></div>
 </details>
 <pre><code>##    abuela madre diff
 ## 1       3     2    1
@@ -936,11 +936,11 @@ div.csl-indent {
 ## 10      3     2    1
 ## 11      4     2    2</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="prueba-de-t-independiente.html#cb401-1" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>diff)</span></code></pre></div>
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="prueba-de-t-independiente.html#cb399-1" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>diff)</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.9090909</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="prueba-de-t-independiente.html#cb403-1" tabindex="-1"></a><span class="fu">t.test</span>(df<span class="sc">$</span>abuela,df<span class="sc">$</span>madre, <span class="at">paired=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb401"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb401-1"><a href="prueba-de-t-independiente.html#cb401-1" tabindex="-1"></a><span class="fu">t.test</span>(df<span class="sc">$</span>abuela,df<span class="sc">$</span>madre, <span class="at">paired=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Paired t-test
@@ -960,34 +960,34 @@ div.csl-indent {
 <p>Un cultivador heredo 18 parcelas donde hay árboles de toronjas cada una en diferentes municipios. El quiere saber si al añadir abono, la cosecha de toronjas aumenta. El podría decidir que de seleccionar 9 de estas parcelas y añadir abono y las otras 9 sin abono. El problema con este diseño experimental es que es bien conocido que el suelo varia de un sitio a otro y que el clima varia también. Es más apropiado que el divide cada parcela en 2, y que la mitad recibe el abono y la otra mitad sirva de control (sin abono). Cual sera el efecto del abono sobre la producción de toronjas en parcelas pareadas en Puerto Rico.</p>
 <p>La cantidad de Toronjas producidas por árbol en fincas pareadas, cada finca tiene una parcela con abono y la otra la otra parcela sin abono. Tenemos 18 diferentes sitios en PR donde se probo el efecto del abono sobre la producción de toronjas, se enseña solamente los primeros 8 pares de valores en la tabla. Cada parcela es del mismo tamaño con la misma cantidad de arboles. Los datos completos están en el próximo chunk.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="prueba-de-t-independiente.html#cb405-1" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb405-2"><a href="prueba-de-t-independiente.html#cb405-2" tabindex="-1"></a><span class="fu">library</span>(huxtable)</span>
-<span id="cb405-3"><a href="prueba-de-t-independiente.html#cb405-3" tabindex="-1"></a>Toronja<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb405-4"><a href="prueba-de-t-independiente.html#cb405-4" tabindex="-1"></a>  <span class="sc">~</span>Fertilizante, <span class="sc">~</span>Sin_Fertilizante, <span class="sc">~</span>Municipio,</span>
-<span id="cb405-5"><a href="prueba-de-t-independiente.html#cb405-5" tabindex="-1"></a>  <span class="dv">2250</span>,     <span class="dv">1920</span> , <span class="st">&quot;Utuado&quot;</span>,</span>
-<span id="cb405-6"><a href="prueba-de-t-independiente.html#cb405-6" tabindex="-1"></a> <span class="dv">2410</span>,              <span class="dv">2020</span>,  <span class="st">&quot;Cabo Rojo&quot;</span>,</span>
-<span id="cb405-7"><a href="prueba-de-t-independiente.html#cb405-7" tabindex="-1"></a> <span class="dv">2260</span>,              <span class="dv">2060</span>,  <span class="st">&quot;Manati&quot;</span>,</span>
-<span id="cb405-8"><a href="prueba-de-t-independiente.html#cb405-8" tabindex="-1"></a> <span class="dv">2200</span>,              <span class="dv">1960</span>,  <span class="st">&quot;Yabucoa&quot;</span>,       </span>
-<span id="cb405-9"><a href="prueba-de-t-independiente.html#cb405-9" tabindex="-1"></a> <span class="dv">2360</span>,              <span class="dv">1960</span>, <span class="st">&quot;Humacao&quot;</span>, </span>
-<span id="cb405-10"><a href="prueba-de-t-independiente.html#cb405-10" tabindex="-1"></a> <span class="dv">2320</span>,              <span class="dv">2140</span>,<span class="st">&quot;Caguas&quot;</span>,</span>
-<span id="cb405-11"><a href="prueba-de-t-independiente.html#cb405-11" tabindex="-1"></a> <span class="dv">2240</span>,              <span class="dv">1980</span>, <span class="st">&quot;San Juan&quot;</span>,</span>
-<span id="cb405-12"><a href="prueba-de-t-independiente.html#cb405-12" tabindex="-1"></a> <span class="dv">2300</span>,              <span class="dv">1940</span>, <span class="st">&quot;Jayuya&quot;</span>,</span>
-<span id="cb405-13"><a href="prueba-de-t-independiente.html#cb405-13" tabindex="-1"></a> <span class="dv">2090</span>,              <span class="dv">1790</span>,<span class="st">&quot;Ponce&quot;</span></span>
-<span id="cb405-14"><a href="prueba-de-t-independiente.html#cb405-14" tabindex="-1"></a>)</span>
-<span id="cb405-15"><a href="prueba-de-t-independiente.html#cb405-15" tabindex="-1"></a>Toronja</span>
-<span id="cb405-16"><a href="prueba-de-t-independiente.html#cb405-16" tabindex="-1"></a>Toronja<span class="sc">$</span>dif_F_NF<span class="ot">=</span>Toronja<span class="sc">$</span>Fertilizante<span class="sc">-</span>Toronja<span class="sc">$</span>Sin_Fertilizante</span>
-<span id="cb405-17"><a href="prueba-de-t-independiente.html#cb405-17" tabindex="-1"></a></span>
-<span id="cb405-18"><a href="prueba-de-t-independiente.html#cb405-18" tabindex="-1"></a>Toronja</span>
-<span id="cb405-19"><a href="prueba-de-t-independiente.html#cb405-19" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb405-20"><a href="prueba-de-t-independiente.html#cb405-20" tabindex="-1"></a><span class="fu">ggplot</span>(Toronja, <span class="fu">aes</span>(dif_F_NF))<span class="sc">+</span></span>
-<span id="cb405-21"><a href="prueba-de-t-independiente.html#cb405-21" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span>
-<span id="cb405-22"><a href="prueba-de-t-independiente.html#cb405-22" tabindex="-1"></a></span>
-<span id="cb405-23"><a href="prueba-de-t-independiente.html#cb405-23" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Mi_super_grafico.png&quot;</span>)</span>
-<span id="cb405-24"><a href="prueba-de-t-independiente.html#cb405-24" tabindex="-1"></a></span>
-<span id="cb405-25"><a href="prueba-de-t-independiente.html#cb405-25" tabindex="-1"></a><span class="fu">huxtable</span>(Toronja)<span class="sc">%&gt;%</span></span>
-<span id="cb405-26"><a href="prueba-de-t-independiente.html#cb405-26" tabindex="-1"></a>  <span class="fu">theme_article</span>(<span class="at">header_col =</span> <span class="cn">TRUE</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb405-27"><a href="prueba-de-t-independiente.html#cb405-27" tabindex="-1"></a>  <span class="fu">set_bottom_border</span>(<span class="at">row =</span> <span class="dv">1</span>, <span class="at">col =</span> everywhere, <span class="at">value =</span> <span class="dv">1</span>)<span class="sc">%&gt;%</span> </span>
-<span id="cb405-28"><a href="prueba-de-t-independiente.html#cb405-28" tabindex="-1"></a>  <span class="fu">set_caption</span>(<span class="st">&quot;La cantidad de toronjas producidas en parceles en diferentes municipios&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb403"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb403-1"><a href="prueba-de-t-independiente.html#cb403-1" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb403-2"><a href="prueba-de-t-independiente.html#cb403-2" tabindex="-1"></a><span class="fu">library</span>(huxtable)</span>
+<span id="cb403-3"><a href="prueba-de-t-independiente.html#cb403-3" tabindex="-1"></a>Toronja<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb403-4"><a href="prueba-de-t-independiente.html#cb403-4" tabindex="-1"></a>  <span class="sc">~</span>Fertilizante, <span class="sc">~</span>Sin_Fertilizante, <span class="sc">~</span>Municipio,</span>
+<span id="cb403-5"><a href="prueba-de-t-independiente.html#cb403-5" tabindex="-1"></a>  <span class="dv">2250</span>,     <span class="dv">1920</span> , <span class="st">&quot;Utuado&quot;</span>,</span>
+<span id="cb403-6"><a href="prueba-de-t-independiente.html#cb403-6" tabindex="-1"></a> <span class="dv">2410</span>,              <span class="dv">2020</span>,  <span class="st">&quot;Cabo Rojo&quot;</span>,</span>
+<span id="cb403-7"><a href="prueba-de-t-independiente.html#cb403-7" tabindex="-1"></a> <span class="dv">2260</span>,              <span class="dv">2060</span>,  <span class="st">&quot;Manati&quot;</span>,</span>
+<span id="cb403-8"><a href="prueba-de-t-independiente.html#cb403-8" tabindex="-1"></a> <span class="dv">2200</span>,              <span class="dv">1960</span>,  <span class="st">&quot;Yabucoa&quot;</span>,       </span>
+<span id="cb403-9"><a href="prueba-de-t-independiente.html#cb403-9" tabindex="-1"></a> <span class="dv">2360</span>,              <span class="dv">1960</span>, <span class="st">&quot;Humacao&quot;</span>, </span>
+<span id="cb403-10"><a href="prueba-de-t-independiente.html#cb403-10" tabindex="-1"></a> <span class="dv">2320</span>,              <span class="dv">2140</span>,<span class="st">&quot;Caguas&quot;</span>,</span>
+<span id="cb403-11"><a href="prueba-de-t-independiente.html#cb403-11" tabindex="-1"></a> <span class="dv">2240</span>,              <span class="dv">1980</span>, <span class="st">&quot;San Juan&quot;</span>,</span>
+<span id="cb403-12"><a href="prueba-de-t-independiente.html#cb403-12" tabindex="-1"></a> <span class="dv">2300</span>,              <span class="dv">1940</span>, <span class="st">&quot;Jayuya&quot;</span>,</span>
+<span id="cb403-13"><a href="prueba-de-t-independiente.html#cb403-13" tabindex="-1"></a> <span class="dv">2090</span>,              <span class="dv">1790</span>,<span class="st">&quot;Ponce&quot;</span></span>
+<span id="cb403-14"><a href="prueba-de-t-independiente.html#cb403-14" tabindex="-1"></a>)</span>
+<span id="cb403-15"><a href="prueba-de-t-independiente.html#cb403-15" tabindex="-1"></a>Toronja</span>
+<span id="cb403-16"><a href="prueba-de-t-independiente.html#cb403-16" tabindex="-1"></a>Toronja<span class="sc">$</span>dif_F_NF<span class="ot">=</span>Toronja<span class="sc">$</span>Fertilizante<span class="sc">-</span>Toronja<span class="sc">$</span>Sin_Fertilizante</span>
+<span id="cb403-17"><a href="prueba-de-t-independiente.html#cb403-17" tabindex="-1"></a></span>
+<span id="cb403-18"><a href="prueba-de-t-independiente.html#cb403-18" tabindex="-1"></a>Toronja</span>
+<span id="cb403-19"><a href="prueba-de-t-independiente.html#cb403-19" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb403-20"><a href="prueba-de-t-independiente.html#cb403-20" tabindex="-1"></a><span class="fu">ggplot</span>(Toronja, <span class="fu">aes</span>(dif_F_NF))<span class="sc">+</span></span>
+<span id="cb403-21"><a href="prueba-de-t-independiente.html#cb403-21" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()</span>
+<span id="cb403-22"><a href="prueba-de-t-independiente.html#cb403-22" tabindex="-1"></a></span>
+<span id="cb403-23"><a href="prueba-de-t-independiente.html#cb403-23" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Mi_super_grafico.png&quot;</span>)</span>
+<span id="cb403-24"><a href="prueba-de-t-independiente.html#cb403-24" tabindex="-1"></a></span>
+<span id="cb403-25"><a href="prueba-de-t-independiente.html#cb403-25" tabindex="-1"></a><span class="fu">huxtable</span>(Toronja)<span class="sc">%&gt;%</span></span>
+<span id="cb403-26"><a href="prueba-de-t-independiente.html#cb403-26" tabindex="-1"></a>  <span class="fu">theme_article</span>(<span class="at">header_col =</span> <span class="cn">TRUE</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb403-27"><a href="prueba-de-t-independiente.html#cb403-27" tabindex="-1"></a>  <span class="fu">set_bottom_border</span>(<span class="at">row =</span> <span class="dv">1</span>, <span class="at">col =</span> everywhere, <span class="at">value =</span> <span class="dv">1</span>)<span class="sc">%&gt;%</span> </span>
+<span id="cb403-28"><a href="prueba-de-t-independiente.html#cb403-28" tabindex="-1"></a>  <span class="fu">set_caption</span>(<span class="st">&quot;La cantidad de toronjas producidas en parceles en diferentes municipios&quot;</span>)</span></code></pre></div>
 </details>
 <blockquote>
 <ul>
@@ -1000,21 +1000,21 @@ div.csl-indent {
 </blockquote>
 <p>El resultado: El valor de t-observado es de 8.80, con un grado de libertad de 17 (n=18), y valor de p &lt;0.0001. Por consecuencia se rechaza la hipótesis nula y se acepta la alterna. El intervalo de confianza del promedio es 198.5 - 323.7, con un promedio de 261. Esto significa que a añadir fertilizante la producción de toronjas aumento de en promedio de 261 toronjas.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="prueba-de-t-independiente.html#cb406-1" tabindex="-1"></a>Fert<span class="ot">=</span><span class="fu">c</span>(<span class="dv">2250</span>,<span class="dv">2410</span>, <span class="dv">2260</span>,<span class="dv">2200</span>, <span class="dv">2360</span>, </span>
-<span id="cb406-2"><a href="prueba-de-t-independiente.html#cb406-2" tabindex="-1"></a>     <span class="dv">2320</span>,<span class="dv">2240</span>,<span class="dv">2300</span>,<span class="dv">2090</span>, <span class="dv">2250</span>,<span class="dv">2410</span>, <span class="dv">2260</span>,<span class="dv">2200</span>, <span class="dv">2360</span>, </span>
-<span id="cb406-3"><a href="prueba-de-t-independiente.html#cb406-3" tabindex="-1"></a>     <span class="dv">2320</span>,<span class="dv">2240</span>,<span class="dv">2300</span>,<span class="dv">2090</span>)</span>
-<span id="cb406-4"><a href="prueba-de-t-independiente.html#cb406-4" tabindex="-1"></a><span class="co">#Fert</span></span>
-<span id="cb406-5"><a href="prueba-de-t-independiente.html#cb406-5" tabindex="-1"></a>SFert<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1920</span>,<span class="dv">2020</span>,<span class="dv">2060</span>,<span class="dv">1960</span>,</span>
-<span id="cb406-6"><a href="prueba-de-t-independiente.html#cb406-6" tabindex="-1"></a>     <span class="dv">1960</span>,<span class="dv">2140</span>,<span class="dv">1980</span>,<span class="dv">1940</span>,<span class="dv">2100</span>, <span class="dv">1920</span>,<span class="dv">2020</span>,<span class="dv">2060</span>,<span class="dv">1960</span>,</span>
-<span id="cb406-7"><a href="prueba-de-t-independiente.html#cb406-7" tabindex="-1"></a>     <span class="dv">1960</span>,<span class="dv">2140</span>,<span class="dv">1980</span>,<span class="dv">1940</span>,<span class="dv">2100</span>)</span>
-<span id="cb406-8"><a href="prueba-de-t-independiente.html#cb406-8" tabindex="-1"></a><span class="co">#SFert</span></span>
-<span id="cb406-9"><a href="prueba-de-t-independiente.html#cb406-9" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">data.frame</span>(Fert,SFert)</span>
-<span id="cb406-10"><a href="prueba-de-t-independiente.html#cb406-10" tabindex="-1"></a>df<span class="sc">$</span>diff_produccion<span class="ot">=</span>df<span class="sc">$</span>Fert<span class="sc">-</span>df<span class="sc">$</span>SFert </span>
-<span id="cb406-11"><a href="prueba-de-t-independiente.html#cb406-11" tabindex="-1"></a></span>
-<span id="cb406-12"><a href="prueba-de-t-independiente.html#cb406-12" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>diff_produccion) <span class="co"># el promedio de las diferencias</span></span>
-<span id="cb406-13"><a href="prueba-de-t-independiente.html#cb406-13" tabindex="-1"></a></span>
-<span id="cb406-14"><a href="prueba-de-t-independiente.html#cb406-14" tabindex="-1"></a></span>
-<span id="cb406-15"><a href="prueba-de-t-independiente.html#cb406-15" tabindex="-1"></a><span class="fu">t.test</span>(df<span class="sc">$</span>Fert,df<span class="sc">$</span>SFert, <span class="at">paired=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb404"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb404-1"><a href="prueba-de-t-independiente.html#cb404-1" tabindex="-1"></a>Fert<span class="ot">=</span><span class="fu">c</span>(<span class="dv">2250</span>,<span class="dv">2410</span>, <span class="dv">2260</span>,<span class="dv">2200</span>, <span class="dv">2360</span>, </span>
+<span id="cb404-2"><a href="prueba-de-t-independiente.html#cb404-2" tabindex="-1"></a>     <span class="dv">2320</span>,<span class="dv">2240</span>,<span class="dv">2300</span>,<span class="dv">2090</span>, <span class="dv">2250</span>,<span class="dv">2410</span>, <span class="dv">2260</span>,<span class="dv">2200</span>, <span class="dv">2360</span>, </span>
+<span id="cb404-3"><a href="prueba-de-t-independiente.html#cb404-3" tabindex="-1"></a>     <span class="dv">2320</span>,<span class="dv">2240</span>,<span class="dv">2300</span>,<span class="dv">2090</span>)</span>
+<span id="cb404-4"><a href="prueba-de-t-independiente.html#cb404-4" tabindex="-1"></a><span class="co">#Fert</span></span>
+<span id="cb404-5"><a href="prueba-de-t-independiente.html#cb404-5" tabindex="-1"></a>SFert<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1920</span>,<span class="dv">2020</span>,<span class="dv">2060</span>,<span class="dv">1960</span>,</span>
+<span id="cb404-6"><a href="prueba-de-t-independiente.html#cb404-6" tabindex="-1"></a>     <span class="dv">1960</span>,<span class="dv">2140</span>,<span class="dv">1980</span>,<span class="dv">1940</span>,<span class="dv">2100</span>, <span class="dv">1920</span>,<span class="dv">2020</span>,<span class="dv">2060</span>,<span class="dv">1960</span>,</span>
+<span id="cb404-7"><a href="prueba-de-t-independiente.html#cb404-7" tabindex="-1"></a>     <span class="dv">1960</span>,<span class="dv">2140</span>,<span class="dv">1980</span>,<span class="dv">1940</span>,<span class="dv">2100</span>)</span>
+<span id="cb404-8"><a href="prueba-de-t-independiente.html#cb404-8" tabindex="-1"></a><span class="co">#SFert</span></span>
+<span id="cb404-9"><a href="prueba-de-t-independiente.html#cb404-9" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">data.frame</span>(Fert,SFert)</span>
+<span id="cb404-10"><a href="prueba-de-t-independiente.html#cb404-10" tabindex="-1"></a>df<span class="sc">$</span>diff_produccion<span class="ot">=</span>df<span class="sc">$</span>Fert<span class="sc">-</span>df<span class="sc">$</span>SFert </span>
+<span id="cb404-11"><a href="prueba-de-t-independiente.html#cb404-11" tabindex="-1"></a></span>
+<span id="cb404-12"><a href="prueba-de-t-independiente.html#cb404-12" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>diff_produccion) <span class="co"># el promedio de las diferencias</span></span>
+<span id="cb404-13"><a href="prueba-de-t-independiente.html#cb404-13" tabindex="-1"></a></span>
+<span id="cb404-14"><a href="prueba-de-t-independiente.html#cb404-14" tabindex="-1"></a></span>
+<span id="cb404-15"><a href="prueba-de-t-independiente.html#cb404-15" tabindex="-1"></a><span class="fu">t.test</span>(df<span class="sc">$</span>Fert,df<span class="sc">$</span>SFert, <span class="at">paired=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <hr />
 </div>
@@ -1023,15 +1023,15 @@ div.csl-indent {
 <p>Los datos representa cuantas hojas tenían las <strong>mismas</strong> plantas en diferentes momentos de su muestreo. Por consecuencia los datos nos son independiente. Los datos provienen de datos recolectados en el Yunque en una pequeña orquídea epifita, <em>Lepanthes eltoroensis</em> Stimson. Aquí una foto de la planta.</p>
 <p>El archivo de datos tiene información sobre la cantidad de hojas que tiene cada una de las plantas marcadas después del huracán Georges (1998). La plantas fueron muestreado a cada 6 meses comenzando 6 meses después del huracán por 6 años (13 muestreos). Fueron seguidos 1084 plantas distintas, aunque no todos están muestreados a cada tiempo. Cada fila representa un individuo, si no hay información en un tiempo puede ser que la planta a) no fue encontrada en este muestreo, b) que la planta este muerta o que c) fue antes que la planta creciera (todavía no había germinado).</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb407"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb407-1"><a href="prueba-de-t-independiente.html#cb407-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb407-2"><a href="prueba-de-t-independiente.html#cb407-2" tabindex="-1"></a>Lepanthes_eltoroensis_Georges_STUDENT <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Lepanthes_eltoroensis_Georges_STUDENT.csv&quot;</span>)</span>
-<span id="cb407-3"><a href="prueba-de-t-independiente.html#cb407-3" tabindex="-1"></a></span>
-<span id="cb407-4"><a href="prueba-de-t-independiente.html#cb407-4" tabindex="-1"></a>Lep<span class="ot">=</span>Lepanthes_eltoroensis_Georges_STUDENT</span>
-<span id="cb407-5"><a href="prueba-de-t-independiente.html#cb407-5" tabindex="-1"></a><span class="fu">head</span>(Lep)</span>
-<span id="cb407-6"><a href="prueba-de-t-independiente.html#cb407-6" tabindex="-1"></a></span>
-<span id="cb407-7"><a href="prueba-de-t-independiente.html#cb407-7" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb407-8"><a href="prueba-de-t-independiente.html#cb407-8" tabindex="-1"></a></span>
-<span id="cb407-9"><a href="prueba-de-t-independiente.html#cb407-9" tabindex="-1"></a><span class="fu">length</span>(Lep<span class="sc">$</span>T1)</span></code></pre></div>
+<div class="sourceCode" id="cb405"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb405-1"><a href="prueba-de-t-independiente.html#cb405-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb405-2"><a href="prueba-de-t-independiente.html#cb405-2" tabindex="-1"></a>Lepanthes_eltoroensis_Georges_STUDENT <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Lepanthes_eltoroensis_Georges_STUDENT.csv&quot;</span>)</span>
+<span id="cb405-3"><a href="prueba-de-t-independiente.html#cb405-3" tabindex="-1"></a></span>
+<span id="cb405-4"><a href="prueba-de-t-independiente.html#cb405-4" tabindex="-1"></a>Lep<span class="ot">=</span>Lepanthes_eltoroensis_Georges_STUDENT</span>
+<span id="cb405-5"><a href="prueba-de-t-independiente.html#cb405-5" tabindex="-1"></a><span class="fu">head</span>(Lep)</span>
+<span id="cb405-6"><a href="prueba-de-t-independiente.html#cb405-6" tabindex="-1"></a></span>
+<span id="cb405-7"><a href="prueba-de-t-independiente.html#cb405-7" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb405-8"><a href="prueba-de-t-independiente.html#cb405-8" tabindex="-1"></a></span>
+<span id="cb405-9"><a href="prueba-de-t-independiente.html#cb405-9" tabindex="-1"></a><span class="fu">length</span>(Lep<span class="sc">$</span>T1)</span></code></pre></div>
 </details>
 <hr />
 <ol style="list-style-type: decimal">
@@ -1061,14 +1061,14 @@ div.csl-indent {
 <h2><span class="header-section-number">15.9</span> Anxiedad y Alacranes<a href="prueba-de-t-independiente.html#anxiedad-y-alacranes-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Con un indice de Ansiedad. Más alto el número más ansioso.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb408"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb408-1"><a href="prueba-de-t-independiente.html#cb408-1" tabindex="-1"></a>picture<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">7</span>)</span>
-<span id="cb408-2"><a href="prueba-de-t-independiente.html#cb408-2" tabindex="-1"></a>dead<span class="ot">=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">18</span>,<span class="dv">16</span>,<span class="dv">11</span>)</span>
-<span id="cb408-3"><a href="prueba-de-t-independiente.html#cb408-3" tabindex="-1"></a><span class="fu">mean</span>(picture)</span>
-<span id="cb408-4"><a href="prueba-de-t-independiente.html#cb408-4" tabindex="-1"></a><span class="fu">mean</span>(dead)</span>
-<span id="cb408-5"><a href="prueba-de-t-independiente.html#cb408-5" tabindex="-1"></a>alacran<span class="ot">=</span><span class="fu">data.frame</span>(picture,dead)</span>
-<span id="cb408-6"><a href="prueba-de-t-independiente.html#cb408-6" tabindex="-1"></a><span class="fu">head</span>(alacran)</span>
-<span id="cb408-7"><a href="prueba-de-t-independiente.html#cb408-7" tabindex="-1"></a></span>
-<span id="cb408-8"><a href="prueba-de-t-independiente.html#cb408-8" tabindex="-1"></a><span class="fu">t.test</span>(alacran<span class="sc">$</span>dead, alacran<span class="sc">$</span>picture,<span class="at">paired=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb406"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb406-1"><a href="prueba-de-t-independiente.html#cb406-1" tabindex="-1"></a>picture<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">8</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">7</span>)</span>
+<span id="cb406-2"><a href="prueba-de-t-independiente.html#cb406-2" tabindex="-1"></a>dead<span class="ot">=</span><span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">10</span>,<span class="dv">18</span>,<span class="dv">16</span>,<span class="dv">11</span>)</span>
+<span id="cb406-3"><a href="prueba-de-t-independiente.html#cb406-3" tabindex="-1"></a><span class="fu">mean</span>(picture)</span>
+<span id="cb406-4"><a href="prueba-de-t-independiente.html#cb406-4" tabindex="-1"></a><span class="fu">mean</span>(dead)</span>
+<span id="cb406-5"><a href="prueba-de-t-independiente.html#cb406-5" tabindex="-1"></a>alacran<span class="ot">=</span><span class="fu">data.frame</span>(picture,dead)</span>
+<span id="cb406-6"><a href="prueba-de-t-independiente.html#cb406-6" tabindex="-1"></a><span class="fu">head</span>(alacran)</span>
+<span id="cb406-7"><a href="prueba-de-t-independiente.html#cb406-7" tabindex="-1"></a></span>
+<span id="cb406-8"><a href="prueba-de-t-independiente.html#cb406-8" tabindex="-1"></a><span class="fu">t.test</span>(alacran<span class="sc">$</span>dead, alacran<span class="sc">$</span>picture,<span class="at">paired=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 </details>
 <hr />
 <p>li

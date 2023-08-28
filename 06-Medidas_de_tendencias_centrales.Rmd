@@ -292,3 +292,52 @@ ggplot(dfBin, aes(dfBin))+
   theme(legend.position = "none")
 ```
 
+
+
+### Preguntas de practica sobre medidas de tendencias central.
+
+
+1. ¿Cuando es que el promedio, mediana y moda son iguales?
+
+2. ¿Cual es la moda de esta conjunto de datos?
+
+```{r}
+x=c(3,5,2,3,6,7,8,9, 1)
+x
+```
+
+
+3. ¿Cual es la mediana de este conjunto de datos?
+
+
+```{r}
+y=c(3,5,2,3,6,7,8,9, 1)
+y
+```
+
+
+4. ¿Cual es la mediana de este conjunto de datos?
+
+
+```{r}
+y=c(3,5,2,3,6,7,8,9, 1, 6)
+sort(y)
+```
+
+5. Para describir la medida central de este conjunto de datos, se debería usar el promedio, mediana o moda?
+
+```{r}
+z=c(1,2,2,3,4,10, 100, 1000)
+z
+
+```
+
+
+6. ¿Cual es la moda de las siguientes datos.   Número de hijos que tienen estudiantes universitarios
+
+```{r}
+Numero_hijos=c(1,0,0,0,0,0,0,0,0,0,1,3)
+
+Numero_hijos
+```
+

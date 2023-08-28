@@ -293,6 +293,7 @@ ggplot(dfBin, aes(dfBin))+
 ```
 
 
+***
 
 ### Preguntas de practica sobre medidas de tendencias central.
 
@@ -307,7 +308,7 @@ x
 ```
 
 
-3. ¿Cual es la mediana de este conjunto de datos?
+3. ¿Cual es la mediana de este conjunto de datos? Eso son la cantidad de cursos 
 
 
 ```{r}

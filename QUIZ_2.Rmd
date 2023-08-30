@@ -26,7 +26,7 @@
     
 ```{r include=FALSE}
 library(tidyverse)
-library(statip)
+library(DescTools)
 ```
   
   
@@ -56,7 +56,7 @@ HOMERUN
 ```{r eval=FALSE, include=FALSE}
 mean(HOMERUN$Numeros_Homerum)
 median(HOMERUN$Numeros_Homerum)
-mfv1(HOMERUN$Numeros_Homerum)
+Mode(HOMERUN$Numeros_Homerum)
 var(HOMERUN$Numeros_Homerum)
 quantile(HOMERUN$Numeros_Homerum, probs = c(0.025, 0.25, 0.50,.75, .975))
 sd(HOMERUN$Numeros_Homerum)

@@ -28,6 +28,7 @@ tab:unnamed-chunk-265
 tab:unnamed-chunk-272
 tab:five
 tab:ten
+tab:unnamed-chunk-278
 introducción-al-curso-de-biometría
 horario-de-clase
 libro-obligatorio
@@ -484,3 +485,7 @@ ejercicios-de-pruebas-de-frecuencia
 capitulo-7
 ejericico-de-práctica-no-para-someter
 ejercicio-para-someter.
+quiz-1
+quiz-1-de-tendencia-central-y-de-dispersión
+usando-los-datos-siguientes-calcula-los-siguientes-estadísticos
+evalua-cada-uno-y-despues-abrá-msteam-para-contestar-las-preguntas

@@ -17,7 +17,13 @@ Distancia_Estrellas=tribble(~Distancia,
 Distancia_Estrellas
 ```
 
-------------------------------------------------------------------------
+```{r}
+sd(
+Distancia_Estrellas$Distancia)
+```
+
+
+
 
 ```{r, echo=FALSE, eval=FALSE}
 library(readr)
@@ -142,7 +148,7 @@ Pop_PR_2022
 ```{r, echo=FALSE, eval=FALSE}
 
 quantile(Muni_2022$Pop_N, p=c(0.01, 0.10, .25, .50, .75, 0.99))
-
+median(Muni_2022$Pop_N)
 mean(Muni_2022$Pop_N)
 ```
 ***

@@ -29,7 +29,7 @@ tab:unnamed-chunk-272
 tab:five
 tab:ten
 tab:unnamed-chunk-278
-tab:unnamed-chunk-284
+tab:unnamed-chunk-285
 introducción-al-curso-de-biometría
 horario-de-clase
 libro-obligatorio

@@ -1,21 +1,23 @@
 # Quiz 3
 
-## 
+------------------------------------------------------------------------
+
+## Pregunta 1
+
 Use los datos siguientes para la primera pregunta
 
-Aqui se encuentra un grupo de datos de la distancia a estrellas en años luz. 
+Aqui se encuentra un grupo de datos de la distancia a estrellas en años luz.
 
 ```{r, eval=FALSE}
 library(tidyverse)
-Distancia_Estrellas=tribble(
-  ~Distancia,
+Distancia_Estrellas=tribble(~Distancia,
   8.6,36.7,42.2,16.8,33.7,87.9,4.4,25.3,11.4,25.1,51.5
 )
 
 Distancia_Estrellas
 ```
 
-
+------------------------------------------------------------------------
 
 ```{r, echo=FALSE, eval=FALSE}
 library(readr)
@@ -24,8 +26,6 @@ muni=estimados_anuales_poblacionales_por_municipio_y_pr_annual_population_estima
 
 muni
 ```
-
-
 
 ```{r, echo=FALSE, eval=FALSE}
 
@@ -44,6 +44,11 @@ Muni_2022
 write_csv(Muni_2022, "Muni_2022.csv")
 ```
 
+------------------------------------------------------------------------
+
+## Pregunta 2
+
+Use los siguientes datos para la segunda pregunta
 
 ```{r}
 
@@ -131,5 +136,30 @@ Pop_PR_2022 = tribble(
 )
 
 Pop_PR_2022
+```
+
+## Calcular el quantile 50
+```{r, echo=FALSE, eval=FALSE}
+
+quantile(Muni_2022$Pop_N, p=c(0.01, 0.10, .25, .50, .75, 0.99))
+
+mean(Muni_2022$Pop_N)
+```
+***
+
+Calcular el indice de oblicuidad de los datos de los tamaños de población de PR
+
+```{r, echo=FALSE, eval=FALSE}
+library(e1071)
+e1071::skewness(Muni_2022$Pop_N)
+```
+
+
+
+
+```{r, echo=FALSE, eval=FALSE}
+
+ggplot(Muni_2022, aes(Pop_N))+
+  geom_histogram()
 ```
 

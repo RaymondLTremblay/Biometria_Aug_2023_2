@@ -790,7 +790,9 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="R" data-path="quiz-3.html"><a href="quiz-3.html"><i class="fa fa-check"></i><b>R</b> Quiz 3</a>
 <ul>
-<li class="chapter" data-level="R.1" data-path="quiz-3.html"><a href="quiz-3.html#section"><i class="fa fa-check"></i><b>R.1</b> </a></li>
+<li class="chapter" data-level="R.1" data-path="quiz-3.html"><a href="quiz-3.html#pregunta-1"><i class="fa fa-check"></i><b>R.1</b> Pregunta 1</a></li>
+<li class="chapter" data-level="R.2" data-path="quiz-3.html"><a href="quiz-3.html#pregunta-2"><i class="fa fa-check"></i><b>R.2</b> Pregunta 2</a></li>
+<li class="chapter" data-level="R.3" data-path="quiz-3.html"><a href="quiz-3.html#calcular-el-quantile-50"><i class="fa fa-check"></i><b>R.3</b> Calcular el quantile 50</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -814,19 +816,25 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="quiz-3" class="section level1 hasAnchor" number="43">
 <h1><span class="header-section-number">R</span> Quiz 3<a href="quiz-3.html#quiz-3" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="section" class="section level2" number="43.1">
-<h2><span class="header-section-number">R.1</span> </h2>
+<hr />
+<div id="pregunta-1" class="section level2 hasAnchor" number="43.1">
+<h2><span class="header-section-number">R.1</span> Pregunta 1<a href="quiz-3.html#pregunta-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Use los datos siguientes para la primera pregunta</p>
 <p>Aqui se encuentra un grupo de datos de la distancia a estrellas en años luz.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb663"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb663-1"><a href="quiz-3.html#cb663-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb663-2"><a href="quiz-3.html#cb663-2" tabindex="-1"></a>Distancia_Estrellas<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb663-3"><a href="quiz-3.html#cb663-3" tabindex="-1"></a>  <span class="sc">~</span>Distancia,</span>
-<span id="cb663-4"><a href="quiz-3.html#cb663-4" tabindex="-1"></a>  <span class="fl">8.6</span>,<span class="fl">36.7</span>,<span class="fl">42.2</span>,<span class="fl">16.8</span>,<span class="fl">33.7</span>,<span class="fl">87.9</span>,<span class="fl">4.4</span>,<span class="fl">25.3</span>,<span class="fl">11.4</span>,<span class="fl">25.1</span>,<span class="fl">51.5</span></span>
-<span id="cb663-5"><a href="quiz-3.html#cb663-5" tabindex="-1"></a>)</span>
-<span id="cb663-6"><a href="quiz-3.html#cb663-6" tabindex="-1"></a></span>
-<span id="cb663-7"><a href="quiz-3.html#cb663-7" tabindex="-1"></a>Distancia_Estrellas</span></code></pre></div>
+<span id="cb663-2"><a href="quiz-3.html#cb663-2" tabindex="-1"></a>Distancia_Estrellas<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>Distancia,</span>
+<span id="cb663-3"><a href="quiz-3.html#cb663-3" tabindex="-1"></a>  <span class="fl">8.6</span>,<span class="fl">36.7</span>,<span class="fl">42.2</span>,<span class="fl">16.8</span>,<span class="fl">33.7</span>,<span class="fl">87.9</span>,<span class="fl">4.4</span>,<span class="fl">25.3</span>,<span class="fl">11.4</span>,<span class="fl">25.1</span>,<span class="fl">51.5</span></span>
+<span id="cb663-4"><a href="quiz-3.html#cb663-4" tabindex="-1"></a>)</span>
+<span id="cb663-5"><a href="quiz-3.html#cb663-5" tabindex="-1"></a></span>
+<span id="cb663-6"><a href="quiz-3.html#cb663-6" tabindex="-1"></a>Distancia_Estrellas</span></code></pre></div>
 </details>
+<hr />
+<hr />
+</div>
+<div id="pregunta-2" class="section level2 hasAnchor" number="43.2">
+<h2><span class="header-section-number">R.2</span> Pregunta 2<a href="quiz-3.html#pregunta-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use los siguientes datos para la segunda pregunta</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb664"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb664-1"><a href="quiz-3.html#cb664-1" tabindex="-1"></a>Pop_PR_2022 <span class="ot">=</span> <span class="fu">tribble</span>(</span>
 <span id="cb664-2"><a href="quiz-3.html#cb664-2" tabindex="-1"></a><span class="sc">~</span>Anio,  <span class="sc">~</span>Municipality,  <span class="sc">~</span>Pop_N,</span>
@@ -1073,6 +1081,11 @@ div.csl-indent {
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.02e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Yauco</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3.29e+04</td></tr>
 </table>
 
+</div>
+<div id="calcular-el-quantile-50" class="section level2 hasAnchor" number="43.3">
+<h2><span class="header-section-number">R.3</span> Calcular el quantile 50<a href="quiz-3.html#calcular-el-quantile-50" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<hr />
+<p>Calcular el indice de oblicuidad de los datos de los tamaños de población de PR</p>
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div class="csl-entry">

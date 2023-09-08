@@ -491,4 +491,6 @@ quiz-1-de-tendencia-central-y-de-dispersión
 usando-los-datos-siguientes-calcula-los-siguientes-estadísticos
 evalua-cada-uno-y-despues-abrá-msteam-para-contestar-las-preguntas
 quiz-3
-section
+pregunta-1
+pregunta-2
+calcular-el-quantile-50

@@ -1621,11 +1621,177 @@ Ud. someterán los las repuestas a los siguientes ejercicios en un documento .ht
 
 - 5 puntos para un trabajo bien presentado y organizado
 
+***
+
+# DATA
+
+## Datos de Tremblay.
+
+Los siguientes datos son de R. L. Tremblay. Estos datos no se pueden usar para publicaciones excepto con permiso escrito del autor. 
 
 
+1. [Lepanthes_eltoroensis.csv](Data_files_csv/Lepanthes_eltoroensis_Georges_STUDENT.csv)
+
+
+***
+
+## Archivos de Datos de la Naciones Unidas
+
+1. [PoblacionEdad_genero](UNdata_Pop_Size_Caribbean) # Datos poblacional de las islas del caribe (Datos de las Naciones Unidas al siguiente enlace <http://data.un.org/Data.aspx?d=POP&f=tableCode%3A22>)
+2. [DominicanRepublicPop](Data/DominicanRepublic.csv) # Datos poblacional de la Republica Dominicana (Igual que #1)
+
+***
+
+## Archivo de datos de "Mortality" 
+### (https://www.mortality.org/Account/Auth)
+
+1. [Births In USA since 1933](Data_files_csv/USAbirthbymonth.csv)
+
+***
+
+## NOAA, USA.gov
+
+Los siguientes datos provienen del "National Weather sservice" en este enlace, https://w2.weather.gov/climate/xmacis.php?wfo=pafc
+
+2. [Anchorage_ALASKA](Data/Anchorage_ALASKA.csv)
+
+
+***
+
+#3 Discovering Statistics Using R.
+
+Los siguientes archivos son de Andy Field, Jeremy Miles and Zoë Field son identificado con las siglas "FMF".
+
+***
+
+Lista de archivos de datos
+
+
+1. [DownloadFestival_FMF.csv](Data_files_csv/DownloadFestival.csv)
+2. [Alturas_Humanos.csv](Data_files_csv/Alturas_Humanos.csv)
+3. [Exam Anxiety_FMF](Data_files_csv/Exam Anxiety.csv)
+4. [Hiccups_FMF.csv](Data_files_csv/Hiccups.csv)
+5. [DownloadFestival_Outliers_FMF.csv](Data_files_csv/DownloadFestival_No_Outlier.csv)
+6. [Superhero.csv](Data_files_csv/Superhero.csv)
+7. [pubs.csv](Data_files_csv/pubs.csv)
+
+***
+
+## Datos de Karn and Penrose 
+
+Los datos provienen de un estudio realizado por Mary N. Karn and L. S. Penrose publicado en **Annals of Eugenics**, titulado **Birth Weight and gestation time in relation to maternal age, parity and infant survival** publicado en 1951.  Estaremos usando solamente una parte de los datos. El periodo de gestación y el peso de los bebés varones al nacer y su supervivencia (fallecio= 0 y sobrevivio= 1).  Para facilitar el trabajo he modificado los datos un poco para cumplir con las tareas asignada.
+
+1. [Karn_Penrose.csv](Data_files_csv/Karn_Penrose_infant_survivorship.csv)
+
+
+***
+
+## Introductory Biological Statistics
+
+Los siguientes archivos son de John E. Havel, Raymond E. Hampton y Scott J. Meiners (2019).
+
+>> Agredezco a John E. Havel para el permiso de añadir los archivos de datos en este website, Jul 25th, 2020. 
+
+
+Lista de archivos por capítulo
+
+### Capítulo 3 
+
+1. [EX 3.1.csv](Data_files_Havel/Chapter3/EX 3.1.csv)
+2. [EX 3.6.csv](Data_files_Havel/Chapter3/EX 3.6.csv)
+3. [Table_3.3.csv](Data_files_Havel/Chapter3/Table 3.3.csv)
+4. [Table_3.4.csv](Data_files_Havel/Chapter3/Table 3.3.csv)
+
+***
+
+### Capítulo 4
+
+1. [EX 4.2.csv](Data_files_Havel/Chapter4/EX 4.2.csv)
+
+***
+
+### Capítulo 9
+
+1. [Table 9.2.csv](Data_files_Havel/Chapter9/Table 9.2.csv)
+
+***
+
+### Capítulo 10
+
+1. [Table 10.17.csv](Data_files_Havel/Chapter10/EX 10.17.csv)
+
+***
+
+### Capítulo 11
+
+1. [EX 11.1.csv](Data_files_Havel/Chapter11/EX11.1.csv)
+2. [EX 11.2.csv](Data_files_Havel/Chapter11/EX11.2.csv)
+3. [EX 11.3.csv](Data_files_Havel/Chapter11/EX11.3.csv)
+4. [EX 11.4.csv](Data_files_Havel/Chapter11/EX11.4.csv)
+5. [EX 11.5.csv](Data_files_Havel/Chapter11/EX11.5.csv)
+6. [EX 11.6.csv](Data_files_Havel/Chapter11/EX11.6.csv)
+7. [EX 11.7.csv](Data_files_Havel/Chapter11/EX11.7.csv)
+8. [EX 11.8.csv](Data_files_Havel/Chapter11/EX11.8.csv)
+9. [EX 11.9.csv](Data_files_Havel/Chapter11/EX11.9.csv)
+10. [EX 11.10.csv](Data_files_Havel/Chapter11/EX11.10.csv)
+11. [EX 11.11.csv](Data_files_Havel/Chapter11/EX11.11.csv)
+12. [EX 11.12.csv](Data_files_Havel/Chapter11/EX11.12.csv)
+13. [EX 11.13.csv](Data_files_Havel/Chapter11/EX11.13.csv)
+14. [EX 11.14.csv](Data_files_Havel/Chapter11/EX11.14.csv)
+15. [Table 11.3.csv](Data_files_Havel/Chapter11/Table 11.3.csv)
+16. [Table 11.10.csv](Data_files_Havel/Chapter11/Table 11.10.csv)
+
+***
+
+### Capítulo 12
+
+1. [EX 12.1.csv](Data_files_Havel/Chapter12/EX12.1.csv)
+2. [EX 12.2.csv](Data_files_Havel/Chapter12/EX12.2.csv)
+3. [EX 12.3.csv](Data_files_Havel/Chapter12/EX12.3.csv)
+4. [EX 12.4.csv](Data_files_Havel/Chapter12/EX12.4.csv)
+5. [EX 12.5.csv](Data_files_Havel/Chapter12/EX12.5.csv)
+6. [EX 12.6.csv](Data_files_Havel/Chapter12/EX12.6.csv)
+7. [EX 12.7.csv](Data_files_Havel/Chapter12/EX12.7.csv)
+8. [EX 12.8.csv](Data_files_Havel/Chapter12/EX12.8.csv)
+9. [EX 12.9.csv](Data_files_Havel/Chapter12/EX12.9.csv)
+10. [EX 12.10.csv](Data_files_Havel/Chapter12/EX12.10.csv)
+11. [EX 12.11.csv](Data_files_Havel/Chapter12/EX12.11.csv)
+12. [EX 12.12.csv](Data_files_Havel/Chapter12/EX12.12.csv)
+13. [EX 12.13.csv](Data_files_Havel/Chapter12/EX12.13.csv)
+14. [EX 12.14.csv](Data_files_Havel/Chapter12/EX12.14.csv)
+15. [EX 12.16.csv](Data_files_Havel/Chapte12/EX12.16.csv)
+16. [Table 12.1.csv](Data_files_Havel/Chapter12/Table 12.1.csv)
+17. [Table 12.3.csv](Data_files_Havel/Chapter12/Table 12.3.csv)
+18. [Table 12.5.csv](Data_files_Havel/Chapter12/Table 12.5.csv)
+19. [Table 12.7.csv](Data_files_Havel/Chapter12/Table 12.7.csv)
+20. [Table 12.9.csv](Data_files_Havel/Chapter12/Table 12.9.csv)
+
+***
+
+## Aqui una lista y los archivos de datos 
+
+### Capítulo 13
  
- 
+1. [EX 13.1.csv](Data_files_Havel/Chapter13/EX13.1.csv)
+2. [EX 13.2.csv](Data_files_Havel/Chapter13/EX13.2.csv)
+3. [EX 13.3.csv](Data_files_Havel/Chapter13/EX13.3.csv)
+4. [EX 13.4.csv](Data_files_Havel/Chapter13/EX13.4.csv)
+5. [EX 13.5.csv](Data_files_Havel/Chapter13/EX13.5.csv)
+6. [EX 13.6.csv](Data_files_Havel/Chapter13/EX13.6.csv)
+7. [EX 13.8.csv](Data_files_Havel/Chapter13/EX13.8.csv)
+8. [Table 13.1.csv](Data_files_Havel/Chapter13/Table 13.1.csv)
+9. [Table 13.3.csv](Data_files_Havel/Chapter13/Table 13.3.csv)
 
+***
 
+### Capítulo 14
+
+1. [EX 14.2.csv](Data_files_Havel/Chapter14/EX14.3.csv)
+2. [EX 14.3.csv](Data_files_Havel/Chapter14/EX14.3.csv)
+3. [EX 14.6.csv](Data_files_Havel/Chapter14/EX14.6.csv)
+4. [EX 14.7.csv](Data_files_Havel/Chapter14/EX14.7.csv)
+5. [EX 14.8.csv](Data_files_Havel/Chapter14/EX14.8.csv)
+6. [Table 14.1.csv](Data_files_Havel/Chapter14/Table 14.1.csv)
+7. [Table 14.3.csv](Data_files_Havel/Chapter14/Table 14.3.csv)
 
 

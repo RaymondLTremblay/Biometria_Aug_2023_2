@@ -511,7 +511,3 @@ quiz-3
 pregunta-1
 pregunta-2
 calcular-el-quantile-50
-tab:unnamed-chunk-51
-tab:unnamed-chunk-58
-supuestos-de-la-prueba-de-t-con-datos-pareados.-1
-bdi-becks-depression-index-change

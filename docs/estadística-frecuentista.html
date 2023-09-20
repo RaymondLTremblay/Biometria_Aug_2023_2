@@ -1150,9 +1150,9 @@ Esperado
 <li><p>Ejercicio: Cien pajaritos recibieron semillas de girasol con rayas negras o semillas negras. Setenta y cinco eligieron semillas negras. ¿Podemos concluir que la población de la que se tomó esta muestra tiene preferencia por las semillas de girasol negras sobre las semillas de girasol rayadas? (traducido del extracto 7.1 de Havel et al.).</p>
 <ul>
 <li>¿Cual es la hipótesis nula?</li>
-<li>¿cual es la hipótesis alterna?</li>
-<li>calcula los valores esperados</li>
-<li>calcula el chi cuadrado</li>
+<li>¿Cual es la hipótesis alterna?</li>
+<li>Calcula los valores esperados</li>
+<li>Calcula el chi cuadrado</li>
 <li>¿Se rechaza o acepta la Ho?</li>
 </ul></li>
 </ol>
@@ -1177,7 +1177,7 @@ A 162 no se la dado recompensa, y de estos 48 bailaron y 114 no bailaron.</p>
 <span id="cb310-2"><a href="estadística-frecuentista.html#cb310-2" tabindex="-1"></a></span>
 <span id="cb310-3"><a href="estadística-frecuentista.html#cb310-3" tabindex="-1"></a>comida <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">28</span>)</span>
 <span id="cb310-4"><a href="estadística-frecuentista.html#cb310-4" tabindex="-1"></a>carino <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">114</span>,<span class="dv">48</span>)</span>
-<span id="cb310-5"><a href="estadística-frecuentista.html#cb310-5" tabindex="-1"></a>catsTable <span class="ot">&lt;-</span> <span class="fu">cbind</span>(comida, carino)</span>
+<span id="cb310-5"><a href="estadística-frecuentista.html#cb310-5" tabindex="-1"></a>catsTable <span class="ot">&lt;-</span> <span class="fu">cbind</span>(comida, carino) <span class="co"># la función &quot;cbind&quot;, une listas en columnas, la &quot;c&quot; es para columna</span></span>
 <span id="cb310-6"><a href="estadística-frecuentista.html#cb310-6" tabindex="-1"></a></span>
 <span id="cb310-7"><a href="estadística-frecuentista.html#cb310-7" tabindex="-1"></a></span>
 <span id="cb310-8"><a href="estadística-frecuentista.html#cb310-8" tabindex="-1"></a><span class="fu">rownames</span>(catsTable)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;No_bailan&quot;</span>, <span class="st">&quot;bailan&quot;</span>) <span class="co"># Añade el nombre a las filas</span></span>
@@ -1191,13 +1191,13 @@ A 162 no se la dado recompensa, y de estos 48 bailaron y 114 no bailaron.</p>
 </div>
 <div id="gráfico-de-mosaico" class="section level2 hasAnchor" number="11.10">
 <h2><span class="header-section-number">11.10</span> Gráfico de Mosaico<a href="estadística-frecuentista.html#gráfico-de-mosaico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Podemos visualizar la frecuencia de los datos con un gráfico de mosaico. Si la hipótesis nula la organización de las cajas deberían ser más o menos de la mismq proporción (relativo a su frecuencia). En este caso lo que uno observa es que los que reciben comida y no bailan, la caja es mucha más pequeña que los que bailan y reciben comida. Nota que esto no es una prueba es una visualización de los datos y puede ayudar a entender el patrón.</p>
+<p>Podemos visualizar la frecuencia de los datos con un gráfico de mosaico. Si la hipótesis nula la organización de las cajas deberían ser más o menos de la misma proporción (relativo a su frecuencia). En este caso lo que uno observa es que los que reciben comida y no bailan, la caja es mucha más pequeña que los que bailan y reciben comida. Nota que esto no es una prueba es una visualización de los datos y puede ayudar a entender el patrón.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="estadística-frecuentista.html#cb312-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(catsTable)</span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="estadística-frecuentista.html#cb312-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(catsTable, <span class="at">color =</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-114-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-115-1.png" width="672" /></p>
 <hr />
-<p>Haz un tabla con diferentes cantidad de frecuencia y gráficolos con mosaicplot para evaluar como cambia el gráfico.</p>
+<p>Haz un tabla con diferentes cantidad de frecuencia y gráfico los con mosaicplot para evaluar como cambia el gráfico.</p>
 <hr />
 </div>
 <div id="prueba-de-independencia-de-frecuencia." class="section level2 hasAnchor" number="11.11">
@@ -2525,7 +2525,7 @@ La prueba es exactamente igual como la anterior donde comparamos el valor observ
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="estadística-frecuentista.html#cb331-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(serpiente)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-120-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-121-1.png" width="672" /></p>
 <p>Nota que se usa la misma función que anterior pero en los resultados hay que fijarse en la sección que dice <strong>Fisher’s Exact test</strong>. Lo que uno observa es que el valor de <strong>p</strong> es menor de 0.05 por consecuencia se rechaza la hipótesis nula. Lo que significa es que para la serpiente el angulo donde proviene el estimulo resulta en una repuesta diferente.</p>
 <hr />
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>

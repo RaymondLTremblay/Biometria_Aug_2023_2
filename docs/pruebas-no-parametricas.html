@@ -960,8 +960,8 @@ gl(n, k, lenght=n*k, labels=1:n, ordered=FALSE)</p>
 <span id="cb570-3"><a href="pruebas-no-parametricas.html#cb570-3" tabindex="-1"></a></span>
 <span id="cb570-4"><a href="pruebas-no-parametricas.html#cb570-4" tabindex="-1"></a><span class="fu">head</span>(Drug)</span></code></pre></div>
 </details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-208">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-208">Table 22.1: </span> </caption><col><col><col><tr>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-209">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-209">Table 22.1: </span> </caption><col><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">drug</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">sundayBDI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">wedsBDI</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Ecstasy</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">15</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">28</td></tr>
@@ -1047,7 +1047,7 @@ gl(n, k, lenght=n*k, labels=1:n, ordered=FALSE)</p>
 <span id="cb576-4"><a href="pruebas-no-parametricas.html#cb576-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
 <span id="cb576-5"><a href="pruebas-no-parametricas.html#cb576-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>drug)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-209-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-210-1.png" width="672" /></p>
 <hr />
 </div>
 </div>
@@ -1095,8 +1095,8 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 <div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="pruebas-no-parametricas.html#cb579-1" tabindex="-1"></a>drugData<span class="sc">$</span>wedsRank<span class="ot">=</span><span class="fu">rank</span>(drugData<span class="sc">$</span>wedsBDI)</span>
 <span id="cb579-2"><a href="pruebas-no-parametricas.html#cb579-2" tabindex="-1"></a>drugData</span></code></pre></div>
 </details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-210">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-210">Table 22.2: </span> </caption><col><col><col><col><col><tr>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-211">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-211">Table 22.2: </span> </caption><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Gender</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">drug</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">sundayBDI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">wedsBDI</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">wedsRank</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Ecstasy</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">15</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">28</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">12&nbsp;&nbsp;</td></tr>
@@ -1531,7 +1531,7 @@ Hum Reprod. 2008 Nov;23(11):2584-90. doi: 10.1093/humrep/den243. Epub 2008 Jul 2
 <span id="cb610-4"><a href="pruebas-no-parametricas.html#cb610-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
 <span id="cb610-5"><a href="pruebas-no-parametricas.html#cb610-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>))</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-212-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-213-1.png" width="672" /></p>
 <hr />
 <p>Descriptive statistics
 When adding “norm=TRUE” will perform Shapiro_Wilks Normality test.</p>

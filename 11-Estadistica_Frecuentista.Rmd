@@ -180,10 +180,20 @@ knitr::include_graphics("Graficos/Tweety.svg.png")
 1. Ejercicio:  Cien pajaritos recibieron semillas de girasol con rayas negras o semillas negras. Setenta y cinco eligieron semillas negras. ¿Podemos concluir que la población de la que se tomó esta muestra tiene preferencia por las semillas de girasol negras sobre las semillas de girasol rayadas? (traducido del extracto 7.1 de Havel et al.).
 
     - ¿Cual es la hipótesis nula?
-    - ¿cual es la hipótesis alterna?
-    - calcula los valores esperados
-    - calcula el chi cuadrado
+    - ¿Cual es la hipótesis alterna?
+    - Calcula los valores esperados
+    - Calcula el chi cuadrado
     - ¿Se rechaza o acepta la Ho?
+
+
+
+```{r, eval=FALSE, echo=FALSE}
+obs<-c(75,25)
+esp<-c(0.5,0.5)
+
+chisq.test(x=obs, p=esp)
+
+```
 
 
 ***
@@ -205,6 +215,7 @@ Los siguientes datos son de Field, Miles and Field 2012.
 Este conjunto de datos represente un experimento ficticio de tratar de entrenar 200 gatos para que bailan basado en si se la da una recompensa o no. Este esta basado en el concepto del psicólogo Ruso Ivan Pavlov (1849-1936) de que se puede enseñar o sea motivar a una acción dando una recompensa.  Lo que se llama "condicionar" un proceso de aprendizaje que ocurre entre la asociación de un estimulo ambiental y un comportamiento. 
 
 
+
 Primero entramos los datos directamente en una tabla
 
 Los datos son los siguientes: 
@@ -219,7 +230,7 @@ Se crea dos listas con los resultados y se une estas dos filas con **cbind()** y
 
 comida <- c(10, 28)
 carino <- c(114,48)
-catsTable <- cbind(comida, carino)
+catsTable <- cbind(comida, carino) # la función "cbind", une listas en columnas, la "c" es para columna
 
 
 rownames(catsTable)<-c("No_bailan", "bailan") # Añade el nombre a las filas
@@ -234,18 +245,18 @@ catsTable
 
 ## Gráfico de Mosaico
 
-Podemos visualizar la frecuencia de los datos con un gráfico de mosaico.  Si la hipótesis nula la organización de las cajas deberían ser más o menos de la mismq proporción (relativo a su frecuencia).  En este caso lo que uno observa es que los que reciben comida y no bailan, la caja es mucha más pequeña que los que bailan y reciben comida.  Nota que esto no es una prueba es una visualización de los datos y puede ayudar a entender el patrón.  
+Podemos visualizar la frecuencia de los datos con un gráfico de mosaico.  Si la hipótesis nula la organización de las cajas deberían ser más o menos de la misma proporción (relativo a su frecuencia).  En este caso lo que uno observa es que los que reciben comida y no bailan, la caja es mucha más pequeña que los que bailan y reciben comida.  Nota que esto no es una prueba es una visualización de los datos y puede ayudar a entender el patrón.  
 
 
 ```{r}
-mosaicplot(catsTable)
+mosaicplot(catsTable, color =TRUE)
 
 ```
 
 
 ***
 
-Haz un tabla con diferentes cantidad de frecuencia y gráficolos con mosaicplot para evaluar como cambia el gráfico.  
+Haz un tabla con diferentes cantidad de frecuencia y gráfico los con mosaicplot para evaluar como cambia el gráfico.  
 
 
 ***

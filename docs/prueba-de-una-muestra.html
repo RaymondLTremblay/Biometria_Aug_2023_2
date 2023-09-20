@@ -872,7 +872,7 @@ div.csl-indent {
 <span id="cb356-7"><a href="prueba-de-una-muestra.html#cb356-7" tabindex="-1"></a>                     <span class="fu">xlab</span>(<span class="st">&quot;Valores&quot;</span>)<span class="sc">+</span></span>
 <span id="cb356-8"><a href="prueba-de-una-muestra.html#cb356-8" tabindex="-1"></a>                     <span class="fu">ylab</span>(<span class="st">&quot;Densidad&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-138-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-139-1.png" width="672" /></p>
 <p>Observa que la distribución de t, cuando cambio el tamaño de muestra, (grado de libertad es <span class="math inline">\(\nu=n-1\)</span>). Tiene que observar dos componentes 1. hay menos datos en centrado en el promedio y 2. hay más datos en la colas.</p>
 <p>Se usa la distribución de t para calcular el intervalo de confianza y la hipótesis del promedio de una muestra, debido que la forma de la distribución de t cambia con el tamaño de muestra <span class="math inline">\(\nu=n-1\)</span> y también con la razón de error Tipo I, <span class="math inline">\(\alpha\)</span>.</p>
 <hr />
@@ -881,10 +881,10 @@ div.csl-indent {
 <h2><span class="header-section-number">13.4</span> Cuando es que uno rechaza la hipótesis nula<a href="prueba-de-una-muestra.html#cuando-es-que-uno-rechaza-la-hipótesis-nula" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Regresamos a la idea de Tipo de error I. Cuando se selecciona un <span class="math inline">\(\alpha=0.05\)</span>, lo que estamos diciendo es que hay 5% de probabilidad de cometer un error Tipo 1, que es <span style="color: blue;">de rechazar la hipótesis nula cuando uno debería aceptarla</span>. Ahora este 5% puede estar divido en dos componentes, uno cuando el valor es más pequeño o más grande que el valor observado. Por consecuencia el área de rechazar la hipótesis nula es 0.025 en la parte negativa y positiva.</p>
 <p>Seleccionamos la curva con un grado de libertad de 5 y evaluamos el área de la curva que esta dentro del 95% del intervalo de confianza y lo fuera de este rango. Si el promedio estimado de una prueba de t es dentro del área en gris se aceptará la hipótesis nula, si esta en el área rojo se rechazara la hipótesis nula. NOta que para esta hipótesis hay son maneras de rechazar la hipótesis nula.</p>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-140-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-141-1.png" width="672" /></p>
 <hr />
 <p>La alternativa es que nuestra hipótesis sea nada más de un lado donde el total del 5% es en la parte inferior o superior. En esta caso se rechaza solamente si se encuentra en esta proporción de los valores de t. Nota ahora que el área en esta sección es más grande (incluye más valores, no solamente el 2.5% pero el 5% de los valores).</p>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-141-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-142-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="el-intervalo-de-confianza-de-mu" class="section level2 hasAnchor" number="13.5">
@@ -965,7 +965,7 @@ div.csl-indent {
 <div id="muchos-muestreos-y-el-universo" class="section level2 hasAnchor" number="13.11">
 <h2><span class="header-section-number">13.11</span> Muchos muestreos y el universo<a href="prueba-de-una-muestra.html#muchos-muestreos-y-el-universo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Para demostrar lo que quiere decir el intervalo de confianza evaluamos el siguiente gráfico. Cada linea horizontal representa un muestreo independiente, la pequeña linea vertical representa el promedio de este muestreo <span class="math inline">\(\overline{x}\)</span>, y la linea vertical que cruza todos los muestreos representa el promedio universal <span class="math inline">\(\mu\)</span>. Nota que este caso el intervalo de confianza casi siempre cruza el <span class="math inline">\(\mu\)</span>, aparte de uno. El muestreo aunque proviene de la misma población no incluyo el promedio del universo.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-146"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-147"></span>
 <img src="Havel_Figures/9-3%20Series%20-%20Confidence%20Interals.jpg" alt="Su promedio incluye el promedio del universo?" width="70%" />
 <p class="caption">
 Figure 13.1: Su promedio incluye el promedio del universo?

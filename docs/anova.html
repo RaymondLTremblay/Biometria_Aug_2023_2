@@ -903,8 +903,8 @@ múltiples pruebas t.</p>
 <span id="cb428-13"><a href="anova.html#cb428-13" tabindex="-1"></a>  <span class="fu">set_caption</span>(<span class="st">&quot;La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)&quot;</span>)<span class="sc">%&gt;%</span></span>
 <span id="cb428-14"><a href="anova.html#cb428-14" tabindex="-1"></a>  <span class="fu">add_footnote</span>(<span class="st">&quot;* C=k(k-1)/2, que es la cantidad de comparación&quot;</span>)</span></code></pre></div>
 </details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-166">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-166">Table 16.1: </span> La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)</caption><col><col><col><col><tr>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-167">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-167">Table 16.1: </span> La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)</caption><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Cantidad_Grupo_k</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">C</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">0.05</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 1pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">0.01</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.05</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.01</td></tr>
@@ -1051,7 +1051,7 @@ Vimos también este tipo de gráfico para la prueba de t.</p>
 <span id="cb433-2"><a href="anova.html#cb433-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
 <span id="cb433-3"><a href="anova.html#cb433-3" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>) <span class="fu">lines</span>(<span class="fu">c</span>(i,i), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-167-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-168-1.png" width="672" /></p>
 <p>Ahora vamos a separar el gráfico y ver los residuales por grupo, en otra
 palabra, cual son los residuales entre los valores y el promedio dentro
 de los mismos grupos. Se observa en este caso que hay mucho menos
@@ -1074,7 +1074,7 @@ plantas.</p>
 <span id="cb434-13"><a href="anova.html#cb434-13" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;DosBocas&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
 <span id="cb434-14"><a href="anova.html#cb434-14" tabindex="-1"></a>} </span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-168-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-169-1.png" width="672" /></p>
 <hr />
 <p>Datos donde los grupos son iguales</p>
 <p>En este ejemplo de vemos dos de los grupos donde los residuales solapan,
@@ -1108,7 +1108,7 @@ diferentes.</p>
 <span id="cb436-13"><a href="anova.html#cb436-13" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;DosBocas&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
 <span id="cb436-14"><a href="anova.html#cb436-14" tabindex="-1"></a>} </span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-169-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-170-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="gráficar-los-datos" class="section level2 hasAnchor" number="16.5">
@@ -1305,7 +1305,7 @@ tendríamos 3 lineas.
 <span id="cb443-4"><a href="anova.html#cb443-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Valores teóricos&quot;</span>)<span class="sc">+</span></span>
 <span id="cb443-5"><a href="anova.html#cb443-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Valores observados&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-170-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-171-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="la-prueba-de-anova" class="section level2 hasAnchor" number="16.14">

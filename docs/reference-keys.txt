@@ -30,7 +30,7 @@ tab:five
 tab:ten
 tab:unnamed-chunk-278
 tab:unnamed-chunk-285
-introducción-al-curso-de-biometría
+introducción-al-curso-de-bioestadística
 horario-de-clase
 libro-obligatorio
 libros-sugeridos
@@ -48,7 +48,7 @@ integridad-academica
 comentario-sobre-grabar-videos-yo-audio-de-las-clases
 espacio-libre-de-acoso-sexual
 protocolo-de-la-clase
-introducción-a-la-biometria
+introducción-a-la-bioestadística
 el-libro-de-la-clase
 el-proceso-de-investigación
 el-primer-paso

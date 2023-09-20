@@ -1,4 +1,4 @@
-# Historia breve de la estadística
+# Historia breve de la Estadística
 
 
 
@@ -85,7 +85,7 @@ Cursó sus primeros estudios en la llamada Perry High School de la misma ciudad.
 ### Primera dama en Estadística
 
 
-En 1939, la nombraron profesora asistente en Iowa State College y, en 1940, dirigió el primer departamento de Estadística Experimental en la Escuela de Agricultura de la Universidad de Carolina del Norte. Esto la convirtió en la primera mujer directora del recinto. Además, Cox fue la primera mujer jefa del Instituto de Estadística de la Universidad de Carolina del Norte en 1944. Un año más tarde, participó como editora principal de la revista Biometrics durante 10 años, y fundó, en 1947, la ¨International Biometric Society¨. Además, se convirtió en presidenta de la ASA (American Society of Anesthesiologists) en 1956.
+En 1939, la nombraron profesora asistente en Iowa State College y, en 1940, dirigió el primer departamento de Estadística Experimental en la Escuela de Agricultura de la Universidad de Carolina del Norte. Esto la convirtió en la primera mujer directora del recinto. Además, Cox fue la primera mujer jefa del Instituto de Estadística de la Universidad de Carolina del Norte en 1944. Un año más tarde, participó como editora principal de la revista **Biometrics** durante 10 años, y fundó, en 1947, la **International Biometric Society**. Además, se convirtió en presidenta de la ASA (American Society of Anesthesiologists) en 1956.
 
 ```{r, echo=FALSE, fig.align='center', fig.width = 50, echo=FALSE}
 
@@ -101,7 +101,7 @@ knitr::include_graphics("Graficos/COX/Exten_Farm.jpg")
 knitr::include_graphics("Graficos/COX/biom.v76.3.cover.jpg")
 ```
 
-La revista^7^ fue publicada por la Sociedad Internacional de Biometría en 1945, originalmente bajo el título de *Biometrics Bulletin*. Sin embargo, en 1947, su nombre fue acortado. Su objetivo principal consiste en publicar artículos sobre la aplicación de la estadística y las matemáticas a las ciencias biológicas. Según una encuesta realizada por especialistas en biometría, obtuvo el quinto lugar entre 40 revistas existentes de estadítica.
+La revista^7^ fue publicada por la Sociedad Internacional de Biometría en 1945, originalmente bajo el título de *Biometrics Bulletin*. Sin embargo, en 1947, su nombre fue acortado. Su objetivo principal consiste en publicar artículos sobre la aplicación de la estadística y las matemáticas a las ciencias biológicas. Según una encuesta realizada por especialistas en BioEstadística, obtuvo el quinto lugar entre 40 revistas existentes de estadítica.
 
 
 ***

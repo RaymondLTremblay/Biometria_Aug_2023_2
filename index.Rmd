@@ -1,5 +1,5 @@
 ---
-title: "Biometria"
+title: "BioEstadistica"
 output:
   bookdown::gitbook:
     highlight: tango
@@ -14,7 +14,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 
 description: |
-  Este libro digital es una introdución al estudio de Biometría
+  Este libro digital es una introdución al estudio de BioEstadistica
 link-citations: yes
 
 editor_options: 
@@ -26,7 +26,7 @@ editor_options:
 
 
 
-# Introducción al curso de Biometría
+# Introducción al curso de BioEstadística
 
 **Instructor:** Raymond L. Tremblay, PhD  
 

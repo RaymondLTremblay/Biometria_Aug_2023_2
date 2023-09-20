@@ -81,7 +81,7 @@ Pregunta corta:  Explica el sesgo de los diferentes métodos, como se podría me
 
  1.  ¿Cual de las siguientes alternativas es un mejor diseño experimental para deteminar el nivel de colestrerol de los puertoriqueños que viven en Puerto Rico?
 
->  + Se muestrea estudiantes de la clase de biometría de la UPRH
+>  + Se muestrea estudiantes de la clase de BioEstadística de la UPRH
 >  + Se muestrea paciente que llegan a la oficina de un medico
 >  + Se muestrea paciente que llegan a la sala de emergencia
 >  + Se muestrea gente de multiples edades

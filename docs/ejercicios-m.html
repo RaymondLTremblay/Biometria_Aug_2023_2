@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-09-20" />
+<meta name="date" content="2023-09-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -372,7 +372,7 @@ div.csl-indent {
 <li class="chapter" data-level="11.6" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste."><i class="fa fa-check"></i><b>11.6</b> Bondad de Ajuste.</a></li>
 <li class="chapter" data-level="11.7" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#primer-ejemplo"><i class="fa fa-check"></i><b>11.7</b> Primer ejemplo</a></li>
 <li class="chapter" data-level="11.8" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#segundo-ejemplo"><i class="fa fa-check"></i><b>11.8</b> Segundo ejemplo</a></li>
-<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste</a></li>
+<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste, Tabla de contingencia RxC</a></li>
 <li class="chapter" data-level="11.10" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gráfico-de-mosaico"><i class="fa fa-check"></i><b>11.10</b> Gráfico de Mosaico</a></li>
 <li class="chapter" data-level="11.11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia-de-frecuencia."><i class="fa fa-check"></i><b>11.11</b> Prueba de Independencia de frecuencia.</a></li>
 <li class="chapter" data-level="11.12" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-función-crosstable"><i class="fa fa-check"></i><b>11.12</b> La función <em>CrossTable</em></a></li>
@@ -849,30 +849,30 @@ div.csl-indent {
 <li>Fungal growth from soil samples were cultured in the presence of different concentrations of Cadnium (in µM). The density of fungal growth (x 10^6/ml) in each of the cultures was determined after a period of incubation. Para conocer más sobre estas interacciones vea el siguiente enlace. <a href="https://bmcmicrobiol.biomedcentral.com/articles/10.1186/s12866-022-02488-z" class="uri">https://bmcmicrobiol.biomedcentral.com/articles/10.1186/s12866-022-02488-z</a></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb646-1"><a href="ejercicios-m.html#cb646-1" tabindex="-1"></a>DATA<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>Cadnium, <span class="sc">~</span>Fungal_Growth,</span>
-<span id="cb646-2"><a href="ejercicios-m.html#cb646-2" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">6.6</span>,</span>
-<span id="cb646-3"><a href="ejercicios-m.html#cb646-3" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">6.9</span>,</span>
-<span id="cb646-4"><a href="ejercicios-m.html#cb646-4" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">7.2</span>,</span>
-<span id="cb646-5"><a href="ejercicios-m.html#cb646-5" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">6.8</span>, </span>
-<span id="cb646-6"><a href="ejercicios-m.html#cb646-6" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">6.0</span>,</span>
-<span id="cb646-7"><a href="ejercicios-m.html#cb646-7" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">5.6</span>,</span>
-<span id="cb646-8"><a href="ejercicios-m.html#cb646-8" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">6.4</span>,</span>
-<span id="cb646-9"><a href="ejercicios-m.html#cb646-9" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">6.0</span>,</span>
-<span id="cb646-10"><a href="ejercicios-m.html#cb646-10" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">5.4</span>,</span>
-<span id="cb646-11"><a href="ejercicios-m.html#cb646-11" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">4.8</span>,</span>
-<span id="cb646-12"><a href="ejercicios-m.html#cb646-12" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">4.4</span>,</span>
-<span id="cb646-13"><a href="ejercicios-m.html#cb646-13" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">3.9</span>,</span>
-<span id="cb646-14"><a href="ejercicios-m.html#cb646-14" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">2.6</span>,</span>
-<span id="cb646-15"><a href="ejercicios-m.html#cb646-15" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">3.1</span>,</span>
-<span id="cb646-16"><a href="ejercicios-m.html#cb646-16" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">3.4</span>,</span>
-<span id="cb646-17"><a href="ejercicios-m.html#cb646-17" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.0</span>,</span>
-<span id="cb646-18"><a href="ejercicios-m.html#cb646-18" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.3</span>,</span>
-<span id="cb646-19"><a href="ejercicios-m.html#cb646-19" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.7</span>,</span>
-<span id="cb646-20"><a href="ejercicios-m.html#cb646-20" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.2</span>,</span>
-<span id="cb646-21"><a href="ejercicios-m.html#cb646-21" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.3</span>,</span>
-<span id="cb646-22"><a href="ejercicios-m.html#cb646-22" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.5</span>)</span>
-<span id="cb646-23"><a href="ejercicios-m.html#cb646-23" tabindex="-1"></a></span>
-<span id="cb646-24"><a href="ejercicios-m.html#cb646-24" tabindex="-1"></a>DATA</span></code></pre></div>
+<div class="sourceCode" id="cb647"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb647-1"><a href="ejercicios-m.html#cb647-1" tabindex="-1"></a>DATA<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>Cadnium, <span class="sc">~</span>Fungal_Growth,</span>
+<span id="cb647-2"><a href="ejercicios-m.html#cb647-2" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">6.6</span>,</span>
+<span id="cb647-3"><a href="ejercicios-m.html#cb647-3" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">6.9</span>,</span>
+<span id="cb647-4"><a href="ejercicios-m.html#cb647-4" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">7.2</span>,</span>
+<span id="cb647-5"><a href="ejercicios-m.html#cb647-5" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">6.8</span>, </span>
+<span id="cb647-6"><a href="ejercicios-m.html#cb647-6" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">6.0</span>,</span>
+<span id="cb647-7"><a href="ejercicios-m.html#cb647-7" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">5.6</span>,</span>
+<span id="cb647-8"><a href="ejercicios-m.html#cb647-8" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">6.4</span>,</span>
+<span id="cb647-9"><a href="ejercicios-m.html#cb647-9" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">6.0</span>,</span>
+<span id="cb647-10"><a href="ejercicios-m.html#cb647-10" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">5.4</span>,</span>
+<span id="cb647-11"><a href="ejercicios-m.html#cb647-11" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">4.8</span>,</span>
+<span id="cb647-12"><a href="ejercicios-m.html#cb647-12" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">4.4</span>,</span>
+<span id="cb647-13"><a href="ejercicios-m.html#cb647-13" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">3.9</span>,</span>
+<span id="cb647-14"><a href="ejercicios-m.html#cb647-14" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">2.6</span>,</span>
+<span id="cb647-15"><a href="ejercicios-m.html#cb647-15" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">3.1</span>,</span>
+<span id="cb647-16"><a href="ejercicios-m.html#cb647-16" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">3.4</span>,</span>
+<span id="cb647-17"><a href="ejercicios-m.html#cb647-17" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.0</span>,</span>
+<span id="cb647-18"><a href="ejercicios-m.html#cb647-18" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.3</span>,</span>
+<span id="cb647-19"><a href="ejercicios-m.html#cb647-19" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.7</span>,</span>
+<span id="cb647-20"><a href="ejercicios-m.html#cb647-20" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.2</span>,</span>
+<span id="cb647-21"><a href="ejercicios-m.html#cb647-21" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.3</span>,</span>
+<span id="cb647-22"><a href="ejercicios-m.html#cb647-22" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.5</span>)</span>
+<span id="cb647-23"><a href="ejercicios-m.html#cb647-23" tabindex="-1"></a></span>
+<span id="cb647-24"><a href="ejercicios-m.html#cb647-24" tabindex="-1"></a>DATA</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-273">
 <caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-273">Table M.1: </span> </caption><col><col><tr>
@@ -950,12 +950,12 @@ div.csl-indent {
 <div id="calcular-el-promedio-mediana-moda-y-rango-de-los-datos-de-las-estrellas-más-cercana-a-la-tierra" class="section level3 hasAnchor" number="38.1.4">
 <h3><span class="header-section-number">M.1.4</span> Calcular el promedio, mediana, moda y rango de los datos de las estrellas más cercana a la tierra<a href="ejercicios-m.html#calcular-el-promedio-mediana-moda-y-rango-de-los-datos-de-las-estrellas-más-cercana-a-la-tierra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb647"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb647-1"><a href="ejercicios-m.html#cb647-1" tabindex="-1"></a>Distancia_Estrellas<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb647-2"><a href="ejercicios-m.html#cb647-2" tabindex="-1"></a>  <span class="sc">~</span>Distancia,</span>
-<span id="cb647-3"><a href="ejercicios-m.html#cb647-3" tabindex="-1"></a>  <span class="fl">8.6</span>,<span class="fl">36.7</span>,<span class="fl">42.2</span>,<span class="fl">16.8</span>,<span class="fl">33.7</span>,<span class="fl">87.9</span>,<span class="fl">4.4</span>,<span class="fl">25.3</span>,<span class="fl">11.4</span>,<span class="fl">25.1</span>,<span class="fl">51.5</span></span>
-<span id="cb647-4"><a href="ejercicios-m.html#cb647-4" tabindex="-1"></a>)</span>
-<span id="cb647-5"><a href="ejercicios-m.html#cb647-5" tabindex="-1"></a></span>
-<span id="cb647-6"><a href="ejercicios-m.html#cb647-6" tabindex="-1"></a><span class="fu">gt</span>(Distancia_Estrellas)</span></code></pre></div>
+<div class="sourceCode" id="cb648"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb648-1"><a href="ejercicios-m.html#cb648-1" tabindex="-1"></a>Distancia_Estrellas<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb648-2"><a href="ejercicios-m.html#cb648-2" tabindex="-1"></a>  <span class="sc">~</span>Distancia,</span>
+<span id="cb648-3"><a href="ejercicios-m.html#cb648-3" tabindex="-1"></a>  <span class="fl">8.6</span>,<span class="fl">36.7</span>,<span class="fl">42.2</span>,<span class="fl">16.8</span>,<span class="fl">33.7</span>,<span class="fl">87.9</span>,<span class="fl">4.4</span>,<span class="fl">25.3</span>,<span class="fl">11.4</span>,<span class="fl">25.1</span>,<span class="fl">51.5</span></span>
+<span id="cb648-4"><a href="ejercicios-m.html#cb648-4" tabindex="-1"></a>)</span>
+<span id="cb648-5"><a href="ejercicios-m.html#cb648-5" tabindex="-1"></a></span>
+<span id="cb648-6"><a href="ejercicios-m.html#cb648-6" tabindex="-1"></a><span class="fu">gt</span>(Distancia_Estrellas)</span></code></pre></div>
 </details>
 <div id="oimymtwtmm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#oimymtwtmm table {
@@ -1428,12 +1428,12 @@ div.csl-indent {
 <div id="calular-los-cuantiles-mencionado-en-la-pregunta" class="section level4 hasAnchor" number="38.1.5.1">
 <h4><span class="header-section-number">M.1.5.1</span> Calular los cuantiles mencionado en la pregunta<a href="ejercicios-m.html#calular-los-cuantiles-mencionado-en-la-pregunta" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb648"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb648-1"><a href="ejercicios-m.html#cb648-1" tabindex="-1"></a>PR_poblacion<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb648-2"><a href="ejercicios-m.html#cb648-2" tabindex="-1"></a>  <span class="sc">~</span>Poblacion,</span>
-<span id="cb648-3"><a href="ejercicios-m.html#cb648-3" tabindex="-1"></a>  <span class="fl">18.0</span>, <span class="fl">38.1</span>,<span class="fl">55.1</span>,<span class="fl">24.2</span>,<span class="fl">24.6</span>,<span class="fl">25.6</span>,<span class="fl">87.7</span>,<span class="fl">15.8</span>,<span class="fl">22.7</span>,<span class="fl">28.9</span>,<span class="fl">185.2</span>,<span class="fl">47.1</span>,<span class="fl">127.2</span></span>
-<span id="cb648-4"><a href="ejercicios-m.html#cb648-4" tabindex="-1"></a>)</span>
-<span id="cb648-5"><a href="ejercicios-m.html#cb648-5" tabindex="-1"></a></span>
-<span id="cb648-6"><a href="ejercicios-m.html#cb648-6" tabindex="-1"></a><span class="fu">gt</span>(PR_poblacion)</span></code></pre></div>
+<div class="sourceCode" id="cb649"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb649-1"><a href="ejercicios-m.html#cb649-1" tabindex="-1"></a>PR_poblacion<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb649-2"><a href="ejercicios-m.html#cb649-2" tabindex="-1"></a>  <span class="sc">~</span>Poblacion,</span>
+<span id="cb649-3"><a href="ejercicios-m.html#cb649-3" tabindex="-1"></a>  <span class="fl">18.0</span>, <span class="fl">38.1</span>,<span class="fl">55.1</span>,<span class="fl">24.2</span>,<span class="fl">24.6</span>,<span class="fl">25.6</span>,<span class="fl">87.7</span>,<span class="fl">15.8</span>,<span class="fl">22.7</span>,<span class="fl">28.9</span>,<span class="fl">185.2</span>,<span class="fl">47.1</span>,<span class="fl">127.2</span></span>
+<span id="cb649-4"><a href="ejercicios-m.html#cb649-4" tabindex="-1"></a>)</span>
+<span id="cb649-5"><a href="ejercicios-m.html#cb649-5" tabindex="-1"></a></span>
+<span id="cb649-6"><a href="ejercicios-m.html#cb649-6" tabindex="-1"></a><span class="fu">gt</span>(PR_poblacion)</span></code></pre></div>
 </details>
 <div id="mxhpatzpmn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#mxhpatzpmn table {

@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-09-20" />
+<meta name="date" content="2023-09-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -372,7 +372,7 @@ div.csl-indent {
 <li class="chapter" data-level="11.6" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste."><i class="fa fa-check"></i><b>11.6</b> Bondad de Ajuste.</a></li>
 <li class="chapter" data-level="11.7" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#primer-ejemplo"><i class="fa fa-check"></i><b>11.7</b> Primer ejemplo</a></li>
 <li class="chapter" data-level="11.8" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#segundo-ejemplo"><i class="fa fa-check"></i><b>11.8</b> Segundo ejemplo</a></li>
-<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste</a></li>
+<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste, Tabla de contingencia RxC</a></li>
 <li class="chapter" data-level="11.10" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gráfico-de-mosaico"><i class="fa fa-check"></i><b>11.10</b> Gráfico de Mosaico</a></li>
 <li class="chapter" data-level="11.11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia-de-frecuencia."><i class="fa fa-check"></i><b>11.11</b> Prueba de Independencia de frecuencia.</a></li>
 <li class="chapter" data-level="11.12" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-función-crosstable"><i class="fa fa-check"></i><b>11.12</b> La función <em>CrossTable</em></a></li>
@@ -865,10 +865,10 @@ div.csl-indent {
 <li>Surv_Index = “0” o “1”</li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb637"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb637-1"><a href="ejercicios-g.html#cb637-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb637-2"><a href="ejercicios-g.html#cb637-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb637-3"><a href="ejercicios-g.html#cb637-3" tabindex="-1"></a>Karn_Penrose_infant_survivorship <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Karn_Penrose_infant_survivorship.csv&quot;</span>)</span>
-<span id="cb637-4"><a href="ejercicios-g.html#cb637-4" tabindex="-1"></a>KPdata<span class="ot">=</span>Karn_Penrose_infant_survivorship</span></code></pre></div>
+<div class="sourceCode" id="cb638"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb638-1"><a href="ejercicios-g.html#cb638-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb638-2"><a href="ejercicios-g.html#cb638-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb638-3"><a href="ejercicios-g.html#cb638-3" tabindex="-1"></a>Karn_Penrose_infant_survivorship <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Karn_Penrose_infant_survivorship.csv&quot;</span>)</span>
+<span id="cb638-4"><a href="ejercicios-g.html#cb638-4" tabindex="-1"></a>KPdata<span class="ot">=</span>Karn_Penrose_infant_survivorship</span></code></pre></div>
 </details>
 <hr />
 <ol style="list-style-type: decimal">

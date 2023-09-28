@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-09-20" />
+<meta name="date" content="2023-09-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -372,7 +372,7 @@ div.csl-indent {
 <li class="chapter" data-level="11.6" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste."><i class="fa fa-check"></i><b>11.6</b> Bondad de Ajuste.</a></li>
 <li class="chapter" data-level="11.7" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#primer-ejemplo"><i class="fa fa-check"></i><b>11.7</b> Primer ejemplo</a></li>
 <li class="chapter" data-level="11.8" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#segundo-ejemplo"><i class="fa fa-check"></i><b>11.8</b> Segundo ejemplo</a></li>
-<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste</a></li>
+<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste, Tabla de contingencia RxC</a></li>
 <li class="chapter" data-level="11.10" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gráfico-de-mosaico"><i class="fa fa-check"></i><b>11.10</b> Gráfico de Mosaico</a></li>
 <li class="chapter" data-level="11.11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia-de-frecuencia."><i class="fa fa-check"></i><b>11.11</b> Prueba de Independencia de frecuencia.</a></li>
 <li class="chapter" data-level="11.12" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-función-crosstable"><i class="fa fa-check"></i><b>11.12</b> La función <em>CrossTable</em></a></li>
@@ -867,20 +867,20 @@ div.csl-indent {
 <hr />
 <p>Los Datos: Los datos muestran el número de “homerun” al bate de la liga Americana de baseball en los ultimos 30 años. Cada número es la cantidad máxima de Homerun en uno de los años.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb662"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb662-1"><a href="quiz-1.html#cb662-1" tabindex="-1"></a>HOMERUN <span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb662-2"><a href="quiz-1.html#cb662-2" tabindex="-1"></a>  <span class="sc">~</span><span class="st">&quot;Numeros_Homerum&quot;</span>,</span>
-<span id="cb662-3"><a href="quiz-1.html#cb662-3" tabindex="-1"></a>  <span class="dv">40</span>,  <span class="dv">43</span>, <span class="dv">40</span>, <span class="dv">53</span>, <span class="dv">47</span>, </span>
-<span id="cb662-4"><a href="quiz-1.html#cb662-4" tabindex="-1"></a>  <span class="dv">46</span>, <span class="dv">44</span>, <span class="dv">57</span>, <span class="dv">43</span>, <span class="dv">43</span>, </span>
-<span id="cb662-5"><a href="quiz-1.html#cb662-5" tabindex="-1"></a>  <span class="dv">52</span>, <span class="dv">44</span>, <span class="dv">54</span>, <span class="dv">47</span>, <span class="dv">51</span>, </span>
-<span id="cb662-6"><a href="quiz-1.html#cb662-6" tabindex="-1"></a>  <span class="dv">39</span>, <span class="dv">48</span>, <span class="dv">36</span>, <span class="dv">37</span>, <span class="dv">56</span>, </span>
-<span id="cb662-7"><a href="quiz-1.html#cb662-7" tabindex="-1"></a>  <span class="dv">42</span>, <span class="dv">54</span>, <span class="dv">56</span>, <span class="dv">49</span>, <span class="dv">54</span>,</span>
-<span id="cb662-8"><a href="quiz-1.html#cb662-8" tabindex="-1"></a>  <span class="dv">52</span>, <span class="dv">40</span>, <span class="dv">48</span>, <span class="dv">50</span>, <span class="dv">40</span></span>
-<span id="cb662-9"><a href="quiz-1.html#cb662-9" tabindex="-1"></a>)</span>
-<span id="cb662-10"><a href="quiz-1.html#cb662-10" tabindex="-1"></a></span>
-<span id="cb662-11"><a href="quiz-1.html#cb662-11" tabindex="-1"></a>HOMERUN</span></code></pre></div>
+<div class="sourceCode" id="cb663"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb663-1"><a href="quiz-1.html#cb663-1" tabindex="-1"></a>HOMERUN <span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb663-2"><a href="quiz-1.html#cb663-2" tabindex="-1"></a>  <span class="sc">~</span><span class="st">&quot;Numeros_Homerum&quot;</span>,</span>
+<span id="cb663-3"><a href="quiz-1.html#cb663-3" tabindex="-1"></a>  <span class="dv">40</span>,  <span class="dv">43</span>, <span class="dv">40</span>, <span class="dv">53</span>, <span class="dv">47</span>, </span>
+<span id="cb663-4"><a href="quiz-1.html#cb663-4" tabindex="-1"></a>  <span class="dv">46</span>, <span class="dv">44</span>, <span class="dv">57</span>, <span class="dv">43</span>, <span class="dv">43</span>, </span>
+<span id="cb663-5"><a href="quiz-1.html#cb663-5" tabindex="-1"></a>  <span class="dv">52</span>, <span class="dv">44</span>, <span class="dv">54</span>, <span class="dv">47</span>, <span class="dv">51</span>, </span>
+<span id="cb663-6"><a href="quiz-1.html#cb663-6" tabindex="-1"></a>  <span class="dv">39</span>, <span class="dv">48</span>, <span class="dv">36</span>, <span class="dv">37</span>, <span class="dv">56</span>, </span>
+<span id="cb663-7"><a href="quiz-1.html#cb663-7" tabindex="-1"></a>  <span class="dv">42</span>, <span class="dv">54</span>, <span class="dv">56</span>, <span class="dv">49</span>, <span class="dv">54</span>,</span>
+<span id="cb663-8"><a href="quiz-1.html#cb663-8" tabindex="-1"></a>  <span class="dv">52</span>, <span class="dv">40</span>, <span class="dv">48</span>, <span class="dv">50</span>, <span class="dv">40</span></span>
+<span id="cb663-9"><a href="quiz-1.html#cb663-9" tabindex="-1"></a>)</span>
+<span id="cb663-10"><a href="quiz-1.html#cb663-10" tabindex="-1"></a></span>
+<span id="cb663-11"><a href="quiz-1.html#cb663-11" tabindex="-1"></a>HOMERUN</span></code></pre></div>
 </details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-279">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-279">Table R.1: </span> </caption><col><tr>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-280">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-280">Table R.1: </span> </caption><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Numeros_Homerum</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">40</td></tr>

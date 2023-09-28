@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-09-20" />
+<meta name="date" content="2023-09-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -372,7 +372,7 @@ div.csl-indent {
 <li class="chapter" data-level="11.6" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste."><i class="fa fa-check"></i><b>11.6</b> Bondad de Ajuste.</a></li>
 <li class="chapter" data-level="11.7" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#primer-ejemplo"><i class="fa fa-check"></i><b>11.7</b> Primer ejemplo</a></li>
 <li class="chapter" data-level="11.8" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#segundo-ejemplo"><i class="fa fa-check"></i><b>11.8</b> Segundo ejemplo</a></li>
-<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste</a></li>
+<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste, Tabla de contingencia RxC</a></li>
 <li class="chapter" data-level="11.10" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gráfico-de-mosaico"><i class="fa fa-check"></i><b>11.10</b> Gráfico de Mosaico</a></li>
 <li class="chapter" data-level="11.11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia-de-frecuencia."><i class="fa fa-check"></i><b>11.11</b> Prueba de Independencia de frecuencia.</a></li>
 <li class="chapter" data-level="11.12" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-función-crosstable"><i class="fa fa-check"></i><b>11.12</b> La función <em>CrossTable</em></a></li>
@@ -848,10 +848,10 @@ div.csl-indent {
 <p>Los datos representa la gravedad de lesiones que tienen niños que se disfrazan de su superheroes favorito y después llegan a un hospital por alguna lesión. Los niños son categorizados con un nivel gravedad de lesión, más alto el valor más serio era la lesión. Los datos provienen de Field et al. </p>
 <p>Subir los datos de <strong>Superhero.csv</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb630"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb630-1"><a href="ejercicios-e.html#cb630-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb630-2"><a href="ejercicios-e.html#cb630-2" tabindex="-1"></a>Superhero <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Superhero.csv&quot;</span>)</span>
-<span id="cb630-3"><a href="ejercicios-e.html#cb630-3" tabindex="-1"></a></span>
-<span id="cb630-4"><a href="ejercicios-e.html#cb630-4" tabindex="-1"></a><span class="fu">head</span>(Superhero)</span></code></pre></div>
+<div class="sourceCode" id="cb631"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb631-1"><a href="ejercicios-e.html#cb631-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb631-2"><a href="ejercicios-e.html#cb631-2" tabindex="-1"></a>Superhero <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Superhero.csv&quot;</span>)</span>
+<span id="cb631-3"><a href="ejercicios-e.html#cb631-3" tabindex="-1"></a></span>
+<span id="cb631-4"><a href="ejercicios-e.html#cb631-4" tabindex="-1"></a><span class="fu">head</span>(Superhero)</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:data super heroes2">
 <caption style="caption-side: top; text-align: center;">(#tab:data super heroes2) </caption><col><col><tr>
@@ -871,15 +871,15 @@ div.csl-indent {
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb631"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb631-1"><a href="ejercicios-e.html#cb631-1" tabindex="-1"></a><span class="fu">unique</span>(Superhero<span class="sc">$</span>heronames)</span></code></pre></div>
+<div class="sourceCode" id="cb632"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb632-1"><a href="ejercicios-e.html#cb632-1" tabindex="-1"></a><span class="fu">unique</span>(Superhero<span class="sc">$</span>heronames)</span></code></pre></div>
 </details>
 <pre><code>## NULL</code></pre>
 <p>Renombrar los nombres de las categorías para los tipos de Superheroes. En el archivo como están identificados las categorías de superheroes?</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb633"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb633-1"><a href="ejercicios-e.html#cb633-1" tabindex="-1"></a><span class="co">#Superhero</span></span>
-<span id="cb633-2"><a href="ejercicios-e.html#cb633-2" tabindex="-1"></a>Superhero<span class="sc">$</span>heronames<span class="ot">&lt;-</span><span class="fu">factor</span>(Superhero<span class="sc">$</span>hero, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), </span>
-<span id="cb633-3"><a href="ejercicios-e.html#cb633-3" tabindex="-1"></a>     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Spiderman&quot;</span>,<span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Hulk&quot;</span>, <span class="st">&quot;Ninja Turtle&quot;</span>))</span>
-<span id="cb633-4"><a href="ejercicios-e.html#cb633-4" tabindex="-1"></a>Superhero</span></code></pre></div>
+<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb634-1"><a href="ejercicios-e.html#cb634-1" tabindex="-1"></a><span class="co">#Superhero</span></span>
+<span id="cb634-2"><a href="ejercicios-e.html#cb634-2" tabindex="-1"></a>Superhero<span class="sc">$</span>heronames<span class="ot">&lt;-</span><span class="fu">factor</span>(Superhero<span class="sc">$</span>hero, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), </span>
+<span id="cb634-3"><a href="ejercicios-e.html#cb634-3" tabindex="-1"></a>     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Spiderman&quot;</span>,<span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Hulk&quot;</span>, <span class="st">&quot;Ninja Turtle&quot;</span>))</span>
+<span id="cb634-4"><a href="ejercicios-e.html#cb634-4" tabindex="-1"></a>Superhero</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:rename variables2">
 <caption style="caption-side: top; text-align: center;">(#tab:rename variables2) </caption><col><col><col><tr>
@@ -947,7 +947,7 @@ div.csl-indent {
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb634"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb634-1"><a href="ejercicios-e.html#cb634-1" tabindex="-1"></a><span class="fu">names</span>(Superhero)</span></code></pre></div>
+<div class="sourceCode" id="cb635"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb635-1"><a href="ejercicios-e.html#cb635-1" tabindex="-1"></a><span class="fu">names</span>(Superhero)</span></code></pre></div>
 </details>
 <pre><code>## [1] &quot;hero&quot;      &quot;injury&quot;    &quot;heronames&quot;</code></pre>
 </div>

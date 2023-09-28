@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-09-20" />
+<meta name="date" content="2023-09-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -372,7 +372,7 @@ div.csl-indent {
 <li class="chapter" data-level="11.6" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste."><i class="fa fa-check"></i><b>11.6</b> Bondad de Ajuste.</a></li>
 <li class="chapter" data-level="11.7" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#primer-ejemplo"><i class="fa fa-check"></i><b>11.7</b> Primer ejemplo</a></li>
 <li class="chapter" data-level="11.8" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#segundo-ejemplo"><i class="fa fa-check"></i><b>11.8</b> Segundo ejemplo</a></li>
-<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste</a></li>
+<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste, Tabla de contingencia RxC</a></li>
 <li class="chapter" data-level="11.10" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gráfico-de-mosaico"><i class="fa fa-check"></i><b>11.10</b> Gráfico de Mosaico</a></li>
 <li class="chapter" data-level="11.11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia-de-frecuencia."><i class="fa fa-check"></i><b>11.11</b> Prueba de Independencia de frecuencia.</a></li>
 <li class="chapter" data-level="11.12" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-función-crosstable"><i class="fa fa-check"></i><b>11.12</b> La función <em>CrossTable</em></a></li>
@@ -941,9 +941,9 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <span id="cb25-2"><a href="medida-de-tendencia-central.html#cb25-2" tabindex="-1"></a>df1<span class="ot">=</span><span class="fu">data.frame</span>(df)</span>
 <span id="cb25-3"><a href="medida-de-tendencia-central.html#cb25-3" tabindex="-1"></a><span class="fu">head</span>(df1, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
 </details>
-<pre><code>##   df
-## 1 91
-## 2 97</code></pre>
+<pre><code>##    df
+## 1 108
+## 2  88</code></pre>
 <p>Lo que uno observa es que los tres valores son muy cercano uno del otro.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="medida-de-tendencia-central.html#cb27-1" tabindex="-1"></a><span class="co">#mean(df1$df)</span></span>
@@ -957,7 +957,7 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <span id="cb28-3"><a href="medida-de-tendencia-central.html#cb28-3" tabindex="-1"></a>mod99<span class="ot">=</span><span class="fu">mode</span>(df1<span class="sc">$</span>df)</span>
 <span id="cb28-4"><a href="medida-de-tendencia-central.html#cb28-4" tabindex="-1"></a>mod99</span></code></pre></div>
 </details>
-<pre><code>## [1] 98</code></pre>
+<pre><code>## [1] 99</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="medida-de-tendencia-central.html#cb30-1" tabindex="-1"></a>a<span class="ot">=</span><span class="fu">ggplot</span>(df1, <span class="fu">aes</span>(df))<span class="sc">+</span></span>
 <span id="cb30-2"><a href="medida-de-tendencia-central.html#cb30-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">binwidth =</span> <span class="dv">1</span>)<span class="sc">+</span></span>
@@ -1056,9 +1056,9 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 </details>
 <pre><code>##   dfBin
 ## 1     0
-## 2     0
+## 2     1
 ## 3     0
-## 4     1
+## 4     0
 ## 5     1
 ## 6     0</code></pre>
 <p>Ahora vamos a producir el gráfico. Lo que uno observa es que el promedio esta en el centro cerca de .6, pero no hay ningún dato cerca del promedio. El promedio no representa la “tendencia central” de la distribución.</p>
@@ -1068,7 +1068,7 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <span id="cb40-3"><a href="medida-de-tendencia-central.html#cb40-3" tabindex="-1"></a>mod<span class="ot">=</span><span class="fu">mode</span>(dfBin<span class="sc">$</span>dfBin)</span>
 <span id="cb40-4"><a href="medida-de-tendencia-central.html#cb40-4" tabindex="-1"></a>mea</span></code></pre></div>
 </details>
-<pre><code>## [1] 0.6041</code></pre>
+<pre><code>## [1] 0.5949</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="medida-de-tendencia-central.html#cb42-1" tabindex="-1"></a><span class="fu">ggplot</span>(dfBin, <span class="fu">aes</span>(dfBin))<span class="sc">+</span></span>
 <span id="cb42-2"><a href="medida-de-tendencia-central.html#cb42-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>

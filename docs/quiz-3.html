@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-09-20" />
+<meta name="date" content="2023-09-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -372,7 +372,7 @@ div.csl-indent {
 <li class="chapter" data-level="11.6" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste."><i class="fa fa-check"></i><b>11.6</b> Bondad de Ajuste.</a></li>
 <li class="chapter" data-level="11.7" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#primer-ejemplo"><i class="fa fa-check"></i><b>11.7</b> Primer ejemplo</a></li>
 <li class="chapter" data-level="11.8" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#segundo-ejemplo"><i class="fa fa-check"></i><b>11.8</b> Segundo ejemplo</a></li>
-<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste</a></li>
+<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste, Tabla de contingencia RxC</a></li>
 <li class="chapter" data-level="11.10" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gráfico-de-mosaico"><i class="fa fa-check"></i><b>11.10</b> Gráfico de Mosaico</a></li>
 <li class="chapter" data-level="11.11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia-de-frecuencia."><i class="fa fa-check"></i><b>11.11</b> Prueba de Independencia de frecuencia.</a></li>
 <li class="chapter" data-level="11.12" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-función-crosstable"><i class="fa fa-check"></i><b>11.12</b> La función <em>CrossTable</em></a></li>
@@ -847,16 +847,16 @@ div.csl-indent {
 <p>Use los datos siguientes para la primera pregunta</p>
 <p>Aqui se encuentra un grupo de datos de la distancia a estrellas en años luz.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb663"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb663-1"><a href="quiz-3.html#cb663-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb663-2"><a href="quiz-3.html#cb663-2" tabindex="-1"></a>Distancia_Estrellas<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>Distancia,</span>
-<span id="cb663-3"><a href="quiz-3.html#cb663-3" tabindex="-1"></a>  <span class="fl">8.6</span>,<span class="fl">36.7</span>,<span class="fl">42.2</span>,<span class="fl">16.8</span>,<span class="fl">33.7</span>,<span class="fl">87.9</span>,<span class="fl">4.4</span>,<span class="fl">25.3</span>,<span class="fl">11.4</span>,<span class="fl">25.1</span>,<span class="fl">51.5</span></span>
-<span id="cb663-4"><a href="quiz-3.html#cb663-4" tabindex="-1"></a>)</span>
-<span id="cb663-5"><a href="quiz-3.html#cb663-5" tabindex="-1"></a></span>
-<span id="cb663-6"><a href="quiz-3.html#cb663-6" tabindex="-1"></a>Distancia_Estrellas</span></code></pre></div>
+<div class="sourceCode" id="cb664"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb664-1"><a href="quiz-3.html#cb664-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb664-2"><a href="quiz-3.html#cb664-2" tabindex="-1"></a>Distancia_Estrellas<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>Distancia,</span>
+<span id="cb664-3"><a href="quiz-3.html#cb664-3" tabindex="-1"></a>  <span class="fl">8.6</span>,<span class="fl">36.7</span>,<span class="fl">42.2</span>,<span class="fl">16.8</span>,<span class="fl">33.7</span>,<span class="fl">87.9</span>,<span class="fl">4.4</span>,<span class="fl">25.3</span>,<span class="fl">11.4</span>,<span class="fl">25.1</span>,<span class="fl">51.5</span></span>
+<span id="cb664-4"><a href="quiz-3.html#cb664-4" tabindex="-1"></a>)</span>
+<span id="cb664-5"><a href="quiz-3.html#cb664-5" tabindex="-1"></a></span>
+<span id="cb664-6"><a href="quiz-3.html#cb664-6" tabindex="-1"></a>Distancia_Estrellas</span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb664"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb664-1"><a href="quiz-3.html#cb664-1" tabindex="-1"></a><span class="fu">sd</span>(</span>
-<span id="cb664-2"><a href="quiz-3.html#cb664-2" tabindex="-1"></a>Distancia_Estrellas<span class="sc">$</span>Distancia)</span></code></pre></div>
+<div class="sourceCode" id="cb665"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb665-1"><a href="quiz-3.html#cb665-1" tabindex="-1"></a><span class="fu">sd</span>(</span>
+<span id="cb665-2"><a href="quiz-3.html#cb665-2" tabindex="-1"></a>Distancia_Estrellas<span class="sc">$</span>Distancia)</span></code></pre></div>
 </details>
 <pre><code>## [1] 23.843</code></pre>
 <hr />
@@ -865,92 +865,92 @@ div.csl-indent {
 <h2><span class="header-section-number">S.2</span> Pregunta 2<a href="quiz-3.html#pregunta-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Use los siguientes datos para la segunda pregunta</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb666"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb666-1"><a href="quiz-3.html#cb666-1" tabindex="-1"></a>Pop_PR_2022 <span class="ot">=</span> <span class="fu">tribble</span>(</span>
-<span id="cb666-2"><a href="quiz-3.html#cb666-2" tabindex="-1"></a><span class="sc">~</span>Anio,  <span class="sc">~</span>Municipality,  <span class="sc">~</span>Pop_N,</span>
-<span id="cb666-3"><a href="quiz-3.html#cb666-3" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Adjuntas&quot;</span>, <span class="dv">17905</span>,</span>
-<span id="cb666-4"><a href="quiz-3.html#cb666-4" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Aguada&quot;</span>,   <span class="dv">37666</span>,</span>
-<span id="cb666-5"><a href="quiz-3.html#cb666-5" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Aguadilla&quot;</span>,    <span class="dv">53931</span>,</span>
-<span id="cb666-6"><a href="quiz-3.html#cb666-6" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Aguas Buenas&quot;</span>, <span class="dv">23538</span>,</span>
-<span id="cb666-7"><a href="quiz-3.html#cb666-7" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Aibonito&quot;</span>, <span class="dv">24555</span>,</span>
-<span id="cb666-8"><a href="quiz-3.html#cb666-8" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Anasco&quot;</span>,   <span class="dv">25026</span>,</span>
-<span id="cb666-9"><a href="quiz-3.html#cb666-9" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Arecibo&quot;</span>,  <span class="dv">86090</span>,</span>
-<span id="cb666-10"><a href="quiz-3.html#cb666-10" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Arroyo&quot;</span>,   <span class="dv">15289</span>,</span>
-<span id="cb666-11"><a href="quiz-3.html#cb666-11" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Barceloneta&quot;</span>,  <span class="dv">22416</span>,</span>
-<span id="cb666-12"><a href="quiz-3.html#cb666-12" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Barranquitas&quot;</span>, <span class="dv">28944</span>,</span>
-<span id="cb666-13"><a href="quiz-3.html#cb666-13" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Bayamon&quot;</span>,  <span class="dv">181577</span>,</span>
-<span id="cb666-14"><a href="quiz-3.html#cb666-14" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Cabo Rojo&quot;</span>,    <span class="dv">46718</span>,</span>
-<span id="cb666-15"><a href="quiz-3.html#cb666-15" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Caguas&quot;</span>,   <span class="dv">125136</span>,</span>
-<span id="cb666-16"><a href="quiz-3.html#cb666-16" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Camuy&quot;</span>,    <span class="dv">32620</span>,</span>
-<span id="cb666-17"><a href="quiz-3.html#cb666-17" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Canovanas&quot;</span>,    <span class="dv">41637</span>,</span>
-<span id="cb666-18"><a href="quiz-3.html#cb666-18" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Carolina&quot;</span>, <span class="dv">151571</span>,</span>
-<span id="cb666-19"><a href="quiz-3.html#cb666-19" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Catano&quot;</span>,   <span class="dv">22364</span>,</span>
-<span id="cb666-20"><a href="quiz-3.html#cb666-20" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Cayey&quot;</span>,    <span class="dv">40782</span>,</span>
-<span id="cb666-21"><a href="quiz-3.html#cb666-21" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Ceiba&quot;</span>,    <span class="dv">10931</span>,</span>
-<span id="cb666-22"><a href="quiz-3.html#cb666-22" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Ciales&quot;</span>,   <span class="dv">16742</span>,</span>
-<span id="cb666-23"><a href="quiz-3.html#cb666-23" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Cidra&quot;</span>,    <span class="dv">39515</span>,</span>
-<span id="cb666-24"><a href="quiz-3.html#cb666-24" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Coamo&quot;</span>,    <span class="dv">33887</span>,</span>
-<span id="cb666-25"><a href="quiz-3.html#cb666-25" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Comerio&quot;</span>,  <span class="dv">18619</span>,</span>
-<span id="cb666-26"><a href="quiz-3.html#cb666-26" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Corozal&quot;</span>,  <span class="dv">34322</span>,</span>
-<span id="cb666-27"><a href="quiz-3.html#cb666-27" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Culebra&quot;</span>,  <span class="dv">1769</span>,</span>
-<span id="cb666-28"><a href="quiz-3.html#cb666-28" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Dorado&quot;</span>,   <span class="dv">35663</span>,</span>
-<span id="cb666-29"><a href="quiz-3.html#cb666-29" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Fajardo&quot;</span>,  <span class="dv">31375</span>,</span>
-<span id="cb666-30"><a href="quiz-3.html#cb666-30" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Florida&quot;</span>,  <span class="dv">11538</span>,</span>
-<span id="cb666-31"><a href="quiz-3.html#cb666-31" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Guanica&quot;</span>,  <span class="dv">12800</span>,</span>
-<span id="cb666-32"><a href="quiz-3.html#cb666-32" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Guayama&quot;</span>,  <span class="dv">35262</span>,</span>
-<span id="cb666-33"><a href="quiz-3.html#cb666-33" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Guayanilla&quot;</span>,   <span class="dv">17064</span>,</span>
-<span id="cb666-34"><a href="quiz-3.html#cb666-34" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Guaynabo&quot;</span>, <span class="dv">89057</span>,</span>
-<span id="cb666-35"><a href="quiz-3.html#cb666-35" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Gurabo&quot;</span>,   <span class="dv">40061</span>,</span>
-<span id="cb666-36"><a href="quiz-3.html#cb666-36" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Hatillo&quot;</span>,  <span class="dv">38021</span>,</span>
-<span id="cb666-37"><a href="quiz-3.html#cb666-37" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Hormigueros&quot;</span>,  <span class="dv">15413</span>,</span>
-<span id="cb666-38"><a href="quiz-3.html#cb666-38" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Humacao&quot;</span>,  <span class="dv">49924</span>,</span>
-<span id="cb666-39"><a href="quiz-3.html#cb666-39" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Isabela&quot;</span>,  <span class="dv">42754</span>,</span>
-<span id="cb666-40"><a href="quiz-3.html#cb666-40" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Jayuya&quot;</span>,   <span class="dv">14495</span>,</span>
-<span id="cb666-41"><a href="quiz-3.html#cb666-41" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Juana Diaz&quot;</span>,   <span class="dv">45923</span>,</span>
-<span id="cb666-42"><a href="quiz-3.html#cb666-42" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Juncos&quot;</span>,   <span class="dv">36672</span>,</span>
-<span id="cb666-43"><a href="quiz-3.html#cb666-43" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Lajas&quot;</span>,    <span class="dv">22936</span>,</span>
-<span id="cb666-44"><a href="quiz-3.html#cb666-44" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Lares&quot;</span>,    <span class="dv">27774</span>,</span>
-<span id="cb666-45"><a href="quiz-3.html#cb666-45" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Las Marias&quot;</span>,   <span class="dv">8705</span>,</span>
-<span id="cb666-46"><a href="quiz-3.html#cb666-46" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Las Piedras&quot;</span>,  <span class="dv">34814</span>,</span>
-<span id="cb666-47"><a href="quiz-3.html#cb666-47" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Loiza&quot;</span>,    <span class="dv">22657</span>,</span>
-<span id="cb666-48"><a href="quiz-3.html#cb666-48" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Luquillo&quot;</span>, <span class="dv">17449</span>,</span>
-<span id="cb666-49"><a href="quiz-3.html#cb666-49" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Manati&quot;</span>,   <span class="dv">38751</span>,</span>
-<span id="cb666-50"><a href="quiz-3.html#cb666-50" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Maricao&quot;</span>,  <span class="dv">4575</span>,</span>
-<span id="cb666-51"><a href="quiz-3.html#cb666-51" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Maunabo&quot;</span>,  <span class="dv">10368</span>,</span>
-<span id="cb666-52"><a href="quiz-3.html#cb666-52" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Mayaguez&quot;</span>, <span class="dv">70609</span>,</span>
-<span id="cb666-53"><a href="quiz-3.html#cb666-53" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Moca&quot;</span>, <span class="dv">37279</span>,</span>
-<span id="cb666-54"><a href="quiz-3.html#cb666-54" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Morovis&quot;</span>,  <span class="dv">28277</span>,</span>
-<span id="cb666-55"><a href="quiz-3.html#cb666-55" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Naguabo&quot;</span>,  <span class="dv">22964</span>,</span>
-<span id="cb666-56"><a href="quiz-3.html#cb666-56" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Naranjito&quot;</span>,    <span class="dv">29208</span>,</span>
-<span id="cb666-57"><a href="quiz-3.html#cb666-57" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Orocovis&quot;</span>, <span class="dv">21229</span>,</span>
-<span id="cb666-58"><a href="quiz-3.html#cb666-58" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Patillas&quot;</span>, <span class="dv">15524</span>,</span>
-<span id="cb666-59"><a href="quiz-3.html#cb666-59" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Penuelas&quot;</span>, <span class="dv">19763</span>,</span>
-<span id="cb666-60"><a href="quiz-3.html#cb666-60" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Ponce&quot;</span>,    <span class="dv">132138</span>,</span>
-<span id="cb666-61"><a href="quiz-3.html#cb666-61" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Quebradillas&quot;</span>, <span class="dv">23332</span>,</span>
-<span id="cb666-62"><a href="quiz-3.html#cb666-62" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Rincon&quot;</span>,   <span class="dv">15316</span>,</span>
-<span id="cb666-63"><a href="quiz-3.html#cb666-63" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Rio Grande&quot;</span>,   <span class="dv">45840</span>,</span>
-<span id="cb666-64"><a href="quiz-3.html#cb666-64" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Sabana Grande&quot;</span>,    <span class="dv">22351</span>,</span>
-<span id="cb666-65"><a href="quiz-3.html#cb666-65" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Salinas&quot;</span>,  <span class="dv">25000</span>,</span>
-<span id="cb666-66"><a href="quiz-3.html#cb666-66" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;San German&quot;</span>,   <span class="dv">31174</span>,</span>
-<span id="cb666-67"><a href="quiz-3.html#cb666-67" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;San Juan&quot;</span>, <span class="dv">334776</span>,</span>
-<span id="cb666-68"><a href="quiz-3.html#cb666-68" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;San Lorenzo&quot;</span>,  <span class="dv">37260</span>,</span>
-<span id="cb666-69"><a href="quiz-3.html#cb666-69" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;San Sebastian&quot;</span>,    <span class="dv">38969</span>,</span>
-<span id="cb666-70"><a href="quiz-3.html#cb666-70" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Santa Isabel&quot;</span>, <span class="dv">19822</span>,</span>
-<span id="cb666-71"><a href="quiz-3.html#cb666-71" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Toa Alta&quot;</span>, <span class="dv">66041</span>,</span>
-<span id="cb666-72"><a href="quiz-3.html#cb666-72" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Toa Baja&quot;</span>, <span class="dv">72783</span>,</span>
-<span id="cb666-73"><a href="quiz-3.html#cb666-73" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Trujillo Alto&quot;</span>,    <span class="dv">66810</span>,</span>
-<span id="cb666-74"><a href="quiz-3.html#cb666-74" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Utuado&quot;</span>,   <span class="dv">27535</span>,</span>
-<span id="cb666-75"><a href="quiz-3.html#cb666-75" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Vega Alta&quot;</span>,    <span class="dv">34786</span>,</span>
-<span id="cb666-76"><a href="quiz-3.html#cb666-76" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Vega Baja&quot;</span>,    <span class="dv">53684</span>,</span>
-<span id="cb666-77"><a href="quiz-3.html#cb666-77" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Vieques&quot;</span>,  <span class="dv">8043</span>,</span>
-<span id="cb666-78"><a href="quiz-3.html#cb666-78" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Villalba&quot;</span>, <span class="dv">21466</span>,</span>
-<span id="cb666-79"><a href="quiz-3.html#cb666-79" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Yabucoa&quot;</span>,  <span class="dv">29305</span>,</span>
-<span id="cb666-80"><a href="quiz-3.html#cb666-80" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Yauco&quot;</span>,    <span class="dv">32904</span>,</span>
-<span id="cb666-81"><a href="quiz-3.html#cb666-81" tabindex="-1"></a>)</span>
-<span id="cb666-82"><a href="quiz-3.html#cb666-82" tabindex="-1"></a></span>
-<span id="cb666-83"><a href="quiz-3.html#cb666-83" tabindex="-1"></a>Pop_PR_2022</span></code></pre></div>
+<div class="sourceCode" id="cb667"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb667-1"><a href="quiz-3.html#cb667-1" tabindex="-1"></a>Pop_PR_2022 <span class="ot">=</span> <span class="fu">tribble</span>(</span>
+<span id="cb667-2"><a href="quiz-3.html#cb667-2" tabindex="-1"></a><span class="sc">~</span>Anio,  <span class="sc">~</span>Municipality,  <span class="sc">~</span>Pop_N,</span>
+<span id="cb667-3"><a href="quiz-3.html#cb667-3" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Adjuntas&quot;</span>, <span class="dv">17905</span>,</span>
+<span id="cb667-4"><a href="quiz-3.html#cb667-4" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Aguada&quot;</span>,   <span class="dv">37666</span>,</span>
+<span id="cb667-5"><a href="quiz-3.html#cb667-5" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Aguadilla&quot;</span>,    <span class="dv">53931</span>,</span>
+<span id="cb667-6"><a href="quiz-3.html#cb667-6" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Aguas Buenas&quot;</span>, <span class="dv">23538</span>,</span>
+<span id="cb667-7"><a href="quiz-3.html#cb667-7" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Aibonito&quot;</span>, <span class="dv">24555</span>,</span>
+<span id="cb667-8"><a href="quiz-3.html#cb667-8" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Anasco&quot;</span>,   <span class="dv">25026</span>,</span>
+<span id="cb667-9"><a href="quiz-3.html#cb667-9" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Arecibo&quot;</span>,  <span class="dv">86090</span>,</span>
+<span id="cb667-10"><a href="quiz-3.html#cb667-10" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Arroyo&quot;</span>,   <span class="dv">15289</span>,</span>
+<span id="cb667-11"><a href="quiz-3.html#cb667-11" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Barceloneta&quot;</span>,  <span class="dv">22416</span>,</span>
+<span id="cb667-12"><a href="quiz-3.html#cb667-12" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Barranquitas&quot;</span>, <span class="dv">28944</span>,</span>
+<span id="cb667-13"><a href="quiz-3.html#cb667-13" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Bayamon&quot;</span>,  <span class="dv">181577</span>,</span>
+<span id="cb667-14"><a href="quiz-3.html#cb667-14" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Cabo Rojo&quot;</span>,    <span class="dv">46718</span>,</span>
+<span id="cb667-15"><a href="quiz-3.html#cb667-15" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Caguas&quot;</span>,   <span class="dv">125136</span>,</span>
+<span id="cb667-16"><a href="quiz-3.html#cb667-16" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Camuy&quot;</span>,    <span class="dv">32620</span>,</span>
+<span id="cb667-17"><a href="quiz-3.html#cb667-17" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Canovanas&quot;</span>,    <span class="dv">41637</span>,</span>
+<span id="cb667-18"><a href="quiz-3.html#cb667-18" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Carolina&quot;</span>, <span class="dv">151571</span>,</span>
+<span id="cb667-19"><a href="quiz-3.html#cb667-19" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Catano&quot;</span>,   <span class="dv">22364</span>,</span>
+<span id="cb667-20"><a href="quiz-3.html#cb667-20" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Cayey&quot;</span>,    <span class="dv">40782</span>,</span>
+<span id="cb667-21"><a href="quiz-3.html#cb667-21" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Ceiba&quot;</span>,    <span class="dv">10931</span>,</span>
+<span id="cb667-22"><a href="quiz-3.html#cb667-22" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Ciales&quot;</span>,   <span class="dv">16742</span>,</span>
+<span id="cb667-23"><a href="quiz-3.html#cb667-23" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Cidra&quot;</span>,    <span class="dv">39515</span>,</span>
+<span id="cb667-24"><a href="quiz-3.html#cb667-24" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Coamo&quot;</span>,    <span class="dv">33887</span>,</span>
+<span id="cb667-25"><a href="quiz-3.html#cb667-25" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Comerio&quot;</span>,  <span class="dv">18619</span>,</span>
+<span id="cb667-26"><a href="quiz-3.html#cb667-26" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Corozal&quot;</span>,  <span class="dv">34322</span>,</span>
+<span id="cb667-27"><a href="quiz-3.html#cb667-27" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Culebra&quot;</span>,  <span class="dv">1769</span>,</span>
+<span id="cb667-28"><a href="quiz-3.html#cb667-28" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Dorado&quot;</span>,   <span class="dv">35663</span>,</span>
+<span id="cb667-29"><a href="quiz-3.html#cb667-29" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Fajardo&quot;</span>,  <span class="dv">31375</span>,</span>
+<span id="cb667-30"><a href="quiz-3.html#cb667-30" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Florida&quot;</span>,  <span class="dv">11538</span>,</span>
+<span id="cb667-31"><a href="quiz-3.html#cb667-31" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Guanica&quot;</span>,  <span class="dv">12800</span>,</span>
+<span id="cb667-32"><a href="quiz-3.html#cb667-32" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Guayama&quot;</span>,  <span class="dv">35262</span>,</span>
+<span id="cb667-33"><a href="quiz-3.html#cb667-33" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Guayanilla&quot;</span>,   <span class="dv">17064</span>,</span>
+<span id="cb667-34"><a href="quiz-3.html#cb667-34" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Guaynabo&quot;</span>, <span class="dv">89057</span>,</span>
+<span id="cb667-35"><a href="quiz-3.html#cb667-35" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Gurabo&quot;</span>,   <span class="dv">40061</span>,</span>
+<span id="cb667-36"><a href="quiz-3.html#cb667-36" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Hatillo&quot;</span>,  <span class="dv">38021</span>,</span>
+<span id="cb667-37"><a href="quiz-3.html#cb667-37" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Hormigueros&quot;</span>,  <span class="dv">15413</span>,</span>
+<span id="cb667-38"><a href="quiz-3.html#cb667-38" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Humacao&quot;</span>,  <span class="dv">49924</span>,</span>
+<span id="cb667-39"><a href="quiz-3.html#cb667-39" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Isabela&quot;</span>,  <span class="dv">42754</span>,</span>
+<span id="cb667-40"><a href="quiz-3.html#cb667-40" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Jayuya&quot;</span>,   <span class="dv">14495</span>,</span>
+<span id="cb667-41"><a href="quiz-3.html#cb667-41" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Juana Diaz&quot;</span>,   <span class="dv">45923</span>,</span>
+<span id="cb667-42"><a href="quiz-3.html#cb667-42" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Juncos&quot;</span>,   <span class="dv">36672</span>,</span>
+<span id="cb667-43"><a href="quiz-3.html#cb667-43" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Lajas&quot;</span>,    <span class="dv">22936</span>,</span>
+<span id="cb667-44"><a href="quiz-3.html#cb667-44" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Lares&quot;</span>,    <span class="dv">27774</span>,</span>
+<span id="cb667-45"><a href="quiz-3.html#cb667-45" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Las Marias&quot;</span>,   <span class="dv">8705</span>,</span>
+<span id="cb667-46"><a href="quiz-3.html#cb667-46" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Las Piedras&quot;</span>,  <span class="dv">34814</span>,</span>
+<span id="cb667-47"><a href="quiz-3.html#cb667-47" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Loiza&quot;</span>,    <span class="dv">22657</span>,</span>
+<span id="cb667-48"><a href="quiz-3.html#cb667-48" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Luquillo&quot;</span>, <span class="dv">17449</span>,</span>
+<span id="cb667-49"><a href="quiz-3.html#cb667-49" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Manati&quot;</span>,   <span class="dv">38751</span>,</span>
+<span id="cb667-50"><a href="quiz-3.html#cb667-50" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Maricao&quot;</span>,  <span class="dv">4575</span>,</span>
+<span id="cb667-51"><a href="quiz-3.html#cb667-51" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Maunabo&quot;</span>,  <span class="dv">10368</span>,</span>
+<span id="cb667-52"><a href="quiz-3.html#cb667-52" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Mayaguez&quot;</span>, <span class="dv">70609</span>,</span>
+<span id="cb667-53"><a href="quiz-3.html#cb667-53" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Moca&quot;</span>, <span class="dv">37279</span>,</span>
+<span id="cb667-54"><a href="quiz-3.html#cb667-54" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Morovis&quot;</span>,  <span class="dv">28277</span>,</span>
+<span id="cb667-55"><a href="quiz-3.html#cb667-55" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Naguabo&quot;</span>,  <span class="dv">22964</span>,</span>
+<span id="cb667-56"><a href="quiz-3.html#cb667-56" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Naranjito&quot;</span>,    <span class="dv">29208</span>,</span>
+<span id="cb667-57"><a href="quiz-3.html#cb667-57" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Orocovis&quot;</span>, <span class="dv">21229</span>,</span>
+<span id="cb667-58"><a href="quiz-3.html#cb667-58" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Patillas&quot;</span>, <span class="dv">15524</span>,</span>
+<span id="cb667-59"><a href="quiz-3.html#cb667-59" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Penuelas&quot;</span>, <span class="dv">19763</span>,</span>
+<span id="cb667-60"><a href="quiz-3.html#cb667-60" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Ponce&quot;</span>,    <span class="dv">132138</span>,</span>
+<span id="cb667-61"><a href="quiz-3.html#cb667-61" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Quebradillas&quot;</span>, <span class="dv">23332</span>,</span>
+<span id="cb667-62"><a href="quiz-3.html#cb667-62" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Rincon&quot;</span>,   <span class="dv">15316</span>,</span>
+<span id="cb667-63"><a href="quiz-3.html#cb667-63" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Rio Grande&quot;</span>,   <span class="dv">45840</span>,</span>
+<span id="cb667-64"><a href="quiz-3.html#cb667-64" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Sabana Grande&quot;</span>,    <span class="dv">22351</span>,</span>
+<span id="cb667-65"><a href="quiz-3.html#cb667-65" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Salinas&quot;</span>,  <span class="dv">25000</span>,</span>
+<span id="cb667-66"><a href="quiz-3.html#cb667-66" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;San German&quot;</span>,   <span class="dv">31174</span>,</span>
+<span id="cb667-67"><a href="quiz-3.html#cb667-67" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;San Juan&quot;</span>, <span class="dv">334776</span>,</span>
+<span id="cb667-68"><a href="quiz-3.html#cb667-68" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;San Lorenzo&quot;</span>,  <span class="dv">37260</span>,</span>
+<span id="cb667-69"><a href="quiz-3.html#cb667-69" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;San Sebastian&quot;</span>,    <span class="dv">38969</span>,</span>
+<span id="cb667-70"><a href="quiz-3.html#cb667-70" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Santa Isabel&quot;</span>, <span class="dv">19822</span>,</span>
+<span id="cb667-71"><a href="quiz-3.html#cb667-71" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Toa Alta&quot;</span>, <span class="dv">66041</span>,</span>
+<span id="cb667-72"><a href="quiz-3.html#cb667-72" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Toa Baja&quot;</span>, <span class="dv">72783</span>,</span>
+<span id="cb667-73"><a href="quiz-3.html#cb667-73" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Trujillo Alto&quot;</span>,    <span class="dv">66810</span>,</span>
+<span id="cb667-74"><a href="quiz-3.html#cb667-74" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Utuado&quot;</span>,   <span class="dv">27535</span>,</span>
+<span id="cb667-75"><a href="quiz-3.html#cb667-75" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Vega Alta&quot;</span>,    <span class="dv">34786</span>,</span>
+<span id="cb667-76"><a href="quiz-3.html#cb667-76" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Vega Baja&quot;</span>,    <span class="dv">53684</span>,</span>
+<span id="cb667-77"><a href="quiz-3.html#cb667-77" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Vieques&quot;</span>,  <span class="dv">8043</span>,</span>
+<span id="cb667-78"><a href="quiz-3.html#cb667-78" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Villalba&quot;</span>, <span class="dv">21466</span>,</span>
+<span id="cb667-79"><a href="quiz-3.html#cb667-79" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Yabucoa&quot;</span>,  <span class="dv">29305</span>,</span>
+<span id="cb667-80"><a href="quiz-3.html#cb667-80" tabindex="-1"></a><span class="dv">2022</span>,   <span class="st">&quot;Yauco&quot;</span>,    <span class="dv">32904</span>,</span>
+<span id="cb667-81"><a href="quiz-3.html#cb667-81" tabindex="-1"></a>)</span>
+<span id="cb667-82"><a href="quiz-3.html#cb667-82" tabindex="-1"></a></span>
+<span id="cb667-83"><a href="quiz-3.html#cb667-83" tabindex="-1"></a>Pop_PR_2022</span></code></pre></div>
 </details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-286">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-286">Table S.1: </span> </caption><col><col><col><tr>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-287">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-287">Table S.1: </span> </caption><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Anio</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Municipality</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Pop_N</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.02e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Adjuntas</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1.79e+04</td></tr>

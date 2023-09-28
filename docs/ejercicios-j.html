@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2023-09-20" />
+<meta name="date" content="2023-09-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -372,7 +372,7 @@ div.csl-indent {
 <li class="chapter" data-level="11.6" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste."><i class="fa fa-check"></i><b>11.6</b> Bondad de Ajuste.</a></li>
 <li class="chapter" data-level="11.7" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#primer-ejemplo"><i class="fa fa-check"></i><b>11.7</b> Primer ejemplo</a></li>
 <li class="chapter" data-level="11.8" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#segundo-ejemplo"><i class="fa fa-check"></i><b>11.8</b> Segundo ejemplo</a></li>
-<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste</a></li>
+<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste, Tabla de contingencia RxC</a></li>
 <li class="chapter" data-level="11.10" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gráfico-de-mosaico"><i class="fa fa-check"></i><b>11.10</b> Gráfico de Mosaico</a></li>
 <li class="chapter" data-level="11.11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia-de-frecuencia."><i class="fa fa-check"></i><b>11.11</b> Prueba de Independencia de frecuencia.</a></li>
 <li class="chapter" data-level="11.12" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-función-crosstable"><i class="fa fa-check"></i><b>11.12</b> La función <em>CrossTable</em></a></li>
@@ -876,15 +876,15 @@ div.csl-indent {
 <h3><span class="header-section-number">J.1.2</span> Ejercicio de práctica 2: Dias de enfermedades<a href="ejercicios-j.html#ejercicio-de-práctica-2-dias-de-enfermedades-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Un dueño de una impresa dice que su insiste que la cantidad de días promedio de enfermedades de sus empleados es menor que el promedio nacional de 10. Los datos de 40 empleados sigue. Determina si hay evidencia para creer el comentario del dueño de esta impresa.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="ejercicios-j.html#cb643-1" tabindex="-1"></a>dias_E<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb643-2"><a href="ejercicios-j.html#cb643-2" tabindex="-1"></a>  <span class="sc">~</span>dias_e,</span>
-<span id="cb643-3"><a href="ejercicios-j.html#cb643-3" tabindex="-1"></a>  <span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,</span>
-<span id="cb643-4"><a href="ejercicios-j.html#cb643-4" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,</span>
-<span id="cb643-5"><a href="ejercicios-j.html#cb643-5" tabindex="-1"></a>  <span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">12</span>,<span class="dv">3</span>,</span>
-<span id="cb643-6"><a href="ejercicios-j.html#cb643-6" tabindex="-1"></a>  <span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,</span>
-<span id="cb643-7"><a href="ejercicios-j.html#cb643-7" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">11</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">9</span></span>
-<span id="cb643-8"><a href="ejercicios-j.html#cb643-8" tabindex="-1"></a>)</span>
-<span id="cb643-9"><a href="ejercicios-j.html#cb643-9" tabindex="-1"></a>dias_E</span></code></pre></div>
+<div class="sourceCode" id="cb644"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb644-1"><a href="ejercicios-j.html#cb644-1" tabindex="-1"></a>dias_E<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb644-2"><a href="ejercicios-j.html#cb644-2" tabindex="-1"></a>  <span class="sc">~</span>dias_e,</span>
+<span id="cb644-3"><a href="ejercicios-j.html#cb644-3" tabindex="-1"></a>  <span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">12</span>,<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,</span>
+<span id="cb644-4"><a href="ejercicios-j.html#cb644-4" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">7</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">4</span>,</span>
+<span id="cb644-5"><a href="ejercicios-j.html#cb644-5" tabindex="-1"></a>  <span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">12</span>,<span class="dv">3</span>,</span>
+<span id="cb644-6"><a href="ejercicios-j.html#cb644-6" tabindex="-1"></a>  <span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,</span>
+<span id="cb644-7"><a href="ejercicios-j.html#cb644-7" tabindex="-1"></a>  <span class="dv">3</span>,<span class="dv">11</span>,<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">9</span></span>
+<span id="cb644-8"><a href="ejercicios-j.html#cb644-8" tabindex="-1"></a>)</span>
+<span id="cb644-9"><a href="ejercicios-j.html#cb644-9" tabindex="-1"></a>dias_E</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-259">
 <caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-259">Table J.1: </span> </caption><col><tr>

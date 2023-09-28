@@ -139,6 +139,7 @@ kable(df, escape=FALSE)
 qchisq(0.95, 1)
 ```
 
+
 No hay ninguna razón de hacer los cálculos a mano si tenemos a R para hacerlo.  Nota aquí se hace la misma prueba con los mismos datos y tenemos el mismo resultado.  
 
 ***
@@ -148,11 +149,14 @@ No hay ninguna razón de hacer los cálculos a mano si tenemos a R para hacerlo.
 Lo que uno observa es el valor de la prueba de Bondad de ajuste tiene un Chi Cuadrado de 0.48, p =.49. Como el valor de *p* es mayor a 0.05, no se rechaza la hipótesis nula y que la frecuencia no es diferente de una proporción de 3:1.   
 
 ```{r}
-obs<-c(45,12)
+obs<-c(45,12) # los valores observado
 esp<-c(0.75,0.25) # este el modelo nulo
 
 chisq.test(x=obs, p=esp)
 
+
+# Cuando el valor de p es mayor a 0.05 se acepta la hipotesis nula
+# Es el caso presente que la la herencia es de 3:1
 ```
 
 ***
@@ -200,21 +204,23 @@ chisq.test(x=obs, p=esp)
 
 
 
-```{r}
-#install.packages("MASS", dependencies = TRUE)
-```
+
 
 ***
 
-## Prueba de Bondad de Ajuste
+## Prueba de Bondad de Ajuste, Tabla de contingencia RxC 
+
+```{r}
+#install.packages("MASS", dependencies = TRUE)
+```
 
 Esta prueba se usa para 
 
 Los siguientes datos son de Field, Miles and Field 2012.  
 
-Este conjunto de datos represente un experimento ficticio de tratar de entrenar 200 gatos para que bailan basado en si se la da una recompensa o no. Este esta basado en el concepto del psicólogo Ruso Ivan Pavlov (1849-1936) de que se puede enseñar o sea motivar a una acción dando una recompensa.  Lo que se llama "condicionar" un proceso de aprendizaje que ocurre entre la asociación de un estimulo ambiental y un comportamiento. 
+Este conjunto de datos represente un experimento ficticio de tratar de entrenar 200 gatos para que bailan basado en si se la da una recompensa o no. Este esta basado en el concepto del psicólogo Ruso Ivan Pavlov (1849-1936) de que se puede enseñar o sea motivar a una acción dando una recompensa. Ese proceso se llama "condicionar" un proceso de aprendizaje que ocurre entre la asociación de un estimulo ambiental y un comportamiento. 
 
-
+<<https://en.wikipedia.org/wiki/Ivan_Pavlov>>
 
 Primero entramos los datos directamente en una tabla
 

@@ -861,7 +861,7 @@ div.csl-indent {
 <pre><code>## [1] &quot;2023-10-03&quot;</code></pre>
 <p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="regresión-logistica.html#cb492-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="regresión-logistica.html#cb498-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </details>
 <p>Esta regresión es utilizada cuando la variable dependiente tiene solamente dos alternativas (representadas de forma numérica, <strong>0 y 1</strong>) y la variable independiente es una variable continua.</p>
 <div id="brassavola-cucullata" class="section level2 hasAnchor" number="19.1">
@@ -869,7 +869,7 @@ div.csl-indent {
 <p>Los datos fueron recolectado de dos pequeñas islas del Caribe, San Eustaquio y Saba.</p>
 <p><em>Brassavola cucullata</em> pertenece a la subtribu Laeliinae y es una especie epífita y rupícola que puede formar grandes racimos de brotes. Cada brote está compuesto por un solo tallo de 3.5-12.5 cm de largo y 1-3.5 mm de diámetro y tiene una sola hoja semi-tereta de 16-35 cm de largo y solo un poco más gruesa que el tallo. Las inflorescencias terminales miden 3-30 mm de largo y suelen tener una sola flor. Las flores son en gran parte blancas con las partes delgadas del perianto que a menudo se vuelven de color amarillo pálido hacia sus ápices. El labelo es ovado-acuminado y fimbriado alrededor de la columna. El cunículo se extiende hacia el ovario inferior y no tiene néctar. Las flores engañosas tienen una fragancia nocturna dulce y espesa, que puede perdurar hasta el día. La producción de frutos depende de los polinizadores. Las cápsulas tardan varios meses en desarrollarse y son pediceladas y picudas (restos de la columna); el cuerpo de la cápsula mide entre 2 y 5 cm de largo y produce muchos miles de semillas polvorientas (Ackerman y Collaborators 2014).</p>
 <p>En cada una de las tres poblaciones, etiquetamos todas las plantas de <em>B. cucullata</em> que pudimos encontrar. Observamos si cada planta era epífita o epilítica, medimos la altura sobre el suelo, buscamos evidencia de herbivoría foliar, medimos la longitud de la hoja más larga y contamos el número de brotes de hojas, flores y frutos. Si las flores estaban presentes, registramos si habían sido visitadas con éxito o no mediante una inspección visual para la eliminación de polinarios o polinias en el estigma. Estos datos se obtuvieron una vez al año durante la época de floración. Nuestras observaciones en la población de Quill abarcaron 2009-2013, en Boven 2010-2013 y en Saba 2011-2014.</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-194"></span>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-195"></span>
 <img src="Graficos/Brass_cucu1.png" alt="**La especie** *Brasavolla cucullata* **en la isla de San Eustaquio**" width="50%" /><img src="Graficos/Brass_cucu2.png" alt="**La especie** *Brasavolla cucullata* **en la isla de San Eustaquio**" width="50%" />
 <p class="caption">
 Figure 19.1: <strong>La especie</strong> <em>Brasavolla cucullata</em> <strong>en la isla de San Eustaquio</strong>
@@ -879,10 +879,10 @@ Figure 19.1: <strong>La especie</strong> <em>Brasavolla cucullata</em> <strong>e
 <p>Puede encontrar el manuscrito en este enlace, que evalúa la biología de la orquídea y la posibilidad de extinción y como las cabras impacta su supervivencias.</p>
 <p><a href="https://www.journals.uchicago.edu/doi/pdf/10.1086/709399" class="uri">https://www.journals.uchicago.edu/doi/pdf/10.1086/709399</a></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="regresión-logistica.html#cb493-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb493-2"><a href="regresión-logistica.html#cb493-2" tabindex="-1"></a>Student_Brassavola <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Student_Brassavola.csv&quot;</span>)</span>
-<span id="cb493-3"><a href="regresión-logistica.html#cb493-3" tabindex="-1"></a>completeBrass<span class="ot">=</span><span class="fu">na.omit</span>(Student_Brassavola)  <span class="co"># remove NA</span></span>
-<span id="cb493-4"><a href="regresión-logistica.html#cb493-4" tabindex="-1"></a><span class="fu">head</span>(completeBrass)</span></code></pre></div>
+<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="regresión-logistica.html#cb499-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb499-2"><a href="regresión-logistica.html#cb499-2" tabindex="-1"></a>Student_Brassavola <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Student_Brassavola.csv&quot;</span>)</span>
+<span id="cb499-3"><a href="regresión-logistica.html#cb499-3" tabindex="-1"></a>completeBrass<span class="ot">=</span><span class="fu">na.omit</span>(Student_Brassavola)  <span class="co"># remove NA</span></span>
+<span id="cb499-4"><a href="regresión-logistica.html#cb499-4" tabindex="-1"></a><span class="fu">head</span>(completeBrass)</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:data19">
 <caption style="caption-side: top; text-align: center;"><span id="tab:data19">Table 19.1: </span> </caption><col><col><col><col><col><col><col><col><col><col><tr>
@@ -902,30 +902,30 @@ Figure 19.1: <strong>La especie</strong> <em>Brasavolla cucullata</em> <strong>e
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="regresión-logistica.html#cb494-1" tabindex="-1"></a><span class="co">#library(tidyverse)</span></span>
-<span id="cb494-2"><a href="regresión-logistica.html#cb494-2" tabindex="-1"></a><span class="co">#library(dplyr)</span></span>
-<span id="cb494-3"><a href="regresión-logistica.html#cb494-3" tabindex="-1"></a><span class="fu">unique</span>(completeBrass<span class="sc">$</span>Fr_Num)</span></code></pre></div>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="regresión-logistica.html#cb500-1" tabindex="-1"></a><span class="co">#library(tidyverse)</span></span>
+<span id="cb500-2"><a href="regresión-logistica.html#cb500-2" tabindex="-1"></a><span class="co">#library(dplyr)</span></span>
+<span id="cb500-3"><a href="regresión-logistica.html#cb500-3" tabindex="-1"></a><span class="fu">unique</span>(completeBrass<span class="sc">$</span>Fr_Num)</span></code></pre></div>
 </details>
 <pre><code>## [1] 0 2 1 3</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="regresión-logistica.html#cb496-1" tabindex="-1"></a><span class="co"># completeBrass$Fr_Y_N2=ifelse(completeBrass$Fr_Num&gt;0 ,1,0) Metodo de la función base</span></span>
-<span id="cb496-2"><a href="regresión-logistica.html#cb496-2" tabindex="-1"></a></span>
-<span id="cb496-3"><a href="regresión-logistica.html#cb496-3" tabindex="-1"></a>completeBrass<span class="sc">$</span>Fr_Y_N1<span class="ot">=</span><span class="fu">ifelse</span>(completeBrass<span class="sc">$</span>Fr_Num<span class="sc">&gt;</span><span class="dv">0</span> ,<span class="dv">1</span>,<span class="dv">0</span>) <span class="co"># Método de dplyr</span></span>
-<span id="cb496-4"><a href="regresión-logistica.html#cb496-4" tabindex="-1"></a></span>
-<span id="cb496-5"><a href="regresión-logistica.html#cb496-5" tabindex="-1"></a><span class="fu">unique</span>(completeBrass<span class="sc">$</span>Fr_Y_N1) <span class="co"># deberia tener solamente dos alternativas, &quot;0&quot; y &quot;1&quot;, Frutos no y si</span></span></code></pre></div>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="regresión-logistica.html#cb502-1" tabindex="-1"></a><span class="co"># completeBrass$Fr_Y_N2=ifelse(completeBrass$Fr_Num&gt;0 ,1,0) Metodo de la función base</span></span>
+<span id="cb502-2"><a href="regresión-logistica.html#cb502-2" tabindex="-1"></a></span>
+<span id="cb502-3"><a href="regresión-logistica.html#cb502-3" tabindex="-1"></a>completeBrass<span class="sc">$</span>Fr_Y_N1<span class="ot">=</span><span class="fu">ifelse</span>(completeBrass<span class="sc">$</span>Fr_Num<span class="sc">&gt;</span><span class="dv">0</span> ,<span class="dv">1</span>,<span class="dv">0</span>) <span class="co"># Método de dplyr</span></span>
+<span id="cb502-4"><a href="regresión-logistica.html#cb502-4" tabindex="-1"></a></span>
+<span id="cb502-5"><a href="regresión-logistica.html#cb502-5" tabindex="-1"></a><span class="fu">unique</span>(completeBrass<span class="sc">$</span>Fr_Y_N1) <span class="co"># deberia tener solamente dos alternativas, &quot;0&quot; y &quot;1&quot;, Frutos no y si</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 0 1</code></pre>
 <p>Evaluar la tendencias centrales y la dispersión de las variables y cambio de nombre de las variables al español.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="regresión-logistica.html#cb498-1" tabindex="-1"></a>Brass<span class="ot">=</span>completeBrass<span class="sc">%&gt;%</span></span>
-<span id="cb498-2"><a href="regresión-logistica.html#cb498-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">Isla=</span>Island, <span class="at">Ano=</span>Year, <span class="at">Numero_planta=</span>Pl_Num, </span>
-<span id="cb498-3"><a href="regresión-logistica.html#cb498-3" tabindex="-1"></a>         <span class="at">Cant_hojas=</span>Leaf_Num, <span class="at">Largo_Hoja_cm=</span>LLL, </span>
-<span id="cb498-4"><a href="regresión-logistica.html#cb498-4" tabindex="-1"></a>         <span class="at">Cant_capullo=</span>Bud_Num, <span class="at">Cant_Flores=</span>Fl_Num, </span>
-<span id="cb498-5"><a href="regresión-logistica.html#cb498-5" tabindex="-1"></a>         <span class="at">Cant_Frutos=</span>Fr_Num, <span class="at">BQS=</span>BQS, <span class="at">Flor_si_no=</span>Flowers_Y_N,</span>
-<span id="cb498-6"><a href="regresión-logistica.html#cb498-6" tabindex="-1"></a>         <span class="at">Frutos_si_no=</span>Fr_Y_N1)</span></code></pre></div>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="regresión-logistica.html#cb504-1" tabindex="-1"></a>Brass<span class="ot">=</span>completeBrass<span class="sc">%&gt;%</span></span>
+<span id="cb504-2"><a href="regresión-logistica.html#cb504-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">Isla=</span>Island, <span class="at">Ano=</span>Year, <span class="at">Numero_planta=</span>Pl_Num, </span>
+<span id="cb504-3"><a href="regresión-logistica.html#cb504-3" tabindex="-1"></a>         <span class="at">Cant_hojas=</span>Leaf_Num, <span class="at">Largo_Hoja_cm=</span>LLL, </span>
+<span id="cb504-4"><a href="regresión-logistica.html#cb504-4" tabindex="-1"></a>         <span class="at">Cant_capullo=</span>Bud_Num, <span class="at">Cant_Flores=</span>Fl_Num, </span>
+<span id="cb504-5"><a href="regresión-logistica.html#cb504-5" tabindex="-1"></a>         <span class="at">Cant_Frutos=</span>Fr_Num, <span class="at">BQS=</span>BQS, <span class="at">Flor_si_no=</span>Flowers_Y_N,</span>
+<span id="cb504-6"><a href="regresión-logistica.html#cb504-6" tabindex="-1"></a>         <span class="at">Frutos_si_no=</span>Fr_Y_N1)</span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="regresión-logistica.html#cb499-1" tabindex="-1"></a><span class="fu">summary</span>(Brass)</span></code></pre></div>
+<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="regresión-logistica.html#cb505-1" tabindex="-1"></a><span class="fu">summary</span>(Brass)</span></code></pre></div>
 </details>
 <pre><code>##      Isla                Ano       Numero_planta        Cant_hojas    
 ##  Length:1436        Min.   :2009   Length:1436        Min.   :  0.00  
@@ -999,10 +999,10 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 <div id="generalized-linear-model-glm" class="section level3 hasAnchor" number="19.6.1">
 <h3><span class="header-section-number">19.6.1</span> Generalized Linear Model = glm<a href="regresión-logistica.html#generalized-linear-model-glm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="regresión-logistica.html#cb501-1" tabindex="-1"></a>BrassModel<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Cant_hojas,</span>
-<span id="cb501-2"><a href="regresión-logistica.html#cb501-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb501-3"><a href="regresión-logistica.html#cb501-3" tabindex="-1"></a></span>
-<span id="cb501-4"><a href="regresión-logistica.html#cb501-4" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="regresión-logistica.html#cb507-1" tabindex="-1"></a>BrassModel<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Cant_hojas,</span>
+<span id="cb507-2"><a href="regresión-logistica.html#cb507-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb507-3"><a href="regresión-logistica.html#cb507-3" tabindex="-1"></a></span>
+<span id="cb507-4"><a href="regresión-logistica.html#cb507-4" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.1</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -1023,10 +1023,10 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 ## 
 ## Number of Fisher Scoring iterations: 5</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="regresión-logistica.html#cb503-1" tabindex="-1"></a>BrassModel<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Largo_Hoja_cm,</span>
-<span id="cb503-2"><a href="regresión-logistica.html#cb503-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb503-3"><a href="regresión-logistica.html#cb503-3" tabindex="-1"></a></span>
-<span id="cb503-4"><a href="regresión-logistica.html#cb503-4" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="regresión-logistica.html#cb509-1" tabindex="-1"></a>BrassModel<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Largo_Hoja_cm,</span>
+<span id="cb509-2"><a href="regresión-logistica.html#cb509-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb509-3"><a href="regresión-logistica.html#cb509-3" tabindex="-1"></a></span>
+<span id="cb509-4"><a href="regresión-logistica.html#cb509-4" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.2</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -1048,9 +1048,9 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 ## 
 ## Number of Fisher Scoring iterations: 6</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="regresión-logistica.html#cb505-1" tabindex="-1"></a>BrassModel<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Cant_hojas<span class="sc">+</span>Largo_Hoja_cm,</span>
-<span id="cb505-2"><a href="regresión-logistica.html#cb505-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb505-3"><a href="regresión-logistica.html#cb505-3" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="regresión-logistica.html#cb511-1" tabindex="-1"></a>BrassModel<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Cant_hojas<span class="sc">+</span>Largo_Hoja_cm,</span>
+<span id="cb511-2"><a href="regresión-logistica.html#cb511-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb511-3"><a href="regresión-logistica.html#cb511-3" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.3</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -1078,15 +1078,15 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 <p>Si no le interesa el intercepto se añade un “-1” después de la
 #Los valores de interes en nuestro caso son el intercepto y la pendiente (valor que se encuentra debajo del intercepto).</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="regresión-logistica.html#cb507-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb513-1"><a href="regresión-logistica.html#cb513-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
 </details>
 <pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
 ##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
 ##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="regresión-logistica.html#cb509-1" tabindex="-1"></a>BrassModel.<span class="fl">1.1</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Cant_hojas<span class="sc">+</span>BQS<span class="sc">+</span>Largo_Hoja_cm<span class="dv">-1</span>,</span>
-<span id="cb509-2"><a href="regresión-logistica.html#cb509-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
-<span id="cb509-3"><a href="regresión-logistica.html#cb509-3" tabindex="-1"></a><span class="fu">summary</span>(BrassModel.<span class="fl">1.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="regresión-logistica.html#cb515-1" tabindex="-1"></a>BrassModel.<span class="fl">1.1</span> <span class="ot">&lt;-</span> <span class="fu">glm</span>(Flor_si_no <span class="sc">~</span> Cant_hojas<span class="sc">+</span>BQS<span class="sc">+</span>Largo_Hoja_cm<span class="dv">-1</span>,</span>
+<span id="cb515-2"><a href="regresión-logistica.html#cb515-2" tabindex="-1"></a>                    <span class="at">data =</span> Brass, <span class="at">family =</span> <span class="fu">binomial</span>())</span>
+<span id="cb515-3"><a href="regresión-logistica.html#cb515-3" tabindex="-1"></a><span class="fu">summary</span>(BrassModel.<span class="fl">1.1</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -1118,7 +1118,7 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 <span class="math display">\[P(Y)\quad =\quad \frac { 1 }{ 1+{ e }^{ -((intercepto)+pendiente*variable.predictora) } }\]</span>
 # Se usa esta ecuacion para predecir un valor de ‘Y’ especifico para un valor de una variable ‘X’ de interes.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="regresión-logistica.html#cb511-1" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="regresión-logistica.html#cb517-1" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.1</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -1139,42 +1139,42 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 ## 
 ## Number of Fisher Scoring iterations: 5</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb513-1"><a href="regresión-logistica.html#cb513-1" tabindex="-1"></a><span class="fu">exp</span>(<span class="dv">1</span>) <span class="co">#= e</span></span></code></pre></div>
+<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="regresión-logistica.html#cb519-1" tabindex="-1"></a><span class="fu">exp</span>(<span class="dv">1</span>) <span class="co">#= e</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 2.718282</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="regresión-logistica.html#cb515-1" tabindex="-1"></a>e<span class="ot">=</span><span class="fu">exp</span>(<span class="dv">1</span>) </span>
-<span id="cb515-2"><a href="regresión-logistica.html#cb515-2" tabindex="-1"></a>e</span></code></pre></div>
+<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="regresión-logistica.html#cb521-1" tabindex="-1"></a>e<span class="ot">=</span><span class="fu">exp</span>(<span class="dv">1</span>) </span>
+<span id="cb521-2"><a href="regresión-logistica.html#cb521-2" tabindex="-1"></a>e</span></code></pre></div>
 </details>
 <pre><code>## [1] 2.718282</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="regresión-logistica.html#cb517-1" tabindex="-1"></a>P_10<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="fl">+2.7182818284</span><span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">150</span>))</span>
-<span id="cb517-2"><a href="regresión-logistica.html#cb517-2" tabindex="-1"></a>P_10</span></code></pre></div>
+<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="regresión-logistica.html#cb523-1" tabindex="-1"></a>P_10<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="fl">+2.7182818284</span><span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">150</span>))</span>
+<span id="cb523-2"><a href="regresión-logistica.html#cb523-2" tabindex="-1"></a>P_10</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.8005922</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="regresión-logistica.html#cb519-1" tabindex="-1"></a>P_10<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="dv">1</span>)<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">100</span>))</span>
-<span id="cb519-2"><a href="regresión-logistica.html#cb519-2" tabindex="-1"></a>P_10</span></code></pre></div>
+<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="regresión-logistica.html#cb525-1" tabindex="-1"></a>P_10<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="dv">1</span>)<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">100</span>))</span>
+<span id="cb525-2"><a href="regresión-logistica.html#cb525-2" tabindex="-1"></a>P_10</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.4762678</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="regresión-logistica.html#cb521-1" tabindex="-1"></a>P_25<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="sc">-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">25</span>)))</span>
-<span id="cb521-2"><a href="regresión-logistica.html#cb521-2" tabindex="-1"></a>P_25</span></code></pre></div>
+<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="regresión-logistica.html#cb527-1" tabindex="-1"></a>P_25<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span><span class="fu">exp</span>(<span class="sc">-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">25</span>)))</span>
+<span id="cb527-2"><a href="regresión-logistica.html#cb527-2" tabindex="-1"></a>P_25</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.08927658</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="regresión-logistica.html#cb523-1" tabindex="-1"></a>P_50<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">50</span>))</span>
-<span id="cb523-2"><a href="regresión-logistica.html#cb523-2" tabindex="-1"></a>P_50</span></code></pre></div>
+<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="regresión-logistica.html#cb529-1" tabindex="-1"></a>P_50<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">50</span>))</span>
+<span id="cb529-2"><a href="regresión-logistica.html#cb529-2" tabindex="-1"></a>P_50</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.1707955</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="regresión-logistica.html#cb525-1" tabindex="-1"></a>P_70<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">70</span>))</span>
-<span id="cb525-2"><a href="regresión-logistica.html#cb525-2" tabindex="-1"></a>P_70</span></code></pre></div>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="regresión-logistica.html#cb531-1" tabindex="-1"></a>P_70<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">70</span>))</span>
+<span id="cb531-2"><a href="regresión-logistica.html#cb531-2" tabindex="-1"></a>P_70</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.2717029</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="regresión-logistica.html#cb527-1" tabindex="-1"></a>P_150<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">150</span>))</span>
-<span id="cb527-2"><a href="regresión-logistica.html#cb527-2" tabindex="-1"></a>P_150</span></code></pre></div>
+<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="regresión-logistica.html#cb533-1" tabindex="-1"></a>P_150<span class="ot">=</span><span class="dv">1</span><span class="sc">/</span>(<span class="dv">1</span><span class="sc">+</span>e<span class="sc">^-</span>(<span class="sc">-</span><span class="fl">3.065</span> <span class="sc">+</span><span class="fl">0.0297</span><span class="sc">*</span><span class="dv">150</span>))</span>
+<span id="cb533-2"><a href="regresión-logistica.html#cb533-2" tabindex="-1"></a>P_150</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.8005922</code></pre>
 <hr />
@@ -1183,15 +1183,15 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 <div id="visualizando-una-regresión-logistica" class="section level2 hasAnchor" number="19.7">
 <h2><span class="header-section-number">19.7</span> Visualizando una regresión logistica<a href="regresión-logistica.html#visualizando-una-regresión-logistica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="regresión-logistica.html#cb529-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="regresión-logistica.html#cb535-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
 </details>
 <pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
 ##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
 ##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="regresión-logistica.html#cb531-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb531-2"><a href="regresión-logistica.html#cb531-2" tabindex="-1"></a> <span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
-<span id="cb531-3"><a href="regresión-logistica.html#cb531-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="regresión-logistica.html#cb537-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb537-2"><a href="regresión-logistica.html#cb537-2" tabindex="-1"></a> <span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
+<span id="cb537-3"><a href="regresión-logistica.html#cb537-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/ggplot%20binomial-1.png" width="672" /></p>
 </div>
@@ -1207,29 +1207,29 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 ◦ size: representa el grosor de la línea
 ◦ weight: para modificar el valor original; entonces no sería, por ejemplo, el conteo/suma de los valores si no un valor ponderado (promedio ponderado)</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb532"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb532-1"><a href="regresión-logistica.html#cb532-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
-<span id="cb532-2"><a href="regresión-logistica.html#cb532-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb538-1"><a href="regresión-logistica.html#cb538-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
+<span id="cb538-2"><a href="regresión-logistica.html#cb538-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.10</span>)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/jitter-1.png" width="672" /></p>
 </div>
 <div id="gráfico-con-ajuste-binomial" class="section level2 hasAnchor" number="19.9">
 <h2><span class="header-section-number">19.9</span> Gráfico con ajuste binomial<a href="regresión-logistica.html#gráfico-con-ajuste-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb533"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb533-1"><a href="regresión-logistica.html#cb533-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<div class="sourceCode" id="cb539"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb539-1"><a href="regresión-logistica.html#cb539-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
 </details>
 <pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
 ##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
 ##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb535"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb535-1"><a href="regresión-logistica.html#cb535-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
-<span id="cb535-2"><a href="regresión-logistica.html#cb535-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb535-3"><a href="regresión-logistica.html#cb535-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">TRUE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))</span></code></pre></div>
+<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="regresión-logistica.html#cb541-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
+<span id="cb541-2"><a href="regresión-logistica.html#cb541-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb541-3"><a href="regresión-logistica.html#cb541-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">TRUE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/binomial%20fit-1.png" width="672" /></p>
 <div id="el-modelo-de-regresión-binomial" class="section level3 hasAnchor" number="19.9.1">
 <h3><span class="header-section-number">19.9.1</span> El modelo de regresión binomial<a href="regresión-logistica.html#el-modelo-de-regresión-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb536"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb536-1"><a href="regresión-logistica.html#cb536-1" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb542-1"><a href="regresión-logistica.html#cb542-1" tabindex="-1"></a><span class="fu">summary</span>(BrassModel<span class="fl">.1</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -1254,16 +1254,16 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 <h3><span class="header-section-number">19.9.2</span> Vusualizando diferentes grupos<a href="regresión-logistica.html#vusualizando-diferentes-grupos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>En este gráfico se osbserva el valor de la pendiente, el mismo aumenta cuando el numero de hojas se aproxima a 100 (por ende al acercarnos a este valor el valor de nuestra variable de respuesta es mayor aumenta o es mayor).</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb538-1"><a href="regresión-logistica.html#cb538-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="regresión-logistica.html#cb544-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
 </details>
 <pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
 ##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
 ##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb540"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb540-1"><a href="regresión-logistica.html#cb540-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
-<span id="cb540-2"><a href="regresión-logistica.html#cb540-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb540-3"><a href="regresión-logistica.html#cb540-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))<span class="sc">+</span></span>
-<span id="cb540-4"><a href="regresión-logistica.html#cb540-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Isla)</span></code></pre></div>
+<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="regresión-logistica.html#cb546-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no))<span class="sc">+</span></span>
+<span id="cb546-2"><a href="regresión-logistica.html#cb546-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb546-3"><a href="regresión-logistica.html#cb546-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))<span class="sc">+</span></span>
+<span id="cb546-4"><a href="regresión-logistica.html#cb546-4" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Isla)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/facet-1.png" width="672" /></p>
 </div>
@@ -1271,28 +1271,28 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 <div id="solapamiento-de-los-ajustes-binomial-por-grupo" class="section level2 hasAnchor" number="19.10">
 <h2><span class="header-section-number">19.10</span> Solapamiento de los ajustes binomial por grupo<a href="regresión-logistica.html#solapamiento-de-los-ajustes-binomial-por-grupo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="regresión-logistica.html#cb541-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="regresión-logistica.html#cb547-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
 </details>
 <pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
 ##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
 ##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb543"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb543-1"><a href="regresión-logistica.html#cb543-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no, <span class="at">colour=</span>BQS))<span class="sc">+</span></span>
-<span id="cb543-2"><a href="regresión-logistica.html#cb543-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb543-3"><a href="regresión-logistica.html#cb543-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">TRUE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))</span></code></pre></div>
+<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb549-1"><a href="regresión-logistica.html#cb549-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Cant_hojas,Flor_si_no, <span class="at">colour=</span>BQS))<span class="sc">+</span></span>
+<span id="cb549-2"><a href="regresión-logistica.html#cb549-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb549-3"><a href="regresión-logistica.html#cb549-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">TRUE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/overlap%20by%20site-1.png" width="672" /></p>
 <div id="evaluate-using-the-length-of-the-longest-leaf" class="section level3 hasAnchor" number="19.10.1">
 <h3><span class="header-section-number">19.10.1</span> Evaluate using the Length of the longest leaf<a href="regresión-logistica.html#evaluate-using-the-length-of-the-longest-leaf" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="regresión-logistica.html#cb544-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="regresión-logistica.html#cb550-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
 </details>
 <pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
 ##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
 ##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="regresión-logistica.html#cb546-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Largo_Hoja_cm,Flor_si_no))<span class="sc">+</span></span>
-<span id="cb546-2"><a href="regresión-logistica.html#cb546-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.25</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="regresión-logistica.html#cb552-1" tabindex="-1"></a><span class="fu">ggplot</span>(Brass, <span class="fu">aes</span>(Largo_Hoja_cm,Flor_si_no))<span class="sc">+</span></span>
+<span id="cb552-2"><a href="regresión-logistica.html#cb552-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.25</span>)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/LLL-1.png" width="672" /></p>
 </div>
@@ -1302,15 +1302,15 @@ Nota que la primera ecuación es un modelo que trata de predecir el valor de <st
 <div id="nota-que-se-hace-un-subgrupo-subset-de-los-datos-usando-la-función-subsetel-data-frame-la-condición" class="section level4 hasAnchor" number="19.10.2.1">
 <h4><span class="header-section-number">19.10.2.1</span> Nota que se hace un subgrupo (subset) de los datos, usando la función subset(el data frame, la condición)<a href="regresión-logistica.html#nota-que-se-hace-un-subgrupo-subset-de-los-datos-usando-la-función-subsetel-data-frame-la-condición" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="regresión-logistica.html#cb547-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
+<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="regresión-logistica.html#cb553-1" tabindex="-1"></a><span class="fu">names</span>(Brass)</span></code></pre></div>
 </details>
 <pre><code>##  [1] &quot;Isla&quot;          &quot;Ano&quot;           &quot;Numero_planta&quot; &quot;Cant_hojas&quot;   
 ##  [5] &quot;Largo_Hoja_cm&quot; &quot;Cant_capullo&quot;  &quot;Cant_Flores&quot;   &quot;Cant_Frutos&quot;  
 ##  [9] &quot;BQS&quot;           &quot;Flor_si_no&quot;    &quot;Frutos_si_no&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb549-1"><a href="regresión-logistica.html#cb549-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(Brass,Largo_Hoja_cm<span class="sc">&lt;</span><span class="dv">90</span>), <span class="fu">aes</span>(Largo_Hoja_cm,Flor_si_no, <span class="at">colour=</span>BQS))<span class="sc">+</span></span>
-<span id="cb549-2"><a href="regresión-logistica.html#cb549-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.10</span>)<span class="sc">+</span></span>
-<span id="cb549-3"><a href="regresión-logistica.html#cb549-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))</span></code></pre></div>
+<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="regresión-logistica.html#cb555-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">subset</span>(Brass,Largo_Hoja_cm<span class="sc">&lt;</span><span class="dv">90</span>), <span class="fu">aes</span>(Largo_Hoja_cm,Flor_si_no, <span class="at">colour=</span>BQS))<span class="sc">+</span></span>
+<span id="cb555-2"><a href="regresión-logistica.html#cb555-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">height =</span> <span class="fl">0.10</span>)<span class="sc">+</span></span>
+<span id="cb555-3"><a href="regresión-logistica.html#cb555-3" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">method=</span><span class="st">&quot;glm&quot;</span>, <span class="at">se=</span><span class="cn">FALSE</span>, <span class="at">method.args =</span> <span class="fu">list</span>(<span class="at">family=</span>binomial))</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/LLL90-1.png" width="672" /></p>
 </div>

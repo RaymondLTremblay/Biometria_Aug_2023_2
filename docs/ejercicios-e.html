@@ -864,10 +864,10 @@ div.csl-indent {
 <p>Los datos representa la gravedad de lesiones que tienen niños que se disfrazan de su superheroes favorito y después llegan a un hospital por alguna lesión. Los niños son categorizados con un nivel gravedad de lesión, más alto el valor más serio era la lesión. Los datos provienen de Field et al. </p>
 <p>Subir los datos de <strong>Superhero.csv</strong></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb640"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb640-1"><a href="ejercicios-e.html#cb640-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb640-2"><a href="ejercicios-e.html#cb640-2" tabindex="-1"></a>Superhero <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Superhero.csv&quot;</span>)</span>
-<span id="cb640-3"><a href="ejercicios-e.html#cb640-3" tabindex="-1"></a></span>
-<span id="cb640-4"><a href="ejercicios-e.html#cb640-4" tabindex="-1"></a><span class="fu">head</span>(Superhero)</span></code></pre></div>
+<div class="sourceCode" id="cb646"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb646-1"><a href="ejercicios-e.html#cb646-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb646-2"><a href="ejercicios-e.html#cb646-2" tabindex="-1"></a>Superhero <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Superhero.csv&quot;</span>)</span>
+<span id="cb646-3"><a href="ejercicios-e.html#cb646-3" tabindex="-1"></a></span>
+<span id="cb646-4"><a href="ejercicios-e.html#cb646-4" tabindex="-1"></a><span class="fu">head</span>(Superhero)</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:data super heroes2">
 <caption style="caption-side: top; text-align: center;">(#tab:data super heroes2) </caption><col><col><tr>
@@ -887,15 +887,15 @@ div.csl-indent {
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb641"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb641-1"><a href="ejercicios-e.html#cb641-1" tabindex="-1"></a><span class="fu">unique</span>(Superhero<span class="sc">$</span>heronames)</span></code></pre></div>
+<div class="sourceCode" id="cb647"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb647-1"><a href="ejercicios-e.html#cb647-1" tabindex="-1"></a><span class="fu">unique</span>(Superhero<span class="sc">$</span>heronames)</span></code></pre></div>
 </details>
 <pre><code>## NULL</code></pre>
 <p>Renombrar los nombres de las categorías para los tipos de Superheroes. En el archivo como están identificados las categorías de superheroes?</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb643"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb643-1"><a href="ejercicios-e.html#cb643-1" tabindex="-1"></a><span class="co">#Superhero</span></span>
-<span id="cb643-2"><a href="ejercicios-e.html#cb643-2" tabindex="-1"></a>Superhero<span class="sc">$</span>heronames<span class="ot">&lt;-</span><span class="fu">factor</span>(Superhero<span class="sc">$</span>hero, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), </span>
-<span id="cb643-3"><a href="ejercicios-e.html#cb643-3" tabindex="-1"></a>     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Spiderman&quot;</span>,<span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Hulk&quot;</span>, <span class="st">&quot;Ninja Turtle&quot;</span>))</span>
-<span id="cb643-4"><a href="ejercicios-e.html#cb643-4" tabindex="-1"></a>Superhero</span></code></pre></div>
+<div class="sourceCode" id="cb649"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb649-1"><a href="ejercicios-e.html#cb649-1" tabindex="-1"></a><span class="co">#Superhero</span></span>
+<span id="cb649-2"><a href="ejercicios-e.html#cb649-2" tabindex="-1"></a>Superhero<span class="sc">$</span>heronames<span class="ot">&lt;-</span><span class="fu">factor</span>(Superhero<span class="sc">$</span>hero, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), </span>
+<span id="cb649-3"><a href="ejercicios-e.html#cb649-3" tabindex="-1"></a>     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Spiderman&quot;</span>,<span class="st">&quot;Superman&quot;</span>, <span class="st">&quot;Hulk&quot;</span>, <span class="st">&quot;Ninja Turtle&quot;</span>))</span>
+<span id="cb649-4"><a href="ejercicios-e.html#cb649-4" tabindex="-1"></a>Superhero</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:rename variables2">
 <caption style="caption-side: top; text-align: center;">(#tab:rename variables2) </caption><col><col><col><tr>
@@ -963,7 +963,7 @@ div.csl-indent {
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb644"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb644-1"><a href="ejercicios-e.html#cb644-1" tabindex="-1"></a><span class="fu">names</span>(Superhero)</span></code></pre></div>
+<div class="sourceCode" id="cb650"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb650-1"><a href="ejercicios-e.html#cb650-1" tabindex="-1"></a><span class="fu">names</span>(Superhero)</span></code></pre></div>
 </details>
 <pre><code>## [1] &quot;hero&quot;      &quot;injury&quot;    &quot;heronames&quot;</code></pre>
 </div>

@@ -865,11 +865,11 @@ div.csl-indent {
 <h3><span class="header-section-number">21.1.1</span> Ejemplo de Construcción de selección por <span class="math inline">\(R^2\)</span><a href="como-funciona-la-selección-de-modelos.html#ejemplo-de-construcción-de-selección-por-r2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Seleccionamos los datos de modulo regresión multiples (TF5). Sobre el <strong>Biomass Index</strong> y comoo esta corelacionado con la edad, el nivel de colesterol y glucosa en la sangre.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="como-funciona-la-selección-de-modelos.html#cb550-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb550-2"><a href="como-funciona-la-selección-de-modelos.html#cb550-2" tabindex="-1"></a></span>
-<span id="cb550-3"><a href="como-funciona-la-selección-de-modelos.html#cb550-3" tabindex="-1"></a>reg.multiple  <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;Data_files_csv/mod_empiricos.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;bmi&quot;</span>)</span>
-<span id="cb550-4"><a href="como-funciona-la-selección-de-modelos.html#cb550-4" tabindex="-1"></a><span class="co"># para ver las primeras seis filas de datos</span></span>
-<span id="cb550-5"><a href="como-funciona-la-selección-de-modelos.html#cb550-5" tabindex="-1"></a><span class="fu">head</span>(reg.multiple)</span></code></pre></div>
+<div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="como-funciona-la-selección-de-modelos.html#cb556-1" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb556-2"><a href="como-funciona-la-selección-de-modelos.html#cb556-2" tabindex="-1"></a></span>
+<span id="cb556-3"><a href="como-funciona-la-selección-de-modelos.html#cb556-3" tabindex="-1"></a>reg.multiple  <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;Data_files_csv/mod_empiricos.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;bmi&quot;</span>)</span>
+<span id="cb556-4"><a href="como-funciona-la-selección-de-modelos.html#cb556-4" tabindex="-1"></a><span class="co"># para ver las primeras seis filas de datos</span></span>
+<span id="cb556-5"><a href="como-funciona-la-selección-de-modelos.html#cb556-5" tabindex="-1"></a><span class="fu">head</span>(reg.multiple)</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:modelo">
 <caption style="caption-side: top; text-align: center;"><span id="tab:modelo">Table 21.1: </span> </caption><col><col><col><col><tr>
@@ -891,15 +891,15 @@ div.csl-indent {
 <div id="installar-los-siguientes-paquetes-si-no-lo-tienen-instalado" class="section level4 hasAnchor" number="21.1.1.1">
 <h4><span class="header-section-number">21.1.1.1</span> Installar los siguientes paquetes si no lo tienen instalado<a href="como-funciona-la-selección-de-modelos.html#installar-los-siguientes-paquetes-si-no-lo-tienen-instalado" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="como-funciona-la-selección-de-modelos.html#cb551-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span>
-<span id="cb551-2"><a href="como-funciona-la-selección-de-modelos.html#cb551-2" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(<span class="st">&quot;MuMIn&quot;</span>, <span class="st">&quot;formattable&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="como-funciona-la-selección-de-modelos.html#cb557-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span>
+<span id="cb557-2"><a href="como-funciona-la-selección-de-modelos.html#cb557-2" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(<span class="st">&quot;MuMIn&quot;</span>, <span class="st">&quot;formattable&quot;</span>)</span></code></pre></div>
 </details>
 <p>Se construye un modelo con todos los parametros. Vemos que el <span class="math inline">\(R^2= 0.0785\)</span>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="como-funciona-la-selección-de-modelos.html#cb552-1" tabindex="-1"></a><span class="fu">library</span>(car)</span>
-<span id="cb552-2"><a href="como-funciona-la-selección-de-modelos.html#cb552-2" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span>
-<span id="cb552-3"><a href="como-funciona-la-selección-de-modelos.html#cb552-3" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(BMI <span class="sc">~</span> Age <span class="sc">+</span> Cholesterol <span class="sc">+</span> Glucose, <span class="at">data =</span> reg.multiple)</span>
-<span id="cb552-4"><a href="como-funciona-la-selección-de-modelos.html#cb552-4" tabindex="-1"></a><span class="fu">tab_model</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb558"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb558-1"><a href="como-funciona-la-selección-de-modelos.html#cb558-1" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb558-2"><a href="como-funciona-la-selección-de-modelos.html#cb558-2" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span>
+<span id="cb558-3"><a href="como-funciona-la-selección-de-modelos.html#cb558-3" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(BMI <span class="sc">~</span> Age <span class="sc">+</span> Cholesterol <span class="sc">+</span> Glucose, <span class="at">data =</span> reg.multiple)</span>
+<span id="cb558-4"><a href="como-funciona-la-selección-de-modelos.html#cb558-4" tabindex="-1"></a><span class="fu">tab_model</span>(model)</span></code></pre></div>
 </details>
 <table style="border-collapse:collapse; border:none;">
 <tr>
@@ -1000,20 +1000,20 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <hr />
 <p>Ahora evaluamos todas las posibles combinaciones de modelos. Considera la columna de <span class="math inline">\(R^2\)</span> y los valores para cada modelo. Los que se observa es que el modelos con más variables tiene un <span class="math inline">\(R^2\)</span> más alto seguido con modelos con dos variables. La pregunta principal, un modelo con cuatro variables con un <span class="math inline">\(R^2=.127\)</span> es significativamente mejor que un modelo de 2 variables con un <span class="math inline">\(R^2=.1185\)</span>. Usando el método tradicional no hay mecanismos para seleccionar y evaluar cual de los modelos es el mejor tomando en cuenta la complejidad del modelo. NOTA: <strong><em>NA</em></strong> en la tabla quiere decir que esta variable no esta incluida en el modelo.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="como-funciona-la-selección-de-modelos.html#cb553-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb553-2"><a href="como-funciona-la-selección-de-modelos.html#cb553-2" tabindex="-1"></a><span class="fu">library</span>(MuMIn)</span>
-<span id="cb553-3"><a href="como-funciona-la-selección-de-modelos.html#cb553-3" tabindex="-1"></a></span>
-<span id="cb553-4"><a href="como-funciona-la-selección-de-modelos.html#cb553-4" tabindex="-1"></a><span class="fu">options</span>(<span class="at">na.action =</span> <span class="st">&quot;na.fail&quot;</span>)</span>
-<span id="cb553-5"><a href="como-funciona-la-selección-de-modelos.html#cb553-5" tabindex="-1"></a>model2<span class="ot">=</span><span class="fu">lm</span>(BMI <span class="sc">~</span> Age <span class="sc">+</span> Cholesterol <span class="sc">+</span> Glucose, <span class="at">data =</span> reg.multiple) <span class="co"># El Modelo más completo</span></span>
-<span id="cb553-6"><a href="como-funciona-la-selección-de-modelos.html#cb553-6" tabindex="-1"></a><span class="co">#model2</span></span>
-<span id="cb553-7"><a href="como-funciona-la-selección-de-modelos.html#cb553-7" tabindex="-1"></a><span class="co">#summary(model2)</span></span>
-<span id="cb553-8"><a href="como-funciona-la-selección-de-modelos.html#cb553-8" tabindex="-1"></a></span>
-<span id="cb553-9"><a href="como-funciona-la-selección-de-modelos.html#cb553-9" tabindex="-1"></a>ALL_models<span class="ot">=</span><span class="fu">dredge</span>(model2, <span class="at">extra=</span><span class="st">&quot;R^2&quot;</span>) <span class="co"># Evaluación de todas las compbinaciones/alternativas (modelos)</span></span></code></pre></div>
+<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="como-funciona-la-selección-de-modelos.html#cb559-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb559-2"><a href="como-funciona-la-selección-de-modelos.html#cb559-2" tabindex="-1"></a><span class="fu">library</span>(MuMIn)</span>
+<span id="cb559-3"><a href="como-funciona-la-selección-de-modelos.html#cb559-3" tabindex="-1"></a></span>
+<span id="cb559-4"><a href="como-funciona-la-selección-de-modelos.html#cb559-4" tabindex="-1"></a><span class="fu">options</span>(<span class="at">na.action =</span> <span class="st">&quot;na.fail&quot;</span>)</span>
+<span id="cb559-5"><a href="como-funciona-la-selección-de-modelos.html#cb559-5" tabindex="-1"></a>model2<span class="ot">=</span><span class="fu">lm</span>(BMI <span class="sc">~</span> Age <span class="sc">+</span> Cholesterol <span class="sc">+</span> Glucose, <span class="at">data =</span> reg.multiple) <span class="co"># El Modelo más completo</span></span>
+<span id="cb559-6"><a href="como-funciona-la-selección-de-modelos.html#cb559-6" tabindex="-1"></a><span class="co">#model2</span></span>
+<span id="cb559-7"><a href="como-funciona-la-selección-de-modelos.html#cb559-7" tabindex="-1"></a><span class="co">#summary(model2)</span></span>
+<span id="cb559-8"><a href="como-funciona-la-selección-de-modelos.html#cb559-8" tabindex="-1"></a></span>
+<span id="cb559-9"><a href="como-funciona-la-selección-de-modelos.html#cb559-9" tabindex="-1"></a>ALL_models<span class="ot">=</span><span class="fu">dredge</span>(model2, <span class="at">extra=</span><span class="st">&quot;R^2&quot;</span>) <span class="co"># Evaluación de todas las compbinaciones/alternativas (modelos)</span></span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="como-funciona-la-selección-de-modelos.html#cb554-1" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
-<span id="cb554-2"><a href="como-funciona-la-selección-de-modelos.html#cb554-2" tabindex="-1"></a></span>
-<span id="cb554-3"><a href="como-funciona-la-selección-de-modelos.html#cb554-3" tabindex="-1"></a><span class="fu">formattable</span>(ALL_models, <span class="at">digits=</span><span class="dv">5</span>, <span class="at">format=</span><span class="st">&quot;html&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="como-funciona-la-selección-de-modelos.html#cb560-1" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
+<span id="cb560-2"><a href="como-funciona-la-selección-de-modelos.html#cb560-2" tabindex="-1"></a></span>
+<span id="cb560-3"><a href="como-funciona-la-selección-de-modelos.html#cb560-3" tabindex="-1"></a><span class="fu">formattable</span>(ALL_models, <span class="at">digits=</span><span class="dv">5</span>, <span class="at">format=</span><span class="st">&quot;html&quot;</span>)</span></code></pre></div>
 </details>
 <table class="table table-condensed">
 <thead>
@@ -1434,8 +1434,8 @@ NA
 <p>El primer paso es construir los modelos que queremos comparar, para facilitar el ejemplo usamos un modelos complejo y comparamos todas las diferentes alternativas. NOTA: que este no es necesariamente el mejor acercamiento, ya que uno debería tener a priori una serie de modelos candidatos.</p>
 <p>Los datos son para evaluar sin hay efecto de cambio de nivel de ansiedad y depresión en la población de Puerto Rico luego del Huracán María. Los datos presentado son solamente parcial y incluye solamente un de los indices el del nivel de depresión después de 5 o más semanas luego del Huracán (Tremblay et al. sin publicar). La hipótesis es que algunos factores sociales y/o económico influencia el nivel de depresión en la gente.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="como-funciona-la-selección-de-modelos.html#cb555-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb555-2"><a href="como-funciona-la-selección-de-modelos.html#cb555-2" tabindex="-1"></a>DFMaria_student <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/DFMaria_student.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb561-1"><a href="como-funciona-la-selección-de-modelos.html#cb561-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb561-2"><a href="como-funciona-la-selección-de-modelos.html#cb561-2" tabindex="-1"></a>DFMaria_student <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/DFMaria_student.csv&quot;</span>)</span></code></pre></div>
 </details>
 <p>Metadata:</p>
 <ul>
@@ -1451,16 +1451,16 @@ NA
 <h3><span class="header-section-number">21.8.2</span> Limpiar los datos<a href="como-funciona-la-selección-de-modelos.html#limpiar-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>El primer paso es remover todos los participantes donde le falta algún información.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="como-funciona-la-selección-de-modelos.html#cb556-1" tabindex="-1"></a>DFMaria_student<span class="ot">=</span><span class="fu">na.omit</span>(DFMaria_student)</span></code></pre></div>
+<div class="sourceCode" id="cb562"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb562-1"><a href="como-funciona-la-selección-de-modelos.html#cb562-1" tabindex="-1"></a>DFMaria_student<span class="ot">=</span><span class="fu">na.omit</span>(DFMaria_student)</span></code></pre></div>
 </details>
 </div>
 <div id="construcción-del-modelo" class="section level3 hasAnchor" number="21.8.3">
 <h3><span class="header-section-number">21.8.3</span> Construcción del modelo<a href="como-funciona-la-selección-de-modelos.html#construcción-del-modelo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="como-funciona-la-selección-de-modelos.html#cb557-1" tabindex="-1"></a><span class="fu">head</span>(DFMaria_student)</span></code></pre></div>
+<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb563-1"><a href="como-funciona-la-selección-de-modelos.html#cb563-1" tabindex="-1"></a><span class="fu">head</span>(DFMaria_student)</span></code></pre></div>
 </details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-201">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-201">Table 21.2: </span> </caption><col><col><col><col><col><col><col><tr>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-202">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-202">Table 21.2: </span> </caption><col><col><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">...1</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Sexo</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Escolaridad</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Num_Pers_Hogar</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Sala_Mens_Antes</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Sala_Mens_Desp</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Index_Dep5T</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">3</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">19</td></tr>
@@ -1477,18 +1477,18 @@ NA
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb558"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb558-1"><a href="como-funciona-la-selección-de-modelos.html#cb558-1" tabindex="-1"></a>Huracan_Dep<span class="ot">=</span><span class="fu">lm</span>(Index_Dep5T<span class="sc">~</span><span class="fu">factor</span>(Sexo)<span class="sc">+</span>Escolaridad<span class="sc">+</span>Num_Pers_Hogar<span class="sc">+</span></span>
-<span id="cb558-2"><a href="como-funciona-la-selección-de-modelos.html#cb558-2" tabindex="-1"></a>                Sala_Mens_Antes<span class="sc">+</span> Sala_Mens_Desp, <span class="at">data=</span>DFMaria_student)</span></code></pre></div>
+<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="como-funciona-la-selección-de-modelos.html#cb564-1" tabindex="-1"></a>Huracan_Dep<span class="ot">=</span><span class="fu">lm</span>(Index_Dep5T<span class="sc">~</span><span class="fu">factor</span>(Sexo)<span class="sc">+</span>Escolaridad<span class="sc">+</span>Num_Pers_Hogar<span class="sc">+</span></span>
+<span id="cb564-2"><a href="como-funciona-la-selección-de-modelos.html#cb564-2" tabindex="-1"></a>                Sala_Mens_Antes<span class="sc">+</span> Sala_Mens_Desp, <span class="at">data=</span>DFMaria_student)</span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="como-funciona-la-selección-de-modelos.html#cb559-1" tabindex="-1"></a><span class="fu">ggplot</span>(DFMaria_student, <span class="fu">aes</span>(<span class="at">y=</span>Index_Dep5T,<span class="at">x=</span>Sala_Mens_Desp))<span class="sc">+</span></span>
-<span id="cb559-2"><a href="como-funciona-la-selección-de-modelos.html#cb559-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span></code></pre></div>
+<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb565-1"><a href="como-funciona-la-selección-de-modelos.html#cb565-1" tabindex="-1"></a><span class="fu">ggplot</span>(DFMaria_student, <span class="fu">aes</span>(<span class="at">y=</span>Index_Dep5T,<span class="at">x=</span>Sala_Mens_Desp))<span class="sc">+</span></span>
+<span id="cb565-2"><a href="como-funciona-la-selección-de-modelos.html#cb565-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-202-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-203-1.png" width="672" /></p>
 <div id="observar-el-resultado-del-modelo-lineal-completo." class="section level4 hasAnchor" number="21.8.3.1">
 <h4><span class="header-section-number">21.8.3.1</span> Observar el resultado del modelo lineal completo.<a href="como-funciona-la-selección-de-modelos.html#observar-el-resultado-del-modelo-lineal-completo." class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="como-funciona-la-selección-de-modelos.html#cb560-1" tabindex="-1"></a><span class="fu">summary</span>(Huracan_Dep)</span></code></pre></div>
+<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="como-funciona-la-selección-de-modelos.html#cb566-1" tabindex="-1"></a><span class="fu">summary</span>(Huracan_Dep)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -1517,8 +1517,8 @@ NA
 <div id="evaluar-todas-los-modelos." class="section level4 hasAnchor" number="21.8.3.2">
 <h4><span class="header-section-number">21.8.3.2</span> Evaluar todas los modelos.<a href="como-funciona-la-selección-de-modelos.html#evaluar-todas-los-modelos." class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Se ordena los modelos comenzando con el mejor, y si resta el valor de AICc con el mejor modelo, menor es el AICc mejor es el modelo. Los modelos que se estará aceptando son los que tienen un delta de menos &lt;-2.00 (comparando con el mejor modelo), <span class="math inline">\(\Delta_i=AIC_i-AIC_{\min}\)</span>. En otra palabra los modelos que difieren más de un AICc de 2.0 no se aceptan como buenos modelos. En este caso los seis primeros modelos son igual de bueno, y no hay evidencia que uno es mejor que el otro. Cuando hay más de un modelo se tiene que calcular los promedios ponderados de los parámetros <span class="math inline">\(\beta_i\)</span> .</p>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-204">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-204">Table 21.3: </span> Criterios de Selección de Modelos</caption><col><col><tr>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-205">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-205">Table 21.3: </span> Criterios de Selección de Modelos</caption><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;"><span style="color: rgb(255, 0, 0);">AIC_BIC_delta</span></th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;"><span style="color: rgb(255, 0, 0);">Interpretación</span></th></tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0-2</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Poca evidencia que los modelos son diferentes</td></tr>
@@ -1530,20 +1530,20 @@ NA
 
 <p>Con la función <strong>dredge</strong> del paquete <strong>MuMIn</strong> podemos evaluar todas las combinaciones de modelos</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb562"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb562-1"><a href="como-funciona-la-selección-de-modelos.html#cb562-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
-<span id="cb562-2"><a href="como-funciona-la-selección-de-modelos.html#cb562-2" tabindex="-1"></a><span class="fu">library</span>(MuMIn)</span>
-<span id="cb562-3"><a href="como-funciona-la-selección-de-modelos.html#cb562-3" tabindex="-1"></a></span>
-<span id="cb562-4"><a href="como-funciona-la-selección-de-modelos.html#cb562-4" tabindex="-1"></a><span class="fu">options</span>(<span class="at">na.action =</span> <span class="st">&quot;na.fail&quot;</span>)</span>
-<span id="cb562-5"><a href="como-funciona-la-selección-de-modelos.html#cb562-5" tabindex="-1"></a>Huracan_Dep<span class="ot">=</span><span class="fu">lm</span>(Index_Dep5T<span class="sc">~</span>Escolaridad<span class="sc">+</span>Num_Pers_Hogar<span class="sc">+</span></span>
-<span id="cb562-6"><a href="como-funciona-la-selección-de-modelos.html#cb562-6" tabindex="-1"></a>                Sala_Mens_Antes<span class="sc">+</span> Sala_Mens_Desp, <span class="at">data=</span>DFMaria_student) <span class="co"># El Modelo más completo</span></span>
-<span id="cb562-7"><a href="como-funciona-la-selección-de-modelos.html#cb562-7" tabindex="-1"></a><span class="co">#model2</span></span>
-<span id="cb562-8"><a href="como-funciona-la-selección-de-modelos.html#cb562-8" tabindex="-1"></a><span class="co">#summary(model2)</span></span>
-<span id="cb562-9"><a href="como-funciona-la-selección-de-modelos.html#cb562-9" tabindex="-1"></a></span>
-<span id="cb562-10"><a href="como-funciona-la-selección-de-modelos.html#cb562-10" tabindex="-1"></a>ALL_models<span class="ot">=</span><span class="fu">dredge</span>(Huracan_Dep, <span class="at">rank=</span><span class="st">&quot;AIC&quot;</span>, <span class="at">extra =</span> <span class="fu">c</span>(BIC, <span class="st">&quot;R^2&quot;</span>)) <span class="co"># Evaluación de todas las combinaciones/alternativas (modelos)</span></span>
-<span id="cb562-11"><a href="como-funciona-la-selección-de-modelos.html#cb562-11" tabindex="-1"></a></span>
-<span id="cb562-12"><a href="como-funciona-la-selección-de-modelos.html#cb562-12" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
-<span id="cb562-13"><a href="como-funciona-la-selección-de-modelos.html#cb562-13" tabindex="-1"></a></span>
-<span id="cb562-14"><a href="como-funciona-la-selección-de-modelos.html#cb562-14" tabindex="-1"></a><span class="fu">formattable</span>(ALL_models, <span class="at">digits=</span><span class="dv">4</span>, <span class="at">format=</span><span class="st">&quot;html&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="como-funciona-la-selección-de-modelos.html#cb568-1" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb568-2"><a href="como-funciona-la-selección-de-modelos.html#cb568-2" tabindex="-1"></a><span class="fu">library</span>(MuMIn)</span>
+<span id="cb568-3"><a href="como-funciona-la-selección-de-modelos.html#cb568-3" tabindex="-1"></a></span>
+<span id="cb568-4"><a href="como-funciona-la-selección-de-modelos.html#cb568-4" tabindex="-1"></a><span class="fu">options</span>(<span class="at">na.action =</span> <span class="st">&quot;na.fail&quot;</span>)</span>
+<span id="cb568-5"><a href="como-funciona-la-selección-de-modelos.html#cb568-5" tabindex="-1"></a>Huracan_Dep<span class="ot">=</span><span class="fu">lm</span>(Index_Dep5T<span class="sc">~</span>Escolaridad<span class="sc">+</span>Num_Pers_Hogar<span class="sc">+</span></span>
+<span id="cb568-6"><a href="como-funciona-la-selección-de-modelos.html#cb568-6" tabindex="-1"></a>                Sala_Mens_Antes<span class="sc">+</span> Sala_Mens_Desp, <span class="at">data=</span>DFMaria_student) <span class="co"># El Modelo más completo</span></span>
+<span id="cb568-7"><a href="como-funciona-la-selección-de-modelos.html#cb568-7" tabindex="-1"></a><span class="co">#model2</span></span>
+<span id="cb568-8"><a href="como-funciona-la-selección-de-modelos.html#cb568-8" tabindex="-1"></a><span class="co">#summary(model2)</span></span>
+<span id="cb568-9"><a href="como-funciona-la-selección-de-modelos.html#cb568-9" tabindex="-1"></a></span>
+<span id="cb568-10"><a href="como-funciona-la-selección-de-modelos.html#cb568-10" tabindex="-1"></a>ALL_models<span class="ot">=</span><span class="fu">dredge</span>(Huracan_Dep, <span class="at">rank=</span><span class="st">&quot;AIC&quot;</span>, <span class="at">extra =</span> <span class="fu">c</span>(BIC, <span class="st">&quot;R^2&quot;</span>)) <span class="co"># Evaluación de todas las combinaciones/alternativas (modelos)</span></span>
+<span id="cb568-11"><a href="como-funciona-la-selección-de-modelos.html#cb568-11" tabindex="-1"></a></span>
+<span id="cb568-12"><a href="como-funciona-la-selección-de-modelos.html#cb568-12" tabindex="-1"></a><span class="fu">library</span>(formattable)</span>
+<span id="cb568-13"><a href="como-funciona-la-selección-de-modelos.html#cb568-13" tabindex="-1"></a></span>
+<span id="cb568-14"><a href="como-funciona-la-selección-de-modelos.html#cb568-14" tabindex="-1"></a><span class="fu">formattable</span>(ALL_models, <span class="at">digits=</span><span class="dv">4</span>, <span class="at">format=</span><span class="st">&quot;html&quot;</span>)</span></code></pre></div>
 </details>
 <table class="table table-condensed">
 <thead>
@@ -2252,9 +2252,9 @@ NA
 <div id="calcular-el-coeficientes-ponderados" class="section level4 hasAnchor" number="21.8.3.3">
 <h4><span class="header-section-number">21.8.3.3</span> Calcular el coeficientes ponderados<a href="como-funciona-la-selección-de-modelos.html#calcular-el-coeficientes-ponderados" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb563-1"><a href="como-funciona-la-selección-de-modelos.html#cb563-1" tabindex="-1"></a><span class="co">#allmodels=format(round(ALL_models, digits=3), scientific=FALSE)</span></span>
-<span id="cb563-2"><a href="como-funciona-la-selección-de-modelos.html#cb563-2" tabindex="-1"></a><span class="co">#library(data.table)</span></span>
-<span id="cb563-3"><a href="como-funciona-la-selección-de-modelos.html#cb563-3" tabindex="-1"></a><span class="co">#write.csv(allmodels, &quot;allmodelsdata.csv&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="como-funciona-la-selección-de-modelos.html#cb569-1" tabindex="-1"></a><span class="co">#allmodels=format(round(ALL_models, digits=3), scientific=FALSE)</span></span>
+<span id="cb569-2"><a href="como-funciona-la-selección-de-modelos.html#cb569-2" tabindex="-1"></a><span class="co">#library(data.table)</span></span>
+<span id="cb569-3"><a href="como-funciona-la-selección-de-modelos.html#cb569-3" tabindex="-1"></a><span class="co">#write.csv(allmodels, &quot;allmodelsdata.csv&quot;)</span></span></code></pre></div>
 </details>
 <hr />
 </div>
@@ -2263,8 +2263,8 @@ NA
 <h3><span class="header-section-number">21.8.4</span> Seleccionar los modelos<a href="como-funciona-la-selección-de-modelos.html#seleccionar-los-modelos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Seleccionar los modelos que tienen un delta AICc menor de 2 y calcular el promedio de los coeficientes de los modelos. Nota el conjunto de coeficientes debajo <strong>subset</strong>, esto son los coeficientes de las variables del conjunto de modelos que tienen un delta AICc menor de 2.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="como-funciona-la-selección-de-modelos.html#cb564-1" tabindex="-1"></a><span class="co"># calculate the model average </span></span>
-<span id="cb564-2"><a href="como-funciona-la-selección-de-modelos.html#cb564-2" tabindex="-1"></a><span class="fu">model.avg</span>(ALL_models, <span class="at">subset =</span> delta <span class="sc">&lt;</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="como-funciona-la-selección-de-modelos.html#cb570-1" tabindex="-1"></a><span class="co"># calculate the model average </span></span>
+<span id="cb570-2"><a href="como-funciona-la-selección-de-modelos.html#cb570-2" tabindex="-1"></a><span class="fu">model.avg</span>(ALL_models, <span class="at">subset =</span> delta <span class="sc">&lt;</span> <span class="dv">2</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -2278,28 +2278,28 @@ NA
 ## full      12.93159  -0.2078493       0.2547956     -0.4095744    0.004178587
 ## subset    12.93159  -0.3155782       0.4515174     -0.4640050    0.041363512</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="como-funciona-la-selección-de-modelos.html#cb566-1" tabindex="-1"></a><span class="co"># get the subset of the best models into a data frame</span></span>
-<span id="cb566-2"><a href="como-funciona-la-selección-de-modelos.html#cb566-2" tabindex="-1"></a> bestModels <span class="ot">&lt;-</span> <span class="fu">get.models</span>(ALL_models, <span class="at">subset=</span>delta<span class="sc">&lt;</span><span class="dv">2</span>)</span>
-<span id="cb566-3"><a href="como-funciona-la-selección-de-modelos.html#cb566-3" tabindex="-1"></a>    bestModels <span class="ot">&lt;-</span> <span class="fu">model.avg</span>(bestModels)</span>
-<span id="cb566-4"><a href="como-funciona-la-selección-de-modelos.html#cb566-4" tabindex="-1"></a>    </span>
-<span id="cb566-5"><a href="como-funciona-la-selección-de-modelos.html#cb566-5" tabindex="-1"></a>    </span>
-<span id="cb566-6"><a href="como-funciona-la-selección-de-modelos.html#cb566-6" tabindex="-1"></a> bestModels<span class="ot">=</span><span class="fu">summary</span>(bestModels)</span>
-<span id="cb566-7"><a href="como-funciona-la-selección-de-modelos.html#cb566-7" tabindex="-1"></a><span class="co"># bestModels$coefficients</span></span></code></pre></div>
+<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="como-funciona-la-selección-de-modelos.html#cb572-1" tabindex="-1"></a><span class="co"># get the subset of the best models into a data frame</span></span>
+<span id="cb572-2"><a href="como-funciona-la-selección-de-modelos.html#cb572-2" tabindex="-1"></a> bestModels <span class="ot">&lt;-</span> <span class="fu">get.models</span>(ALL_models, <span class="at">subset=</span>delta<span class="sc">&lt;</span><span class="dv">2</span>)</span>
+<span id="cb572-3"><a href="como-funciona-la-selección-de-modelos.html#cb572-3" tabindex="-1"></a>    bestModels <span class="ot">&lt;-</span> <span class="fu">model.avg</span>(bestModels)</span>
+<span id="cb572-4"><a href="como-funciona-la-selección-de-modelos.html#cb572-4" tabindex="-1"></a>    </span>
+<span id="cb572-5"><a href="como-funciona-la-selección-de-modelos.html#cb572-5" tabindex="-1"></a>    </span>
+<span id="cb572-6"><a href="como-funciona-la-selección-de-modelos.html#cb572-6" tabindex="-1"></a> bestModels<span class="ot">=</span><span class="fu">summary</span>(bestModels)</span>
+<span id="cb572-7"><a href="como-funciona-la-selección-de-modelos.html#cb572-7" tabindex="-1"></a><span class="co"># bestModels$coefficients</span></span></code></pre></div>
 </details>
 <hr />
 </div>
 <div id="extraer-los-parametros-del-modelo-usando-las-sigueientes-funciones" class="section level3 hasAnchor" number="21.8.5">
 <h3><span class="header-section-number">21.8.5</span> Extraer los parametros del modelo, usando las sigueientes funciones<a href="como-funciona-la-selección-de-modelos.html#extraer-los-parametros-del-modelo-usando-las-sigueientes-funciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="como-funciona-la-selección-de-modelos.html#cb567-1" tabindex="-1"></a>bestModelsResults<span class="ot">=</span><span class="fu">data.frame</span>(bestModels<span class="sc">$</span>coefmat.subset)</span>
-<span id="cb567-2"><a href="como-funciona-la-selección-de-modelos.html#cb567-2" tabindex="-1"></a> <span class="fu">names</span>(bestModelsResults)</span></code></pre></div>
+<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="como-funciona-la-selección-de-modelos.html#cb573-1" tabindex="-1"></a>bestModelsResults<span class="ot">=</span><span class="fu">data.frame</span>(bestModels<span class="sc">$</span>coefmat.subset)</span>
+<span id="cb573-2"><a href="como-funciona-la-selección-de-modelos.html#cb573-2" tabindex="-1"></a> <span class="fu">names</span>(bestModelsResults)</span></code></pre></div>
 </details>
 <pre><code>## [1] &quot;Estimate&quot;    &quot;Std..Error&quot;  &quot;Adjusted.SE&quot; &quot;z.value&quot;     &quot;Pr...z..&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="como-funciona-la-selección-de-modelos.html#cb569-1" tabindex="-1"></a> bestModelsResults</span></code></pre></div>
+<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="como-funciona-la-selección-de-modelos.html#cb575-1" tabindex="-1"></a> bestModelsResults</span></code></pre></div>
 </details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-208">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-208">Table 21.4: </span> </caption><col><col><col><col><col><tr>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-209">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-209">Table 21.4: </span> </caption><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Estimate</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Std..Error</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Adjusted.SE</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">z.value</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Pr...z..</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">12.9&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.703</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.704</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">18.4&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
@@ -2314,11 +2314,11 @@ NA
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="como-funciona-la-selección-de-modelos.html#cb570-1" tabindex="-1"></a>BMR<span class="ot">=</span><span class="fu">setNames</span>(<span class="fu">cbind</span>(<span class="fu">rownames</span>(bestModelsResults), bestModelsResults, <span class="at">row.names =</span> <span class="cn">NULL</span>), </span>
-<span id="cb570-2"><a href="como-funciona-la-selección-de-modelos.html#cb570-2" tabindex="-1"></a>         <span class="fu">c</span>(<span class="st">&quot;Variables&quot;</span>, <span class="st">&quot;Coef_Estimate&quot;</span>, <span class="st">&quot;Std_Error&quot;</span>, <span class="st">&quot;AdjustedSE&quot;</span>, <span class="st">&quot;z_value&quot;</span>, <span class="st">&quot;p_value&quot;</span>))</span>
-<span id="cb570-3"><a href="como-funciona-la-selección-de-modelos.html#cb570-3" tabindex="-1"></a>BMR<span class="ot">=</span><span class="fu">as.data.frame</span>(BMR)</span>
-<span id="cb570-4"><a href="como-funciona-la-selección-de-modelos.html#cb570-4" tabindex="-1"></a><span class="co">#BMR</span></span>
-<span id="cb570-5"><a href="como-funciona-la-selección-de-modelos.html#cb570-5" tabindex="-1"></a><span class="fu">is.data.frame</span>(BMR)</span></code></pre></div>
+<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="como-funciona-la-selección-de-modelos.html#cb576-1" tabindex="-1"></a>BMR<span class="ot">=</span><span class="fu">setNames</span>(<span class="fu">cbind</span>(<span class="fu">rownames</span>(bestModelsResults), bestModelsResults, <span class="at">row.names =</span> <span class="cn">NULL</span>), </span>
+<span id="cb576-2"><a href="como-funciona-la-selección-de-modelos.html#cb576-2" tabindex="-1"></a>         <span class="fu">c</span>(<span class="st">&quot;Variables&quot;</span>, <span class="st">&quot;Coef_Estimate&quot;</span>, <span class="st">&quot;Std_Error&quot;</span>, <span class="st">&quot;AdjustedSE&quot;</span>, <span class="st">&quot;z_value&quot;</span>, <span class="st">&quot;p_value&quot;</span>))</span>
+<span id="cb576-3"><a href="como-funciona-la-selección-de-modelos.html#cb576-3" tabindex="-1"></a>BMR<span class="ot">=</span><span class="fu">as.data.frame</span>(BMR)</span>
+<span id="cb576-4"><a href="como-funciona-la-selección-de-modelos.html#cb576-4" tabindex="-1"></a><span class="co">#BMR</span></span>
+<span id="cb576-5"><a href="como-funciona-la-selección-de-modelos.html#cb576-5" tabindex="-1"></a><span class="fu">is.data.frame</span>(BMR)</span></code></pre></div>
 </details>
 <pre><code>## [1] TRUE</code></pre>
 <hr />
@@ -2327,17 +2327,17 @@ NA
 <h3><span class="header-section-number">21.8.6</span> Intervalos de Confianza<a href="como-funciona-la-selección-de-modelos.html#intervalos-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Los Intervalos de confianza de los parámetros se extraje del modelo usando la siguiente funciones.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="como-funciona-la-selección-de-modelos.html#cb572-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb572-2"><a href="como-funciona-la-selección-de-modelos.html#cb572-2" tabindex="-1"></a><span class="fu">library</span>(coefplot)</span>
-<span id="cb572-3"><a href="como-funciona-la-selección-de-modelos.html#cb572-3" tabindex="-1"></a></span>
-<span id="cb572-4"><a href="como-funciona-la-selección-de-modelos.html#cb572-4" tabindex="-1"></a><span class="co"># Calcular el intervalo de confianza de 2.5% y de 97.5% </span></span>
-<span id="cb572-5"><a href="como-funciona-la-selección-de-modelos.html#cb572-5" tabindex="-1"></a></span>
-<span id="cb572-6"><a href="como-funciona-la-selección-de-modelos.html#cb572-6" tabindex="-1"></a>BMR<span class="sc">$</span>LowerBound<span class="ot">=</span>BMR<span class="sc">$</span>Coef_Estimate<span class="sc">-</span>BMR<span class="sc">$</span>AdjustedSE<span class="sc">*</span><span class="dv">2</span></span>
-<span id="cb572-7"><a href="como-funciona-la-selección-de-modelos.html#cb572-7" tabindex="-1"></a>BMR<span class="sc">$</span>UpperBound<span class="ot">=</span>BMR<span class="sc">$</span>Coef_Estimate<span class="sc">+</span>BMR<span class="sc">$</span>AdjustedSE<span class="sc">*</span><span class="dv">2</span></span>
-<span id="cb572-8"><a href="como-funciona-la-selección-de-modelos.html#cb572-8" tabindex="-1"></a>BMR</span></code></pre></div>
+<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="como-funciona-la-selección-de-modelos.html#cb578-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb578-2"><a href="como-funciona-la-selección-de-modelos.html#cb578-2" tabindex="-1"></a><span class="fu">library</span>(coefplot)</span>
+<span id="cb578-3"><a href="como-funciona-la-selección-de-modelos.html#cb578-3" tabindex="-1"></a></span>
+<span id="cb578-4"><a href="como-funciona-la-selección-de-modelos.html#cb578-4" tabindex="-1"></a><span class="co"># Calcular el intervalo de confianza de 2.5% y de 97.5% </span></span>
+<span id="cb578-5"><a href="como-funciona-la-selección-de-modelos.html#cb578-5" tabindex="-1"></a></span>
+<span id="cb578-6"><a href="como-funciona-la-selección-de-modelos.html#cb578-6" tabindex="-1"></a>BMR<span class="sc">$</span>LowerBound<span class="ot">=</span>BMR<span class="sc">$</span>Coef_Estimate<span class="sc">-</span>BMR<span class="sc">$</span>AdjustedSE<span class="sc">*</span><span class="dv">2</span></span>
+<span id="cb578-7"><a href="como-funciona-la-selección-de-modelos.html#cb578-7" tabindex="-1"></a>BMR<span class="sc">$</span>UpperBound<span class="ot">=</span>BMR<span class="sc">$</span>Coef_Estimate<span class="sc">+</span>BMR<span class="sc">$</span>AdjustedSE<span class="sc">*</span><span class="dv">2</span></span>
+<span id="cb578-8"><a href="como-funciona-la-selección-de-modelos.html#cb578-8" tabindex="-1"></a>BMR</span></code></pre></div>
 </details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-209">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-209">Table 21.5: </span> </caption><col><col><col><col><col><col><col><col><tr>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-210">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-210">Table 21.5: </span> </caption><col><col><col><col><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Variables</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Coef_Estimate</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Std_Error</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">AdjustedSE</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">z_value</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">p_value</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">LowerBound</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">UpperBound</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">(Intercept)</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">12.9&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.703</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.704</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">18.4&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">11.5&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">14.3&nbsp;&nbsp;&nbsp;</td></tr>
@@ -2352,7 +2352,7 @@ NA
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="como-funciona-la-selección-de-modelos.html#cb573-1" tabindex="-1"></a><span class="fu">names</span>(BMR)</span></code></pre></div>
+<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="como-funciona-la-selección-de-modelos.html#cb579-1" tabindex="-1"></a><span class="fu">names</span>(BMR)</span></code></pre></div>
 </details>
 <pre><code>## [1] &quot;Variables&quot;     &quot;Coef_Estimate&quot; &quot;Std_Error&quot;     &quot;AdjustedSE&quot;   
 ## [5] &quot;z_value&quot;       &quot;p_value&quot;       &quot;LowerBound&quot;    &quot;UpperBound&quot;</code></pre>
@@ -2361,20 +2361,20 @@ NA
 <div id="visualizar-los-coeficientes-con-los-intervalos-de-confianza" class="section level3 hasAnchor" number="21.8.7">
 <h3><span class="header-section-number">21.8.7</span> Visualizar los coeficientes con los intervalos de confianza<a href="como-funciona-la-selección-de-modelos.html#visualizar-los-coeficientes-con-los-intervalos-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="como-funciona-la-selección-de-modelos.html#cb575-1" tabindex="-1"></a><span class="fu">ggplot</span>(BMR, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Variables, <span class="at">y =</span> Coef_Estimate,</span>
-<span id="cb575-2"><a href="como-funciona-la-selección-de-modelos.html#cb575-2" tabindex="-1"></a>       <span class="at">ymin =</span> LowerBound, <span class="at">ymax =</span> UpperBound, <span class="at">colour=</span>Variables))<span class="sc">+</span></span>
-<span id="cb575-3"><a href="como-funciona-la-selección-de-modelos.html#cb575-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb575-4"><a href="como-funciona-la-selección-de-modelos.html#cb575-4" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">0.0</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb575-5"><a href="como-funciona-la-selección-de-modelos.html#cb575-5" tabindex="-1"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
-<span id="cb575-6"><a href="como-funciona-la-selección-de-modelos.html#cb575-6" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>()<span class="sc">+</span></span>
-<span id="cb575-7"><a href="como-funciona-la-selección-de-modelos.html#cb575-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Variables&quot;</span>)<span class="sc">+</span></span>
-<span id="cb575-8"><a href="como-funciona-la-selección-de-modelos.html#cb575-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Mean Coefficients: Indice de depresión&quot;</span>)<span class="sc">+</span></span>
-<span id="cb575-9"><a href="como-funciona-la-selección-de-modelos.html#cb575-9" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
-<span id="cb575-10"><a href="como-funciona-la-selección-de-modelos.html#cb575-10" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="como-funciona-la-selección-de-modelos.html#cb581-1" tabindex="-1"></a><span class="fu">ggplot</span>(BMR, <span class="at">mapping=</span><span class="fu">aes</span>(<span class="at">x=</span>Variables, <span class="at">y =</span> Coef_Estimate,</span>
+<span id="cb581-2"><a href="como-funciona-la-selección-de-modelos.html#cb581-2" tabindex="-1"></a>       <span class="at">ymin =</span> LowerBound, <span class="at">ymax =</span> UpperBound, <span class="at">colour=</span>Variables))<span class="sc">+</span></span>
+<span id="cb581-3"><a href="como-funciona-la-selección-de-modelos.html#cb581-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb581-4"><a href="como-funciona-la-selección-de-modelos.html#cb581-4" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">0.0</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb581-5"><a href="como-funciona-la-selección-de-modelos.html#cb581-5" tabindex="-1"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
+<span id="cb581-6"><a href="como-funciona-la-selección-de-modelos.html#cb581-6" tabindex="-1"></a>  <span class="fu">geom_pointrange</span>()<span class="sc">+</span></span>
+<span id="cb581-7"><a href="como-funciona-la-selección-de-modelos.html#cb581-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Variables&quot;</span>)<span class="sc">+</span></span>
+<span id="cb581-8"><a href="como-funciona-la-selección-de-modelos.html#cb581-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Mean Coefficients: Indice de depresión&quot;</span>)<span class="sc">+</span></span>
+<span id="cb581-9"><a href="como-funciona-la-selección-de-modelos.html#cb581-9" tabindex="-1"></a>  rlt_theme<span class="sc">+</span></span>
+<span id="cb581-10"><a href="como-funciona-la-selección-de-modelos.html#cb581-10" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">&quot;none&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-210-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-211-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="como-funciona-la-selección-de-modelos.html#cb576-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Indice_depresión.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb582-1"><a href="como-funciona-la-selección-de-modelos.html#cb582-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Indice_depresión.png&quot;</span>)</span></code></pre></div>
 </details>
 <p>Referencias:</p>
 <p>Johnson, J. B., K. S. Omland. 2004. Model selection in ecology and evolution. TRENDS in Ecology and Evolution. 19:101-108. doi: 10.1016/j.tree.2003.10.013.</p>

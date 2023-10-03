@@ -864,25 +864,25 @@ div.csl-indent {
 <div id="instalar-libreria-si-es-necesario" class="section level3 hasAnchor" number="16.0.1">
 <h3><span class="header-section-number">16.0.1</span> Instalar libreria si es necesario<a href="anova.html#instalar-libreria-si-es-necesario" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb436"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb436-1"><a href="anova.html#cb436-1" tabindex="-1"></a><span class="co">#install.packages(&quot;car&quot;)</span></span>
-<span id="cb436-2"><a href="anova.html#cb436-2" tabindex="-1"></a><span class="co">#install.packages(&quot;pastecs&quot;)</span></span>
-<span id="cb436-3"><a href="anova.html#cb436-3" tabindex="-1"></a><span class="co">#install.packages(&quot;multcomp&quot;)</span></span>
-<span id="cb436-4"><a href="anova.html#cb436-4" tabindex="-1"></a><span class="co">#install.packages(&quot;compute.es&quot;)</span></span>
-<span id="cb436-5"><a href="anova.html#cb436-5" tabindex="-1"></a><span class="co">#install.packages(&quot;WRS2&quot;, repos=&quot;http://R-Forge.R-project.org&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="anova.html#cb442-1" tabindex="-1"></a><span class="co">#install.packages(&quot;car&quot;)</span></span>
+<span id="cb442-2"><a href="anova.html#cb442-2" tabindex="-1"></a><span class="co">#install.packages(&quot;pastecs&quot;)</span></span>
+<span id="cb442-3"><a href="anova.html#cb442-3" tabindex="-1"></a><span class="co">#install.packages(&quot;multcomp&quot;)</span></span>
+<span id="cb442-4"><a href="anova.html#cb442-4" tabindex="-1"></a><span class="co">#install.packages(&quot;compute.es&quot;)</span></span>
+<span id="cb442-5"><a href="anova.html#cb442-5" tabindex="-1"></a><span class="co">#install.packages(&quot;WRS2&quot;, repos=&quot;http://R-Forge.R-project.org&quot;)</span></span></code></pre></div>
 </details>
 </div>
 <div id="activar-libreria" class="section level3 hasAnchor" number="16.0.2">
 <h3><span class="header-section-number">16.0.2</span> Activar libreria<a href="anova.html#activar-libreria" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb437"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb437-1"><a href="anova.html#cb437-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb437-2"><a href="anova.html#cb437-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb437-3"><a href="anova.html#cb437-3" tabindex="-1"></a></span>
-<span id="cb437-4"><a href="anova.html#cb437-4" tabindex="-1"></a><span class="fu">library</span>(huxtable)</span>
-<span id="cb437-5"><a href="anova.html#cb437-5" tabindex="-1"></a><span class="fu">library</span>(car)</span>
-<span id="cb437-6"><a href="anova.html#cb437-6" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
-<span id="cb437-7"><a href="anova.html#cb437-7" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
-<span id="cb437-8"><a href="anova.html#cb437-8" tabindex="-1"></a><span class="fu">library</span>(compute.es)</span>
-<span id="cb437-9"><a href="anova.html#cb437-9" tabindex="-1"></a><span class="fu">library</span>(WRS2) </span></code></pre></div>
+<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="anova.html#cb443-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb443-2"><a href="anova.html#cb443-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb443-3"><a href="anova.html#cb443-3" tabindex="-1"></a></span>
+<span id="cb443-4"><a href="anova.html#cb443-4" tabindex="-1"></a><span class="fu">library</span>(huxtable)</span>
+<span id="cb443-5"><a href="anova.html#cb443-5" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb443-6"><a href="anova.html#cb443-6" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
+<span id="cb443-7"><a href="anova.html#cb443-7" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb443-8"><a href="anova.html#cb443-8" tabindex="-1"></a><span class="fu">library</span>(compute.es)</span>
+<span id="cb443-9"><a href="anova.html#cb443-9" tabindex="-1"></a><span class="fu">library</span>(WRS2) </span></code></pre></div>
 </details>
 </div>
 <div id="anova-1" class="section level2 hasAnchor" number="16.1">
@@ -904,23 +904,23 @@ múltiples pruebas t, hay una posibilidad que se recheza la hipótesis
 nula cuando se debería aceptar. Cuan grande es ese error si uno hace
 múltiples pruebas t.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb438"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb438-1"><a href="anova.html#cb438-1" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb438-2"><a href="anova.html#cb438-2" tabindex="-1"></a>Tipo_errorI<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb438-3"><a href="anova.html#cb438-3" tabindex="-1"></a>  <span class="sc">~</span>Cantidad_Grupo_k, <span class="sc">~</span>C, <span class="sc">~</span><span class="st">&quot;0.05&quot;</span>, <span class="sc">~</span><span class="st">&quot;0.01&quot;</span>,</span>
-<span id="cb438-4"><a href="anova.html#cb438-4" tabindex="-1"></a>  <span class="st">&quot;2&quot;</span>,<span class="st">&quot;1&quot;</span>,<span class="st">&quot;0.05&quot;</span>, <span class="st">&quot;0.01&quot;</span>,</span>
-<span id="cb438-5"><a href="anova.html#cb438-5" tabindex="-1"></a>  <span class="st">&quot;3&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;0.14&quot;</span>, <span class="st">&quot;0.03&quot;</span>,</span>
-<span id="cb438-6"><a href="anova.html#cb438-6" tabindex="-1"></a>  <span class="st">&quot;4&quot;</span>, <span class="st">&quot;6&quot;</span>, <span class="st">&quot;0.26&quot;</span>, <span class="st">&quot;0.06&quot;</span>,</span>
-<span id="cb438-7"><a href="anova.html#cb438-7" tabindex="-1"></a>  <span class="st">&quot;5&quot;</span>, <span class="st">&quot;10&quot;</span>, <span class="st">&quot;0.40&quot;</span>, <span class="st">&quot;0.10&quot;</span>,</span>
-<span id="cb438-8"><a href="anova.html#cb438-8" tabindex="-1"></a>  <span class="st">&quot;6&quot;</span>, <span class="st">&quot;15&quot;</span>, <span class="st">&quot;0.54&quot;</span>, <span class="st">&quot;0.14&quot;</span></span>
-<span id="cb438-9"><a href="anova.html#cb438-9" tabindex="-1"></a>)</span>
-<span id="cb438-10"><a href="anova.html#cb438-10" tabindex="-1"></a><span class="fu">huxtable</span>(Tipo_errorI)<span class="sc">%&gt;%</span></span>
-<span id="cb438-11"><a href="anova.html#cb438-11" tabindex="-1"></a>    <span class="fu">theme_article</span>(<span class="at">header_col =</span> <span class="cn">FALSE</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb438-12"><a href="anova.html#cb438-12" tabindex="-1"></a>  <span class="fu">set_bottom_border</span>(<span class="at">row =</span> <span class="dv">1</span>, <span class="at">col =</span> everywhere, <span class="at">value =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb438-13"><a href="anova.html#cb438-13" tabindex="-1"></a>  <span class="fu">set_caption</span>(<span class="st">&quot;La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)&quot;</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb438-14"><a href="anova.html#cb438-14" tabindex="-1"></a>  <span class="fu">add_footnote</span>(<span class="st">&quot;* C=k(k-1)/2, que es la cantidad de comparación&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="anova.html#cb444-1" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb444-2"><a href="anova.html#cb444-2" tabindex="-1"></a>Tipo_errorI<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb444-3"><a href="anova.html#cb444-3" tabindex="-1"></a>  <span class="sc">~</span>Cantidad_Grupo_k, <span class="sc">~</span>C, <span class="sc">~</span><span class="st">&quot;0.05&quot;</span>, <span class="sc">~</span><span class="st">&quot;0.01&quot;</span>,</span>
+<span id="cb444-4"><a href="anova.html#cb444-4" tabindex="-1"></a>  <span class="st">&quot;2&quot;</span>,<span class="st">&quot;1&quot;</span>,<span class="st">&quot;0.05&quot;</span>, <span class="st">&quot;0.01&quot;</span>,</span>
+<span id="cb444-5"><a href="anova.html#cb444-5" tabindex="-1"></a>  <span class="st">&quot;3&quot;</span>, <span class="st">&quot;3&quot;</span>, <span class="st">&quot;0.14&quot;</span>, <span class="st">&quot;0.03&quot;</span>,</span>
+<span id="cb444-6"><a href="anova.html#cb444-6" tabindex="-1"></a>  <span class="st">&quot;4&quot;</span>, <span class="st">&quot;6&quot;</span>, <span class="st">&quot;0.26&quot;</span>, <span class="st">&quot;0.06&quot;</span>,</span>
+<span id="cb444-7"><a href="anova.html#cb444-7" tabindex="-1"></a>  <span class="st">&quot;5&quot;</span>, <span class="st">&quot;10&quot;</span>, <span class="st">&quot;0.40&quot;</span>, <span class="st">&quot;0.10&quot;</span>,</span>
+<span id="cb444-8"><a href="anova.html#cb444-8" tabindex="-1"></a>  <span class="st">&quot;6&quot;</span>, <span class="st">&quot;15&quot;</span>, <span class="st">&quot;0.54&quot;</span>, <span class="st">&quot;0.14&quot;</span></span>
+<span id="cb444-9"><a href="anova.html#cb444-9" tabindex="-1"></a>)</span>
+<span id="cb444-10"><a href="anova.html#cb444-10" tabindex="-1"></a><span class="fu">huxtable</span>(Tipo_errorI)<span class="sc">%&gt;%</span></span>
+<span id="cb444-11"><a href="anova.html#cb444-11" tabindex="-1"></a>    <span class="fu">theme_article</span>(<span class="at">header_col =</span> <span class="cn">FALSE</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb444-12"><a href="anova.html#cb444-12" tabindex="-1"></a>  <span class="fu">set_bottom_border</span>(<span class="at">row =</span> <span class="dv">1</span>, <span class="at">col =</span> everywhere, <span class="at">value =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb444-13"><a href="anova.html#cb444-13" tabindex="-1"></a>  <span class="fu">set_caption</span>(<span class="st">&quot;La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)&quot;</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb444-14"><a href="anova.html#cb444-14" tabindex="-1"></a>  <span class="fu">add_footnote</span>(<span class="st">&quot;* C=k(k-1)/2, que es la cantidad de comparación&quot;</span>)</span></code></pre></div>
 </details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-169">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-169">Table 16.1: </span> La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)</caption><col><col><col><col><tr>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-170">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-170">Table 16.1: </span> La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)</caption><col><col><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Cantidad_Grupo_k</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">C</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 1pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">0.05</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 1pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">0.01</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.05</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 1pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.01</td></tr>
@@ -990,15 +990,15 @@ concentración de fósforo diferente</li>
 </ul>
 </blockquote>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb439"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb439-1"><a href="anova.html#cb439-1" tabindex="-1"></a>id<span class="ot">&lt;-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>)</span>
-<span id="cb439-2"><a href="anova.html#cb439-2" tabindex="-1"></a>Cant_Fos<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">55</span>,<span class="dv">56</span>,<span class="dv">64</span>,<span class="dv">45</span>,<span class="dv">44</span>,</span>
-<span id="cb439-3"><a href="anova.html#cb439-3" tabindex="-1"></a>            <span class="dv">37</span>,<span class="dv">36</span>,<span class="dv">35</span>,<span class="dv">38</span>,<span class="dv">39</span>,</span>
-<span id="cb439-4"><a href="anova.html#cb439-4" tabindex="-1"></a>            <span class="dv">12</span>,<span class="dv">28</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">11</span>,<span class="dv">9</span>)</span>
-<span id="cb439-5"><a href="anova.html#cb439-5" tabindex="-1"></a>Lagos<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>),<span class="fu">rep</span>(<span class="dv">2</span>,<span class="dv">5</span>), <span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span>
-<span id="cb439-6"><a href="anova.html#cb439-6" tabindex="-1"></a>Lagos<span class="ot">&lt;-</span><span class="fu">factor</span>(Lagos, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>), </span>
-<span id="cb439-7"><a href="anova.html#cb439-7" tabindex="-1"></a>              <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Caraizo&quot;</span>, <span class="st">&quot;DosBocas&quot;</span>, <span class="st">&quot;Guineo&quot;</span>))</span>
-<span id="cb439-8"><a href="anova.html#cb439-8" tabindex="-1"></a>fosforo<span class="ot">&lt;-</span><span class="fu">data.frame</span>(id,Cant_Fos,Lagos)</span>
-<span id="cb439-9"><a href="anova.html#cb439-9" tabindex="-1"></a>fosforo</span></code></pre></div>
+<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="anova.html#cb445-1" tabindex="-1"></a>id<span class="ot">&lt;-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>)</span>
+<span id="cb445-2"><a href="anova.html#cb445-2" tabindex="-1"></a>Cant_Fos<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">55</span>,<span class="dv">56</span>,<span class="dv">64</span>,<span class="dv">45</span>,<span class="dv">44</span>,</span>
+<span id="cb445-3"><a href="anova.html#cb445-3" tabindex="-1"></a>            <span class="dv">37</span>,<span class="dv">36</span>,<span class="dv">35</span>,<span class="dv">38</span>,<span class="dv">39</span>,</span>
+<span id="cb445-4"><a href="anova.html#cb445-4" tabindex="-1"></a>            <span class="dv">12</span>,<span class="dv">28</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">11</span>,<span class="dv">9</span>)</span>
+<span id="cb445-5"><a href="anova.html#cb445-5" tabindex="-1"></a>Lagos<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>),<span class="fu">rep</span>(<span class="dv">2</span>,<span class="dv">5</span>), <span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span>
+<span id="cb445-6"><a href="anova.html#cb445-6" tabindex="-1"></a>Lagos<span class="ot">&lt;-</span><span class="fu">factor</span>(Lagos, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>), </span>
+<span id="cb445-7"><a href="anova.html#cb445-7" tabindex="-1"></a>              <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Caraizo&quot;</span>, <span class="st">&quot;DosBocas&quot;</span>, <span class="st">&quot;Guineo&quot;</span>))</span>
+<span id="cb445-8"><a href="anova.html#cb445-8" tabindex="-1"></a>fosforo<span class="ot">&lt;-</span><span class="fu">data.frame</span>(id,Cant_Fos,Lagos)</span>
+<span id="cb445-9"><a href="anova.html#cb445-9" tabindex="-1"></a>fosforo</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:ejemplo">
 <caption style="caption-side: top; text-align: center;"><span id="tab:ejemplo">Table 16.2: </span> </caption><col><col><col><tr>
@@ -1047,14 +1047,14 @@ valores de la linea y muchos de los valores están por encima. Se observa
 que la concentración de fósforo en plantas que provienen de los lagos
 Caraizo y Guineo son lejos del promedio.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb440"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb440-1"><a href="anova.html#cb440-1" tabindex="-1"></a>mean_fosforo<span class="ot">=</span><span class="fu">mean</span>(fosforo<span class="sc">$</span>Cant_Fos)</span>
-<span id="cb440-2"><a href="anova.html#cb440-2" tabindex="-1"></a>mean_fosforo</span></code></pre></div>
+<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="anova.html#cb446-1" tabindex="-1"></a>mean_fosforo<span class="ot">=</span><span class="fu">mean</span>(fosforo<span class="sc">$</span>Cant_Fos)</span>
+<span id="cb446-2"><a href="anova.html#cb446-2" tabindex="-1"></a>mean_fosforo</span></code></pre></div>
 </details>
 <pre><code>## [1] 33.75</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb442"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb442-1"><a href="anova.html#cb442-1" tabindex="-1"></a><span class="fu">ggplot</span>(fosforo, <span class="fu">aes</span>(Lagos, Cant_Fos, <span class="at">colour=</span>Lagos))<span class="sc">+</span></span>
-<span id="cb442-2"><a href="anova.html#cb442-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
-<span id="cb442-3"><a href="anova.html#cb442-3" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> mean_fosforo) <span class="co"># geom_hline = linea horizontal</span></span></code></pre></div>
+<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="anova.html#cb448-1" tabindex="-1"></a><span class="fu">ggplot</span>(fosforo, <span class="fu">aes</span>(Lagos, Cant_Fos, <span class="at">colour=</span>Lagos))<span class="sc">+</span></span>
+<span id="cb448-2"><a href="anova.html#cb448-2" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>)<span class="sc">+</span></span>
+<span id="cb448-3"><a href="anova.html#cb448-3" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> mean_fosforo) <span class="co"># geom_hline = linea horizontal</span></span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/plot-1.png" width="672" /></p>
 <p>Otra alternativa y una que ayuda a entender como se hace el cálculos es
@@ -1063,11 +1063,11 @@ los residuales.
 <span style="color: blue;">Nota que esto se parece a la grafica de residuales de la regresión lineal</span>.
 Vimos también este tipo de gráfico para la prueba de t.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb443"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb443-1"><a href="anova.html#cb443-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>, Cant_Fos, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">60</span>), <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;order&quot;</span>, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb443-2"><a href="anova.html#cb443-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb443-3"><a href="anova.html#cb443-3" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>) <span class="fu">lines</span>(<span class="fu">c</span>(i,i), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="anova.html#cb449-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>, Cant_Fos, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">60</span>), <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;order&quot;</span>, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb449-2"><a href="anova.html#cb449-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb449-3"><a href="anova.html#cb449-3" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>) <span class="fu">lines</span>(<span class="fu">c</span>(i,i), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-170-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-171-1.png" width="672" /></p>
 <p>Ahora vamos a separar el gráfico y ver los residuales por grupo, en otra
 palabra, cual son los residuales entre los valores y el promedio dentro
 de los mismos grupos. Se observa en este caso que hay mucho menos
@@ -1075,56 +1075,56 @@ varianza entre los valores de un mismo grupo. Este es un indice que los
 lagos explica la varianza (en parte) en concentración de fósforo en las
 plantas.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb444"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb444-1"><a href="anova.html#cb444-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>, Cant_Fos, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;order&quot;</span>, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;black&quot;</span>)</span>
-<span id="cb444-2"><a href="anova.html#cb444-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb444-3"><a href="anova.html#cb444-3" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;DosBocas&quot;</span>]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb444-4"><a href="anova.html#cb444-4" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>]), <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span>
-<span id="cb444-5"><a href="anova.html#cb444-5" tabindex="-1"></a></span>
-<span id="cb444-6"><a href="anova.html#cb444-6" tabindex="-1"></a>index<span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(Cant_Fos)</span>
-<span id="cb444-7"><a href="anova.html#cb444-7" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(index)){</span>
-<span id="cb444-8"><a href="anova.html#cb444-8" tabindex="-1"></a>  <span class="cf">if</span>(Lagos[i]<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>)</span>
-<span id="cb444-9"><a href="anova.html#cb444-9" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb444-10"><a href="anova.html#cb444-10" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (Lagos[i]<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>)</span>
-<span id="cb444-11"><a href="anova.html#cb444-11" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span>
-<span id="cb444-12"><a href="anova.html#cb444-12" tabindex="-1"></a>  <span class="cf">else</span></span>
-<span id="cb444-13"><a href="anova.html#cb444-13" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;DosBocas&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb444-14"><a href="anova.html#cb444-14" tabindex="-1"></a>} </span></code></pre></div>
+<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="anova.html#cb450-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>, Cant_Fos, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;order&quot;</span>, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb450-2"><a href="anova.html#cb450-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb450-3"><a href="anova.html#cb450-3" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;DosBocas&quot;</span>]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb450-4"><a href="anova.html#cb450-4" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>]), <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span>
+<span id="cb450-5"><a href="anova.html#cb450-5" tabindex="-1"></a></span>
+<span id="cb450-6"><a href="anova.html#cb450-6" tabindex="-1"></a>index<span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(Cant_Fos)</span>
+<span id="cb450-7"><a href="anova.html#cb450-7" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(index)){</span>
+<span id="cb450-8"><a href="anova.html#cb450-8" tabindex="-1"></a>  <span class="cf">if</span>(Lagos[i]<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>)</span>
+<span id="cb450-9"><a href="anova.html#cb450-9" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb450-10"><a href="anova.html#cb450-10" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (Lagos[i]<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>)</span>
+<span id="cb450-11"><a href="anova.html#cb450-11" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span>
+<span id="cb450-12"><a href="anova.html#cb450-12" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb450-13"><a href="anova.html#cb450-13" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;DosBocas&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb450-14"><a href="anova.html#cb450-14" tabindex="-1"></a>} </span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-171-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-172-1.png" width="672" /></p>
 <hr />
 <p>Datos donde los grupos son iguales</p>
 <p>En este ejemplo de vemos dos de los grupos donde los residuales solapan,
 este es probable que resulta que estos dos grupos (azul y rojo) no sean
 diferentes.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb445"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb445-1"><a href="anova.html#cb445-1" tabindex="-1"></a>id<span class="ot">&lt;-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>)</span>
-<span id="cb445-2"><a href="anova.html#cb445-2" tabindex="-1"></a>Cant_Fos<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">52</span>,<span class="dv">66</span>,<span class="dv">60</span>,<span class="dv">54</span>,<span class="dv">64</span>,</span>
-<span id="cb445-3"><a href="anova.html#cb445-3" tabindex="-1"></a>            <span class="dv">56</span>,<span class="dv">58</span>,<span class="dv">65</span>,<span class="dv">49</span>,<span class="dv">58</span>,</span>
-<span id="cb445-4"><a href="anova.html#cb445-4" tabindex="-1"></a>            <span class="dv">21</span>,<span class="dv">24</span>,<span class="dv">22</span>,<span class="dv">21</span>,<span class="dv">21</span>,<span class="dv">21</span>)</span>
-<span id="cb445-5"><a href="anova.html#cb445-5" tabindex="-1"></a>Lagos<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>),<span class="fu">rep</span>(<span class="dv">2</span>,<span class="dv">5</span>), <span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span>
-<span id="cb445-6"><a href="anova.html#cb445-6" tabindex="-1"></a>Lagos<span class="ot">&lt;-</span><span class="fu">factor</span>(Lagos, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>), </span>
-<span id="cb445-7"><a href="anova.html#cb445-7" tabindex="-1"></a>              <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Caraizo&quot;</span>, <span class="st">&quot;DosBocas&quot;</span>, <span class="st">&quot;Guineo&quot;</span>))</span>
-<span id="cb445-8"><a href="anova.html#cb445-8" tabindex="-1"></a>fosforo2<span class="ot">&lt;-</span><span class="fu">data.frame</span>(id,Cant_Fos,Lagos)</span>
-<span id="cb445-9"><a href="anova.html#cb445-9" tabindex="-1"></a></span>
-<span id="cb445-10"><a href="anova.html#cb445-10" tabindex="-1"></a><span class="fu">attach</span>(fosforo2)</span></code></pre></div>
+<div class="sourceCode" id="cb451"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb451-1"><a href="anova.html#cb451-1" tabindex="-1"></a>id<span class="ot">&lt;-</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>)</span>
+<span id="cb451-2"><a href="anova.html#cb451-2" tabindex="-1"></a>Cant_Fos<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">52</span>,<span class="dv">66</span>,<span class="dv">60</span>,<span class="dv">54</span>,<span class="dv">64</span>,</span>
+<span id="cb451-3"><a href="anova.html#cb451-3" tabindex="-1"></a>            <span class="dv">56</span>,<span class="dv">58</span>,<span class="dv">65</span>,<span class="dv">49</span>,<span class="dv">58</span>,</span>
+<span id="cb451-4"><a href="anova.html#cb451-4" tabindex="-1"></a>            <span class="dv">21</span>,<span class="dv">24</span>,<span class="dv">22</span>,<span class="dv">21</span>,<span class="dv">21</span>,<span class="dv">21</span>)</span>
+<span id="cb451-5"><a href="anova.html#cb451-5" tabindex="-1"></a>Lagos<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>),<span class="fu">rep</span>(<span class="dv">2</span>,<span class="dv">5</span>), <span class="fu">rep</span>(<span class="dv">3</span>,<span class="dv">6</span>))</span>
+<span id="cb451-6"><a href="anova.html#cb451-6" tabindex="-1"></a>Lagos<span class="ot">&lt;-</span><span class="fu">factor</span>(Lagos, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>), </span>
+<span id="cb451-7"><a href="anova.html#cb451-7" tabindex="-1"></a>              <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Caraizo&quot;</span>, <span class="st">&quot;DosBocas&quot;</span>, <span class="st">&quot;Guineo&quot;</span>))</span>
+<span id="cb451-8"><a href="anova.html#cb451-8" tabindex="-1"></a>fosforo2<span class="ot">&lt;-</span><span class="fu">data.frame</span>(id,Cant_Fos,Lagos)</span>
+<span id="cb451-9"><a href="anova.html#cb451-9" tabindex="-1"></a></span>
+<span id="cb451-10"><a href="anova.html#cb451-10" tabindex="-1"></a><span class="fu">attach</span>(fosforo2)</span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb446"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb446-1"><a href="anova.html#cb446-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>, Cant_Fos, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;order&quot;</span>, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;black&quot;</span>)</span>
-<span id="cb446-2"><a href="anova.html#cb446-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb446-3"><a href="anova.html#cb446-3" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;DosBocas&quot;</span>]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb446-4"><a href="anova.html#cb446-4" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>]), <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span>
-<span id="cb446-5"><a href="anova.html#cb446-5" tabindex="-1"></a></span>
-<span id="cb446-6"><a href="anova.html#cb446-6" tabindex="-1"></a>index<span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(Cant_Fos)</span>
-<span id="cb446-7"><a href="anova.html#cb446-7" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(index)){</span>
-<span id="cb446-8"><a href="anova.html#cb446-8" tabindex="-1"></a>  <span class="cf">if</span>(Lagos[i]<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>)</span>
-<span id="cb446-9"><a href="anova.html#cb446-9" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb446-10"><a href="anova.html#cb446-10" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (Lagos[i]<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>)</span>
-<span id="cb446-11"><a href="anova.html#cb446-11" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span>
-<span id="cb446-12"><a href="anova.html#cb446-12" tabindex="-1"></a>  <span class="cf">else</span></span>
-<span id="cb446-13"><a href="anova.html#cb446-13" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;DosBocas&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb446-14"><a href="anova.html#cb446-14" tabindex="-1"></a>} </span></code></pre></div>
+<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="anova.html#cb452-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">16</span>, Cant_Fos, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;order&quot;</span>, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;black&quot;</span>)</span>
+<span id="cb452-2"><a href="anova.html#cb452-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb452-3"><a href="anova.html#cb452-3" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;DosBocas&quot;</span>]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb452-4"><a href="anova.html#cb452-4" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>]), <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span>
+<span id="cb452-5"><a href="anova.html#cb452-5" tabindex="-1"></a></span>
+<span id="cb452-6"><a href="anova.html#cb452-6" tabindex="-1"></a>index<span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(Cant_Fos)</span>
+<span id="cb452-7"><a href="anova.html#cb452-7" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(index)){</span>
+<span id="cb452-8"><a href="anova.html#cb452-8" tabindex="-1"></a>  <span class="cf">if</span>(Lagos[i]<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>)</span>
+<span id="cb452-9"><a href="anova.html#cb452-9" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Caraizo&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb452-10"><a href="anova.html#cb452-10" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (Lagos[i]<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>)</span>
+<span id="cb452-11"><a href="anova.html#cb452-11" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;Guineo&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span>
+<span id="cb452-12"><a href="anova.html#cb452-12" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb452-13"><a href="anova.html#cb452-13" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(Cant_Fos[Lagos<span class="sc">==</span><span class="st">&quot;DosBocas&quot;</span>]), Cant_Fos[i]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb452-14"><a href="anova.html#cb452-14" tabindex="-1"></a>} </span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-172-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-173-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="gráficar-los-datos" class="section level2 hasAnchor" number="16.5">
@@ -1142,13 +1142,13 @@ del grupo 3. Una linea que une los promedios con stat_summary(fun.y =
 mean, geom = “line”), note la diferencia entre los dos uno usa “point”
 el otro usa “line”.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb447"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb447-1"><a href="anova.html#cb447-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb447-2"><a href="anova.html#cb447-2" tabindex="-1"></a><span class="fu">ggplot</span>(fosforo, <span class="fu">aes</span>(<span class="at">x=</span>Lagos, <span class="at">y=</span>Cant_Fos, <span class="at">colour=</span>Lagos))<span class="sc">+</span></span>
-<span id="cb447-3"><a href="anova.html#cb447-3" tabindex="-1"></a><span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb447-4"><a href="anova.html#cb447-4" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>, </span>
-<span id="cb447-5"><a href="anova.html#cb447-5" tabindex="-1"></a>                    <span class="fu">aes</span>(<span class="at">group=</span><span class="dv">1</span>), <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb447-6"><a href="anova.html#cb447-6" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;line&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>, </span>
-<span id="cb447-7"><a href="anova.html#cb447-7" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">group=</span><span class="dv">1</span>), <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="anova.html#cb453-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb453-2"><a href="anova.html#cb453-2" tabindex="-1"></a><span class="fu">ggplot</span>(fosforo, <span class="fu">aes</span>(<span class="at">x=</span>Lagos, <span class="at">y=</span>Cant_Fos, <span class="at">colour=</span>Lagos))<span class="sc">+</span></span>
+<span id="cb453-3"><a href="anova.html#cb453-3" tabindex="-1"></a><span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb453-4"><a href="anova.html#cb453-4" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>, </span>
+<span id="cb453-5"><a href="anova.html#cb453-5" tabindex="-1"></a>                    <span class="fu">aes</span>(<span class="at">group=</span><span class="dv">1</span>), <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb453-6"><a href="anova.html#cb453-6" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">&quot;line&quot;</span>, <span class="at">size =</span> <span class="dv">1</span>, </span>
+<span id="cb453-7"><a href="anova.html#cb453-7" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">group=</span><span class="dv">1</span>), <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/graficar%20fosforo-1.png" width="672" /></p>
 <hr />
@@ -1163,12 +1163,12 @@ datos resumidos que incluye, el nombre de los grupos (Lagos), el tamaño
 de muestra (N), el promedio de la variable (Cant_Fos), la desviación
 estandar (sd), el error estandar (se) y intervalo de confianza (ci).</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb448"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb448-1"><a href="anova.html#cb448-1" tabindex="-1"></a><span class="fu">library</span>(Rmisc)</span>
-<span id="cb448-2"><a href="anova.html#cb448-2" tabindex="-1"></a></span>
-<span id="cb448-3"><a href="anova.html#cb448-3" tabindex="-1"></a>sum <span class="ot">=</span> <span class="fu">summarySE</span>(fosforo, </span>
-<span id="cb448-4"><a href="anova.html#cb448-4" tabindex="-1"></a>                <span class="at">measurevar=</span><span class="st">&quot;Cant_Fos&quot;</span>, </span>
-<span id="cb448-5"><a href="anova.html#cb448-5" tabindex="-1"></a>                <span class="at">groupvars=</span><span class="st">&quot;Lagos&quot;</span>)</span>
-<span id="cb448-6"><a href="anova.html#cb448-6" tabindex="-1"></a>sum</span></code></pre></div>
+<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="anova.html#cb454-1" tabindex="-1"></a><span class="fu">library</span>(Rmisc)</span>
+<span id="cb454-2"><a href="anova.html#cb454-2" tabindex="-1"></a></span>
+<span id="cb454-3"><a href="anova.html#cb454-3" tabindex="-1"></a>sum <span class="ot">=</span> <span class="fu">summarySE</span>(fosforo, </span>
+<span id="cb454-4"><a href="anova.html#cb454-4" tabindex="-1"></a>                <span class="at">measurevar=</span><span class="st">&quot;Cant_Fos&quot;</span>, </span>
+<span id="cb454-5"><a href="anova.html#cb454-5" tabindex="-1"></a>                <span class="at">groupvars=</span><span class="st">&quot;Lagos&quot;</span>)</span>
+<span id="cb454-6"><a href="anova.html#cb454-6" tabindex="-1"></a>sum</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:summary data">
 <caption style="caption-side: top; text-align: center;">(#tab:summary data) </caption><col><col><col><col><col><col><tr>
@@ -1190,12 +1190,12 @@ siguiente formula <span class="math inline">\(\overline{x}\ \pm2\cdot se\)</span
 95% de donde pudiese estar el promedio si repetimos el mismo experimento
 100 veces.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb449"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb449-1"><a href="anova.html#cb449-1" tabindex="-1"></a><span class="fu">ggplot</span>(sum, <span class="fu">aes</span>(<span class="at">x=</span>Lagos, </span>
-<span id="cb449-2"><a href="anova.html#cb449-2" tabindex="-1"></a>                <span class="at">y=</span>Cant_Fos)) <span class="sc">+</span></span>
-<span id="cb449-3"><a href="anova.html#cb449-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span> </span>
-<span id="cb449-4"><a href="anova.html#cb449-4" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>Cant_Fos<span class="dv">-2</span><span class="sc">*</span>se,</span>
-<span id="cb449-5"><a href="anova.html#cb449-5" tabindex="-1"></a>                    <span class="at">ymax=</span>Cant_Fos<span class="sc">+</span><span class="dv">2</span><span class="sc">*</span>se), </span>
-<span id="cb449-6"><a href="anova.html#cb449-6" tabindex="-1"></a>                <span class="at">width=</span>.<span class="dv">2</span>, <span class="at">size=</span><span class="fl">0.7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb455"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb455-1"><a href="anova.html#cb455-1" tabindex="-1"></a><span class="fu">ggplot</span>(sum, <span class="fu">aes</span>(<span class="at">x=</span>Lagos, </span>
+<span id="cb455-2"><a href="anova.html#cb455-2" tabindex="-1"></a>                <span class="at">y=</span>Cant_Fos)) <span class="sc">+</span></span>
+<span id="cb455-3"><a href="anova.html#cb455-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span> </span>
+<span id="cb455-4"><a href="anova.html#cb455-4" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin=</span>Cant_Fos<span class="dv">-2</span><span class="sc">*</span>se,</span>
+<span id="cb455-5"><a href="anova.html#cb455-5" tabindex="-1"></a>                    <span class="at">ymax=</span>Cant_Fos<span class="sc">+</span><span class="dv">2</span><span class="sc">*</span>se), </span>
+<span id="cb455-6"><a href="anova.html#cb455-6" tabindex="-1"></a>                <span class="at">width=</span>.<span class="dv">2</span>, <span class="at">size=</span><span class="fl">0.7</span>)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/grafica2-1.png" width="672" /></p>
 <hr />
@@ -1203,8 +1203,8 @@ siguiente formula <span class="math inline">\(\overline{x}\ \pm2\cdot se\)</span
 <div id="estadística-descriptiva-de-los-lagos" class="section level2 hasAnchor" number="16.8">
 <h2><span class="header-section-number">16.8</span> Estadística descriptiva de los Lagos<a href="anova.html#estadística-descriptiva-de-los-lagos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb450"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb450-1"><a href="anova.html#cb450-1" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
-<span id="cb450-2"><a href="anova.html#cb450-2" tabindex="-1"></a><span class="fu">by</span>(fosforo<span class="sc">$</span>Cant_Fos, fosforo<span class="sc">$</span>Lagos, stat.desc)</span></code></pre></div>
+<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="anova.html#cb456-1" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
+<span id="cb456-2"><a href="anova.html#cb456-2" tabindex="-1"></a><span class="fu">by</span>(fosforo<span class="sc">$</span>Cant_Fos, fosforo<span class="sc">$</span>Lagos, stat.desc)</span></code></pre></div>
 </details>
 <pre><code>## fosforo$Lagos: Caraizo
 ##      nbr.val     nbr.null       nbr.na          min          max        range 
@@ -1289,8 +1289,8 @@ lagos, la prueba de Levene da un resultado de p &gt; 0.21, lo que indica
 que no hay evidencia que la varianza es distinta entre los grupos, por
 consecuencia se acepta la hipótesis nula.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb452"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb452-1"><a href="anova.html#cb452-1" tabindex="-1"></a><span class="fu">library</span>(car)</span>
-<span id="cb452-2"><a href="anova.html#cb452-2" tabindex="-1"></a><span class="fu">leveneTest</span>(fosforo<span class="sc">$</span>Cant_Fos, fosforo<span class="sc">$</span>Lagos)</span></code></pre></div>
+<div class="sourceCode" id="cb458"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb458-1"><a href="anova.html#cb458-1" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb458-2"><a href="anova.html#cb458-2" tabindex="-1"></a><span class="fu">leveneTest</span>(fosforo<span class="sc">$</span>Cant_Fos, fosforo<span class="sc">$</span>Lagos)</span></code></pre></div>
 </details>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:levene test">
 <caption style="caption-side: top; text-align: center;">(#tab:levene test) </caption><col><col><col><tr>
@@ -1315,13 +1315,13 @@ más sencillo seria de cambiar la primera linea del siguiente script
 tendríamos 3 lineas.
 <span style="color: red;">Si no cumple con el supuesto de normalidad ver el modulo de Kruskal-Wallis para una alternariva como evaluar los datos</span></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb453"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb453-1"><a href="anova.html#cb453-1" tabindex="-1"></a><span class="fu">ggplot</span>(fosforo, <span class="fu">aes</span>(<span class="at">sample =</span> Cant_Fos)) <span class="sc">+</span></span>
-<span id="cb453-2"><a href="anova.html#cb453-2" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
-<span id="cb453-3"><a href="anova.html#cb453-3" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb453-4"><a href="anova.html#cb453-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Valores teóricos&quot;</span>)<span class="sc">+</span></span>
-<span id="cb453-5"><a href="anova.html#cb453-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Valores observados&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="anova.html#cb459-1" tabindex="-1"></a><span class="fu">ggplot</span>(fosforo, <span class="fu">aes</span>(<span class="at">sample =</span> Cant_Fos)) <span class="sc">+</span></span>
+<span id="cb459-2"><a href="anova.html#cb459-2" tabindex="-1"></a>  <span class="fu">stat_qq</span>() <span class="sc">+</span></span>
+<span id="cb459-3"><a href="anova.html#cb459-3" tabindex="-1"></a>  <span class="fu">stat_qq_line</span>(<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb459-4"><a href="anova.html#cb459-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Valores teóricos&quot;</span>)<span class="sc">+</span></span>
+<span id="cb459-5"><a href="anova.html#cb459-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Valores observados&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-173-1.png" width="672" /></p>
+<p><img src="Biometria_files/figure-html/unnamed-chunk-174-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="la-prueba-de-anova" class="section level2 hasAnchor" number="16.14">
@@ -1337,10 +1337,10 @@ igual a los demás. Pero todavía no sabemos que pares son diferentes o si
 todos. En la segunda linea se observa lo otros datos del experimento, lo
 que aquí se llama los residuales.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb454"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb454-1"><a href="anova.html#cb454-1" tabindex="-1"></a>LagosModel<span class="ot">&lt;-</span><span class="fu">aov</span>(Cant_Fos<span class="sc">~</span>Lagos, <span class="at">data =</span> fosforo)</span>
-<span id="cb454-2"><a href="anova.html#cb454-2" tabindex="-1"></a></span>
-<span id="cb454-3"><a href="anova.html#cb454-3" tabindex="-1"></a></span>
-<span id="cb454-4"><a href="anova.html#cb454-4" tabindex="-1"></a><span class="fu">summary</span>(LagosModel)</span></code></pre></div>
+<div class="sourceCode" id="cb460"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb460-1"><a href="anova.html#cb460-1" tabindex="-1"></a>LagosModel<span class="ot">&lt;-</span><span class="fu">aov</span>(Cant_Fos<span class="sc">~</span>Lagos, <span class="at">data =</span> fosforo)</span>
+<span id="cb460-2"><a href="anova.html#cb460-2" tabindex="-1"></a></span>
+<span id="cb460-3"><a href="anova.html#cb460-3" tabindex="-1"></a></span>
+<span id="cb460-4"><a href="anova.html#cb460-4" tabindex="-1"></a><span class="fu">summary</span>(LagosModel)</span></code></pre></div>
 </details>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 ## Lagos        2   3939    1970   49.28 8.55e-07 ***
@@ -1362,7 +1362,7 @@ que hay tres datos que tienen números (5, 3, 12), estos son datos que
 posiblemente sean atípicos, y hay que evaluar si estos datos impacta el
 resultados (veremos esto más tarde, con la prueba de Cooks).</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb456"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb456-1"><a href="anova.html#cb456-1" tabindex="-1"></a><span class="fu">plot</span>(LagosModel)</span></code></pre></div>
+<div class="sourceCode" id="cb462"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb462-1"><a href="anova.html#cb462-1" tabindex="-1"></a><span class="fu">plot</span>(LagosModel)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/ANOVA%20residuals-1.png" width="672" /><img src="Biometria_files/figure-html/ANOVA%20residuals-2.png" width="672" /><img src="Biometria_files/figure-html/ANOVA%20residuals-3.png" width="672" /><img src="Biometria_files/figure-html/ANOVA%20residuals-4.png" width="672" /></p>
 </div>
@@ -1396,7 +1396,7 @@ pruebas.</p>
 <p>Vemos ahora el se hizo 3 pruebas, y cada una tiene un valor de p menor
 de 5%, por consecuencia cada grupo es distinto uno del otro.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb457"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb457-1"><a href="anova.html#cb457-1" tabindex="-1"></a><span class="fu">pairwise.t.test</span>(fosforo<span class="sc">$</span>Cant_Fos, fosforo<span class="sc">$</span>Lagos, <span class="at">p.adjust.method =</span> <span class="st">&quot;bonferroni&quot;</span>) <span class="co"># Nota aqui se usa los datos originales, el error de todos las pruebas se limita a 5%.  </span></span></code></pre></div>
+<div class="sourceCode" id="cb463"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb463-1"><a href="anova.html#cb463-1" tabindex="-1"></a><span class="fu">pairwise.t.test</span>(fosforo<span class="sc">$</span>Cant_Fos, fosforo<span class="sc">$</span>Lagos, <span class="at">p.adjust.method =</span> <span class="st">&quot;bonferroni&quot;</span>) <span class="co"># Nota aqui se usa los datos originales, el error de todos las pruebas se limita a 5%.  </span></span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Pairwise comparisons using t tests with pooled SD 
@@ -1418,9 +1418,9 @@ puede diferir. Si esto ocurre hay que evaluar bien cual es el nivel de
 confiabilidad que queremos. Algunos pruebas Post_Hoc tienden a rechazar
 con meas frecuencia que otra.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb459"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb459-1"><a href="anova.html#cb459-1" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
-<span id="cb459-2"><a href="anova.html#cb459-2" tabindex="-1"></a>postHocs<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">glht</span>(LagosModel, <span class="at">linfct =</span> <span class="fu">mcp</span>(<span class="at">Lagos =</span> <span class="st">&quot;Tukey&quot;</span>))  </span>
-<span id="cb459-3"><a href="anova.html#cb459-3" tabindex="-1"></a><span class="fu">summary</span>(postHocs<span class="fl">.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb465"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb465-1"><a href="anova.html#cb465-1" tabindex="-1"></a><span class="fu">library</span>(multcomp)</span>
+<span id="cb465-2"><a href="anova.html#cb465-2" tabindex="-1"></a>postHocs<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">glht</span>(LagosModel, <span class="at">linfct =</span> <span class="fu">mcp</span>(<span class="at">Lagos =</span> <span class="st">&quot;Tukey&quot;</span>))  </span>
+<span id="cb465-3"><a href="anova.html#cb465-3" tabindex="-1"></a><span class="fu">summary</span>(postHocs<span class="fl">.1</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##   Simultaneous Tests for General Linear Hypotheses

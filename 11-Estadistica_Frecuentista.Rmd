@@ -173,7 +173,7 @@ esp<-c(0.75,0.25)
 chisq.test(x=obs, p=esp)
 
 ```
-
+### Esta ejercicio cumple con los supuestos?
 
 ***
 
@@ -198,6 +198,8 @@ esp<-c(0.5,0.5)
 chisq.test(x=obs, p=esp)
 
 ```
+
+### Esta ejercicio cumple con los supuestos?
 
 
 ***
@@ -345,6 +347,8 @@ Cual es valor de Chi Cuadrado critico
 qchisq(.95,1 )
 ```
 
+### Esta ejercicio cumple con los supuestos?
+
 
 ***
 
@@ -408,6 +412,8 @@ snakeTable
 CrossTable(snakeTable, fisher = TRUE, chisq = TRUE, 
            expected = TRUE, sresid = TRUE, format = "SAS")
 ```
+
+### Esta ejercicio cumple con los supuestos?
 
 ## Análisis con datos en formato de tabla
 
@@ -481,7 +487,7 @@ Creamos
 
 Negro=c(32,55)
 Marron=c(43, 65)
-Rubio=c(16,64)
+Rubio=c(64,14)
 Rojo=c(9,16)
 
 HairColour=cbind(Negro,Marron, Rubio,Rojo) 
@@ -501,6 +507,9 @@ El resultado de la prueba. ¿Se acepta o rechaza la hipótesis nula?
 CrossTable(HairColour, fisher = TRUE, chisq = TRUE, expected = TRUE, sresid = TRUE, format = "SPSS")
 
 ```
+
+
+### Esta ejercicio cumple con los supuestos?
 
 ***
 
@@ -526,6 +535,14 @@ serpiente <- cbind(responde, no_responde)
 rownames(serpiente)<-c("Estimulo_ariba", "Estimulo_lateral") # Añade el nombre a las filas
 
 serpiente
+
+
+
+CrossTable(serpiente, fisher = TRUE, chisq = TRUE, 
+           expected = TRUE, sresid = TRUE, format = "SAS")
+
+
+### Esta ejercicio cumple con los supuestos?
 ```
 
 Se puede visualizar los datos con el Mosaico

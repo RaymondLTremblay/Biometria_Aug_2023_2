@@ -293,18 +293,19 @@ ct=tribble(~fila, ~comida, ~carino, ~suma,
 ct
 ```
 
-R= Rows
-C= Columns
-E = Estimate
-N = Sum
+ - R= Rows
+ - C= Columns
+ - E = Estimate
+ - N = Sum
 
 $$E_{ij}=\frac{\left(R_i\cdot C_j\right)}{N}$$
 
 
-F= Fila
-C= Columna
-E = Estimado
-N = Suma
+ - F= Fila
+ - C= Columna
+ - E = Estimado
+ - N = Suma
+ 
 $$E_{ij}=\frac{\left(F_i\cdot C_j\right)}{N}$$. 
 
 
@@ -330,11 +331,13 @@ $$\chi^2=\frac{(10-23.56)^2}{23.56}+\frac{(28-14.44)^2}{14.44}+\frac{(114-100.44
 
 $$\chi^2=25.36$$
 
-# N columnas =3
-# N filas = 2
+## Como clacular el grado de libertad
+
+### N columnas =3
+### N filas = 2
 
 ```{r}
-df=(2-1)*(2-1)
+df=(4-1)*(2-1)
 df
 ```
 

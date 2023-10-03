@@ -196,6 +196,7 @@ la-hipótesis-nula
 la-hipótesis-alterna
 gráfico-de-mosaico
 prueba-de-independencia-de-frecuencia.
+como-clacular-el-grado-de-libertad
 n-columnas-3
 n-filas-2
 esta-ejercicio-cumple-con-los-supuestos-2

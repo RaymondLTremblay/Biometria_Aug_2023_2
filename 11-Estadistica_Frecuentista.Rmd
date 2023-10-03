@@ -247,6 +247,13 @@ catsTable
 
 
 ***
+## La hipótesis NULA
+
+La hipótesis nula es que la cantidad de gatos que bailan o no es independiente de si recibieron comida o cariño.  
+
+## La hipótesis alterna
+
+La cantidad de gatos que bailan depende que si recibieron cariño o comida. 
 
 
 ## Gráfico de Mosaico
@@ -255,7 +262,7 @@ Podemos visualizar la frecuencia de los datos con un gráfico de mosaico.  Si la
 
 
 ```{r}
-mosaicplot(catsTable, color =TRUE)
+mosaicplot(catsTable, color =TRUE) # El packete MASS
 
 ```
 
@@ -275,11 +282,29 @@ Los valores esperados en esta caso son calculados directamente de la tabla. Para
 
 ```{r}
 catsTable
+
+library(tidyverse)
+ct=tribble(~fila, ~comida, ~carino, ~suma,
+           "No_balian", 10, 114, 124,
+           "bailan", 28, 48, 64,
+           "suma", 38, 162, 200)
+ct
 ```
 
-
+R= Rows
+C= Columns
+E = Estimate
+N = Sum
 
 $$E_{ij}=\frac{\left(R_i\cdot C_j\right)}{N}$$
+
+
+F= Fila
+C= Columna
+E = Estimado
+N = Suma
+$$E_{ij}=\frac{\left(F_i\cdot C_j\right)}{N}$$. 
+
 
 
 Cálculos dos de los valores esperados
@@ -303,6 +328,23 @@ $$\chi^2=\frac{(10-23.56)^2}{23.56}+\frac{(28-14.44)^2}{14.44}+\frac{(114-100.44
 
 $$\chi^2=25.36$$
 
+# N columnas =3
+# N filas = 2
+
+```{r}
+df=(2-1)*(2-1)
+df
+```
+
+
+Cual es valor de Chi Cuadrado critico 
+
+1-.95 = 0.05
+
+```{r}
+qchisq(.95,1 )
+```
+
 
 ***
 
@@ -312,14 +354,20 @@ Con esta función se calcula el chi cuadrado con los valores esperados. Nota la 
 
 $$\chi^2=\sum_{n=i}^n\sum_{n=j}^n\frac{\left(\left|o-e\right|-0.5\right)^2}{e}$$
 
+Instalar el paquete **gmodels** para la función CrossTable
 
+p <0.05 se rechaza la hipotesis nula
+
+p >0.05 se acepta la hipotesis nula
 
 ```{r test}
-
+library(gmodels)
 CrossTable(catsTable, fisher = TRUE, chisq = TRUE, 
            expected = TRUE, sresid = TRUE, format = "SAS")
 
 ```
+
+p = 0.000000477
 
 ***
 [Enlace a un Video de la serpiente](https://www.youtube.com/watch?v=Uw6W8NaJmfo)
@@ -357,7 +405,8 @@ snakeTable
 
 
 
-CrossTable(snakeTable)
+CrossTable(snakeTable, fisher = TRUE, chisq = TRUE, 
+           expected = TRUE, sresid = TRUE, format = "SAS")
 ```
 
 ## Análisis con datos en formato de tabla

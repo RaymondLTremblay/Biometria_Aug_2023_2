@@ -330,11 +330,12 @@ $$\chi^2=\frac{(10-23.56)^2}{23.56}+\frac{(28-14.44)^2}{14.44}+\frac{(114-100.44
 
 
 $$\chi^2=25.36$$
+***
 
-## Como clacular el grado de libertad
+## Como calcular el grado de libertad
 
-### N columnas =3
-### N filas = 2
+##### N columnas = 4
+##### N filas = 2
 
 ```{r}
 df=(4-1)*(2-1)

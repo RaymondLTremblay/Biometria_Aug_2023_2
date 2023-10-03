@@ -491,15 +491,21 @@ Creamos
 
 Negro=c(32,55)
 Marron=c(43, 65)
-Rubio=c(64,14)
+Rubio=c(16,64)
 Rojo=c(9,16)
 
 HairColour=cbind(Negro,Marron, Rubio,Rojo) 
 rownames(HairColour)<-c("Mujer", "Hombre") # Añade el nombre a las filas
 
 HairColour
+
 ```
 
+
+  - Cada categoría tiene una **frecuencia esperada** suficiente grande: 
+      + ninguna de las **frecuencia esperada** sea menor de 5 cuando hay 4 o menos categorías
+      + no más de 20% de las categorías que tengan un valor esperado de < 5 cuando hay más de 5 categorías y ninguna tiene un valor **esperado** menor de 1.
+       Puediese tener valores esperados entre 1 y 5 pero no más de 20% de las categorias 
  
 
 ¿Cual es la hipótesis nula?
@@ -510,6 +516,16 @@ El resultado de la prueba. ¿Se acepta o rechaza la hipótesis nula?
 ```{r}
 CrossTable(HairColour, fisher = TRUE, chisq = TRUE, expected = TRUE, sresid = TRUE, format = "SPSS")
 
+
+#df=(R-1)*(C-1)
+df=(2-1)*(4-1)
+df
+
+.2*8
+```
+
+```{r}
+qchisq(.95,3 )
 ```
 
 
@@ -543,7 +559,7 @@ serpiente
 
 
 CrossTable(serpiente, fisher = TRUE, chisq = TRUE, 
-           expected = TRUE, sresid = TRUE, format = "SAS")
+           expected = TRUE, sresid = TRUE, format = "SAS") # esa prueba no deberia usarse
 
 
 ### Esta ejercicio cumple con los supuestos?

@@ -60,21 +60,25 @@ La distribución normal tiene una ecuación que describe su distribución.  Lo q
 
  $$P(x)=\frac{1}{{\sigma\sqrt{ 2\pi}}}{e}^{-\frac{{(x-µ)}^{2}}{{2\sigma}^{2}}}$$
  
+ 
+ 
 
 
 El promedio de la población $\mu=\frac{\sum{{x}_{i}}}{{n}_{i}}$, se usa la letra "mu", y se refiere al promedio universal.  Esto quiere decir que no falta ningún dato.  Nota que la distribución es en forma de campana, donde 50% de los datos están por encima del promedio y 50% están por debajo el promedio. Debido que la distribución tiene unos parámetros específico se puede predecir información cuando los datos cumple con tal distribución.      
 
 
 ```{r}
-set.seed(12345)
-dfnorm=rnorm(1000000, 0,1)
+#set.seed(123458)
+
+dfnorm=rnorm(10, 0,1)
 dfnorm=data.frame(dfnorm)
 
 ggplot(dfnorm,(aes(x=dfnorm)))+
+  geom_histogram(colour="white")+
   geom_density()+
   geom_vline(xintercept = 0, colour="red")+
-  annotate("text", x=.8, y = .1, label="50% de los \n valores")+
-  annotate("text", x=-.8, y = .1, label="50% de los \n valores")+
+  #annotate("text", x=2.8, y = 100000.1, label="50% de los \n valores")+
+  #annotate("text", x=-2.8, y = 100000.1, label="50% de los \n valores")+
   xlab("algun valor")+
   ylab("densidad")
 ```

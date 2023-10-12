@@ -60,6 +60,15 @@ library(readr)
 pubs <- read_csv("Data_files_csv/pubs.csv")
 pubs
 
+
+pubs2=tribble(~pubs, ~mortality,
+             10, 1000,
+             20, 200,
+             30, 30,
+             40, 4,
+             50, 1)
+pubs2
+
 # Cambiamos los nombres de las columnas
 
 pubs=pubs%>%
@@ -86,8 +95,10 @@ Ahora evaluamos los resultados de la regresión entre el número de barres en un
 Ahora para determinar si estos valores son significativo hay que evaluar el valor de **p** en cada linea. La hipótesis nula del intercepto tiene un valor de p =0.005, que sugiere que se debería rechazar la hipótesis nula, y por consecuencia aceptamos la hipótesis alterna. La pendiente tiene un valor de p=0.015 y también se rechaza la hipotesis nula.
 
 ```{r linear model, fig.align='center'}
-pubReg <- lm(mortalidad~barres, data = pubs) 
+pubReg <- lm(mortalidad~barres, data = pubs) \
 
+model <- lm(mortality~pubs, data=pubs2)
+summary(model)
 #summary(pubReg) # Si no se acuerda de la funcíon que sigue
 
 tab_model(
@@ -109,6 +120,30 @@ Se observa que hay un aumento en fatalidades con aumento en el número de barres
 
 ```{r}
 ggplot(pubs, aes(x=barres, y=mortalidad))+
+  geom_smooth(method = lm)+ # modelo lineal
+  geom_point()
+
+```
+
+
+
+
+```{r}
+
+datosP=tribble(~edad_casar, ~Num_hijos,
+               NA, 10,
+               22, 3,
+               17, 2,
+               18, 2,
+               21, 5,
+               20, 3,
+               37, 2)
+datosP
+
+model2=lm(Num_hijos~edad_casar, data=datosP)
+summary(model2)
+
+ggplot(datosP, aes(y=Num_hijos, x=edad_casar))+
   geom_smooth(method = lm)+ # modelo lineal
   geom_point()
 

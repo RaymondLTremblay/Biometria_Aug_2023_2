@@ -95,7 +95,7 @@ Ahora evaluamos los resultados de la regresión entre el número de barres en un
 Ahora para determinar si estos valores son significativo hay que evaluar el valor de **p** en cada linea. La hipótesis nula del intercepto tiene un valor de p =0.005, que sugiere que se debería rechazar la hipótesis nula, y por consecuencia aceptamos la hipótesis alterna. La pendiente tiene un valor de p=0.015 y también se rechaza la hipotesis nula.
 
 ```{r linear model, fig.align='center'}
-pubReg <- lm(mortalidad~barres, data = pubs) \
+pubReg <- lm(mortalidad~barres, data = pubs) 
 
 model <- lm(mortality~pubs, data=pubs2)
 summary(model)

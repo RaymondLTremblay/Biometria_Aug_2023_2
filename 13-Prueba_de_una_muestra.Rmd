@@ -301,7 +301,7 @@ $$LL_{0.95}=21-2.093*\left(\frac{1.76}{\sqrt{20}}\right)=20.176$$
 El intervalo de confianza del $\mu$ es entre 20.175-21.825 con un 95% de probabilidad. 
 
 ```{r}
-UL=21+abs(qt(0.025, 19)*1.76/sqrt(2))
+UL=21+abs(qt(0.025, 19)*1.76/sqrt(20))
 LL=21-abs(qt(0.025, 19)*1.76/sqrt(20))
 UL
 LL
@@ -316,8 +316,8 @@ Nota lo que pasa si uno tiene menos datos o más datos con el intervalo de confi
 Con un tamaño de muestra solamente de 5 datos el IC de 95% es entre 17.824-22.185. Por tener menos datos tenemos menos confianza donde se entra el promedio del universo. 
 
 ```{r}
-UL=21+qt(0.025, 4)*1.76/sqrt(5)
-LL=21-qt(0.025, 4)*1.76/sqrt(5)
+UL=21+abs(qt(0.025, 4)*1.76/sqrt(5))
+LL=21-abs(qt(0.025, 4)*1.76/sqrt(5))
 UL
 LL
 ```
@@ -352,8 +352,8 @@ knitr::include_graphics("Havel_Figures/9-3 Series - Confidence Interals.jpg")
     + ¿Cuál es el intervalo de confianza al 95% de los ganglios linfáticos mastoideos en hombres? . 
 
 ```{r, eval=FALSE, echo=FALSE}
-UL=0.9+qt(0.025, 19)*0.4/sqrt(20)
-LL=0.9-qt(0.025, 19)*0.4/sqrt(20)
+UL=0.9+abs(qt(0.025, 19)*0.4/sqrt(20))
+LL=0.9-abs(qt(0.025, 19)*0.4/sqrt(20))
 UL
 LL
 
@@ -374,6 +374,12 @@ abs(qt(0.025, 18))  # valor de t-critico, de la tabla
 ```
 
 
+```{r}
+UL=21+abs(qt(0.025, 4)*1.76/sqrt(5))
+LL=21-abs(qt(0.025, 4)*1.76/sqrt(5))
+UL
+LL
+```
 
 
 ***

@@ -261,7 +261,7 @@ gráficar-el-promedio-y-el-intervalo-de-confianza
 pruebas-de-normalidades
 visualización-de-los-datos
 shapiro-wilks-prueba-de-normalidad
-evaluar-la
+evaluar-si-la-distribución-cumple-con-una-distribución-normal
 metodo-1-shapiro.test
 method-2-byf.shapiro
 prueba-de-igualdad-de-varianza

@@ -78,6 +78,8 @@ library(RVAideMemoire) # para la prueba de byf.shapiro
 Una de las pruebas más común es la de comparar dos grupos y evaluar si los promedios de estos grupos son diferentes. Por ejemplo determinar si la edad de los estudiantes una clase es diferentes entre mujeres y hombres.  Evaluar si dos concentraciones de antibiótico resulta en una reducción en el tiempo de infección de una enfermedad especifica. NOTA IMPORTANTE: los datos provienen de diferentes individuos, solamente un valor por individuo. Recuerda que en la prueba anterior de la prueba de t con datos pareados tenemos más de un dato por cada persona/individuo/unidad de muestreo.  
 
 
+***
+
 Datos
 
 
@@ -109,6 +111,10 @@ muni=c("utuado","utuado","utuado","utuado",
       "bayamón","bayamón","bayamón","bayamón","bayamón",
       "bayamón","bayamón")
 ```
+
+
+
+***
 
 Unir los datos en un data frame con la función de "data.frame( )"
 
@@ -145,6 +151,10 @@ ggplot(viajes, aes(muni, dist, colour=muni))+
  + Ha: $\overline{x}_1\ne\overline{x}_2$
 
 
+
+
+***
+
 Otra alternativa para visualizar es observar la diferencias entre el valor de la "y's" y del promedio de esa variable, o sea los residuales (la diferencia entre el promedio y el valor se llaman los **residuales**. `r colorize("Nota que esto aparece a la gráfica de residuales de la regresión lineal", "blue")`.
 
 
@@ -154,6 +164,8 @@ abline(h=mean(dist), col="blue")
 for(i in 1:36) lines(c(i,i), c(mean(dist), dist[i]), col="green")
 ```
 
+
+***
 
 Ahora vamos a separar la gráfica y visualizar los residuales por grupo, en otra palabra, cual son los residuales entre los valores y el promedio dentro de los mismos grupos. Se observa en este caso que hay menos varianza entre los valores de un mismo grupo. Note que en el grupo de `r colorize("**bayamón**", "blue")` que los valores son bastante cerca del promedio de este grupo en adición que los valores de `r colorize("**utuado**", "red")` estan más cerca de su promedio.  Compara los residuales con la gráfica anterior.   
 
@@ -289,7 +301,7 @@ Es típico que cuando uno tiene muchos muchos datos uno puede encontrar diferenc
 
 
 
-### Evaluar la 
+### Evaluar si la distribución cumple con una distribución normal
 
 ```{r shapiro test}
 shapiro.test(viajes$dist)
@@ -297,7 +309,7 @@ shapiro.test(viajes$dist)
 
 ### Metodo #1: shapiro.test()
 
-
+***
 
 
 ```{r SW test}
@@ -308,6 +320,7 @@ shapiro.test(viajes$dist[viajes$muni=="utuado"])
 shapiro.test(viajes$dist[viajes$muni=="bayamón"])
 ```
 
+***
 
 ### Method 2: byf.shapiro()
 
@@ -355,7 +368,7 @@ Cuando los datos no cumple con distribución igualdad de varianza se dice que lo
 3. Fligner-Killeen Test for equality of Variance
   La prueba de Fligner-Killeen los datos NO tiene que cumplir con distribición normal y es una prueba robusta cuando hay datos sesgados (outliers).  
 
-
+***
 
 ## La prueba de Bartlett 
 
@@ -372,6 +385,7 @@ leveneTest(dist~muni, data=viajes)
 ```
 
 
+***
  
 ## Prueba de Fligner-Killeen para igualdad de Varianza
 

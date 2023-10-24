@@ -116,7 +116,7 @@ muni=c("utuado","utuado","utuado","utuado",
 
 ***
 
-Unir los datos en un data frame con la función de "data.frame( )"
+Unir las tres lisatas de datos en un data frame con la función de "data.frame( )"
 
 ```{r join lists in a df}
 viajes=data.frame(genero,dist,muni)
@@ -126,7 +126,8 @@ tail(viajes)
 
 ***
 
-Hacer un  gráfico de los datos.  Si calculamos el promedio de todos los valores de "Y" y lo visualizamos, vemos que muchos de los valores del municipio "bayamón" son muy por debajo los valores de la linea y muchos de los valores del municipio "utuado" son muy por encima.    
+Hacer un  gráfico de los datos.  Si calculamos el promedio de todos los valores de "Y" y lo visualizamos, vemos que muchos de los valores del municipio "Bayamón" son muy por debajo los valores de la linea y muchos de los valores del municipio "U
+tuado" son muy por encima.    
 
 ```{r plot2}
 
@@ -359,7 +360,7 @@ y la hipotesis alterna
 $$H_a:  {s}^{2}_1 \neq  {s}^{2}_2$$
 
 
-Cuando los datos no cumple con distribución igualdad de varianza se dice que los datos heteroscedasticidad.  
+Cuando los datos no cumple con distribución igualdad de varianza se dice que los datos heteroscedastico.  
 
 1. Bartlett's test of equality of variance
   Los datos tienen que cumplir con la distribución normal para usar esta prueba, si no cumple tendra una mayor probabilidad de rechazar la hipotesis nula.

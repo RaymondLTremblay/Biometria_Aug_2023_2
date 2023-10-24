@@ -481,7 +481,7 @@ ggplot(data.frame(x=randT))+
     geom_density(aes(x=x), fill="grey", color="grey")+ # La densidad de los datos
   geom_vline(xintercept = tipTTest$statistic, colour="red")+ # El resultado de la prueba estadística
   geom_vline(xintercept = mean(randT)+c(-2,2)*sd(randT), linetype=2)+ # El intervalo de confianza
-  xlab("Promedio de propina")
+  xlab("EL valor de t")
 ```
 
 

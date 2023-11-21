@@ -440,6 +440,13 @@ ggplot(fosforo, aes(sample = Cant_Fos)) +
   stat_qq_line(colour="blue")+
   xlab("Valores teóricos")+
   ylab("Valores observados")
+
+ggplot(fosforo, aes(sample = Cant_Fos)) +
+  stat_qq() +
+  stat_qq_line(colour="blue")+
+  facet_wrap(~Lagos)+
+  xlab("Valores teóricos")+
+  ylab("Valores observados")
 ```
 
 ------------------------------------------------------------------------

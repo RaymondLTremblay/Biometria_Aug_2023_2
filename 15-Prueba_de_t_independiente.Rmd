@@ -424,6 +424,40 @@ byf.shapiro(kids~sex, futurePR)
 
 
 
+```{r, echo=FALSE, eval=FALSE}
+df1=rnorm(100)
+
+
+df3=runif(100)
+
+df=data.frame(df1, df3)
+df
+
+a=ggplot(df, aes(sample = df1)) +
+  stat_qq() +
+  stat_qq_line(colour="blue")+
+  xlab("Valores teóricos")+
+  ylab("Valores observados")
+
+b=ggplot(df, aes(sample = df3)) +
+  stat_qq() +
+  stat_qq_line(colour="orange")+
+  xlab("Valores teóricos")+
+  ylab("Valores observados")
+
+library(gridExtra)
+
+
+
+ggsave("qq_plot.png", arrangeGrob(a, b, ncol = 2))
+
+#pdf("qq_plot.pdf")
+#grid.arrange(a,b, ncol=2)
+#dev.off()
+```
+
+
+
 
 
 

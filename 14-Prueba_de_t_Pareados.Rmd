@@ -325,8 +325,12 @@ length(Lep$T1)
 
 ```{r paired t-test, eval=FALSE, echo=FALSE}
 
-model2=t.test(Lep$T2,Lep$T1, paired =TRUE)
+model2=t.test(Lep$T12,Lep$T1, paired =TRUE)
 model2
+
+Lep$diff=Lep$T12-Lep$T1
+
+shapiro.test(Lep$diff)
 ```
 
 

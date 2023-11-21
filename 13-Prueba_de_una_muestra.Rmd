@@ -174,11 +174,19 @@ ggplot(out,aes(df1x, val, colour=df) )+
                      theme(legend.position = c(0.8, 0.8))+
                      xlab("Valores")+
                      ylab("Densidad")
+
+ggsave("t-distribution.png")
 ```
 
 Observa que la distribución de t, cuando cambio el tamaño de muestra, (grado de libertad es $\nu=n-1$).  Tiene que observar dos componentes 1. hay menos datos en  centrado en el promedio y 2. hay más datos en la colas.  
 
 Se usa la distribución de t para calcular el intervalo de confianza y la hipótesis del promedio de una muestra, debido que la forma de la distribución de t cambia con el tamaño de muestra $\nu=n-1$ y también con la razón de error Tipo I, $\alpha$.  
+
+
+La prueba de un muestreo es 
+
+$$t=\frac{\overline{x}-\mu}{\sigma\sqrt{n}}$$
+
 
 ***
 

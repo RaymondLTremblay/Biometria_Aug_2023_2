@@ -4,34 +4,33 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 17 Correlación y Covarianza | BioEstadistica</title>
+  <title>L Ejercicios sobre prueba de t con datos independiente | BioEstadistica</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
-  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 17 Correlación y Covarianza | BioEstadistica" />
+  <meta property="og:title" content="L Ejercicios sobre prueba de t con datos independiente | BioEstadistica" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 17 Correlación y Covarianza | BioEstadistica" />
+  <meta name="twitter:title" content="L Ejercicios sobre prueba de t con datos independiente | BioEstadistica" />
   
   <meta name="twitter:description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
   
 
-<meta name="author" content="" />
 
 
-<meta name="date" content="2023-10-26" />
+<meta name="date" content="2023-11-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="anova.html"/>
-<link rel="next" href="regresión-lineal-1.html"/>
+<link rel="prev" href="ejercicios-k.html"/>
+<link rel="next" href="ejercicios-m.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -91,11 +90,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #204a87; } /* Attribute */
+code span.at { color: #c4a000; } /* Attribute */
 code span.bn { color: #0000cf; } /* BaseN */
 code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #8f5902; } /* Constant */
+code span.cn { color: #000000; } /* Constant */
 code span.co { color: #8f5902; font-style: italic; } /* Comment */
 code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
 code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
@@ -104,14 +103,14 @@ code span.dv { color: #0000cf; } /* DecVal */
 code span.er { color: #a40000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.fu { color: #000000; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
 code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
 code span.ot { color: #8f5902; } /* Other */
 code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.sc { color: #000000; } /* SpecialChar */
 code span.ss { color: #4e9a06; } /* SpecialString */
 code span.st { color: #4e9a06; } /* String */
 code span.va { color: #000000; } /* Variable */
@@ -487,7 +486,7 @@ div.csl-indent {
 <li class="chapter" data-level="16.4" data-path="anova.html"><a href="anova.html#visualizar-los-datos"><i class="fa fa-check"></i><b>16.4</b> Visualizar los datos</a></li>
 <li class="chapter" data-level="16.5" data-path="anova.html"><a href="anova.html#gráficar-los-datos"><i class="fa fa-check"></i><b>16.5</b> Gráficar los datos</a></li>
 <li class="chapter" data-level="16.6" data-path="anova.html"><a href="anova.html#un-gráfico-con-el-intervalo-de-confianza."><i class="fa fa-check"></i><b>16.6</b> Un gráfico con el intervalo de confianza.</a></li>
-<li class="chapter" data-level="16.7" data-path="anova.html"><a href="anova.html#graficar-con-nuestro-nuevo-data-frame-sum."><i class="fa fa-check"></i><b>16.7</b> Graficar con nuestro nuevo data frame “sum”.</a></li>
+<li class="chapter" data-level="16.7" data-path="anova.html"><a href="anova.html#graficar-con-nuestro-nuevo-data-frame-sum."><i class="fa fa-check"></i><b>16.7</b> Graficar con nuestro nuevo data frame “sum.”</a></li>
 <li class="chapter" data-level="16.8" data-path="anova.html"><a href="anova.html#estadística-descriptiva-de-los-lagos"><i class="fa fa-check"></i><b>16.8</b> Estadística descriptiva de los Lagos</a></li>
 <li class="chapter" data-level="16.9" data-path="anova.html"><a href="anova.html#los-supuestos-de-anova"><i class="fa fa-check"></i><b>16.9</b> Los supuestos de ANOVA</a></li>
 <li class="chapter" data-level="16.10" data-path="anova.html"><a href="anova.html#datos-al-azar"><i class="fa fa-check"></i><b>16.10</b> Datos al azar</a></li>
@@ -698,8 +697,8 @@ div.csl-indent {
 <li class="chapter" data-level="D.1" data-path="ejercicios-d.html"><a href="ejercicios-d.html#anova-exercices"><i class="fa fa-check"></i><b>D.1</b> ANOVA exercices</a>
 <ul>
 <li class="chapter" data-level="D.1.1" data-path="ejercicios-d.html"><a href="ejercicios-d.html#el-estudiante-entregará-el-trabajo-en-el-formato-de-.html-en-msteam."><i class="fa fa-check"></i><b>D.1.1</b> El estudiante entregará el trabajo en el formato de .html en MSTeam.</a></li>
-<li class="chapter" data-level="D.1.2" data-path="ejercicios-d.html"><a href="ejercicios-d.html#los-datos-se-encuentrán-en-la-pestaña-del-website-debajo-los-datos-archivos-de-datos.-el-nombre-del-archivo-se-llama"><i class="fa fa-check"></i><b>D.1.2</b> Los datos se encuentrán en la pestaña del website debajo “Los Datos”, “Archivos de Datos”. El nombre del archivo se llama</a></li>
-<li class="chapter" data-level="D.1.3" data-path="ejercicios-d.html"><a href="ejercicios-d.html#human-mortality-database"><i class="fa fa-check"></i><b>D.1.3</b> Human Mortality Database</a></li>
+<li class="chapter" data-level="D.1.2" data-path="ejercicios-d.html"><a href="ejercicios-d.html#los-datos-se-encuentrán-en-la-pestaña-del-website-debajo-los-datos-archivos-de-datos.-el-nombre-del-archivo-se-llama"><i class="fa fa-check"></i><b>D.1.2</b> Los datos se encuentrán en la pestaña del website debajo “Los Datos,” “Archivos de Datos.” El nombre del archivo se llama</a></li>
+<li class="chapter" data-level="D.1.3" data-path="ejercicios-d.html"><a href="ejercicios-d.html#human-birth-database"><i class="fa fa-check"></i><b>D.1.3</b> Human Birth Database</a></li>
 <li class="chapter" data-level="D.1.4" data-path="ejercicios-d.html"><a href="ejercicios-d.html#aqui-los-primeras-6-filas-del-df"><i class="fa fa-check"></i><b>D.1.4</b> Aqui los primeras 6 filas del df</a></li>
 </ul></li>
 </ul></li>
@@ -830,7 +829,7 @@ div.csl-indent {
 <li class="chapter" data-level="Q.2" data-path="data.html"><a href="data.html#archivos-de-datos-de-la-naciones-unidas"><i class="fa fa-check"></i><b>Q.2</b> Archivos de Datos de la Naciones Unidas</a></li>
 <li class="chapter" data-level="Q.3" data-path="data.html"><a href="data.html#archivo-de-datos-de-mortality"><i class="fa fa-check"></i><b>Q.3</b> Archivo de datos de “Mortality”</a>
 <ul>
-<li class="chapter" data-level="Q.3.1" data-path="data.html"><a href="data.html#httpswww.mortality.orgaccountauth"><i class="fa fa-check"></i><b>Q.3.1</b> (https://www.mortality.org/Account/Auth)</a></li>
+<li class="chapter" data-level="Q.3.1" data-path="data.html"><a href="data.html#httpswww.mortality.orgaccountauth"><i class="fa fa-check"></i><b>Q.3.1</b> (<span>https://www.mortality.org/Account/Auth</span>)</a></li>
 </ul></li>
 <li class="chapter" data-level="Q.4" data-path="data.html"><a href="data.html#noaa-usa.gov"><i class="fa fa-check"></i><b>Q.4</b> NOAA, USA.gov</a></li>
 <li class="chapter" data-level="Q.5" data-path="data.html"><a href="data.html#datos-de-karn-and-penrose"><i class="fa fa-check"></i><b>Q.5</b> Datos de Karn and Penrose</a></li>
@@ -880,432 +879,74 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="correlación-y-covarianza" class="section level1 hasAnchor" number="17">
-<h1><span class="header-section-number">Chapter 17</span> Correlación y Covarianza<a href="correlación-y-covarianza.html#correlación-y-covarianza" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Fecha de la ultima revisión</p>
-<pre><code>## [1] &quot;2023-10-26&quot;</code></pre>
-<p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="correlación-y-covarianza.html#cb494-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
-</details>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="correlación-y-covarianza.html#cb495-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb495-2"><a href="correlación-y-covarianza.html#cb495-2" tabindex="-1"></a>DownloadFestival <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/DownloadFestival.csv&quot;</span>)</span>
-<span id="cb495-3"><a href="correlación-y-covarianza.html#cb495-3" tabindex="-1"></a></span>
-<span id="cb495-4"><a href="correlación-y-covarianza.html#cb495-4" tabindex="-1"></a></span>
-<span id="cb495-5"><a href="correlación-y-covarianza.html#cb495-5" tabindex="-1"></a></span>
-<span id="cb495-6"><a href="correlación-y-covarianza.html#cb495-6" tabindex="-1"></a>dlf<span class="ot">=</span>DownloadFestival  <span class="co">#use shorter data.frame names to make your life easier..... </span></span>
-<span id="cb495-7"><a href="correlación-y-covarianza.html#cb495-7" tabindex="-1"></a><span class="fu">head</span>(dlf)</span></code></pre></div>
-</details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-192">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-192">Table 17.1: </span> </caption><col><col><col><col><col><tr>
-<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">ticknumb</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">gender</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">day1</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">day2</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">day3</th></tr>
+<div id="ejercicios-sobre-prueba-de-t-con-datos-independiente" class="section level1 hasAnchor" number="37">
+<h1><span class="header-section-number">L</span> Ejercicios sobre <strong>prueba de t con datos independiente</strong><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#ejercicios-sobre-prueba-de-t-con-datos-independiente" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="el-siguiente-ejercicio-es-para-una-prueba-corta-donde-tendrán-que-contestar-en-msteam.-1" class="section level2 hasAnchor" number="37.1">
+<h2><span class="header-section-number">L.1</span> El siguiente ejercicio es para una prueba corta donde tendrán que contestar en MSTeam.<a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#el-siguiente-ejercicio-es-para-una-prueba-corta-donde-tendrán-que-contestar-en-msteam.-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El tema es sobre la <strong>prueba de t con datos independiente</strong>.</p>
+<p>La prueba corta tiene los siguientes objetivos. Evalúa cada pregunta antes de abrir el documento en MSTeam (Tendrán un tiempo limitado el momento que abré MSTeam)</p>
+<p>Los datos son de pacientes que tienen Esclorosis muscular (MS). A cada uno de estos pacientes se evaluó los niveles de IgG, un indicador de anticuerpo.</p>
+<p>Información básica sobre el anticuerpo, tambien conocido como <strong>Immunoglobin</strong>.</p>
+<hr />
+<div id="tabla-de-que-es-igg-y-algunos-de-sus-causas" class="section level3 hasAnchor" number="37.1.1">
+<h3><span class="header-section-number">L.1.1</span> Tabla de que es IgG y algunos de sus causas<a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#tabla-de-que-es-igg-y-algunos-de-sus-causas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 40%; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-297">
+<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-297">Table L.1: </span> </caption><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 0pt 4pt 4pt 0pt; font-weight: bold;">Ig</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 0pt 4pt 4pt 4pt; font-weight: bold;">Que es</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 0pt 4pt 4pt 4pt; font-weight: bold;">Posible cause cuando es bajo</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 0pt 0pt 4pt 4pt; font-weight: bold;">Posible cause cuando es alto</th></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.11e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.64</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1.35</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1.61</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.23e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.97</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1.41</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.29</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.34e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.84</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">&nbsp;&nbsp;&nbsp;</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.38e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3.03</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.4e+03&nbsp;</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.88</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.08</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">&nbsp;&nbsp;&nbsp;</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.40e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Male</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.85</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;</td></tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 4pt 4pt 0pt 0pt; font-weight: normal;">IgG</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 4pt 4pt 0pt 4pt; font-weight: normal;">Major type of antibody found in the blood that can enter tissues and fight infection. In its four forms, provides the majority of antibody-based immunity against invading pathogens. The only antibody capable of crossing the placenta to give passive immunity to the fetus.</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 4pt 4pt 0pt 4pt; font-weight: normal;">Low levels occur in Waldenstrom's macroglobulinemia, where high levels of IgM antibodies may inhibit the growth of B-cells that make IgG. Other conditions that cause low levels include some types of leukemia and a type of kidney damage (nephrotic syndrome). In rare cases, some people are born with a lack of IgG antibodies. These people are more likely to develop infections.</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 4pt 0pt 0pt 4pt; font-weight: normal;">May mean a long-term (chronic) infection, such as AIDS, is present. Levels of IgG are higher in IgG MGUS, IgG multiple myeloma, long-term hepatitis, and multiple sclerosis (MS). In multiple myeloma, tumor cells make only one type of IgG antibody (monoclonal); the other conditions cause an increase in many types of IgG antibodies (polyclonal).</td></tr>
 </table>
 
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="correlación-y-covarianza.html#cb496-1" tabindex="-1"></a><span class="fu">tail</span>(dlf)</span></code></pre></div>
-</details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-192">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-192">Table 17.1: </span> </caption><col><col><col><col><col><tr>
-<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">ticknumb</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">gender</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">day1</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">day2</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">day3</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4.75e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.52</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;"></td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4.76e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.91</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.94</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4.76e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.61</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1.44</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;"></td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4.76e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1.47</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4.76e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1.28</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;"></td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4.76e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1.26</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></td></tr>
-</table>
-
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="correlación-y-covarianza.html#cb497-1" tabindex="-1"></a><span class="fu">summary</span>(dlf)</span></code></pre></div>
-</details>
-<pre><code>##     ticknumb       gender               day1             day2       
-##  Min.   :2111   Length:810         Min.   : 0.020   Min.   :0.0000  
-##  1st Qu.:3096   Class :character   1st Qu.: 1.312   1st Qu.:0.4100  
-##  Median :3620   Mode  :character   Median : 1.790   Median :0.7900  
-##  Mean   :3616                      Mean   : 1.793   Mean   :0.9609  
-##  3rd Qu.:4155                      3rd Qu.: 2.230   3rd Qu.:1.3500  
-##  Max.   :4765                      Max.   :20.020   Max.   :3.4400  
-##                                                     NA&#39;s   :546     
-##       day3       
-##  Min.   :0.0200  
-##  1st Qu.:0.4400  
-##  Median :0.7600  
-##  Mean   :0.9765  
-##  3rd Qu.:1.5250  
-##  Max.   :3.4100  
-##  NA&#39;s   :687</code></pre>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="correlación-y-covarianza.html#cb499-1" tabindex="-1"></a>dlf2<span class="ot">=</span><span class="fu">subset</span>(dlf, dlf<span class="sc">$</span>day1<span class="sc">&lt;</span><span class="dv">5</span>)  </span>
-<span id="cb499-2"><a href="correlación-y-covarianza.html#cb499-2" tabindex="-1"></a></span>
-<span id="cb499-3"><a href="correlación-y-covarianza.html#cb499-3" tabindex="-1"></a><span class="fu">ggplot</span>(dlf2, <span class="fu">aes</span>(day1))<span class="sc">+</span></span>
-<span id="cb499-4"><a href="correlación-y-covarianza.html#cb499-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;white&quot;</span>)</span></code></pre></div>
-</details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-192-1.png" width="672" /></p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="correlación-y-covarianza.html#cb500-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb500-2"><a href="correlación-y-covarianza.html#cb500-2" tabindex="-1"></a><span class="fu">head</span>(dlf2)</span></code></pre></div>
-</details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:correlation">
-<caption style="caption-side: top; text-align: center;"><span id="tab:correlation">Table 17.2: </span> </caption><col><col><col><col><col><tr>
-<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">ticknumb</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">gender</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">day1</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">day2</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">day3</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.11e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.64</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1.35</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1.61</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.23e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.97</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1.41</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.29</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.34e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.84</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">&nbsp;&nbsp;&nbsp;</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.38e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3.03</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.4e+03&nbsp;</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.88</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.08</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">&nbsp;&nbsp;&nbsp;</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2.40e+03</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Male</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.85</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">&nbsp;&nbsp;&nbsp;</td></tr>
-</table>
-
-<div id="a-detour-in-the-murky-world-of-covariance" class="section level2 hasAnchor" number="17.1">
-<h2><span class="header-section-number">17.1</span> A detour in the Murky world of covariance<a href="correlación-y-covarianza.html#a-detour-in-the-murky-world-of-covariance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The objective is to evaluate whether variables covary, that is if the variable explain in part the part of the other.</p>
-<table>
-<thead>
-<tr class="header">
-<th>Advert watched</th>
-<th>5</th>
-<th>4</th>
-<th>4</th>
-<th>6</th>
-<th>8</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Packets bought</td>
-<td>8</td>
-<td>9</td>
-<td>10</td>
-<td>13</td>
-<td>15</td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<div id="understanding-covariance-one-needs-to-understand-variance-equation." class="section level3 hasAnchor" number="17.1.1">
-<h3><span class="header-section-number">17.1.1</span> Understanding covariance one needs to understand variance equation.<a href="correlación-y-covarianza.html#understanding-covariance-one-needs-to-understand-variance-equation." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>[Variance of single variable]
-<span class="math display">\[s^{ 2 }=\frac { \sum { { ({ x }_{ i }-\bar { x } ) }^{ 2 } }  }{ n-1 }\]</span></p>
-</div>
-<div id="while-the-covariance-is-the-cross-product-of-the-deviation" class="section level3 hasAnchor" number="17.1.2">
-<h3><span class="header-section-number">17.1.2</span> While the Covariance is the cross product of the deviation<a href="correlación-y-covarianza.html#while-the-covariance-is-the-cross-product-of-the-deviation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>[Covariance]
-<span class="math display">\[cov(x,y)=\frac { \sum { ({ x }_{ i }-\bar { x } _{ i })({ y }_{ i }-\bar { y } _{ i }) }  }{ n-1 } \]</span></p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="correlación-y-covarianza.html#cb501-1" tabindex="-1"></a>x_val<span class="ot">=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>)</span>
-<span id="cb501-2"><a href="correlación-y-covarianza.html#cb501-2" tabindex="-1"></a>y_val<span class="ot">=</span><span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">15</span>)</span>
-<span id="cb501-3"><a href="correlación-y-covarianza.html#cb501-3" tabindex="-1"></a>Person<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb501-4"><a href="correlación-y-covarianza.html#cb501-4" tabindex="-1"></a>meanx<span class="ot">=</span><span class="fu">mean</span>(x_val)</span>
-<span id="cb501-5"><a href="correlación-y-covarianza.html#cb501-5" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">data.frame</span>(Person,x_val,y_val)</span>
-<span id="cb501-6"><a href="correlación-y-covarianza.html#cb501-6" tabindex="-1"></a>df</span></code></pre></div>
-</details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:variance">
-<caption style="caption-side: top; text-align: center;"><span id="tab:variance">Table 17.3: </span> </caption><col><col><col><tr>
-<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Person</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">x_val</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">y_val</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">5</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">8</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">9</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">3</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">10</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">13</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">5</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">8</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">15</td></tr>
-</table>
-
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="correlación-y-covarianza.html#cb502-1" tabindex="-1"></a><span class="fu">ggplot</span>(df)<span class="sc">+</span></span>
-<span id="cb502-2"><a href="correlación-y-covarianza.html#cb502-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>Person,<span class="at">y=</span>x_val),<span class="at">colour=</span><span class="st">&quot;Blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb502-3"><a href="correlación-y-covarianza.html#cb502-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>Person,<span class="at">y=</span>y_val), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb502-4"><a href="correlación-y-covarianza.html#cb502-4" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="fu">mean</span>(df<span class="sc">$</span>x_val)),<span class="at">colour=</span><span class="st">&quot;Blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb502-5"><a href="correlación-y-covarianza.html#cb502-5" tabindex="-1"></a><span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="fu">mean</span>(df<span class="sc">$</span>y_val)),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-</details>
-<p><img src="Biometria_files/figure-html/variance-1.png" width="672" /></p>
-<p>Because in most cases variables are collected having different measurement scales we have to standardize using the standard deviation</p>
-</div>
-</div>
-<div id="thus-we-have-to-use-the-correlation-coefficient" class="section level2 hasAnchor" number="17.2">
-<h2><span class="header-section-number">17.2</span> Thus we have to use the Correlation Coefficient:<a href="correlación-y-covarianza.html#thus-we-have-to-use-the-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="this-most-common-is-the-pearson-product-moment-correlation-coefficient-or-pearson-correlation-coeffcient." class="section level2 hasAnchor" number="17.3">
-<h2><span class="header-section-number">17.3</span> This most common is the Pearson product-moment correlation coefficient or Pearson correlation coeffcient.<a href="correlación-y-covarianza.html#this-most-common-is-the-pearson-product-moment-correlation-coefficient-or-pearson-correlation-coeffcient." class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><span class="math display">\[r=\frac { cov(x,y) }{ { s }_{ x }{ s }_{ y } } =\frac { \sum { ({ x }_{ i }-\bar { x } _{ i })({ y }_{ i }-\bar { y } _{ i }) }  }{ n-1{ s }_{ x }{ s }_{ y } }\]</span></p>
-<p>The function to calculate the correlation coefficient is “cor”</p>
-<p>The function to determine if the correlation vetween the 2 variables is significant (in other words, different from zero) is “cor.test”.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="correlación-y-covarianza.html#cb503-1" tabindex="-1"></a><span class="fu">cor</span>(df<span class="sc">$</span>x_val, df<span class="sc">$</span>y_val)</span></code></pre></div>
-</details>
-<pre><code>## [1] 0.8711651</code></pre>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="correlación-y-covarianza.html#cb505-1" tabindex="-1"></a><span class="fu">cor.test</span>(df<span class="sc">$</span>x_val, df<span class="sc">$</span>y_val)</span></code></pre></div>
-</details>
-<pre><code>## 
-##  Pearson&#39;s product-moment correlation
-## 
-## data:  df$x_val and df$y_val
-## t = 3.0732, df = 3, p-value = 0.05443
-## alternative hypothesis: true correlation is not equal to 0
-## 95 percent confidence interval:
-##  -0.0479747  0.9914236
-## sample estimates:
-##       cor 
-## 0.8711651</code></pre>
-<p>The correlation of coefficient square <span class="math inline">\({ R }^{ 2 }\)</span> (known as the coefficient of determination) is a measure of the amount of variability in one variable that is shared by the other.</p>
-<p>Simple table of correlation tests</p>
+<hr />
+<p>La prueba corta tiene los siguientes objetivos. Evalúa cada pregunta antes de abrir el documento en MSTeam (Tendrán un tiempo limitado el momento que abré MSTeam)</p>
 <ol style="list-style-type: decimal">
-<li>Pearson test, assumes normal bivariate distribution,</li>
-<li>Spearman test, no assumption of normality,</li>
-<li>Kendall test, no assumption of normality, better when sample size are small</li>
+<li>Poder subir los datos a R</li>
+<li>Hacer la “prueba de t” que corresponde</li>
+<li>Interpretar los resultados</li>
+<li>Subir una gráfico de los resultados a MSTeam</li>
+<li>Explicar cúal(es) es(son) el/los supuesto(s) de esta prueba</li>
+<li>Hacer una prueba para determinar si el/los supuesto(s) es/son validado(s)</li>
+<li>Escribir claramente la hipótesis nula</li>
+<li>Escribir claramente la hipótesis alterna</li>
+<li>¿Cuales son las hipótesis de los supuestos?</li>
 </ol>
-<p>Let us a look at Anxiety and exam results.</p>
-<p>Choose the data set, examData</p>
+<p>Los datos</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="correlación-y-covarianza.html#cb507-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb507-2"><a href="correlación-y-covarianza.html#cb507-2" tabindex="-1"></a>Exam_Anxiety <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Exam Anxiety.csv&quot;</span>)</span>
-<span id="cb507-3"><a href="correlación-y-covarianza.html#cb507-3" tabindex="-1"></a>examData<span class="ot">=</span>Exam_Anxiety</span>
-<span id="cb507-4"><a href="correlación-y-covarianza.html#cb507-4" tabindex="-1"></a><span class="fu">head</span>(examData)</span></code></pre></div>
+<div class="sourceCode" id="cb734"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb734-1"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#cb734-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb734-2"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#cb734-2" aria-hidden="true" tabindex="-1"></a>Immuno_markers_MS <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;Data_files_csv/Immuno_markers_MS.xlsx&quot;</span>)</span>
+<span id="cb734-3"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#cb734-3" aria-hidden="true" tabindex="-1"></a>Imm<span class="ot">=</span>Immuno_markers_MS</span></code></pre></div>
 </details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:graphic">
-<caption style="caption-side: top; text-align: center;"><span id="tab:graphic">Table 17.4: </span> </caption><col><col><col><col><col><tr>
-<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Code</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Revise</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Exam</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Anxiety</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Gender</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">40</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">86.3</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">11</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">65</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">88.7</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">3</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">27</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">80</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">70.2</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">53</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">80</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">61.3</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Male</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">5</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">40</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">89.5</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">22</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">70</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">60.5</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td></tr>
-</table>
-
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="correlación-y-covarianza.html#cb508-1" tabindex="-1"></a><span class="fu">ggplot</span>(examData, <span class="fu">aes</span>(<span class="at">y=</span>Exam, <span class="at">x=</span>Anxiety))<span class="sc">+</span></span>
-<span id="cb508-2"><a href="correlación-y-covarianza.html#cb508-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-</details>
-<p><img src="Biometria_files/figure-html/graphic-1.png" width="672" /></p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="correlación-y-covarianza.html#cb509-1" tabindex="-1"></a><span class="fu">cor.test</span>(examData<span class="sc">$</span>Exam,examData<span class="sc">$</span>Anxiety)</span></code></pre></div>
-</details>
-<pre><code>## 
-##  Pearson&#39;s product-moment correlation
-## 
-## data:  examData$Exam and examData$Anxiety
-## t = -4.938, df = 101, p-value = 3.128e-06
-## alternative hypothesis: true correlation is not equal to 0
-## 95 percent confidence interval:
-##  -0.5846244 -0.2705591
-## sample estimates:
-##        cor 
-## -0.4409934</code></pre>
-<p>One the basic assumption of the Pearson correlation is that the data be bivariate normally distributed. NOTE: WHAT WE MEAN ABOUT THE “ASSUMPTION” IS THAT WE ARE CONFIDENT THAT THE UNIVERSE IS NORMALLY DISTRIBUTED, NOT NECESARILY THAT OUR DATA ARE (SUBSET).</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="correlación-y-covarianza.html#cb511-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb511-2"><a href="correlación-y-covarianza.html#cb511-2" tabindex="-1"></a><span class="fu">library</span>(png)</span>
-<span id="cb511-3"><a href="correlación-y-covarianza.html#cb511-3" tabindex="-1"></a></span>
-<span id="cb511-4"><a href="correlación-y-covarianza.html#cb511-4" tabindex="-1"></a>img3_path<span class="ot">&lt;-</span><span class="st">&quot;Graficos/Bivariate_normal.png&quot;</span></span>
-<span id="cb511-5"><a href="correlación-y-covarianza.html#cb511-5" tabindex="-1"></a><span class="fu">include_graphics</span>(img3_path)</span></code></pre></div>
-</details>
-<p><img src="Graficos/Bivariate_normal.png" width="421" /></p>
-</div>
-<div id="what-does-that-mean" class="section level2 hasAnchor" number="17.4">
-<h2><span class="header-section-number">17.4</span> What does that mean<a href="correlación-y-covarianza.html#what-does-that-mean" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here is a really cool graph that does the figures and most of the analysis in one one shot.
-The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure will be black and white, and not seperated by gender.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="correlación-y-covarianza.html#cb512-1" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
-<span id="cb512-2"><a href="correlación-y-covarianza.html#cb512-2" tabindex="-1"></a><span class="fu">head</span>(examData)</span></code></pre></div>
-</details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:graphic 2">
-<caption style="caption-side: top; text-align: center;">(#tab:graphic 2) </caption><col><col><col><col><col><tr>
-<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Code</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Revise</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Exam</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Anxiety</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Gender</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">40</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">86.3</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">11</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">65</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">88.7</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">3</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">27</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">80</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">70.2</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">53</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">80</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">61.3</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Male</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">5</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">40</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">89.5</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">Male</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">22</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">70</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">60.5</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Female</td></tr>
-</table>
-
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb513-1"><a href="correlación-y-covarianza.html#cb513-1" tabindex="-1"></a><span class="fu">ggpairs</span>(examData, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">colour=</span>Gender))</span></code></pre></div>
-</details>
-<p><img src="Biometria_files/figure-html/graphic%202-1.png" width="672" /></p>
-<p>In this code I removed the first column, which is just the code of the individual, by examData[,c(2:5)], by removing column #1.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="correlación-y-covarianza.html#cb514-1" tabindex="-1"></a><span class="fu">ggpairs</span>(examData[,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>)], ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">colour=</span>Gender)) </span></code></pre></div>
-</details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-194-1.png" width="672" /></p>
-<ol style="list-style-type: decimal">
-<li></li>
-</ol>
-<p>USar el data set siguiente</p>
-<p>con las variables,</p>
+<hr />
+<p>En este archivo tiene tres columnas.</p>
 <ul>
-<li>Flower Size</li>
-<li>Num_Fr = Number off Fruits</li>
-<li>w_sepals_dorsal = width of the dorsal sepal</li>
-<li>front_lip_length = Front lip length</li>
-<li>wf = an index of female selection</li>
+<li>El sexo del paciente, “F” o “M.”</li>
+<li>Un indice de los IgG, en una mustra de cada paciente con MS</li>
+<li>Un indice de IgG synthesis rate :
+<ul>
+<li>The reference interval is –9.9 to +3.3 mg per day. Negative values are considered normal. Multiple sclerosis patients usually have a synthesis rate &gt;8.0.</li>
+</ul></li>
 </ul>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="correlación-y-covarianza.html#cb515-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb515-2"><a href="correlación-y-covarianza.html#cb515-2" tabindex="-1"></a>Lep_rupPetal_All_Data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Lep_rupPetal_All_Data.csv&quot;</span>)</span>
-<span id="cb515-3"><a href="correlación-y-covarianza.html#cb515-3" tabindex="-1"></a>Lep<span class="ot">=</span>Lep_rupPetal_All_Data</span>
-<span id="cb515-4"><a href="correlación-y-covarianza.html#cb515-4" tabindex="-1"></a><span class="fu">names</span>(Lep)</span></code></pre></div>
-</details>
-<pre><code>##  [1] &quot;Plant_Number&quot;     &quot;Petal_Character&quot;  &quot;Population&quot;       &quot;Num_FR&quot;          
-##  [5] &quot;Sqrt_NumFR&quot;       &quot;Rank_Fruits&quot;      &quot;Num_PR&quot;           &quot;Num_PP&quot;          
-##  [9] &quot;Perc_PR&quot;          &quot;Perc_FR&quot;          &quot;Num_flowers&quot;      &quot;wm&quot;              
-## [13] &quot;wf&quot;               &quot;Nfl stand to 1 V&quot; &quot;L_column&quot;         &quot;X2_ L_column&quot;    
-## [17] &quot;Flower_size&quot;      &quot;w_sepals_dorsal&quot;  &quot;Lpostpetallobe&quot;   &quot;wpostpetallobe&quot;  
-## [21] &quot;lantpetallobe&quot;    &quot;front_lip_length&quot; &quot;front_lip_lenght&quot; &quot;Front_lip_width&quot; 
-## [25] &quot;midlobe_lenght&quot;   &quot;anther_cap_open&quot;  &quot;dist_b_w_sepals&quot;  &quot;ST_L _column&quot;    
-## [29] &quot;w_mf&quot;             &quot;ST_L_column2&quot;     &quot;Sqrt_Num_Fl0.5&quot;   &quot;Log_flower size&quot; 
-## [33] &quot;Arcsin_Perc_FR&quot;</code></pre>
-<p>A table of the correlation coefficients</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb517"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb517-1"><a href="correlación-y-covarianza.html#cb517-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb517-2"><a href="correlación-y-covarianza.html#cb517-2" tabindex="-1"></a><span class="fu">rcorr</span>(<span class="fu">as.matrix</span>(examData[,<span class="fu">c</span>(<span class="st">&quot;Exam&quot;</span>,<span class="st">&quot;Anxiety&quot;</span>,<span class="st">&quot;Revise&quot;</span>)]))</span></code></pre></div>
-</details>
-<pre><code>##          Exam Anxiety Revise
-## Exam     1.00   -0.44   0.40
-## Anxiety -0.44    1.00  -0.71
-## Revise   0.40   -0.71   1.00
-## 
-## n= 103 
-## 
-## 
-## P
-##         Exam Anxiety Revise
-## Exam          0       0    
-## Anxiety  0            0    
-## Revise   0    0</code></pre>
-<p>When the data do not comply with the assumption of normality you need to use Spearman or Kendall</p>
-<p>Choose “The Biggest Liar.csv” data set, contest, where this occurs every year in a pub.</p>
-<p>World’s Biggest Liar is an annual competition for telling lies, held in Cumbria, England at the Stanton Inn Bridge Pub.</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb519"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb519-1"><a href="correlación-y-covarianza.html#cb519-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb519-2"><a href="correlación-y-covarianza.html#cb519-2" tabindex="-1"></a><span class="fu">library</span>(png)</span>
-<span id="cb519-3"><a href="correlación-y-covarianza.html#cb519-3" tabindex="-1"></a></span>
-<span id="cb519-4"><a href="correlación-y-covarianza.html#cb519-4" tabindex="-1"></a>img4_path<span class="ot">&lt;-</span><span class="st">&quot;Graficos/Stanton.png&quot;</span></span>
-<span id="cb519-5"><a href="correlación-y-covarianza.html#cb519-5" tabindex="-1"></a><span class="fu">include_graphics</span>(img4_path)</span></code></pre></div>
-</details>
-<p><img src="Graficos/Stanton.png" width="500px" /></p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb520"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb520-1"><a href="correlación-y-covarianza.html#cb520-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb520-2"><a href="correlación-y-covarianza.html#cb520-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb520-3"><a href="correlación-y-covarianza.html#cb520-3" tabindex="-1"></a>The_Biggest_Liar <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/The Biggest Liar.csv&quot;</span>)</span>
-<span id="cb520-4"><a href="correlación-y-covarianza.html#cb520-4" tabindex="-1"></a>liarData<span class="ot">=</span>The_Biggest_Liar</span>
-<span id="cb520-5"><a href="correlación-y-covarianza.html#cb520-5" tabindex="-1"></a></span>
-<span id="cb520-6"><a href="correlación-y-covarianza.html#cb520-6" tabindex="-1"></a><span class="fu">head</span>(liarData)</span></code></pre></div>
-</details>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  " id="tab:unnamed-chunk-198">
-<caption style="caption-side: top; text-align: center;"><span id="tab:unnamed-chunk-198">Table 17.5: </span> </caption><col><col><col><tr>
-<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Creativity</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Position</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Novice</th></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">53</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">36</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">31</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">43</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">30</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td></tr>
-<tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">41</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td></tr>
-</table>
-
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb521"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb521-1"><a href="correlación-y-covarianza.html#cb521-1" tabindex="-1"></a><span class="fu">cor</span>(liarData<span class="sc">$</span>Position, liarData<span class="sc">$</span>Creativity, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
-</details>
-<pre><code>## [1] -0.3060314</code></pre>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb523"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb523-1"><a href="correlación-y-covarianza.html#cb523-1" tabindex="-1"></a><span class="fu">cor</span>(liarData<span class="sc">$</span>Position, liarData<span class="sc">$</span>Creativity, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
-</details>
-<pre><code>## [1] -0.3732184</code></pre>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb525"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb525-1"><a href="correlación-y-covarianza.html#cb525-1" tabindex="-1"></a><span class="fu">cor</span>(liarData<span class="sc">$</span>Position, liarData<span class="sc">$</span>Creativity, <span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
-</details>
-<pre><code>## [1] -0.3002413</code></pre>
+<hr />
 </div>
-<div id="extra-stuff" class="section level2 hasAnchor" number="17.5">
-<h2><span class="header-section-number">17.5</span> EXTRA Stuff<a href="correlación-y-covarianza.html#extra-stuff" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="bootstrapping-correlation" class="section level3 hasAnchor" number="17.5.1">
-<h3><span class="header-section-number">17.5.1</span> Bootstrapping Correlation<a href="correlación-y-covarianza.html#bootstrapping-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>THERE is no need to make assumptions of the distribution, you can let your data speak for itself, and construct the correlation coeffcients and 95% confidence interval.</p>
-<p>We first create a function</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb527"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb527-1"><a href="correlación-y-covarianza.html#cb527-1" tabindex="-1"></a>bootTau<span class="ot">=</span><span class="cf">function</span>(liarData,i)<span class="fu">cor</span>(liarData<span class="sc">$</span>Position[i],liarData<span class="sc">$</span>Creativity[i],</span>
-<span id="cb527-2"><a href="correlación-y-covarianza.html#cb527-2" tabindex="-1"></a>                                <span class="at">use=</span><span class="st">&quot;complete.obs&quot;</span>,<span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
-</details>
-<p>The function is then called and executed</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb528"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb528-1"><a href="correlación-y-covarianza.html#cb528-1" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
-<span id="cb528-2"><a href="correlación-y-covarianza.html#cb528-2" tabindex="-1"></a>boot_kendall<span class="ot">=</span><span class="fu">boot</span>(liarData,bootTau, <span class="dv">1000</span>)</span>
-<span id="cb528-3"><a href="correlación-y-covarianza.html#cb528-3" tabindex="-1"></a>boot_kendall</span></code></pre></div>
-</details>
-<p>To calculate the 95% confidence interval</p>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="correlación-y-covarianza.html#cb529-1" tabindex="-1"></a><span class="fu">boot.ci</span>(boot_kendall)</span></code></pre></div>
-</details>
-<details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="correlación-y-covarianza.html#cb530-1" tabindex="-1"></a><span class="fu">ggplot</span>(liarData, <span class="fu">aes</span>(Creativity, Position))<span class="sc">+</span></span>
-<span id="cb530-2"><a href="correlación-y-covarianza.html#cb530-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
-</details>
-<p><img src="Biometria_files/figure-html/unnamed-chunk-202-1.png" width="672" /></p>
-
+<div id="calcular-el-promedio-y-desviación-estandard-y-el-tamaño-de-muestra-de-los-dos-grupos-del-nivel-de-igg" class="section level3 hasAnchor" number="37.1.2">
+<h3><span class="header-section-number">L.1.2</span> 1. Calcular el promedio y desviación estandard y el tamaño de muestra de los dos grupos del nivel de IgG<a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#calcular-el-promedio-y-desviación-estandard-y-el-tamaño-de-muestra-de-los-dos-grupos-del-nivel-de-igg" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<hr />
+</div>
+<div id="hacer-la-prueba-para-evaluar-si-las-mujeres-y-hombres-tienen-un-igg-diferente" class="section level3 hasAnchor" number="37.1.3">
+<h3><span class="header-section-number">L.1.3</span> 2. Hacer la prueba para evaluar si las mujeres y hombres tienen un IgG diferente<a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#hacer-la-prueba-para-evaluar-si-las-mujeres-y-hombres-tienen-un-igg-diferente" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<hr />
+</div>
+<div id="haz-un-histograma-de-la-variable-igg-por-genero-a-un-color-diferente-por-gender" class="section level3 hasAnchor" number="37.1.4">
+<h3><span class="header-section-number">L.1.4</span> 3. Haz un histograma de la variable “IgG” por genero, a) un color diferente por “Gender”<a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#haz-un-histograma-de-la-variable-igg-por-genero-a-un-color-diferente-por-gender" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Para salvar el gráfico usa ggsave(“nombre_de_tu_grafico.png”). Para subir lo a MSTeam.</p></li>
+<li><p>Ahora su gráfico sera salvado en su proyecto con el nombre que le dio.</p></li>
+</ul>
+<hr />
+</div>
+<div id="determina-si-la-prueba-cumple-con-ellos-supuestos-de-una-prueba-de-t-con-datos-independientes" class="section level3 hasAnchor" number="37.1.5">
+<h3><span class="header-section-number">L.1.5</span> 4. Determina si la prueba cumple con el/los supuesto(s) de una prueba de t con datos independientes?<a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#determina-si-la-prueba-cumple-con-ellos-supuestos-de-una-prueba-de-t-con-datos-independientes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<hr />
 </div>
 </div>
 </div>
@@ -1314,8 +955,8 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
           </div>
         </div>
       </div>
-<a href="anova.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="regresión-lineal-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ejercicios-k.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ejercicios-m.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -1346,7 +987,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/17-Correlacion_Covarianza.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/APPENDIX.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -1354,7 +995,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/RaymondLTremblay/Biometria/blob/main/17-Correlacion_Covarianza.Rmd",
+"link": "https://github.com/RaymondLTremblay/Biometria/blob/main/APPENDIX.Rmd",
 "text": null
 },
 "download": null,

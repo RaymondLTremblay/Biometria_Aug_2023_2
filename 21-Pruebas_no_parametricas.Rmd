@@ -1,6 +1,23 @@
 # Pruebas no parametricas
 
+```{r, eval=TRUE, echo=FALSE}
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color, 
+      x)
+  } else x
+}
 
+#`r colorize("some words in red", "red")`
+library(ggplot2)
+rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bold"),
+        axis.text.x = element_text(colour="grey20",size=15, face="bold"),
+        axis.text.y = element_text(colour="grey20",size=15,face="bold"),  
+        axis.title.x = element_text(colour="grey20",size=15,face="bold"))+
+        theme_bw()
+```
 
 ***
 
@@ -61,7 +78,7 @@ https://en.wikipedia.org/wiki/Beck_Depression_Inventory
 
 
 ##  Enter raw data
-```{r Enter data}
+```{r nopara1}
 
 sundayBDI<-c(15, 35, 16, 18, 19, 
              17, 27, 16, 13, 20, 
@@ -81,7 +98,7 @@ drugData
 ## Or Import the data
 
 ## Exploratory analysis
-```{r}
+```{r nopara2}
 library(readr)
 Drug <- read_csv("Data_files_csv/Drug.csv")
 
@@ -94,7 +111,7 @@ Note here we can use drugData[,c(2:3)], that we want the stats for column 2 and 
 
 NOTE the shapiro wilks test on the last line.  
 
-```{r descriptive stats21}
+```{r nopara3}
 names(drugData)
 by(drugData[,c(3:4)], drugData$drug, stat.desc, basic=TRUE, norm=TRUE)
 
@@ -105,7 +122,7 @@ by(drugData[,c(3:4)], drugData$drug, stat.desc, basic=TRUE, norm=TRUE)
 
 ### Do a histogram by factor level for anxiety for Sunday.
 
-```{r}
+```{r nopara4}
 library(ggplot2)
 
 ggplot(drugData, aes(x=sundayBDI, fill=drug))+
@@ -121,7 +138,7 @@ ggplot(drugData, aes(x=sundayBDI, fill=drug))+
 ## Test of equality of variance
   This is one of the assumptions of parametric tests
 
-```{r equality of variance}
+```{r nopara5}
 
 #leveneTest(drugData$sundayBDI, drugData$drug, center = "mean")
 leveneTest(drugData$sundayBDI, drugData$drug, center = "median")
@@ -155,7 +172,7 @@ Look for the smallest value......in the wedsBDI......
 
 
 
-```{r}
+```{r nopara6}
 drugData$wedsRank=rank(drugData$wedsBDI)
 drugData
 
@@ -165,7 +182,7 @@ drugData
 
 ## Wilcoxon test: A non-parametric test 
 
-```{r wilcoxon test}
+```{r nopara7}
 names(drugData)
 head(drugData)
 sunModel<-wilcox.test(sundayBDI ~ drug, data = drugData)
@@ -181,7 +198,7 @@ wedModel
 
 ## the following approach is better because it can deal with ties (values that are equal)
 
-```{r}
+```{r nopara8}
 sunModel2<-wilcox.test(sundayBDI ~ drug, data = drugData, exact = FALSE, correct= FALSE, conf.int=T)
 sunModel2
 wedModel2<-wilcox.test(wedsBDI ~ drug, data = drugData, exact = FALSE, correct= FALSE, conf.int=T)
@@ -196,7 +213,7 @@ wedModel2
 
 Use Wilcoxon Test
 
-```{r disney}
+```{r nopara9}
 
 Disney=c(3,5,0,1,2,
          0,2,0,2,3,
@@ -214,7 +231,7 @@ DF
 ```
 
 ***
-```{r disney2}
+```{r nopara10}
 ggplot(DF, aes(y=Disney, x=Gender))+
   geom_boxplot()
 
@@ -236,7 +253,7 @@ wilcox.test(Disney ~ Gender, data = DF,exact = FALSE, correct= FALSE, conf.int=T
 
 We now want to compare the results from sunday and Wendsday, but now the data come from the same individuals.
 ## BDI = Becks depression index Change
-```{r WSRT}
+```{r nopara11}
 drugData$BDIchange<-drugData$wedsBDI-drugData$sundayBDI # calculate differences
 
 
@@ -316,7 +333,7 @@ These data suggest that higher intake of soy foods and soy isoflavones is associ
 
 Now let us look at the data from Field, soya.csv. 
 
-```{r soya}
+```{r nopara12}
 library(readr)
 
 Soyadf <- read_csv("Data_files_csv/Soya.csv")
@@ -329,7 +346,7 @@ unique(Soyadf$Soya)
 
 ## Hacer un boxplot de los datos en un nuevo chunk
 
-```{r}
+```{r nopara13}
 library(ggplot2)
 
 ggplot(Soyadf, aes(x=Soya, y=Sperm, fill=Soya))+
@@ -343,7 +360,7 @@ ggplot(Soyadf, aes(x=Soya, y=Sperm, fill=Soya))+
 
 Descriptive statistics
  When adding "norm=TRUE" will perform Shapiro_Wilks Normality test. 
-```{r desc}
+```{r nopara14}
 library(pastecs)
 
 by(Soyadf$Sperm, Soyadf$Soya, stat.desc, basic = FALSE, norm = TRUE)
@@ -360,7 +377,7 @@ by(Soyadf$Sperm, Soyadf$Soya, stat.desc, basic = FALSE, norm = TRUE)
 HO: R1=R2=R3=R4
 HA: Por lo menos uno los grupos es diferente
 
-```{r KW}
+```{r nopara15}
 
 
 # Traditional approach
@@ -372,7 +389,7 @@ kruskal.test(Sperm~as.factor(Soya), data=Soyadf)
 
 ***
 
-```{r}
+```{r nopara16}
 
 library(coin)
 #Approximative (Monte Carlo) Fisher-Pitman test
@@ -399,7 +416,7 @@ modelkt
 
 ***
 
-```{r ranks}
+```{r nopara17}
 Soyadf$Ranks=rank(Soyadf$Sperm)
 head(Soyadf)
 by(Soyadf$Ranks, Soyadf$Soya, median)
@@ -418,7 +435,7 @@ The values shown are the p=values,  the pair are significantly different if the 
 dist="Tukey", correction for ties done
 
 
-```{r nemenyi}
+```{r nopara18}
 library(PMCMRplus)
 kwAllPairsNemenyiTest(Sperm~as.factor(Soya) , data=Soyadf)
 

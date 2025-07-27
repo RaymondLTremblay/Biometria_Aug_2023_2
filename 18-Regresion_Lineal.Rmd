@@ -55,7 +55,7 @@ Primero paso es subir los datos:
 
 El números de barres en un bario y la cantidad de asesinados en este barrio (Datos ficticios)
 
-```{r data18}
+```{r reg1}
 library(readr)
 pubs <- read_csv("Data_files_csv/pubs.csv")
 pubs
@@ -94,7 +94,7 @@ Ahora evaluamos los resultados de la regresión entre el número de barres en un
 
 Ahora para determinar si estos valores son significativo hay que evaluar el valor de **p** en cada linea. La hipótesis nula del intercepto tiene un valor de p =0.005, que sugiere que se debería rechazar la hipótesis nula, y por consecuencia aceptamos la hipótesis alterna. La pendiente tiene un valor de p=0.015 y también se rechaza la hipotesis nula.
 
-```{r linear model, fig.align='center'}
+```{r reg2, fig.align='center'}
 pubReg <- lm(mortalidad~barres, data = pubs) 
 
 model <- lm(mortality~pubs, data=pubs2)
@@ -118,7 +118,7 @@ tab_model(
 
 Se observa que hay un aumento en fatalidades con aumento en el número de barres. Pero nota el valor a la derecha que parece ser muy atípico comparado a los otros.
 
-```{r}
+```{r reg3}
 ggplot(pubs, aes(x=barres, y=mortalidad))+
   geom_smooth(method = lm)+ # modelo lineal
   geom_point()
@@ -128,7 +128,7 @@ ggplot(pubs, aes(x=barres, y=mortalidad))+
 
 
 
-```{r}
+```{r reg4}
 
 datosP=tribble(~edad_casar, ~Num_hijos,
                NA, 10,
@@ -155,7 +155,7 @@ ggplot(datosP, aes(y=Num_hijos, x=edad_casar))+
 
 En cierta ocasiones valores fuera de lo normal pueden hacer grandes cambios en el resultado, en este caso la regresión. ¿Cual es el efecto del valor grande? Removemos ese valor del archivo de datos y revaluamos el modelo (la regresión lineal). Nota que ahora el modelo es sumamente diferente $y=-163.7+103.2*x$. ¿Ahora se rechaza las dos hipótesis?
 
-```{r remover valores}
+```{r reg5}
 
 pubsnew <- pubs[ which(pubs$barres<80), ]  # remover el valor grande
 
@@ -191,7 +191,7 @@ Ahora un set de datos más complejo y más realista a los que uno encontraría e
 
 Los datos representa la cantidad de dinero dedicado a la promoción de diferentes CD's de una compañia de música y la cantidad de CD (CD/downloads) vendido. El la primera linea se observa la cantidad de libras esterlina, **£** (UK) dedicado a la promoción del album de música, en la primera linea vemos que se gasto £10,256, y después la cantidad de CD vendido fue 330.
 
-```{r advertizing and sales}
+```{r reg6}
 library(readr)
 Album_Sales_1_new <- read_csv("Data_files_csv/Album_Sales_1_new.csv")
 head(Album_Sales_1_new)
@@ -204,7 +204,7 @@ Comenzamos con hacer un gráfico entre las dos variables. Nota que en la parte d
 
 $$Y_{ i }=\beta _{ 0 }+\beta _{ 1 }X_{ i }+\epsilon _{ i }$$ Recuerda que $\beta _{ 0 }$ es el intercepto y el $\beta _{ 1 }X_{ i }$ es la pendiente. El área sombreada es el área de 95 de intervalo de confianza. Esto quiere decir que la mejor linea, intercepto y pendiente podría variar en este rango si repetimos el experimento. Nota aquí todas las alternativas, añadí los dos extremos, con una pendiente mayor (roja) y una menor (violeta). Cada punto representa la venta de CD con su correspondiente cantidad dedicada a la promoción. Los $epsilon$ seria la diferencia entre la mejor linea y el valor original, esto se llama tambien los residuales.
 
-```{r advertizing graph}
+```{r reg7}
 library(ggplot2)
 ggplot(Album_Sales_1_new,aes(x=adverts, y=sales))+
   geom_smooth(method=lm, se = TRUE)+
@@ -215,7 +215,7 @@ ggplot(Album_Sales_1_new,aes(x=adverts, y=sales))+
 
 El modelo lineal con la función **lm()**. ¿Como interpretas los coeficientes y si estos son significativos, si se rechaza la hipótesis nula?
 
-```{r, sales model }
+```{r reg7a }
 library(sjPlot)
 head(Album_Sales_1_new)
 
@@ -248,7 +248,7 @@ tab_model(
 
 En el presente gráfico hay tres valores que hay que evaluar (1,42,169), estos valores se tiene que asegurar que son correctos. Siempre es bueno remover los valores sesgados y rehacer el análisis para observar cuan diferente son los resultas.
 
-```{r}
+```{r reg8}
 plot(model1)  # Evaluar los supuestos, 1. Igualdad de varianza, 2. Normalidad, 4. Datos sesgados (Cook's Distance)
 ```
 
@@ -267,7 +267,7 @@ Others have indicated that D\_i\>4/n, where n is the number of observations, mig
 Aqui enseño como añadir 1. los valores de "cook.distance" a su archivo 2. Añadir una columna de "secuencia" de los datos 3. Crear una gráfica de las distancia de Cook.\
 4. Which values have Di larger than 1, which values have Cook's distances larger 4/n?
 
-```{r Cook distance}
+```{r reg9}
 4/length(Album_Sales_1_new$adverts)
 
 
@@ -315,7 +315,7 @@ b.  La segunda hipótesis nula Deteminar si la pendiente es igual a cero. Mira e
 
 6.  Valores sesgados, la prueba de Cook's
 
-```{r linear model2}
+```{r reg10}
 advertizingReg <- lm(sales~adverts, data = Album_Sales_1_new)
 summary(advertizingReg)
 
@@ -346,7 +346,7 @@ A quantity remaining after other things have been subtracted or allowed for. **F
 
 A residual (or fitting deviation), on the other hand, is an observable estimate of the unobservable statistical error.
 
-```{r evaluate the residuals}
+```{r reg11}
 # "advertizingReg", nota que este no es un data frame pero un modelo
 # The main figure
 ggplot(Album_Sales_1_new,aes(x=adverts, y=sales))+
@@ -368,7 +368,7 @@ Cuando R corre un analisis, hace muchos calculos y guarda parate de estos calcul
 
 Para ver algunos de los valores calculado uno pone el nombre del modelo y la añade el **$** y deberia aparecer la lista de los valores calculados. o otra alternativa es usar la función ls() = list() para ver el nombre de las variables
 
-```{r}
+```{r reg12}
 ls(model1)
 
 # model1$residuals  # Por ejemplo para ver los residuales del modelo
@@ -390,7 +390,7 @@ Usa los enviado por MSTeam llamado "Alturas_Humanos
  - Evalúa los supuestos
  
 
-```{r}
+```{r reg13}
 library(readr)
 Alturas_Humanos <- read_csv("Data_files_csv/Alturas_Humanos.csv")
 
@@ -398,17 +398,17 @@ head(Alturas_Humanos)
 ```
 
 
-```{r eval=FALSE, include=FALSE}
+```{r reg14, eval=FALSE, include=FALSE}
 model2=lm(Altura_cm~Peso_kg, data=Alturas_Humanos)
 summary(model2)
 ```
 
-```{r eval=FALSE, include=FALSE}
+```{r reg15, eval=FALSE, include=FALSE}
 plot(model2)
 ```
 
 
-```{r eval=FALSE, include=FALSE}
+```{r reg 16, eval=FALSE, include=FALSE}
 ggplot(Alturas_Humanos, aes(Peso_kg, Altura_cm))+
 geom_point()+
 geom_smooth(method=lm)+
@@ -430,13 +430,13 @@ Los datos se encuentra en el paquete **ggversa** debajo el nombre de *dipodium*.
 
  - Evalua todos los pasos para ver si la altura de inflorescencia es un predictor de la cantidad de flores que tiene una planta.
 
-```{r eval=FALSE, include=FALSE}
+```{r reg17, eval=FALSE, include=FALSE}
 library(ggversa)
 library(ggplot2)
 ```
 
 
-```{r eval=FALSE, include=FALSE}
+```{r reg18, eval=FALSE, include=FALSE}
 ggplot(dipodium, aes(Height_Inflo, Number_of_Flowers))+
 geom_point()+
 geom_smooth(method=lm)+
@@ -446,7 +446,7 @@ labs(x="Altura de la Inflorescencia",y="Cantidad de Flores")
 ```
 
 
-```{r eval=FALSE, include=FALSE}
+```{r reg19, eval=FALSE, include=FALSE}
 modelD=lm(Number_of_Flowers~ Height_Inflo, data = dipodium)
 summary(modelD)
 
@@ -454,12 +454,12 @@ summary(modelD)
 
 
 
-```{r eval=FALSE, include=FALSE}
+```{r reg20, eval=FALSE, include=FALSE}
 plot(modelD)
 ```
 
 
-```{r eval=FALSE, include=FALSE}
+```{r reg21, eval=FALSE, include=FALSE}
 ggplot(dipodium, aes(Height_Inflo, Number_of_Flowers))+
 geom_point()+
 geom_abline(intercept=-2.197 , slope = 0.451)+

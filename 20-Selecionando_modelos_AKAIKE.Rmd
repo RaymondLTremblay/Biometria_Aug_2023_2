@@ -46,7 +46,7 @@ El acercamiento tradicional en la literatura es el $R^2$ o el coeficiente de det
 
 Seleccionamos los datos de modulo regresión multiples (TF5). Sobre el **Biomass Index** y comoo esta corelacionado con la edad, el nivel de colesterol y glucosa en la sangre.
 
-```{r,modelo}
+```{r akaike1}
 
 library(readxl)
 
@@ -67,7 +67,7 @@ pacman::p_load("MuMIn", "formattable")
 
 Se construye un modelo con todos los parametros. Vemos que el $R^2= 0.0785$.
 
-```{r, modelo basico}
+```{r akaike2}
 library(car)
 library(sjPlot)
 model <- lm(BMI ~ Age + Cholesterol + Glucose, data = reg.multiple)
@@ -79,7 +79,7 @@ tab_model(model)
 
 Ahora evaluamos todas las posibles combinaciones de modelos. Considera la columna de $R^2$ y los valores para cada modelo. Los que se observa es que el modelos con más variables tiene un $R^2$ más alto seguido con modelos con dos variables. La pregunta principal, un modelo con cuatro variables con un $R^2=.127$ es significativamente mejor que un modelo de 2 variables con un $R^2=.1185$. Usando el método tradicional no hay mecanismos para seleccionar y evaluar cual de los modelos es el mejor tomando en cuenta la complejidad del modelo. NOTA: ***NA*** en la tabla quiere decir que esta variable no esta incluida en el modelo.
 
-```{r, dredge, message=FALSE}
+```{r akaike3, message=FALSE}
 library(MASS)
 library(MuMIn)
 
@@ -91,7 +91,7 @@ model2=lm(BMI ~ Age + Cholesterol + Glucose, data = reg.multiple) # El Modelo m�
 ALL_models=dredge(model2, extra="R^2") # Evaluación de todas las compbinaciones/alternativas (modelos)
 ```
 
-```{r, tabla R2, message=FALSE}
+```{r akiake4, message=FALSE}
 library(formattable)
 
 formattable(ALL_models, digits=5, format="html")
@@ -185,7 +185,7 @@ El primer paso es construir los modelos que queremos comparar, para facilitar el
 
 Los datos son para evaluar sin hay efecto de cambio de nivel de ansiedad y depresión en la población de Puerto Rico luego del Huracán María. Los datos presentado son solamente parcial y incluye solamente un de los indices el del nivel de depresión después de 5 o más semanas luego del Huracán (Tremblay et al. sin publicar). La hipótesis es que algunos factores sociales y/o económico influencia el nivel de depresión en la gente.
 
-```{r}
+```{r akaike5}
 library(readr)
 DFMaria_student <- read_csv("Data_files_csv/DFMaria_student.csv")
 ```
@@ -208,14 +208,14 @@ Metadata:
 
 El primer paso es remover todos los participantes donde le falta algún información.
 
-```{r}
+```{r akaike6}
 DFMaria_student=na.omit(DFMaria_student)
 
 ```
 
 ### Construcción del modelo
 
-```{r}
+```{r akaike7}
 head(DFMaria_student)
 
 Huracan_Dep=lm(Index_Dep5T~factor(Sexo)+Escolaridad+Num_Pers_Hogar+
@@ -223,7 +223,7 @@ Huracan_Dep=lm(Index_Dep5T~factor(Sexo)+Escolaridad+Num_Pers_Hogar+
 
 ```
 
-```{r}
+```{r akaike8}
 ggplot(DFMaria_student, aes(y=Index_Dep5T,x=Sala_Mens_Desp))+
   geom_smooth(method = lm)
 ```
@@ -232,7 +232,7 @@ ggplot(DFMaria_student, aes(y=Index_Dep5T,x=Sala_Mens_Desp))+
 
 #### Observar el resultado del modelo lineal completo.
 
-```{r}
+```{r akaike9}
 summary(Huracan_Dep)
 
 ```
@@ -240,7 +240,7 @@ summary(Huracan_Dep)
 #### Evaluar todas los modelos. 
 Se ordena los modelos comenzando con el mejor, y si resta el valor de AICc con el mejor modelo, menor es el AICc mejor es el modelo. Los modelos que se estará aceptando son los que tienen un delta de menos <-2.00 (comparando con el mejor modelo), $\Delta_i=AIC_i-AIC_{\min}$.  En otra palabra los modelos que difieren más de un AICc de 2.0 no se aceptan como buenos modelos. En este caso los seis primeros modelos son igual de bueno, y no hay evidencia que uno es mejor que el otro. Cuando hay más de un modelo se tiene que calcular los promedios ponderados de los parámetros $\beta_i$ .  
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r akaike10, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(huxtable)
 
@@ -262,7 +262,7 @@ set_caption("Criterios de Selección de Modelos")
 
 Con la función **dredge** del paquete **MuMIn** podemos evaluar todas las combinaciones de modelos
 
-```{r}
+```{r akaik11}
 library(MASS)
 library(MuMIn)
 
@@ -283,7 +283,7 @@ formattable(ALL_models, digits=4, format="html")
 ***
 #### Calcular el coeficientes ponderados
 
-```{r, message=FALSE, warning=FALSE}
+```{r akaike12, message=FALSE, warning=FALSE}
 #allmodels=format(round(ALL_models, digits=3), scientific=FALSE)
 #library(data.table)
 #write.csv(allmodels, "allmodelsdata.csv")
@@ -294,7 +294,7 @@ formattable(ALL_models, digits=4, format="html")
 ### Seleccionar los modelos 
 
 Seleccionar los modelos que tienen un delta AICc menor de 2 y calcular el promedio de los coeficientes de los modelos. Nota el conjunto de coeficientes debajo **subset**, esto son los coeficientes de las variables del conjunto de modelos que tienen un delta AICc menor de 2. 
-```{r}
+```{r akaike13}
 
 # calculate the model average 
 model.avg(ALL_models, subset = delta < 2)
@@ -313,7 +313,7 @@ model.avg(ALL_models, subset = delta < 2)
 *** 
 
 ### Extraer los parametros del modelo, usando las sigueientes funciones
-```{r}
+```{r akaike14}
 bestModelsResults=data.frame(bestModels$coefmat.subset)
  names(bestModelsResults)
  bestModelsResults
@@ -329,7 +329,7 @@ is.data.frame(BMR)
 
 ### Intervalos de Confianza 
 Los Intervalos de confianza de los parámetros se extraje del modelo usando la siguiente funciones. 
-```{r}
+```{r akaike15}
 library(ggplot2)
 library(coefplot)
 
@@ -344,7 +344,7 @@ names(BMR)
 ***
 
 ### Visualizar los coeficientes con los intervalos de confianza
-```{r}
+```{r akaike16}
 ggplot(BMR, mapping=aes(x=Variables, y = Coef_Estimate,
        ymin = LowerBound, ymax = UpperBound, colour=Variables))+
   geom_point()+

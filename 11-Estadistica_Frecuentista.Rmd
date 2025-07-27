@@ -52,7 +52,7 @@ Cuando hablamos de supuestos estamos hablando de las condiciones necesarias para
 
 ## Instalar y activar los siguientes packages
 
-```{r library}
+```{r freq1}
 #----Instalar los paquetes si es necesario-----
 #install.packages("gmodels")
 #install.packages("MASS")
@@ -105,7 +105,7 @@ $$\chi^2=\sum_{n=i}^n\frac{\left(o-e\right)^2}{e}$$
 
 Usamos un ejemplo sencillo de los datos de Mendel haciendo los cálculos a mano de una proporción 3:1 de herencia de los fenotipos redonda:arrugada.  Los datos son de la primer linea de uno de los experimentos que hizo Mendel. 
 
-```{r width2}
+```{r freq2}
 
 57*.75
 57*.25
@@ -135,7 +135,7 @@ kable(df, escape=FALSE)
   
   Para determinar si es significado el valor de Chi Square observado se compara con el valor critico (de la tabla).  Aquí usamos R para conseguir este valor.  Note aquí se usa (1-0.05= 0.95) y el grado de libertad que es 1.  Ahora se compara ese valor con 0.4737, Si el valor observado es menor que el valor 3.841459 se acepta la hipótesis nula.  En este caso no hay evidencia que los fenotipos se hereden diferente a 3:1.  
   
-```{r}
+```{r freq3}
 qchisq(0.95, 1)
 ```
 
@@ -148,7 +148,7 @@ No hay ninguna razón de hacer los cálculos a mano si tenemos a R para hacerlo.
 
 Lo que uno observa es el valor de la prueba de Bondad de ajuste tiene un Chi Cuadrado de 0.48, p =.49. Como el valor de *p* es mayor a 0.05, no se rechaza la hipótesis nula y que la frecuencia no es diferente de una proporción de 3:1.   
 
-```{r}
+```{r freq4}
 obs<-c(45,12) # los valores observado
 esp<-c(0.75,0.25) # este el modelo nulo
 
@@ -166,7 +166,7 @@ Ahora evaluamos si la frecuencia de semillas redondas:arrugadas de todo el exper
 
 Vemos que a re-evaluar los experimentos de G. Mendel tenemos un resultado que apoya su predicciones.  Nota que G. Mendel **NO** tenia pruebas estadísticas para determinar si las frecuencias eran diferente o no de 3:1.  El hizo observaciones y llego a unas conclusiones. Se acuerda cuando fue desarrollado este método y por quien?
 
-```{r}
+```{r freq5}
 obs<-c(336,101)
 esp<-c(0.75,0.25)
 
@@ -177,7 +177,7 @@ chisq.test(x=obs, p=esp)
 
 ***
 
-```{r echo=FALSE, out.width= "25%", out.extra='style="float:right; padding:10px"'}
+```{r freq6, echo=FALSE, out.width= "25%", out.extra='style="float:right; padding:10px"'}
 knitr::include_graphics("Graficos/Tweety.svg.png")
 ```
 
@@ -191,7 +191,7 @@ knitr::include_graphics("Graficos/Tweety.svg.png")
 
 
 
-```{r, eval=FALSE, echo=FALSE}
+```{r freq7, eval=FALSE, echo=FALSE}
 obs<-c(75,25)
 esp<-c(0.5,0.5)
 
@@ -212,7 +212,7 @@ chisq.test(x=obs, p=esp)
 
 ## Prueba de Bondad de Ajuste, Tabla de contingencia RxC 
 
-```{r}
+```{r freq8}
 #install.packages("MASS", dependencies = TRUE)
 ```
 
@@ -233,7 +233,7 @@ A 162 no se la dado recompensa, y de estos 48 bailaron y 114 no bailaron.
 
 Se crea dos listas con los resultados y se une estas dos filas con **cbind()** y después se la añade un nombre a las filas con **rownames()**. Vemos ahora la tabla de frecuencias de cuantos gatos bailaron o no y si fueron entrenado por comido o cariño. Nota que no se puede añadir la tilde **~** a la **n** de cariño. 
 
-```{r}
+```{r freq9}
 #Crear la tabla de contingencia
 
 comida <- c(10, 28)
@@ -263,7 +263,7 @@ La cantidad de gatos que bailan depende que si recibieron cariño o comida.
 Podemos visualizar la frecuencia de los datos con un gráfico de mosaico.  Si la hipótesis nula la organización de las cajas deberían ser más o menos de la misma proporción (relativo a su frecuencia).  En este caso lo que uno observa es que los que reciben comida y no bailan, la caja es mucha más pequeña que los que bailan y reciben comida.  Nota que esto no es una prueba es una visualización de los datos y puede ayudar a entender el patrón.  
 
 
-```{r}
+```{r freq10}
 mosaicplot(catsTable, color =TRUE) # El packete MASS
 
 ```
@@ -282,7 +282,7 @@ En ingles se le conoce como "Contingency Tables"
 
 Los valores esperados en esta caso son calculados directamente de la tabla. Para cada celda $E_{ij}$ donde la {i} representa la fila y la {j} las columnas.  El valor esperado se calcula multiplicando la suma de la fila por la suma ${R_i}$ de la suma de la columna ${C_j}$. La formula de los valores esperados es la siguiente, donde la N es la suma total de datos. El primer paso es sumar la filas y la columnas de la tabla.  
 
-```{r}
+```{r freq11}
 catsTable
 
 library(tidyverse)
@@ -337,7 +337,7 @@ $$\chi^2=25.36$$
 ##### N columnas = 4
 ##### N filas = 2
 
-```{r}
+```{r freq12}
 df=(4-1)*(2-1)
 df
 ```
@@ -347,7 +347,7 @@ Cual es valor de Chi Cuadrado critico
 
 1-.95 = 0.05
 
-```{r}
+```{r freq13}
 qchisq(.95,1 )
 ```
 
@@ -368,7 +368,7 @@ p <0.05 se rechaza la hipotesis nula
 
 p >0.05 se acepta la hipotesis nula
 
-```{r test}
+```{r freq14}
 library(gmodels)
 CrossTable(catsTable, fisher = TRUE, chisq = TRUE, 
            expected = TRUE, sresid = TRUE, format = "SAS")
@@ -380,7 +380,7 @@ p = 0.000000477
 ***
 [Enlace a un Video de la serpiente](https://www.youtube.com/watch?v=Uw6W8NaJmfo)
 
-```{r echo=FALSE, out.width= "60%", out.extra='style="float:right; padding:10px"'}
+```{r freq15, echo=FALSE, out.width= "60%", out.extra='style="float:right; padding:10px"'}
 knitr::include_graphics("Graficos/Northern_Water_Snake.jpg")
 ```
 
@@ -399,7 +399,7 @@ knitr::include_graphics("Graficos/Northern_Water_Snake.jpg")
 
 ***
 
-```{r, eval=FALSE, echo=FALSE}
+```{r freq16, eval=FALSE, echo=FALSE}
 #Crear la tabla de contingencia
 
 Hembra <- c(25, 2)
@@ -424,7 +424,7 @@ CrossTable(snakeTable, fisher = TRUE, chisq = TRUE,
 Estos son los mismos datos pero no sumado, en otra palabra es información específica sobre cada gato y su tratamiento y si bailo o no.   La ventaja de este método es que uno no tiene que hacer el calculo y sumar la frecuancias, se deja la función **CrossTable** hacer la suma. Miran bien la tabla.  
 
 
-```{r df not summed}
+```{r freq17}
 
 ## La data sin sumar
 
@@ -453,7 +453,7 @@ Nota que aquí se llama cada columna aparte en la función (catsData$Training, c
 
 ## Prueba de independencia 
 
-```{r test2}
+```{r freq18}
 # usando los datos en formato de data frame **catsData**
 CrossTable(catsData$Training, catsData$Dance, 
            fisher = TRUE, chisq = TRUE, expected = TRUE, 
@@ -487,7 +487,7 @@ En la siguiente tabla se encuentra el color de pello de estudiantes de la UPR.  
 
 Creamos 
 
-```{r hcolor de pelo por sexo}
+```{r freq19}
 
 Negro=c(32,55)
 Marron=c(43, 65)
@@ -513,7 +513,7 @@ HairColour
 
 El resultado de la prueba. ¿Se acepta o rechaza la hipótesis nula?
 
-```{r}
+```{r freq19a}
 CrossTable(HairColour, fisher = TRUE, chisq = TRUE, expected = TRUE, sresid = TRUE, format = "SPSS")
 
 
@@ -524,7 +524,7 @@ df
 .2*8
 ```
 
-```{r}
+```{r freq20}
 qchisq(.95,3 )
 ```
 
@@ -548,7 +548,7 @@ La prueba Exacta de Fisher es similar a la prueba de Bondad de Ajuste para evalu
   
 Usando los datos de serpientes del ejemplo 7.4 del libro de Havel et al. 
 
-```{r}
+```{r freq21}
 responde <- c(6,3)
 no_responde <- c(1,6)
 serpiente <- cbind(responde, no_responde)
@@ -567,7 +567,7 @@ CrossTable(serpiente, fisher = TRUE, chisq = TRUE,
 
 Se puede visualizar los datos con el Mosaico
 
-```{r}
+```{r freq22}
 mosaicplot(serpiente)
 
 ```
@@ -576,7 +576,7 @@ Nota que se usa la misma función que anterior pero en los resultados hay que fi
 
 ***
 
-```{r}
+```{r freq23}
 
 fisher.test(serpiente)
 

@@ -35,7 +35,7 @@ library(ggplot2)
  
  
  
-```{r, warning=FALSE}
+```{r corr1, warning=FALSE}
 
 library(readr)
 DownloadFestival <- read_csv("Data_files_csv/DownloadFestival.csv")
@@ -60,7 +60,7 @@ ggplot(dlf2, aes(day1))+
  
  
   
-```{r correlation, warning=FALSE}
+```{r corr2, warning=FALSE}
 library(ggplot2)
 head(dlf2)
 ```
@@ -96,7 +96,7 @@ $$cov(x,y)=\frac { \sum { ({ x }_{ i }-\bar { x } _{ i })({ y }_{ i }-\bar { y }
 
 
 
-```{r variance, warning=FALSE}
+```{r corr3, warning=FALSE}
 
 x_val=c(5,4,4,6,8)
 y_val=c(8,9,10,13,15)
@@ -134,7 +134,7 @@ The function to calculate the correlation coefficient is "cor"
 
 The function to determine if the correlation vetween the 2 variables is significant (in other words, different from zero) is "cor.test".
   
-```{r cor, warning=FALSE}
+```{r corr4, warning=FALSE}
 cor(df$x_val, df$y_val)
 cor.test(df$x_val, df$y_val)
 
@@ -159,7 +159,7 @@ cor.test(df$x_val, df$y_val)
  Choose the data set, examData
  
  
-```{r graphic, warning=FALSE }
+```{r corr5, warning=FALSE }
 library(readr)
 Exam_Anxiety <- read_csv("Data_files_csv/Exam Anxiety.csv")
 examData=Exam_Anxiety
@@ -175,7 +175,7 @@ cor.test(examData$Exam,examData$Anxiety)
 One the basic assumption of the Pearson correlation is that the data be bivariate normally distributed. NOTE: WHAT WE MEAN ABOUT THE "ASSUMPTION" IS THAT WE ARE CONFIDENT THAT THE UNIVERSE IS NORMALLY DISTRIBUTED, NOT NECESARILY THAT OUR DATA ARE (SUBSET).
 
 
-```{r, warning=FALSE}
+```{r corr6, warning=FALSE}
 
 library(knitr)
 library(png)
@@ -192,7 +192,7 @@ The package GGally, if you omit "ggplot2::aes(colour=Gender)", the figure will b
 
  
 
-```{r graphic 2, warning=FALSE}
+```{r corr7, warning=FALSE}
 library(GGally)
 head(examData)
 
@@ -205,7 +205,7 @@ ggpairs(examData, ggplot2::aes(colour=Gender))
 
 In this code I removed the first column, which is just the code of the individual, by examData[,c(2:5)], by removing column #1. 
 
-```{r, warning=FALSE}
+```{r corr8, warning=FALSE}
 ggpairs(examData[,c(2:5)], ggplot2::aes(colour=Gender)) 
 ```
 
@@ -221,7 +221,7 @@ con las variables,
   + w_sepals_dorsal = width of the dorsal sepal
   + front_lip_length = Front lip length 
   + wf = an index of female selection 
-```{r}
+```{r corr9}
 library(readr)
 Lep_rupPetal_All_Data <- read_csv("Data_files_csv/Lep_rupPetal_All_Data.csv")
 Lep=Lep_rupPetal_All_Data
@@ -233,7 +233,7 @@ names(Lep)
 
 A table of the correlation coefficients
 
-```{r, warning=FALSE}
+```{r corr10, warning=FALSE}
 library(Hmisc)
 rcorr(as.matrix(examData[,c("Exam","Anxiety","Revise")]))
 
@@ -250,7 +250,7 @@ Choose "The Biggest Liar.csv" data set, contest, where this occurs every year in
 World's Biggest Liar is an annual competition for telling lies, held in Cumbria, England at the Stanton Inn Bridge Pub.
 
 
-```{r, out.width="500px"}
+```{r corr11, out.width="500px"}
 
 library(knitr)
 library(png)
@@ -260,7 +260,7 @@ include_graphics(img4_path)
 ```
 
 
-```{r}
+```{r corr12}
 library(Hmisc)
 library(readr)
 The_Biggest_Liar <- read_csv("Data_files_csv/The Biggest Liar.csv")
@@ -290,7 +290,7 @@ THERE is no need to make assumptions of the distribution, you can let your data 
 
 We first create a function
 
-```{r}
+```{r corr13}
 bootTau=function(liarData,i)cor(liarData$Position[i],liarData$Creativity[i],
                                 use="complete.obs",method = "kendall")
 ```
@@ -298,7 +298,7 @@ bootTau=function(liarData,i)cor(liarData$Position[i],liarData$Creativity[i],
 
 The function is then called and executed
 
-```{r, eval=FALSE}
+```{r corr14, eval=FALSE}
 library(boot)
 boot_kendall=boot(liarData,bootTau, 1000)
 boot_kendall
@@ -307,7 +307,7 @@ boot_kendall
 
 To calculate the 95% confidence interval
 
-```{r, eval=FALSE}
+```{r corr15, eval=FALSE}
 boot.ci(boot_kendall)
 ```
 
@@ -316,7 +316,7 @@ boot.ci(boot_kendall)
 
 
 
-```{r}
+```{r corr16}
 ggplot(liarData, aes(Creativity, Position))+
   geom_point()
 ```

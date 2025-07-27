@@ -47,7 +47,7 @@ En cada una de las tres poblaciones, etiquetamos todas las plantas de *B. cucull
 
 
 
-```{r echo=FALSE, fig.cap="**La especie** *Brasavolla cucullata* **en la isla de San Eustaquio**",fig.show="hold", out.width = "50%"}
+```{r reglog1, echo=FALSE, fig.cap="**La especie** *Brasavolla cucullata* **en la isla de San Eustaquio**",fig.show="hold", out.width = "50%"}
 knitr::include_graphics("Graficos/Brass_cucu1.png")
 knitr::include_graphics("Graficos/Brass_cucu2.png")
 ```
@@ -59,7 +59,7 @@ Puede encontrar el manuscrito en este enlace, que evalúa la biología de la orq
 <https://www.journals.uchicago.edu/doi/pdf/10.1086/709399> 
 
 
-```{r data19}
+```{r reglog2}
 library(readr)
 Student_Brassavola <- read_csv("Data_files_csv/Student_Brassavola.csv")
 completeBrass=na.omit(Student_Brassavola)  # remove NA
@@ -84,7 +84,7 @@ unique(completeBrass$Fr_Y_N1) # deberia tener solamente dos alternativas, "0" y 
 Evaluar la tendencias centrales y la dispersión de las variables y cambio de nombre de las variables al español.
 
 
-```{r, cambio de nombres}
+```{r reglog3}
 
 Brass=completeBrass%>%
   dplyr::rename(Isla=Island, Ano=Year, Numero_planta=Pl_Num, 
@@ -95,7 +95,7 @@ Brass=completeBrass%>%
 ```
 
 
-```{r, resumir}
+```{r reglog4}
 summary(Brass)
 ```
 
@@ -105,7 +105,7 @@ summary(Brass)
 
 You can also embed plots, for example:
 
-```{r head, echo=FALSE}
+```{r reglog5, echo=FALSE}
 
 library(ggplot2)
 library(latex2exp)
@@ -175,7 +175,7 @@ Se evalúa tres modelos:
 ***
 ### Generalized Linear Model = glm
 
-```{r model}
+```{r reglog6}
 BrassModel.1 <- glm(Flor_si_no ~ Cant_hojas,
                     data = Brass, family = binomial())
 
@@ -199,7 +199,7 @@ summary(BrassModel.3)
 Si no le interesa el intercepto se añade un "-1" después de la 
 #Los valores de interes en nuestro caso son el intercepto y la pendiente (valor que se encuentra debajo del intercepto).
 
-```{r model bby site surveyed}
+```{r reglog7}
 
 names(Brass)
 BrassModel.1.1 <- glm(Flor_si_no ~ Cant_hojas+BQS+Largo_Hoja_cm-1,
@@ -217,7 +217,7 @@ $$P(Y)\quad =\quad \frac { 1 }{ 1+{ e }^{ -(b+m*{ x }_{ i }) } }$$
 $$P(Y)\quad =\quad \frac { 1 }{ 1+{ e }^{ -((intercepto)+pendiente*variable.predictora) } }$$
 # Se usa esta ecuacion para predecir un valor de 'Y' especifico para un valor de una variable 'X' de interes.
 
-```{r predicting num fruits}
+```{r reglog8}
 
 summary(BrassModel.1)
 
@@ -249,7 +249,7 @@ P_150
 
 ## Visualizando una regresión logistica
 
-```{r ggplot binomial}
+```{r reglog9}
 names(Brass)
 library(ggplot2)
  ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
@@ -271,7 +271,7 @@ ggplot(el archivo de datos, aes(las variables continuas))
     ◦ weight: para modificar el valor original; entonces no sería, por ejemplo, el conteo/suma de los valores si no un valor ponderado (promedio ponderado) 
 
 
-```{r jitter}
+```{r reglog10}
 
 ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
   geom_jitter(height = 0.10)
@@ -281,7 +281,7 @@ ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
 
 ## Gráfico con ajuste binomial
 
-```{r binomial fit}
+```{r reglog11}
 names(Brass)
 
 ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
@@ -291,7 +291,7 @@ ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
 
 ### El modelo de regresión binomial
 
-```{r}
+```{r reglog12}
 
 summary(BrassModel.1)
 ```
@@ -301,7 +301,7 @@ summary(BrassModel.1)
 En este gráfico se osbserva el valor de la pendiente, el mismo aumenta cuando el numero de hojas se aproxima a 100 (por ende al acercarnos a este valor el valor de nuestra variable de respuesta es mayor aumenta o es mayor).
 
 
-```{r facet}
+```{r reglog13}
 names(Brass)
 ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
   geom_point(alpha=.5) +
@@ -313,7 +313,7 @@ ggplot(Brass, aes(Cant_hojas,Flor_si_no))+
 
 ## Solapamiento de los ajustes binomial por grupo
 
-```{r overlap by site}
+```{r reglog14}
 
 names(Brass)
 ggplot(Brass, aes(Cant_hojas,Flor_si_no, colour=BQS))+
@@ -325,7 +325,7 @@ ggplot(Brass, aes(Cant_hojas,Flor_si_no, colour=BQS))+
 
 ### Evaluate using the Length of the longest leaf
 
-```{r LLL}
+```{r reglog15}
 names(Brass)
 ggplot(Brass, aes(Largo_Hoja_cm,Flor_si_no))+
   geom_jitter(height = 0.25)
@@ -341,7 +341,7 @@ ggplot(Brass, aes(Largo_Hoja_cm,Flor_si_no))+
 #### Nota que se hace un subgrupo (subset) de los datos, usando la función subset(el data frame, la condición)
 
 
-```{r LLL90}
+```{r reglog16}
 names(Brass)
 ggplot(subset(Brass,Largo_Hoja_cm<90), aes(Largo_Hoja_cm,Flor_si_no, colour=BQS))+
   geom_jitter(height = 0.10)+

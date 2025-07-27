@@ -5,7 +5,7 @@
 
 
 
-```{r packages2, eval=FALSE}
+```{r norm1, eval=FALSE}
 
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load( car, GGally, ggversa, pastecs, psych, pander, ggplot2, nortest, Hmisc, boot, knitr,tidyverse, gt, gridExtra)
@@ -15,7 +15,7 @@ pacman::p_load( car, GGally, ggversa, pastecs, psych, pander, ggplot2, nortest, 
 
 
 Activar los Paquetes
-```{r, warning=FALSE}
+```{r norm2, warning=FALSE}
 library(nortest) # paquete para probar la normalidad
 library(car) # paquete para análisis de correlación
 library(ggplot2)  # paquete para visualizar los datos
@@ -67,7 +67,7 @@ La distribución normal tiene una ecuación que describe su distribución.  Lo q
 El promedio de la población $\mu=\frac{\sum{{x}_{i}}}{{n}_{i}}$, se usa la letra "mu", y se refiere al promedio universal.  Esto quiere decir que no falta ningún dato.  Nota que la distribución es en forma de campana, donde 50% de los datos están por encima del promedio y 50% están por debajo el promedio. Debido que la distribución tiene unos parámetros específico se puede predecir información cuando los datos cumple con tal distribución.      
 
 
-```{r}
+```{r norm3}
 #set.seed(123458)
 
 dfnorm=rnorm(10, 0,1)
@@ -100,7 +100,7 @@ Se necesita el archivo **DownloadFestival** que se encuentra debajo la pestaña 
 >    + 4 = hueles a rosas dulces en un fresco día de primavera
     
 
-```{r, warning=FALSE}
+```{r norm4, warning=FALSE}
 
 library(readr)
 DownloadFestival_No_Outlier_ <- read_csv("Data_files_csv/DownloadFestival_No_Outlier.csv")
@@ -114,7 +114,7 @@ head(dlf) # ver las 3 primeras filas
 
 Se nota en el histograma que la mayoría de los datos de la higiene de los participantes en el primer día se parece bastante a una distribución normal.  Nota que los valores en el eje de **y** es la frecuencia de los valores en el conjunto de datos.  
 
-```{r}
+```{r norm5, warning=FALSE}
 ggplot(dlf, aes(day1))+
   geom_histogram(color="white", fill="red")
 ```
@@ -136,7 +136,7 @@ Se añade el promedio y la desviación estándar con la siguientes funciones.  L
 Ahora nota que el eje de **y** no son frecuencias pero son densidades.  La suma de todas las densidades es igual a 1.0.  Vea que la linea teórica se acerca bastante a las barras del histograma.   Este proceso NO es una prueba para determinar si los datos cumple con una distribución normal. Aunque con experiencia visualizando los datos uno puede tener un buen apreciación si los datos cumple suficientemente con la distribución normal para usar las pruebas paramétricas.   
 
  
-```{r, warning=FALSE, message=FALSE}
+```{r norm6, warning=FALSE, message=FALSE}
 hist.dlfc1 <- ggplot(dlf, aes(day1)) + 
   geom_histogram(aes(y=..density..), colour="white", fill="red") + 
   labs(x="Higiene día 1", y = "Densidad")+
@@ -157,7 +157,7 @@ Usamos los datos del segundo día y comparamos con el primer día.  En este caso
 
 Evalúa y compara con el día tres
 
-```{r, warning=FALSE}
+```{r norm7, warning=FALSE}
 hist.dlfc2 <- ggplot(dlf, aes(day2)) + 
   geom_histogram(aes(y=..density..), colour="white", fill="blue") + 
   labs(x="Higiene día 2", y = "Densidad")+
@@ -188,7 +188,7 @@ Es necesario convertir la lista en un **data.frame** en un **tibble** para usar 
 
 Haz unos ejercicio de reducir y aumentar el tamaño de muestra, **n** y compara las distribuciones.  Evalúa cuando cuando son muy pequeño  (n de 30 o menos). 
 
-```{r historgram normal, warning=FALSE}
+```{r norm8, warning=FALSE}
 
 #rnorm(10, 100, 10)
 
@@ -221,7 +221,7 @@ El gráfico Q-Q, o gráfico cuantil-cuantil, es una herramienta gráfica que nos
 Un diagrama Q-Q es un diagrama de dispersión y compara dos conjuntos de cuantiles uno observado y el otro teórico. Si ambos conjuntos de cuantiles provienen de una distribución normal, deberíamos ver los puntos formando una línea que es más o menos recta. Usamos los datos del primer y el segundo día de la higiene de los participantes al concierto de rock.  Vean que los puntos están en el primer gráfico siguen una linea recta y la linea teórica (`r colorize("color azul", "blue")`) sigue estos puntos.  Esto sugiere que los datos siguen una distribución normal.  En el segundo gráfico vemos que los datos observados no siguen los datos teóricos (`r colorize("color rojo", "red")`). 
 
 
-```{r qqplot y la linea, warning=FALSE}
+```{r norm9, warning=FALSE}
 
 
 d=ggplot(dlf, aes(sample=day1))+
@@ -266,7 +266,7 @@ Reglas básica.
 
  La función **shapiro.test()** es para evaluar una variable a la vez.  Nota que aquí los datos de higiene del primer día sugiere que no cumple con una distribución normal. Cuando las dos alternativas anteriores los daots se ven bastante norma (histograma y qqplot)
 
-```{r shapiro, warning=FALSE}
+```{r norm10, warning=FALSE}
 shapiro.test(dlf$day1)
 length(dlf$day1)
 ```
@@ -286,7 +286,7 @@ La prueba de Anderson Darling es una de las más poderosas para evaluar si los d
 
     *Ralph B. D'Agostino (1986). "Tests for the Normal Distribution". In D'Agostino, R.B.; Stephens, M.A. (eds.). Goodness-of-Fit Techniques. New York: Marcel Dekker. ISBN 0-8247-7487-6.* 
 
-```{r norm test, warning=FALSE}
+```{r norm11, warning=FALSE}
 library(nortest)
 
 ad.test(dlf$day1)

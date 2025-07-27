@@ -34,7 +34,7 @@ colorize <- function(x, color) {
 
 ***********
 Fecha de la ultima revisión
-```{r echo=FALSE}
+```{r intro1,echo=FALSE}
 
 Sys.Date()
 ```
@@ -48,7 +48,7 @@ El proceso de investigación cuantitativo tiene múltiples pasos y podemos visua
 
 
 
-```{r echo=FALSE, fig.cap="El proceso de Investigación", out.width = '60%'}
+```{r intro 2, echo=FALSE, fig.cap="El proceso de Investigación", out.width = '60%'}
 knitr::include_graphics("Graficos/Proceso_Investigacion.png")
 ```
 
@@ -106,7 +106,7 @@ Los tres términos usado en estadística para de los dos tipos de errores
 
 Aquí un gráfico de los tipos de errores.  El gráfico representa los dos tipos de error y las dos condiciones en que no se hace un error.  
 
-```{r echo=FALSE, fig.cap="El proceso de Investigación", out.width = '70%'}
+```{r intro 3, echo=FALSE, fig.cap="El proceso de Investigación", out.width = '70%'}
 knitr::include_graphics("Graficos/Hipothesis_Grid.png")
 ```
 ***

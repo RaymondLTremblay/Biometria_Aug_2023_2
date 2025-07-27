@@ -87,7 +87,7 @@ múltiples pruebas t, hay una posibilidad que se recheza la hipótesis
 nula cuando se debería aceptar. Cuan grande es ese error si uno hace
 múltiples pruebas t.
 
-```{r}
+```{r anova1}
 library(tibble)
 Tipo_errorI=tribble(
   ~Cantidad_Grupo_k, ~C, ~"0.05", ~"0.01",
@@ -156,7 +156,7 @@ million) en la plantas es igual en los tres lagos.
 > -   Por lo menos en uno de estos lagos las plantas tienen una
 >     concentración de fósforo diferente
 
-```{r ejemplo}
+```{r anova2}
 
 
 id<-(1:16)
@@ -180,7 +180,7 @@ valores de la linea y muchos de los valores están por encima. Se observa
 que la concentración de fósforo en plantas que provienen de los lagos
 Caraizo y Guineo son lejos del promedio.
 
-```{r plot}
+```{r anova3}
 
 mean_fosforo=mean(fosforo$Cant_Fos)
 mean_fosforo
@@ -197,7 +197,7 @@ los residuales.
 `r colorize("Nota que esto se parece a la grafica de residuales de la regresión lineal", "blue")`.
 Vimos también este tipo de gráfico para la prueba de t.
 
-```{r}
+```{r anova4}
 plot(1:16, Cant_Fos, ylim=c(0, 60), ylab="y", xlab = "order", pch=21, bg="red")
 abline(h=mean(Cant_Fos), col="blue")
 for(i in 1:16) lines(c(i,i), c(mean(Cant_Fos), Cant_Fos[i]), col="green")
@@ -211,7 +211,7 @@ varianza entre los valores de un mismo grupo. Este es un indice que los
 lagos explica la varianza (en parte) en concentración de fósforo en las
 plantas.
 
-```{r}
+```{r anova5}
 
 plot(1:16, Cant_Fos, ylim=c(0, 70), ylab="y", xlab = "order", pch=21, bg="black")
 abline(h=mean(Cant_Fos[Lagos=="Caraizo"]), col="blue")
@@ -239,7 +239,7 @@ En este ejemplo de vemos dos de los grupos donde los residuales solapan,
 este es probable que resulta que estos dos grupos (azul y rojo) no sean
 diferentes.
 
-```{r residuales segundo grupo}
+```{r anova6}
 
 
 id<-(1:16)
@@ -254,7 +254,7 @@ fosforo2<-data.frame(id,Cant_Fos,Lagos)
 attach(fosforo2)
 ```
 
-```{r}
+```{r anova7}
 
 plot(1:16, Cant_Fos, ylim=c(0, 70), ylab="y", xlab = "order", pch=21, bg="black")
 abline(h=mean(Cant_Fos[Lagos=="Caraizo"]), col="blue")
@@ -290,7 +290,7 @@ del grupo 3. Una linea que une los promedios con stat\_summary(fun.y =
 mean, geom = "line"), note la diferencia entre los dos uno usa "point"
 el otro usa "line".
 
-```{r graficar fosforo}
+```{r anova8}
 library(ggplot2)
 ggplot(fosforo, aes(x=Lagos, y=Cant_Fos, colour=Lagos))+
 geom_point()+
@@ -313,7 +313,7 @@ datos resumidos que incluye, el nombre de los grupos (Lagos), el tamaño
 de muestra (N), el promedio de la variable (Cant\_Fos), la desviación
 estandar (sd), el error estandar (se) y intervalo de confianza (ci).
 
-```{r summary data}
+```{r anova9}
 library(Rmisc)
 
 sum = summarySE(fosforo, 
@@ -333,7 +333,7 @@ siguiente formula $\overline{x}\ \pm2\cdot se$. Las barras representa el
 95% de donde pudiese estar el promedio si repetimos el mismo experimento
 100 veces.
 
-```{r grafica2}
+```{r anova10}
 ggplot(sum, aes(x=Lagos, 
                 y=Cant_Fos)) +
   geom_point(colour="blue")+ 
@@ -348,7 +348,7 @@ ggplot(sum, aes(x=Lagos,
 
 ## Estadística descriptiva de los Lagos
 
-```{r descriptive stats}
+```{r anova11}
 
 library(pastecs)
 by(fosforo$Cant_Fos, fosforo$Lagos, stat.desc)
@@ -414,7 +414,7 @@ lagos, la prueba de Levene da un resultado de p \> 0.21, lo que indica
 que no hay evidencia que la varianza es distinta entre los grupos, por
 consecuencia se acepta la hipótesis nula.
 
-```{r levene test}
+```{r anova12}
 
 library(car)
 leveneTest(fosforo$Cant_Fos, fosforo$Lagos)
@@ -434,7 +434,7 @@ más sencillo seria de cambiar la primera linea del siguiente script
 tendríamos 3 lineas.
 `r colorize("Si no cumple con el supuesto de normalidad ver el modulo de Kruskal-Wallis para una alternariva como evaluar los datos", "red")`
 
-```{r}
+```{r anova13}
 ggplot(fosforo, aes(sample = Cant_Fos)) +
   stat_qq() +
   stat_qq_line(colour="blue")+
@@ -464,7 +464,7 @@ igual a los demás. Pero todavía no sabemos que pares son diferentes o si
 todos. En la segunda linea se observa lo otros datos del experimento, lo
 que aquí se llama los residuales.
 
-```{r ANOVA}
+```{r anova14}
 LagosModel<-aov(Cant_Fos~Lagos, data = fosforo)
 
 
@@ -490,7 +490,7 @@ que hay tres datos que tienen números (5, 3, 12), estos son datos que
 posiblemente sean atípicos, y hay que evaluar si estos datos impacta el
 resultados (veremos esto más tarde, con la prueba de Cooks).
 
-```{r ANOVA residuals}
+```{r anova15}
 plot(LagosModel)
 
 
@@ -524,7 +524,7 @@ pruebas.
 Vemos ahora el se hizo 3 pruebas, y cada una tiene un valor de p menor
 de 5%, por consecuencia cada grupo es distinto uno del otro.
 
-```{r post-hoc2 test}
+```{r anova16}
 pairwise.t.test(fosforo$Cant_Fos, fosforo$Lagos, p.adjust.method = "bonferroni") # Nota aqui se usa los datos originales, el error de todos las pruebas se limita a 5%.  
 
 
@@ -539,7 +539,7 @@ puede diferir. Si esto ocurre hay que evaluar bien cual es el nivel de
 confiabilidad que queremos. Algunos pruebas Post\_Hoc tienden a rechazar
 con meas frecuencia que otra.
 
-```{r}
+```{r anova17}
 library(multcomp)
 postHocs.1<-glht(LagosModel, linfct = mcp(Lagos = "Tukey"))  
 summary(postHocs.1)
@@ -550,7 +550,7 @@ summary(postHocs.1)
 
 Vea la sección de ejercicio
 
-```{r data super heroes, eval=FALSE, echo=FALSE}
+```{r anova18, eval=FALSE, echo=FALSE}
 
 
 library(readr)
@@ -562,7 +562,7 @@ unique(Superhero$heronames)
 
 #### Rename the categories with super hero names
 
-```{r rename variables, eval=FALSE,echo=FALSE}
+```{r anova19, eval=FALSE,echo=FALSE}
 #Superhero
 Superhero$heronames<-factor(Superhero$hero, levels = c(1:4), 
      labels = c("Spiderman","Superman", "Hulk", "Ninja Turtle"))
@@ -578,7 +578,7 @@ names(Superhero)
 > -   Evaluar la gráfica de qq, para la normalidad
 > -   Hacer la prueba de post-hoc si es necesario!!!!!
 
-```{r hero1, eval=FALSE,echo=FALSE}
+```{r anova20, eval=FALSE,echo=FALSE}
 library(ggplot2)
 line <- ggplot(Superhero, aes(heronames, injury))
 line +geom_point()+
@@ -589,7 +589,7 @@ line +geom_point()+
 
 ```
 
-```{r hero levene test, eval=FALSE, echo=FALSE}
+```{r anva21, eval=FALSE, echo=FALSE}
 
 library(car)
 car::leveneTest(Superhero$injury, Superhero$heronames)
@@ -597,7 +597,7 @@ car::leveneTest(Superhero$injury, Superhero$heronames)
 bartlett.test(injury~heronames, data=Superhero)
 ```
 
-```{r grafica3, eval=FALSE, echo=FALSE}
+```{r anova22, eval=FALSE, echo=FALSE}
 
 library(Rmisc)   # this is a function to create 
 #a data frame of summary data
@@ -620,7 +620,7 @@ ggplot(sum2, aes(x=heronames,
 
 ```
 
-```{r Hero ANOVA, eval=FALSE, echo=FALSE}
+```{r anova23, eval=FALSE, echo=FALSE}
 # Hacer la prueba de ANOVA con aov()
 SuperHeroModel<-aov(injury~heronames, data = Superhero)
 
@@ -628,7 +628,7 @@ summary(SuperHeroModel)
 #summary.lm(SuperHeroModel)
 ```
 
-```{r hero residuals, eval=FALSE, echo=FALSE}
+```{r anova24, eval=FALSE, echo=FALSE}
 # Evaluar la figura de los residuales
 # Evaluar la grafica de qq
 plot(SuperHeroModel)
@@ -636,7 +636,7 @@ plot(SuperHeroModel)
 
 ```
 
-```{r post-hoc test, eval=FALSE, echo=FALSE}
+```{r anova25, eval=FALSE, echo=FALSE}
 # Hacer la prueba de post-hoc si es necesario!!!!!
 pairwise.t.test(Superhero$injury, Superhero$heronames, p.adjust.method = "bonferroni")
 

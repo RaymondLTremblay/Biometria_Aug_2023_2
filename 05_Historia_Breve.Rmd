@@ -87,7 +87,7 @@ Cursó sus primeros estudios en la llamada Perry High School de la misma ciudad.
 
 En 1939, la nombraron profesora asistente en Iowa State College y, en 1940, dirigió el primer departamento de Estadística Experimental en la Escuela de Agricultura de la Universidad de Carolina del Norte. Esto la convirtió en la primera mujer directora del recinto. Además, Cox fue la primera mujer jefa del Instituto de Estadística de la Universidad de Carolina del Norte en 1944. Un año más tarde, participó como editora principal de la revista **Biometrics** durante 10 años, y fundó, en 1947, la **International Biometric Society**. Además, se convirtió en presidenta de la ASA (American Society of Anesthesiologists) en 1956.
 
-```{r, echo=FALSE, fig.align='center', fig.width = 50, echo=FALSE}
+```{r H1, echo=FALSE, fig.align='center', fig.width = 50, echo=FALSE}
 
 knitr::include_graphics("Graficos/COX/Exten_Farm.jpg")
 
@@ -97,7 +97,7 @@ knitr::include_graphics("Graficos/COX/Exten_Farm.jpg")
 ***
 
 ### Revista *Biometrics*
-```{r, echo=FALSE, out.width= "45%", out.extra='style="float:right; padding:10px"'}
+```{r H2, echo=FALSE, out.width= "45%", out.extra='style="float:right; padding:10px"'}
 knitr::include_graphics("Graficos/COX/biom.v76.3.cover.jpg")
 ```
 

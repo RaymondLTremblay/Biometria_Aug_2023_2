@@ -64,7 +64,7 @@ knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
 
 
 
-```{r}
+```{r tind1}
 
 library(car)  # para la prueba de leveneTest
 
@@ -85,7 +85,7 @@ Datos
 
 Producimos un set de datos de diferentes personas, con las siguientes variables, el genero, la distancia (dist) viajada por estudiantes que van a la universidad de UPR-Utuado y UPR-Bayamón. 
 
-```{r, attr.source='.numberLines'}
+```{r tind2, attr.source='.numberLines'}
 genero=c("m","f","f","f",
     "f","f","f","f","f",
     "m","f","m","f","f",
@@ -118,7 +118,7 @@ muni=c("utuado","utuado","utuado","utuado",
 
 Unir las tres lisatas de datos en un data frame con la función de "data.frame( )"
 
-```{r join lists in a df}
+```{r tind3}
 viajes=data.frame(genero,dist,muni)
 head(viajes)
 tail(viajes)
@@ -129,7 +129,7 @@ tail(viajes)
 Hacer un  gráfico de los datos.  Si calculamos el promedio de todos los valores de "Y" y lo visualizamos, vemos que muchos de los valores del municipio "Bayamón" son muy por debajo los valores de la linea y muchos de los valores del municipio "U
 tuado" son muy por encima.    
 
-```{r plot2}
+```{r tind4}
 
 mean_dist=mean(viajes$dist)
 
@@ -159,7 +159,7 @@ ggplot(viajes, aes(muni, dist, colour=muni))+
 Otra alternativa para visualizar es observar la diferencias entre el valor de la "y's" y del promedio de esa variable, o sea los residuales (la diferencia entre el promedio y el valor se llaman los **residuales**. `r colorize("Nota que esto aparece a la gráfica de residuales de la regresión lineal", "blue")`.
 
 
-```{r}
+```{r tind5}
 plot(1:36, dist, ylim=c(0, 100), ylab="y", xlab = "order", pch=21, bg="red")
 abline(h=mean(dist), col="blue")
 for(i in 1:36) lines(c(i,i), c(mean(dist), dist[i]), col="green")
@@ -171,7 +171,7 @@ for(i in 1:36) lines(c(i,i), c(mean(dist), dist[i]), col="green")
 Ahora vamos a separar la gráfica y visualizar los residuales por grupo, en otra palabra, cual son los residuales entre los valores y el promedio dentro de los mismos grupos. Se observa en este caso que hay menos varianza entre los valores de un mismo grupo. Note que en el grupo de `r colorize("**bayamón**", "blue")` que los valores son bastante cerca del promedio de este grupo en adición que los valores de `r colorize("**utuado**", "red")` estan más cerca de su promedio.  Compara los residuales con la gráfica anterior.   
 
 
-```{r}
+```{r tind6}
 plot(1:36, dist, ylim=c(0, 100), ylab="y", xlab = "order", pch=21, bg="red")
 abline(h=mean(dist[muni=="bayamón"]), col="blue")
 abline(h=mean(dist[muni=="utuado"]), col="red")
@@ -220,14 +220,14 @@ La hipótesis alterna:
 
 
 
-```{r t.test}
-model=t.test(dist~muni,data=viajes, paired=FALSE)
+```{r tind7}
+model=t.test(dist~muni,data=viajes)
 model
 ```
 
 
 
-```{r}
+```{r tind8}
 gender=c("m", "m", "f", "f", "m", 
          "f","f","m", "f", "f", "f")
 
@@ -237,12 +237,12 @@ dist=c(10,20, 11, 40, 19,
 df=data.frame(gender, dist)
 head(df)
 
-model2=t.test(dist~gender, data=df, paired=FALSE)
+model2=t.test(dist~gender, data=df)
 model2
 ```
 
 
-```{r}
+```{r tind9}
 padres=c("p", "m" , "p", "m", "p","m",
          "p","m", "p","m", "p","m",
          "p","m", "p","m", "p","m", 
@@ -266,7 +266,7 @@ Hermanos= c(2, 1,2,2,2,3,
 
 Graficar los datos con el promedio y el intervalo de confianza da un resumen de la estadística de forma visual, lo que se visualiza es el promedio y el intervalo de 95%.  Nota que se usa la función en ggplot2 de **stat_summary(fun.data = mean_cl_normal)**, esto quiere decir que se esta calculando los valores ASUMIENDO una distribución normal de los datos. 
 
-```{r graph summary stats}
+```{r tind10}
 ggplot(df, aes(gender, dist))+
  stat_summary(fun.data = mean_cl_normal, geom = "pointrange")
 
@@ -281,7 +281,7 @@ ggplot(df, aes(gender, dist))+
 Siempre se debería producir un gráfico de los datos para tener una idea de si los datos cumple con los supuestos de las pruebas. 
 Ahora ver las distribución de frecuencia por municipio. Si los datos tuviese una distribución **perfecta** normal, se obtendría una distribición en forma de campana.   Primero NO se debería esperar este tipo de distribución cuando tenemos pocos datos.  
 
-```{r}
+```{r tind11}
 ggplot(viajes, aes(dist, fill=muni))+
   geom_histogram(colour="white")+
   facet_grid(~muni)
@@ -304,7 +304,7 @@ Es típico que cuando uno tiene muchos muchos datos uno puede encontrar diferenc
 
 ### Evaluar si la distribución cumple con una distribución normal
 
-```{r shapiro test}
+```{r tind12}
 shapiro.test(viajes$dist)
 ```
 
@@ -313,7 +313,7 @@ shapiro.test(viajes$dist)
 ***
 
 
-```{r SW test}
+```{r tind13}
 # Normality test by group
 # Method 1 
 shapiro.test(viajes$dist)
@@ -334,7 +334,7 @@ Nota la oragnización de la prueba, es como la de la t.test( )
 byf.shapiro(variable_de_respuesta ~ variable_de_grupo, dataframe)
 
 
-```{r SW2}
+```{r tind14}
 # de la libreria de (RVAideMemoire)
 
 byf.shapiro(dist~muni, viajes)
@@ -373,14 +373,14 @@ Cuando los datos no cumple con distribución igualdad de varianza se dice que lo
 
 ## La prueba de Bartlett 
 
-```{r}
+```{r tind15}
 bartlett.test(dist~muni, data=viajes)
 ```
 
 ## Prueba de Levene para igualdad de Varianza
  - similar to Bartlett's test
 
-```{r}
+```{r tind16}
 
 leveneTest(dist~muni, data=viajes)
 ```
@@ -392,7 +392,7 @@ leveneTest(dist~muni, data=viajes)
 
 - good when the distribution are not normal
 
-```{r}
+```{r tind17}
 fligner.test(dist~muni, data=viajes)
 ```
 
@@ -400,7 +400,7 @@ fligner.test(dist~muni, data=viajes)
 1. Ejercicio 
 
 
-```{r my students}
+```{r tind18}
 sex=c("f","f","f","f","f",
       "f","f","f","f","f",
       "f",
@@ -424,7 +424,7 @@ byf.shapiro(kids~sex, futurePR)
 
 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r tind19, echo=FALSE, eval=FALSE}
 df1=rnorm(100)
 
 

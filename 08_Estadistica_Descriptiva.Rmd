@@ -31,7 +31,7 @@ knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
 
 
 Activar los Paquetes
-```{r, warning=FALSE}
+```{r desc1, warning=FALSE}
 
 library(ggplot2)  # paquete para visualizar los datos
 library(ggversa) # paquete para diferentes conjuntos de datos
@@ -65,7 +65,7 @@ Los indices que veremos aquí incluye
 
 Aqui creamos un conjunto de datos de 100 datos con un promedio de 100 y una desviación estándar de 10. Nota que la función **set.seed()** es que el comienzo la simulación sea igual a cada vez que se corre, y se el mismo resultado.  Esto se añade solamente cuando uno esta enseñando y que los resultados sean consistente.   
  
-```{r summary stat, warning=FALSE}
+```{r desc2, warning=FALSE}
 
 
 
@@ -102,7 +102,7 @@ Se necesita el archivo **DownloadFestival** que se encuentra debajo la pestaña 
   
 
 
-```{r, warning=FALSE}
+```{r desc3, warning=FALSE}
 
 library(readr)
 DownloadFestival <- read_csv("Data_files_csv/DownloadFestival.csv")
@@ -118,7 +118,7 @@ head(dlf) # ver las 3 primeras filas
 
 Con los datos de los participantes al festival como en algunos diá hay participantes donde no tienen los datos se añadió un **NA**, es estos casos para que el análisis se logra hay que añadir a la función **na.rm=TRUE** que significa remover la **NA**.  Para dar se cuenta remueve **na.rm=TRUE** cuando se usa el "día2" o "día3", y evalúa que pasa.  
  
-```{r summary stat 2, warning=FALSE}
+```{r desc4, warning=FALSE}
 
 
 
@@ -141,7 +141,7 @@ Para ver los estadístico mencionado arriba (menos la moda, oblicuidad y curtosi
 
 Nota que hay muchos más parámetros calculados.  Aparece en la lista en orden el valor mínimo: min(), el valor máximo: max(), la mediana: median, el promedio: mean, la desviación estándar; std.dev entre otros.  
 
-```{r summary function, warning=FALSE}
+```{r desc5, warning=FALSE}
 
 library(pastecs)
 stat.desc(dlf[,c("day1")])
@@ -157,7 +157,7 @@ round(stat.desc(dlf[,c("day1")]), 2)
 
 Si uno quiere evaluar múltiples variables continua todas juntos se puede usar la misma función pero el componente **c()** se añade todas las variables de interés.   
 
-```{r}
+```{r desc6, warning=FALSE}
 
 round(stat.desc(dlf[,c("day1","day2","day3")], basic=FALSE,norm=TRUE), digits=3) # round reduce a 3 valores significativo
 ```
@@ -177,7 +177,7 @@ round(stat.desc(dlf[,c("day1","day2","day3")], basic=FALSE,norm=TRUE), digits=3)
  
  En el siguiente ejemplo se demuestra como tulizar la función **quantiles** y seleccionar los cuantiles deseados con el comopnente de **probs=c(x,x,x)**.  
  
-```{r quantiles, warning=FALSE}
+```{r desc7, warning=FALSE}
 
 quantile(dlf$day1,probs=c(0.05, 0.1, 0.25, 0.5, 0.75, 0.95, 0.99), na.rm=TRUE)
 ```
@@ -186,7 +186,7 @@ quantile(dlf$day1,probs=c(0.05, 0.1, 0.25, 0.5, 0.75, 0.95, 0.99), na.rm=TRUE)
 Se puede usar también la función **describe** en el paquete **pshych** que le da automáticamente estos cuantiles.  
 
 
-```{r}
+```{r desc8, warning=FALSE}
 describe(dlf$day1)
 ```
 
@@ -207,7 +207,7 @@ Primero voy a crear tres conjuntos de datos
 + oblicuidad a la izquierda
 + oblicuidad a la derecha
 
-```{r}
+```{r desc9, warning=FALSE}
 normal=rnorm(100000, .5, .15)
 obliz=rbeta(100000, 1.5,5)
 obldr=rbeta(100000, 5.5,2)
@@ -223,7 +223,7 @@ obldr=as.tibble(obldr)
 
 Ahora unimos los data frames y se añade nombres a las columnas
 
-```{r}
+```{r desc10, warning=FALSE}
 df=cbind(normal, obliz, obldr)
 head(df, n=2)
 df <- setNames(df, c("normal","obliz","obldr"))
@@ -234,7 +234,7 @@ head(df, n=2)
 El próximo paso es apilar cada columna una sobre la otra.  La razón que queremos esto es que deseamos reproducir las variables en un mismo gráfico 
 
 
-```{r}
+```{r desc11, warning=FALSE}
 library(tidyverse)
 df2=df%>%
   gather(key = "Distribución", value="valor", c(normal, obliz, obldr))
@@ -245,7 +245,7 @@ head(df2, n=3)
 Ahora vamos a ver los datos un gráfico. Vemos que la distribución de los datos son muy diferentes, tanto la distribución en azul y verde están sesgado a unos valores y tienen una cola o valores más grande (azul) o pequeños (verde) que si fuese una distribución normal.   
 
 
-```{r}
+```{r desc12, warning=FALSE}
 ggplot(df2, (aes(valor, colour=Distribución)))+
   geom_density()+
   xlim(-.01,1)
@@ -265,7 +265,7 @@ Ahora evaluamos la oblicuidad de los tres gráficos. se usa la función de **ske
 
 Para los datos de una distribución normal el valor es muy cerca a cero. Para los datos sesgado a la izquierda el indice de oblicuidad es positivo y el sesgado a derecha es negativo.  
 
-```{r}
+```{r desc13, warning=FALSE}
 library(e1071)
 e1071::skewness(normal$value) # la oblicuidad de los datos de una distribución normal
 e1071::skewness(obliz$value) # la oblicuidad de los datos sesgado a la izquierda
@@ -293,7 +293,7 @@ Primero voy a crear cuatro conjuntos de datos
 + distribución uniforme
  
 
-```{r}
+```{r desc14, warning=FALSE}
 library(PearsonDS)
 library(rmutil)
 
@@ -324,7 +324,7 @@ laplace=as.tibble(laplace)
 
 Ahora unimos los data frames y se añade nombres a las columnas
 
-```{r}
+```{r desc15, warning=FALSE}
 df=cbind(normal, normalR, normalE, Unif, laplace)
 head(df, n=2)
 df <- setNames(df, c("normal","normalR","normalE", "Unif", "laplace"))
@@ -335,7 +335,7 @@ head(df, n=2)
 El próximo paso es apilar cada columna una sobre la otra.  La razón que queremos esto es que deseamos reproducir las variables en un mismo gráfico 
 
 
-```{r}
+```{r desc16, warning=FALSE}
 library(tidyverse)
 df2=df%>%
   gather(key = "Distribución", value="valor", c(normal, normalR, normalE, Unif, laplace))
@@ -348,7 +348,7 @@ Ahora vamos a ver los datos en un gráfico. Vemos que la distribución de los da
 Tanto la distribución uniforme (color rosa) y normal reducido (normalR, color azul) las curvas pasan de bajo la curva normal.  Al contrarío la linea verde y roja son distribuciones que pasan por encima de la curva normal, entonces las colas son más predominante. 
 
 
-```{r}
+```{r desc17, warning=FALSE}
 whole=ggplot(df2, (aes(valor, colour=Distribución)))+
   geom_density(adjust=5)+
   xlim(-5,5)
@@ -383,7 +383,7 @@ Ahora evaluamos la oblicuidad de los tres gráficos. se usa la función de **kur
 
 Para los datos de una distribución normal el valor es muy cerca a cero. Para los datos que tienen exceso de cola el valor de curtosis es negativos y cuando el valor de curtosis es positivo hay exceso de datos en la cola.
 
-```{r}
+```{r desc18, warning=FALSE}
 library(e1071)
 e1071::kurtosis(normal$value) # curtosis de los datos de una distribución normal
 e1071::kurtosis(normalR$value) # curtosis de los datos restringido
@@ -395,21 +395,21 @@ e1071::kurtosis(laplace$value) # curtosis de distribución Laplace, exceso de co
 
 Quiz 1
 
-```{r, echo=FALSE, eval=FALSE}
+```{r desc19, echo=FALSE, eval=FALSE}
 x=c(4, 6, 7, 3, 9, 10, 19, 52)
 mean(x)
 ```
 
 Quiz 2
 
-```{r, echo=FALSE, eval=FALSE}
+```{r desc20, echo=FALSE, eval=FALSE}
 y=c(1, NA, 1, 2, 73, 6, 2, 78, 16, 16, 87, 5)
 median(y, na.rm=TRUE)
 ```
 
 Quiz 3
 
-```{r, echo=FALSE, eval=FALSE}
+```{r desc21, echo=FALSE, eval=FALSE}
 library(ggversa)
 head(Camas_Hospital)
 
@@ -421,7 +421,7 @@ skewness(Camas_Hospital$Camas)
 kurtosis((Camas_Hospital$Camas))
 ```
 
-```{r, echo=FALSE, eval=FALSE}
+```{r desc22, echo=FALSE, eval=FALSE}
 ggplot(Camas_Hospital, aes(Camas))+
   geom_histogram()
 ```
@@ -429,7 +429,7 @@ ggplot(Camas_Hospital, aes(Camas))+
 
 
 
-```{r}
+```{r desc23, echo=FALSE, eval=FALSE}
 dfNormal=data.frame(data=rnorm(1000000))
 head(dfNormal)
 

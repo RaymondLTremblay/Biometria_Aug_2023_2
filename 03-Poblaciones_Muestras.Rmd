@@ -53,7 +53,7 @@ Cuando uno quiere referir a la población/parámetro uno utiliza las letras del 
 En la siguiente tabla se observa algunos de las variables que veremos en los módulos siguientes. En los próximos módulos regresaremos al significado de estos parámetros. 
 
 
-```{r width}
+```{r pop1}
 library(gt)
 library(knitr)
 library(kableExtra)
@@ -95,6 +95,6 @@ Pregunta corta:  Explica el sesgo de los diferentes métodos, como se podría me
 ### La precisión es un estimado de cuan cerca cada valor es uno del otro.  Hablando de la mismo individuo o variable.
 
 
-```{r, echo=FALSE, fig.show = "hold", out.width = "100%", fig.align = "default"}
+```{r pop2, echo=FALSE, fig.show = "hold", out.width = "100%", fig.align = "default"}
 knitr::include_graphics(c("Graficos/Accuracy_precision.png"))
 ```

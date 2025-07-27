@@ -5,7 +5,7 @@
 library(ggplot2)
 ```
 
-```{r, echo=FALSE}
+```{r ggplot1, echo=FALSE}
 library(tidyverse)
 
 rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bold"),
@@ -40,7 +40,7 @@ cbPalette2 <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
 ```
 
 
-```{r, eval=TRUE, echo=FALSE}
+```{r ggplot2, eval=TRUE, echo=FALSE}
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -66,21 +66,21 @@ La información utilizada en este documento proviene en parte del libro *Discove
 Seleccionar el archivo **Exam Anxiety**. Note que los datos a la hoja de datos tienen que abrirlo en Excel o otro programa y salvarlo en formato **.csv** antes de seguir los proximos pasos. El siguiente paso es poner el archivo de datos en su proyecto de RStudio.\
 \*\*\* \#\# Subir los datos a RStudio
 
-```{r}
+```{r ggplot3, echo=FALSE}
 library(readr)
 Exam_Anxiety <- read_csv("Data_files_csv/Exam Anxiety.csv")
 ```
 
 Para visualizar las primeras y ultimas 6 filas usar **head()** y **tail()** respectivamente.
 
-```{r}
+```{r ggplot4}
 head(Exam_Anxiety)
 tail(Exam_Anxiety)
 ```
 
 Parta ver el nombre de las variables en el archivo se usa la función **names**. Vemos que hay cinco columnas, el **Code** que se refiere a un código que identifica el estudiante, **Revise** el tiempo que el estudiante estudio antes de tomar el examen, **Exam** la nota del estidiante, **Anxiety**, un indice de anxiedad antes de tomar el examen, **Gender** el genero del estudiante.
 
-```{r}
+```{r ggplot5}
 names(Exam_Anxiety)
 ```
 
@@ -90,7 +90,7 @@ names(Exam_Anxiety)
 
 El primer gráfico es crear una regresión lineal. Para producir una regresión lineal se necesita dos variables con datos continuos Seleccionamos dos variables continua, el nivel de ansiedad y la nota del examen. Para hacer una regresión lineal que sigue el patrón de y=mx+b, hay que utilizar la función geom\_smooth(method=lm), la función **lm** se refiere a modelo lineal o ingles **linear model**. Nota que con el programa ggplot2, hay que primero identificar de donde proviene los datos **Exam\_Anxiety**, despúes que hay identificar cual; son las variables de este archivo que se van a utilizar, en este caso **y=Exam, x=Anxiety**. El proximoo paso es determinar que tipo de gráfico, y este caso es una regresión lineal.
 
-```{r linear graph}
+```{r ggplot6}
 
 ggplot(Exam_Anxiety, aes(y=Exam, x=Anxiety))+ 
   geom_smooth(method=lm, colour="red")+
@@ -104,7 +104,7 @@ ggplot(Exam_Anxiety, aes(y=Exam, x=Anxiety))+
 
 En este archivo utilizaremos un archivo que se usa muy comúnmente en los análisis de R, para demostrar un análisis o como hacer gráfico. El archivo se llama **iris** y contiene información sobre el tamaño de características florales de tres especies del genero *Iris*. En este gráfico se añade cuatro componente suplementarios, 1) un puntos para cada par de valores **Sepal.Length, Petal.Length**, 2) se cambia los nombres de las leyendas en **y** y **x** con la función **labs()** = labels, 3) se añade un titulo al gráfico con **ggtitle()**, 4) Note que cada especies tiene un color distinto, esto fue muy fácil incluir añadiendo la función **col=Species**, lo que esto significa es que para cada especies de planta se pone un color diferente.
 
-```{r}
+```{r ggplot7}
 tail(iris)
 
 
@@ -123,14 +123,14 @@ ggplot(iris, aes(Sepal.Length, Petal.Length,colour=Species)) +
 
 Como salvar un gráfico para usarlo en otros programados o presentación por ejemplo de **MS Power Point**. Se usa la función **ggsave()**. se pone en comilla el nombre que se quiere dar a la figura y se identifica que tipo de archivo se quiere crear, por ejemplo (.tiff, .png, .pdf). Nota que se salvo en un archivo que se llama "Graficos", es no es necesario, si no lo incluye sera salvado en el proyecto.
 
-```{r}
+```{r ggplot8}
 ggsave("Iris_size.png") # .tiff, .png, .jpeg, .jpg
 
 ```
 
 ## Regresión simple con puntos
 
-```{r more examples}
+```{r ggplot9}
 
 
 scatter <- ggplot(Exam_Anxiety, aes(Anxiety, Exam))
@@ -142,7 +142,7 @@ scatter + geom_point(shape=20, colour="red") +
 
 ## Regresión simple con puntos y intervalo de confianza
 
-```{r}
+```{r ggplot10}
 scatter <- ggplot(Exam_Anxiety, aes(Anxiety, Exam))
 scatter + geom_point() + 
           geom_smooth(method = "lm", colour = "Red")+ 
@@ -151,7 +151,7 @@ scatter + geom_point() +
 
 ### Cambio de color del intervalo de confianza
 
-```{r}
+```{r ggplot11}
 scatter <- ggplot(Exam_Anxiety, aes(Anxiety, Exam))
 scatter + geom_point() + 
   geom_smooth(method = "lm", colour = "Red", alpha = 0.2, fill = "orange") + 
@@ -164,7 +164,7 @@ scatter + geom_point() +
 
 Para separar y tener una linea por grupo se usa la función **colour** y se añade la variable de factor. En este caso la variable **Gender** para separar entre hombres y mujer. Se enseña también la función **ggtitle()** para añadir un titulo al gráfico.
 
-```{r}
+```{r ggplot12}
 
 ggplot(Exam_Anxiety, aes(y=Exam, x=Anxiety, colour=Gender))+ 
   geom_point(colour="coral")+
@@ -188,7 +188,7 @@ Se necesita el archivo *DownloadFestival* que se encuentra debajo la pestaña de
 
 La hipótesis es que la higiene personal de los asistentes al concierto disminuiría dramáticamente durante los 3 días del festival.
 
-```{r festival data}
+```{r ggplot13, echo=FALSE}
 library(readr)
 DownloadFestival <- read_csv("Data_files_csv/DownloadFestival.csv")
 
@@ -198,7 +198,7 @@ FD=DownloadFestival
 
 Construyendo histogramas y detectando valores atípicos. Nota los valores **NA**, estos son los participantes que no se pudieron encontrar en los siguientes días.
 
-```{r mirar los datos}
+```{r ggplot14}
 head(FD, n=2)
 tail(FD)
 
@@ -206,7 +206,7 @@ tail(FD)
 
 Nota que aquí vemos el resultado, y encontramos un problema. Hay participantes que tienen valores que no son entre 0 y 4, que es la escala de higiene. Aunque es difícil ver, pero debido que el gráfico se extiende mayor de 4, es un indice de un problema ya que sabemos que los valores pueden estar solamente entre 0 y 4.
 
-```{r histograma}
+```{r ggplot15}
  ggplot(FD, aes(day1))+ 
   geom_histogram(colour="white", fill="steelblue") + 
   labs(x = "Hygiene (Day 1 of Festival)", y = "Frequency")
@@ -217,7 +217,7 @@ Nota que aquí vemos el resultado, y encontramos un problema. Hay participantes 
 
 Evaluar los datos resumidos, para detectar porque el gráfico se extiende a valores mayor de 4. Nota que el día 1, el valor máximo es de 20. Este probablemente fue un error de poner los datos un la hoja de Excel. Lo que se puede hacer es remover este participante del analisis.
 
-```{r}
+```{r ggplot16}
 summary(DownloadFestival)
 
 ```
@@ -226,14 +226,14 @@ Se puede remueve valores de un conjunto de datos usando la función **subset( )*
 
 Usamos otra vez **summary( )** para asegurarnos que se solucionó el problema. Ahora vemos que el valor máximo es 3.69.
 
-```{r subsetting}
+```{r ggplot17}
 Festivalday1=subset(DownloadFestival, day1<5)
 summary(Festivalday1)
 ```
 
 Ahora usando el nuevo data frame hacemos el gráfico otra vez
 
-```{r no outliers}
+```{r ggplot18}
 festivalHistogram <- ggplot(Festivalday1, aes(day1))
 festivalHistogram + 
   geom_histogram(fill="orange", colour="white") + 
@@ -247,7 +247,7 @@ festivalHistogram +
 
 Para crear un gráfico de caja se usa la función **geom\_boxplot()**, si hay solamente un grupo en **x** se pone **x=1** y en la **y** la variable continua.
 
-```{r boxplots2}
+```{r ggplot19}
 
 festivalBoxplot <- ggplot(Festivalday1, aes(x=1,y=day1))
 festivalBoxplot + geom_boxplot() + labs(x = "Gender", y = "Hygiene (Day 1 of Festival)")
@@ -261,7 +261,7 @@ festivalBoxplot + geom_boxplot() + labs(x = "Gender", y = "Hygiene (Day 1 of Fes
 
 Para producir un gráfico de caja por multiples grupos en **x** se añade la variable categorica y en la **y** la variable continua. Si se quiere un color diferente por caja se usa la función **color** con el nombre en de la variable en **x**.
 
-```{r boxplots}
+```{r ggplot20}
 
 festivalBoxplot <- ggplot(Festivalday1, aes(x=gender,y=day2, colour=gender))
 festivalBoxplot + 
@@ -278,7 +278,7 @@ festivalBoxplot +
 
 En la función abajo denominado **Valoressesgados** uno puede determinar el porciento de valores que son sesgados. Note que aquí la función no existe y se construye una función para calcularlos porcentajes. Si selecionamos uno de las columnas, el dia 3 del concierto. Vemos que hay 4% de los valores que estén por fuera del intervalo de 95%, y 2.4% de los valores que estén por encima del intervalo de confianza de 99%.
 
-```{r valoressesgados}
+```{r ggplot21}
 
 Valoressesgados<-function(variable, digits = 2){
   
@@ -313,7 +313,7 @@ Valoressesgados(FD$day3)
 
 Installar la library(Hmisc)
 
-```{r line and error bars}
+```{r ggplot22}
 
 library(Hmisc) # Se necesita este paquete para poner los intervalos de confianza
 
@@ -324,7 +324,7 @@ head(Hiccups, n=2)
 
 Es necesario re-organizar los datos, ya que las 4 diferentes variables están diferentes columnas, necesitamos que están todos los datos en una columna. Se usa la función **stack**. Subseguientemente, se asigna un nombre nuevo a las columnas
 
-```{r}
+```{r ggplot23}
 
 hiccups<-stack(Hiccups) # organizar los datos en dos columnas con la función **stack**
 
@@ -340,7 +340,7 @@ head(hiccups)
 
 Nota aquí que el promedio, *mean* es añadido como un punto y que están uniido tambien por una linea, están añadido al eje de **y** con la función **fun.y**. Los intervalos de confianza se añaden con la función **fun.data=mean\_cl\_boot** y **geom="errorbar**.
 
-```{r}
+```{r ggplot24}
 ggplot(hiccups, aes(y=Num_Hiccups,x=Intervention))+ 
   stat_summary(fun.y = "mean", geom = "point") + 
   stat_summary(fun.y = "mean", geom = "line", aes(group = 1),colour = "Red", linetype = "dashed") +      
@@ -352,7 +352,7 @@ ggplot(hiccups, aes(y=Num_Hiccups,x=Intervention))+
 
 Este diagrama demuestra la cantidad de datos usando el metodo sugerido por John Tukey
 
-```{r}
+```{r ggplot25}
 stem(Exam_Anxiety$Anxiety)
 
 ggplot(Exam_Anxiety, aes(Anxiety))+
@@ -361,11 +361,11 @@ ggplot(Exam_Anxiety, aes(Anxiety))+
 
 Stem leaf for two groups
 
-```{r}
+```{r ggplot26}
 #library(aplpack)
 ```
 
-```{r}
+```{r ggplot27}
 #stem.leaf(co2)
 #stem.leaf.backback(Exam_Anxiety$Anxiety[1:30],Exam_Anxiety$Anxiety[31:60])
 ```

@@ -28,7 +28,13 @@ colorize <- function(x, color) {
 
 ## El libro de la clase
 
-[Introductory Biological Statistics by Havel, Hampton and Meiners](https://www.amazon.com/Introductory-Biological-Statistics-Fourth-Havel/dp/1478638184/ref=sr_1_1?dchild=1&keywords=Introductory+Biological+Statistics&qid=1594323793&s=books&sr=1-1) Presione en el titulo para dirigirlo a Amazon. 
+Ningún libro es obligatorio
+
+Libros sugeridos:
+
+Discovering Statistics Using R, Andy Field, Jeremy Miles, Zoë Field. 2012. Sage Publications. ISBN: 978-1-4462-0462-1
+
+
 
 \pagebreak
 

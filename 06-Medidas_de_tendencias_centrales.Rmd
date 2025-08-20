@@ -90,6 +90,17 @@ median(b)
 ```
 
 
+
+
+## Ejemplo # 2 de mediana
+
+```{r}
+datos=c(1:100)
+median(datos)
+```
+
+
+
 ## Con **n** pares
 
 Cuando hay una cantidad de datos pares, los dos valores en el centro son sumado y el promedio es calculado. 

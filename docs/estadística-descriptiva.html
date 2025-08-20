@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2025-08-05" />
+<meta name="date" content="2025-08-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -884,20 +884,20 @@ div.csl-indent {
 <div id="estadística-descriptiva" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">Chapter 8</span> Estadística Descriptiva<a href="#estad%C3%ADstica-descriptiva" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Fecha de la ultima revisión</p>
-<pre><code>## [1] &quot;2025-08-05&quot;</code></pre>
+<pre><code>## [1] &quot;2025-08-20&quot;</code></pre>
 <p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
 <p>Activar los Paquetes</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="estadística-descriptiva.html#cb150-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)  <span class="co"># paquete para visualizar los datos</span></span>
-<span id="cb150-2"><a href="estadística-descriptiva.html#cb150-2" tabindex="-1"></a><span class="fu">library</span>(ggversa) <span class="co"># paquete para diferentes conjuntos de datos</span></span>
-<span id="cb150-3"><a href="estadística-descriptiva.html#cb150-3" tabindex="-1"></a><span class="fu">library</span>(modeest) <span class="co"># paquete para calcular la moda </span></span>
-<span id="cb150-4"><a href="estadística-descriptiva.html#cb150-4" tabindex="-1"></a></span>
-<span id="cb150-5"><a href="estadística-descriptiva.html#cb150-5" tabindex="-1"></a><span class="fu">library</span>(pastecs) <span class="co"># paquete para análisis tiempo-espacial usado en ecología </span></span>
-<span id="cb150-6"><a href="estadística-descriptiva.html#cb150-6" tabindex="-1"></a><span class="fu">library</span>(psych) <span class="co"># paquete para análisis psicométrica, psicológica y de personalidad </span></span>
-<span id="cb150-7"><a href="estadística-descriptiva.html#cb150-7" tabindex="-1"></a><span class="fu">library</span>(knitr) <span class="co"># un grupo de función para incluyendo tablas bonitas con kable.</span></span>
-<span id="cb150-8"><a href="estadística-descriptiva.html#cb150-8" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb150-9"><a href="estadística-descriptiva.html#cb150-9" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
-<span id="cb150-10"><a href="estadística-descriptiva.html#cb150-10" tabindex="-1"></a><span class="fu">library</span>(e1071)</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="estadística-descriptiva.html#cb152-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)  <span class="co"># paquete para visualizar los datos</span></span>
+<span id="cb152-2"><a href="estadística-descriptiva.html#cb152-2" tabindex="-1"></a><span class="fu">library</span>(ggversa) <span class="co"># paquete para diferentes conjuntos de datos</span></span>
+<span id="cb152-3"><a href="estadística-descriptiva.html#cb152-3" tabindex="-1"></a><span class="fu">library</span>(modeest) <span class="co"># paquete para calcular la moda </span></span>
+<span id="cb152-4"><a href="estadística-descriptiva.html#cb152-4" tabindex="-1"></a></span>
+<span id="cb152-5"><a href="estadística-descriptiva.html#cb152-5" tabindex="-1"></a><span class="fu">library</span>(pastecs) <span class="co"># paquete para análisis tiempo-espacial usado en ecología </span></span>
+<span id="cb152-6"><a href="estadística-descriptiva.html#cb152-6" tabindex="-1"></a><span class="fu">library</span>(psych) <span class="co"># paquete para análisis psicométrica, psicológica y de personalidad </span></span>
+<span id="cb152-7"><a href="estadística-descriptiva.html#cb152-7" tabindex="-1"></a><span class="fu">library</span>(knitr) <span class="co"># un grupo de función para incluyendo tablas bonitas con kable.</span></span>
+<span id="cb152-8"><a href="estadística-descriptiva.html#cb152-8" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb152-9"><a href="estadística-descriptiva.html#cb152-9" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb152-10"><a href="estadística-descriptiva.html#cb152-10" tabindex="-1"></a><span class="fu">library</span>(e1071)</span></code></pre></div>
 </details>
 <hr />
 <div id="estadistica-descriptiva" class="section level2 hasAnchor" number="8.1">
@@ -916,9 +916,9 @@ div.csl-indent {
 </ul>
 <p>Aqui creamos un conjunto de datos de 100 datos con un promedio de 100 y una desviación estándar de 10. Nota que la función <strong>set.seed()</strong> es que el comienzo la simulación sea igual a cada vez que se corre, y se el mismo resultado. Esto se añade solamente cuando uno esta enseñando y que los resultados sean consistente.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="estadística-descriptiva.html#cb151-1" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">10</span>) <span class="co">#(100 datos, x=100, sd=10)</span></span>
-<span id="cb151-2"><a href="estadística-descriptiva.html#cb151-2" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">data.frame</span>(x)</span>
-<span id="cb151-3"><a href="estadística-descriptiva.html#cb151-3" tabindex="-1"></a><span class="fu">head</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="estadística-descriptiva.html#cb153-1" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">100</span>, <span class="dv">10</span>) <span class="co">#(100 datos, x=100, sd=10)</span></span>
+<span id="cb153-2"><a href="estadística-descriptiva.html#cb153-2" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">data.frame</span>(x)</span>
+<span id="cb153-3"><a href="estadística-descriptiva.html#cb153-3" tabindex="-1"></a><span class="fu">head</span>(x)</span></code></pre></div>
 </details>
 <pre><code>##           x
 ## 1 110.44564
@@ -928,19 +928,19 @@ div.csl-indent {
 ## 5 118.75482
 ## 6 104.62023</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="estadística-descriptiva.html#cb153-1" tabindex="-1"></a><span class="fu">mean</span>(x<span class="sc">$</span>x) <span class="co"># el promedio</span></span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="estadística-descriptiva.html#cb155-1" tabindex="-1"></a><span class="fu">mean</span>(x<span class="sc">$</span>x) <span class="co"># el promedio</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 100.0398</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="estadística-descriptiva.html#cb155-1" tabindex="-1"></a><span class="fu">sd</span>(x<span class="sc">$</span>x) <span class="co"># la desviación estándar</span></span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="estadística-descriptiva.html#cb157-1" tabindex="-1"></a><span class="fu">sd</span>(x<span class="sc">$</span>x) <span class="co"># la desviación estándar</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 9.932391</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="estadística-descriptiva.html#cb157-1" tabindex="-1"></a><span class="fu">min</span>(x<span class="sc">$</span>x) <span class="co"># el valor mínimo</span></span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="estadística-descriptiva.html#cb159-1" tabindex="-1"></a><span class="fu">min</span>(x<span class="sc">$</span>x) <span class="co"># el valor mínimo</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 77.74019</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="estadística-descriptiva.html#cb159-1" tabindex="-1"></a><span class="fu">max</span>(x<span class="sc">$</span>x) <span class="co"># el valor máximo</span></span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="estadística-descriptiva.html#cb161-1" tabindex="-1"></a><span class="fu">max</span>(x<span class="sc">$</span>x) <span class="co"># el valor máximo</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 123.6114</code></pre>
 <hr />
@@ -964,13 +964,13 @@ Usa R y construye una lista o data frame con los siguientes datos y calcular el 
 </ul>
 </blockquote>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="estadística-descriptiva.html#cb161-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb161-2"><a href="estadística-descriptiva.html#cb161-2" tabindex="-1"></a>DownloadFestival <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/DownloadFestival.csv&quot;</span>)</span>
-<span id="cb161-3"><a href="estadística-descriptiva.html#cb161-3" tabindex="-1"></a></span>
-<span id="cb161-4"><a href="estadística-descriptiva.html#cb161-4" tabindex="-1"></a></span>
-<span id="cb161-5"><a href="estadística-descriptiva.html#cb161-5" tabindex="-1"></a></span>
-<span id="cb161-6"><a href="estadística-descriptiva.html#cb161-6" tabindex="-1"></a>dlf<span class="ot">=</span>DownloadFestival  <span class="co">#usamos un nombre más corta para facilitar  </span></span>
-<span id="cb161-7"><a href="estadística-descriptiva.html#cb161-7" tabindex="-1"></a><span class="fu">head</span>(dlf) <span class="co"># ver las 3 primeras filas</span></span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="estadística-descriptiva.html#cb163-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb163-2"><a href="estadística-descriptiva.html#cb163-2" tabindex="-1"></a>DownloadFestival <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/DownloadFestival.csv&quot;</span>)</span>
+<span id="cb163-3"><a href="estadística-descriptiva.html#cb163-3" tabindex="-1"></a></span>
+<span id="cb163-4"><a href="estadística-descriptiva.html#cb163-4" tabindex="-1"></a></span>
+<span id="cb163-5"><a href="estadística-descriptiva.html#cb163-5" tabindex="-1"></a></span>
+<span id="cb163-6"><a href="estadística-descriptiva.html#cb163-6" tabindex="-1"></a>dlf<span class="ot">=</span>DownloadFestival  <span class="co">#usamos un nombre más corta para facilitar  </span></span>
+<span id="cb163-7"><a href="estadística-descriptiva.html#cb163-7" tabindex="-1"></a><span class="fu">head</span>(dlf) <span class="co"># ver las 3 primeras filas</span></span></code></pre></div>
 </details>
 <pre><code>## # A tibble: 6 × 5
 ##   ticknumb gender  day1  day2  day3
@@ -986,23 +986,23 @@ Usa R y construye una lista o data frame con los siguientes datos y calcular el 
 <h2><span class="header-section-number">8.3</span> Remover los <strong>NA</strong> del análisis<a href="#remover-los-na-del-an%C3%A1lisis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Con los datos de los participantes al festival como en algunos diá hay participantes donde no tienen los datos se añadió un <strong>NA</strong>, es estos casos para que el análisis se logra hay que añadir a la función <strong>na.rm=TRUE</strong> que significa remover la <strong>NA</strong>. Para dar se cuenta remueve <strong>na.rm=TRUE</strong> cuando se usa el “día2” o “día3”, y evalúa que pasa.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="estadística-descriptiva.html#cb163-1" tabindex="-1"></a><span class="fu">mean</span>(dlf<span class="sc">$</span>day2, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="co"># na.rm= na remove</span></span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="estadística-descriptiva.html#cb165-1" tabindex="-1"></a><span class="fu">mean</span>(dlf<span class="sc">$</span>day2, <span class="at">na.rm=</span><span class="cn">TRUE</span>) <span class="co"># na.rm= na remove</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 0.9609091</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="estadística-descriptiva.html#cb165-1" tabindex="-1"></a><span class="fu">sd</span>(dlf<span class="sc">$</span>day1, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="estadística-descriptiva.html#cb167-1" tabindex="-1"></a><span class="fu">sd</span>(dlf<span class="sc">$</span>day1, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.9444949</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="estadística-descriptiva.html#cb167-1" tabindex="-1"></a><span class="fu">min</span>(dlf<span class="sc">$</span>day1, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="estadística-descriptiva.html#cb169-1" tabindex="-1"></a><span class="fu">min</span>(dlf<span class="sc">$</span>day1, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.02</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="estadística-descriptiva.html#cb169-1" tabindex="-1"></a><span class="fu">max</span>(dlf<span class="sc">$</span>day1, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="estadística-descriptiva.html#cb171-1" tabindex="-1"></a><span class="fu">max</span>(dlf<span class="sc">$</span>day1, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <pre><code>## [1] 20.02</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="estadística-descriptiva.html#cb171-1" tabindex="-1"></a><span class="fu">median</span>(dlf<span class="sc">$</span>day1, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="estadística-descriptiva.html#cb173-1" tabindex="-1"></a><span class="fu">median</span>(dlf<span class="sc">$</span>day1, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <pre><code>## [1] 1.79</code></pre>
 <hr />
@@ -1013,8 +1013,8 @@ Usa R y construye una lista o data frame con los siguientes datos y calcular el 
 <p>Para ver los estadístico mencionado arriba (menos la moda, oblicuidad y curtosis) se puede usar la función <strong>stat.desc()</strong> del paquete <strong>pastecs</strong>. Para facilitar la lectura de los valores se usa la función “round(x, 3), el tres en esta caso representa la cantidad de valores significativos que se demuestra. Si no usamos <strong>round()</strong> los valores aparece en notación científicas.</p>
 <p>Nota que hay muchos más parámetros calculados. Aparece en la lista en orden el valor mínimo: min(), el valor máximo: max(), la mediana: median, el promedio: mean, la desviación estándar; std.dev entre otros.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="estadística-descriptiva.html#cb173-1" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
-<span id="cb173-2"><a href="estadística-descriptiva.html#cb173-2" tabindex="-1"></a><span class="fu">stat.desc</span>(dlf[,<span class="fu">c</span>(<span class="st">&quot;day1&quot;</span>)])</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="estadística-descriptiva.html#cb175-1" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
+<span id="cb175-2"><a href="estadística-descriptiva.html#cb175-2" tabindex="-1"></a><span class="fu">stat.desc</span>(dlf[,<span class="fu">c</span>(<span class="st">&quot;day1&quot;</span>)])</span></code></pre></div>
 </details>
 <pre><code>##                      day1
 ## nbr.val      8.100000e+02
@@ -1032,7 +1032,7 @@ Usa R y construye una lista o data frame con los siguientes datos y calcular el 
 ## std.dev      9.444949e-01
 ## coef.var     5.266627e-01</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="estadística-descriptiva.html#cb175-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">stat.desc</span>(dlf[,<span class="fu">c</span>(<span class="st">&quot;day1&quot;</span>)]), <span class="dv">2</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="estadística-descriptiva.html#cb177-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">stat.desc</span>(dlf[,<span class="fu">c</span>(<span class="st">&quot;day1&quot;</span>)]), <span class="dv">2</span>)  </span></code></pre></div>
 </details>
 <pre><code>##                 day1
 ## nbr.val       810.00
@@ -1055,7 +1055,7 @@ Usa R y construye una lista o data frame con los siguientes datos y calcular el 
 <h2><span class="header-section-number">8.5</span> Resumen Estadístico de multiples variables<a href="#resumen-estad%C3%ADstico-de-multiples-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Si uno quiere evaluar múltiples variables continua todas juntos se puede usar la misma función pero el componente <strong>c()</strong> se añade todas las variables de interés.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="estadística-descriptiva.html#cb177-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">stat.desc</span>(dlf[,<span class="fu">c</span>(<span class="st">&quot;day1&quot;</span>,<span class="st">&quot;day2&quot;</span>,<span class="st">&quot;day3&quot;</span>)], <span class="at">basic=</span><span class="cn">FALSE</span>,<span class="at">norm=</span><span class="cn">TRUE</span>), <span class="at">digits=</span><span class="dv">3</span>) <span class="co"># round reduce a 3 valores significativo</span></span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="estadística-descriptiva.html#cb179-1" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">stat.desc</span>(dlf[,<span class="fu">c</span>(<span class="st">&quot;day1&quot;</span>,<span class="st">&quot;day2&quot;</span>,<span class="st">&quot;day3&quot;</span>)], <span class="at">basic=</span><span class="cn">FALSE</span>,<span class="at">norm=</span><span class="cn">TRUE</span>), <span class="at">digits=</span><span class="dv">3</span>) <span class="co"># round reduce a 3 valores significativo</span></span></code></pre></div>
 </details>
 <pre><code>##                 day1  day2  day3
 ## median         1.790 0.790 0.760
@@ -1083,13 +1083,13 @@ Usa R usa el data.frame <strong>Camas_Hospital</strong> en el paquete <strong>gg
 <p>Los cuantiles son los valores a intervalos específicos de una variable aleatoria continua. Los cuantiles son frecuentemente una mejor interpretación de la distribución cuando los valores no tienen una distribución normal. Típicamente, la distribución se divide en 4 partes con las siguientes partes (los cuantiles 0.25, 0.50 = la mediana, 0.75) y se define como <strong>cuartiles</strong>. Para meas detalle pueden ver el siguiente enlace <a href="https://en.wikipedia.org/wiki/Quantile" class="uri">https://en.wikipedia.org/wiki/Quantile</a>.</p>
 <p>En el siguiente ejemplo se demuestra como tulizar la función <strong>quantiles</strong> y seleccionar los cuantiles deseados con el comopnente de <strong>probs=c(x,x,x)</strong>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="estadística-descriptiva.html#cb179-1" tabindex="-1"></a><span class="fu">quantile</span>(dlf<span class="sc">$</span>day1,<span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>), <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="estadística-descriptiva.html#cb181-1" tabindex="-1"></a><span class="fu">quantile</span>(dlf<span class="sc">$</span>day1,<span class="at">probs=</span><span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>), <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <pre><code>##     5%    10%    25%    50%    75%    95%    99% 
 ## 0.5945 0.8490 1.3125 1.7900 2.2300 2.9100 3.3200</code></pre>
 <p>Se puede usar también la función <strong>describe</strong> en el paquete <strong>pshych</strong> que le da automáticamente estos cuantiles.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="estadística-descriptiva.html#cb181-1" tabindex="-1"></a><span class="fu">describe</span>(dlf<span class="sc">$</span>day1)</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="estadística-descriptiva.html#cb183-1" tabindex="-1"></a><span class="fu">describe</span>(dlf<span class="sc">$</span>day1)</span></code></pre></div>
 </details>
 <pre><code>##    vars   n mean   sd median trimmed mad  min   max range skew kurtosis   se
 ## X1    1 810 1.79 0.94   1.79    1.77 0.7 0.02 20.02    20 8.83   168.97 0.03</code></pre>
@@ -1107,55 +1107,55 @@ Usa R usa el data.frame <strong>Camas_Hospital</strong> en el paquete <strong>gg
 <li>oblicuidad a la derecha</li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="estadística-descriptiva.html#cb183-1" tabindex="-1"></a>normal<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">100000</span>, .<span class="dv">5</span>, .<span class="dv">15</span>)</span>
-<span id="cb183-2"><a href="estadística-descriptiva.html#cb183-2" tabindex="-1"></a>obliz<span class="ot">=</span><span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="fl">1.5</span>,<span class="dv">5</span>)</span>
-<span id="cb183-3"><a href="estadística-descriptiva.html#cb183-3" tabindex="-1"></a>obldr<span class="ot">=</span><span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="fl">5.5</span>,<span class="dv">2</span>)</span>
-<span id="cb183-4"><a href="estadística-descriptiva.html#cb183-4" tabindex="-1"></a></span>
-<span id="cb183-5"><a href="estadística-descriptiva.html#cb183-5" tabindex="-1"></a>normal<span class="ot">=</span><span class="fu">as.tibble</span>(normal)</span>
-<span id="cb183-6"><a href="estadística-descriptiva.html#cb183-6" tabindex="-1"></a></span>
-<span id="cb183-7"><a href="estadística-descriptiva.html#cb183-7" tabindex="-1"></a>obliz<span class="ot">=</span><span class="fu">as.tibble</span>(obliz)</span>
-<span id="cb183-8"><a href="estadística-descriptiva.html#cb183-8" tabindex="-1"></a></span>
-<span id="cb183-9"><a href="estadística-descriptiva.html#cb183-9" tabindex="-1"></a>obldr<span class="ot">=</span><span class="fu">as.tibble</span>(obldr)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="estadística-descriptiva.html#cb185-1" tabindex="-1"></a>normal<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">100000</span>, .<span class="dv">5</span>, .<span class="dv">15</span>)</span>
+<span id="cb185-2"><a href="estadística-descriptiva.html#cb185-2" tabindex="-1"></a>obliz<span class="ot">=</span><span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="fl">1.5</span>,<span class="dv">5</span>)</span>
+<span id="cb185-3"><a href="estadística-descriptiva.html#cb185-3" tabindex="-1"></a>obldr<span class="ot">=</span><span class="fu">rbeta</span>(<span class="dv">100000</span>, <span class="fl">5.5</span>,<span class="dv">2</span>)</span>
+<span id="cb185-4"><a href="estadística-descriptiva.html#cb185-4" tabindex="-1"></a></span>
+<span id="cb185-5"><a href="estadística-descriptiva.html#cb185-5" tabindex="-1"></a>normal<span class="ot">=</span><span class="fu">as.tibble</span>(normal)</span>
+<span id="cb185-6"><a href="estadística-descriptiva.html#cb185-6" tabindex="-1"></a></span>
+<span id="cb185-7"><a href="estadística-descriptiva.html#cb185-7" tabindex="-1"></a>obliz<span class="ot">=</span><span class="fu">as.tibble</span>(obliz)</span>
+<span id="cb185-8"><a href="estadística-descriptiva.html#cb185-8" tabindex="-1"></a></span>
+<span id="cb185-9"><a href="estadística-descriptiva.html#cb185-9" tabindex="-1"></a>obldr<span class="ot">=</span><span class="fu">as.tibble</span>(obldr)</span></code></pre></div>
 </details>
 <p>Ahora unimos los data frames y se añade nombres a las columnas</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="estadística-descriptiva.html#cb184-1" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">cbind</span>(normal, obliz, obldr)</span>
-<span id="cb184-2"><a href="estadística-descriptiva.html#cb184-2" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="estadística-descriptiva.html#cb186-1" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">cbind</span>(normal, obliz, obldr)</span>
+<span id="cb186-2"><a href="estadística-descriptiva.html#cb186-2" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
 </details>
 <pre><code>##       value     value     value
 ## 1 0.3593956 0.1288732 0.5454791
 ## 2 0.6649285 0.1578481 0.8598856</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="estadística-descriptiva.html#cb186-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">setNames</span>(df, <span class="fu">c</span>(<span class="st">&quot;normal&quot;</span>,<span class="st">&quot;obliz&quot;</span>,<span class="st">&quot;obldr&quot;</span>))</span>
-<span id="cb186-2"><a href="estadística-descriptiva.html#cb186-2" tabindex="-1"></a></span>
-<span id="cb186-3"><a href="estadística-descriptiva.html#cb186-3" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="estadística-descriptiva.html#cb188-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">setNames</span>(df, <span class="fu">c</span>(<span class="st">&quot;normal&quot;</span>,<span class="st">&quot;obliz&quot;</span>,<span class="st">&quot;obldr&quot;</span>))</span>
+<span id="cb188-2"><a href="estadística-descriptiva.html#cb188-2" tabindex="-1"></a></span>
+<span id="cb188-3"><a href="estadística-descriptiva.html#cb188-3" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
 </details>
 <pre><code>##      normal     obliz     obldr
 ## 1 0.3593956 0.1288732 0.5454791
 ## 2 0.6649285 0.1578481 0.8598856</code></pre>
 <p>El próximo paso es apilar cada columna una sobre la otra. La razón que queremos esto es que deseamos reproducir las variables en un mismo gráfico</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="estadística-descriptiva.html#cb188-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb188-2"><a href="estadística-descriptiva.html#cb188-2" tabindex="-1"></a>df2<span class="ot">=</span>df<span class="sc">%&gt;%</span></span>
-<span id="cb188-3"><a href="estadística-descriptiva.html#cb188-3" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> <span class="st">&quot;Distribución&quot;</span>, <span class="at">value=</span><span class="st">&quot;valor&quot;</span>, <span class="fu">c</span>(normal, obliz, obldr))</span>
-<span id="cb188-4"><a href="estadística-descriptiva.html#cb188-4" tabindex="-1"></a><span class="fu">head</span>(df2, <span class="at">n=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="estadística-descriptiva.html#cb190-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb190-2"><a href="estadística-descriptiva.html#cb190-2" tabindex="-1"></a>df2<span class="ot">=</span>df<span class="sc">%&gt;%</span></span>
+<span id="cb190-3"><a href="estadística-descriptiva.html#cb190-3" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> <span class="st">&quot;Distribución&quot;</span>, <span class="at">value=</span><span class="st">&quot;valor&quot;</span>, <span class="fu">c</span>(normal, obliz, obldr))</span>
+<span id="cb190-4"><a href="estadística-descriptiva.html#cb190-4" tabindex="-1"></a><span class="fu">head</span>(df2, <span class="at">n=</span><span class="dv">3</span>)</span></code></pre></div>
 </details>
 <pre><code>##   Distribución     valor
 ## 1       normal 0.3593956
 ## 2       normal 0.6649285
 ## 3       normal 0.5922829</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="estadística-descriptiva.html#cb190-1" tabindex="-1"></a><span class="co"># unique(df2$Distribución) # función para ver el nombre de las variables en la columna Distribución</span></span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="estadística-descriptiva.html#cb192-1" tabindex="-1"></a><span class="co"># unique(df2$Distribución) # función para ver el nombre de las variables en la columna Distribución</span></span></code></pre></div>
 </details>
 <p>Ahora vamos a ver los datos un gráfico. Vemos que la distribución de los datos son muy diferentes, tanto la distribución en azul y verde están sesgado a unos valores y tienen una cola o valores más grande (azul) o pequeños (verde) que si fuese una distribución normal.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="estadística-descriptiva.html#cb191-1" tabindex="-1"></a><span class="fu">ggplot</span>(df2, (<span class="fu">aes</span>(valor, <span class="at">colour=</span>Distribución)))<span class="sc">+</span></span>
-<span id="cb191-2"><a href="estadística-descriptiva.html#cb191-2" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
-<span id="cb191-3"><a href="estadística-descriptiva.html#cb191-3" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span>.<span class="dv">01</span>,<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="estadística-descriptiva.html#cb193-1" tabindex="-1"></a><span class="fu">ggplot</span>(df2, (<span class="fu">aes</span>(valor, <span class="at">colour=</span>Distribución)))<span class="sc">+</span></span>
+<span id="cb193-2"><a href="estadística-descriptiva.html#cb193-2" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb193-3"><a href="estadística-descriptiva.html#cb193-3" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span>.<span class="dv">01</span>,<span class="dv">1</span>)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/desc12-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="estadística-descriptiva.html#cb192-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Graficos/Skewness.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="estadística-descriptiva.html#cb194-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Graficos/Skewness.png&quot;</span>)</span></code></pre></div>
 </details>
 <p>Ahora se calcula el indice de oblicuidad y comparamos los valores. Como regla cuando el nivel de oblicuidad esta entre</p>
 <ul>
@@ -1166,16 +1166,16 @@ Usa R usa el data.frame <strong>Camas_Hospital</strong> en el paquete <strong>gg
 <p>Ahora evaluamos la oblicuidad de los tres gráficos. se usa la función de <strong>skewness</strong> en el paquete <strong>e1071</strong></p>
 <p>Para los datos de una distribución normal el valor es muy cerca a cero. Para los datos sesgado a la izquierda el indice de oblicuidad es positivo y el sesgado a derecha es negativo.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="estadística-descriptiva.html#cb193-1" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
-<span id="cb193-2"><a href="estadística-descriptiva.html#cb193-2" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">skewness</span>(normal<span class="sc">$</span>value) <span class="co"># la oblicuidad de los datos de una distribución normal</span></span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="estadística-descriptiva.html#cb195-1" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
+<span id="cb195-2"><a href="estadística-descriptiva.html#cb195-2" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">skewness</span>(normal<span class="sc">$</span>value) <span class="co"># la oblicuidad de los datos de una distribución normal</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 0.006368452</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="estadística-descriptiva.html#cb195-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">skewness</span>(obliz<span class="sc">$</span>value) <span class="co"># la oblicuidad de los datos sesgado a la izquierda</span></span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="estadística-descriptiva.html#cb197-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">skewness</span>(obliz<span class="sc">$</span>value) <span class="co"># la oblicuidad de los datos sesgado a la izquierda</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 0.8262887</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="estadística-descriptiva.html#cb197-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">skewness</span>(obldr<span class="sc">$</span>value) <span class="co"># la oblicuidad de los datos sesgado a la derecha</span></span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="estadística-descriptiva.html#cb199-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">skewness</span>(obldr<span class="sc">$</span>value) <span class="co"># la oblicuidad de los datos sesgado a la derecha</span></span></code></pre></div>
 </details>
 <pre><code>## [1] -0.6486796</code></pre>
 <hr />
@@ -1193,83 +1193,83 @@ Usa R usa el data.frame <strong>Camas_Hospital</strong> en el paquete <strong>gg
 <li>distribución uniforme</li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="estadística-descriptiva.html#cb199-1" tabindex="-1"></a><span class="fu">library</span>(PearsonDS)</span>
-<span id="cb199-2"><a href="estadística-descriptiva.html#cb199-2" tabindex="-1"></a><span class="fu">library</span>(rmutil)</span>
-<span id="cb199-3"><a href="estadística-descriptiva.html#cb199-3" tabindex="-1"></a></span>
-<span id="cb199-4"><a href="estadística-descriptiva.html#cb199-4" tabindex="-1"></a>momentsR<span class="ot">=</span><span class="fu">c</span>(<span class="at">mean=</span><span class="dv">0</span>, <span class="at">variance=</span><span class="dv">1</span>, <span class="at">skewness=</span><span class="dv">0</span>, <span class="at">kurtosis=</span><span class="dv">2</span>)</span>
-<span id="cb199-5"><a href="estadística-descriptiva.html#cb199-5" tabindex="-1"></a>momentsE<span class="ot">=</span><span class="fu">c</span>(<span class="at">mean=</span><span class="dv">0</span>, <span class="at">variance=</span><span class="dv">1</span>, <span class="at">skewness=</span><span class="dv">0</span>, <span class="at">kurtosis=</span><span class="dv">4</span>)  </span>
-<span id="cb199-6"><a href="estadística-descriptiva.html#cb199-6" tabindex="-1"></a></span>
-<span id="cb199-7"><a href="estadística-descriptiva.html#cb199-7" tabindex="-1"></a>normalR<span class="ot">=</span><span class="fu">rpearson</span>(<span class="dv">100000</span>, <span class="at">moments=</span>momentsR)</span>
-<span id="cb199-8"><a href="estadística-descriptiva.html#cb199-8" tabindex="-1"></a>normalE<span class="ot">=</span><span class="fu">rpearson</span>(<span class="dv">100000</span>, <span class="at">moments=</span>momentsE)</span>
-<span id="cb199-9"><a href="estadística-descriptiva.html#cb199-9" tabindex="-1"></a></span>
-<span id="cb199-10"><a href="estadística-descriptiva.html#cb199-10" tabindex="-1"></a></span>
-<span id="cb199-11"><a href="estadística-descriptiva.html#cb199-11" tabindex="-1"></a>Unif<span class="ot">=</span><span class="fu">runif</span>(<span class="dv">100000</span>, <span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb199-12"><a href="estadística-descriptiva.html#cb199-12" tabindex="-1"></a>normal<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="dv">0</span>,<span class="dv">1</span>)</span>
-<span id="cb199-13"><a href="estadística-descriptiva.html#cb199-13" tabindex="-1"></a>laplace<span class="ot">=</span><span class="fu">rlaplace</span>(<span class="dv">500000</span>, <span class="at">m=</span><span class="dv">0</span>, <span class="at">s=</span><span class="dv">1</span>)</span>
-<span id="cb199-14"><a href="estadística-descriptiva.html#cb199-14" tabindex="-1"></a></span>
-<span id="cb199-15"><a href="estadística-descriptiva.html#cb199-15" tabindex="-1"></a></span>
-<span id="cb199-16"><a href="estadística-descriptiva.html#cb199-16" tabindex="-1"></a>normal<span class="ot">=</span><span class="fu">as.tibble</span>(normal)</span>
-<span id="cb199-17"><a href="estadística-descriptiva.html#cb199-17" tabindex="-1"></a></span>
-<span id="cb199-18"><a href="estadística-descriptiva.html#cb199-18" tabindex="-1"></a>normalR<span class="ot">=</span><span class="fu">as.tibble</span>(normalR)</span>
-<span id="cb199-19"><a href="estadística-descriptiva.html#cb199-19" tabindex="-1"></a></span>
-<span id="cb199-20"><a href="estadística-descriptiva.html#cb199-20" tabindex="-1"></a>normalE<span class="ot">=</span><span class="fu">as.tibble</span>(normalE)</span>
-<span id="cb199-21"><a href="estadística-descriptiva.html#cb199-21" tabindex="-1"></a></span>
-<span id="cb199-22"><a href="estadística-descriptiva.html#cb199-22" tabindex="-1"></a>Unif<span class="ot">=</span><span class="fu">as.tibble</span>(Unif)</span>
-<span id="cb199-23"><a href="estadística-descriptiva.html#cb199-23" tabindex="-1"></a></span>
-<span id="cb199-24"><a href="estadística-descriptiva.html#cb199-24" tabindex="-1"></a>laplace<span class="ot">=</span><span class="fu">as.tibble</span>(laplace)</span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="estadística-descriptiva.html#cb201-1" tabindex="-1"></a><span class="fu">library</span>(PearsonDS)</span>
+<span id="cb201-2"><a href="estadística-descriptiva.html#cb201-2" tabindex="-1"></a><span class="fu">library</span>(rmutil)</span>
+<span id="cb201-3"><a href="estadística-descriptiva.html#cb201-3" tabindex="-1"></a></span>
+<span id="cb201-4"><a href="estadística-descriptiva.html#cb201-4" tabindex="-1"></a>momentsR<span class="ot">=</span><span class="fu">c</span>(<span class="at">mean=</span><span class="dv">0</span>, <span class="at">variance=</span><span class="dv">1</span>, <span class="at">skewness=</span><span class="dv">0</span>, <span class="at">kurtosis=</span><span class="dv">2</span>)</span>
+<span id="cb201-5"><a href="estadística-descriptiva.html#cb201-5" tabindex="-1"></a>momentsE<span class="ot">=</span><span class="fu">c</span>(<span class="at">mean=</span><span class="dv">0</span>, <span class="at">variance=</span><span class="dv">1</span>, <span class="at">skewness=</span><span class="dv">0</span>, <span class="at">kurtosis=</span><span class="dv">4</span>)  </span>
+<span id="cb201-6"><a href="estadística-descriptiva.html#cb201-6" tabindex="-1"></a></span>
+<span id="cb201-7"><a href="estadística-descriptiva.html#cb201-7" tabindex="-1"></a>normalR<span class="ot">=</span><span class="fu">rpearson</span>(<span class="dv">100000</span>, <span class="at">moments=</span>momentsR)</span>
+<span id="cb201-8"><a href="estadística-descriptiva.html#cb201-8" tabindex="-1"></a>normalE<span class="ot">=</span><span class="fu">rpearson</span>(<span class="dv">100000</span>, <span class="at">moments=</span>momentsE)</span>
+<span id="cb201-9"><a href="estadística-descriptiva.html#cb201-9" tabindex="-1"></a></span>
+<span id="cb201-10"><a href="estadística-descriptiva.html#cb201-10" tabindex="-1"></a></span>
+<span id="cb201-11"><a href="estadística-descriptiva.html#cb201-11" tabindex="-1"></a>Unif<span class="ot">=</span><span class="fu">runif</span>(<span class="dv">100000</span>, <span class="sc">-</span><span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb201-12"><a href="estadística-descriptiva.html#cb201-12" tabindex="-1"></a>normal<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">100000</span>, <span class="dv">0</span>,<span class="dv">1</span>)</span>
+<span id="cb201-13"><a href="estadística-descriptiva.html#cb201-13" tabindex="-1"></a>laplace<span class="ot">=</span><span class="fu">rlaplace</span>(<span class="dv">500000</span>, <span class="at">m=</span><span class="dv">0</span>, <span class="at">s=</span><span class="dv">1</span>)</span>
+<span id="cb201-14"><a href="estadística-descriptiva.html#cb201-14" tabindex="-1"></a></span>
+<span id="cb201-15"><a href="estadística-descriptiva.html#cb201-15" tabindex="-1"></a></span>
+<span id="cb201-16"><a href="estadística-descriptiva.html#cb201-16" tabindex="-1"></a>normal<span class="ot">=</span><span class="fu">as.tibble</span>(normal)</span>
+<span id="cb201-17"><a href="estadística-descriptiva.html#cb201-17" tabindex="-1"></a></span>
+<span id="cb201-18"><a href="estadística-descriptiva.html#cb201-18" tabindex="-1"></a>normalR<span class="ot">=</span><span class="fu">as.tibble</span>(normalR)</span>
+<span id="cb201-19"><a href="estadística-descriptiva.html#cb201-19" tabindex="-1"></a></span>
+<span id="cb201-20"><a href="estadística-descriptiva.html#cb201-20" tabindex="-1"></a>normalE<span class="ot">=</span><span class="fu">as.tibble</span>(normalE)</span>
+<span id="cb201-21"><a href="estadística-descriptiva.html#cb201-21" tabindex="-1"></a></span>
+<span id="cb201-22"><a href="estadística-descriptiva.html#cb201-22" tabindex="-1"></a>Unif<span class="ot">=</span><span class="fu">as.tibble</span>(Unif)</span>
+<span id="cb201-23"><a href="estadística-descriptiva.html#cb201-23" tabindex="-1"></a></span>
+<span id="cb201-24"><a href="estadística-descriptiva.html#cb201-24" tabindex="-1"></a>laplace<span class="ot">=</span><span class="fu">as.tibble</span>(laplace)</span></code></pre></div>
 </details>
 <p>Ahora unimos los data frames y se añade nombres a las columnas</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="estadística-descriptiva.html#cb200-1" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">cbind</span>(normal, normalR, normalE, Unif, laplace)</span>
-<span id="cb200-2"><a href="estadística-descriptiva.html#cb200-2" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="estadística-descriptiva.html#cb202-1" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">cbind</span>(normal, normalR, normalE, Unif, laplace)</span>
+<span id="cb202-2"><a href="estadística-descriptiva.html#cb202-2" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
 </details>
 <pre><code>##        value     value      value     value     value
 ## 1  0.5988411  1.708884 -2.8346486  1.062104 -0.177971
 ## 2 -0.5381463 -1.145072  0.2195933 -1.907250 -2.433041</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="estadística-descriptiva.html#cb202-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">setNames</span>(df, <span class="fu">c</span>(<span class="st">&quot;normal&quot;</span>,<span class="st">&quot;normalR&quot;</span>,<span class="st">&quot;normalE&quot;</span>, <span class="st">&quot;Unif&quot;</span>, <span class="st">&quot;laplace&quot;</span>))</span>
-<span id="cb202-2"><a href="estadística-descriptiva.html#cb202-2" tabindex="-1"></a></span>
-<span id="cb202-3"><a href="estadística-descriptiva.html#cb202-3" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="estadística-descriptiva.html#cb204-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">setNames</span>(df, <span class="fu">c</span>(<span class="st">&quot;normal&quot;</span>,<span class="st">&quot;normalR&quot;</span>,<span class="st">&quot;normalE&quot;</span>, <span class="st">&quot;Unif&quot;</span>, <span class="st">&quot;laplace&quot;</span>))</span>
+<span id="cb204-2"><a href="estadística-descriptiva.html#cb204-2" tabindex="-1"></a></span>
+<span id="cb204-3"><a href="estadística-descriptiva.html#cb204-3" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">2</span>)</span></code></pre></div>
 </details>
 <pre><code>##       normal   normalR    normalE      Unif   laplace
 ## 1  0.5988411  1.708884 -2.8346486  1.062104 -0.177971
 ## 2 -0.5381463 -1.145072  0.2195933 -1.907250 -2.433041</code></pre>
 <p>El próximo paso es apilar cada columna una sobre la otra. La razón que queremos esto es que deseamos reproducir las variables en un mismo gráfico</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="estadística-descriptiva.html#cb204-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb204-2"><a href="estadística-descriptiva.html#cb204-2" tabindex="-1"></a>df2<span class="ot">=</span>df<span class="sc">%&gt;%</span></span>
-<span id="cb204-3"><a href="estadística-descriptiva.html#cb204-3" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> <span class="st">&quot;Distribución&quot;</span>, <span class="at">value=</span><span class="st">&quot;valor&quot;</span>, <span class="fu">c</span>(normal, normalR, normalE, Unif, laplace))</span>
-<span id="cb204-4"><a href="estadística-descriptiva.html#cb204-4" tabindex="-1"></a><span class="fu">head</span>(df2, <span class="at">n=</span><span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="estadística-descriptiva.html#cb206-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb206-2"><a href="estadística-descriptiva.html#cb206-2" tabindex="-1"></a>df2<span class="ot">=</span>df<span class="sc">%&gt;%</span></span>
+<span id="cb206-3"><a href="estadística-descriptiva.html#cb206-3" tabindex="-1"></a>  <span class="fu">gather</span>(<span class="at">key =</span> <span class="st">&quot;Distribución&quot;</span>, <span class="at">value=</span><span class="st">&quot;valor&quot;</span>, <span class="fu">c</span>(normal, normalR, normalE, Unif, laplace))</span>
+<span id="cb206-4"><a href="estadística-descriptiva.html#cb206-4" tabindex="-1"></a><span class="fu">head</span>(df2, <span class="at">n=</span><span class="dv">3</span>)</span></code></pre></div>
 </details>
 <pre><code>##   Distribución      valor
 ## 1       normal  0.5988411
 ## 2       normal -0.5381463
 ## 3       normal  0.9216448</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="estadística-descriptiva.html#cb206-1" tabindex="-1"></a><span class="co"># unique(df2$Distribución) #función  para ver el nombre de las variables en la columna Distribución</span></span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="estadística-descriptiva.html#cb208-1" tabindex="-1"></a><span class="co"># unique(df2$Distribución) #función  para ver el nombre de las variables en la columna Distribución</span></span></code></pre></div>
 </details>
 <p>Ahora vamos a ver los datos en un gráfico. Vemos que la distribución de los datos son muy diferentes, Tiene que concentrar no en el pico de la distribución pero las colas de los datos. Nota la distribución normal que es de color amarillo, y comparar si la colas están por debajo o por encima de esta distribución normal.</p>
 <p>Tanto la distribución uniforme (color rosa) y normal reducido (normalR, color azul) las curvas pasan de bajo la curva normal. Al contrarío la linea verde y roja son distribuciones que pasan por encima de la curva normal, entonces las colas son más predominante.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="estadística-descriptiva.html#cb207-1" tabindex="-1"></a>whole<span class="ot">=</span><span class="fu">ggplot</span>(df2, (<span class="fu">aes</span>(valor, <span class="at">colour=</span>Distribución)))<span class="sc">+</span></span>
-<span id="cb207-2"><a href="estadística-descriptiva.html#cb207-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">adjust=</span><span class="dv">5</span>)<span class="sc">+</span></span>
-<span id="cb207-3"><a href="estadística-descriptiva.html#cb207-3" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
-<span id="cb207-4"><a href="estadística-descriptiva.html#cb207-4" tabindex="-1"></a></span>
-<span id="cb207-5"><a href="estadística-descriptiva.html#cb207-5" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Graficos/curtosis_whole.png&quot;</span>)</span>
-<span id="cb207-6"><a href="estadística-descriptiva.html#cb207-6" tabindex="-1"></a></span>
-<span id="cb207-7"><a href="estadística-descriptiva.html#cb207-7" tabindex="-1"></a></span>
-<span id="cb207-8"><a href="estadística-descriptiva.html#cb207-8" tabindex="-1"></a>sub<span class="ot">=</span><span class="fu">ggplot</span>(df2, (<span class="fu">aes</span>(valor, <span class="at">colour=</span>Distribución)))<span class="sc">+</span></span>
-<span id="cb207-9"><a href="estadística-descriptiva.html#cb207-9" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
-<span id="cb207-10"><a href="estadística-descriptiva.html#cb207-10" tabindex="-1"></a>   <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb207-11"><a href="estadística-descriptiva.html#cb207-11" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">1</span>)) <span class="sc">+</span> </span>
-<span id="cb207-12"><a href="estadística-descriptiva.html#cb207-12" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">1</span>)) <span class="sc">+</span></span>
-<span id="cb207-13"><a href="estadística-descriptiva.html#cb207-13" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span> <span class="st">&quot;none&quot;</span>)</span>
-<span id="cb207-14"><a href="estadística-descriptiva.html#cb207-14" tabindex="-1"></a></span>
-<span id="cb207-15"><a href="estadística-descriptiva.html#cb207-15" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Graficos/curtosis.png&quot;</span>)</span>
-<span id="cb207-16"><a href="estadística-descriptiva.html#cb207-16" tabindex="-1"></a></span>
-<span id="cb207-17"><a href="estadística-descriptiva.html#cb207-17" tabindex="-1"></a>sub <span class="sc">+</span> <span class="fu">annotation_custom</span>(</span>
-<span id="cb207-18"><a href="estadística-descriptiva.html#cb207-18" tabindex="-1"></a>    <span class="fu">ggplotGrob</span>(whole),</span>
-<span id="cb207-19"><a href="estadística-descriptiva.html#cb207-19" tabindex="-1"></a>    <span class="at">xmin =</span> <span class="sc">-</span><span class="fl">1.8</span>, <span class="at">xmax =</span> <span class="fl">1.4</span>, <span class="at">ymin =</span> <span class="fl">0.005</span>, <span class="at">ymax =</span> <span class="fl">0.075</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="estadística-descriptiva.html#cb209-1" tabindex="-1"></a>whole<span class="ot">=</span><span class="fu">ggplot</span>(df2, (<span class="fu">aes</span>(valor, <span class="at">colour=</span>Distribución)))<span class="sc">+</span></span>
+<span id="cb209-2"><a href="estadística-descriptiva.html#cb209-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">adjust=</span><span class="dv">5</span>)<span class="sc">+</span></span>
+<span id="cb209-3"><a href="estadística-descriptiva.html#cb209-3" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>)</span>
+<span id="cb209-4"><a href="estadística-descriptiva.html#cb209-4" tabindex="-1"></a></span>
+<span id="cb209-5"><a href="estadística-descriptiva.html#cb209-5" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Graficos/curtosis_whole.png&quot;</span>)</span>
+<span id="cb209-6"><a href="estadística-descriptiva.html#cb209-6" tabindex="-1"></a></span>
+<span id="cb209-7"><a href="estadística-descriptiva.html#cb209-7" tabindex="-1"></a></span>
+<span id="cb209-8"><a href="estadística-descriptiva.html#cb209-8" tabindex="-1"></a>sub<span class="ot">=</span><span class="fu">ggplot</span>(df2, (<span class="fu">aes</span>(valor, <span class="at">colour=</span>Distribución)))<span class="sc">+</span></span>
+<span id="cb209-9"><a href="estadística-descriptiva.html#cb209-9" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
+<span id="cb209-10"><a href="estadística-descriptiva.html#cb209-10" tabindex="-1"></a>   <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb209-11"><a href="estadística-descriptiva.html#cb209-11" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">1</span>)) <span class="sc">+</span> </span>
+<span id="cb209-12"><a href="estadística-descriptiva.html#cb209-12" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits=</span><span class="fu">c</span>(<span class="dv">0</span>, .<span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb209-13"><a href="estadística-descriptiva.html#cb209-13" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position=</span> <span class="st">&quot;none&quot;</span>)</span>
+<span id="cb209-14"><a href="estadística-descriptiva.html#cb209-14" tabindex="-1"></a></span>
+<span id="cb209-15"><a href="estadística-descriptiva.html#cb209-15" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Graficos/curtosis.png&quot;</span>)</span>
+<span id="cb209-16"><a href="estadística-descriptiva.html#cb209-16" tabindex="-1"></a></span>
+<span id="cb209-17"><a href="estadística-descriptiva.html#cb209-17" tabindex="-1"></a>sub <span class="sc">+</span> <span class="fu">annotation_custom</span>(</span>
+<span id="cb209-18"><a href="estadística-descriptiva.html#cb209-18" tabindex="-1"></a>    <span class="fu">ggplotGrob</span>(whole),</span>
+<span id="cb209-19"><a href="estadística-descriptiva.html#cb209-19" tabindex="-1"></a>    <span class="at">xmin =</span> <span class="sc">-</span><span class="fl">1.8</span>, <span class="at">xmax =</span> <span class="fl">1.4</span>, <span class="at">ymin =</span> <span class="fl">0.005</span>, <span class="at">ymax =</span> <span class="fl">0.075</span>)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/desc17-1.png" width="672" /></p>
 <p>Ahora se calcula el indice de curtosis y comparamos los valores. Como regla el nivel de curtosis esta significativo si los valores de curtosis se enuentra en los siguientes rangos, y se acerca cero no hay curtosis (lo que uno espera para una distribución normal.</p>
@@ -1280,24 +1280,24 @@ Usa R usa el data.frame <strong>Camas_Hospital</strong> en el paquete <strong>gg
 <p>Ahora evaluamos la oblicuidad de los tres gráficos. se usa la función de <strong>kurtosis</strong> en el paquete <strong>e1071</strong></p>
 <p>Para los datos de una distribución normal el valor es muy cerca a cero. Para los datos que tienen exceso de cola el valor de curtosis es negativos y cuando el valor de curtosis es positivo hay exceso de datos en la cola.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="estadística-descriptiva.html#cb208-1" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
-<span id="cb208-2"><a href="estadística-descriptiva.html#cb208-2" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">kurtosis</span>(normal<span class="sc">$</span>value) <span class="co"># curtosis de los datos de una distribución normal</span></span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="estadística-descriptiva.html#cb210-1" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
+<span id="cb210-2"><a href="estadística-descriptiva.html#cb210-2" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">kurtosis</span>(normal<span class="sc">$</span>value) <span class="co"># curtosis de los datos de una distribución normal</span></span></code></pre></div>
 </details>
 <pre><code>## [1] -0.009931754</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="estadística-descriptiva.html#cb210-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">kurtosis</span>(normalR<span class="sc">$</span>value) <span class="co"># curtosis de los datos restringido</span></span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="estadística-descriptiva.html#cb212-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">kurtosis</span>(normalR<span class="sc">$</span>value) <span class="co"># curtosis de los datos restringido</span></span></code></pre></div>
 </details>
 <pre><code>## [1] -1.008095</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="estadística-descriptiva.html#cb212-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">kurtosis</span>(normalE<span class="sc">$</span>value) <span class="co"># curtosis de los datos con más colas</span></span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="estadística-descriptiva.html#cb214-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">kurtosis</span>(normalE<span class="sc">$</span>value) <span class="co"># curtosis de los datos con más colas</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 1.142044</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="estadística-descriptiva.html#cb214-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">kurtosis</span>(Unif<span class="sc">$</span>value) <span class="co"># curtosis de distribución informe, falta de colas</span></span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="estadística-descriptiva.html#cb216-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">kurtosis</span>(Unif<span class="sc">$</span>value) <span class="co"># curtosis de distribución informe, falta de colas</span></span></code></pre></div>
 </details>
 <pre><code>## [1] -1.203061</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="estadística-descriptiva.html#cb216-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">kurtosis</span>(laplace<span class="sc">$</span>value) <span class="co"># curtosis de distribución Laplace, exceso de colas</span></span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="estadística-descriptiva.html#cb218-1" tabindex="-1"></a>e1071<span class="sc">::</span><span class="fu">kurtosis</span>(laplace<span class="sc">$</span>value) <span class="co"># curtosis de distribución Laplace, exceso de colas</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 3.058468</code></pre>
 <p>Quiz 1</p>

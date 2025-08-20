@@ -543,3 +543,5 @@ quiz-3
 pregunta-1
 pregunta-2
 calcular-el-quantile-50
+bdi-becks-depression-index-change
+ejemplo-2-de-mediana

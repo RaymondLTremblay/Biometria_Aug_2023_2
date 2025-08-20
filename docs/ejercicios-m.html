@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2025-08-05" />
+<meta name="date" content="2025-08-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -891,76 +891,80 @@ div.csl-indent {
 <li>Fungal growth from soil samples were cultured in the presence of different concentrations of Cadnium (in µM). The density of fungal growth (x 10^6/ml) in each of the cultures was determined after a period of incubation. Para conocer más sobre estas interacciones vea el siguiente enlace. <a href="https://bmcmicrobiol.biomedcentral.com/articles/10.1186/s12866-022-02488-z" class="uri">https://bmcmicrobiol.biomedcentral.com/articles/10.1186/s12866-022-02488-z</a></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb728"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb728-1"><a href="ejercicios-m.html#cb728-1" tabindex="-1"></a>DATA<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>Cadnium, <span class="sc">~</span>Fungal_Growth,</span>
-<span id="cb728-2"><a href="ejercicios-m.html#cb728-2" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">6.6</span>,</span>
-<span id="cb728-3"><a href="ejercicios-m.html#cb728-3" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">6.9</span>,</span>
-<span id="cb728-4"><a href="ejercicios-m.html#cb728-4" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">7.2</span>,</span>
-<span id="cb728-5"><a href="ejercicios-m.html#cb728-5" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">6.8</span>, </span>
-<span id="cb728-6"><a href="ejercicios-m.html#cb728-6" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">6.0</span>,</span>
-<span id="cb728-7"><a href="ejercicios-m.html#cb728-7" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">5.6</span>,</span>
-<span id="cb728-8"><a href="ejercicios-m.html#cb728-8" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">6.4</span>,</span>
-<span id="cb728-9"><a href="ejercicios-m.html#cb728-9" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">6.0</span>,</span>
-<span id="cb728-10"><a href="ejercicios-m.html#cb728-10" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">5.4</span>,</span>
-<span id="cb728-11"><a href="ejercicios-m.html#cb728-11" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">4.8</span>,</span>
-<span id="cb728-12"><a href="ejercicios-m.html#cb728-12" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">4.4</span>,</span>
-<span id="cb728-13"><a href="ejercicios-m.html#cb728-13" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">3.9</span>,</span>
-<span id="cb728-14"><a href="ejercicios-m.html#cb728-14" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">2.6</span>,</span>
-<span id="cb728-15"><a href="ejercicios-m.html#cb728-15" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">3.1</span>,</span>
-<span id="cb728-16"><a href="ejercicios-m.html#cb728-16" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">3.4</span>,</span>
-<span id="cb728-17"><a href="ejercicios-m.html#cb728-17" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.0</span>,</span>
-<span id="cb728-18"><a href="ejercicios-m.html#cb728-18" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.3</span>,</span>
-<span id="cb728-19"><a href="ejercicios-m.html#cb728-19" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.7</span>,</span>
-<span id="cb728-20"><a href="ejercicios-m.html#cb728-20" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.2</span>,</span>
-<span id="cb728-21"><a href="ejercicios-m.html#cb728-21" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.3</span>,</span>
-<span id="cb728-22"><a href="ejercicios-m.html#cb728-22" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.5</span>)</span>
-<span id="cb728-23"><a href="ejercicios-m.html#cb728-23" tabindex="-1"></a></span>
-<span id="cb728-24"><a href="ejercicios-m.html#cb728-24" tabindex="-1"></a>DATA</span></code></pre></div>
+<div class="sourceCode" id="cb730"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb730-1"><a href="ejercicios-m.html#cb730-1" tabindex="-1"></a>DATA<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>Cadnium, <span class="sc">~</span>Fungal_Growth,</span>
+<span id="cb730-2"><a href="ejercicios-m.html#cb730-2" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">6.6</span>,</span>
+<span id="cb730-3"><a href="ejercicios-m.html#cb730-3" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">6.9</span>,</span>
+<span id="cb730-4"><a href="ejercicios-m.html#cb730-4" tabindex="-1"></a>             <span class="dv">0</span>, <span class="fl">7.2</span>,</span>
+<span id="cb730-5"><a href="ejercicios-m.html#cb730-5" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">6.8</span>, </span>
+<span id="cb730-6"><a href="ejercicios-m.html#cb730-6" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">6.0</span>,</span>
+<span id="cb730-7"><a href="ejercicios-m.html#cb730-7" tabindex="-1"></a>             <span class="dv">1</span>, <span class="fl">5.6</span>,</span>
+<span id="cb730-8"><a href="ejercicios-m.html#cb730-8" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">6.4</span>,</span>
+<span id="cb730-9"><a href="ejercicios-m.html#cb730-9" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">6.0</span>,</span>
+<span id="cb730-10"><a href="ejercicios-m.html#cb730-10" tabindex="-1"></a>             <span class="dv">2</span>, <span class="fl">5.4</span>,</span>
+<span id="cb730-11"><a href="ejercicios-m.html#cb730-11" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">4.8</span>,</span>
+<span id="cb730-12"><a href="ejercicios-m.html#cb730-12" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">4.4</span>,</span>
+<span id="cb730-13"><a href="ejercicios-m.html#cb730-13" tabindex="-1"></a>             <span class="dv">4</span>, <span class="fl">3.9</span>,</span>
+<span id="cb730-14"><a href="ejercicios-m.html#cb730-14" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">2.6</span>,</span>
+<span id="cb730-15"><a href="ejercicios-m.html#cb730-15" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">3.1</span>,</span>
+<span id="cb730-16"><a href="ejercicios-m.html#cb730-16" tabindex="-1"></a>             <span class="dv">6</span>, <span class="fl">3.4</span>,</span>
+<span id="cb730-17"><a href="ejercicios-m.html#cb730-17" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.0</span>,</span>
+<span id="cb730-18"><a href="ejercicios-m.html#cb730-18" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.3</span>,</span>
+<span id="cb730-19"><a href="ejercicios-m.html#cb730-19" tabindex="-1"></a>             <span class="dv">8</span>, <span class="fl">1.7</span>,</span>
+<span id="cb730-20"><a href="ejercicios-m.html#cb730-20" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.2</span>,</span>
+<span id="cb730-21"><a href="ejercicios-m.html#cb730-21" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.3</span>,</span>
+<span id="cb730-22"><a href="ejercicios-m.html#cb730-22" tabindex="-1"></a>             <span class="dv">10</span>, <span class="fl">0.5</span>)</span>
+<span id="cb730-23"><a href="ejercicios-m.html#cb730-23" tabindex="-1"></a></span>
+<span id="cb730-24"><a href="ejercicios-m.html#cb730-24" tabindex="-1"></a>DATA</span></code></pre></div>
 </details>
-<table class="huxtable" data-quarto-disable-processing="true" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; ; margin-left: auto; margin-right: auto;  ">
-<col><col><tr>
-<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Cadnium</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Fungal_Growth</th></tr>
+<table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;">
+<col><col><thead>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">6.6</td></tr>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Cadnium</th><th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">Fungal_Growth</th></tr>
+</thead>
+<tbody>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6.9</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">0</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">6.6</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">7.2</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">0</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">6.9</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6.8</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">0</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">7.2</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">6&nbsp;&nbsp;</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">1</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">6.8</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">5.6</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">1</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">6&nbsp;&nbsp;</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">6.4</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">1</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">5.6</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6&nbsp;&nbsp;</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">2</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">6.4</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">5.4</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">2</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">6&nbsp;&nbsp;</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4.8</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">2</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">5.4</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">4.4</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">4</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">4.8</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3.9</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">4</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">4.4</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">2.6</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">4</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">3.9</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3.1</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">6</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">2.6</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">3.4</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">6</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">3.1</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">8</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1&nbsp;&nbsp;</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">6</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">3.4</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">8</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">1.3</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">8</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">1&nbsp;&nbsp;</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">8</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1.7</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">8</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">1.3</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">10</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.2</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">8</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">1.7</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">10</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0.3</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">10</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">0.2</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">10</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; background-color: rgb(242, 242, 242); font-weight: normal;">0.5</td></tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">10</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">0.3</td></tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;     background-color: rgb(242, 242, 242);">10</td><td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;     background-color: rgb(242, 242, 242);">0.5</td></tr>
+</tbody>
 </table>
 
 <hr />
@@ -992,12 +996,12 @@ div.csl-indent {
 <div id="calcular-el-promedio-mediana-moda-y-rango-de-los-datos-de-las-estrellas-más-cercana-a-la-tierra" class="section level3 hasAnchor" number="38.1.4">
 <h3><span class="header-section-number">M.1.4</span> Calcular el promedio, mediana, moda y rango de los datos de las estrellas más cercana a la tierra<a href="#calcular-el-promedio-mediana-moda-y-rango-de-los-datos-de-las-estrellas-m%C3%A1s-cercana-a-la-tierra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb729"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb729-1"><a href="ejercicios-m.html#cb729-1" tabindex="-1"></a>Distancia_Estrellas<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb729-2"><a href="ejercicios-m.html#cb729-2" tabindex="-1"></a>  <span class="sc">~</span>Distancia,</span>
-<span id="cb729-3"><a href="ejercicios-m.html#cb729-3" tabindex="-1"></a>  <span class="fl">8.6</span>,<span class="fl">36.7</span>,<span class="fl">42.2</span>,<span class="fl">16.8</span>,<span class="fl">33.7</span>,<span class="fl">87.9</span>,<span class="fl">4.4</span>,<span class="fl">25.3</span>,<span class="fl">11.4</span>,<span class="fl">25.1</span>,<span class="fl">51.5</span></span>
-<span id="cb729-4"><a href="ejercicios-m.html#cb729-4" tabindex="-1"></a>)</span>
-<span id="cb729-5"><a href="ejercicios-m.html#cb729-5" tabindex="-1"></a></span>
-<span id="cb729-6"><a href="ejercicios-m.html#cb729-6" tabindex="-1"></a><span class="fu">gt</span>(Distancia_Estrellas)</span></code></pre></div>
+<div class="sourceCode" id="cb731"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb731-1"><a href="ejercicios-m.html#cb731-1" tabindex="-1"></a>Distancia_Estrellas<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb731-2"><a href="ejercicios-m.html#cb731-2" tabindex="-1"></a>  <span class="sc">~</span>Distancia,</span>
+<span id="cb731-3"><a href="ejercicios-m.html#cb731-3" tabindex="-1"></a>  <span class="fl">8.6</span>,<span class="fl">36.7</span>,<span class="fl">42.2</span>,<span class="fl">16.8</span>,<span class="fl">33.7</span>,<span class="fl">87.9</span>,<span class="fl">4.4</span>,<span class="fl">25.3</span>,<span class="fl">11.4</span>,<span class="fl">25.1</span>,<span class="fl">51.5</span></span>
+<span id="cb731-4"><a href="ejercicios-m.html#cb731-4" tabindex="-1"></a>)</span>
+<span id="cb731-5"><a href="ejercicios-m.html#cb731-5" tabindex="-1"></a></span>
+<span id="cb731-6"><a href="ejercicios-m.html#cb731-6" tabindex="-1"></a><span class="fu">gt</span>(Distancia_Estrellas)</span></code></pre></div>
 </details>
 <div id="fczrybyrzj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#fczrybyrzj table {
@@ -1478,12 +1482,12 @@ div.csl-indent {
 <div id="calular-los-cuantiles-mencionado-en-la-pregunta" class="section level4 hasAnchor" number="38.1.5.1">
 <h4><span class="header-section-number">M.1.5.1</span> Calular los cuantiles mencionado en la pregunta<a href="ejercicios-m.html#calular-los-cuantiles-mencionado-en-la-pregunta" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb730"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb730-1"><a href="ejercicios-m.html#cb730-1" tabindex="-1"></a>PR_poblacion<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb730-2"><a href="ejercicios-m.html#cb730-2" tabindex="-1"></a>  <span class="sc">~</span>Poblacion,</span>
-<span id="cb730-3"><a href="ejercicios-m.html#cb730-3" tabindex="-1"></a>  <span class="fl">18.0</span>, <span class="fl">38.1</span>,<span class="fl">55.1</span>,<span class="fl">24.2</span>,<span class="fl">24.6</span>,<span class="fl">25.6</span>,<span class="fl">87.7</span>,<span class="fl">15.8</span>,<span class="fl">22.7</span>,<span class="fl">28.9</span>,<span class="fl">185.2</span>,<span class="fl">47.1</span>,<span class="fl">127.2</span></span>
-<span id="cb730-4"><a href="ejercicios-m.html#cb730-4" tabindex="-1"></a>)</span>
-<span id="cb730-5"><a href="ejercicios-m.html#cb730-5" tabindex="-1"></a></span>
-<span id="cb730-6"><a href="ejercicios-m.html#cb730-6" tabindex="-1"></a><span class="fu">gt</span>(PR_poblacion)</span></code></pre></div>
+<div class="sourceCode" id="cb732"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb732-1"><a href="ejercicios-m.html#cb732-1" tabindex="-1"></a>PR_poblacion<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb732-2"><a href="ejercicios-m.html#cb732-2" tabindex="-1"></a>  <span class="sc">~</span>Poblacion,</span>
+<span id="cb732-3"><a href="ejercicios-m.html#cb732-3" tabindex="-1"></a>  <span class="fl">18.0</span>, <span class="fl">38.1</span>,<span class="fl">55.1</span>,<span class="fl">24.2</span>,<span class="fl">24.6</span>,<span class="fl">25.6</span>,<span class="fl">87.7</span>,<span class="fl">15.8</span>,<span class="fl">22.7</span>,<span class="fl">28.9</span>,<span class="fl">185.2</span>,<span class="fl">47.1</span>,<span class="fl">127.2</span></span>
+<span id="cb732-4"><a href="ejercicios-m.html#cb732-4" tabindex="-1"></a>)</span>
+<span id="cb732-5"><a href="ejercicios-m.html#cb732-5" tabindex="-1"></a></span>
+<span id="cb732-6"><a href="ejercicios-m.html#cb732-6" tabindex="-1"></a><span class="fu">gt</span>(PR_poblacion)</span></code></pre></div>
 </details>
 <div id="jlftvbmymi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#jlftvbmymi table {

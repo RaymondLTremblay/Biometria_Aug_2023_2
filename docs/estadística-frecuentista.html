@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2025-08-05" />
+<meta name="date" content="2025-08-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -925,17 +925,17 @@ div.csl-indent {
 <div id="instalar-y-activar-los-siguientes-packages" class="section level2 hasAnchor" number="11.4">
 <h2><span class="header-section-number">11.4</span> Instalar y activar los siguientes packages<a href="estadística-frecuentista.html#instalar-y-activar-los-siguientes-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="estadística-frecuentista.html#cb290-1" tabindex="-1"></a><span class="co">#----Instalar los paquetes si es necesario-----</span></span>
-<span id="cb290-2"><a href="estadística-frecuentista.html#cb290-2" tabindex="-1"></a><span class="co">#install.packages(&quot;gmodels&quot;)</span></span>
-<span id="cb290-3"><a href="estadística-frecuentista.html#cb290-3" tabindex="-1"></a><span class="co">#install.packages(&quot;MASS&quot;)</span></span>
-<span id="cb290-4"><a href="estadística-frecuentista.html#cb290-4" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span>
-<span id="cb290-5"><a href="estadística-frecuentista.html#cb290-5" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(gmodels, MASS, gt)</span>
-<span id="cb290-6"><a href="estadística-frecuentista.html#cb290-6" tabindex="-1"></a></span>
-<span id="cb290-7"><a href="estadística-frecuentista.html#cb290-7" tabindex="-1"></a><span class="co">#------Activar los paquetes-----</span></span>
-<span id="cb290-8"><a href="estadística-frecuentista.html#cb290-8" tabindex="-1"></a></span>
-<span id="cb290-9"><a href="estadística-frecuentista.html#cb290-9" tabindex="-1"></a><span class="fu">library</span>(gmodels) <span class="do">## Analisis de datos de frecuencia</span></span>
-<span id="cb290-10"><a href="estadística-frecuentista.html#cb290-10" tabindex="-1"></a><span class="fu">library</span>(MASS) <span class="do">## graficar los datos con la función &quot;mosaicpLot&quot;</span></span>
-<span id="cb290-11"><a href="estadística-frecuentista.html#cb290-11" tabindex="-1"></a><span class="fu">library</span>(gt) <span class="do">## &quot;Grammer of Tables&quot;, tablas más bonitas</span></span></code></pre></div>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="estadística-frecuentista.html#cb292-1" tabindex="-1"></a><span class="co">#----Instalar los paquetes si es necesario-----</span></span>
+<span id="cb292-2"><a href="estadística-frecuentista.html#cb292-2" tabindex="-1"></a><span class="co">#install.packages(&quot;gmodels&quot;)</span></span>
+<span id="cb292-3"><a href="estadística-frecuentista.html#cb292-3" tabindex="-1"></a><span class="co">#install.packages(&quot;MASS&quot;)</span></span>
+<span id="cb292-4"><a href="estadística-frecuentista.html#cb292-4" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span>
+<span id="cb292-5"><a href="estadística-frecuentista.html#cb292-5" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(gmodels, MASS, gt)</span>
+<span id="cb292-6"><a href="estadística-frecuentista.html#cb292-6" tabindex="-1"></a></span>
+<span id="cb292-7"><a href="estadística-frecuentista.html#cb292-7" tabindex="-1"></a><span class="co">#------Activar los paquetes-----</span></span>
+<span id="cb292-8"><a href="estadística-frecuentista.html#cb292-8" tabindex="-1"></a></span>
+<span id="cb292-9"><a href="estadística-frecuentista.html#cb292-9" tabindex="-1"></a><span class="fu">library</span>(gmodels) <span class="do">## Analisis de datos de frecuencia</span></span>
+<span id="cb292-10"><a href="estadística-frecuentista.html#cb292-10" tabindex="-1"></a><span class="fu">library</span>(MASS) <span class="do">## graficar los datos con la función &quot;mosaicpLot&quot;</span></span>
+<span id="cb292-11"><a href="estadística-frecuentista.html#cb292-11" tabindex="-1"></a><span class="fu">library</span>(gt) <span class="do">## &quot;Grammer of Tables&quot;, tablas más bonitas</span></span></code></pre></div>
 </details>
 <hr />
 </div>
@@ -1020,22 +1020,22 @@ div.csl-indent {
 <p><span class="math display">\[\chi^2=\sum_{n=i}^n\frac{\left(o-e\right)^2}{e}\]</span></p>
 <p>Usamos un ejemplo sencillo de los datos de Mendel haciendo los cálculos a mano de una proporción 3:1 de herencia de los fenotipos redonda:arrugada. Los datos son de la primer linea de uno de los experimentos que hizo Mendel.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="estadística-frecuentista.html#cb291-1" tabindex="-1"></a><span class="dv">57</span><span class="sc">*</span>.<span class="dv">75</span></span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="estadística-frecuentista.html#cb293-1" tabindex="-1"></a><span class="dv">57</span><span class="sc">*</span>.<span class="dv">75</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 42.75</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="estadística-frecuentista.html#cb293-1" tabindex="-1"></a><span class="dv">57</span><span class="sc">*</span>.<span class="dv">25</span></span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="estadística-frecuentista.html#cb295-1" tabindex="-1"></a><span class="dv">57</span><span class="sc">*</span>.<span class="dv">25</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 14.25</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="estadística-frecuentista.html#cb295-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb295-2"><a href="estadística-frecuentista.html#cb295-2" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb295-3"><a href="estadística-frecuentista.html#cb295-3" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Calculos =</span> <span class="fu">c</span>(<span class="st">&quot;Observado&quot;</span>,<span class="st">&quot;Esperado&quot;</span>, <span class="st">&quot;(o-e)&quot;</span>, <span class="st">&quot;(o-e)^2&quot;</span>, <span class="st">&quot;$$</span><span class="sc">\\</span><span class="st">frac{(o-e)^2}{e}$$&quot;</span>, <span class="st">&quot;$$</span><span class="sc">\\</span><span class="st">chi_{total}^2$$&quot;</span>),</span>
-<span id="cb295-4"><a href="estadística-frecuentista.html#cb295-4" tabindex="-1"></a>                 <span class="at">Redonda =</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="fl">42.75</span>, <span class="fl">2.25</span>,<span class="fl">5.0625</span>, <span class="fl">0.1184</span>, <span class="st">&quot;&quot;</span>),</span>
-<span id="cb295-5"><a href="estadística-frecuentista.html#cb295-5" tabindex="-1"></a>                 <span class="at">Arrugada =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="fl">14.25</span>, <span class="sc">-</span><span class="fl">2.25</span>,<span class="fl">5.0625</span> ,<span class="fl">0.3553</span>, <span class="st">&quot;&quot;</span>),</span>
-<span id="cb295-6"><a href="estadística-frecuentista.html#cb295-6" tabindex="-1"></a>                 <span class="at">Total =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="fl">0.4737</span>))</span>
-<span id="cb295-7"><a href="estadística-frecuentista.html#cb295-7" tabindex="-1"></a></span>
-<span id="cb295-8"><a href="estadística-frecuentista.html#cb295-8" tabindex="-1"></a><span class="fu">kable</span>(df, <span class="at">escape=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="estadística-frecuentista.html#cb297-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb297-2"><a href="estadística-frecuentista.html#cb297-2" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb297-3"><a href="estadística-frecuentista.html#cb297-3" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Calculos =</span> <span class="fu">c</span>(<span class="st">&quot;Observado&quot;</span>,<span class="st">&quot;Esperado&quot;</span>, <span class="st">&quot;(o-e)&quot;</span>, <span class="st">&quot;(o-e)^2&quot;</span>, <span class="st">&quot;$$</span><span class="sc">\\</span><span class="st">frac{(o-e)^2}{e}$$&quot;</span>, <span class="st">&quot;$$</span><span class="sc">\\</span><span class="st">chi_{total}^2$$&quot;</span>),</span>
+<span id="cb297-4"><a href="estadística-frecuentista.html#cb297-4" tabindex="-1"></a>                 <span class="at">Redonda =</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="fl">42.75</span>, <span class="fl">2.25</span>,<span class="fl">5.0625</span>, <span class="fl">0.1184</span>, <span class="st">&quot;&quot;</span>),</span>
+<span id="cb297-5"><a href="estadística-frecuentista.html#cb297-5" tabindex="-1"></a>                 <span class="at">Arrugada =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="fl">14.25</span>, <span class="sc">-</span><span class="fl">2.25</span>,<span class="fl">5.0625</span> ,<span class="fl">0.3553</span>, <span class="st">&quot;&quot;</span>),</span>
+<span id="cb297-6"><a href="estadística-frecuentista.html#cb297-6" tabindex="-1"></a>                 <span class="at">Total =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="fl">0.4737</span>))</span>
+<span id="cb297-7"><a href="estadística-frecuentista.html#cb297-7" tabindex="-1"></a></span>
+<span id="cb297-8"><a href="estadística-frecuentista.html#cb297-8" tabindex="-1"></a><span class="fu">kable</span>(df, <span class="at">escape=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 </details>
 <table>
 <thead>
@@ -1100,7 +1100,7 @@ div.csl-indent {
 </blockquote>
 <p>Para determinar si es significado el valor de Chi Square observado se compara con el valor critico (de la tabla). Aquí usamos R para conseguir este valor. Note aquí se usa (1-0.05= 0.95) y el grado de libertad que es 1. Ahora se compara ese valor con 0.4737, Si el valor observado es menor que el valor 3.841459 se acepta la hipótesis nula. En este caso no hay evidencia que los fenotipos se hereden diferente a 3:1.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb296-1"><a href="estadística-frecuentista.html#cb296-1" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.95</span>, <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="estadística-frecuentista.html#cb298-1" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.95</span>, <span class="dv">1</span>)</span></code></pre></div>
 </details>
 <pre><code>## [1] 3.841459</code></pre>
 <p>No hay ninguna razón de hacer los cálculos a mano si tenemos a R para hacerlo. Nota aquí se hace la misma prueba con los mismos datos y tenemos el mismo resultado.</p>
@@ -1110,10 +1110,10 @@ div.csl-indent {
 <h2><span class="header-section-number">11.7</span> Primer ejemplo<a href="estadística-frecuentista.html#primer-ejemplo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Lo que uno observa es el valor de la prueba de Bondad de ajuste tiene un Chi Cuadrado de 0.48, p =.49. Como el valor de <em>p</em> es mayor a 0.05, no se rechaza la hipótesis nula y que la frecuencia no es diferente de una proporción de 3:1.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="estadística-frecuentista.html#cb298-1" tabindex="-1"></a>obs<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">45</span>,<span class="dv">12</span>) <span class="co"># los valores observado</span></span>
-<span id="cb298-2"><a href="estadística-frecuentista.html#cb298-2" tabindex="-1"></a>esp<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.75</span>,<span class="fl">0.25</span>) <span class="co"># este el modelo nulo</span></span>
-<span id="cb298-3"><a href="estadística-frecuentista.html#cb298-3" tabindex="-1"></a></span>
-<span id="cb298-4"><a href="estadística-frecuentista.html#cb298-4" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x=</span>obs, <span class="at">p=</span>esp)</span></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="estadística-frecuentista.html#cb300-1" tabindex="-1"></a>obs<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">45</span>,<span class="dv">12</span>) <span class="co"># los valores observado</span></span>
+<span id="cb300-2"><a href="estadística-frecuentista.html#cb300-2" tabindex="-1"></a>esp<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.75</span>,<span class="fl">0.25</span>) <span class="co"># este el modelo nulo</span></span>
+<span id="cb300-3"><a href="estadística-frecuentista.html#cb300-3" tabindex="-1"></a></span>
+<span id="cb300-4"><a href="estadística-frecuentista.html#cb300-4" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x=</span>obs, <span class="at">p=</span>esp)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
@@ -1121,8 +1121,8 @@ div.csl-indent {
 ## data:  obs
 ## X-squared = 0.47368, df = 1, p-value = 0.4913</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="estadística-frecuentista.html#cb300-1" tabindex="-1"></a><span class="co"># Cuando el valor de p es mayor a 0.05 se acepta la hipotesis nula</span></span>
-<span id="cb300-2"><a href="estadística-frecuentista.html#cb300-2" tabindex="-1"></a><span class="co"># Es el caso presente que la la herencia es de 3:1</span></span></code></pre></div>
+<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="estadística-frecuentista.html#cb302-1" tabindex="-1"></a><span class="co"># Cuando el valor de p es mayor a 0.05 se acepta la hipotesis nula</span></span>
+<span id="cb302-2"><a href="estadística-frecuentista.html#cb302-2" tabindex="-1"></a><span class="co"># Es el caso presente que la la herencia es de 3:1</span></span></code></pre></div>
 </details>
 <hr />
 </div>
@@ -1131,10 +1131,10 @@ div.csl-indent {
 <p>Ahora evaluamos si la frecuencia de semillas redondas:arrugadas de todo el experimento sigue un patrón de 3:1. Se observa un Chi cuadrado de 0.83 y un valor de p=0.36, otra vez el valor es por encima de 0.05, y se concluye que la frecuencia de semillas redondas:redondas no es distintas a 3:1. Se acepta la hipotesis nula.</p>
 <p>Vemos que a re-evaluar los experimentos de G. Mendel tenemos un resultado que apoya su predicciones. Nota que G. Mendel <strong>NO</strong> tenia pruebas estadísticas para determinar si las frecuencias eran diferente o no de 3:1. El hizo observaciones y llego a unas conclusiones. Se acuerda cuando fue desarrollado este método y por quien?</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb301-1"><a href="estadística-frecuentista.html#cb301-1" tabindex="-1"></a>obs<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">336</span>,<span class="dv">101</span>)</span>
-<span id="cb301-2"><a href="estadística-frecuentista.html#cb301-2" tabindex="-1"></a>esp<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.75</span>,<span class="fl">0.25</span>)</span>
-<span id="cb301-3"><a href="estadística-frecuentista.html#cb301-3" tabindex="-1"></a></span>
-<span id="cb301-4"><a href="estadística-frecuentista.html#cb301-4" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x=</span>obs, <span class="at">p=</span>esp)</span></code></pre></div>
+<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="estadística-frecuentista.html#cb303-1" tabindex="-1"></a>obs<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">336</span>,<span class="dv">101</span>)</span>
+<span id="cb303-2"><a href="estadística-frecuentista.html#cb303-2" tabindex="-1"></a>esp<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.75</span>,<span class="fl">0.25</span>)</span>
+<span id="cb303-3"><a href="estadística-frecuentista.html#cb303-3" tabindex="-1"></a></span>
+<span id="cb303-4"><a href="estadística-frecuentista.html#cb303-4" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x=</span>obs, <span class="at">p=</span>esp)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Chi-squared test for given probabilities
@@ -1165,7 +1165,7 @@ div.csl-indent {
 <div id="prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc" class="section level2 hasAnchor" number="11.9">
 <h2><span class="header-section-number">11.9</span> Prueba de Bondad de Ajuste, Tabla de contingencia RxC<a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb303-1"><a href="estadística-frecuentista.html#cb303-1" tabindex="-1"></a><span class="co">#install.packages(&quot;MASS&quot;, dependencies = TRUE)</span></span></code></pre></div>
+<div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="estadística-frecuentista.html#cb305-1" tabindex="-1"></a><span class="co">#install.packages(&quot;MASS&quot;, dependencies = TRUE)</span></span></code></pre></div>
 </details>
 <p>Esta prueba se usa para</p>
 <p>Los siguientes datos son de Field, Miles and Field 2012.</p>
@@ -1177,16 +1177,16 @@ div.csl-indent {
 A 162 no se la dado recompensa, y de estos 48 bailaron y 114 no bailaron.</p>
 <p>Se crea dos listas con los resultados y se une estas dos filas con <strong>cbind()</strong> y después se la añade un nombre a las filas con <strong>rownames()</strong>. Vemos ahora la tabla de frecuencias de cuantos gatos bailaron o no y si fueron entrenado por comido o cariño. Nota que no se puede añadir la tilde <strong>~</strong> a la <strong>n</strong> de cariño.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="estadística-frecuentista.html#cb304-1" tabindex="-1"></a><span class="co">#Crear la tabla de contingencia</span></span>
-<span id="cb304-2"><a href="estadística-frecuentista.html#cb304-2" tabindex="-1"></a></span>
-<span id="cb304-3"><a href="estadística-frecuentista.html#cb304-3" tabindex="-1"></a>comida <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">28</span>)</span>
-<span id="cb304-4"><a href="estadística-frecuentista.html#cb304-4" tabindex="-1"></a>carino <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">114</span>,<span class="dv">48</span>)</span>
-<span id="cb304-5"><a href="estadística-frecuentista.html#cb304-5" tabindex="-1"></a>catsTable <span class="ot">&lt;-</span> <span class="fu">cbind</span>(comida, carino) <span class="co"># la función &quot;cbind&quot;, une listas en columnas, la &quot;c&quot; es para columna</span></span>
-<span id="cb304-6"><a href="estadística-frecuentista.html#cb304-6" tabindex="-1"></a></span>
-<span id="cb304-7"><a href="estadística-frecuentista.html#cb304-7" tabindex="-1"></a></span>
-<span id="cb304-8"><a href="estadística-frecuentista.html#cb304-8" tabindex="-1"></a><span class="fu">rownames</span>(catsTable)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;No_bailan&quot;</span>, <span class="st">&quot;bailan&quot;</span>) <span class="co"># Añade el nombre a las filas</span></span>
-<span id="cb304-9"><a href="estadística-frecuentista.html#cb304-9" tabindex="-1"></a></span>
-<span id="cb304-10"><a href="estadística-frecuentista.html#cb304-10" tabindex="-1"></a>catsTable</span></code></pre></div>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="estadística-frecuentista.html#cb306-1" tabindex="-1"></a><span class="co">#Crear la tabla de contingencia</span></span>
+<span id="cb306-2"><a href="estadística-frecuentista.html#cb306-2" tabindex="-1"></a></span>
+<span id="cb306-3"><a href="estadística-frecuentista.html#cb306-3" tabindex="-1"></a>comida <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">28</span>)</span>
+<span id="cb306-4"><a href="estadística-frecuentista.html#cb306-4" tabindex="-1"></a>carino <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">114</span>,<span class="dv">48</span>)</span>
+<span id="cb306-5"><a href="estadística-frecuentista.html#cb306-5" tabindex="-1"></a>catsTable <span class="ot">&lt;-</span> <span class="fu">cbind</span>(comida, carino) <span class="co"># la función &quot;cbind&quot;, une listas en columnas, la &quot;c&quot; es para columna</span></span>
+<span id="cb306-6"><a href="estadística-frecuentista.html#cb306-6" tabindex="-1"></a></span>
+<span id="cb306-7"><a href="estadística-frecuentista.html#cb306-7" tabindex="-1"></a></span>
+<span id="cb306-8"><a href="estadística-frecuentista.html#cb306-8" tabindex="-1"></a><span class="fu">rownames</span>(catsTable)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;No_bailan&quot;</span>, <span class="st">&quot;bailan&quot;</span>) <span class="co"># Añade el nombre a las filas</span></span>
+<span id="cb306-9"><a href="estadística-frecuentista.html#cb306-9" tabindex="-1"></a></span>
+<span id="cb306-10"><a href="estadística-frecuentista.html#cb306-10" tabindex="-1"></a>catsTable</span></code></pre></div>
 </details>
 <pre><code>##           comida carino
 ## No_bailan     10    114
@@ -1205,7 +1205,7 @@ A 162 no se la dado recompensa, y de estos 48 bailaron y 114 no bailaron.</p>
 <h2><span class="header-section-number">11.12</span> Gráfico de Mosaico<a href="#gr%C3%A1fico-de-mosaico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Podemos visualizar la frecuencia de los datos con un gráfico de mosaico. Si la hipótesis nula la organización de las cajas deberían ser más o menos de la misma proporción (relativo a su frecuencia). En este caso lo que uno observa es que los que reciben comida y no bailan, la caja es mucha más pequeña que los que bailan y reciben comida. Nota que esto no es una prueba es una visualización de los datos y puede ayudar a entender el patrón.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="estadística-frecuentista.html#cb306-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(catsTable, <span class="at">color =</span><span class="cn">TRUE</span>) <span class="co"># El packete MASS</span></span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="estadística-frecuentista.html#cb308-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(catsTable, <span class="at">color =</span><span class="cn">TRUE</span>) <span class="co"># El packete MASS</span></span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/freq10-1.png" width="672" /></p>
 <hr />
@@ -1217,18 +1217,18 @@ A 162 no se la dado recompensa, y de estos 48 bailaron y 114 no bailaron.</p>
 <p>En ingles se le conoce como “Contingency Tables”</p>
 <p>Los valores esperados en esta caso son calculados directamente de la tabla. Para cada celda <span class="math inline">\(E_{ij}\)</span> donde la {i} representa la fila y la {j} las columnas. El valor esperado se calcula multiplicando la suma de la fila por la suma <span class="math inline">\({R_i}\)</span> de la suma de la columna <span class="math inline">\({C_j}\)</span>. La formula de los valores esperados es la siguiente, donde la N es la suma total de datos. El primer paso es sumar la filas y la columnas de la tabla.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb307"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb307-1"><a href="estadística-frecuentista.html#cb307-1" tabindex="-1"></a>catsTable</span></code></pre></div>
+<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="estadística-frecuentista.html#cb309-1" tabindex="-1"></a>catsTable</span></code></pre></div>
 </details>
 <pre><code>##           comida carino
 ## No_bailan     10    114
 ## bailan        28     48</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="estadística-frecuentista.html#cb309-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb309-2"><a href="estadística-frecuentista.html#cb309-2" tabindex="-1"></a>ct<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>fila, <span class="sc">~</span>comida, <span class="sc">~</span>carino, <span class="sc">~</span>suma,</span>
-<span id="cb309-3"><a href="estadística-frecuentista.html#cb309-3" tabindex="-1"></a>           <span class="st">&quot;No_balian&quot;</span>, <span class="dv">10</span>, <span class="dv">114</span>, <span class="dv">124</span>,</span>
-<span id="cb309-4"><a href="estadística-frecuentista.html#cb309-4" tabindex="-1"></a>           <span class="st">&quot;bailan&quot;</span>, <span class="dv">28</span>, <span class="dv">48</span>, <span class="dv">64</span>,</span>
-<span id="cb309-5"><a href="estadística-frecuentista.html#cb309-5" tabindex="-1"></a>           <span class="st">&quot;suma&quot;</span>, <span class="dv">38</span>, <span class="dv">162</span>, <span class="dv">200</span>)</span>
-<span id="cb309-6"><a href="estadística-frecuentista.html#cb309-6" tabindex="-1"></a>ct</span></code></pre></div>
+<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="estadística-frecuentista.html#cb311-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb311-2"><a href="estadística-frecuentista.html#cb311-2" tabindex="-1"></a>ct<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>fila, <span class="sc">~</span>comida, <span class="sc">~</span>carino, <span class="sc">~</span>suma,</span>
+<span id="cb311-3"><a href="estadística-frecuentista.html#cb311-3" tabindex="-1"></a>           <span class="st">&quot;No_balian&quot;</span>, <span class="dv">10</span>, <span class="dv">114</span>, <span class="dv">124</span>,</span>
+<span id="cb311-4"><a href="estadística-frecuentista.html#cb311-4" tabindex="-1"></a>           <span class="st">&quot;bailan&quot;</span>, <span class="dv">28</span>, <span class="dv">48</span>, <span class="dv">64</span>,</span>
+<span id="cb311-5"><a href="estadística-frecuentista.html#cb311-5" tabindex="-1"></a>           <span class="st">&quot;suma&quot;</span>, <span class="dv">38</span>, <span class="dv">162</span>, <span class="dv">200</span>)</span>
+<span id="cb311-6"><a href="estadística-frecuentista.html#cb311-6" tabindex="-1"></a>ct</span></code></pre></div>
 </details>
 <pre><code>## # A tibble: 3 × 4
 ##   fila      comida carino  suma
@@ -1274,14 +1274,14 @@ La prueba es exactamente igual como la anterior donde comparamos el valor observ
 <div id="n-filas-2" class="section level5 hasAnchor" number="11.14.0.0.2">
 <h5><span class="header-section-number">11.14.0.0.2</span> N filas = 2<a href="estadística-frecuentista.html#n-filas-2" class="anchor-section" aria-label="Anchor link to header"></a></h5>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb311-1"><a href="estadística-frecuentista.html#cb311-1" tabindex="-1"></a>df<span class="ot">=</span>(<span class="dv">4-1</span>)<span class="sc">*</span>(<span class="dv">2-1</span>)</span>
-<span id="cb311-2"><a href="estadística-frecuentista.html#cb311-2" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="estadística-frecuentista.html#cb313-1" tabindex="-1"></a>df<span class="ot">=</span>(<span class="dv">4-1</span>)<span class="sc">*</span>(<span class="dv">2-1</span>)</span>
+<span id="cb313-2"><a href="estadística-frecuentista.html#cb313-2" tabindex="-1"></a>df</span></code></pre></div>
 </details>
 <pre><code>## [1] 3</code></pre>
 <p>Cual es valor de Chi Cuadrado critico</p>
 <p>1-.95 = 0.05</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb313-1"><a href="estadística-frecuentista.html#cb313-1" tabindex="-1"></a><span class="fu">qchisq</span>(.<span class="dv">95</span>,<span class="dv">1</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="estadística-frecuentista.html#cb315-1" tabindex="-1"></a><span class="fu">qchisq</span>(.<span class="dv">95</span>,<span class="dv">1</span> )</span></code></pre></div>
 </details>
 <pre><code>## [1] 3.841459</code></pre>
 </div>
@@ -1298,9 +1298,9 @@ La prueba es exactamente igual como la anterior donde comparamos el valor observ
 <p>p &lt;0.05 se rechaza la hipotesis nula</p>
 <p>p &gt;0.05 se acepta la hipotesis nula</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb315-1"><a href="estadística-frecuentista.html#cb315-1" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span>
-<span id="cb315-2"><a href="estadística-frecuentista.html#cb315-2" tabindex="-1"></a><span class="fu">CrossTable</span>(catsTable, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb315-3"><a href="estadística-frecuentista.html#cb315-3" tabindex="-1"></a>           <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SAS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb317-1"><a href="estadística-frecuentista.html#cb317-1" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span>
+<span id="cb317-2"><a href="estadística-frecuentista.html#cb317-2" tabindex="-1"></a><span class="fu">CrossTable</span>(catsTable, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb317-3"><a href="estadística-frecuentista.html#cb317-3" tabindex="-1"></a>           <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SAS&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  
@@ -1412,19 +1412,19 @@ La prueba es exactamente igual como la anterior donde comparamos el valor observ
 <h2><span class="header-section-number">11.16</span> Análisis con datos en formato de tabla<a href="#an%C3%A1lisis-con-datos-en-formato-de-tabla" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Estos son los mismos datos pero no sumado, en otra palabra es información específica sobre cada gato y su tratamiento y si bailo o no. La ventaja de este método es que uno no tiene que hacer el calculo y sumar la frecuancias, se deja la función <strong>CrossTable</strong> hacer la suma. Miran bien la tabla.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="estadística-frecuentista.html#cb318-1" tabindex="-1"></a><span class="do">## La data sin sumar</span></span>
-<span id="cb318-2"><a href="estadística-frecuentista.html#cb318-2" tabindex="-1"></a></span>
-<span id="cb318-3"><a href="estadística-frecuentista.html#cb318-3" tabindex="-1"></a>Training<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">38</span>), <span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">162</span>))</span>
-<span id="cb318-4"><a href="estadística-frecuentista.html#cb318-4" tabindex="-1"></a></span>
-<span id="cb318-5"><a href="estadística-frecuentista.html#cb318-5" tabindex="-1"></a>Dance<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">28</span>),  <span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">114</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">48</span>))</span>
-<span id="cb318-6"><a href="estadística-frecuentista.html#cb318-6" tabindex="-1"></a></span>
-<span id="cb318-7"><a href="estadística-frecuentista.html#cb318-7" tabindex="-1"></a>Training<span class="ot">&lt;-</span><span class="fu">factor</span>(Training, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Food as Reward&quot;</span>, <span class="st">&quot;Affection as Reward&quot;</span>))</span>
-<span id="cb318-8"><a href="estadística-frecuentista.html#cb318-8" tabindex="-1"></a></span>
-<span id="cb318-9"><a href="estadística-frecuentista.html#cb318-9" tabindex="-1"></a>Dance<span class="ot">&lt;-</span><span class="fu">factor</span>(Dance, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;No&quot;</span>, <span class="st">&quot;Yes&quot;</span>))</span>
-<span id="cb318-10"><a href="estadística-frecuentista.html#cb318-10" tabindex="-1"></a></span>
-<span id="cb318-11"><a href="estadística-frecuentista.html#cb318-11" tabindex="-1"></a>catsData<span class="ot">&lt;-</span><span class="fu">data.frame</span>(Training, Dance)</span>
-<span id="cb318-12"><a href="estadística-frecuentista.html#cb318-12" tabindex="-1"></a><span class="do">## catsData Los datos completos</span></span>
-<span id="cb318-13"><a href="estadística-frecuentista.html#cb318-13" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">head</span>(catsData, <span class="at">n=</span><span class="dv">6</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="estadística-frecuentista.html#cb320-1" tabindex="-1"></a><span class="do">## La data sin sumar</span></span>
+<span id="cb320-2"><a href="estadística-frecuentista.html#cb320-2" tabindex="-1"></a></span>
+<span id="cb320-3"><a href="estadística-frecuentista.html#cb320-3" tabindex="-1"></a>Training<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">38</span>), <span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">162</span>))</span>
+<span id="cb320-4"><a href="estadística-frecuentista.html#cb320-4" tabindex="-1"></a></span>
+<span id="cb320-5"><a href="estadística-frecuentista.html#cb320-5" tabindex="-1"></a>Dance<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">28</span>),  <span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">114</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">48</span>))</span>
+<span id="cb320-6"><a href="estadística-frecuentista.html#cb320-6" tabindex="-1"></a></span>
+<span id="cb320-7"><a href="estadística-frecuentista.html#cb320-7" tabindex="-1"></a>Training<span class="ot">&lt;-</span><span class="fu">factor</span>(Training, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Food as Reward&quot;</span>, <span class="st">&quot;Affection as Reward&quot;</span>))</span>
+<span id="cb320-8"><a href="estadística-frecuentista.html#cb320-8" tabindex="-1"></a></span>
+<span id="cb320-9"><a href="estadística-frecuentista.html#cb320-9" tabindex="-1"></a>Dance<span class="ot">&lt;-</span><span class="fu">factor</span>(Dance, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;No&quot;</span>, <span class="st">&quot;Yes&quot;</span>))</span>
+<span id="cb320-10"><a href="estadística-frecuentista.html#cb320-10" tabindex="-1"></a></span>
+<span id="cb320-11"><a href="estadística-frecuentista.html#cb320-11" tabindex="-1"></a>catsData<span class="ot">&lt;-</span><span class="fu">data.frame</span>(Training, Dance)</span>
+<span id="cb320-12"><a href="estadística-frecuentista.html#cb320-12" tabindex="-1"></a><span class="do">## catsData Los datos completos</span></span>
+<span id="cb320-13"><a href="estadística-frecuentista.html#cb320-13" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">head</span>(catsData, <span class="at">n=</span><span class="dv">6</span>))</span></code></pre></div>
 </details>
 <div id="tlwagtglcu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#tlwagtglcu table {
@@ -1901,7 +1901,7 @@ La prueba es exactamente igual como la anterior donde comparamos el valor observ
 </table>
 </div>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb319-1"><a href="estadística-frecuentista.html#cb319-1" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">tail</span>(catsData, <span class="at">n=</span><span class="dv">5</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="estadística-frecuentista.html#cb321-1" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">tail</span>(catsData, <span class="at">n=</span><span class="dv">5</span>))</span></code></pre></div>
 </details>
 <div id="khujpdvosf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#khujpdvosf table {
@@ -2381,10 +2381,10 @@ La prueba es exactamente igual como la anterior donde comparamos el valor observ
 <div id="prueba-de-independencia" class="section level2 hasAnchor" number="11.17">
 <h2><span class="header-section-number">11.17</span> Prueba de independencia<a href="estadística-frecuentista.html#prueba-de-independencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="estadística-frecuentista.html#cb320-1" tabindex="-1"></a><span class="co"># usando los datos en formato de data frame **catsData**</span></span>
-<span id="cb320-2"><a href="estadística-frecuentista.html#cb320-2" tabindex="-1"></a><span class="fu">CrossTable</span>(catsData<span class="sc">$</span>Training, catsData<span class="sc">$</span>Dance, </span>
-<span id="cb320-3"><a href="estadística-frecuentista.html#cb320-3" tabindex="-1"></a>           <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, <span class="at">expected =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb320-4"><a href="estadística-frecuentista.html#cb320-4" tabindex="-1"></a>           <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="estadística-frecuentista.html#cb322-1" tabindex="-1"></a><span class="co"># usando los datos en formato de data frame **catsData**</span></span>
+<span id="cb322-2"><a href="estadística-frecuentista.html#cb322-2" tabindex="-1"></a><span class="fu">CrossTable</span>(catsData<span class="sc">$</span>Training, catsData<span class="sc">$</span>Dance, </span>
+<span id="cb322-3"><a href="estadística-frecuentista.html#cb322-3" tabindex="-1"></a>           <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, <span class="at">expected =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb322-4"><a href="estadística-frecuentista.html#cb322-4" tabindex="-1"></a>           <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##    Cell Contents
@@ -2456,17 +2456,17 @@ La prueba es exactamente igual como la anterior donde comparamos el valor observ
 ##  
 ##        Minimum expected frequency: 14.44</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="estadística-frecuentista.html#cb322-1" tabindex="-1"></a><span class="co"># Se puede hacer un grafico de los resultados</span></span>
-<span id="cb322-2"><a href="estadística-frecuentista.html#cb322-2" tabindex="-1"></a></span>
-<span id="cb322-3"><a href="estadística-frecuentista.html#cb322-3" tabindex="-1"></a>Ta2<span class="ot">=</span> <span class="fu">xtabs</span>(<span class="sc">~</span>Training<span class="sc">+</span>Dance, <span class="at">data=</span>catsData)</span>
-<span id="cb322-4"><a href="estadística-frecuentista.html#cb322-4" tabindex="-1"></a>Ta2</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="estadística-frecuentista.html#cb324-1" tabindex="-1"></a><span class="co"># Se puede hacer un grafico de los resultados</span></span>
+<span id="cb324-2"><a href="estadística-frecuentista.html#cb324-2" tabindex="-1"></a></span>
+<span id="cb324-3"><a href="estadística-frecuentista.html#cb324-3" tabindex="-1"></a>Ta2<span class="ot">=</span> <span class="fu">xtabs</span>(<span class="sc">~</span>Training<span class="sc">+</span>Dance, <span class="at">data=</span>catsData)</span>
+<span id="cb324-4"><a href="estadística-frecuentista.html#cb324-4" tabindex="-1"></a>Ta2</span></code></pre></div>
 </details>
 <pre><code>##                      Dance
 ## Training               No Yes
 ##   Food as Reward       28  10
 ##   Affection as Reward  48 114</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="estadística-frecuentista.html#cb324-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(Ta2, <span class="at">shade=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb326-1"><a href="estadística-frecuentista.html#cb326-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(Ta2, <span class="at">shade=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/freq18-1.png" width="672" /></p>
 <hr />
@@ -2507,15 +2507,15 @@ La prueba es exactamente igual como la anterior donde comparamos el valor observ
 </table>
 <p>Creamos</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="estadística-frecuentista.html#cb325-1" tabindex="-1"></a>Negro<span class="ot">=</span><span class="fu">c</span>(<span class="dv">32</span>,<span class="dv">55</span>)</span>
-<span id="cb325-2"><a href="estadística-frecuentista.html#cb325-2" tabindex="-1"></a>Marron<span class="ot">=</span><span class="fu">c</span>(<span class="dv">43</span>, <span class="dv">65</span>)</span>
-<span id="cb325-3"><a href="estadística-frecuentista.html#cb325-3" tabindex="-1"></a>Rubio<span class="ot">=</span><span class="fu">c</span>(<span class="dv">16</span>,<span class="dv">64</span>)</span>
-<span id="cb325-4"><a href="estadística-frecuentista.html#cb325-4" tabindex="-1"></a>Rojo<span class="ot">=</span><span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">16</span>)</span>
-<span id="cb325-5"><a href="estadística-frecuentista.html#cb325-5" tabindex="-1"></a></span>
-<span id="cb325-6"><a href="estadística-frecuentista.html#cb325-6" tabindex="-1"></a>HairColour<span class="ot">=</span><span class="fu">cbind</span>(Negro,Marron, Rubio,Rojo) </span>
-<span id="cb325-7"><a href="estadística-frecuentista.html#cb325-7" tabindex="-1"></a><span class="fu">rownames</span>(HairColour)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;Mujer&quot;</span>, <span class="st">&quot;Hombre&quot;</span>) <span class="co"># Añade el nombre a las filas</span></span>
-<span id="cb325-8"><a href="estadística-frecuentista.html#cb325-8" tabindex="-1"></a></span>
-<span id="cb325-9"><a href="estadística-frecuentista.html#cb325-9" tabindex="-1"></a>HairColour</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="estadística-frecuentista.html#cb327-1" tabindex="-1"></a>Negro<span class="ot">=</span><span class="fu">c</span>(<span class="dv">32</span>,<span class="dv">55</span>)</span>
+<span id="cb327-2"><a href="estadística-frecuentista.html#cb327-2" tabindex="-1"></a>Marron<span class="ot">=</span><span class="fu">c</span>(<span class="dv">43</span>, <span class="dv">65</span>)</span>
+<span id="cb327-3"><a href="estadística-frecuentista.html#cb327-3" tabindex="-1"></a>Rubio<span class="ot">=</span><span class="fu">c</span>(<span class="dv">16</span>,<span class="dv">64</span>)</span>
+<span id="cb327-4"><a href="estadística-frecuentista.html#cb327-4" tabindex="-1"></a>Rojo<span class="ot">=</span><span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">16</span>)</span>
+<span id="cb327-5"><a href="estadística-frecuentista.html#cb327-5" tabindex="-1"></a></span>
+<span id="cb327-6"><a href="estadística-frecuentista.html#cb327-6" tabindex="-1"></a>HairColour<span class="ot">=</span><span class="fu">cbind</span>(Negro,Marron, Rubio,Rojo) </span>
+<span id="cb327-7"><a href="estadística-frecuentista.html#cb327-7" tabindex="-1"></a><span class="fu">rownames</span>(HairColour)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;Mujer&quot;</span>, <span class="st">&quot;Hombre&quot;</span>) <span class="co"># Añade el nombre a las filas</span></span>
+<span id="cb327-8"><a href="estadística-frecuentista.html#cb327-8" tabindex="-1"></a></span>
+<span id="cb327-9"><a href="estadística-frecuentista.html#cb327-9" tabindex="-1"></a>HairColour</span></code></pre></div>
 </details>
 <pre><code>##        Negro Marron Rubio Rojo
 ## Mujer     32     43    16    9
@@ -2532,7 +2532,7 @@ Puediese tener valores esperados entre 1 y 5 pero no más de 20% de las categori
 ¿Cual es la hipótesis alterna?</p>
 <p>El resultado de la prueba. ¿Se acepta o rechaza la hipótesis nula?</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="estadística-frecuentista.html#cb327-1" tabindex="-1"></a><span class="fu">CrossTable</span>(HairColour, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="estadística-frecuentista.html#cb329-1" tabindex="-1"></a><span class="fu">CrossTable</span>(HairColour, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##    Cell Contents
@@ -2589,17 +2589,17 @@ Puediese tener valores esperados entre 1 y 5 pero no más de 20% de las categori
 ##  
 ##        Minimum expected frequency: 8.333333</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="estadística-frecuentista.html#cb329-1" tabindex="-1"></a><span class="co">#df=(R-1)*(C-1)</span></span>
-<span id="cb329-2"><a href="estadística-frecuentista.html#cb329-2" tabindex="-1"></a>df<span class="ot">=</span>(<span class="dv">2-1</span>)<span class="sc">*</span>(<span class="dv">4-1</span>)</span>
-<span id="cb329-3"><a href="estadística-frecuentista.html#cb329-3" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="estadística-frecuentista.html#cb331-1" tabindex="-1"></a><span class="co">#df=(R-1)*(C-1)</span></span>
+<span id="cb331-2"><a href="estadística-frecuentista.html#cb331-2" tabindex="-1"></a>df<span class="ot">=</span>(<span class="dv">2-1</span>)<span class="sc">*</span>(<span class="dv">4-1</span>)</span>
+<span id="cb331-3"><a href="estadística-frecuentista.html#cb331-3" tabindex="-1"></a>df</span></code></pre></div>
 </details>
 <pre><code>## [1] 3</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="estadística-frecuentista.html#cb331-1" tabindex="-1"></a>.<span class="dv">2</span><span class="sc">*</span><span class="dv">8</span></span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="estadística-frecuentista.html#cb333-1" tabindex="-1"></a>.<span class="dv">2</span><span class="sc">*</span><span class="dv">8</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 1.6</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="estadística-frecuentista.html#cb333-1" tabindex="-1"></a><span class="fu">qchisq</span>(.<span class="dv">95</span>,<span class="dv">3</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="estadística-frecuentista.html#cb335-1" tabindex="-1"></a><span class="fu">qchisq</span>(.<span class="dv">95</span>,<span class="dv">3</span> )</span></code></pre></div>
 </details>
 <pre><code>## [1] 7.814728</code></pre>
 <div id="esta-ejercicio-cumple-con-los-supuestos-4" class="section level3 hasAnchor" number="11.18.1">
@@ -2623,19 +2623,19 @@ Puediese tener valores esperados entre 1 y 5 pero no más de 20% de las categori
 </blockquote>
 <p>Usando los datos de serpientes del ejemplo 7.4 del libro de Havel et al. </p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="estadística-frecuentista.html#cb335-1" tabindex="-1"></a>responde <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">3</span>)</span>
-<span id="cb335-2"><a href="estadística-frecuentista.html#cb335-2" tabindex="-1"></a>no_responde <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>)</span>
-<span id="cb335-3"><a href="estadística-frecuentista.html#cb335-3" tabindex="-1"></a>serpiente <span class="ot">&lt;-</span> <span class="fu">cbind</span>(responde, no_responde)</span>
-<span id="cb335-4"><a href="estadística-frecuentista.html#cb335-4" tabindex="-1"></a><span class="fu">rownames</span>(serpiente)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;Estimulo_ariba&quot;</span>, <span class="st">&quot;Estimulo_lateral&quot;</span>) <span class="co"># Añade el nombre a las filas</span></span>
-<span id="cb335-5"><a href="estadística-frecuentista.html#cb335-5" tabindex="-1"></a></span>
-<span id="cb335-6"><a href="estadística-frecuentista.html#cb335-6" tabindex="-1"></a>serpiente</span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="estadística-frecuentista.html#cb337-1" tabindex="-1"></a>responde <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">3</span>)</span>
+<span id="cb337-2"><a href="estadística-frecuentista.html#cb337-2" tabindex="-1"></a>no_responde <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>)</span>
+<span id="cb337-3"><a href="estadística-frecuentista.html#cb337-3" tabindex="-1"></a>serpiente <span class="ot">&lt;-</span> <span class="fu">cbind</span>(responde, no_responde)</span>
+<span id="cb337-4"><a href="estadística-frecuentista.html#cb337-4" tabindex="-1"></a><span class="fu">rownames</span>(serpiente)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;Estimulo_ariba&quot;</span>, <span class="st">&quot;Estimulo_lateral&quot;</span>) <span class="co"># Añade el nombre a las filas</span></span>
+<span id="cb337-5"><a href="estadística-frecuentista.html#cb337-5" tabindex="-1"></a></span>
+<span id="cb337-6"><a href="estadística-frecuentista.html#cb337-6" tabindex="-1"></a>serpiente</span></code></pre></div>
 </details>
 <pre><code>##                  responde no_responde
 ## Estimulo_ariba          6           1
 ## Estimulo_lateral        3           6</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="estadística-frecuentista.html#cb337-1" tabindex="-1"></a><span class="fu">CrossTable</span>(serpiente, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb337-2"><a href="estadística-frecuentista.html#cb337-2" tabindex="-1"></a>           <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SAS&quot;</span>) <span class="co"># esa prueba no deberia usarse</span></span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="estadística-frecuentista.html#cb339-1" tabindex="-1"></a><span class="fu">CrossTable</span>(serpiente, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb339-2"><a href="estadística-frecuentista.html#cb339-2" tabindex="-1"></a>           <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SAS&quot;</span>) <span class="co"># esa prueba no deberia usarse</span></span></code></pre></div>
 </details>
 <pre><code>## 
 ##  
@@ -2706,17 +2706,17 @@ Puediese tener valores esperados entre 1 y 5 pero no más de 20% de las categori
 ## 
 ## </code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="estadística-frecuentista.html#cb339-1" tabindex="-1"></a><span class="do">### Esta ejercicio cumple con los supuestos?</span></span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="estadística-frecuentista.html#cb341-1" tabindex="-1"></a><span class="do">### Esta ejercicio cumple con los supuestos?</span></span></code></pre></div>
 </details>
 <p>Se puede visualizar los datos con el Mosaico</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb340-1"><a href="estadística-frecuentista.html#cb340-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(serpiente)</span></code></pre></div>
+<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="estadística-frecuentista.html#cb342-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(serpiente)</span></code></pre></div>
 </details>
 <p><img src="Biometria_files/figure-html/freq22-1.png" width="672" /></p>
 <p>Nota que se usa la misma función que anterior pero en los resultados hay que fijarse en la sección que dice <strong>Fisher’s Exact test</strong>. Lo que uno observa es que el valor de <strong>p</strong> es menor de 0.05 por consecuencia se rechaza la hipótesis nula. Lo que significa es que para la serpiente el angulo donde proviene el estimulo resulta en una repuesta diferente.</p>
 <hr />
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="estadística-frecuentista.html#cb341-1" tabindex="-1"></a><span class="fu">fisher.test</span>(serpiente)</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="estadística-frecuentista.html#cb343-1" tabindex="-1"></a><span class="fu">fisher.test</span>(serpiente)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Fisher&#39;s Exact Test for Count Data

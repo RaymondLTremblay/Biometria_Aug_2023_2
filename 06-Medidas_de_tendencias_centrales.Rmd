@@ -65,7 +65,11 @@ Digamos que yo tengo la cantidad de semillas producida por 11 plantas, la primer
 
 ```{r Central_Tendency2}
 x=c(0,1,2,3,4,5,6,7,8,9,1000)
+
+
 sum(x)/length(x)
+
+
 mean(x)
 
 ```
@@ -85,10 +89,23 @@ Donde **n** es la cantidad de valores en orden del más pequeño al grande. Por 
 ```{r central_tendency3}
 b=c(247,0,3,43626,26,23,1,2,4,5,24,6,7)
 b=sort(b)
+b
 length(b)
 median(b)
+
+mean(b)
 ```
 
+```{r}
+
+muchos=c(0:100000, 1000000)
+
+muchos
+
+mean(muchos)
+median(muchos)
+
+```
 
 
 
@@ -96,7 +113,17 @@ median(b)
 
 ```{r}
 datos=c(1:100)
+datos
 median(datos)
+```
+
+
+```{r}
+
+km=c(37, 13, 19, 4.35, 46, 28.2)
+
+sort(km)
+median(km)
 ```
 
 
@@ -149,6 +176,15 @@ mode(b)
 
 ***
 
+
+```{r}
+bebe=c(2, 2,4, 17, 1, 2, .5, 3, 2, 2)
+
+mode(bebe)
+```
+
+
+
 ## Cuando es que el promedio, mediana y moda son iguales?
 
 
@@ -156,8 +192,9 @@ Los tres valores de tendencia central son iguales cuando la distribución es nor
 
 ```{r, central_tendency7, warning=FALSE, message=FALSE}
 df=rpois(5000, 100)
+df
 df1=data.frame(df)
-head(df1, n=2)
+head(df1)
 ```
 
 
@@ -165,9 +202,9 @@ Lo que uno observa es que los tres valores son muy cercano uno del otro.
 
 ```{r central_tendency8, warning=FALSE, message=FALSE}
 
-#mean(df1$df)
-#median(df1$df)
-#mode(df1$df)
+mean(df1$df)
+median(df1$df)
+mode(df1$df)
 ```
 
 Podemos visualizar estos datos usamos dos gráfico, En el gráfico de la izquierda se ve una distribución normal con las tres lineas (promedio, mediana y moda).  En el gráfico de la derecha se observa la misma información pero solamente los valores entre 96 y 101. Se observa que la mediana y el promedio son igual y la moda varia un poco, se encuentra donde la barra es más alta.    Se observa que los tres valores son cerca del centro.  
@@ -182,6 +219,8 @@ mod99
 ```
 
 ```{r central_tendency10, warning=FALSE, message=FALSE}
+library(ggplot2)
+
 a=ggplot(df1, aes(df))+
   geom_histogram(fill="orange", colour="white", binwidth = 1)+
   geom_vline(aes(xintercept = pro), colour="red")+
@@ -194,7 +233,8 @@ a
 
 
 ```{r central_tendency11, warning=FALSE, message=FALSE}
-b=ggplot(df1, aes(df))+
+library(ggplot2)
+ggplot(df1, aes(df))+
   geom_histogram(fill="orange", colour="white", binwidth = 1)+
   geom_vline(aes(xintercept = pro), colour="red")+
   geom_vline(aes(xintercept = med), colour="blue")+

@@ -1,5 +1,5 @@
 ---
-title: "BioEstadistica"
+title: "BioEstadística"
 output:
   bookdown::gitbook:
     highlight: tango

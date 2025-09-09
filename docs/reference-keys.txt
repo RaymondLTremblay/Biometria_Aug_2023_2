@@ -112,6 +112,7 @@ calculando-el-promedio
 cuando-el-promedio-no-esta-localizado-en-el-centro
 la-mediana
 con-n-impares
+ejemplo-2-de-mediana
 con-n-pares
 la-moda
 cuando-es-que-el-promedio-mediana-y-moda-son-iguales
@@ -124,7 +125,7 @@ vizualizando-la-dispersión
 el-rango
 mínimo-y-máximo
 ejemplo-de-la-clase
-cual-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes
+cual-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes-cuando-nacieron-sus-hijos
 la-varianza
 este-indice-se-llama-la-desviación-del-promedio-que-es-la-suma-de-los-cuadrados
 calcular-la-varianza-con-var
@@ -524,6 +525,7 @@ archivos-de-datos-de-la-naciones-unidas
 archivo-de-datos-de-mortality
 httpswww.mortality.orgaccountauth
 noaa-usa.gov
+discovering-statistics-using-r.
 datos-de-karn-and-penrose
 introductory-biological-statistics
 capítulo-3
@@ -543,5 +545,4 @@ quiz-3
 pregunta-1
 pregunta-2
 calcular-el-quantile-50
-bdi-becks-depression-index-change
-ejemplo-2-de-mediana
+quiz-bondad-de-ajuste

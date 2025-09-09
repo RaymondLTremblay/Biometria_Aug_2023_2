@@ -234,18 +234,22 @@ a
 
 ```{r central_tendency11, warning=FALSE, message=FALSE}
 library(ggplot2)
-ggplot(df1, aes(df))+
+b=ggplot(df1, aes(df))+
   geom_histogram(fill="orange", colour="white", binwidth = 1)+
   geom_vline(aes(xintercept = pro), colour="red")+
   geom_vline(aes(xintercept = med), colour="blue")+
   geom_vline(aes(xintercept = mod99), colour="green")+
   xlim(94,105)+
   theme(legend.position = "none")
+b
 
 ```
 
 ```{r central_tendency12, warning=FALSE, message=FALSE }
-gridExtra::grid.arrange(a,b, ncol=1)
+
+
+gridExtra::grid.arrange(a,b, ncol=2)
+
 ```
 
 ***

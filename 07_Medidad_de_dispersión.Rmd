@@ -60,8 +60,8 @@ Primero miramos un gráfico donde tenemos datos donde el promedio es igual pero 
 ```{r dispersion2}
 
 set.seed(8690) # esto es para que los valores se queda igual a cada vez que se corre el analisis
-a=rnorm(5000, 100, 10) # la función para generar datos al azar con una distribución normal
-
+a=rnorm(1000, 100, 10) # la función para generar datos al azar con una distribución normal
+#a
 dfa=data.frame(a)
 head(dfa, n=10)
  # r is for random
@@ -69,6 +69,8 @@ head(dfa, n=10)
 #a
 b=rnorm(500, 100, 50)
 dfb=data.frame(b)
+
+
 ```
 
 
@@ -96,7 +98,8 @@ El rango son los valores mínimo y valor máximo de un conjunto de datos.  Se us
 
 
 ```{r dispersion5}
-range(dfa$a)
+range(dfa$a) 
+
 range(dfb$b)
 
 ```
@@ -104,15 +107,15 @@ range(dfb$b)
 
 ## Mínimo y máximo
 
-El rango de una distribución es lo mismo que el minimo y maximo
+El rango de una distribución es lo mismo que el mínimo y máximo
 
 
 ```{r dispersion6}
 min(dfa$a)
 max(dfa$a)
 
-min(dfa$b)
-max(dfa$b)
+min(dfb$b, na.rm=TRUE) # si hay valores NA en los datos
+max(dfb$b)
 
 ```
 
@@ -121,17 +124,57 @@ max(dfa$b)
 
 ## Ejemplo de la clase
 
-### Cual es el rango de la Edad de los padres de los Estudiantes
+### Cual es el rango de la Edad de los padres de los Estudiantes cuando nacieron sus hijos
 
+```{r}
+# Create mode() function to calculate mode
+mode <- function(x, na.rm = FALSE) {
+  
+  if(na.rm){ #if na.rm is TRUE, remove NA values from input x
+    x = x[!is.na(x)]
+  }
+
+  val <- unique(x)
+  return(val[which.max(tabulate(match(x, val)))])
+}
+
+```
 
 ```{r dispersion7}
-Edad=c(57,50,43,39,54,50,59,49, 57,51,43,47)
-Edad
+Edad=c(23, 27, 33, 23, 21, 25, 30, 27, 26, 23,
+       21, 28, 33, 35, 27, 15, 21, 22, 28, 33,
+       29, 23, 22, 26, 21, 27, 29, 28)
+#Edad
 Edad_df=data.frame(Edad)
 Edad_df
 range(Edad)
 range(Edad_df$Edad)
+
+mean(Edad_df$Edad)
+median(Edad_df$Edad)
+mode(Edad) # para correr "mode" necesita correr la función mode arriba
+
+var(Edad)
+
 ```
+
+
+```{r}
+Edad_papa=c(25, 29, 35, 25, 25, 25, 30, 29, 31, 28,
+            26, 29, 31, 36, 27, 21, 21, 22, 48, 15, 
+            62, 21, 24, 32, 25, 26, 28, 33)
+
+Edad_papa_df=data.frame(Edad_papa)
+
+mean(Edad_papa_df$Edad_papa)
+median(Edad_papa_df$Edad_papa)
+mode(Edad_papa_df$Edad_papa)
+range(Edad_papa_df$Edad_papa)
+var(Edad_papa_df$Edad_papa)
+```
+
+
+
 
 
 ```{r dispersion8}

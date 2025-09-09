@@ -65,17 +65,25 @@ Los indices que veremos aquí incluye
 
 Aqui creamos un conjunto de datos de 100 datos con un promedio de 100 y una desviación estándar de 10. Nota que la función **set.seed()** es que el comienzo la simulación sea igual a cada vez que se corre, y se el mismo resultado.  Esto se añade solamente cuando uno esta enseñando y que los resultados sean consistente.   
  
+ 
+ seed for constant values
+ 
 ```{r desc2, warning=FALSE}
 
+# rnorm(n=100, mean=100, sd=10) # genera un número al azar de una distribución normal
 
 
+set.seed(12345) # para que los resultados sean consistente
 x=rnorm(100, 100, 10) #(100 datos, x=100, sd=10)
-x=data.frame(x)
-head(x)
-mean(x$x) # el promedio
-sd(x$x) # la desviación estándar
-min(x$x) # el valor mínimo
-max(x$x) # el valor máximo
+
+#x 
+df=data.frame(x)
+#df
+
+mean(df$x) # el promedio
+sd(df$x) # la desviación estándar
+min(df$x) # el valor mínimo
+max(df$x) # el valor máximo
 ```
 
 ***
@@ -100,18 +108,49 @@ Se necesita el archivo **DownloadFestival** que se encuentra debajo la pestaña 
 >    + 4 = hueles a rosas dulces en un fresco día de primavera
   
   
+  
+  
+```{r}
+library(readr)
+Karn_Penrose_infant_survivorship <- read_csv("Data_files_csv/Karn_Penrose_infant_survivorship.csv")
+
+KP=Karn_Penrose_infant_survivorship  #usamos un nombre más corta para facilitar
+
+head(KP)
+
+
+```
+  
+  
+```{r}
+summary(KP)
+```
+  
+```{r}
+library(ggplot2)
+
+ggplot(KP, aes(Weigth_lb))+
+  geom_histogram(color="white", fill="orange")
+```
+  
+  
+  
+  ### Start here
+  
+ >  Una bióloga estaba preocupado por los posibles efectos sobre la salud de los que particpan a un festivales de música. Entonces, un año fue al un Festival en el Reino Unido (Download Festival UK). Ella midió la higiene del los que participaron al concierto n= 810 durante el festival de 3 días. Cada día intentaba encontrar a todas las personas que censó el primer día. Los valores asignado fueron de 0 a 4 sobre el nivel de limpieza por como olia los participantes
+
+>    + 0 = hueles como un cadáver. 
+>    + 4 = hueles a rosas dulces en un fresco día de primavera 
 
 
 ```{r desc3, warning=FALSE}
 
 library(readr)
-DownloadFestival <- read_csv("Data_files_csv/DownloadFestival.csv")
+DownloadFestival_No_Outlier <- read_csv("DownloadFestival_No_Outlier.csv")
 
-
-
-dlf=DownloadFestival  #usamos un nombre más corta para facilitar  
-head(dlf) # ver las 3 primeras filas
-
+dlf=DownloadFestival_No_Outlier  #usamos un nombre más corta para facilitar  
+head(dlf) # ver las 6 primeras filas
+dlf
 ```
 
 ## Remover los **NA** del análisis
@@ -120,6 +159,7 @@ Con los datos de los participantes al festival como en algunos diá hay particip
  
 ```{r desc4, warning=FALSE}
 
+library(tidyverse)
 
 
 mean(dlf$day2, na.rm=TRUE) # na.rm= na remove
@@ -146,8 +186,6 @@ Nota que hay muchos más parámetros calculados.  Aparece en la lista en orden e
 library(pastecs)
 stat.desc(dlf[,c("day1")])
 
-
-
 round(stat.desc(dlf[,c("day1")]), 2)  
 ```
 
@@ -158,8 +196,8 @@ round(stat.desc(dlf[,c("day1")]), 2)
 Si uno quiere evaluar múltiples variables continua todas juntos se puede usar la misma función pero el componente **c()** se añade todas las variables de interés.   
 
 ```{r desc6, warning=FALSE}
-
-round(stat.desc(dlf[,c("day1","day2","day3")], basic=FALSE,norm=TRUE), digits=3) # round reduce a 3 valores significativo
+mean(dlf$day1, na.rm=TRUE)
+round(stat.desc(dlf[,c("day1","day2","day3")]), digits=3) # round reduce a 3 valores significativo
 ```
 
 ***

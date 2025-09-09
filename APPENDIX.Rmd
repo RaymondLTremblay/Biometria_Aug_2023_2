@@ -23,6 +23,7 @@ Haber Instalado RMarkdown en Rstudio
 # Ejercicios B
 
 ```{r, eval=TRUE, echo=FALSE}
+
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -1670,7 +1671,7 @@ Los siguientes datos provienen del "National Weather sservice" en este enlace, h
 
 ***
 
-#3 Discovering Statistics Using R.
+## Discovering Statistics Using R.
 
 Los siguientes archivos son de Andy Field, Jeremy Miles and Zoë Field son identificado con las siglas "FMF".
 

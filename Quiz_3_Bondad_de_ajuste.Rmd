@@ -1,0 +1,62 @@
+# Quiz: Bondad de Ajuste
+
+```{r, eval=TRUE, echo=FALSE}
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color, 
+      x)
+  } else x
+}
+
+#`r colorize("some words in red", "red")`
+```
+
+BONDAD de AJUSTE
+
+Este quiz es para evaluar tu comprensión de la bondad de ajuste en estadística. Responde las siguientes preguntas:
+
+1. ¿Qué tipo de datos se usa para las pruebas de bondad de ajuste en estadística? (3 puntos)
+
+2. ¿Cuál es el propósito principal de una prueba de bondad de ajuste? (3 puntos)
+
+
+3. ¿Qué prueba estadística se utiliza comúnmente para evaluar la bondad de ajuste de una distribución observada a una distribución teórica? (3 puntos)
+
+4. Ejercicio:  Un herpetólogo sospecha que las serpientes de agua hembras que se alimentan en el lago Michigan migran a los estanques del interior en el otoño para dar a luz a sus crías. Si esta hipótesis es correcta, cabría esperar que las hembras fueran mucho más propensas a migrar en ese momento que los machos. Se recopilaron los siguientes datos. (De Havel et al.) [Enlace a un Video de la serpiente](https://www.youtube.com/watch?v=Uw6W8NaJmfo)
+
+
+
+|        | Migrantes | No Migrantes |
+|--------|-----------:|--------------:|
+| Hembra | 25        | 2            |
+| Machos | 4         | 30           |
+
+    - ¿Cual es la hipótesis nula? (2 puntos)
+    - ¿cual es la hipótesis alterna? (2 puntos)
+    - calcula los valores esperados (2 puntos)
+    - calcula el chi cuadrado (5 puntos)
+    - ¿Se rechaza o acepta la Ho? (2 puntos)
+    - Intepreta los resultados (3 puntos)
+
+
+Pon los datos en un "chunk", y haz la prueba de bondad de ajuste en R.
+
+```{r, eval=FALSE, echo=TRUE}
+Hembra <- c(25, 2)
+Machos <- c(4,30)
+snakeTable <- cbind(Hembra, Machos)
+
+
+rownames(snakeTable)<-c("Migrantes", "No_Migrantes") # Añade el nombre a las filas
+
+snakeTable
+
+chisq.test(snakeTable)
+```
+
+   
+   
+   
+

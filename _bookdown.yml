@@ -1,8 +1,19 @@
-book_filename: "Biometria"
+book_filename: "BiomEstadistica"
 output_dir: docs
 delete_merged_file: true
 edit: https://github.com/RaymondLTremblay/Biometria/edit/main/%s
 view: https://github.com/RaymondLTremblay/Biometria/blob/main/%s
+rmd_files: ["index.Rmd", "02-Intro.Rmd", "03-Poblaciones_Muestras.Rmd", 
+            "04-Inferencias_Hipotesis.Rmd", "05_Historia_Breve.Rmd", 
+            "06-Medidas_de_tendencias_centrales.Rmd", "07_Medidad_de_dispersión.Rmd", 
+            "08_Estadistica_Descriptiva.Rmd", "09_Graficos.Rmd", 
+            "10-Supuestos.Rmd", "11-Estadistica_Frecuentista.Rmd", 
+            "12-Distribucion_normal.Rmd", "13-Prueba_de_una_muestra.Rmd", 
+            "14-Prueba_de_t_Pareados.Rmd", "15-Prueba_de_t_independiente.Rmd", 
+            "16-ANOVA.Rmd", "17-Correlacion_Covarianza.Rmd",
+            "18-Regresion_lineal.Rmd", "19-Regresion_Logistica.Rmd",
+            "20-Selecionando_modelos_AKAIKE.Rmd", "21-Pruebas_no_parametricas.Rmd",
+            "APPENDIX.Rmd"]
 language:
   ui:
     chapter_name: "Chapter "

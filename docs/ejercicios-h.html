@@ -833,9 +833,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">H.1</span> Bondad de Ajuste<a href="ejercicios-h.html#bondad-de-ajuste" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb775"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb775-1"><a href="ejercicios-h.html#cb775-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb775-2"><a href="ejercicios-h.html#cb775-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb775-3"><a href="ejercicios-h.html#cb775-3" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span></code></pre></div>
+<div class="sourceCode" id="cb773"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb773-1"><a href="ejercicios-h.html#cb773-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb773-2"><a href="ejercicios-h.html#cb773-2" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb773-3"><a href="ejercicios-h.html#cb773-3" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span></code></pre></div>
 </details>
 <div id="encontrarán-dos-ejercicios-de-los-análisis-de-bondad-de-ajuste." class="section level3 hasAnchor" number="30.1.1">
 <h3><span class="header-section-number">H.1.1</span> Encontrarán dos ejercicios de los análisis de Bondad de Ajuste.<a href="ejercicios-h.html#encontrarán-dos-ejercicios-de-los-análisis-de-bondad-de-ajuste." class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -849,15 +849,15 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="Graficos/musarana.jpg" width="50%" /></p>
 <p>Photo from: <a href="https://www.laguiadelvaron.com/wp-content/uploads/2020/08/reaparece-musarana-elefante-www.laguiadelvaron-1.jpg" class="uri">https://www.laguiadelvaron.com/wp-content/uploads/2020/08/reaparece-musarana-elefante-www.laguiadelvaron-1.jpg</a></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb776"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb776-1"><a href="ejercicios-h.html#cb776-1" tabindex="-1"></a>musaraña<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb776-2"><a href="ejercicios-h.html#cb776-2" tabindex="-1"></a>  <span class="sc">~</span>Tipo_comida, <span class="sc">~</span>frecuencia,</span>
-<span id="cb776-3"><a href="ejercicios-h.html#cb776-3" tabindex="-1"></a>  <span class="st">&quot;C1&quot;</span>, <span class="dv">13</span>,</span>
-<span id="cb776-4"><a href="ejercicios-h.html#cb776-4" tabindex="-1"></a>  <span class="st">&quot;C2&quot;</span>, <span class="dv">26</span>,</span>
-<span id="cb776-5"><a href="ejercicios-h.html#cb776-5" tabindex="-1"></a>  <span class="st">&quot;C3&quot;</span>, <span class="dv">39</span>,</span>
-<span id="cb776-6"><a href="ejercicios-h.html#cb776-6" tabindex="-1"></a>  <span class="st">&quot;C4&quot;</span>, <span class="dv">14</span>,</span>
-<span id="cb776-7"><a href="ejercicios-h.html#cb776-7" tabindex="-1"></a>  <span class="st">&quot;C5&quot;</span>, <span class="dv">28</span></span>
-<span id="cb776-8"><a href="ejercicios-h.html#cb776-8" tabindex="-1"></a>)</span>
-<span id="cb776-9"><a href="ejercicios-h.html#cb776-9" tabindex="-1"></a><span class="fu">gt</span>(musaraña)</span></code></pre></div>
+<div class="sourceCode" id="cb774"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb774-1"><a href="ejercicios-h.html#cb774-1" tabindex="-1"></a>musaraña<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb774-2"><a href="ejercicios-h.html#cb774-2" tabindex="-1"></a>  <span class="sc">~</span>Tipo_comida, <span class="sc">~</span>frecuencia,</span>
+<span id="cb774-3"><a href="ejercicios-h.html#cb774-3" tabindex="-1"></a>  <span class="st">&quot;C1&quot;</span>, <span class="dv">13</span>,</span>
+<span id="cb774-4"><a href="ejercicios-h.html#cb774-4" tabindex="-1"></a>  <span class="st">&quot;C2&quot;</span>, <span class="dv">26</span>,</span>
+<span id="cb774-5"><a href="ejercicios-h.html#cb774-5" tabindex="-1"></a>  <span class="st">&quot;C3&quot;</span>, <span class="dv">39</span>,</span>
+<span id="cb774-6"><a href="ejercicios-h.html#cb774-6" tabindex="-1"></a>  <span class="st">&quot;C4&quot;</span>, <span class="dv">14</span>,</span>
+<span id="cb774-7"><a href="ejercicios-h.html#cb774-7" tabindex="-1"></a>  <span class="st">&quot;C5&quot;</span>, <span class="dv">28</span></span>
+<span id="cb774-8"><a href="ejercicios-h.html#cb774-8" tabindex="-1"></a>)</span>
+<span id="cb774-9"><a href="ejercicios-h.html#cb774-9" tabindex="-1"></a><span class="fu">gt</span>(musaraña)</span></code></pre></div>
 </details>
 <div id="scqrpypefc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#scqrpypefc table {
@@ -1366,13 +1366,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="Graficos/Skunk.jpeg" width="50%" /></p>
 <p>Photo from: <a href="https://www.britannica.com/animal/skunk" class="uri">https://www.britannica.com/animal/skunk</a></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb778"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb778-1"><a href="ejercicios-h.html#cb778-1" tabindex="-1"></a>mofetas<span class="ot">=</span><span class="fu">tribble</span>(</span>
-<span id="cb778-2"><a href="ejercicios-h.html#cb778-2" tabindex="-1"></a>  <span class="sc">~</span>TRegion, <span class="sc">~</span>con_rabia, <span class="sc">~</span>sin_rabia,</span>
-<span id="cb778-3"><a href="ejercicios-h.html#cb778-3" tabindex="-1"></a>  <span class="st">&quot;Region1&quot;</span>, <span class="dv">14</span>, <span class="dv">29</span>,</span>
-<span id="cb778-4"><a href="ejercicios-h.html#cb778-4" tabindex="-1"></a>  <span class="st">&quot;Region2&quot;</span>, <span class="dv">12</span>, <span class="dv">38</span></span>
-<span id="cb778-5"><a href="ejercicios-h.html#cb778-5" tabindex="-1"></a>  </span>
-<span id="cb778-6"><a href="ejercicios-h.html#cb778-6" tabindex="-1"></a>)</span>
-<span id="cb778-7"><a href="ejercicios-h.html#cb778-7" tabindex="-1"></a><span class="fu">gt</span>(mofetas)</span></code></pre></div>
+<div class="sourceCode" id="cb776"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb776-1"><a href="ejercicios-h.html#cb776-1" tabindex="-1"></a>mofetas<span class="ot">=</span><span class="fu">tribble</span>(</span>
+<span id="cb776-2"><a href="ejercicios-h.html#cb776-2" tabindex="-1"></a>  <span class="sc">~</span>TRegion, <span class="sc">~</span>con_rabia, <span class="sc">~</span>sin_rabia,</span>
+<span id="cb776-3"><a href="ejercicios-h.html#cb776-3" tabindex="-1"></a>  <span class="st">&quot;Region1&quot;</span>, <span class="dv">14</span>, <span class="dv">29</span>,</span>
+<span id="cb776-4"><a href="ejercicios-h.html#cb776-4" tabindex="-1"></a>  <span class="st">&quot;Region2&quot;</span>, <span class="dv">12</span>, <span class="dv">38</span></span>
+<span id="cb776-5"><a href="ejercicios-h.html#cb776-5" tabindex="-1"></a>  </span>
+<span id="cb776-6"><a href="ejercicios-h.html#cb776-6" tabindex="-1"></a>)</span>
+<span id="cb776-7"><a href="ejercicios-h.html#cb776-7" tabindex="-1"></a><span class="fu">gt</span>(mofetas)</span></code></pre></div>
 </details>
 <div id="mzpqjbxakd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#mzpqjbxakd table {

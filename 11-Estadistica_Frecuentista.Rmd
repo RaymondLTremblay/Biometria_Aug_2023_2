@@ -177,14 +177,6 @@ esp<-c(0.75,0.25)
 chisq.test(x=obs, p=esp)
 ```
 
-```{r}
-
-obs<-c(6, 16)
-esp<-c(0.50,0.50)
-
-chisq.test(x=obs, p=esp)
-
-```
 
 ### Esta ejercicio cumple con los supuestos?
 
@@ -289,7 +281,7 @@ catsTable
 library(tidyverse)
 ct=tribble(~fila, ~comida, ~carino, ~suma,
            "No_balian", 10, 114, 124,
-           "bailan", 28, 48, 64,
+           "bailan", 28, 48, 76,
            "suma", 38, 162, 200)
 ct
 ```

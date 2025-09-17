@@ -3,7 +3,6 @@ bookdown::bs4_book:
   includes:
     in_header: _header.html
   config:
-    html:
     toc:
       before: |
         <li><a href="./">BioEstadistica</a></li>

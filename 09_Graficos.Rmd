@@ -64,9 +64,10 @@ La información utilizada en este documento proviene en parte del libro *Discove
 1.  Subir los datos "Exam Anxiety" Los archivos de datos que se usan en el libro se encuentran en este enlace, <https://studysites.sagepub.com/dsur/study/articles.htm>
 
 Seleccionar el archivo **Exam Anxiety**. Note que los datos a la hoja de datos tienen que abrirlo en Excel o otro programa y salvarlo en formato **.csv** antes de seguir los proximos pasos. El siguiente paso es poner el archivo de datos en su proyecto de RStudio.\
-\*\*\* \#\# Subir los datos a RStudio
 
-```{r ggplot3, echo=FALSE}
+### Subir los datos a RStudio
+
+```{r ggplot3}
 library(readr)
 Exam_Anxiety <- read_csv("Data_files_csv/Exam Anxiety.csv")
 ```
@@ -74,7 +75,7 @@ Exam_Anxiety <- read_csv("Data_files_csv/Exam Anxiety.csv")
 Para visualizar las primeras y ultimas 6 filas usar **head()** y **tail()** respectivamente.
 
 ```{r ggplot4}
-head(Exam_Anxiety)
+head(Exam_Anxiety) # para las primeras 6 filas
 tail(Exam_Anxiety)
 ```
 
@@ -92,13 +93,15 @@ El primer gráfico es crear una regresión lineal. Para producir una regresión 
 
 ```{r ggplot6}
 
-ggplot(Exam_Anxiety, aes(y=Exam, x=Anxiety))+ 
+ggplot(Exam_Anxiety, aes(Anxiety, Exam))+ 
   geom_smooth(method=lm, colour="red")+
   geom_point()# linear model
 
 ```
 
-------------------------------------------------------------------------
+
+
+***
 
 ## Añadiendo color por grupo y otras bellezas
 
@@ -107,17 +110,20 @@ En este archivo utilizaremos un archivo que se usa muy comúnmente en los análi
 ```{r ggplot7}
 tail(iris)
 
+ggplot(iris, aes(Sepal.Length, Petal.Length))+
+  geom_smooth(method=lm,colour="blue")+
+  geom_point()
+
 
 ggplot(iris, aes(Sepal.Length, Petal.Length,colour=Species)) +
       geom_point(aes(col = Species)) +
   geom_smooth(method="lm") +  
-  labs(x = "El largo del Sepalo", y = "El largo del Petalo")+
-  ggtitle("Basic geom_point and linear regression")+
-  rlt_theme
+  labs(x = "El largo del Sépalo", y = "El largo del Pétalo")+
+  ggtitle("Gráfica básica de \n geom_point con regresión lineal")
 
 ```
 
-------------------------------------------------------------------------
+***
 
 ## Salvar gráficos con **ggsave**
 
@@ -208,7 +214,7 @@ Nota que aquí vemos el resultado, y encontramos un problema. Hay participantes 
 
 ```{r ggplot15}
  ggplot(FD, aes(day1))+ 
-  geom_histogram(colour="white", fill="steelblue") + 
+  geom_histogram(colour="white", fill="#4E8EFC") + 
   labs(x = "Hygiene (Day 1 of Festival)", y = "Frequency")
  
  
@@ -228,6 +234,8 @@ Usamos otra vez **summary( )** para asegurarnos que se solucionó el problema. A
 
 ```{r ggplot17}
 Festivalday1=subset(DownloadFestival, day1<5)
+
+
 summary(Festivalday1)
 ```
 
@@ -250,7 +258,10 @@ Para crear un gráfico de caja se usa la función **geom\_boxplot()**, si hay so
 ```{r ggplot19}
 
 festivalBoxplot <- ggplot(Festivalday1, aes(x=1,y=day1))
-festivalBoxplot + geom_boxplot() + labs(x = "Gender", y = "Hygiene (Day 1 of Festival)")
+
+
+
+festivalBoxplot + geom_boxplot() + labs(x = "Ambos géneros", y = "Higiene (Día 1 del Festival)")
 
 
 ```
@@ -261,7 +272,7 @@ festivalBoxplot + geom_boxplot() + labs(x = "Gender", y = "Hygiene (Day 1 of Fes
 
 Para producir un gráfico de caja por multiples grupos en **x** se añade la variable categorica y en la **y** la variable continua. Si se quiere un color diferente por caja se usa la función **color** con el nombre en de la variable en **x**.
 
-```{r ggplot20}
+```{r ggplot20, warning=FALSE}
 
 festivalBoxplot <- ggplot(Festivalday1, aes(x=gender,y=day2, colour=gender))
 festivalBoxplot + 
@@ -340,15 +351,35 @@ head(hiccups)
 
 Nota aquí que el promedio, *mean* es añadido como un punto y que están uniido tambien por una linea, están añadido al eje de **y** con la función **fun.y**. Los intervalos de confianza se añaden con la función **fun.data=mean\_cl\_boot** y **geom="errorbar**.
 
+Se necesita la librería **Hmisc** para calcular los intervalos de confianza.
+
 ```{r ggplot24}
 ggplot(hiccups, aes(y=Num_Hiccups,x=Intervention))+ 
-  stat_summary(fun.y = "mean", geom = "point") + 
-  stat_summary(fun.y = "mean", geom = "line", aes(group = 1),colour = "Red", linetype = "dashed") +      
-  stat_summary(fun.data = mean_cl_boot, geom = "errorbar", width = 0.2, colour="blue") + 
-  labs(x = "Intervention", y = "Mean Number of Hiccups")
+  stat_summary(fun.y = "mean", geom = "point")
+
 ```
 
-## Diagrama de tallo y hoja
+
+Añade la linea que conecta los promedios y los intervalos de confianza
+
+```{r}
+ggplot(hiccups, aes(y=Num_Hiccups,x=Intervention))+ 
+  stat_summary(fun.y = "mean", geom = "point")+ 
+  stat_summary(fun.y = "mean", geom = "line", aes(group = 1),colour = "Red", linetype = "dashed") 
+
+```
+
+Annade el interval de confianza
+
+```{r}
+ggplot(hiccups, aes(y=Num_Hiccups,x=Intervention))+ 
+  stat_summary(fun.y = "mean", geom = "point")+ 
+  stat_summary(fun.y = "mean", geom = "line", aes(group = 1),colour = "Red", linetype = "dashed")+      
+  stat_summary(fun.data = mean_cl_boot, geom = "errorbar", width = 0.2, colour="blue") + 
+  labs(x = "Intervention", y = "Mean Number of Hiccups and 95% CI")
+```
+
+## Diagrama de tallo y hoja (leaf and stem)
 
 Este diagrama demuestra la cantidad de datos usando el metodo sugerido por John Tukey
 
@@ -356,7 +387,7 @@ Este diagrama demuestra la cantidad de datos usando el metodo sugerido por John 
 stem(Exam_Anxiety$Anxiety)
 
 ggplot(Exam_Anxiety, aes(Anxiety))+
-  geom_histogram()
+  geom_histogram(color="white")
 ```
 
 Stem leaf for two groups

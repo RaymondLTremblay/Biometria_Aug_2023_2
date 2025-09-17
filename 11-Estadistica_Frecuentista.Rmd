@@ -14,41 +14,42 @@ colorize <- function(x, color) {
 
 
 ```
-***
+
+------------------------------------------------------------------------
 
 ## Bondad de ajuste y Table de Contingencia
 
-Este tipo de prueba es frecuentemente conocido erróneamente como la prueba de Chi cuadrado. Los tipos de datos necesarios son distintos a las pruebas anteriores. En las pruebas que en los próximos módulos siempre habrá por lo menos una variable donde la unidad era el número de individuos, el largo o ancho en una unidad (cm, metro, celsius, etc) o sea una variable continua. Ahora para la pruebas de Bondad de ajuste y Tabla de Contingencia se contabiliza el número de eventos por categoría. En otra palabra es la frecuencia que ocurre un evento.  
+Este tipo de prueba es frecuentemente conocido erróneamente como la prueba de Chi cuadrado. Los tipos de datos necesarios son distintos a las pruebas anteriores. En las pruebas que en los próximos módulos siempre habrá por lo menos una variable donde la unidad era el número de individuos, el largo o ancho en una unidad (cm, metro, celsius, etc) o sea una variable continua. Ahora para la pruebas de Bondad de ajuste y Tabla de Contingencia se contabiliza el número de eventos por categoría. En otra palabra es la frecuencia que ocurre un evento.
 
-En esta sección no estamos interesado en evaluar los valores con datos que son continuos como la altura o el tamaño.  Las variables que se usa son variables categóricas, o sea los valores son la frecuencia de un evento (o la ausencia de un evento).  
+En esta sección no estamos interesado en evaluar los valores con datos que son continuos como la altura o el tamaño. Las variables que se usa son variables categóricas, o sea los valores son la frecuencia de un evento (o la ausencia de un evento).
 
 > Los datos tienen que caer exactamente en una categoría, por ejemplo
 
->  + vivo o muerto.
->  +  presente o ausente.
->  +  blanco, rojo, verde, azul.
->  +  estar embarazada o no.
->  +  Tiene el fenotipo dominante o recesivo.
->  +  En una herencia mendeliana, los individuos son homocigóticos recesivo, dominantes o heterocigóticos.   
+> -   vivo o muerto.
+> -   presente o ausente.
+> -   blanco, rojo, verde, azul.
+> -   estar embarazada o no.
+> -   Tiene el fenotipo dominante o recesivo.
+> -   En una herencia mendeliana, los individuos son homocigóticos recesivo, dominantes o heterocigóticos.
 
-
-***
+------------------------------------------------------------------------
 
 ## Qué son supuestos
 
-Cuando hablamos de supuestos estamos hablando de las condiciones necesarias para que la prueba sea utilizada. El incumplimiento de los supuestos resulta en que el los resultados de la prueba tenga un nivel de tipo de error I y tipo de error II más grande que los especificado (por ejemplo si selecciona un $\alpha$ de 0.05, el error seria más grande). Si se usa datos usa datos erróneos puede ser que la prueba sea completamente invalida. 
+Cuando hablamos de supuestos estamos hablando de las condiciones necesarias para que la prueba sea utilizada. El incumplimiento de los supuestos resulta en que el los resultados de la prueba tenga un nivel de tipo de error I y tipo de error II más grande que los especificado (por ejemplo si selecciona un $\alpha$ de 0.05, el error seria más grande). Si se usa datos usa datos erróneos puede ser que la prueba sea completamente invalida.
 
-***
+------------------------------------------------------------------------
+
 ## Los supuestos de las pruebas de frecuencias.
 
-  - Los datos son frecuencias.
-  - Las frecuencias son mutuamente exclusivas (no caen en múltiples categorías).
-  - Las observaciones son independiente una de la otra.
-  - Cada categoría tiene una **frecuencia esperada** suficiente grande: 
-      + ninguna de las **frecuencia esperada** sea menor de 5 cuando hay 4 o menos categorías
-      + no más de 20% de las categorías que tengan un valor esperado de < 5 cuando hay más de 5 categorías y ninguna tiene un valor **esperado** menor de 1. 
+-   Los datos son frecuencias.
+-   Las frecuencias son mutuamente exclusivas (no caen en múltiples categorías).
+-   Las observaciones son independiente una de la otra.
+-   Cada categoría tiene una **frecuencia esperada** suficiente grande:
+    -   ninguna de las **frecuencia esperada** sea menor de 5 cuando hay 4 o menos categorías
+    -   no más de 20% de las categorías que tengan un valor esperado de \< 5 cuando hay más de 5 categorías y ninguna tiene un valor **esperado** menor de 1.
 
-***
+------------------------------------------------------------------------
 
 ## Instalar y activar los siguientes packages
 
@@ -61,49 +62,54 @@ pacman::p_load(gmodels, MASS, gt)
 
 #------Activar los paquetes-----
 
-library(gmodels) ## Analisis de datos de frecuencia
+library(gmodels) ## Análisis de datos de frecuencia
 library(MASS) ## graficar los datos con la función "mosaicpLot"
 library(gt) ## "Grammer of Tables", tablas más bonitas
 
 ```
 
-***
+------------------------------------------------------------------------
+
 ## Gregory Mendel y sus guisantes
 
-Gregory Mendel (1822-1884) el padre de herencia "mendeliana" estaba interesada en determinar como se hereda las características de los organismos.  En clases de biología y genética uno de los primeros ejemplos de herencia mendeliana es evaluar si cumple con lo que Mendel sugerió que es la razón de herencia.  Si un fenotipo es heredado por un mecanismo sencillo de un gen con solamente dos alelos donde uno de los alelos es dominante y el otro es recesivo entonces hay solamente dos fenotipos posible.  Por consecuencia lo más básico es determinar si la frecuencia de los fenotipos en una población sigue una razón mendeliana de 3:1, en otra palabra por cada 3 individuos de un fenotipo "x" hay un individuo del fenotipo "y".
+Gregory Mendel (1822-1884) el padre de herencia "mendeliana" estaba interesada en determinar como se hereda las características de los organismos. En clases de biología y genética uno de los primeros ejemplos de herencia mendeliana es evaluar si cumple con lo que Mendel sugerió que es la razón de herencia. Si un fenotipo es heredado por un mecanismo sencillo de un gen con solamente dos alelos donde uno de los alelos es dominante y el otro es recesivo entonces hay solamente dos fenotipos posible. Por consecuencia lo más básico es determinar si la frecuencia de los fenotipos en una población sigue una razón mendeliana de 3:1, en otra palabra por cada 3 individuos de un fenotipo "x" hay un individuo del fenotipo "y".
 
-Los datos que estaremos usando provenien directamente de los trabajos de Mendel. Aquí esta la publicación original en aleman y la referencia a la traducción en ingles.  
+Los datos que estaremos usando provenien directamente de los trabajos de Mendel. Aquí esta la publicación original en aleman y la referencia a la traducción en ingles.
 
- Mendel, J.G. (1866). "Versuche über Pflanzenhybriden", Verhandlungen des naturforschenden Vereines in Brünn, Bd. IV für das Jahr, 1865, Abhandlungen: 3–47, [1]. For the English translation, see: Druery, C.T.; Bateson, William (1901). "Experiments in plant hybridization" (PDF). Journal of the Royal Horticultural Society. 26: 1–32.
+Mendel, J.G. (1866). "Versuche über Pflanzenhybriden", Verhandlungen des naturforschenden Vereines in Brünn, Bd. IV für das Jahr, 1865, Abhandlungen: 3–47, [1]. For the English translation, see: Druery, C.T.; Bateson, William (1901). "Experiments in plant hybridization" (PDF). Journal of the Royal Horticultural Society. 26: 1–32.
 
-
-Tabla de los resultados de experimentos original de Gregor Mendel con semillas redondas y arrugadas. Cada uno represente un experimento y la cantidad de guisantes redondos o arrugadas.  
+Tabla de los resultados de experimentos original de Gregor Mendel con semillas redondas y arrugadas. Cada uno represente un experimento y la cantidad de guisantes redondos o arrugadas.
 
 | Plantas | redonda | arrugada |
-|---------|---------:|---------:|
-| 1       |      45 |      12 |
-| 2       |      27 |       8 |
-| 3       |      24 |       7 |
-| 4       |      19 |      10 |
-| 5       |      32 |      11 |
-| 6       |      26 |       6 |
-| 7       |      88 |      24 |
-| 8       |      22 |      10 |
-| 9       |      28 |       6 |
-| 10      |      25 |       7 |
-| Total   |    336  |    101  |
+|---------|--------:|---------:|
+| 1       |      45 |       12 |
+| 2       |      27 |        8 |
+| 3       |      24 |        7 |
+| 4       |      19 |       10 |
+| 5       |      32 |       11 |
+| 6       |      26 |        6 |
+| 7       |      88 |       24 |
+| 8       |      22 |       10 |
+| 9       |      28 |        6 |
+| 10      |      25 |        7 |
+| Total   |     336 |      101 |
 
-En la pagina número 10 del articulo observamos los resultados de diferentes experimentos. En el experimento 1, la Planta #1, produjo un total de 57 semillas donde 45 eran redonda y 12 eran arrugadas.  Si lo que esperamos es una razón de 3:1, los que se se espera es que 0.75:0.25 que seria las proporciones esperada. Creamos un vector de datos de los valores observados (obs) y un vector de datos para la proporción esperada (esp). 
+En la pagina número 10 del articulo observamos los resultados de diferentes experimentos. En el experimento 1, la Planta #1, produjo un total de 57 semillas donde 45 eran redonda y 12 eran arrugadas. Si lo que esperamos es una razón de 3:1, los que se se espera es que 0.75:0.25 que seria las proporciones esperada. Creamos un vector de datos de los valores observados (obs) y un vector de datos para la proporción esperada (esp).
 
-***
+------------------------------------------------------------------------
+
 ## Bondad de Ajuste.
 
-La prueba de bondad de ajuste y de tabla de contingencia son pruebas que evalúa la cantidad/frecuencia en las categorías y lo compara con un modelo nulo.  En este caso lo que se compará es la cantidad de la frecuencia observada $o$, con la frecuencia esperada $e$.  La formula es la siguiente 
+La prueba de bondad de ajuste y de tabla de contingencia son pruebas que evalúa la cantidad/frecuencia en las categorías y lo compara con un modelo nulo. En este caso lo que se compará es la cantidad de la frecuencia observada $o$, con la frecuencia esperada $e$. La formula es la siguiente
+
 
 $$\chi^2=\sum_{n=i}^n\frac{\left(o-e\right)^2}{e}$$
 
 
-Usamos un ejemplo sencillo de los datos de Mendel haciendo los cálculos a mano de una proporción 3:1 de herencia de los fenotipos redonda:arrugada.  Los datos son de la primer linea de uno de los experimentos que hizo Mendel. 
+
+
+
+Usamos un ejemplo sencillo de los datos de Mendel haciendo los cálculos a mano de una proporción 3:1 de herencia de los fenotipos redonda:arrugada. Los datos son de la primer linea de uno de los experimentos que hizo Mendel.
 
 ```{r freq2}
 
@@ -122,31 +128,28 @@ kable(df, escape=FALSE)
 
 ```
 
+> Los pasos para calcular el Chi Cuadrado:
 
+> -   Los valores esperados, en este caso fue una proporción de 3:1
+> -   Las diferencias
+> -   Cuadrar las diferencias
+> -   División por el valor esperado (da los Chi Square parcial)
+> -   Sumar los valores en #4.
+> -   buscar en una tabla de Chi Square el valor critico de Chi Square para la cantidad de grupos menos 1 y el $\alpha$ correspondiente. En este caso se busca un $\alpha$ de 0.05 y el grado de libertad (n-1) = 2-1, n es el número de grupos.
 
-> Los pasos para calcular el Chi Cuadrado: 
+Para determinar si es significado el valor de Chi Square observado se compara con el valor critico (de la tabla). Aquí usamos R para conseguir este valor. Note aquí se usa (1-0.05= 0.95) y el grado de libertad que es 1. Ahora se compara ese valor con 0.4737, Si el valor observado es menor que el valor 3.841459 se acepta la hipótesis nula. En este caso no hay evidencia que los fenotipos se hereden diferente a 3:1.
 
->  + Los valores esperados, en este caso fue una proporción de 3:1
->  + Las diferencias 
->  + Cuadrar las diferencias
->  + División por el valor esperado (da los Chi Square parcial)
->  + Sumar los valores en #4.
->  + buscar en una tabla de Chi Square el valor critico de Chi Square para la cantidad de grupos menos 1 y el $\alpha$ correspondiente.  En este caso se busca un $\alpha$ de 0.05 y el grado de libertad (n-1) = 2-1, n es el número de grupos. 
-  
-  Para determinar si es significado el valor de Chi Square observado se compara con el valor critico (de la tabla).  Aquí usamos R para conseguir este valor.  Note aquí se usa (1-0.05= 0.95) y el grado de libertad que es 1.  Ahora se compara ese valor con 0.4737, Si el valor observado es menor que el valor 3.841459 se acepta la hipótesis nula.  En este caso no hay evidencia que los fenotipos se hereden diferente a 3:1.  
-  
 ```{r freq3}
 qchisq(0.95, 1)
 ```
 
+No hay ninguna razón de hacer los cálculos a mano si tenemos a R para hacerlo. Nota aquí se hace la misma prueba con los mismos datos y tenemos el mismo resultado.
 
-No hay ninguna razón de hacer los cálculos a mano si tenemos a R para hacerlo.  Nota aquí se hace la misma prueba con los mismos datos y tenemos el mismo resultado.  
-
-***
+------------------------------------------------------------------------
 
 ## Primer ejemplo
 
-Lo que uno observa es el valor de la prueba de Bondad de ajuste tiene un Chi Cuadrado de 0.48, p =.49. Como el valor de *p* es mayor a 0.05, no se rechaza la hipótesis nula y que la frecuencia no es diferente de una proporción de 3:1.   
+Lo que uno observa es el valor de la prueba de Bondad de ajuste tiene un Chi Cuadrado de 0.48, p =.49. Como el valor de *p* es mayor a 0.05, no se rechaza la hipótesis nula y que la frecuencia no es diferente de una proporción de 3:1.
 
 ```{r freq4}
 obs<-c(45,12) # los valores observado
@@ -159,37 +162,45 @@ chisq.test(x=obs, p=esp)
 # Es el caso presente que la la herencia es de 3:1
 ```
 
-***
+------------------------------------------------------------------------
+
 ## Segundo ejemplo
 
-Ahora evaluamos si la frecuencia de semillas redondas:arrugadas de todo el experimento sigue un patrón de 3:1.  Se observa un Chi cuadrado de 0.83 y un valor de p=0.36, otra vez el valor es por encima de 0.05, y se concluye que la frecuencia de semillas redondas:redondas no es distintas a 3:1. Se acepta la hipotesis nula.   
+Ahora evaluamos si la frecuencia de semillas redondas:arrugadas de todo el experimento sigue un patrón de 3:1. Se observa un Chi cuadrado de 0.83 y un valor de p=0.36, otra vez el valor es por encima de 0.05, y se concluye que la frecuencia de semillas redondas:redondas no es distintas a 3:1. Se acepta la hipotesis nula.
 
-Vemos que a re-evaluar los experimentos de G. Mendel tenemos un resultado que apoya su predicciones.  Nota que G. Mendel **NO** tenia pruebas estadísticas para determinar si las frecuencias eran diferente o no de 3:1.  El hizo observaciones y llego a unas conclusiones. Se acuerda cuando fue desarrollado este método y por quien?
+Vemos que a re-evaluar los experimentos de G. Mendel tenemos un resultado que apoya su predicciones. Nota que G. Mendel **NO** tenia pruebas estadísticas para determinar si las frecuencias eran diferente o no de 3:1. El hizo observaciones y llego a unas conclusiones. Se acuerda cuando fue desarrollado este método y por quien?
 
 ```{r freq5}
 obs<-c(336,101)
 esp<-c(0.75,0.25)
 
 chisq.test(x=obs, p=esp)
+```
+
+```{r}
+
+obs<-c(6, 16)
+esp<-c(0.50,0.50)
+
+chisq.test(x=obs, p=esp)
 
 ```
+
 ### Esta ejercicio cumple con los supuestos?
 
-***
+------------------------------------------------------------------------
 
 ```{r freq6, echo=FALSE, out.width= "25%", out.extra='style="float:right; padding:10px"'}
 knitr::include_graphics("Graficos/Tweety.svg.png")
 ```
 
-1. Ejercicio:  Cien pajaritos recibieron semillas de girasol con rayas negras o semillas negras. Setenta y cinco eligieron semillas negras. ¿Podemos concluir que la población de la que se tomó esta muestra tiene preferencia por las semillas de girasol negras sobre las semillas de girasol rayadas? (traducido del extracto 7.1 de Havel et al.).
+1.  Ejercicio: Cien pajaritos recibieron semillas de girasol con rayas negras o semillas negras. Setenta y cinco eligieron semillas negras. ¿Podemos concluir que la población de la que se tomó esta muestra tiene preferencia por las semillas de girasol negras sobre las semillas de girasol rayadas? (traducido del extracto 7.1 de Havel et al.).
 
-    - ¿Cual es la hipótesis nula?
-    - ¿Cual es la hipótesis alterna?
-    - Calcula los valores esperados
-    - Calcula el chi cuadrado
-    - ¿Se rechaza o acepta la Ho?
-
-
+    -   ¿Cual es la hipótesis nula?
+    -   ¿Cual es la hipótesis alterna?
+    -   Calcula los valores esperados
+    -   Calcula el chi cuadrado
+    -   ¿Se rechaza o acepta la Ho?
 
 ```{r freq7, eval=FALSE, echo=FALSE}
 obs<-c(75,25)
@@ -201,37 +212,31 @@ chisq.test(x=obs, p=esp)
 
 ### Esta ejercicio cumple con los supuestos?
 
+------------------------------------------------------------------------
 
-***
+------------------------------------------------------------------------
 
-
-
-
-
-***
-
-## Prueba de Bondad de Ajuste, Tabla de contingencia RxC 
+## Prueba de Bondad de Ajuste, Tabla de contingencia RxC
 
 ```{r freq8}
 #install.packages("MASS", dependencies = TRUE)
 ```
 
-Esta prueba se usa para 
+Esta prueba se usa para
 
-Los siguientes datos son de Field, Miles and Field 2012.  
+Los siguientes datos son de Field, Miles and Field 2012.
 
-Este conjunto de datos represente un experimento ficticio de tratar de entrenar 200 gatos para que bailan basado en si se la da una recompensa o no. Este esta basado en el concepto del psicólogo Ruso Ivan Pavlov (1849-1936) de que se puede enseñar o sea motivar a una acción dando una recompensa. Ese proceso se llama "condicionar" un proceso de aprendizaje que ocurre entre la asociación de un estimulo ambiental y un comportamiento. 
+Este conjunto de datos represente un experimento ficticio de tratar de entrenar 200 gatos para que bailan basado en si se la da una recompensa o no. Este esta basado en el concepto del psicólogo Ruso Ivan Pavlov (1849-1936) de que se puede enseñar o sea motivar a una acción dando una recompensa. Ese proceso se llama "condicionar" un proceso de aprendizaje que ocurre entre la asociación de un estimulo ambiental y un comportamiento.
 
-<<https://en.wikipedia.org/wiki/Ivan_Pavlov>>
+\<<https://en.wikipedia.org/wiki/Ivan_Pavlov>\>
 
 Primero entramos los datos directamente en una tabla
 
-Los datos son los siguientes: 
+Los datos son los siguientes:
 
-A 38 gatos se la ha dado una recompensa, y de estos 28 bailaron y 10 no bailaron.
-A 162 no se la dado recompensa, y de estos 48 bailaron y 114 no bailaron.
+A 38 gatos se la ha dado una recompensa, y de estos 28 bailaron y 10 no bailaron. A 162 no se la dado recompensa, y de estos 48 bailaron y 114 no bailaron.
 
-Se crea dos listas con los resultados y se une estas dos filas con **cbind()** y después se la añade un nombre a las filas con **rownames()**. Vemos ahora la tabla de frecuencias de cuantos gatos bailaron o no y si fueron entrenado por comido o cariño. Nota que no se puede añadir la tilde **~** a la **n** de cariño. 
+Se crea dos listas con los resultados y se une estas dos filas con **cbind()** y después se la añade un nombre a las filas con **rownames()**. Vemos ahora la tabla de frecuencias de cuantos gatos bailaron o no y si fueron entrenado por comido o cariño. Nota que no se puede añadir la tilde **\~** a la **n** de cariño.
 
 ```{r freq9}
 #Crear la tabla de contingencia
@@ -247,40 +252,36 @@ catsTable
 
 ```
 
+------------------------------------------------------------------------
 
-***
 ## La hipótesis NULA
 
-La hipótesis nula es que la cantidad de gatos que bailan o no es independiente de si recibieron comida o cariño.  
+La hipótesis nula es que la cantidad de gatos que bailan o no es independiente de si recibieron comida o cariño.
 
 ## La hipótesis alterna
 
-La cantidad de gatos que bailan depende que si recibieron cariño o comida. 
-
+La cantidad de gatos que bailan depende que si recibieron cariño o comida.
 
 ## Gráfico de Mosaico
 
-Podemos visualizar la frecuencia de los datos con un gráfico de mosaico.  Si la hipótesis nula la organización de las cajas deberían ser más o menos de la misma proporción (relativo a su frecuencia).  En este caso lo que uno observa es que los que reciben comida y no bailan, la caja es mucha más pequeña que los que bailan y reciben comida.  Nota que esto no es una prueba es una visualización de los datos y puede ayudar a entender el patrón.  
-
+Podemos visualizar la frecuencia de los datos con un gráfico de mosaico. Si la hipótesis nula la organización de las cajas deberían ser más o menos de la misma proporción (relativo a su frecuencia). En este caso lo que uno observa es que los que reciben comida y no bailan, la caja es mucha más pequeña que los que bailan y reciben comida. Nota que esto no es una prueba es una visualización de los datos y puede ayudar a entender el patrón.
 
 ```{r freq10}
 mosaicplot(catsTable, color =TRUE) # El packete MASS
 
 ```
 
+------------------------------------------------------------------------
 
-***
+Haz un tabla con diferentes cantidad de frecuencia y gráfico los con mosaicplot para evaluar como cambia el gráfico.
 
-Haz un tabla con diferentes cantidad de frecuencia y gráfico los con mosaicplot para evaluar como cambia el gráfico.  
+------------------------------------------------------------------------
 
-
-***
-
-## Prueba de Independencia de frecuencia. 
+## Prueba de Independencia de frecuencia.
 
 En ingles se le conoce como "Contingency Tables"
 
-Los valores esperados en esta caso son calculados directamente de la tabla. Para cada celda $E_{ij}$ donde la {i} representa la fila y la {j} las columnas.  El valor esperado se calcula multiplicando la suma de la fila por la suma ${R_i}$ de la suma de la columna ${C_j}$. La formula de los valores esperados es la siguiente, donde la N es la suma total de datos. El primer paso es sumar la filas y la columnas de la tabla.  
+Los valores esperados en esta caso son calculados directamente de la tabla. Para cada celda $E_{ij}$ donde la {i} representa la fila y la {j} las columnas. El valor esperado se calcula multiplicando la suma de la fila por la suma ${R_i}$ de la suma de la columna ${C_j}$. La formula de los valores esperados es la siguiente, donde la N es la suma total de datos. El primer paso es sumar la filas y la columnas de la tabla.
 
 ```{r freq11}
 catsTable
@@ -293,48 +294,42 @@ ct=tribble(~fila, ~comida, ~carino, ~suma,
 ct
 ```
 
- - R= Rows
- - C= Columns
- - E = Estimate
- - N = Sum
+-   R= Rows
+-   C= Columns
+-   E = Estimate
+-   N = Sum
 
 $$E_{ij}=\frac{\left(R_i\cdot C_j\right)}{N}$$
 
+-   F= Fila
+-   C= Columna
+-   E = Estimado
+-   N = Suma
 
- - F= Fila
- - C= Columna
- - E = Estimado
- - N = Suma
- 
-$$E_{ij}=\frac{\left(F_i\cdot C_j\right)}{N}$$. 
-
-
+$$E_{ij}=\frac{\left(F_i\cdot C_j\right)}{N}$$.
 
 Cálculos dos de los valores esperados
 
- +  Los gatos que reciban comida y bailan
+-   Los gatos que reciban comida y bailan
 
 $$E_{12}=\frac{\left(R_2\cdot C_1\right)}{N}= \frac{(38*76)}{200}=14.44$$
 
+-   Los gatos que reciban cariño y no bailan
 
- + Los gatos que reciban cariño y no bailan
-
-$$E_{21}=\frac{\left(R_1\cdot C_2\right)}{N}= \frac{(124*162)}{200}=100.44$$
-La prueba es exactamente igual como la anterior donde comparamos el valor observado con el valor esperado.  Por ser más de una fila la formula cambia.
+$$E_{21}=\frac{\left(R_1\cdot C_2\right)}{N}= \frac{(124*162)}{200}=100.44$$ La prueba es exactamente igual como la anterior donde comparamos el valor observado con el valor esperado. Por ser más de una fila la formula cambia.
 
 $$\chi^2=\sum_{n=i}^n\sum_{n=j}^n\frac{\left(o-e\right)^2}{e}$$
 
-El Chi Cuadrado final es 
+El Chi Cuadrado final es
 
 $$\chi^2=\frac{(10-23.56)^2}{23.56}+\frac{(28-14.44)^2}{14.44}+\frac{(114-100.44)^2}{100.44}+\frac{(48-61.56)^2}{61.56}=25.36$$
 
-
-$$\chi^2=25.36$$
-***
+$$\chi^2=25.36$$ \*\*\*
 
 ## Como calcular el grado de libertad
 
 ##### N columnas = 4
+
 ##### N filas = 2
 
 ```{r freq12}
@@ -342,8 +337,7 @@ df=(4-1)*(2-1)
 df
 ```
 
-
-Cual es valor de Chi Cuadrado critico 
+Cual es valor de Chi Cuadrado critico
 
 1-.95 = 0.05
 
@@ -353,20 +347,19 @@ qchisq(.95,1 )
 
 ### Esta ejercicio cumple con los supuestos?
 
-
-***
+------------------------------------------------------------------------
 
 ## La función *CrossTable*
 
-Con esta función se calcula el chi cuadrado con los valores esperados. Nota la leyenda al principio para poder entender la organización de los datos.    El grado de liberta se calcula con la siguiente formula, el numero de filas -1 multiplicado por la cantidad de columnas -1, df= (R-1)(C-1). df = es para grado de libertad.  Si tiene solamente 1 grado de libertad hay que usar el resultado de la prueba de **Yates de continuidad**, que hace una corrección para la poca cantidad de grados de libertad. 
+Con esta función se calcula el chi cuadrado con los valores esperados. Nota la leyenda al principio para poder entender la organización de los datos. El grado de liberta se calcula con la siguiente formula, el numero de filas -1 multiplicado por la cantidad de columnas -1, df= (R-1)(C-1). df = es para grado de libertad. Si tiene solamente 1 grado de libertad hay que usar el resultado de la prueba de **Yates de continuidad**, que hace una corrección para la poca cantidad de grados de libertad.
 
 $$\chi^2=\sum_{n=i}^n\sum_{n=j}^n\frac{\left(\left|o-e\right|-0.5\right)^2}{e}$$
 
 Instalar el paquete **gmodels** para la función CrossTable
 
-p <0.05 se rechaza la hipotesis nula
+p \<0.05 se rechaza la hipotesis nula
 
-p >0.05 se acepta la hipotesis nula
+p \>0.05 se acepta la hipotesis nula
 
 ```{r freq14}
 library(gmodels)
@@ -377,27 +370,30 @@ CrossTable(catsTable, fisher = TRUE, chisq = TRUE,
 
 p = 0.000000477
 
-***
+------------------------------------------------------------------------
+
 [Enlace a un Video de la serpiente](https://www.youtube.com/watch?v=Uw6W8NaJmfo)
 
 ```{r freq15, echo=FALSE, out.width= "60%", out.extra='style="float:right; padding:10px"'}
 knitr::include_graphics("Graficos/Northern_Water_Snake.jpg")
 ```
 
-2. Ejercicio:  Un herpetólogo sospecha que las serpientes de agua hembras que se alimentan en el lago Michigan migran a los estanques del interior en el otoño para dar a luz a sus crías. Si esta hipótesis es correcta, cabría esperar que las hembras fueran mucho más propensas a migrar en ese momento que los machos. Se recopilaron los siguientes datos. (De Havel et al.)
+2.  Ejercicio: Un herpetólogo sospecha que las serpientes de agua hembras que se alimentan en el lago Michigan migran a los estanques del interior en el otoño para dar a luz a sus crías. Si esta hipótesis es correcta, cabría esperar que las hembras fueran mucho más propensas a migrar en ese momento que los machos. Se recopilaron los siguientes datos. (De Havel et al.)
 
 |        | Migrantes | No Migrantes |
-|--------|-----------:|--------------:|
-| Hembra | 25        | 2            |
-| Machos | 4         | 30           |
+|--------|----------:|-------------:|
+| Hembra |        25 |            2 |
+| Machos |         4 |           30 |
 
-    - ¿Cual es la hipótesis nula?
-    - ¿cual es la hipótesis alterna?
-    - calcula los valores esperados
-    - calcula el chi cuadrado
-    - ¿Se rechaza o acepta la Ho?
+```         
+- ¿Cual es la hipótesis nula?
+- ¿cual es la hipótesis alterna?
+- calcula los valores esperados
+- calcula el chi cuadrado
+- ¿Se rechaza o acepta la Ho?
+```
 
-***
+------------------------------------------------------------------------
 
 ```{r freq16, eval=FALSE, echo=FALSE}
 #Crear la tabla de contingencia
@@ -421,8 +417,7 @@ CrossTable(snakeTable, fisher = TRUE, chisq = TRUE,
 
 ## Análisis con datos en formato de tabla
 
-Estos son los mismos datos pero no sumado, en otra palabra es información específica sobre cada gato y su tratamiento y si bailo o no.   La ventaja de este método es que uno no tiene que hacer el calculo y sumar la frecuancias, se deja la función **CrossTable** hacer la suma. Miran bien la tabla.  
-
+Estos son los mismos datos pero no sumado, en otra palabra es información específica sobre cada gato y su tratamiento y si bailo o no. La ventaja de este método es que uno no tiene que hacer el calculo y sumar la frecuancias, se deja la función **CrossTable** hacer la suma. Miran bien la tabla.
 
 ```{r freq17}
 
@@ -443,15 +438,12 @@ gt(tail(catsData, n=5))
 
 
 ```
-***
 
+------------------------------------------------------------------------
 
+Nota que aquí se llama cada columna aparte en la función (catsData$Training, catsData$Dance).
 
-
-
-Nota que aquí se llama cada columna aparte en la función (catsData$Training, catsData$Dance). 
-
-## Prueba de independencia 
+## Prueba de independencia
 
 ```{r freq18}
 # usando los datos en formato de data frame **catsData**
@@ -467,25 +459,20 @@ Ta2
 mosaicplot(Ta2, shade=TRUE)
 ```
 
+------------------------------------------------------------------------
 
+## El color de pello es independiente del sexo
 
-***
-
-
-##  El color de pello es independiente del sexo 
-
-En la siguiente tabla se encuentra el color de pello de estudiantes de la UPR.  La hipótesis es que el color de pelo no esta asociado al sexo de los estudiantes. 
-
+En la siguiente tabla se encuentra el color de pello de estudiantes de la UPR. La hipótesis es que el color de pelo no esta asociado al sexo de los estudiantes.
 
 | Color de Pello | Mujer | Hombre |
 |---------------:|------:|-------:|
-| Negro          |    32 |     55 |
-| Marrón         |    43 |     65 |
-| Rubio          |    16 |     64 |
-| Rojo           |     9 |     16 |
+|          Negro |    32 |     55 |
+|         Marrón |    43 |     65 |
+|          Rubio |    16 |     64 |
+|           Rojo |     9 |     16 |
 
-
-Creamos 
+Creamos
 
 ```{r freq19}
 
@@ -501,15 +488,11 @@ HairColour
 
 ```
 
+-   Cada categoría tiene una **frecuencia esperada** suficiente grande:
+    -   ninguna de las **frecuencia esperada** sea menor de 5 cuando hay 4 o menos categorías
+    -   no más de 20% de las categorías que tengan un valor esperado de \< 5 cuando hay más de 5 categorías y ninguna tiene un valor **esperado** menor de 1. Puediese tener valores esperados entre 1 y 5 pero no más de 20% de las categorias
 
-  - Cada categoría tiene una **frecuencia esperada** suficiente grande: 
-      + ninguna de las **frecuencia esperada** sea menor de 5 cuando hay 4 o menos categorías
-      + no más de 20% de las categorías que tengan un valor esperado de < 5 cuando hay más de 5 categorías y ninguna tiene un valor **esperado** menor de 1.
-       Puediese tener valores esperados entre 1 y 5 pero no más de 20% de las categorias 
- 
-
-¿Cual es la hipótesis nula?
-¿Cual es la hipótesis alterna?
+¿Cual es la hipótesis nula? ¿Cual es la hipótesis alterna?
 
 El resultado de la prueba. ¿Se acepta o rechaza la hipótesis nula?
 
@@ -528,25 +511,24 @@ df
 qchisq(.95,3 )
 ```
 
-
 ### Esta ejercicio cumple con los supuestos?
 
-***
+------------------------------------------------------------------------
 
 ## Prueba de Exacta de Fisher
 
+La prueba Exacta de Fisher es similar a la prueba de Bondad de Ajuste para evaluar si hay asociación entre dos variables categorías. La diferencia importante es que no es necesario que el valor esperado sea mayor de 5. Por consecuencia se puede usar con muestras más pequeñas.
 
-La prueba Exacta de Fisher es similar a la prueba de Bondad de Ajuste para evaluar si hay asociación entre dos variables categorías.  La diferencia importante es que no es necesario que el valor esperado sea mayor de 5. Por consecuencia se puede usar con muestras más pequeñas.  
+------------------------------------------------------------------------
 
-***
 ### Los supuestos de las prueba Exacta de Fisher.
 
->  + Los datos son frecuencias.
->  + Las frecuencias son mutuamente exclusivas (no caen en múltiples categorías).
->  + Las observaciones son independiente una de la otra.
->  + La tabla tiene 2 filas y 2 columnas.
-  
-Usando los datos de serpientes del ejemplo 7.4 del libro de Havel et al. 
+> -   Los datos son frecuencias.
+> -   Las frecuencias son mutuamente exclusivas (no caen en múltiples categorías).
+> -   Las observaciones son independiente una de la otra.
+> -   La tabla tiene 2 filas y 2 columnas.
+
+Usando los datos de serpientes del ejemplo 7.4 del libro de Havel et al.
 
 ```{r freq21}
 responde <- c(6,3)
@@ -572,18 +554,12 @@ mosaicplot(serpiente)
 
 ```
 
-Nota que se usa la misma función que anterior pero en los resultados hay que fijarse en la sección que dice **Fisher's Exact test**. Lo que uno observa es que el valor de **p** es menor de 0.05 por consecuencia se rechaza la hipótesis nula. Lo que significa es que para la serpiente el angulo donde proviene el estimulo resulta en una repuesta diferente. 
+Nota que se usa la misma función que anterior pero en los resultados hay que fijarse en la sección que dice **Fisher's Exact test**. Lo que uno observa es que el valor de **p** es menor de 0.05 por consecuencia se rechaza la hipótesis nula. Lo que significa es que para la serpiente el angulo donde proviene el estimulo resulta en una repuesta diferente.
 
-***
+------------------------------------------------------------------------
 
 ```{r freq23}
 
 fisher.test(serpiente)
 
 ```
-
-
-
-
-
-

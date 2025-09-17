@@ -1,6 +1,8 @@
 bookdown::bs4_book:
   css: style.css
   config:
+    html: 
+      favicon: "favicon.io/favicon.ico"
     toc:
       before: |
         <li><a href="./">BioEstadística</a></li>

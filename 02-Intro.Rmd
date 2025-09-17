@@ -26,6 +26,9 @@ colorize <- function(x, color) {
 ```
 
 
+
+
+
 ## El libro de la clase
 
 Ningún libro es obligatorio

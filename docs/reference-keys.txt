@@ -152,6 +152,7 @@ el-indice-de-curtosis-kurtosis
 gráficos
 gráficos-básicos-con-ggplot2
 como-crear-una-gráfica-de-regresión-lineal-usando-ggplot
+subir-los-datos-a-rstudio
 regresión-lineal
 añadiendo-color-por-grupo-y-otras-bellezas
 salvar-gráficos-con-ggsave
@@ -165,7 +166,7 @@ gráfico-de-caja-por-grupo
 detección-valores-sesgados-o-átipicos.
 gráficos-de-línea-y-intervalo-de-errores
 la-función-stat_summary-para-calcular-indices-sumativos.
-diagrama-de-tallo-y-hoja
+diagrama-de-tallo-y-hoja-leaf-and-stem
 supuestos
 qué-son-supuestos
 homogeneidad-de-varianza

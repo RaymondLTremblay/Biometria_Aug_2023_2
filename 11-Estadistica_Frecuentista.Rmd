@@ -177,6 +177,14 @@ esp<-c(0.75,0.25)
 chisq.test(x=obs, p=esp)
 ```
 
+```{r}
+
+obs<-c(6, 16)
+esp<-c(0.50,0.50)
+
+chisq.test(x=obs, p=esp)
+
+```
 
 ### Esta ejercicio cumple con los supuestos?
 
@@ -281,7 +289,7 @@ catsTable
 library(tidyverse)
 ct=tribble(~fila, ~comida, ~carino, ~suma,
            "No_balian", 10, 114, 124,
-           "bailan", 28, 48, 76,
+           "bailan", 28, 48, 64,
            "suma", 38, 162, 200)
 ct
 ```
@@ -316,7 +324,10 @@ El Chi Cuadrado final es
 
 $$\chi^2=\frac{(10-23.56)^2}{23.56}+\frac{(28-14.44)^2}{14.44}+\frac{(114-100.44)^2}{100.44}+\frac{(48-61.56)^2}{61.56}=25.36$$
 
-$$\chi^2=25.36$$ \*\*\*
+$$\chi^2=25.36$$ 
+
+
+
 
 ## Como calcular el grado de libertad
 

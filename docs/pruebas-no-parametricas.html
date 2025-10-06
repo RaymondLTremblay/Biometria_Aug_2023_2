@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 22 Pruebas no parametricas | BioEstadística</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
-  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 22 Pruebas no parametricas | BioEstadística" />
   <meta property="og:type" content="book" />
@@ -841,21 +841,21 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="los-paquetes" class="section level2 hasAnchor" number="22.2">
 <h2><span class="header-section-number">22.2</span> Los paquetes<a href="pruebas-no-parametricas.html#los-paquetes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb705"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb705-1"><a href="pruebas-no-parametricas.html#cb705-1" tabindex="-1"></a><span class="co">#install.packages(&quot;car&quot;)</span></span>
-<span id="cb705-2"><a href="pruebas-no-parametricas.html#cb705-2" tabindex="-1"></a><span class="co">#install.packages(&quot;clinfun&quot;)</span></span>
-<span id="cb705-3"><a href="pruebas-no-parametricas.html#cb705-3" tabindex="-1"></a><span class="co">#install.packages(&quot;ggplot2&quot;)</span></span>
-<span id="cb705-4"><a href="pruebas-no-parametricas.html#cb705-4" tabindex="-1"></a><span class="co">#install.packages(&quot;pastecs&quot;)</span></span>
-<span id="cb705-5"><a href="pruebas-no-parametricas.html#cb705-5" tabindex="-1"></a><span class="co">#install.packages(&quot;pgirmess&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb706"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb706-1"><a href="pruebas-no-parametricas.html#cb706-1" tabindex="-1"></a><span class="co">#install.packages(&quot;car&quot;)</span></span>
+<span id="cb706-2"><a href="pruebas-no-parametricas.html#cb706-2" tabindex="-1"></a><span class="co">#install.packages(&quot;clinfun&quot;)</span></span>
+<span id="cb706-3"><a href="pruebas-no-parametricas.html#cb706-3" tabindex="-1"></a><span class="co">#install.packages(&quot;ggplot2&quot;)</span></span>
+<span id="cb706-4"><a href="pruebas-no-parametricas.html#cb706-4" tabindex="-1"></a><span class="co">#install.packages(&quot;pastecs&quot;)</span></span>
+<span id="cb706-5"><a href="pruebas-no-parametricas.html#cb706-5" tabindex="-1"></a><span class="co">#install.packages(&quot;pgirmess&quot;)</span></span></code></pre></div>
 </details>
 </div>
 <div id="activating-packages" class="section level2 hasAnchor" number="22.3">
 <h2><span class="header-section-number">22.3</span> Activating packages<a href="pruebas-no-parametricas.html#activating-packages" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb706"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb706-1"><a href="pruebas-no-parametricas.html#cb706-1" tabindex="-1"></a><span class="fu">library</span>(car)  <span class="co"># Companion to applied Regression</span></span>
-<span id="cb706-2"><a href="pruebas-no-parametricas.html#cb706-2" tabindex="-1"></a><span class="fu">library</span>(clinfun) <span class="co"># Clinical Trial Design and Data Analysis Functions</span></span>
-<span id="cb706-3"><a href="pruebas-no-parametricas.html#cb706-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Graphic production</span></span>
-<span id="cb706-4"><a href="pruebas-no-parametricas.html#cb706-4" tabindex="-1"></a><span class="fu">library</span>(pastecs) <span class="co"># Package for analysis of Space -Time ecological Series</span></span>
-<span id="cb706-5"><a href="pruebas-no-parametricas.html#cb706-5" tabindex="-1"></a><span class="fu">library</span>(pgirmess) <span class="co"># Spatial Analysis and Data Mining for Field Ecologist</span></span></code></pre></div>
+<div class="sourceCode" id="cb707"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb707-1"><a href="pruebas-no-parametricas.html#cb707-1" tabindex="-1"></a><span class="fu">library</span>(car)  <span class="co"># Companion to applied Regression</span></span>
+<span id="cb707-2"><a href="pruebas-no-parametricas.html#cb707-2" tabindex="-1"></a><span class="fu">library</span>(clinfun) <span class="co"># Clinical Trial Design and Data Analysis Functions</span></span>
+<span id="cb707-3"><a href="pruebas-no-parametricas.html#cb707-3" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># Graphic production</span></span>
+<span id="cb707-4"><a href="pruebas-no-parametricas.html#cb707-4" tabindex="-1"></a><span class="fu">library</span>(pastecs) <span class="co"># Package for analysis of Space -Time ecological Series</span></span>
+<span id="cb707-5"><a href="pruebas-no-parametricas.html#cb707-5" tabindex="-1"></a><span class="fu">library</span>(pgirmess) <span class="co"># Spatial Analysis and Data Mining for Field Ecologist</span></span></code></pre></div>
 </details>
 </div>
 <div id="wilcoxon-rank-sum-test" class="section level2 hasAnchor" number="22.4">
@@ -878,19 +878,19 @@ gl(n, k, lenght=n*k, labels=1:n, ordered=FALSE)</p>
 <div id="enter-raw-data" class="section level2 hasAnchor" number="22.7">
 <h2><span class="header-section-number">22.7</span> Enter raw data<a href="pruebas-no-parametricas.html#enter-raw-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb707"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb707-1"><a href="pruebas-no-parametricas.html#cb707-1" tabindex="-1"></a>sundayBDI<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">35</span>, <span class="dv">16</span>, <span class="dv">18</span>, <span class="dv">19</span>, </span>
-<span id="cb707-2"><a href="pruebas-no-parametricas.html#cb707-2" tabindex="-1"></a>             <span class="dv">17</span>, <span class="dv">27</span>, <span class="dv">16</span>, <span class="dv">13</span>, <span class="dv">20</span>, </span>
-<span id="cb707-3"><a href="pruebas-no-parametricas.html#cb707-3" tabindex="-1"></a>             <span class="dv">16</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">16</span>, </span>
-<span id="cb707-4"><a href="pruebas-no-parametricas.html#cb707-4" tabindex="-1"></a>             <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">19</span>, <span class="dv">18</span>, <span class="dv">18</span>)</span>
-<span id="cb707-5"><a href="pruebas-no-parametricas.html#cb707-5" tabindex="-1"></a>wedsBDI<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">28</span>, <span class="dv">35</span>, <span class="dv">35</span>, <span class="dv">24</span>, <span class="dv">39</span>, <span class="dv">32</span>, </span>
-<span id="cb707-6"><a href="pruebas-no-parametricas.html#cb707-6" tabindex="-1"></a>           <span class="dv">27</span>, <span class="dv">29</span>, <span class="dv">36</span>, <span class="dv">35</span>, <span class="dv">5</span>, <span class="dv">6</span>, </span>
-<span id="cb707-7"><a href="pruebas-no-parametricas.html#cb707-7" tabindex="-1"></a>           <span class="dv">30</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">17</span>, </span>
-<span id="cb707-8"><a href="pruebas-no-parametricas.html#cb707-8" tabindex="-1"></a>           <span class="dv">3</span>, <span class="dv">10</span>)</span>
-<span id="cb707-9"><a href="pruebas-no-parametricas.html#cb707-9" tabindex="-1"></a>drug<span class="ot">&lt;-</span><span class="fu">gl</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Ecstasy&quot;</span>, <span class="st">&quot;Alcohol&quot;</span>))</span>
-<span id="cb707-10"><a href="pruebas-no-parametricas.html#cb707-10" tabindex="-1"></a>Gender<span class="ot">=</span><span class="fu">gl</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>))</span>
-<span id="cb707-11"><a href="pruebas-no-parametricas.html#cb707-11" tabindex="-1"></a></span>
-<span id="cb707-12"><a href="pruebas-no-parametricas.html#cb707-12" tabindex="-1"></a>drugData<span class="ot">&lt;-</span><span class="fu">data.frame</span>(Gender, drug, sundayBDI, wedsBDI)</span>
-<span id="cb707-13"><a href="pruebas-no-parametricas.html#cb707-13" tabindex="-1"></a>drugData</span></code></pre></div>
+<div class="sourceCode" id="cb708"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb708-1"><a href="pruebas-no-parametricas.html#cb708-1" tabindex="-1"></a>sundayBDI<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">35</span>, <span class="dv">16</span>, <span class="dv">18</span>, <span class="dv">19</span>, </span>
+<span id="cb708-2"><a href="pruebas-no-parametricas.html#cb708-2" tabindex="-1"></a>             <span class="dv">17</span>, <span class="dv">27</span>, <span class="dv">16</span>, <span class="dv">13</span>, <span class="dv">20</span>, </span>
+<span id="cb708-3"><a href="pruebas-no-parametricas.html#cb708-3" tabindex="-1"></a>             <span class="dv">16</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">15</span>, <span class="dv">16</span>, </span>
+<span id="cb708-4"><a href="pruebas-no-parametricas.html#cb708-4" tabindex="-1"></a>             <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">19</span>, <span class="dv">18</span>, <span class="dv">18</span>)</span>
+<span id="cb708-5"><a href="pruebas-no-parametricas.html#cb708-5" tabindex="-1"></a>wedsBDI<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">28</span>, <span class="dv">35</span>, <span class="dv">35</span>, <span class="dv">24</span>, <span class="dv">39</span>, <span class="dv">32</span>, </span>
+<span id="cb708-6"><a href="pruebas-no-parametricas.html#cb708-6" tabindex="-1"></a>           <span class="dv">27</span>, <span class="dv">29</span>, <span class="dv">36</span>, <span class="dv">35</span>, <span class="dv">5</span>, <span class="dv">6</span>, </span>
+<span id="cb708-7"><a href="pruebas-no-parametricas.html#cb708-7" tabindex="-1"></a>           <span class="dv">30</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">17</span>, </span>
+<span id="cb708-8"><a href="pruebas-no-parametricas.html#cb708-8" tabindex="-1"></a>           <span class="dv">3</span>, <span class="dv">10</span>)</span>
+<span id="cb708-9"><a href="pruebas-no-parametricas.html#cb708-9" tabindex="-1"></a>drug<span class="ot">&lt;-</span><span class="fu">gl</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Ecstasy&quot;</span>, <span class="st">&quot;Alcohol&quot;</span>))</span>
+<span id="cb708-10"><a href="pruebas-no-parametricas.html#cb708-10" tabindex="-1"></a>Gender<span class="ot">=</span><span class="fu">gl</span>(<span class="dv">2</span>, <span class="dv">10</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>))</span>
+<span id="cb708-11"><a href="pruebas-no-parametricas.html#cb708-11" tabindex="-1"></a></span>
+<span id="cb708-12"><a href="pruebas-no-parametricas.html#cb708-12" tabindex="-1"></a>drugData<span class="ot">&lt;-</span><span class="fu">data.frame</span>(Gender, drug, sundayBDI, wedsBDI)</span>
+<span id="cb708-13"><a href="pruebas-no-parametricas.html#cb708-13" tabindex="-1"></a>drugData</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara1">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara1">Table 22.1: </span> </caption><col><col><col><col><thead>
@@ -948,10 +948,10 @@ gl(n, k, lenght=n*k, labels=1:n, ordered=FALSE)</p>
 <div id="exploratory-analysis" class="section level2 hasAnchor" number="22.9">
 <h2><span class="header-section-number">22.9</span> Exploratory analysis<a href="pruebas-no-parametricas.html#exploratory-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb708"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb708-1"><a href="pruebas-no-parametricas.html#cb708-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb708-2"><a href="pruebas-no-parametricas.html#cb708-2" tabindex="-1"></a>Drug <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Drug.csv&quot;</span>)</span>
-<span id="cb708-3"><a href="pruebas-no-parametricas.html#cb708-3" tabindex="-1"></a></span>
-<span id="cb708-4"><a href="pruebas-no-parametricas.html#cb708-4" tabindex="-1"></a><span class="fu">head</span>(Drug)</span></code></pre></div>
+<div class="sourceCode" id="cb709"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb709-1"><a href="pruebas-no-parametricas.html#cb709-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb709-2"><a href="pruebas-no-parametricas.html#cb709-2" tabindex="-1"></a>Drug <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Drug.csv&quot;</span>)</span>
+<span id="cb709-3"><a href="pruebas-no-parametricas.html#cb709-3" tabindex="-1"></a></span>
+<span id="cb709-4"><a href="pruebas-no-parametricas.html#cb709-4" tabindex="-1"></a><span class="fu">head</span>(Drug)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara2">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara2">Table 22.2: </span> </caption><col><col><col><thead>
@@ -980,11 +980,11 @@ gl(n, k, lenght=n*k, labels=1:n, ordered=FALSE)</p>
 <p>Note here we can use drugData[,c(2:3)], that we want the stats for column 2 and 3, and these be seperated by the drug (column 1).</p>
 <p>NOTE the shapiro wilks test on the last line.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb709"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb709-1"><a href="pruebas-no-parametricas.html#cb709-1" tabindex="-1"></a><span class="fu">names</span>(drugData)</span></code></pre></div>
+<div class="sourceCode" id="cb710"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb710-1"><a href="pruebas-no-parametricas.html#cb710-1" tabindex="-1"></a><span class="fu">names</span>(drugData)</span></code></pre></div>
 </details>
 <pre><code>## [1] &quot;Gender&quot;    &quot;drug&quot;      &quot;sundayBDI&quot; &quot;wedsBDI&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb711"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb711-1"><a href="pruebas-no-parametricas.html#cb711-1" tabindex="-1"></a><span class="fu">by</span>(drugData[,<span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>)], drugData<span class="sc">$</span>drug, stat.desc, <span class="at">basic=</span><span class="cn">TRUE</span>, <span class="at">norm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb712"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb712-1"><a href="pruebas-no-parametricas.html#cb712-1" tabindex="-1"></a><span class="fu">by</span>(drugData[,<span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>)], drugData<span class="sc">$</span>drug, stat.desc, <span class="at">basic=</span><span class="cn">TRUE</span>, <span class="at">norm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <pre><code>## drugData$drug: Ecstasy
 ##                 sundayBDI     wedsBDI
@@ -1032,17 +1032,17 @@ gl(n, k, lenght=n*k, labels=1:n, ordered=FALSE)</p>
 ## normtest.W     0.95946584 7.534665e-01
 ## normtest.p     0.77976459 3.933024e-03</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb713"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb713-1"><a href="pruebas-no-parametricas.html#cb713-1" tabindex="-1"></a><span class="co">#shapiro.test(drugData$sundayBDI)  # this is to look at all the data, it is not the appropriate way to do the analisis of normality, why?</span></span>
-<span id="cb713-2"><a href="pruebas-no-parametricas.html#cb713-2" tabindex="-1"></a><span class="co">#shapiro.test(drugData$wedsBDI) # this is to look at all the data, it is not the appropriate way to do the analisis of normality, why?</span></span></code></pre></div>
+<div class="sourceCode" id="cb714"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb714-1"><a href="pruebas-no-parametricas.html#cb714-1" tabindex="-1"></a><span class="co">#shapiro.test(drugData$sundayBDI)  # this is to look at all the data, it is not the appropriate way to do the analisis of normality, why?</span></span>
+<span id="cb714-2"><a href="pruebas-no-parametricas.html#cb714-2" tabindex="-1"></a><span class="co">#shapiro.test(drugData$wedsBDI) # this is to look at all the data, it is not the appropriate way to do the analisis of normality, why?</span></span></code></pre></div>
 </details>
 <div id="do-a-histogram-by-factor-level-for-anxiety-for-sunday." class="section level3 hasAnchor" number="22.10.1">
 <h3><span class="header-section-number">22.10.1</span> Do a histogram by factor level for anxiety for Sunday.<a href="pruebas-no-parametricas.html#do-a-histogram-by-factor-level-for-anxiety-for-sunday." class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb714"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb714-1"><a href="pruebas-no-parametricas.html#cb714-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb714-2"><a href="pruebas-no-parametricas.html#cb714-2" tabindex="-1"></a></span>
-<span id="cb714-3"><a href="pruebas-no-parametricas.html#cb714-3" tabindex="-1"></a><span class="fu">ggplot</span>(drugData, <span class="fu">aes</span>(<span class="at">x=</span>sundayBDI, <span class="at">fill=</span>drug))<span class="sc">+</span></span>
-<span id="cb714-4"><a href="pruebas-no-parametricas.html#cb714-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
-<span id="cb714-5"><a href="pruebas-no-parametricas.html#cb714-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>drug)</span></code></pre></div>
+<div class="sourceCode" id="cb715"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb715-1"><a href="pruebas-no-parametricas.html#cb715-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb715-2"><a href="pruebas-no-parametricas.html#cb715-2" tabindex="-1"></a></span>
+<span id="cb715-3"><a href="pruebas-no-parametricas.html#cb715-3" tabindex="-1"></a><span class="fu">ggplot</span>(drugData, <span class="fu">aes</span>(<span class="at">x=</span>sundayBDI, <span class="at">fill=</span>drug))<span class="sc">+</span></span>
+<span id="cb715-4"><a href="pruebas-no-parametricas.html#cb715-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb715-5"><a href="pruebas-no-parametricas.html#cb715-5" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>drug)</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/nopara4-1.png" width="672" /></p>
 <hr />
@@ -1052,8 +1052,8 @@ gl(n, k, lenght=n*k, labels=1:n, ordered=FALSE)</p>
 <h2><span class="header-section-number">22.11</span> Test of equality of variance<a href="pruebas-no-parametricas.html#test-of-equality-of-variance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This is one of the assumptions of parametric tests</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb715"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb715-1"><a href="pruebas-no-parametricas.html#cb715-1" tabindex="-1"></a><span class="co">#leveneTest(drugData$sundayBDI, drugData$drug, center = &quot;mean&quot;)</span></span>
-<span id="cb715-2"><a href="pruebas-no-parametricas.html#cb715-2" tabindex="-1"></a><span class="fu">leveneTest</span>(drugData<span class="sc">$</span>sundayBDI, drugData<span class="sc">$</span>drug, <span class="at">center =</span> <span class="st">&quot;median&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb716"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb716-1"><a href="pruebas-no-parametricas.html#cb716-1" tabindex="-1"></a><span class="co">#leveneTest(drugData$sundayBDI, drugData$drug, center = &quot;mean&quot;)</span></span>
+<span id="cb716-2"><a href="pruebas-no-parametricas.html#cb716-2" tabindex="-1"></a><span class="fu">leveneTest</span>(drugData<span class="sc">$</span>sundayBDI, drugData<span class="sc">$</span>drug, <span class="at">center =</span> <span class="st">&quot;median&quot;</span>)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara5">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara5">Table 22.3: </span> </caption><col><col><col><thead>
@@ -1069,8 +1069,8 @@ gl(n, k, lenght=n*k, labels=1:n, ordered=FALSE)</p>
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb716"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb716-1"><a href="pruebas-no-parametricas.html#cb716-1" tabindex="-1"></a><span class="co">#leveneTest(drugData$wedsBDI, drugData$drug, center = &quot;mean&quot;)</span></span>
-<span id="cb716-2"><a href="pruebas-no-parametricas.html#cb716-2" tabindex="-1"></a><span class="fu">leveneTest</span>(drugData<span class="sc">$</span>wedsBDI, drugData<span class="sc">$</span>drug, <span class="at">center =</span> <span class="st">&quot;median&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb717"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb717-1"><a href="pruebas-no-parametricas.html#cb717-1" tabindex="-1"></a><span class="co">#leveneTest(drugData$wedsBDI, drugData$drug, center = &quot;mean&quot;)</span></span>
+<span id="cb717-2"><a href="pruebas-no-parametricas.html#cb717-2" tabindex="-1"></a><span class="fu">leveneTest</span>(drugData<span class="sc">$</span>wedsBDI, drugData<span class="sc">$</span>drug, <span class="at">center =</span> <span class="st">&quot;median&quot;</span>)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara5">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara5">Table 22.3: </span> </caption><col><col><col><thead>
@@ -1097,8 +1097,8 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 <h2><span class="header-section-number">22.13</span> This is how to assing the Rank by Hand…… This is an example, the scripts will do this automatically.<a href="pruebas-no-parametricas.html#this-is-how-to-assing-the-rank-by-hand-this-is-an-example-the-scripts-will-do-this-automatically." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Look for the smallest value……in the wedsBDI……</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb717"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb717-1"><a href="pruebas-no-parametricas.html#cb717-1" tabindex="-1"></a>drugData<span class="sc">$</span>wedsRank<span class="ot">=</span><span class="fu">rank</span>(drugData<span class="sc">$</span>wedsBDI)</span>
-<span id="cb717-2"><a href="pruebas-no-parametricas.html#cb717-2" tabindex="-1"></a>drugData</span></code></pre></div>
+<div class="sourceCode" id="cb718"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb718-1"><a href="pruebas-no-parametricas.html#cb718-1" tabindex="-1"></a>drugData<span class="sc">$</span>wedsRank<span class="ot">=</span><span class="fu">rank</span>(drugData<span class="sc">$</span>wedsBDI)</span>
+<span id="cb718-2"><a href="pruebas-no-parametricas.html#cb718-2" tabindex="-1"></a>drugData</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara6">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara6">Table 22.4: </span> </caption><col><col><col><col><col><thead>
@@ -1154,11 +1154,11 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 <div id="wilcoxon-test-a-non-parametric-test" class="section level2 hasAnchor" number="22.14">
 <h2><span class="header-section-number">22.14</span> Wilcoxon test: A non-parametric test<a href="pruebas-no-parametricas.html#wilcoxon-test-a-non-parametric-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb718"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb718-1"><a href="pruebas-no-parametricas.html#cb718-1" tabindex="-1"></a><span class="fu">names</span>(drugData)</span></code></pre></div>
+<div class="sourceCode" id="cb719"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb719-1"><a href="pruebas-no-parametricas.html#cb719-1" tabindex="-1"></a><span class="fu">names</span>(drugData)</span></code></pre></div>
 </details>
 <pre><code>## [1] &quot;Gender&quot;    &quot;drug&quot;      &quot;sundayBDI&quot; &quot;wedsBDI&quot;   &quot;wedsRank&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb720"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb720-1"><a href="pruebas-no-parametricas.html#cb720-1" tabindex="-1"></a><span class="fu">head</span>(drugData)</span></code></pre></div>
+<div class="sourceCode" id="cb721"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb721-1"><a href="pruebas-no-parametricas.html#cb721-1" tabindex="-1"></a><span class="fu">head</span>(drugData)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara7">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara7">Table 22.5: </span> </caption><col><col><col><col><col><thead>
@@ -1182,8 +1182,8 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb721"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb721-1"><a href="pruebas-no-parametricas.html#cb721-1" tabindex="-1"></a>sunModel<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(sundayBDI <span class="sc">~</span> drug, <span class="at">data =</span> drugData)</span>
-<span id="cb721-2"><a href="pruebas-no-parametricas.html#cb721-2" tabindex="-1"></a>sunModel</span></code></pre></div>
+<div class="sourceCode" id="cb722"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb722-1"><a href="pruebas-no-parametricas.html#cb722-1" tabindex="-1"></a>sunModel<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(sundayBDI <span class="sc">~</span> drug, <span class="at">data =</span> drugData)</span>
+<span id="cb722-2"><a href="pruebas-no-parametricas.html#cb722-2" tabindex="-1"></a>sunModel</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Wilcoxon rank sum test with continuity correction
@@ -1192,8 +1192,8 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 ## W = 64.5, p-value = 0.2861
 ## alternative hypothesis: true location shift is not equal to 0</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb723"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb723-1"><a href="pruebas-no-parametricas.html#cb723-1" tabindex="-1"></a>wedModel<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(wedsBDI <span class="sc">~</span> drug, <span class="at">data =</span> drugData)</span>
-<span id="cb723-2"><a href="pruebas-no-parametricas.html#cb723-2" tabindex="-1"></a>wedModel</span></code></pre></div>
+<div class="sourceCode" id="cb724"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb724-1"><a href="pruebas-no-parametricas.html#cb724-1" tabindex="-1"></a>wedModel<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(wedsBDI <span class="sc">~</span> drug, <span class="at">data =</span> drugData)</span>
+<span id="cb724-2"><a href="pruebas-no-parametricas.html#cb724-2" tabindex="-1"></a>wedModel</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Wilcoxon rank sum test with continuity correction
@@ -1206,8 +1206,8 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 <div id="the-following-approach-is-better-because-it-can-deal-with-ties-values-that-are-equal" class="section level2 hasAnchor" number="22.15">
 <h2><span class="header-section-number">22.15</span> the following approach is better because it can deal with ties (values that are equal)<a href="pruebas-no-parametricas.html#the-following-approach-is-better-because-it-can-deal-with-ties-values-that-are-equal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb725"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb725-1"><a href="pruebas-no-parametricas.html#cb725-1" tabindex="-1"></a>sunModel2<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(sundayBDI <span class="sc">~</span> drug, <span class="at">data =</span> drugData, <span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct=</span> <span class="cn">FALSE</span>, <span class="at">conf.int=</span>T)</span>
-<span id="cb725-2"><a href="pruebas-no-parametricas.html#cb725-2" tabindex="-1"></a>sunModel2</span></code></pre></div>
+<div class="sourceCode" id="cb726"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb726-1"><a href="pruebas-no-parametricas.html#cb726-1" tabindex="-1"></a>sunModel2<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(sundayBDI <span class="sc">~</span> drug, <span class="at">data =</span> drugData, <span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct=</span> <span class="cn">FALSE</span>, <span class="at">conf.int=</span>T)</span>
+<span id="cb726-2"><a href="pruebas-no-parametricas.html#cb726-2" tabindex="-1"></a>sunModel2</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Wilcoxon rank sum test
@@ -1221,8 +1221,8 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 ## difference in location 
 ##               1.000023</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb727"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb727-1"><a href="pruebas-no-parametricas.html#cb727-1" tabindex="-1"></a>wedModel2<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(wedsBDI <span class="sc">~</span> drug, <span class="at">data =</span> drugData, <span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct=</span> <span class="cn">FALSE</span>, <span class="at">conf.int=</span>T)</span>
-<span id="cb727-2"><a href="pruebas-no-parametricas.html#cb727-2" tabindex="-1"></a>wedModel2</span></code></pre></div>
+<div class="sourceCode" id="cb728"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb728-1"><a href="pruebas-no-parametricas.html#cb728-1" tabindex="-1"></a>wedModel2<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(wedsBDI <span class="sc">~</span> drug, <span class="at">data =</span> drugData, <span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct=</span> <span class="cn">FALSE</span>, <span class="at">conf.int=</span>T)</span>
+<span id="cb728-2"><a href="pruebas-no-parametricas.html#cb728-2" tabindex="-1"></a>wedModel2</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Wilcoxon rank sum test
@@ -1244,19 +1244,19 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 <h2><span class="header-section-number">22.17</span> How many time have you gone to Disney, and is there a difference between genders?<a href="pruebas-no-parametricas.html#how-many-time-have-you-gone-to-disney-and-is-there-a-difference-between-genders" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Use Wilcoxon Test</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb729"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb729-1"><a href="pruebas-no-parametricas.html#cb729-1" tabindex="-1"></a>Disney<span class="ot">=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,</span>
-<span id="cb729-2"><a href="pruebas-no-parametricas.html#cb729-2" tabindex="-1"></a>         <span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,</span>
-<span id="cb729-3"><a href="pruebas-no-parametricas.html#cb729-3" tabindex="-1"></a>         <span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>, <span class="dv">3</span>, </span>
-<span id="cb729-4"><a href="pruebas-no-parametricas.html#cb729-4" tabindex="-1"></a>         <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">6</span>,<span class="dv">7</span>,</span>
-<span id="cb729-5"><a href="pruebas-no-parametricas.html#cb729-5" tabindex="-1"></a>         <span class="dv">11</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
-<span id="cb729-6"><a href="pruebas-no-parametricas.html#cb729-6" tabindex="-1"></a></span>
-<span id="cb729-7"><a href="pruebas-no-parametricas.html#cb729-7" tabindex="-1"></a>Gender<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,</span>
-<span id="cb729-8"><a href="pruebas-no-parametricas.html#cb729-8" tabindex="-1"></a>         <span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,</span>
-<span id="cb729-9"><a href="pruebas-no-parametricas.html#cb729-9" tabindex="-1"></a>         <span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,</span>
-<span id="cb729-10"><a href="pruebas-no-parametricas.html#cb729-10" tabindex="-1"></a>        <span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,</span>
-<span id="cb729-11"><a href="pruebas-no-parametricas.html#cb729-11" tabindex="-1"></a>        <span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>)</span>
-<span id="cb729-12"><a href="pruebas-no-parametricas.html#cb729-12" tabindex="-1"></a>DF<span class="ot">=</span><span class="fu">data.frame</span>(Disney,Gender)</span>
-<span id="cb729-13"><a href="pruebas-no-parametricas.html#cb729-13" tabindex="-1"></a>DF</span></code></pre></div>
+<div class="sourceCode" id="cb730"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb730-1"><a href="pruebas-no-parametricas.html#cb730-1" tabindex="-1"></a>Disney<span class="ot">=</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,</span>
+<span id="cb730-2"><a href="pruebas-no-parametricas.html#cb730-2" tabindex="-1"></a>         <span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>,</span>
+<span id="cb730-3"><a href="pruebas-no-parametricas.html#cb730-3" tabindex="-1"></a>         <span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>, <span class="dv">3</span>, </span>
+<span id="cb730-4"><a href="pruebas-no-parametricas.html#cb730-4" tabindex="-1"></a>         <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">6</span>,<span class="dv">7</span>,</span>
+<span id="cb730-5"><a href="pruebas-no-parametricas.html#cb730-5" tabindex="-1"></a>         <span class="dv">11</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
+<span id="cb730-6"><a href="pruebas-no-parametricas.html#cb730-6" tabindex="-1"></a></span>
+<span id="cb730-7"><a href="pruebas-no-parametricas.html#cb730-7" tabindex="-1"></a>Gender<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,</span>
+<span id="cb730-8"><a href="pruebas-no-parametricas.html#cb730-8" tabindex="-1"></a>         <span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,</span>
+<span id="cb730-9"><a href="pruebas-no-parametricas.html#cb730-9" tabindex="-1"></a>         <span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,<span class="st">&quot;F&quot;</span>,</span>
+<span id="cb730-10"><a href="pruebas-no-parametricas.html#cb730-10" tabindex="-1"></a>        <span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,</span>
+<span id="cb730-11"><a href="pruebas-no-parametricas.html#cb730-11" tabindex="-1"></a>        <span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>,<span class="st">&quot;M&quot;</span>)</span>
+<span id="cb730-12"><a href="pruebas-no-parametricas.html#cb730-12" tabindex="-1"></a>DF<span class="ot">=</span><span class="fu">data.frame</span>(Disney,Gender)</span>
+<span id="cb730-13"><a href="pruebas-no-parametricas.html#cb730-13" tabindex="-1"></a>DF</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara9">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara9">Table 22.6: </span> </caption><col><col><thead>
@@ -1313,18 +1313,18 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 
 <hr />
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb730"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb730-1"><a href="pruebas-no-parametricas.html#cb730-1" tabindex="-1"></a><span class="fu">ggplot</span>(DF, <span class="fu">aes</span>(<span class="at">y=</span>Disney, <span class="at">x=</span>Gender))<span class="sc">+</span></span>
-<span id="cb730-2"><a href="pruebas-no-parametricas.html#cb730-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb731"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb731-1"><a href="pruebas-no-parametricas.html#cb731-1" tabindex="-1"></a><span class="fu">ggplot</span>(DF, <span class="fu">aes</span>(<span class="at">y=</span>Disney, <span class="at">x=</span>Gender))<span class="sc">+</span></span>
+<span id="cb731-2"><a href="pruebas-no-parametricas.html#cb731-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/nopara10-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb731"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb731-1"><a href="pruebas-no-parametricas.html#cb731-1" tabindex="-1"></a><span class="fu">ggplot</span>(DF, <span class="fu">aes</span>(<span class="at">x=</span>Disney, <span class="at">fill=</span>Gender))<span class="sc">+</span></span>
-<span id="cb731-2"><a href="pruebas-no-parametricas.html#cb731-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
-<span id="cb731-3"><a href="pruebas-no-parametricas.html#cb731-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>Gender)</span></code></pre></div>
+<div class="sourceCode" id="cb732"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb732-1"><a href="pruebas-no-parametricas.html#cb732-1" tabindex="-1"></a><span class="fu">ggplot</span>(DF, <span class="fu">aes</span>(<span class="at">x=</span>Disney, <span class="at">fill=</span>Gender))<span class="sc">+</span></span>
+<span id="cb732-2"><a href="pruebas-no-parametricas.html#cb732-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()<span class="sc">+</span></span>
+<span id="cb732-3"><a href="pruebas-no-parametricas.html#cb732-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>Gender)</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/nopara10-2.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb732"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb732-1"><a href="pruebas-no-parametricas.html#cb732-1" tabindex="-1"></a><span class="fu">wilcox.test</span>(Disney <span class="sc">~</span> Gender, <span class="at">data =</span> DF,<span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct=</span> <span class="cn">FALSE</span>, <span class="at">conf.int=</span>T )</span></code></pre></div>
+<div class="sourceCode" id="cb733"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb733-1"><a href="pruebas-no-parametricas.html#cb733-1" tabindex="-1"></a><span class="fu">wilcox.test</span>(Disney <span class="sc">~</span> Gender, <span class="at">data =</span> DF,<span class="at">exact =</span> <span class="cn">FALSE</span>, <span class="at">correct=</span> <span class="cn">FALSE</span>, <span class="at">conf.int=</span>T )</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Wilcoxon rank sum test
@@ -1346,16 +1346,16 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 <p>We now want to compare the results from sunday and Wendsday, but now the data come from the same individuals.
 ## BDI = Becks depression index Change</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb734"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb734-1"><a href="pruebas-no-parametricas.html#cb734-1" tabindex="-1"></a>drugData<span class="sc">$</span>BDIchange<span class="ot">&lt;-</span>drugData<span class="sc">$</span>wedsBDI<span class="sc">-</span>drugData<span class="sc">$</span>sundayBDI <span class="co"># calculate differences</span></span>
-<span id="cb734-2"><a href="pruebas-no-parametricas.html#cb734-2" tabindex="-1"></a></span>
-<span id="cb734-3"><a href="pruebas-no-parametricas.html#cb734-3" tabindex="-1"></a></span>
-<span id="cb734-4"><a href="pruebas-no-parametricas.html#cb734-4" tabindex="-1"></a></span>
-<span id="cb734-5"><a href="pruebas-no-parametricas.html#cb734-5" tabindex="-1"></a>drugData<span class="sc">$</span>BDIchange</span></code></pre></div>
+<div class="sourceCode" id="cb735"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb735-1"><a href="pruebas-no-parametricas.html#cb735-1" tabindex="-1"></a>drugData<span class="sc">$</span>BDIchange<span class="ot">&lt;-</span>drugData<span class="sc">$</span>wedsBDI<span class="sc">-</span>drugData<span class="sc">$</span>sundayBDI <span class="co"># calculate differences</span></span>
+<span id="cb735-2"><a href="pruebas-no-parametricas.html#cb735-2" tabindex="-1"></a></span>
+<span id="cb735-3"><a href="pruebas-no-parametricas.html#cb735-3" tabindex="-1"></a></span>
+<span id="cb735-4"><a href="pruebas-no-parametricas.html#cb735-4" tabindex="-1"></a></span>
+<span id="cb735-5"><a href="pruebas-no-parametricas.html#cb735-5" tabindex="-1"></a>drugData<span class="sc">$</span>BDIchange</span></code></pre></div>
 </details>
 <pre><code>##  [1]  13   0  19   6  20  15   0  13  23  15 -11  -9  10  -7  -7  -6  -8  -2 -15
 ## [20]  -8</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb736"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb736-1"><a href="pruebas-no-parametricas.html#cb736-1" tabindex="-1"></a><span class="fu">head</span>(drugData)</span></code></pre></div>
+<div class="sourceCode" id="cb737"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb737-1"><a href="pruebas-no-parametricas.html#cb737-1" tabindex="-1"></a><span class="fu">head</span>(drugData)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara11">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara11">Table 22.7: </span> </caption><col><col><col><col><col><col><thead>
@@ -1379,7 +1379,7 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb737"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb737-1"><a href="pruebas-no-parametricas.html#cb737-1" tabindex="-1"></a>drugData</span></code></pre></div>
+<div class="sourceCode" id="cb738"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb738-1"><a href="pruebas-no-parametricas.html#cb738-1" tabindex="-1"></a>drugData</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara11">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara11">Table 22.7: </span> </caption><col><col><col><col><col><col><thead>
@@ -1431,7 +1431,7 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb738"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb738-1"><a href="pruebas-no-parametricas.html#cb738-1" tabindex="-1"></a><span class="fu">by</span>(drugData<span class="sc">$</span>BDIchange, drugData<span class="sc">$</span>drug, stat.desc, <span class="at">basic =</span> <span class="cn">FALSE</span>, <span class="at">norm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb739"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb739-1"><a href="pruebas-no-parametricas.html#cb739-1" tabindex="-1"></a><span class="fu">by</span>(drugData<span class="sc">$</span>BDIchange, drugData<span class="sc">$</span>drug, stat.desc, <span class="at">basic =</span> <span class="cn">FALSE</span>, <span class="at">norm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <pre><code>## drugData$drug: Ecstasy
 ##       median         mean      SE.mean CI.mean.0.95          var      std.dev 
@@ -1449,18 +1449,18 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 ##   normtest.p 
 ##   0.03161929</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb740"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb740-1"><a href="pruebas-no-parametricas.html#cb740-1" tabindex="-1"></a>boxplot<span class="ot">&lt;-</span><span class="fu">ggplot</span>(drugData, <span class="fu">aes</span>(drug, BDIchange)) <span class="sc">+</span> </span>
-<span id="cb740-2"><a href="pruebas-no-parametricas.html#cb740-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span>
-<span id="cb740-3"><a href="pruebas-no-parametricas.html#cb740-3" tabindex="-1"></a>boxplot</span></code></pre></div>
+<div class="sourceCode" id="cb741"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb741-1"><a href="pruebas-no-parametricas.html#cb741-1" tabindex="-1"></a>boxplot<span class="ot">&lt;-</span><span class="fu">ggplot</span>(drugData, <span class="fu">aes</span>(drug, BDIchange)) <span class="sc">+</span> </span>
+<span id="cb741-2"><a href="pruebas-no-parametricas.html#cb741-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb741-3"><a href="pruebas-no-parametricas.html#cb741-3" tabindex="-1"></a>boxplot</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/nopara11-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb741"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb741-1"><a href="pruebas-no-parametricas.html#cb741-1" tabindex="-1"></a>alcoholData<span class="ot">&lt;-</span><span class="fu">subset</span>(drugData, drug <span class="sc">==</span> <span class="st">&quot;Alcohol&quot;</span>) <span class="co"># subset the data for alcohol</span></span>
-<span id="cb741-2"><a href="pruebas-no-parametricas.html#cb741-2" tabindex="-1"></a>ecstasyData<span class="ot">&lt;-</span><span class="fu">subset</span>(drugData, drug <span class="sc">==</span> <span class="st">&quot;Ecstasy&quot;</span>) <span class="co"># subset the data for ecstasy</span></span>
-<span id="cb741-3"><a href="pruebas-no-parametricas.html#cb741-3" tabindex="-1"></a></span>
-<span id="cb741-4"><a href="pruebas-no-parametricas.html#cb741-4" tabindex="-1"></a></span>
-<span id="cb741-5"><a href="pruebas-no-parametricas.html#cb741-5" tabindex="-1"></a>alcoholModel<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(alcoholData<span class="sc">$</span>wedsBDI, alcoholData<span class="sc">$</span>sundayBDI,  <span class="at">paired =</span> <span class="cn">TRUE</span>, <span class="at">exact =</span> <span class="cn">TRUE</span>, <span class="at">correct=</span> <span class="cn">FALSE</span>)</span>
-<span id="cb741-6"><a href="pruebas-no-parametricas.html#cb741-6" tabindex="-1"></a>alcoholModel</span></code></pre></div>
+<div class="sourceCode" id="cb742"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb742-1"><a href="pruebas-no-parametricas.html#cb742-1" tabindex="-1"></a>alcoholData<span class="ot">&lt;-</span><span class="fu">subset</span>(drugData, drug <span class="sc">==</span> <span class="st">&quot;Alcohol&quot;</span>) <span class="co"># subset the data for alcohol</span></span>
+<span id="cb742-2"><a href="pruebas-no-parametricas.html#cb742-2" tabindex="-1"></a>ecstasyData<span class="ot">&lt;-</span><span class="fu">subset</span>(drugData, drug <span class="sc">==</span> <span class="st">&quot;Ecstasy&quot;</span>) <span class="co"># subset the data for ecstasy</span></span>
+<span id="cb742-3"><a href="pruebas-no-parametricas.html#cb742-3" tabindex="-1"></a></span>
+<span id="cb742-4"><a href="pruebas-no-parametricas.html#cb742-4" tabindex="-1"></a></span>
+<span id="cb742-5"><a href="pruebas-no-parametricas.html#cb742-5" tabindex="-1"></a>alcoholModel<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(alcoholData<span class="sc">$</span>wedsBDI, alcoholData<span class="sc">$</span>sundayBDI,  <span class="at">paired =</span> <span class="cn">TRUE</span>, <span class="at">exact =</span> <span class="cn">TRUE</span>, <span class="at">correct=</span> <span class="cn">FALSE</span>)</span>
+<span id="cb742-6"><a href="pruebas-no-parametricas.html#cb742-6" tabindex="-1"></a>alcoholModel</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Wilcoxon signed rank test
@@ -1469,8 +1469,8 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 ## V = 8, p-value = 0.04657
 ## alternative hypothesis: true location shift is not equal to 0</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb743"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb743-1"><a href="pruebas-no-parametricas.html#cb743-1" tabindex="-1"></a>ecstasyModel<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(ecstasyData<span class="sc">$</span>wedsBDI, ecstasyData<span class="sc">$</span>sundayBDI, <span class="at">paired =</span> <span class="cn">TRUE</span>, <span class="at">exact =</span> <span class="cn">FALSE</span>,<span class="at">correct=</span> <span class="cn">FALSE</span>)   <span class="co"># Note that the option &quot;exact=FALSE&quot; has to be added becase there are ties.  </span></span>
-<span id="cb743-2"><a href="pruebas-no-parametricas.html#cb743-2" tabindex="-1"></a>ecstasyModel</span></code></pre></div>
+<div class="sourceCode" id="cb744"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb744-1"><a href="pruebas-no-parametricas.html#cb744-1" tabindex="-1"></a>ecstasyModel<span class="ot">&lt;-</span><span class="fu">wilcox.test</span>(ecstasyData<span class="sc">$</span>wedsBDI, ecstasyData<span class="sc">$</span>sundayBDI, <span class="at">paired =</span> <span class="cn">TRUE</span>, <span class="at">exact =</span> <span class="cn">FALSE</span>,<span class="at">correct=</span> <span class="cn">FALSE</span>)   <span class="co"># Note that the option &quot;exact=FALSE&quot; has to be added becase there are ties.  </span></span>
+<span id="cb744-2"><a href="pruebas-no-parametricas.html#cb744-2" tabindex="-1"></a>ecstasyModel</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Wilcoxon signed rank test
@@ -1517,11 +1517,11 @@ Hum Reprod. 2008 Nov;23(11):2584-90. doi: 10.1093/humrep/den243. Epub 2008 Jul 2
 <p>These data suggest that higher intake of soy foods and soy isoflavones is associated with lower sperm concentration.</p>
 <p>Now let us look at the data from Field, soya.csv.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb745"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb745-1"><a href="pruebas-no-parametricas.html#cb745-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb745-2"><a href="pruebas-no-parametricas.html#cb745-2" tabindex="-1"></a></span>
-<span id="cb745-3"><a href="pruebas-no-parametricas.html#cb745-3" tabindex="-1"></a>Soyadf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Soya.csv&quot;</span>)</span>
-<span id="cb745-4"><a href="pruebas-no-parametricas.html#cb745-4" tabindex="-1"></a></span>
-<span id="cb745-5"><a href="pruebas-no-parametricas.html#cb745-5" tabindex="-1"></a><span class="fu">head</span>(Soyadf)</span></code></pre></div>
+<div class="sourceCode" id="cb746"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb746-1"><a href="pruebas-no-parametricas.html#cb746-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb746-2"><a href="pruebas-no-parametricas.html#cb746-2" tabindex="-1"></a></span>
+<span id="cb746-3"><a href="pruebas-no-parametricas.html#cb746-3" tabindex="-1"></a>Soyadf <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Soya.csv&quot;</span>)</span>
+<span id="cb746-4"><a href="pruebas-no-parametricas.html#cb746-4" tabindex="-1"></a></span>
+<span id="cb746-5"><a href="pruebas-no-parametricas.html#cb746-5" tabindex="-1"></a><span class="fu">head</span>(Soyadf)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara12">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara12">Table 22.8: </span> </caption><col><col><thead>
@@ -1545,7 +1545,7 @@ Hum Reprod. 2008 Nov;23(11):2584-90. doi: 10.1093/humrep/den243. Epub 2008 Jul 2
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb746"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb746-1"><a href="pruebas-no-parametricas.html#cb746-1" tabindex="-1"></a><span class="fu">unique</span>(Soyadf<span class="sc">$</span>Soya)</span></code></pre></div>
+<div class="sourceCode" id="cb747"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb747-1"><a href="pruebas-no-parametricas.html#cb747-1" tabindex="-1"></a><span class="fu">unique</span>(Soyadf<span class="sc">$</span>Soya)</span></code></pre></div>
 </details>
 <pre><code>## [1] &quot;No Soya Meals&quot;          &quot;1 Soya Meal Per Week&quot;   &quot;4 Soyal Meals Per Week&quot;
 ## [4] &quot;7 Soya Meals Per Week&quot;</code></pre>
@@ -1554,20 +1554,20 @@ Hum Reprod. 2008 Nov;23(11):2584-90. doi: 10.1093/humrep/den243. Epub 2008 Jul 2
 <div id="hacer-un-boxplot-de-los-datos-en-un-nuevo-chunk" class="section level2 hasAnchor" number="22.22">
 <h2><span class="header-section-number">22.22</span> Hacer un boxplot de los datos en un nuevo chunk<a href="pruebas-no-parametricas.html#hacer-un-boxplot-de-los-datos-en-un-nuevo-chunk" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb748"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb748-1"><a href="pruebas-no-parametricas.html#cb748-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb748-2"><a href="pruebas-no-parametricas.html#cb748-2" tabindex="-1"></a></span>
-<span id="cb748-3"><a href="pruebas-no-parametricas.html#cb748-3" tabindex="-1"></a><span class="fu">ggplot</span>(Soyadf, <span class="fu">aes</span>(<span class="at">x=</span>Soya, <span class="at">y=</span>Sperm, <span class="at">fill=</span>Soya))<span class="sc">+</span></span>
-<span id="cb748-4"><a href="pruebas-no-parametricas.html#cb748-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
-<span id="cb748-5"><a href="pruebas-no-parametricas.html#cb748-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb749"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb749-1"><a href="pruebas-no-parametricas.html#cb749-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb749-2"><a href="pruebas-no-parametricas.html#cb749-2" tabindex="-1"></a></span>
+<span id="cb749-3"><a href="pruebas-no-parametricas.html#cb749-3" tabindex="-1"></a><span class="fu">ggplot</span>(Soyadf, <span class="fu">aes</span>(<span class="at">x=</span>Soya, <span class="at">y=</span>Sperm, <span class="at">fill=</span>Soya))<span class="sc">+</span></span>
+<span id="cb749-4"><a href="pruebas-no-parametricas.html#cb749-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()<span class="sc">+</span></span>
+<span id="cb749-5"><a href="pruebas-no-parametricas.html#cb749-5" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>))</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/nopara13-1.png" width="672" /></p>
 <hr />
 <p>Descriptive statistics
 When adding “norm=TRUE” will perform Shapiro_Wilks Normality test.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb749"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb749-1"><a href="pruebas-no-parametricas.html#cb749-1" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
-<span id="cb749-2"><a href="pruebas-no-parametricas.html#cb749-2" tabindex="-1"></a></span>
-<span id="cb749-3"><a href="pruebas-no-parametricas.html#cb749-3" tabindex="-1"></a><span class="fu">by</span>(Soyadf<span class="sc">$</span>Sperm, Soyadf<span class="sc">$</span>Soya, stat.desc, <span class="at">basic =</span> <span class="cn">FALSE</span>, <span class="at">norm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb750"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb750-1"><a href="pruebas-no-parametricas.html#cb750-1" tabindex="-1"></a><span class="fu">library</span>(pastecs)</span>
+<span id="cb750-2"><a href="pruebas-no-parametricas.html#cb750-2" tabindex="-1"></a></span>
+<span id="cb750-3"><a href="pruebas-no-parametricas.html#cb750-3" tabindex="-1"></a><span class="fu">by</span>(Soyadf<span class="sc">$</span>Sperm, Soyadf<span class="sc">$</span>Soya, stat.desc, <span class="at">basic =</span> <span class="cn">FALSE</span>, <span class="at">norm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </details>
 <pre><code>## Soyadf$Soya: 1 Soya Meal Per Week
 ##       median         mean      SE.mean CI.mean.0.95          var      std.dev 
@@ -1607,8 +1607,8 @@ When adding “norm=TRUE” will perform Shapiro_Wilks Normality test.</p>
 <p>HO: R1=R2=R3=R4
 HA: Por lo menos uno los grupos es diferente</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb751"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb751-1"><a href="pruebas-no-parametricas.html#cb751-1" tabindex="-1"></a><span class="co"># Traditional approach</span></span>
-<span id="cb751-2"><a href="pruebas-no-parametricas.html#cb751-2" tabindex="-1"></a><span class="fu">kruskal.test</span>(Sperm<span class="sc">~</span><span class="fu">as.factor</span>(Soya), <span class="at">data=</span>Soyadf)</span></code></pre></div>
+<div class="sourceCode" id="cb752"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb752-1"><a href="pruebas-no-parametricas.html#cb752-1" tabindex="-1"></a><span class="co"># Traditional approach</span></span>
+<span id="cb752-2"><a href="pruebas-no-parametricas.html#cb752-2" tabindex="-1"></a><span class="fu">kruskal.test</span>(Sperm<span class="sc">~</span><span class="fu">as.factor</span>(Soya), <span class="at">data=</span>Soyadf)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Kruskal-Wallis rank sum test
@@ -1617,10 +1617,10 @@ HA: Por lo menos uno los grupos es diferente</p>
 ## Kruskal-Wallis chi-squared = 8.6589, df = 3, p-value = 0.03419</code></pre>
 <hr />
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb753"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb753-1"><a href="pruebas-no-parametricas.html#cb753-1" tabindex="-1"></a><span class="fu">library</span>(coin)</span>
-<span id="cb753-2"><a href="pruebas-no-parametricas.html#cb753-2" tabindex="-1"></a><span class="co">#Approximative (Monte Carlo) Fisher-Pitman test</span></span>
-<span id="cb753-3"><a href="pruebas-no-parametricas.html#cb753-3" tabindex="-1"></a>modelkt<span class="ot">=</span><span class="fu">kruskal_test</span>(Sperm<span class="sc">~</span><span class="fu">as.factor</span>(Soya), <span class="at">data=</span>Soyadf, <span class="at">distribution =</span> <span class="fu">approximate</span>(<span class="at">nresample =</span> <span class="dv">10000</span>))</span>
-<span id="cb753-4"><a href="pruebas-no-parametricas.html#cb753-4" tabindex="-1"></a>modelkt</span></code></pre></div>
+<div class="sourceCode" id="cb754"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb754-1"><a href="pruebas-no-parametricas.html#cb754-1" tabindex="-1"></a><span class="fu">library</span>(coin)</span>
+<span id="cb754-2"><a href="pruebas-no-parametricas.html#cb754-2" tabindex="-1"></a><span class="co">#Approximative (Monte Carlo) Fisher-Pitman test</span></span>
+<span id="cb754-3"><a href="pruebas-no-parametricas.html#cb754-3" tabindex="-1"></a>modelkt<span class="ot">=</span><span class="fu">kruskal_test</span>(Sperm<span class="sc">~</span><span class="fu">as.factor</span>(Soya), <span class="at">data=</span>Soyadf, <span class="at">distribution =</span> <span class="fu">approximate</span>(<span class="at">nresample =</span> <span class="dv">10000</span>))</span>
+<span id="cb754-4"><a href="pruebas-no-parametricas.html#cb754-4" tabindex="-1"></a>modelkt</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Approximative Kruskal-Wallis Test
@@ -1629,22 +1629,22 @@ HA: Por lo menos uno los grupos es diferente</p>
 ##   as.factor(Soya) (1 Soya Meal Per Week, 4 Soyal Meals Per Week, 7 Soya Meals Per Week, No Soya Meals)
 ## chi-squared = 8.6589, p-value = 0.0345</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb755"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb755-1"><a href="pruebas-no-parametricas.html#cb755-1" tabindex="-1"></a><span class="co">#op &lt;- par(no.readonly = TRUE) # save current settings</span></span>
-<span id="cb755-2"><a href="pruebas-no-parametricas.html#cb755-2" tabindex="-1"></a><span class="co">#layout(matrix(1:3, nrow = 3))</span></span>
-<span id="cb755-3"><a href="pruebas-no-parametricas.html#cb755-3" tabindex="-1"></a><span class="co">#s1 &lt;- support(modelkt); d1 &lt;- dperm(modelkt, s1)</span></span>
-<span id="cb755-4"><a href="pruebas-no-parametricas.html#cb755-4" tabindex="-1"></a><span class="co">#plot(s1, d1, type = &quot;h&quot;, main = &quot;Mid-score: 0&quot;,</span></span>
-<span id="cb755-5"><a href="pruebas-no-parametricas.html#cb755-5" tabindex="-1"></a><span class="co">#     xlab = &quot;Test Statistic&quot;, ylab = &quot;Density&quot;)</span></span>
-<span id="cb755-6"><a href="pruebas-no-parametricas.html#cb755-6" tabindex="-1"></a></span>
-<span id="cb755-7"><a href="pruebas-no-parametricas.html#cb755-7" tabindex="-1"></a><span class="co">#pperm(modelkt, q=c(0.05, 0.5, 0.95))</span></span>
-<span id="cb755-8"><a href="pruebas-no-parametricas.html#cb755-8" tabindex="-1"></a></span>
-<span id="cb755-9"><a href="pruebas-no-parametricas.html#cb755-9" tabindex="-1"></a></span>
-<span id="cb755-10"><a href="pruebas-no-parametricas.html#cb755-10" tabindex="-1"></a><span class="co">#s=support(modelkt)</span></span>
-<span id="cb755-11"><a href="pruebas-no-parametricas.html#cb755-11" tabindex="-1"></a><span class="co">#quantile(s, c(.025, 0.975))</span></span></code></pre></div>
+<div class="sourceCode" id="cb756"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb756-1"><a href="pruebas-no-parametricas.html#cb756-1" tabindex="-1"></a><span class="co">#op &lt;- par(no.readonly = TRUE) # save current settings</span></span>
+<span id="cb756-2"><a href="pruebas-no-parametricas.html#cb756-2" tabindex="-1"></a><span class="co">#layout(matrix(1:3, nrow = 3))</span></span>
+<span id="cb756-3"><a href="pruebas-no-parametricas.html#cb756-3" tabindex="-1"></a><span class="co">#s1 &lt;- support(modelkt); d1 &lt;- dperm(modelkt, s1)</span></span>
+<span id="cb756-4"><a href="pruebas-no-parametricas.html#cb756-4" tabindex="-1"></a><span class="co">#plot(s1, d1, type = &quot;h&quot;, main = &quot;Mid-score: 0&quot;,</span></span>
+<span id="cb756-5"><a href="pruebas-no-parametricas.html#cb756-5" tabindex="-1"></a><span class="co">#     xlab = &quot;Test Statistic&quot;, ylab = &quot;Density&quot;)</span></span>
+<span id="cb756-6"><a href="pruebas-no-parametricas.html#cb756-6" tabindex="-1"></a></span>
+<span id="cb756-7"><a href="pruebas-no-parametricas.html#cb756-7" tabindex="-1"></a><span class="co">#pperm(modelkt, q=c(0.05, 0.5, 0.95))</span></span>
+<span id="cb756-8"><a href="pruebas-no-parametricas.html#cb756-8" tabindex="-1"></a></span>
+<span id="cb756-9"><a href="pruebas-no-parametricas.html#cb756-9" tabindex="-1"></a></span>
+<span id="cb756-10"><a href="pruebas-no-parametricas.html#cb756-10" tabindex="-1"></a><span class="co">#s=support(modelkt)</span></span>
+<span id="cb756-11"><a href="pruebas-no-parametricas.html#cb756-11" tabindex="-1"></a><span class="co">#quantile(s, c(.025, 0.975))</span></span></code></pre></div>
 </details>
 <hr />
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb756"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb756-1"><a href="pruebas-no-parametricas.html#cb756-1" tabindex="-1"></a>Soyadf<span class="sc">$</span>Ranks<span class="ot">=</span><span class="fu">rank</span>(Soyadf<span class="sc">$</span>Sperm)</span>
-<span id="cb756-2"><a href="pruebas-no-parametricas.html#cb756-2" tabindex="-1"></a><span class="fu">head</span>(Soyadf)</span></code></pre></div>
+<div class="sourceCode" id="cb757"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb757-1"><a href="pruebas-no-parametricas.html#cb757-1" tabindex="-1"></a>Soyadf<span class="sc">$</span>Ranks<span class="ot">=</span><span class="fu">rank</span>(Soyadf<span class="sc">$</span>Sperm)</span>
+<span id="cb757-2"><a href="pruebas-no-parametricas.html#cb757-2" tabindex="-1"></a><span class="fu">head</span>(Soyadf)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:nopara17">
 <caption style="caption-side: top; text-align: center;"><span id="tab:nopara17">Table 22.9: </span> </caption><col><col><col><thead>
@@ -1668,7 +1668,7 @@ HA: Por lo menos uno los grupos es diferente</p>
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb757"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb757-1"><a href="pruebas-no-parametricas.html#cb757-1" tabindex="-1"></a><span class="fu">by</span>(Soyadf<span class="sc">$</span>Ranks, Soyadf<span class="sc">$</span>Soya, median)</span></code></pre></div>
+<div class="sourceCode" id="cb758"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb758-1"><a href="pruebas-no-parametricas.html#cb758-1" tabindex="-1"></a><span class="fu">by</span>(Soyadf<span class="sc">$</span>Ranks, Soyadf<span class="sc">$</span>Soya, median)</span></code></pre></div>
 </details>
 <pre><code>## Soyadf$Soya: 1 Soya Meal Per Week
 ## [1] 43
@@ -1688,8 +1688,8 @@ The values shown are the p=values, the pair are significantly different if the p
 <h3><span class="header-section-number">22.23.1</span> Note<a href="pruebas-no-parametricas.html#note" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>dist=“Tukey”, correction for ties done</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb759"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb759-1"><a href="pruebas-no-parametricas.html#cb759-1" tabindex="-1"></a><span class="fu">library</span>(PMCMRplus)</span>
-<span id="cb759-2"><a href="pruebas-no-parametricas.html#cb759-2" tabindex="-1"></a><span class="fu">kwAllPairsNemenyiTest</span>(Sperm<span class="sc">~</span><span class="fu">as.factor</span>(Soya) , <span class="at">data=</span>Soyadf)</span></code></pre></div>
+<div class="sourceCode" id="cb760"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb760-1"><a href="pruebas-no-parametricas.html#cb760-1" tabindex="-1"></a><span class="fu">library</span>(PMCMRplus)</span>
+<span id="cb760-2"><a href="pruebas-no-parametricas.html#cb760-2" tabindex="-1"></a><span class="fu">kwAllPairsNemenyiTest</span>(Sperm<span class="sc">~</span><span class="fu">as.factor</span>(Soya) , <span class="at">data=</span>Soyadf)</span></code></pre></div>
 </details>
 <pre><code>##                        1 Soya Meal Per Week 4 Soyal Meals Per Week
 ## 4 Soyal Meals Per Week 1.000                -                     
@@ -1700,8 +1700,8 @@ The values shown are the p=values, the pair are significantly different if the p
 ## 7 Soya Meals Per Week  -                    
 ## No Soya Meals          0.048</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb761"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb761-1"><a href="pruebas-no-parametricas.html#cb761-1" tabindex="-1"></a>model1<span class="ot">=</span><span class="fu">kwAllPairsNemenyiTest</span>(Sperm<span class="sc">~</span><span class="fu">as.factor</span>(Soya) , <span class="at">data=</span>Soyadf) <span class="co"># para más detalles</span></span>
-<span id="cb761-2"><a href="pruebas-no-parametricas.html#cb761-2" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb762"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb762-1"><a href="pruebas-no-parametricas.html#cb762-1" tabindex="-1"></a>model1<span class="ot">=</span><span class="fu">kwAllPairsNemenyiTest</span>(Sperm<span class="sc">~</span><span class="fu">as.factor</span>(Soya) , <span class="at">data=</span>Soyadf) <span class="co"># para más detalles</span></span>
+<span id="cb762-2"><a href="pruebas-no-parametricas.html#cb762-2" tabindex="-1"></a><span class="fu">summary</span>(model1)</span></code></pre></div>
 </details>
 <pre><code>##                                                     q value Pr(&gt;|q|)  
 ## 4 Soyal Meals Per Week - 1 Soya Meal Per Week == 0    0.000 1.000000  
@@ -1711,7 +1711,7 @@ The values shown are the p=values, the pair are significantly different if the p
 ## No Soya Meals - 4 Soyal Meals Per Week == 0           0.423 0.990680  
 ## No Soya Meals - 7 Soya Meals Per Week == 0            3.657 0.047845 *</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb763"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb763-1"><a href="pruebas-no-parametricas.html#cb763-1" tabindex="-1"></a><span class="co"># Try &quot;Chi Square&quot; = Chisq</span></span></code></pre></div>
+<div class="sourceCode" id="cb764"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb764-1"><a href="pruebas-no-parametricas.html#cb764-1" tabindex="-1"></a><span class="co"># Try &quot;Chi Square&quot; = Chisq</span></span></code></pre></div>
 </details>
 
 </div>

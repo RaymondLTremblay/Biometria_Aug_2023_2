@@ -423,6 +423,8 @@ abs(qt(0.025, 29))  # valor de t-critico, de la tabla
 ```
 
 
+Para enterder mejor como cambia el valor de t critico con el tamaño de muestra vea la siguiente tabla. https://numiqo.com/tutorial/t-distribution
+
 
 
 ***
@@ -457,7 +459,7 @@ Las opciones para esta prueba son las siguientes en roja
        
 
 
-```{r onesamp18, echo=FALSE}
+```{r onesamp18}
 
 tipTTest<-t.test(tips$tip, alternative = "two.sided", mu=2.50)
 

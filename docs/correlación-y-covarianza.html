@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 17 Correlación y Covarianza | BioEstadística</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
-  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 17 Correlación y Covarianza | BioEstadística" />
   <meta property="og:type" content="book" />
@@ -834,16 +834,16 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;2025-10-06&quot;</code></pre>
 <p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="correlación-y-covarianza.html#cb545-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="correlación-y-covarianza.html#cb546-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb546"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb546-1"><a href="correlación-y-covarianza.html#cb546-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb546-2"><a href="correlación-y-covarianza.html#cb546-2" tabindex="-1"></a>DownloadFestival <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/DownloadFestival.csv&quot;</span>)</span>
-<span id="cb546-3"><a href="correlación-y-covarianza.html#cb546-3" tabindex="-1"></a></span>
-<span id="cb546-4"><a href="correlación-y-covarianza.html#cb546-4" tabindex="-1"></a></span>
-<span id="cb546-5"><a href="correlación-y-covarianza.html#cb546-5" tabindex="-1"></a></span>
-<span id="cb546-6"><a href="correlación-y-covarianza.html#cb546-6" tabindex="-1"></a>dlf<span class="ot">=</span>DownloadFestival  <span class="co">#use shorter data.frame names to make your life easier..... </span></span>
-<span id="cb546-7"><a href="correlación-y-covarianza.html#cb546-7" tabindex="-1"></a><span class="fu">head</span>(dlf)</span></code></pre></div>
+<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="correlación-y-covarianza.html#cb547-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb547-2"><a href="correlación-y-covarianza.html#cb547-2" tabindex="-1"></a>DownloadFestival <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/DownloadFestival.csv&quot;</span>)</span>
+<span id="cb547-3"><a href="correlación-y-covarianza.html#cb547-3" tabindex="-1"></a></span>
+<span id="cb547-4"><a href="correlación-y-covarianza.html#cb547-4" tabindex="-1"></a></span>
+<span id="cb547-5"><a href="correlación-y-covarianza.html#cb547-5" tabindex="-1"></a></span>
+<span id="cb547-6"><a href="correlación-y-covarianza.html#cb547-6" tabindex="-1"></a>dlf<span class="ot">=</span>DownloadFestival  <span class="co">#use shorter data.frame names to make your life easier..... </span></span>
+<span id="cb547-7"><a href="correlación-y-covarianza.html#cb547-7" tabindex="-1"></a><span class="fu">head</span>(dlf)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:corr1">
 <caption style="caption-side: top; text-align: center;"><span id="tab:corr1">Table 17.1: </span> </caption><col><col><col><col><col><thead>
@@ -867,7 +867,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="correlación-y-covarianza.html#cb547-1" tabindex="-1"></a><span class="fu">tail</span>(dlf)</span></code></pre></div>
+<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="correlación-y-covarianza.html#cb548-1" tabindex="-1"></a><span class="fu">tail</span>(dlf)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:corr1">
 <caption style="caption-side: top; text-align: center;"><span id="tab:corr1">Table 17.1: </span> </caption><col><col><col><col><col><thead>
@@ -891,7 +891,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb548"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb548-1"><a href="correlación-y-covarianza.html#cb548-1" tabindex="-1"></a><span class="fu">summary</span>(dlf)</span></code></pre></div>
+<div class="sourceCode" id="cb549"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb549-1"><a href="correlación-y-covarianza.html#cb549-1" tabindex="-1"></a><span class="fu">summary</span>(dlf)</span></code></pre></div>
 </details>
 <pre><code>##     ticknumb       gender               day1             day2       
 ##  Min.   :2111   Length:810         Min.   : 0.020   Min.   :0.0000  
@@ -910,15 +910,15 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ##  Max.   :3.4100  
 ##  NA&#39;s   :687</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="correlación-y-covarianza.html#cb550-1" tabindex="-1"></a>dlf2<span class="ot">=</span><span class="fu">subset</span>(dlf, dlf<span class="sc">$</span>day1<span class="sc">&lt;</span><span class="dv">5</span>)  </span>
-<span id="cb550-2"><a href="correlación-y-covarianza.html#cb550-2" tabindex="-1"></a></span>
-<span id="cb550-3"><a href="correlación-y-covarianza.html#cb550-3" tabindex="-1"></a><span class="fu">ggplot</span>(dlf2, <span class="fu">aes</span>(day1))<span class="sc">+</span></span>
-<span id="cb550-4"><a href="correlación-y-covarianza.html#cb550-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="correlación-y-covarianza.html#cb551-1" tabindex="-1"></a>dlf2<span class="ot">=</span><span class="fu">subset</span>(dlf, dlf<span class="sc">$</span>day1<span class="sc">&lt;</span><span class="dv">5</span>)  </span>
+<span id="cb551-2"><a href="correlación-y-covarianza.html#cb551-2" tabindex="-1"></a></span>
+<span id="cb551-3"><a href="correlación-y-covarianza.html#cb551-3" tabindex="-1"></a><span class="fu">ggplot</span>(dlf2, <span class="fu">aes</span>(day1))<span class="sc">+</span></span>
+<span id="cb551-4"><a href="correlación-y-covarianza.html#cb551-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/corr1-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb551"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb551-1"><a href="correlación-y-covarianza.html#cb551-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb551-2"><a href="correlación-y-covarianza.html#cb551-2" tabindex="-1"></a><span class="fu">head</span>(dlf2)</span></code></pre></div>
+<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="correlación-y-covarianza.html#cb552-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb552-2"><a href="correlación-y-covarianza.html#cb552-2" tabindex="-1"></a><span class="fu">head</span>(dlf2)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:corr2">
 <caption style="caption-side: top; text-align: center;"><span id="tab:corr2">Table 17.2: </span> </caption><col><col><col><col><col><thead>
@@ -992,12 +992,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>![Covariance]
 <span class="math display">\[cov(x,y)=\frac { \sum { ({ x }_{ i }-\bar { x } _{ i })({ y }_{ i }-\bar { y } _{ i }) }  }{ n-1 } \]</span></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="correlación-y-covarianza.html#cb552-1" tabindex="-1"></a>x_val<span class="ot">=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>)</span>
-<span id="cb552-2"><a href="correlación-y-covarianza.html#cb552-2" tabindex="-1"></a>y_val<span class="ot">=</span><span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">15</span>)</span>
-<span id="cb552-3"><a href="correlación-y-covarianza.html#cb552-3" tabindex="-1"></a>Person<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb552-4"><a href="correlación-y-covarianza.html#cb552-4" tabindex="-1"></a>meanx<span class="ot">=</span><span class="fu">mean</span>(x_val)</span>
-<span id="cb552-5"><a href="correlación-y-covarianza.html#cb552-5" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">data.frame</span>(Person,x_val,y_val)</span>
-<span id="cb552-6"><a href="correlación-y-covarianza.html#cb552-6" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="correlación-y-covarianza.html#cb553-1" tabindex="-1"></a>x_val<span class="ot">=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>)</span>
+<span id="cb553-2"><a href="correlación-y-covarianza.html#cb553-2" tabindex="-1"></a>y_val<span class="ot">=</span><span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">13</span>,<span class="dv">15</span>)</span>
+<span id="cb553-3"><a href="correlación-y-covarianza.html#cb553-3" tabindex="-1"></a>Person<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb553-4"><a href="correlación-y-covarianza.html#cb553-4" tabindex="-1"></a>meanx<span class="ot">=</span><span class="fu">mean</span>(x_val)</span>
+<span id="cb553-5"><a href="correlación-y-covarianza.html#cb553-5" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">data.frame</span>(Person,x_val,y_val)</span>
+<span id="cb553-6"><a href="correlación-y-covarianza.html#cb553-6" tabindex="-1"></a>df</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:corr3">
 <caption style="caption-side: top; text-align: center;"><span id="tab:corr3">Table 17.3: </span> </caption><col><col><col><thead>
@@ -1019,11 +1019,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb553"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb553-1"><a href="correlación-y-covarianza.html#cb553-1" tabindex="-1"></a><span class="fu">ggplot</span>(df)<span class="sc">+</span></span>
-<span id="cb553-2"><a href="correlación-y-covarianza.html#cb553-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>Person,<span class="at">y=</span>x_val),<span class="at">colour=</span><span class="st">&quot;Blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb553-3"><a href="correlación-y-covarianza.html#cb553-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>Person,<span class="at">y=</span>y_val), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb553-4"><a href="correlación-y-covarianza.html#cb553-4" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="fu">mean</span>(df<span class="sc">$</span>x_val)),<span class="at">colour=</span><span class="st">&quot;Blue&quot;</span>)<span class="sc">+</span></span>
-<span id="cb553-5"><a href="correlación-y-covarianza.html#cb553-5" tabindex="-1"></a><span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="fu">mean</span>(df<span class="sc">$</span>y_val)),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="correlación-y-covarianza.html#cb554-1" tabindex="-1"></a><span class="fu">ggplot</span>(df)<span class="sc">+</span></span>
+<span id="cb554-2"><a href="correlación-y-covarianza.html#cb554-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>df, <span class="fu">aes</span>(<span class="at">x=</span>Person,<span class="at">y=</span>x_val),<span class="at">colour=</span><span class="st">&quot;Blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb554-3"><a href="correlación-y-covarianza.html#cb554-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>df,<span class="fu">aes</span>(<span class="at">x=</span>Person,<span class="at">y=</span>y_val), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb554-4"><a href="correlación-y-covarianza.html#cb554-4" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="fu">mean</span>(df<span class="sc">$</span>x_val)),<span class="at">colour=</span><span class="st">&quot;Blue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb554-5"><a href="correlación-y-covarianza.html#cb554-5" tabindex="-1"></a><span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="fu">mean</span>(df<span class="sc">$</span>y_val)),<span class="at">colour=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/corr3-1.png" width="672" /></p>
 <p>Because in most cases variables are collected having different measurement scales we have to standardize using the standard deviation</p>
@@ -1038,11 +1038,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>The function to calculate the correlation coefficient is “cor”</p>
 <p>The function to determine if the correlation vetween the 2 variables is significant (in other words, different from zero) is “cor.test”.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="correlación-y-covarianza.html#cb554-1" tabindex="-1"></a><span class="fu">cor</span>(df<span class="sc">$</span>x_val, df<span class="sc">$</span>y_val)</span></code></pre></div>
+<div class="sourceCode" id="cb555"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb555-1"><a href="correlación-y-covarianza.html#cb555-1" tabindex="-1"></a><span class="fu">cor</span>(df<span class="sc">$</span>x_val, df<span class="sc">$</span>y_val)</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.8711651</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="correlación-y-covarianza.html#cb556-1" tabindex="-1"></a><span class="fu">cor.test</span>(df<span class="sc">$</span>x_val, df<span class="sc">$</span>y_val)</span></code></pre></div>
+<div class="sourceCode" id="cb557"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb557-1"><a href="correlación-y-covarianza.html#cb557-1" tabindex="-1"></a><span class="fu">cor.test</span>(df<span class="sc">$</span>x_val, df<span class="sc">$</span>y_val)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
@@ -1065,10 +1065,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Let us a look at Anxiety and exam results.</p>
 <p>Choose the data set, examData</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb558"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb558-1"><a href="correlación-y-covarianza.html#cb558-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb558-2"><a href="correlación-y-covarianza.html#cb558-2" tabindex="-1"></a>Exam_Anxiety <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Exam Anxiety.csv&quot;</span>)</span>
-<span id="cb558-3"><a href="correlación-y-covarianza.html#cb558-3" tabindex="-1"></a>examData<span class="ot">=</span>Exam_Anxiety</span>
-<span id="cb558-4"><a href="correlación-y-covarianza.html#cb558-4" tabindex="-1"></a><span class="fu">head</span>(examData)</span></code></pre></div>
+<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="correlación-y-covarianza.html#cb559-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb559-2"><a href="correlación-y-covarianza.html#cb559-2" tabindex="-1"></a>Exam_Anxiety <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Exam Anxiety.csv&quot;</span>)</span>
+<span id="cb559-3"><a href="correlación-y-covarianza.html#cb559-3" tabindex="-1"></a>examData<span class="ot">=</span>Exam_Anxiety</span>
+<span id="cb559-4"><a href="correlación-y-covarianza.html#cb559-4" tabindex="-1"></a><span class="fu">head</span>(examData)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:corr5">
 <caption style="caption-side: top; text-align: center;"><span id="tab:corr5">Table 17.4: </span> </caption><col><col><col><col><col><thead>
@@ -1092,12 +1092,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="correlación-y-covarianza.html#cb559-1" tabindex="-1"></a><span class="fu">ggplot</span>(examData, <span class="fu">aes</span>(<span class="at">y=</span>Exam, <span class="at">x=</span>Anxiety))<span class="sc">+</span></span>
-<span id="cb559-2"><a href="correlación-y-covarianza.html#cb559-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="correlación-y-covarianza.html#cb560-1" tabindex="-1"></a><span class="fu">ggplot</span>(examData, <span class="fu">aes</span>(<span class="at">y=</span>Exam, <span class="at">x=</span>Anxiety))<span class="sc">+</span></span>
+<span id="cb560-2"><a href="correlación-y-covarianza.html#cb560-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/corr5-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="correlación-y-covarianza.html#cb560-1" tabindex="-1"></a><span class="fu">cor.test</span>(examData<span class="sc">$</span>Exam,examData<span class="sc">$</span>Anxiety)</span></code></pre></div>
+<div class="sourceCode" id="cb561"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb561-1"><a href="correlación-y-covarianza.html#cb561-1" tabindex="-1"></a><span class="fu">cor.test</span>(examData<span class="sc">$</span>Exam,examData<span class="sc">$</span>Anxiety)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
@@ -1112,11 +1112,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## -0.4409934</code></pre>
 <p>One the basic assumption of the Pearson correlation is that the data be bivariate normally distributed. NOTE: WHAT WE MEAN ABOUT THE “ASSUMPTION” IS THAT WE ARE CONFIDENT THAT THE UNIVERSE IS NORMALLY DISTRIBUTED, NOT NECESARILY THAT OUR DATA ARE (SUBSET).</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb562"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb562-1"><a href="correlación-y-covarianza.html#cb562-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb562-2"><a href="correlación-y-covarianza.html#cb562-2" tabindex="-1"></a><span class="fu">library</span>(png)</span>
-<span id="cb562-3"><a href="correlación-y-covarianza.html#cb562-3" tabindex="-1"></a></span>
-<span id="cb562-4"><a href="correlación-y-covarianza.html#cb562-4" tabindex="-1"></a>img3_path<span class="ot">&lt;-</span><span class="st">&quot;Graficos/Bivariate_normal.png&quot;</span></span>
-<span id="cb562-5"><a href="correlación-y-covarianza.html#cb562-5" tabindex="-1"></a><span class="fu">include_graphics</span>(img3_path)</span></code></pre></div>
+<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb563-1"><a href="correlación-y-covarianza.html#cb563-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb563-2"><a href="correlación-y-covarianza.html#cb563-2" tabindex="-1"></a><span class="fu">library</span>(png)</span>
+<span id="cb563-3"><a href="correlación-y-covarianza.html#cb563-3" tabindex="-1"></a></span>
+<span id="cb563-4"><a href="correlación-y-covarianza.html#cb563-4" tabindex="-1"></a>img3_path<span class="ot">&lt;-</span><span class="st">&quot;Graficos/Bivariate_normal.png&quot;</span></span>
+<span id="cb563-5"><a href="correlación-y-covarianza.html#cb563-5" tabindex="-1"></a><span class="fu">include_graphics</span>(img3_path)</span></code></pre></div>
 </details>
 <p><img src="Graficos/Bivariate_normal.png" width="421" /></p>
 </div>
@@ -1125,8 +1125,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Here is a really cool graph that does the figures and most of the analysis in one one shot.
 The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure will be black and white, and not seperated by gender.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb563-1"><a href="correlación-y-covarianza.html#cb563-1" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
-<span id="cb563-2"><a href="correlación-y-covarianza.html#cb563-2" tabindex="-1"></a><span class="fu">head</span>(examData)</span></code></pre></div>
+<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="correlación-y-covarianza.html#cb564-1" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb564-2"><a href="correlación-y-covarianza.html#cb564-2" tabindex="-1"></a><span class="fu">head</span>(examData)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:corr7">
 <caption style="caption-side: top; text-align: center;"><span id="tab:corr7">Table 17.5: </span> </caption><col><col><col><col><col><thead>
@@ -1150,12 +1150,12 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="correlación-y-covarianza.html#cb564-1" tabindex="-1"></a><span class="fu">ggpairs</span>(examData, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">colour=</span>Gender))</span></code></pre></div>
+<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb565-1"><a href="correlación-y-covarianza.html#cb565-1" tabindex="-1"></a><span class="fu">ggpairs</span>(examData, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">colour=</span>Gender))</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/corr7-1.png" width="672" /></p>
 <p>In this code I removed the first column, which is just the code of the individual, by examData[,c(2:5)], by removing column #1.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb565"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb565-1"><a href="correlación-y-covarianza.html#cb565-1" tabindex="-1"></a><span class="fu">ggpairs</span>(examData[,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>)], ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">colour=</span>Gender)) </span></code></pre></div>
+<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="correlación-y-covarianza.html#cb566-1" tabindex="-1"></a><span class="fu">ggpairs</span>(examData[,<span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>)], ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">colour=</span>Gender)) </span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/corr8-1.png" width="672" /></p>
 <ol style="list-style-type: decimal">
@@ -1171,10 +1171,10 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
 <li>wf = an index of female selection</li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="correlación-y-covarianza.html#cb566-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb566-2"><a href="correlación-y-covarianza.html#cb566-2" tabindex="-1"></a>Lep_rupPetal_All_Data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Lep_rupPetal_All_Data.csv&quot;</span>)</span>
-<span id="cb566-3"><a href="correlación-y-covarianza.html#cb566-3" tabindex="-1"></a>Lep<span class="ot">=</span>Lep_rupPetal_All_Data</span>
-<span id="cb566-4"><a href="correlación-y-covarianza.html#cb566-4" tabindex="-1"></a><span class="fu">names</span>(Lep)</span></code></pre></div>
+<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="correlación-y-covarianza.html#cb567-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb567-2"><a href="correlación-y-covarianza.html#cb567-2" tabindex="-1"></a>Lep_rupPetal_All_Data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Lep_rupPetal_All_Data.csv&quot;</span>)</span>
+<span id="cb567-3"><a href="correlación-y-covarianza.html#cb567-3" tabindex="-1"></a>Lep<span class="ot">=</span>Lep_rupPetal_All_Data</span>
+<span id="cb567-4"><a href="correlación-y-covarianza.html#cb567-4" tabindex="-1"></a><span class="fu">names</span>(Lep)</span></code></pre></div>
 </details>
 <pre><code>##  [1] &quot;Plant_Number&quot;     &quot;Petal_Character&quot;  &quot;Population&quot;       &quot;Num_FR&quot;          
 ##  [5] &quot;Sqrt_NumFR&quot;       &quot;Rank_Fruits&quot;      &quot;Num_PR&quot;           &quot;Num_PP&quot;          
@@ -1187,8 +1187,8 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
 ## [33] &quot;Arcsin_Perc_FR&quot;</code></pre>
 <p>A table of the correlation coefficients</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="correlación-y-covarianza.html#cb568-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb568-2"><a href="correlación-y-covarianza.html#cb568-2" tabindex="-1"></a><span class="fu">rcorr</span>(<span class="fu">as.matrix</span>(examData[,<span class="fu">c</span>(<span class="st">&quot;Exam&quot;</span>,<span class="st">&quot;Anxiety&quot;</span>,<span class="st">&quot;Revise&quot;</span>)]))</span></code></pre></div>
+<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="correlación-y-covarianza.html#cb569-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb569-2"><a href="correlación-y-covarianza.html#cb569-2" tabindex="-1"></a><span class="fu">rcorr</span>(<span class="fu">as.matrix</span>(examData[,<span class="fu">c</span>(<span class="st">&quot;Exam&quot;</span>,<span class="st">&quot;Anxiety&quot;</span>,<span class="st">&quot;Revise&quot;</span>)]))</span></code></pre></div>
 </details>
 <pre><code>##          Exam Anxiety Revise
 ## Exam     1.00   -0.44   0.40
@@ -1207,20 +1207,20 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
 <p>Choose “The Biggest Liar.csv” data set, contest, where this occurs every year in a pub.</p>
 <p>World’s Biggest Liar is an annual competition for telling lies, held in Cumbria, England at the Stanton Inn Bridge Pub.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="correlación-y-covarianza.html#cb570-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb570-2"><a href="correlación-y-covarianza.html#cb570-2" tabindex="-1"></a><span class="fu">library</span>(png)</span>
-<span id="cb570-3"><a href="correlación-y-covarianza.html#cb570-3" tabindex="-1"></a></span>
-<span id="cb570-4"><a href="correlación-y-covarianza.html#cb570-4" tabindex="-1"></a>img4_path<span class="ot">&lt;-</span><span class="st">&quot;Graficos/Stanton.png&quot;</span></span>
-<span id="cb570-5"><a href="correlación-y-covarianza.html#cb570-5" tabindex="-1"></a><span class="fu">include_graphics</span>(img4_path)</span></code></pre></div>
+<div class="sourceCode" id="cb571"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb571-1"><a href="correlación-y-covarianza.html#cb571-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb571-2"><a href="correlación-y-covarianza.html#cb571-2" tabindex="-1"></a><span class="fu">library</span>(png)</span>
+<span id="cb571-3"><a href="correlación-y-covarianza.html#cb571-3" tabindex="-1"></a></span>
+<span id="cb571-4"><a href="correlación-y-covarianza.html#cb571-4" tabindex="-1"></a>img4_path<span class="ot">&lt;-</span><span class="st">&quot;Graficos/Stanton.png&quot;</span></span>
+<span id="cb571-5"><a href="correlación-y-covarianza.html#cb571-5" tabindex="-1"></a><span class="fu">include_graphics</span>(img4_path)</span></code></pre></div>
 </details>
 <p><img src="Graficos/Stanton.png" width="500px" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb571"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb571-1"><a href="correlación-y-covarianza.html#cb571-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb571-2"><a href="correlación-y-covarianza.html#cb571-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb571-3"><a href="correlación-y-covarianza.html#cb571-3" tabindex="-1"></a>The_Biggest_Liar <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/The Biggest Liar.csv&quot;</span>)</span>
-<span id="cb571-4"><a href="correlación-y-covarianza.html#cb571-4" tabindex="-1"></a>liarData<span class="ot">=</span>The_Biggest_Liar</span>
-<span id="cb571-5"><a href="correlación-y-covarianza.html#cb571-5" tabindex="-1"></a></span>
-<span id="cb571-6"><a href="correlación-y-covarianza.html#cb571-6" tabindex="-1"></a><span class="fu">head</span>(liarData)</span></code></pre></div>
+<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="correlación-y-covarianza.html#cb572-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb572-2"><a href="correlación-y-covarianza.html#cb572-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb572-3"><a href="correlación-y-covarianza.html#cb572-3" tabindex="-1"></a>The_Biggest_Liar <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/The Biggest Liar.csv&quot;</span>)</span>
+<span id="cb572-4"><a href="correlación-y-covarianza.html#cb572-4" tabindex="-1"></a>liarData<span class="ot">=</span>The_Biggest_Liar</span>
+<span id="cb572-5"><a href="correlación-y-covarianza.html#cb572-5" tabindex="-1"></a></span>
+<span id="cb572-6"><a href="correlación-y-covarianza.html#cb572-6" tabindex="-1"></a><span class="fu">head</span>(liarData)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:corr12">
 <caption style="caption-side: top; text-align: center;"><span id="tab:corr12">Table 17.6: </span> </caption><col><col><col><thead>
@@ -1244,15 +1244,15 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="correlación-y-covarianza.html#cb572-1" tabindex="-1"></a><span class="fu">cor</span>(liarData<span class="sc">$</span>Position, liarData<span class="sc">$</span>Creativity, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="correlación-y-covarianza.html#cb573-1" tabindex="-1"></a><span class="fu">cor</span>(liarData<span class="sc">$</span>Position, liarData<span class="sc">$</span>Creativity, <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## [1] -0.3060314</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="correlación-y-covarianza.html#cb574-1" tabindex="-1"></a><span class="fu">cor</span>(liarData<span class="sc">$</span>Position, liarData<span class="sc">$</span>Creativity, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb575"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb575-1"><a href="correlación-y-covarianza.html#cb575-1" tabindex="-1"></a><span class="fu">cor</span>(liarData<span class="sc">$</span>Position, liarData<span class="sc">$</span>Creativity, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## [1] -0.3732184</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="correlación-y-covarianza.html#cb576-1" tabindex="-1"></a><span class="fu">cor</span>(liarData<span class="sc">$</span>Position, liarData<span class="sc">$</span>Creativity, <span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="correlación-y-covarianza.html#cb577-1" tabindex="-1"></a><span class="fu">cor</span>(liarData<span class="sc">$</span>Position, liarData<span class="sc">$</span>Creativity, <span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
 </details>
 <pre><code>## [1] -0.3002413</code></pre>
 </div>
@@ -1263,22 +1263,22 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
 <p>THERE is no need to make assumptions of the distribution, you can let your data speak for itself, and construct the correlation coeffcients and 95% confidence interval.</p>
 <p>We first create a function</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="correlación-y-covarianza.html#cb578-1" tabindex="-1"></a>bootTau<span class="ot">=</span><span class="cf">function</span>(liarData,i)<span class="fu">cor</span>(liarData<span class="sc">$</span>Position[i],liarData<span class="sc">$</span>Creativity[i],</span>
-<span id="cb578-2"><a href="correlación-y-covarianza.html#cb578-2" tabindex="-1"></a>                                <span class="at">use=</span><span class="st">&quot;complete.obs&quot;</span>,<span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="correlación-y-covarianza.html#cb579-1" tabindex="-1"></a>bootTau<span class="ot">=</span><span class="cf">function</span>(liarData,i)<span class="fu">cor</span>(liarData<span class="sc">$</span>Position[i],liarData<span class="sc">$</span>Creativity[i],</span>
+<span id="cb579-2"><a href="correlación-y-covarianza.html#cb579-2" tabindex="-1"></a>                                <span class="at">use=</span><span class="st">&quot;complete.obs&quot;</span>,<span class="at">method =</span> <span class="st">&quot;kendall&quot;</span>)</span></code></pre></div>
 </details>
 <p>The function is then called and executed</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="correlación-y-covarianza.html#cb579-1" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
-<span id="cb579-2"><a href="correlación-y-covarianza.html#cb579-2" tabindex="-1"></a>boot_kendall<span class="ot">=</span><span class="fu">boot</span>(liarData,bootTau, <span class="dv">1000</span>)</span>
-<span id="cb579-3"><a href="correlación-y-covarianza.html#cb579-3" tabindex="-1"></a>boot_kendall</span></code></pre></div>
+<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="correlación-y-covarianza.html#cb580-1" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
+<span id="cb580-2"><a href="correlación-y-covarianza.html#cb580-2" tabindex="-1"></a>boot_kendall<span class="ot">=</span><span class="fu">boot</span>(liarData,bootTau, <span class="dv">1000</span>)</span>
+<span id="cb580-3"><a href="correlación-y-covarianza.html#cb580-3" tabindex="-1"></a>boot_kendall</span></code></pre></div>
 </details>
 <p>To calculate the 95% confidence interval</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="correlación-y-covarianza.html#cb580-1" tabindex="-1"></a><span class="fu">boot.ci</span>(boot_kendall)</span></code></pre></div>
+<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="correlación-y-covarianza.html#cb581-1" tabindex="-1"></a><span class="fu">boot.ci</span>(boot_kendall)</span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="correlación-y-covarianza.html#cb581-1" tabindex="-1"></a><span class="fu">ggplot</span>(liarData, <span class="fu">aes</span>(Creativity, Position))<span class="sc">+</span></span>
-<span id="cb581-2"><a href="correlación-y-covarianza.html#cb581-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb582-1"><a href="correlación-y-covarianza.html#cb582-1" tabindex="-1"></a><span class="fu">ggplot</span>(liarData, <span class="fu">aes</span>(Creativity, Position))<span class="sc">+</span></span>
+<span id="cb582-2"><a href="correlación-y-covarianza.html#cb582-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/corr16-1.png" width="672" /></p>
 

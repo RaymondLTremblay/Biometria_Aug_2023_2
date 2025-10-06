@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 15 Prueba de t con datos independientes | BioEstadística</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
-  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 15 Prueba de t con datos independientes | BioEstadística" />
   <meta property="og:type" content="book" />
@@ -834,9 +834,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;2025-10-06&quot;</code></pre>
 <p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb477"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb477-1"><a href="prueba-de-t-con-datos-independientes.html#cb477-1" tabindex="-1"></a><span class="fu">library</span>(car)  <span class="co"># para la prueba de leveneTest</span></span>
-<span id="cb477-2"><a href="prueba-de-t-con-datos-independientes.html#cb477-2" tabindex="-1"></a></span>
-<span id="cb477-3"><a href="prueba-de-t-con-datos-independientes.html#cb477-3" tabindex="-1"></a><span class="fu">library</span>(RVAideMemoire) <span class="co"># para la prueba de byf.shapiro</span></span></code></pre></div>
+<div class="sourceCode" id="cb478"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb478-1"><a href="prueba-de-t-con-datos-independientes.html#cb478-1" tabindex="-1"></a><span class="fu">library</span>(car)  <span class="co"># para la prueba de leveneTest</span></span>
+<span id="cb478-2"><a href="prueba-de-t-con-datos-independientes.html#cb478-2" tabindex="-1"></a></span>
+<span id="cb478-3"><a href="prueba-de-t-con-datos-independientes.html#cb478-3" tabindex="-1"></a><span class="fu">library</span>(RVAideMemoire) <span class="co"># para la prueba de byf.shapiro</span></span></code></pre></div>
 </details>
 <hr />
 <div id="la-prueba-t-con-datos-independiente" class="section level2 hasAnchor" number="15.1">
@@ -846,36 +846,36 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Datos</p>
 <p>Producimos un set de datos de diferentes personas, con las siguientes variables, el genero, la distancia (dist) viajada por estudiantes que van a la universidad de UPR-Utuado y UPR-Bayamón.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb478"><pre class="sourceCode numberSource r numberLines"><code class="sourceCode r"><span id="cb478-1"><a href="prueba-de-t-con-datos-independientes.html#cb478-1"></a>genero<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
-<span id="cb478-2"><a href="prueba-de-t-con-datos-independientes.html#cb478-2"></a>    <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
-<span id="cb478-3"><a href="prueba-de-t-con-datos-independientes.html#cb478-3"></a>    <span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
-<span id="cb478-4"><a href="prueba-de-t-con-datos-independientes.html#cb478-4"></a>    <span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
-<span id="cb478-5"><a href="prueba-de-t-con-datos-independientes.html#cb478-5"></a>    <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>,<span class="st">&quot;m&quot;</span>,</span>
-<span id="cb478-6"><a href="prueba-de-t-con-datos-independientes.html#cb478-6"></a>    <span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
-<span id="cb478-7"><a href="prueba-de-t-con-datos-independientes.html#cb478-7"></a>    <span class="st">&quot;f&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
-<span id="cb478-8"><a href="prueba-de-t-con-datos-independientes.html#cb478-8"></a>    <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>)</span>
-<span id="cb478-9"><a href="prueba-de-t-con-datos-independientes.html#cb478-9"></a>dist<span class="ot">=</span><span class="fu">c</span>(<span class="dv">92</span>,<span class="dv">50</span>,<span class="dv">75</span>,<span class="dv">55</span>,</span>
-<span id="cb478-10"><a href="prueba-de-t-con-datos-independientes.html#cb478-10"></a>       <span class="dv">30</span>, <span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">35</span>,<span class="dv">65</span>,</span>
-<span id="cb478-11"><a href="prueba-de-t-con-datos-independientes.html#cb478-11"></a>       <span class="dv">45</span>, <span class="dv">65</span>, <span class="dv">80</span>,<span class="dv">60</span>,<span class="dv">67</span>,</span>
-<span id="cb478-12"><a href="prueba-de-t-con-datos-independientes.html#cb478-12"></a>       <span class="dv">98</span>,<span class="dv">88</span>,<span class="dv">60</span>,<span class="dv">20</span>,<span class="dv">49</span>,</span>
-<span id="cb478-13"><a href="prueba-de-t-con-datos-independientes.html#cb478-13"></a>       <span class="dv">45</span>, <span class="dv">19</span>,<span class="dv">27</span>,<span class="dv">20</span>,<span class="dv">34</span>,</span>
-<span id="cb478-14"><a href="prueba-de-t-con-datos-independientes.html#cb478-14"></a>       <span class="dv">30</span>,<span class="dv">45</span>, <span class="dv">35</span>,<span class="dv">26</span>, <span class="dv">24</span>, </span>
-<span id="cb478-15"><a href="prueba-de-t-con-datos-independientes.html#cb478-15"></a>       <span class="dv">34</span>,<span class="dv">12</span>, <span class="dv">26</span>, <span class="dv">21</span>, <span class="dv">25</span>, </span>
-<span id="cb478-16"><a href="prueba-de-t-con-datos-independientes.html#cb478-16"></a>       <span class="dv">15</span>, <span class="dv">22</span>)</span>
-<span id="cb478-17"><a href="prueba-de-t-con-datos-independientes.html#cb478-17"></a>muni<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,</span>
-<span id="cb478-18"><a href="prueba-de-t-con-datos-independientes.html#cb478-18"></a>      <span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,</span>
-<span id="cb478-19"><a href="prueba-de-t-con-datos-independientes.html#cb478-19"></a>      <span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,</span>
-<span id="cb478-20"><a href="prueba-de-t-con-datos-independientes.html#cb478-20"></a>      <span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,</span>
-<span id="cb478-21"><a href="prueba-de-t-con-datos-independientes.html#cb478-21"></a>      <span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,</span>
-<span id="cb478-22"><a href="prueba-de-t-con-datos-independientes.html#cb478-22"></a>      <span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,</span>
-<span id="cb478-23"><a href="prueba-de-t-con-datos-independientes.html#cb478-23"></a>      <span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,</span>
-<span id="cb478-24"><a href="prueba-de-t-con-datos-independientes.html#cb478-24"></a>      <span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb479"><pre class="sourceCode numberSource r numberLines"><code class="sourceCode r"><span id="cb479-1"><a href="prueba-de-t-con-datos-independientes.html#cb479-1"></a>genero<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
+<span id="cb479-2"><a href="prueba-de-t-con-datos-independientes.html#cb479-2"></a>    <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
+<span id="cb479-3"><a href="prueba-de-t-con-datos-independientes.html#cb479-3"></a>    <span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
+<span id="cb479-4"><a href="prueba-de-t-con-datos-independientes.html#cb479-4"></a>    <span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
+<span id="cb479-5"><a href="prueba-de-t-con-datos-independientes.html#cb479-5"></a>    <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>,<span class="st">&quot;m&quot;</span>,</span>
+<span id="cb479-6"><a href="prueba-de-t-con-datos-independientes.html#cb479-6"></a>    <span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
+<span id="cb479-7"><a href="prueba-de-t-con-datos-independientes.html#cb479-7"></a>    <span class="st">&quot;f&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
+<span id="cb479-8"><a href="prueba-de-t-con-datos-independientes.html#cb479-8"></a>    <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>)</span>
+<span id="cb479-9"><a href="prueba-de-t-con-datos-independientes.html#cb479-9"></a>dist<span class="ot">=</span><span class="fu">c</span>(<span class="dv">92</span>,<span class="dv">50</span>,<span class="dv">75</span>,<span class="dv">55</span>,</span>
+<span id="cb479-10"><a href="prueba-de-t-con-datos-independientes.html#cb479-10"></a>       <span class="dv">30</span>, <span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">35</span>,<span class="dv">65</span>,</span>
+<span id="cb479-11"><a href="prueba-de-t-con-datos-independientes.html#cb479-11"></a>       <span class="dv">45</span>, <span class="dv">65</span>, <span class="dv">80</span>,<span class="dv">60</span>,<span class="dv">67</span>,</span>
+<span id="cb479-12"><a href="prueba-de-t-con-datos-independientes.html#cb479-12"></a>       <span class="dv">98</span>,<span class="dv">88</span>,<span class="dv">60</span>,<span class="dv">20</span>,<span class="dv">49</span>,</span>
+<span id="cb479-13"><a href="prueba-de-t-con-datos-independientes.html#cb479-13"></a>       <span class="dv">45</span>, <span class="dv">19</span>,<span class="dv">27</span>,<span class="dv">20</span>,<span class="dv">34</span>,</span>
+<span id="cb479-14"><a href="prueba-de-t-con-datos-independientes.html#cb479-14"></a>       <span class="dv">30</span>,<span class="dv">45</span>, <span class="dv">35</span>,<span class="dv">26</span>, <span class="dv">24</span>, </span>
+<span id="cb479-15"><a href="prueba-de-t-con-datos-independientes.html#cb479-15"></a>       <span class="dv">34</span>,<span class="dv">12</span>, <span class="dv">26</span>, <span class="dv">21</span>, <span class="dv">25</span>, </span>
+<span id="cb479-16"><a href="prueba-de-t-con-datos-independientes.html#cb479-16"></a>       <span class="dv">15</span>, <span class="dv">22</span>)</span>
+<span id="cb479-17"><a href="prueba-de-t-con-datos-independientes.html#cb479-17"></a>muni<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,</span>
+<span id="cb479-18"><a href="prueba-de-t-con-datos-independientes.html#cb479-18"></a>      <span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,</span>
+<span id="cb479-19"><a href="prueba-de-t-con-datos-independientes.html#cb479-19"></a>      <span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,</span>
+<span id="cb479-20"><a href="prueba-de-t-con-datos-independientes.html#cb479-20"></a>      <span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,<span class="st">&quot;utuado&quot;</span>,</span>
+<span id="cb479-21"><a href="prueba-de-t-con-datos-independientes.html#cb479-21"></a>      <span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,</span>
+<span id="cb479-22"><a href="prueba-de-t-con-datos-independientes.html#cb479-22"></a>      <span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,</span>
+<span id="cb479-23"><a href="prueba-de-t-con-datos-independientes.html#cb479-23"></a>      <span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>,</span>
+<span id="cb479-24"><a href="prueba-de-t-con-datos-independientes.html#cb479-24"></a>      <span class="st">&quot;bayamón&quot;</span>,<span class="st">&quot;bayamón&quot;</span>)</span></code></pre></div>
 </details>
 <hr />
 <p>Unir las tres lisatas de datos en un data frame con la función de “data.frame( )”</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb479"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb479-1"><a href="prueba-de-t-con-datos-independientes.html#cb479-1" tabindex="-1"></a>viajes<span class="ot">=</span><span class="fu">data.frame</span>(genero,dist,muni)</span>
-<span id="cb479-2"><a href="prueba-de-t-con-datos-independientes.html#cb479-2" tabindex="-1"></a><span class="fu">head</span>(viajes)</span></code></pre></div>
+<div class="sourceCode" id="cb480"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb480-1"><a href="prueba-de-t-con-datos-independientes.html#cb480-1" tabindex="-1"></a>viajes<span class="ot">=</span><span class="fu">data.frame</span>(genero,dist,muni)</span>
+<span id="cb480-2"><a href="prueba-de-t-con-datos-independientes.html#cb480-2" tabindex="-1"></a><span class="fu">head</span>(viajes)</span></code></pre></div>
 </details>
 <pre><code>##   genero dist   muni
 ## 1      m   92 utuado
@@ -885,7 +885,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## 5      f   30 utuado
 ## 6      f   40 utuado</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb481"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb481-1"><a href="prueba-de-t-con-datos-independientes.html#cb481-1" tabindex="-1"></a><span class="fu">tail</span>(viajes)</span></code></pre></div>
+<div class="sourceCode" id="cb482"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb482-1"><a href="prueba-de-t-con-datos-independientes.html#cb482-1" tabindex="-1"></a><span class="fu">tail</span>(viajes)</span></code></pre></div>
 </details>
 <pre><code>##    genero dist    muni
 ## 31      m   12 bayamón
@@ -898,11 +898,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Hacer un gráfico de los datos. Si calculamos el promedio de todos los valores de “Y” y lo visualizamos, vemos que muchos de los valores del municipio “Bayamón” son muy por debajo los valores de la linea y muchos de los valores del municipio “U
 tuado” son muy por encima.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb483"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb483-1"><a href="prueba-de-t-con-datos-independientes.html#cb483-1" tabindex="-1"></a>mean_dist<span class="ot">=</span><span class="fu">mean</span>(viajes<span class="sc">$</span>dist)</span>
-<span id="cb483-2"><a href="prueba-de-t-con-datos-independientes.html#cb483-2" tabindex="-1"></a></span>
-<span id="cb483-3"><a href="prueba-de-t-con-datos-independientes.html#cb483-3" tabindex="-1"></a><span class="fu">ggplot</span>(viajes, <span class="fu">aes</span>(muni, dist, <span class="at">colour=</span>muni))<span class="sc">+</span></span>
-<span id="cb483-4"><a href="prueba-de-t-con-datos-independientes.html#cb483-4" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> .<span class="dv">2</span>)<span class="sc">+</span></span>
-<span id="cb483-5"><a href="prueba-de-t-con-datos-independientes.html#cb483-5" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> mean_dist)</span></code></pre></div>
+<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="prueba-de-t-con-datos-independientes.html#cb484-1" tabindex="-1"></a>mean_dist<span class="ot">=</span><span class="fu">mean</span>(viajes<span class="sc">$</span>dist)</span>
+<span id="cb484-2"><a href="prueba-de-t-con-datos-independientes.html#cb484-2" tabindex="-1"></a></span>
+<span id="cb484-3"><a href="prueba-de-t-con-datos-independientes.html#cb484-3" tabindex="-1"></a><span class="fu">ggplot</span>(viajes, <span class="fu">aes</span>(muni, dist, <span class="at">colour=</span>muni))<span class="sc">+</span></span>
+<span id="cb484-4"><a href="prueba-de-t-con-datos-independientes.html#cb484-4" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> .<span class="dv">2</span>)<span class="sc">+</span></span>
+<span id="cb484-5"><a href="prueba-de-t-con-datos-independientes.html#cb484-5" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> mean_dist)</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/tind4-1.png" width="672" /></p>
 <hr />
@@ -926,24 +926,24 @@ tuado” son muy por encima.</p>
 <hr />
 <p>Otra alternativa para visualizar es observar la diferencias entre el valor de la “y’s” y del promedio de esa variable, o sea los residuales (la diferencia entre el promedio y el valor se llaman los <strong>residuales</strong>. <span style="color: blue;">Nota que esto aparece a la gráfica de residuales de la regresión lineal</span>.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb484"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb484-1"><a href="prueba-de-t-con-datos-independientes.html#cb484-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>, dist, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;order&quot;</span>, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb484-2"><a href="prueba-de-t-con-datos-independientes.html#cb484-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(dist), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb484-3"><a href="prueba-de-t-con-datos-independientes.html#cb484-3" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>) <span class="fu">lines</span>(<span class="fu">c</span>(i,i), <span class="fu">c</span>(<span class="fu">mean</span>(dist), dist[i]), <span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="prueba-de-t-con-datos-independientes.html#cb485-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>, dist, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;order&quot;</span>, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb485-2"><a href="prueba-de-t-con-datos-independientes.html#cb485-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(dist), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb485-3"><a href="prueba-de-t-con-datos-independientes.html#cb485-3" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>) <span class="fu">lines</span>(<span class="fu">c</span>(i,i), <span class="fu">c</span>(<span class="fu">mean</span>(dist), dist[i]), <span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/tind5-1.png" width="672" /></p>
 <hr />
 <p>Ahora vamos a separar la gráfica y visualizar los residuales por grupo, en otra palabra, cual son los residuales entre los valores y el promedio dentro de los mismos grupos. Se observa en este caso que hay menos varianza entre los valores de un mismo grupo. Note que en el grupo de <span style="color: blue;"><strong>bayamón</strong></span> que los valores son bastante cerca del promedio de este grupo en adición que los valores de <span style="color: red;"><strong>utuado</strong></span> estan más cerca de su promedio. Compara los residuales con la gráfica anterior.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb485"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb485-1"><a href="prueba-de-t-con-datos-independientes.html#cb485-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>, dist, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;order&quot;</span>, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb485-2"><a href="prueba-de-t-con-datos-independientes.html#cb485-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(dist[muni<span class="sc">==</span><span class="st">&quot;bayamón&quot;</span>]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb485-3"><a href="prueba-de-t-con-datos-independientes.html#cb485-3" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(dist[muni<span class="sc">==</span><span class="st">&quot;utuado&quot;</span>]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb485-4"><a href="prueba-de-t-con-datos-independientes.html#cb485-4" tabindex="-1"></a>index<span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(dist)</span>
-<span id="cb485-5"><a href="prueba-de-t-con-datos-independientes.html#cb485-5" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(index)){</span>
-<span id="cb485-6"><a href="prueba-de-t-con-datos-independientes.html#cb485-6" tabindex="-1"></a>  <span class="cf">if</span>(muni[i]<span class="sc">==</span><span class="st">&quot;bayamón&quot;</span>)</span>
-<span id="cb485-7"><a href="prueba-de-t-con-datos-independientes.html#cb485-7" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(dist[muni<span class="sc">==</span><span class="st">&quot;bayamón&quot;</span>]),dist[i]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb485-8"><a href="prueba-de-t-con-datos-independientes.html#cb485-8" tabindex="-1"></a>  <span class="cf">else</span></span>
-<span id="cb485-9"><a href="prueba-de-t-con-datos-independientes.html#cb485-9" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(dist[muni<span class="sc">==</span><span class="st">&quot;utuado&quot;</span>]),dist[i]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
-<span id="cb485-10"><a href="prueba-de-t-con-datos-independientes.html#cb485-10" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="prueba-de-t-con-datos-independientes.html#cb486-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>, dist, <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">ylab=</span><span class="st">&quot;y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;order&quot;</span>, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">bg=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb486-2"><a href="prueba-de-t-con-datos-independientes.html#cb486-2" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(dist[muni<span class="sc">==</span><span class="st">&quot;bayamón&quot;</span>]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb486-3"><a href="prueba-de-t-con-datos-independientes.html#cb486-3" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fu">mean</span>(dist[muni<span class="sc">==</span><span class="st">&quot;utuado&quot;</span>]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb486-4"><a href="prueba-de-t-con-datos-independientes.html#cb486-4" tabindex="-1"></a>index<span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(dist)</span>
+<span id="cb486-5"><a href="prueba-de-t-con-datos-independientes.html#cb486-5" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(index)){</span>
+<span id="cb486-6"><a href="prueba-de-t-con-datos-independientes.html#cb486-6" tabindex="-1"></a>  <span class="cf">if</span>(muni[i]<span class="sc">==</span><span class="st">&quot;bayamón&quot;</span>)</span>
+<span id="cb486-7"><a href="prueba-de-t-con-datos-independientes.html#cb486-7" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(dist[muni<span class="sc">==</span><span class="st">&quot;bayamón&quot;</span>]),dist[i]), <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb486-8"><a href="prueba-de-t-con-datos-independientes.html#cb486-8" tabindex="-1"></a>  <span class="cf">else</span></span>
+<span id="cb486-9"><a href="prueba-de-t-con-datos-independientes.html#cb486-9" tabindex="-1"></a>    <span class="fu">lines</span>(<span class="fu">c</span>(index[i], index[i]), <span class="fu">c</span>(<span class="fu">mean</span>(dist[muni<span class="sc">==</span><span class="st">&quot;utuado&quot;</span>]),dist[i]), <span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span>
+<span id="cb486-10"><a href="prueba-de-t-con-datos-independientes.html#cb486-10" tabindex="-1"></a>}</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/tind6-1.png" width="672" /></p>
 <hr />
@@ -968,8 +968,8 @@ Ho: la distancia viajado por la gente de la gente de los dos municipios es igual
 <p>La hipótesis alterna:
 Ha: la distancia viajado por la gente no es igual por la gente de los dos municipios (el valor de “p” sera menor de 0.05 )</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb486"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb486-1"><a href="prueba-de-t-con-datos-independientes.html#cb486-1" tabindex="-1"></a>model<span class="ot">=</span><span class="fu">t.test</span>(dist<span class="sc">~</span>muni,<span class="at">data=</span>viajes)</span>
-<span id="cb486-2"><a href="prueba-de-t-con-datos-independientes.html#cb486-2" tabindex="-1"></a>model</span></code></pre></div>
+<div class="sourceCode" id="cb487"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb487-1"><a href="prueba-de-t-con-datos-independientes.html#cb487-1" tabindex="-1"></a>model<span class="ot">=</span><span class="fu">t.test</span>(dist<span class="sc">~</span>muni,<span class="at">data=</span>viajes)</span>
+<span id="cb487-2"><a href="prueba-de-t-con-datos-independientes.html#cb487-2" tabindex="-1"></a>model</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Welch Two Sample t-test
@@ -983,14 +983,14 @@ Ha: la distancia viajado por la gente no es igual por la gente de los dos munici
 ## mean in group bayamón  mean in group utuado 
 ##              27.05882              59.68421</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb488"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb488-1"><a href="prueba-de-t-con-datos-independientes.html#cb488-1" tabindex="-1"></a>gender<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;m&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>, </span>
-<span id="cb488-2"><a href="prueba-de-t-con-datos-independientes.html#cb488-2" tabindex="-1"></a>         <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>)</span>
-<span id="cb488-3"><a href="prueba-de-t-con-datos-independientes.html#cb488-3" tabindex="-1"></a></span>
-<span id="cb488-4"><a href="prueba-de-t-con-datos-independientes.html#cb488-4" tabindex="-1"></a>dist<span class="ot">=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">20</span>, <span class="dv">11</span>, <span class="dv">40</span>, <span class="dv">19</span>, </span>
-<span id="cb488-5"><a href="prueba-de-t-con-datos-independientes.html#cb488-5" tabindex="-1"></a>       <span class="fl">8.1</span>, <span class="dv">203</span>, <span class="fl">4.4</span>, <span class="dv">16</span>, <span class="dv">29</span>, <span class="dv">19</span>)</span>
-<span id="cb488-6"><a href="prueba-de-t-con-datos-independientes.html#cb488-6" tabindex="-1"></a></span>
-<span id="cb488-7"><a href="prueba-de-t-con-datos-independientes.html#cb488-7" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">data.frame</span>(gender, dist)</span>
-<span id="cb488-8"><a href="prueba-de-t-con-datos-independientes.html#cb488-8" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb489"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb489-1"><a href="prueba-de-t-con-datos-independientes.html#cb489-1" tabindex="-1"></a>gender<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;m&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;m&quot;</span>, </span>
+<span id="cb489-2"><a href="prueba-de-t-con-datos-independientes.html#cb489-2" tabindex="-1"></a>         <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;f&quot;</span>)</span>
+<span id="cb489-3"><a href="prueba-de-t-con-datos-independientes.html#cb489-3" tabindex="-1"></a></span>
+<span id="cb489-4"><a href="prueba-de-t-con-datos-independientes.html#cb489-4" tabindex="-1"></a>dist<span class="ot">=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">20</span>, <span class="dv">11</span>, <span class="dv">40</span>, <span class="dv">19</span>, </span>
+<span id="cb489-5"><a href="prueba-de-t-con-datos-independientes.html#cb489-5" tabindex="-1"></a>       <span class="fl">8.1</span>, <span class="dv">203</span>, <span class="fl">4.4</span>, <span class="dv">16</span>, <span class="dv">29</span>, <span class="dv">19</span>)</span>
+<span id="cb489-6"><a href="prueba-de-t-con-datos-independientes.html#cb489-6" tabindex="-1"></a></span>
+<span id="cb489-7"><a href="prueba-de-t-con-datos-independientes.html#cb489-7" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">data.frame</span>(gender, dist)</span>
+<span id="cb489-8"><a href="prueba-de-t-con-datos-independientes.html#cb489-8" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div>
 </details>
 <pre><code>##   gender dist
 ## 1      m 10.0
@@ -1000,8 +1000,8 @@ Ha: la distancia viajado por la gente no es igual por la gente de los dos munici
 ## 5      m 19.0
 ## 6      f  8.1</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb490"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb490-1"><a href="prueba-de-t-con-datos-independientes.html#cb490-1" tabindex="-1"></a>model2<span class="ot">=</span><span class="fu">t.test</span>(dist<span class="sc">~</span>gender, <span class="at">data=</span>df)</span>
-<span id="cb490-2"><a href="prueba-de-t-con-datos-independientes.html#cb490-2" tabindex="-1"></a>model2</span></code></pre></div>
+<div class="sourceCode" id="cb491"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb491-1"><a href="prueba-de-t-con-datos-independientes.html#cb491-1" tabindex="-1"></a>model2<span class="ot">=</span><span class="fu">t.test</span>(dist<span class="sc">~</span>gender, <span class="at">data=</span>df)</span>
+<span id="cb491-2"><a href="prueba-de-t-con-datos-independientes.html#cb491-2" tabindex="-1"></a>model2</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Welch Two Sample t-test
@@ -1015,15 +1015,15 @@ Ha: la distancia viajado por la gente no es igual por la gente de los dos munici
 ## mean in group f mean in group m 
 ##        46.58571        13.35000</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb492"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb492-1"><a href="prueba-de-t-con-datos-independientes.html#cb492-1" tabindex="-1"></a>padres<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;p&quot;</span>, <span class="st">&quot;m&quot;</span> , <span class="st">&quot;p&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>,</span>
-<span id="cb492-2"><a href="prueba-de-t-con-datos-independientes.html#cb492-2" tabindex="-1"></a>         <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>,</span>
-<span id="cb492-3"><a href="prueba-de-t-con-datos-independientes.html#cb492-3" tabindex="-1"></a>         <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>, </span>
-<span id="cb492-4"><a href="prueba-de-t-con-datos-independientes.html#cb492-4" tabindex="-1"></a>         <span class="st">&quot;p&quot;</span>, <span class="st">&quot;m&quot;</span>)</span>
-<span id="cb492-5"><a href="prueba-de-t-con-datos-independientes.html#cb492-5" tabindex="-1"></a></span>
-<span id="cb492-6"><a href="prueba-de-t-con-datos-independientes.html#cb492-6" tabindex="-1"></a>Hermanos<span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,</span>
-<span id="cb492-7"><a href="prueba-de-t-con-datos-independientes.html#cb492-7" tabindex="-1"></a>            <span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,</span>
-<span id="cb492-8"><a href="prueba-de-t-con-datos-independientes.html#cb492-8" tabindex="-1"></a>            <span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>, </span>
-<span id="cb492-9"><a href="prueba-de-t-con-datos-independientes.html#cb492-9" tabindex="-1"></a>            <span class="dv">12</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="prueba-de-t-con-datos-independientes.html#cb493-1" tabindex="-1"></a>padres<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;p&quot;</span>, <span class="st">&quot;m&quot;</span> , <span class="st">&quot;p&quot;</span>, <span class="st">&quot;m&quot;</span>, <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>,</span>
+<span id="cb493-2"><a href="prueba-de-t-con-datos-independientes.html#cb493-2" tabindex="-1"></a>         <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>,</span>
+<span id="cb493-3"><a href="prueba-de-t-con-datos-independientes.html#cb493-3" tabindex="-1"></a>         <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>, <span class="st">&quot;p&quot;</span>,<span class="st">&quot;m&quot;</span>, </span>
+<span id="cb493-4"><a href="prueba-de-t-con-datos-independientes.html#cb493-4" tabindex="-1"></a>         <span class="st">&quot;p&quot;</span>, <span class="st">&quot;m&quot;</span>)</span>
+<span id="cb493-5"><a href="prueba-de-t-con-datos-independientes.html#cb493-5" tabindex="-1"></a></span>
+<span id="cb493-6"><a href="prueba-de-t-con-datos-independientes.html#cb493-6" tabindex="-1"></a>Hermanos<span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>,</span>
+<span id="cb493-7"><a href="prueba-de-t-con-datos-independientes.html#cb493-7" tabindex="-1"></a>            <span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,</span>
+<span id="cb493-8"><a href="prueba-de-t-con-datos-independientes.html#cb493-8" tabindex="-1"></a>            <span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>, </span>
+<span id="cb493-9"><a href="prueba-de-t-con-datos-independientes.html#cb493-9" tabindex="-1"></a>            <span class="dv">12</span>, <span class="dv">2</span>)</span></code></pre></div>
 </details>
 <hr />
 </div>
@@ -1032,8 +1032,8 @@ Ha: la distancia viajado por la gente no es igual por la gente de los dos munici
 <h2><span class="header-section-number">15.4</span> Gráficar el promedio y el intervalo de confianza<a href="prueba-de-t-con-datos-independientes.html#gráficar-el-promedio-y-el-intervalo-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Graficar los datos con el promedio y el intervalo de confianza da un resumen de la estadística de forma visual, lo que se visualiza es el promedio y el intervalo de 95%. Nota que se usa la función en ggplot2 de <strong>stat_summary(fun.data = mean_cl_normal)</strong>, esto quiere decir que se esta calculando los valores ASUMIENDO una distribución normal de los datos.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb493"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb493-1"><a href="prueba-de-t-con-datos-independientes.html#cb493-1" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(gender, dist))<span class="sc">+</span></span>
-<span id="cb493-2"><a href="prueba-de-t-con-datos-independientes.html#cb493-2" tabindex="-1"></a> <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> mean_cl_normal, <span class="at">geom =</span> <span class="st">&quot;pointrange&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="prueba-de-t-con-datos-independientes.html#cb494-1" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(gender, dist))<span class="sc">+</span></span>
+<span id="cb494-2"><a href="prueba-de-t-con-datos-independientes.html#cb494-2" tabindex="-1"></a> <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> mean_cl_normal, <span class="at">geom =</span> <span class="st">&quot;pointrange&quot;</span>)</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/tind10-1.png" width="672" /></p>
 <hr />
@@ -1046,9 +1046,9 @@ Ha: la distancia viajado por la gente no es igual por la gente de los dos munici
 <p>Siempre se debería producir un gráfico de los datos para tener una idea de si los datos cumple con los supuestos de las pruebas.
 Ahora ver las distribución de frecuencia por municipio. Si los datos tuviese una distribución <strong>perfecta</strong> normal, se obtendría una distribición en forma de campana. Primero NO se debería esperar este tipo de distribución cuando tenemos pocos datos.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb494"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb494-1"><a href="prueba-de-t-con-datos-independientes.html#cb494-1" tabindex="-1"></a><span class="fu">ggplot</span>(viajes, <span class="fu">aes</span>(dist, <span class="at">fill=</span>muni))<span class="sc">+</span></span>
-<span id="cb494-2"><a href="prueba-de-t-con-datos-independientes.html#cb494-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
-<span id="cb494-3"><a href="prueba-de-t-con-datos-independientes.html#cb494-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>muni)</span></code></pre></div>
+<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="prueba-de-t-con-datos-independientes.html#cb495-1" tabindex="-1"></a><span class="fu">ggplot</span>(viajes, <span class="fu">aes</span>(dist, <span class="at">fill=</span>muni))<span class="sc">+</span></span>
+<span id="cb495-2"><a href="prueba-de-t-con-datos-independientes.html#cb495-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
+<span id="cb495-3"><a href="prueba-de-t-con-datos-independientes.html#cb495-3" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span>muni)</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/tind11-1.png" width="672" /></p>
 <hr />
@@ -1061,7 +1061,7 @@ Ahora ver las distribución de frecuencia por municipio. Si los datos tuviese un
 <div id="evaluar-si-la-distribución-cumple-con-una-distribución-normal" class="section level3 hasAnchor" number="15.7.1">
 <h3><span class="header-section-number">15.7.1</span> Evaluar si la distribución cumple con una distribución normal<a href="prueba-de-t-con-datos-independientes.html#evaluar-si-la-distribución-cumple-con-una-distribución-normal" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb495"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb495-1"><a href="prueba-de-t-con-datos-independientes.html#cb495-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(viajes<span class="sc">$</span>dist)</span></code></pre></div>
+<div class="sourceCode" id="cb496"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb496-1"><a href="prueba-de-t-con-datos-independientes.html#cb496-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(viajes<span class="sc">$</span>dist)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
@@ -1073,9 +1073,9 @@ Ahora ver las distribución de frecuencia por municipio. Si los datos tuviese un
 <h3><span class="header-section-number">15.7.2</span> Metodo #1: shapiro.test()<a href="prueba-de-t-con-datos-independientes.html#metodo-1-shapiro.test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <hr />
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb497"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb497-1"><a href="prueba-de-t-con-datos-independientes.html#cb497-1" tabindex="-1"></a><span class="co"># Normality test by group</span></span>
-<span id="cb497-2"><a href="prueba-de-t-con-datos-independientes.html#cb497-2" tabindex="-1"></a><span class="co"># Method 1 </span></span>
-<span id="cb497-3"><a href="prueba-de-t-con-datos-independientes.html#cb497-3" tabindex="-1"></a><span class="fu">shapiro.test</span>(viajes<span class="sc">$</span>dist)</span></code></pre></div>
+<div class="sourceCode" id="cb498"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb498-1"><a href="prueba-de-t-con-datos-independientes.html#cb498-1" tabindex="-1"></a><span class="co"># Normality test by group</span></span>
+<span id="cb498-2"><a href="prueba-de-t-con-datos-independientes.html#cb498-2" tabindex="-1"></a><span class="co"># Method 1 </span></span>
+<span id="cb498-3"><a href="prueba-de-t-con-datos-independientes.html#cb498-3" tabindex="-1"></a><span class="fu">shapiro.test</span>(viajes<span class="sc">$</span>dist)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
@@ -1083,7 +1083,7 @@ Ahora ver las distribución de frecuencia por municipio. Si los datos tuviese un
 ## data:  viajes$dist
 ## W = 0.92929, p-value = 0.02381</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb499"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb499-1"><a href="prueba-de-t-con-datos-independientes.html#cb499-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(viajes<span class="sc">$</span>dist[viajes<span class="sc">$</span>muni<span class="sc">==</span><span class="st">&quot;utuado&quot;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb500"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb500-1"><a href="prueba-de-t-con-datos-independientes.html#cb500-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(viajes<span class="sc">$</span>dist[viajes<span class="sc">$</span>muni<span class="sc">==</span><span class="st">&quot;utuado&quot;</span>])</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
@@ -1091,7 +1091,7 @@ Ahora ver las distribución de frecuencia por municipio. Si los datos tuviese un
 ## data:  viajes$dist[viajes$muni == &quot;utuado&quot;]
 ## W = 0.98408, p-value = 0.979</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb501"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb501-1"><a href="prueba-de-t-con-datos-independientes.html#cb501-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(viajes<span class="sc">$</span>dist[viajes<span class="sc">$</span>muni<span class="sc">==</span><span class="st">&quot;bayamón&quot;</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb502"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb502-1"><a href="prueba-de-t-con-datos-independientes.html#cb502-1" tabindex="-1"></a><span class="fu">shapiro.test</span>(viajes<span class="sc">$</span>dist[viajes<span class="sc">$</span>muni<span class="sc">==</span><span class="st">&quot;bayamón&quot;</span>])</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
@@ -1107,9 +1107,9 @@ Ahora ver las distribución de frecuencia por municipio. Si los datos tuviese un
 <p>Nota la oragnización de la prueba, es como la de la t.test( )</p>
 <p>byf.shapiro(variable_de_respuesta ~ variable_de_grupo, dataframe)</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb503"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb503-1"><a href="prueba-de-t-con-datos-independientes.html#cb503-1" tabindex="-1"></a><span class="co"># de la libreria de (RVAideMemoire)</span></span>
-<span id="cb503-2"><a href="prueba-de-t-con-datos-independientes.html#cb503-2" tabindex="-1"></a></span>
-<span id="cb503-3"><a href="prueba-de-t-con-datos-independientes.html#cb503-3" tabindex="-1"></a><span class="fu">byf.shapiro</span>(dist<span class="sc">~</span>muni, viajes)</span></code></pre></div>
+<div class="sourceCode" id="cb504"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb504-1"><a href="prueba-de-t-con-datos-independientes.html#cb504-1" tabindex="-1"></a><span class="co"># de la libreria de (RVAideMemoire)</span></span>
+<span id="cb504-2"><a href="prueba-de-t-con-datos-independientes.html#cb504-2" tabindex="-1"></a></span>
+<span id="cb504-3"><a href="prueba-de-t-con-datos-independientes.html#cb504-3" tabindex="-1"></a><span class="fu">byf.shapiro</span>(dist<span class="sc">~</span>muni, viajes)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Shapiro-Wilk normality tests
@@ -1145,7 +1145,7 @@ La prueba de Fligner-Killeen los datos NO tiene que cumplir con distribición no
 <div id="la-prueba-de-bartlett" class="section level2 hasAnchor" number="15.9">
 <h2><span class="header-section-number">15.9</span> La prueba de Bartlett<a href="prueba-de-t-con-datos-independientes.html#la-prueba-de-bartlett" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb505"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb505-1"><a href="prueba-de-t-con-datos-independientes.html#cb505-1" tabindex="-1"></a><span class="fu">bartlett.test</span>(dist<span class="sc">~</span>muni, <span class="at">data=</span>viajes)</span></code></pre></div>
+<div class="sourceCode" id="cb506"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb506-1"><a href="prueba-de-t-con-datos-independientes.html#cb506-1" tabindex="-1"></a><span class="fu">bartlett.test</span>(dist<span class="sc">~</span>muni, <span class="at">data=</span>viajes)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Bartlett test of homogeneity of variances
@@ -1159,7 +1159,7 @@ La prueba de Fligner-Killeen los datos NO tiene que cumplir con distribición no
 <li>similar to Bartlett’s test</li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb507"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb507-1"><a href="prueba-de-t-con-datos-independientes.html#cb507-1" tabindex="-1"></a><span class="fu">leveneTest</span>(dist<span class="sc">~</span>muni, <span class="at">data=</span>viajes)</span></code></pre></div>
+<div class="sourceCode" id="cb508"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb508-1"><a href="prueba-de-t-con-datos-independientes.html#cb508-1" tabindex="-1"></a><span class="fu">leveneTest</span>(dist<span class="sc">~</span>muni, <span class="at">data=</span>viajes)</span></code></pre></div>
 </details>
 <pre><code>## Levene&#39;s Test for Homogeneity of Variance (center = median)
 ##       Df F value  Pr(&gt;F)  
@@ -1175,7 +1175,7 @@ La prueba de Fligner-Killeen los datos NO tiene que cumplir con distribición no
 <li>good when the distribution are not normal</li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb509"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb509-1"><a href="prueba-de-t-con-datos-independientes.html#cb509-1" tabindex="-1"></a><span class="fu">fligner.test</span>(dist<span class="sc">~</span>muni, <span class="at">data=</span>viajes)</span></code></pre></div>
+<div class="sourceCode" id="cb510"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb510-1"><a href="prueba-de-t-con-datos-independientes.html#cb510-1" tabindex="-1"></a><span class="fu">fligner.test</span>(dist<span class="sc">~</span>muni, <span class="at">data=</span>viajes)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Fligner-Killeen test of homogeneity of variances
@@ -1186,20 +1186,20 @@ La prueba de Fligner-Killeen los datos NO tiene que cumplir con distribición no
 <li>Ejercicio</li>
 </ol>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb511"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb511-1"><a href="prueba-de-t-con-datos-independientes.html#cb511-1" tabindex="-1"></a>sex<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
-<span id="cb511-2"><a href="prueba-de-t-con-datos-independientes.html#cb511-2" tabindex="-1"></a>      <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
-<span id="cb511-3"><a href="prueba-de-t-con-datos-independientes.html#cb511-3" tabindex="-1"></a>      <span class="st">&quot;f&quot;</span>,</span>
-<span id="cb511-4"><a href="prueba-de-t-con-datos-independientes.html#cb511-4" tabindex="-1"></a>      <span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,</span>
-<span id="cb511-5"><a href="prueba-de-t-con-datos-independientes.html#cb511-5" tabindex="-1"></a>      <span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>)</span>
-<span id="cb511-6"><a href="prueba-de-t-con-datos-independientes.html#cb511-6" tabindex="-1"></a>kids<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>,</span>
-<span id="cb511-7"><a href="prueba-de-t-con-datos-independientes.html#cb511-7" tabindex="-1"></a>       <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">10</span>,</span>
-<span id="cb511-8"><a href="prueba-de-t-con-datos-independientes.html#cb511-8" tabindex="-1"></a>       <span class="dv">2</span>,</span>
-<span id="cb511-9"><a href="prueba-de-t-con-datos-independientes.html#cb511-9" tabindex="-1"></a>       <span class="dv">80</span>, <span class="dv">24</span>,</span>
-<span id="cb511-10"><a href="prueba-de-t-con-datos-independientes.html#cb511-10" tabindex="-1"></a>       <span class="dv">32</span>, <span class="dv">22</span>, <span class="dv">22</span>,<span class="dv">15</span>)</span>
-<span id="cb511-11"><a href="prueba-de-t-con-datos-independientes.html#cb511-11" tabindex="-1"></a></span>
-<span id="cb511-12"><a href="prueba-de-t-con-datos-independientes.html#cb511-12" tabindex="-1"></a>futurePR<span class="ot">=</span><span class="fu">data.frame</span>(sex,kids)</span>
-<span id="cb511-13"><a href="prueba-de-t-con-datos-independientes.html#cb511-13" tabindex="-1"></a></span>
-<span id="cb511-14"><a href="prueba-de-t-con-datos-independientes.html#cb511-14" tabindex="-1"></a><span class="fu">head</span>(futurePR)</span></code></pre></div>
+<div class="sourceCode" id="cb512"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb512-1"><a href="prueba-de-t-con-datos-independientes.html#cb512-1" tabindex="-1"></a>sex<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
+<span id="cb512-2"><a href="prueba-de-t-con-datos-independientes.html#cb512-2" tabindex="-1"></a>      <span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,<span class="st">&quot;f&quot;</span>,</span>
+<span id="cb512-3"><a href="prueba-de-t-con-datos-independientes.html#cb512-3" tabindex="-1"></a>      <span class="st">&quot;f&quot;</span>,</span>
+<span id="cb512-4"><a href="prueba-de-t-con-datos-independientes.html#cb512-4" tabindex="-1"></a>      <span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,</span>
+<span id="cb512-5"><a href="prueba-de-t-con-datos-independientes.html#cb512-5" tabindex="-1"></a>      <span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>,<span class="st">&quot;m&quot;</span>)</span>
+<span id="cb512-6"><a href="prueba-de-t-con-datos-independientes.html#cb512-6" tabindex="-1"></a>kids<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>,</span>
+<span id="cb512-7"><a href="prueba-de-t-con-datos-independientes.html#cb512-7" tabindex="-1"></a>       <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">10</span>,</span>
+<span id="cb512-8"><a href="prueba-de-t-con-datos-independientes.html#cb512-8" tabindex="-1"></a>       <span class="dv">2</span>,</span>
+<span id="cb512-9"><a href="prueba-de-t-con-datos-independientes.html#cb512-9" tabindex="-1"></a>       <span class="dv">80</span>, <span class="dv">24</span>,</span>
+<span id="cb512-10"><a href="prueba-de-t-con-datos-independientes.html#cb512-10" tabindex="-1"></a>       <span class="dv">32</span>, <span class="dv">22</span>, <span class="dv">22</span>,<span class="dv">15</span>)</span>
+<span id="cb512-11"><a href="prueba-de-t-con-datos-independientes.html#cb512-11" tabindex="-1"></a></span>
+<span id="cb512-12"><a href="prueba-de-t-con-datos-independientes.html#cb512-12" tabindex="-1"></a>futurePR<span class="ot">=</span><span class="fu">data.frame</span>(sex,kids)</span>
+<span id="cb512-13"><a href="prueba-de-t-con-datos-independientes.html#cb512-13" tabindex="-1"></a></span>
+<span id="cb512-14"><a href="prueba-de-t-con-datos-independientes.html#cb512-14" tabindex="-1"></a><span class="fu">head</span>(futurePR)</span></code></pre></div>
 </details>
 <pre><code>##   sex kids
 ## 1   f    0
@@ -1209,8 +1209,8 @@ La prueba de Fligner-Killeen los datos NO tiene que cumplir con distribición no
 ## 5   f    1
 ## 6   f    4</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb513"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb513-1"><a href="prueba-de-t-con-datos-independientes.html#cb513-1" tabindex="-1"></a>model2<span class="ot">=</span><span class="fu">t.test</span>(kids<span class="sc">~</span>sex, <span class="at">data=</span>futurePR)</span>
-<span id="cb513-2"><a href="prueba-de-t-con-datos-independientes.html#cb513-2" tabindex="-1"></a>model2</span></code></pre></div>
+<div class="sourceCode" id="cb514"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb514-1"><a href="prueba-de-t-con-datos-independientes.html#cb514-1" tabindex="-1"></a>model2<span class="ot">=</span><span class="fu">t.test</span>(kids<span class="sc">~</span>sex, <span class="at">data=</span>futurePR)</span>
+<span id="cb514-2"><a href="prueba-de-t-con-datos-independientes.html#cb514-2" tabindex="-1"></a>model2</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Welch Two Sample t-test
@@ -1224,7 +1224,7 @@ La prueba de Fligner-Killeen los datos NO tiene que cumplir con distribición no
 ## mean in group f mean in group m 
 ##        2.454545       32.500000</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb515"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb515-1"><a href="prueba-de-t-con-datos-independientes.html#cb515-1" tabindex="-1"></a><span class="fu">byf.shapiro</span>(kids<span class="sc">~</span>sex, futurePR)</span></code></pre></div>
+<div class="sourceCode" id="cb516"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb516-1"><a href="prueba-de-t-con-datos-independientes.html#cb516-1" tabindex="-1"></a><span class="fu">byf.shapiro</span>(kids<span class="sc">~</span>sex, futurePR)</span></code></pre></div>
 </details>
 <pre><code>## 
 ##  Shapiro-Wilk normality tests

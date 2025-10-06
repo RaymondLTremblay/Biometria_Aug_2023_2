@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 18 Regresión Lineal | BioEstadística</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
-  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 18 Regresión Lineal | BioEstadística" />
   <meta property="og:type" content="book" />
@@ -836,12 +836,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <p>Activar las librerias, averiguar que TIENE instalado estos paquetes</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="regresión-lineal-1.html#cb583-1" tabindex="-1"></a><span class="fu">library</span>(QuantPsyc)</span>
-<span id="cb583-2"><a href="regresión-lineal-1.html#cb583-2" tabindex="-1"></a><span class="fu">library</span>(car)</span>
-<span id="cb583-3"><a href="regresión-lineal-1.html#cb583-3" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
-<span id="cb583-4"><a href="regresión-lineal-1.html#cb583-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb583-5"><a href="regresión-lineal-1.html#cb583-5" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb583-6"><a href="regresión-lineal-1.html#cb583-6" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span></code></pre></div>
+<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="regresión-lineal-1.html#cb584-1" tabindex="-1"></a><span class="fu">library</span>(QuantPsyc)</span>
+<span id="cb584-2"><a href="regresión-lineal-1.html#cb584-2" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb584-3"><a href="regresión-lineal-1.html#cb584-3" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
+<span id="cb584-4"><a href="regresión-lineal-1.html#cb584-4" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb584-5"><a href="regresión-lineal-1.html#cb584-5" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb584-6"><a href="regresión-lineal-1.html#cb584-6" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span></code></pre></div>
 </details>
 <hr />
 <p>La regresión lineal es el modelo básico de evaluar si hay una relación <em>lineal</em> o sea <em>recta</em> entre dos variable. Esta relación entre las variables puedes ser positiva o negativa. Hay otro tipos de regresión, que incluye regresión no lineal tal como cuadrática <span class="math display">\[x^2\]</span> o cúbica <span class="math display">\[x^3\]</span>, logarítmica <span class="math display">\[log(x)\]</span> entre muchas otras alternativas.</p>
@@ -849,9 +849,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Primero paso es subir los datos:</p>
 <p>El números de barres en un bario y la cantidad de asesinados en este barrio (Datos ficticios)</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb584"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb584-1"><a href="regresión-lineal-1.html#cb584-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb584-2"><a href="regresión-lineal-1.html#cb584-2" tabindex="-1"></a>pubs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/pubs.csv&quot;</span>)</span>
-<span id="cb584-3"><a href="regresión-lineal-1.html#cb584-3" tabindex="-1"></a>pubs</span></code></pre></div>
+<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="regresión-lineal-1.html#cb585-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb585-2"><a href="regresión-lineal-1.html#cb585-2" tabindex="-1"></a>pubs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/pubs.csv&quot;</span>)</span>
+<span id="cb585-3"><a href="regresión-lineal-1.html#cb585-3" tabindex="-1"></a>pubs</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:reg1">
 <caption style="caption-side: top; text-align: center;"><span id="tab:reg1">Table 18.1: </span> </caption><col><col><thead>
@@ -879,13 +879,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="regresión-lineal-1.html#cb585-1" tabindex="-1"></a>pubs2<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>pubs, <span class="sc">~</span>mortality,</span>
-<span id="cb585-2"><a href="regresión-lineal-1.html#cb585-2" tabindex="-1"></a>             <span class="dv">10</span>, <span class="dv">1000</span>,</span>
-<span id="cb585-3"><a href="regresión-lineal-1.html#cb585-3" tabindex="-1"></a>             <span class="dv">20</span>, <span class="dv">200</span>,</span>
-<span id="cb585-4"><a href="regresión-lineal-1.html#cb585-4" tabindex="-1"></a>             <span class="dv">30</span>, <span class="dv">30</span>,</span>
-<span id="cb585-5"><a href="regresión-lineal-1.html#cb585-5" tabindex="-1"></a>             <span class="dv">40</span>, <span class="dv">4</span>,</span>
-<span id="cb585-6"><a href="regresión-lineal-1.html#cb585-6" tabindex="-1"></a>             <span class="dv">50</span>, <span class="dv">1</span>)</span>
-<span id="cb585-7"><a href="regresión-lineal-1.html#cb585-7" tabindex="-1"></a>pubs2</span></code></pre></div>
+<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="regresión-lineal-1.html#cb586-1" tabindex="-1"></a>pubs2<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>pubs, <span class="sc">~</span>mortality,</span>
+<span id="cb586-2"><a href="regresión-lineal-1.html#cb586-2" tabindex="-1"></a>             <span class="dv">10</span>, <span class="dv">1000</span>,</span>
+<span id="cb586-3"><a href="regresión-lineal-1.html#cb586-3" tabindex="-1"></a>             <span class="dv">20</span>, <span class="dv">200</span>,</span>
+<span id="cb586-4"><a href="regresión-lineal-1.html#cb586-4" tabindex="-1"></a>             <span class="dv">30</span>, <span class="dv">30</span>,</span>
+<span id="cb586-5"><a href="regresión-lineal-1.html#cb586-5" tabindex="-1"></a>             <span class="dv">40</span>, <span class="dv">4</span>,</span>
+<span id="cb586-6"><a href="regresión-lineal-1.html#cb586-6" tabindex="-1"></a>             <span class="dv">50</span>, <span class="dv">1</span>)</span>
+<span id="cb586-7"><a href="regresión-lineal-1.html#cb586-7" tabindex="-1"></a>pubs2</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:reg1">
 <caption style="caption-side: top; text-align: center;"><span id="tab:reg1">Table 18.1: </span> </caption><col><col><thead>
@@ -907,10 +907,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="regresión-lineal-1.html#cb586-1" tabindex="-1"></a><span class="co"># Cambiamos los nombres de las columnas</span></span>
-<span id="cb586-2"><a href="regresión-lineal-1.html#cb586-2" tabindex="-1"></a></span>
-<span id="cb586-3"><a href="regresión-lineal-1.html#cb586-3" tabindex="-1"></a>pubs<span class="ot">=</span>pubs<span class="sc">%&gt;%</span></span>
-<span id="cb586-4"><a href="regresión-lineal-1.html#cb586-4" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">barres=</span>pubs, <span class="at">mortalidad=</span>mortality)</span></code></pre></div>
+<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb587-1"><a href="regresión-lineal-1.html#cb587-1" tabindex="-1"></a><span class="co"># Cambiamos los nombres de las columnas</span></span>
+<span id="cb587-2"><a href="regresión-lineal-1.html#cb587-2" tabindex="-1"></a></span>
+<span id="cb587-3"><a href="regresión-lineal-1.html#cb587-3" tabindex="-1"></a>pubs<span class="ot">=</span>pubs<span class="sc">%&gt;%</span></span>
+<span id="cb587-4"><a href="regresión-lineal-1.html#cb587-4" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">rename</span>(<span class="at">barres=</span>pubs, <span class="at">mortalidad=</span>mortality)</span></code></pre></div>
 </details>
 <hr />
 <div id="la-función-lm" class="section level2 hasAnchor" number="18.1">
@@ -923,10 +923,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Ahora evaluamos los resultados de la regresión entre el número de barres en un vecindarios y la mortalidad en este mismo sector. Se observa que los coeficientes de la linea son <span class="math inline">\(y=3352+14.3*x\)</span>. Entonce el intercepto en cero comienza en 3352 fatalidades y por cada bar suplementario hay 14.3 más fatalidad.</p>
 <p>Ahora para determinar si estos valores son significativo hay que evaluar el valor de <strong>p</strong> en cada linea. La hipótesis nula del intercepto tiene un valor de p =0.005, que sugiere que se debería rechazar la hipótesis nula, y por consecuencia aceptamos la hipótesis alterna. La pendiente tiene un valor de p=0.015 y también se rechaza la hipotesis nula.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb587-1"><a href="regresión-lineal-1.html#cb587-1" tabindex="-1"></a>pubReg <span class="ot">&lt;-</span> <span class="fu">lm</span>(mortalidad<span class="sc">~</span>barres, <span class="at">data =</span> pubs) </span>
-<span id="cb587-2"><a href="regresión-lineal-1.html#cb587-2" tabindex="-1"></a></span>
-<span id="cb587-3"><a href="regresión-lineal-1.html#cb587-3" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mortality<span class="sc">~</span>pubs, <span class="at">data=</span>pubs2)</span>
-<span id="cb587-4"><a href="regresión-lineal-1.html#cb587-4" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
+<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="regresión-lineal-1.html#cb588-1" tabindex="-1"></a>pubReg <span class="ot">&lt;-</span> <span class="fu">lm</span>(mortalidad<span class="sc">~</span>barres, <span class="at">data =</span> pubs) </span>
+<span id="cb588-2"><a href="regresión-lineal-1.html#cb588-2" tabindex="-1"></a></span>
+<span id="cb588-3"><a href="regresión-lineal-1.html#cb588-3" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mortality<span class="sc">~</span>pubs, <span class="at">data=</span>pubs2)</span>
+<span id="cb588-4"><a href="regresión-lineal-1.html#cb588-4" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -947,17 +947,17 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 ## Multiple R-squared:  0.6541, Adjusted R-squared:  0.5389 
 ## F-statistic: 5.674 on 1 and 3 DF,  p-value: 0.09744</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="regresión-lineal-1.html#cb589-1" tabindex="-1"></a><span class="co">#summary(pubReg) # Si no se acuerda de la funcíon que sigue</span></span>
-<span id="cb589-2"><a href="regresión-lineal-1.html#cb589-2" tabindex="-1"></a></span>
-<span id="cb589-3"><a href="regresión-lineal-1.html#cb589-3" tabindex="-1"></a><span class="fu">tab_model</span>(</span>
-<span id="cb589-4"><a href="regresión-lineal-1.html#cb589-4" tabindex="-1"></a>  pubReg,<span class="at">show.df =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb589-5"><a href="regresión-lineal-1.html#cb589-5" tabindex="-1"></a>  <span class="at">CSS =</span> <span class="fu">list</span>(</span>
-<span id="cb589-6"><a href="regresión-lineal-1.html#cb589-6" tabindex="-1"></a>    <span class="at">css.depvarhead =</span> <span class="st">&#39;color: red;&#39;</span>,</span>
-<span id="cb589-7"><a href="regresión-lineal-1.html#cb589-7" tabindex="-1"></a>    <span class="at">css.centeralign =</span> <span class="st">&#39;text-align: left;&#39;</span>, </span>
-<span id="cb589-8"><a href="regresión-lineal-1.html#cb589-8" tabindex="-1"></a>    <span class="at">css.firsttablecol =</span> <span class="st">&#39;font-weight: bold;&#39;</span>, </span>
-<span id="cb589-9"><a href="regresión-lineal-1.html#cb589-9" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
-<span id="cb589-10"><a href="regresión-lineal-1.html#cb589-10" tabindex="-1"></a>  )</span>
-<span id="cb589-11"><a href="regresión-lineal-1.html#cb589-11" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb590-1"><a href="regresión-lineal-1.html#cb590-1" tabindex="-1"></a><span class="co">#summary(pubReg) # Si no se acuerda de la funcíon que sigue</span></span>
+<span id="cb590-2"><a href="regresión-lineal-1.html#cb590-2" tabindex="-1"></a></span>
+<span id="cb590-3"><a href="regresión-lineal-1.html#cb590-3" tabindex="-1"></a><span class="fu">tab_model</span>(</span>
+<span id="cb590-4"><a href="regresión-lineal-1.html#cb590-4" tabindex="-1"></a>  pubReg,<span class="at">show.df =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb590-5"><a href="regresión-lineal-1.html#cb590-5" tabindex="-1"></a>  <span class="at">CSS =</span> <span class="fu">list</span>(</span>
+<span id="cb590-6"><a href="regresión-lineal-1.html#cb590-6" tabindex="-1"></a>    <span class="at">css.depvarhead =</span> <span class="st">&#39;color: red;&#39;</span>,</span>
+<span id="cb590-7"><a href="regresión-lineal-1.html#cb590-7" tabindex="-1"></a>    <span class="at">css.centeralign =</span> <span class="st">&#39;text-align: left;&#39;</span>, </span>
+<span id="cb590-8"><a href="regresión-lineal-1.html#cb590-8" tabindex="-1"></a>    <span class="at">css.firsttablecol =</span> <span class="st">&#39;font-weight: bold;&#39;</span>, </span>
+<span id="cb590-9"><a href="regresión-lineal-1.html#cb590-9" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
+<span id="cb590-10"><a href="regresión-lineal-1.html#cb590-10" tabindex="-1"></a>  )</span>
+<span id="cb590-11"><a href="regresión-lineal-1.html#cb590-11" tabindex="-1"></a>)</span></code></pre></div>
 </details>
 <table style="border-collapse:collapse; border:none;">
 <tr>
@@ -1042,21 +1042,21 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <h2><span class="header-section-number">18.2</span> Visualización de la regresión<a href="regresión-lineal-1.html#visualización-de-la-regresión" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Se observa que hay un aumento en fatalidades con aumento en el número de barres. Pero nota el valor a la derecha que parece ser muy atípico comparado a los otros.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb590-1"><a href="regresión-lineal-1.html#cb590-1" tabindex="-1"></a><span class="fu">ggplot</span>(pubs, <span class="fu">aes</span>(<span class="at">x=</span>barres, <span class="at">y=</span>mortalidad))<span class="sc">+</span></span>
-<span id="cb590-2"><a href="regresión-lineal-1.html#cb590-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)<span class="sc">+</span> <span class="co"># modelo lineal</span></span>
-<span id="cb590-3"><a href="regresión-lineal-1.html#cb590-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="regresión-lineal-1.html#cb591-1" tabindex="-1"></a><span class="fu">ggplot</span>(pubs, <span class="fu">aes</span>(<span class="at">x=</span>barres, <span class="at">y=</span>mortalidad))<span class="sc">+</span></span>
+<span id="cb591-2"><a href="regresión-lineal-1.html#cb591-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)<span class="sc">+</span> <span class="co"># modelo lineal</span></span>
+<span id="cb591-3"><a href="regresión-lineal-1.html#cb591-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/reg3-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="regresión-lineal-1.html#cb591-1" tabindex="-1"></a>datosP<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>edad_casar, <span class="sc">~</span>Num_hijos,</span>
-<span id="cb591-2"><a href="regresión-lineal-1.html#cb591-2" tabindex="-1"></a>               <span class="cn">NA</span>, <span class="dv">10</span>,</span>
-<span id="cb591-3"><a href="regresión-lineal-1.html#cb591-3" tabindex="-1"></a>               <span class="dv">22</span>, <span class="dv">3</span>,</span>
-<span id="cb591-4"><a href="regresión-lineal-1.html#cb591-4" tabindex="-1"></a>               <span class="dv">17</span>, <span class="dv">2</span>,</span>
-<span id="cb591-5"><a href="regresión-lineal-1.html#cb591-5" tabindex="-1"></a>               <span class="dv">18</span>, <span class="dv">2</span>,</span>
-<span id="cb591-6"><a href="regresión-lineal-1.html#cb591-6" tabindex="-1"></a>               <span class="dv">21</span>, <span class="dv">5</span>,</span>
-<span id="cb591-7"><a href="regresión-lineal-1.html#cb591-7" tabindex="-1"></a>               <span class="dv">20</span>, <span class="dv">3</span>,</span>
-<span id="cb591-8"><a href="regresión-lineal-1.html#cb591-8" tabindex="-1"></a>               <span class="dv">37</span>, <span class="dv">2</span>)</span>
-<span id="cb591-9"><a href="regresión-lineal-1.html#cb591-9" tabindex="-1"></a>datosP</span></code></pre></div>
+<div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb592-1"><a href="regresión-lineal-1.html#cb592-1" tabindex="-1"></a>datosP<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>edad_casar, <span class="sc">~</span>Num_hijos,</span>
+<span id="cb592-2"><a href="regresión-lineal-1.html#cb592-2" tabindex="-1"></a>               <span class="cn">NA</span>, <span class="dv">10</span>,</span>
+<span id="cb592-3"><a href="regresión-lineal-1.html#cb592-3" tabindex="-1"></a>               <span class="dv">22</span>, <span class="dv">3</span>,</span>
+<span id="cb592-4"><a href="regresión-lineal-1.html#cb592-4" tabindex="-1"></a>               <span class="dv">17</span>, <span class="dv">2</span>,</span>
+<span id="cb592-5"><a href="regresión-lineal-1.html#cb592-5" tabindex="-1"></a>               <span class="dv">18</span>, <span class="dv">2</span>,</span>
+<span id="cb592-6"><a href="regresión-lineal-1.html#cb592-6" tabindex="-1"></a>               <span class="dv">21</span>, <span class="dv">5</span>,</span>
+<span id="cb592-7"><a href="regresión-lineal-1.html#cb592-7" tabindex="-1"></a>               <span class="dv">20</span>, <span class="dv">3</span>,</span>
+<span id="cb592-8"><a href="regresión-lineal-1.html#cb592-8" tabindex="-1"></a>               <span class="dv">37</span>, <span class="dv">2</span>)</span>
+<span id="cb592-9"><a href="regresión-lineal-1.html#cb592-9" tabindex="-1"></a>datosP</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:reg4">
 <caption style="caption-side: top; text-align: center;"><span id="tab:reg4">Table 18.2: </span> </caption><col><col><thead>
@@ -1082,8 +1082,8 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb592-1"><a href="regresión-lineal-1.html#cb592-1" tabindex="-1"></a>model2<span class="ot">=</span><span class="fu">lm</span>(Num_hijos<span class="sc">~</span>edad_casar, <span class="at">data=</span>datosP)</span>
-<span id="cb592-2"><a href="regresión-lineal-1.html#cb592-2" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code></pre></div>
+<div class="sourceCode" id="cb593"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb593-1"><a href="regresión-lineal-1.html#cb593-1" tabindex="-1"></a>model2<span class="ot">=</span><span class="fu">lm</span>(Num_hijos<span class="sc">~</span>edad_casar, <span class="at">data=</span>datosP)</span>
+<span id="cb593-2"><a href="regresión-lineal-1.html#cb593-2" tabindex="-1"></a><span class="fu">summary</span>(model2)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -1103,9 +1103,9 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 ## Multiple R-squared:  0.03054,    Adjusted R-squared:  -0.2118 
 ## F-statistic: 0.126 on 1 and 4 DF,  p-value: 0.7405</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb594-1"><a href="regresión-lineal-1.html#cb594-1" tabindex="-1"></a><span class="fu">ggplot</span>(datosP, <span class="fu">aes</span>(<span class="at">y=</span>Num_hijos, <span class="at">x=</span>edad_casar))<span class="sc">+</span></span>
-<span id="cb594-2"><a href="regresión-lineal-1.html#cb594-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)<span class="sc">+</span> <span class="co"># modelo lineal</span></span>
-<span id="cb594-3"><a href="regresión-lineal-1.html#cb594-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="regresión-lineal-1.html#cb595-1" tabindex="-1"></a><span class="fu">ggplot</span>(datosP, <span class="fu">aes</span>(<span class="at">y=</span>Num_hijos, <span class="at">x=</span>edad_casar))<span class="sc">+</span></span>
+<span id="cb595-2"><a href="regresión-lineal-1.html#cb595-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm)<span class="sc">+</span> <span class="co"># modelo lineal</span></span>
+<span id="cb595-3"><a href="regresión-lineal-1.html#cb595-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/reg4-1.png" width="672" /></p>
 <hr />
@@ -1114,24 +1114,24 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <h2><span class="header-section-number">18.3</span> El impacto de valores atípico<a href="regresión-lineal-1.html#el-impacto-de-valores-atípico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En cierta ocasiones valores fuera de lo normal pueden hacer grandes cambios en el resultado, en este caso la regresión. ¿Cual es el efecto del valor grande? Removemos ese valor del archivo de datos y revaluamos el modelo (la regresión lineal). Nota que ahora el modelo es sumamente diferente <span class="math inline">\(y=-163.7+103.2*x\)</span>. ¿Ahora se rechaza las dos hipótesis?</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb595"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb595-1"><a href="regresión-lineal-1.html#cb595-1" tabindex="-1"></a>pubsnew <span class="ot">&lt;-</span> pubs[ <span class="fu">which</span>(pubs<span class="sc">$</span>barres<span class="sc">&lt;</span><span class="dv">80</span>), ]  <span class="co"># remover el valor grande</span></span>
-<span id="cb595-2"><a href="regresión-lineal-1.html#cb595-2" tabindex="-1"></a></span>
-<span id="cb595-3"><a href="regresión-lineal-1.html#cb595-3" tabindex="-1"></a>pubsnew<span class="ot">=</span>pubsnew <span class="sc">%&gt;%</span> </span>
-<span id="cb595-4"><a href="regresión-lineal-1.html#cb595-4" tabindex="-1"></a>  <span class="fu">add_row</span>(<span class="at">barres =</span> <span class="dv">4</span>, <span class="at">mortalidad =</span> <span class="dv">0</span>) <span class="co"># Añadiendo un par de valores</span></span>
-<span id="cb595-5"><a href="regresión-lineal-1.html#cb595-5" tabindex="-1"></a></span>
-<span id="cb595-6"><a href="regresión-lineal-1.html#cb595-6" tabindex="-1"></a></span>
-<span id="cb595-7"><a href="regresión-lineal-1.html#cb595-7" tabindex="-1"></a>pubRegNew <span class="ot">&lt;-</span> <span class="fu">lm</span>(mortalidad<span class="sc">~</span>barres, <span class="at">data =</span> pubsnew)</span>
-<span id="cb595-8"><a href="regresión-lineal-1.html#cb595-8" tabindex="-1"></a><span class="co">#summary(pubRegNew)</span></span>
-<span id="cb595-9"><a href="regresión-lineal-1.html#cb595-9" tabindex="-1"></a></span>
-<span id="cb595-10"><a href="regresión-lineal-1.html#cb595-10" tabindex="-1"></a><span class="fu">tab_model</span>(</span>
-<span id="cb595-11"><a href="regresión-lineal-1.html#cb595-11" tabindex="-1"></a>  pubRegNew,<span class="at">show.df =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb595-12"><a href="regresión-lineal-1.html#cb595-12" tabindex="-1"></a>  <span class="at">CSS =</span> <span class="fu">list</span>(</span>
-<span id="cb595-13"><a href="regresión-lineal-1.html#cb595-13" tabindex="-1"></a>    <span class="at">css.depvarhead =</span> <span class="st">&#39;color: red;&#39;</span>,</span>
-<span id="cb595-14"><a href="regresión-lineal-1.html#cb595-14" tabindex="-1"></a>    <span class="at">css.centeralign =</span> <span class="st">&#39;text-align: left;&#39;</span>, </span>
-<span id="cb595-15"><a href="regresión-lineal-1.html#cb595-15" tabindex="-1"></a>    <span class="at">css.firsttablecol =</span> <span class="st">&#39;font-weight: bold;&#39;</span>, </span>
-<span id="cb595-16"><a href="regresión-lineal-1.html#cb595-16" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
-<span id="cb595-17"><a href="regresión-lineal-1.html#cb595-17" tabindex="-1"></a>  )</span>
-<span id="cb595-18"><a href="regresión-lineal-1.html#cb595-18" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb596"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb596-1"><a href="regresión-lineal-1.html#cb596-1" tabindex="-1"></a>pubsnew <span class="ot">&lt;-</span> pubs[ <span class="fu">which</span>(pubs<span class="sc">$</span>barres<span class="sc">&lt;</span><span class="dv">80</span>), ]  <span class="co"># remover el valor grande</span></span>
+<span id="cb596-2"><a href="regresión-lineal-1.html#cb596-2" tabindex="-1"></a></span>
+<span id="cb596-3"><a href="regresión-lineal-1.html#cb596-3" tabindex="-1"></a>pubsnew<span class="ot">=</span>pubsnew <span class="sc">%&gt;%</span> </span>
+<span id="cb596-4"><a href="regresión-lineal-1.html#cb596-4" tabindex="-1"></a>  <span class="fu">add_row</span>(<span class="at">barres =</span> <span class="dv">4</span>, <span class="at">mortalidad =</span> <span class="dv">0</span>) <span class="co"># Añadiendo un par de valores</span></span>
+<span id="cb596-5"><a href="regresión-lineal-1.html#cb596-5" tabindex="-1"></a></span>
+<span id="cb596-6"><a href="regresión-lineal-1.html#cb596-6" tabindex="-1"></a></span>
+<span id="cb596-7"><a href="regresión-lineal-1.html#cb596-7" tabindex="-1"></a>pubRegNew <span class="ot">&lt;-</span> <span class="fu">lm</span>(mortalidad<span class="sc">~</span>barres, <span class="at">data =</span> pubsnew)</span>
+<span id="cb596-8"><a href="regresión-lineal-1.html#cb596-8" tabindex="-1"></a><span class="co">#summary(pubRegNew)</span></span>
+<span id="cb596-9"><a href="regresión-lineal-1.html#cb596-9" tabindex="-1"></a></span>
+<span id="cb596-10"><a href="regresión-lineal-1.html#cb596-10" tabindex="-1"></a><span class="fu">tab_model</span>(</span>
+<span id="cb596-11"><a href="regresión-lineal-1.html#cb596-11" tabindex="-1"></a>  pubRegNew,<span class="at">show.df =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb596-12"><a href="regresión-lineal-1.html#cb596-12" tabindex="-1"></a>  <span class="at">CSS =</span> <span class="fu">list</span>(</span>
+<span id="cb596-13"><a href="regresión-lineal-1.html#cb596-13" tabindex="-1"></a>    <span class="at">css.depvarhead =</span> <span class="st">&#39;color: red;&#39;</span>,</span>
+<span id="cb596-14"><a href="regresión-lineal-1.html#cb596-14" tabindex="-1"></a>    <span class="at">css.centeralign =</span> <span class="st">&#39;text-align: left;&#39;</span>, </span>
+<span id="cb596-15"><a href="regresión-lineal-1.html#cb596-15" tabindex="-1"></a>    <span class="at">css.firsttablecol =</span> <span class="st">&#39;font-weight: bold;&#39;</span>, </span>
+<span id="cb596-16"><a href="regresión-lineal-1.html#cb596-16" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
+<span id="cb596-17"><a href="regresión-lineal-1.html#cb596-17" tabindex="-1"></a>  )</span>
+<span id="cb596-18"><a href="regresión-lineal-1.html#cb596-18" tabindex="-1"></a>)</span></code></pre></div>
 </details>
 <table style="border-collapse:collapse; border:none;">
 <tr>
@@ -1211,9 +1211,9 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 </tr>
 </table>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb596"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb596-1"><a href="regresión-lineal-1.html#cb596-1" tabindex="-1"></a><span class="fu">ggplot</span>(pubsnew,<span class="fu">aes</span>(<span class="at">x=</span>barres, <span class="at">y=</span>mortalidad))<span class="sc">+</span></span>
-<span id="cb596-2"><a href="regresión-lineal-1.html#cb596-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)<span class="sc">+</span></span>
-<span id="cb596-3"><a href="regresión-lineal-1.html#cb596-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb597-1"><a href="regresión-lineal-1.html#cb597-1" tabindex="-1"></a><span class="fu">ggplot</span>(pubsnew,<span class="fu">aes</span>(<span class="at">x=</span>barres, <span class="at">y=</span>mortalidad))<span class="sc">+</span></span>
+<span id="cb597-2"><a href="regresión-lineal-1.html#cb597-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)<span class="sc">+</span></span>
+<span id="cb597-3"><a href="regresión-lineal-1.html#cb597-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/reg5-1.png" width="672" /></p>
 <hr />
@@ -1223,9 +1223,9 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <p>Ahora un set de datos más complejo y más realista a los que uno encontraría en un estudio de en medicina, sociología o ecológica.</p>
 <p>Los datos representa la cantidad de dinero dedicado a la promoción de diferentes CD’s de una compañia de música y la cantidad de CD (CD/downloads) vendido. El la primera linea se observa la cantidad de libras esterlina, <strong>£</strong> (UK) dedicado a la promoción del album de música, en la primera linea vemos que se gasto £10,256, y después la cantidad de CD vendido fue 330.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb597"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb597-1"><a href="regresión-lineal-1.html#cb597-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb597-2"><a href="regresión-lineal-1.html#cb597-2" tabindex="-1"></a>Album_Sales_1_new <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Album_Sales_1_new.csv&quot;</span>)</span>
-<span id="cb597-3"><a href="regresión-lineal-1.html#cb597-3" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
+<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="regresión-lineal-1.html#cb598-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb598-2"><a href="regresión-lineal-1.html#cb598-2" tabindex="-1"></a>Album_Sales_1_new <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Album_Sales_1_new.csv&quot;</span>)</span>
+<span id="cb598-3"><a href="regresión-lineal-1.html#cb598-3" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:reg6">
 <caption style="caption-side: top; text-align: center;"><span id="tab:reg6">Table 18.3: </span> </caption><col><col><thead>
@@ -1249,24 +1249,24 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="regresión-lineal-1.html#cb598-1" tabindex="-1"></a><span class="fu">length</span>(Album_Sales_1_new<span class="sc">$</span>adverts)  <span class="co"># cuantas files de datos hay en el data frame</span></span></code></pre></div>
+<div class="sourceCode" id="cb599"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb599-1"><a href="regresión-lineal-1.html#cb599-1" tabindex="-1"></a><span class="fu">length</span>(Album_Sales_1_new<span class="sc">$</span>adverts)  <span class="co"># cuantas files de datos hay en el data frame</span></span></code></pre></div>
 </details>
 <pre><code>## [1] 200</code></pre>
 <p>Comenzamos con hacer un gráfico entre las dos variables. Nota que en la parte de <strong>geom_smooth()</strong>, tiene que incluir <strong>method=lm</strong>, esto significa que el método de construir la linea usara la regresión lineal. Se añade a la función lineal <span class="math inline">\(\epsilon\)</span> que representa los errores de los valores al comparar con la linea que representa el mejor modelo.</p>
 <p><span class="math display">\[Y_{ i }=\beta _{ 0 }+\beta _{ 1 }X_{ i }+\epsilon _{ i }\]</span> Recuerda que <span class="math inline">\(\beta _{ 0 }\)</span> es el intercepto y el <span class="math inline">\(\beta _{ 1 }X_{ i }\)</span> es la pendiente. El área sombreada es el área de 95 de intervalo de confianza. Esto quiere decir que la mejor linea, intercepto y pendiente podría variar en este rango si repetimos el experimento. Nota aquí todas las alternativas, añadí los dos extremos, con una pendiente mayor (roja) y una menor (violeta). Cada punto representa la venta de CD con su correspondiente cantidad dedicada a la promoción. Los <span class="math inline">\(epsilon\)</span> seria la diferencia entre la mejor linea y el valor original, esto se llama tambien los residuales.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb600-1"><a href="regresión-lineal-1.html#cb600-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb600-2"><a href="regresión-lineal-1.html#cb600-2" tabindex="-1"></a><span class="fu">ggplot</span>(Album_Sales_1_new,<span class="fu">aes</span>(<span class="at">x=</span>adverts, <span class="at">y=</span>sales))<span class="sc">+</span></span>
-<span id="cb600-3"><a href="regresión-lineal-1.html#cb600-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
-<span id="cb600-4"><a href="regresión-lineal-1.html#cb600-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb600-5"><a href="regresión-lineal-1.html#cb600-5" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">120</span>, <span class="at">xend=</span><span class="dv">2250</span>, <span class="at">yend=</span><span class="dv">380</span>), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
-<span id="cb600-6"><a href="regresión-lineal-1.html#cb600-6" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">150</span>, <span class="at">xend=</span><span class="dv">2250</span>, <span class="at">yend=</span><span class="dv">320</span>), <span class="at">colour=</span><span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb601"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb601-1"><a href="regresión-lineal-1.html#cb601-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb601-2"><a href="regresión-lineal-1.html#cb601-2" tabindex="-1"></a><span class="fu">ggplot</span>(Album_Sales_1_new,<span class="fu">aes</span>(<span class="at">x=</span>adverts, <span class="at">y=</span>sales))<span class="sc">+</span></span>
+<span id="cb601-3"><a href="regresión-lineal-1.html#cb601-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb601-4"><a href="regresión-lineal-1.html#cb601-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb601-5"><a href="regresión-lineal-1.html#cb601-5" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">120</span>, <span class="at">xend=</span><span class="dv">2250</span>, <span class="at">yend=</span><span class="dv">380</span>), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
+<span id="cb601-6"><a href="regresión-lineal-1.html#cb601-6" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="dv">0</span>, <span class="at">y=</span><span class="dv">150</span>, <span class="at">xend=</span><span class="dv">2250</span>, <span class="at">yend=</span><span class="dv">320</span>), <span class="at">colour=</span><span class="st">&quot;purple&quot;</span>)</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/reg7-1.png" width="672" /></p>
 <p>El modelo lineal con la función <strong>lm()</strong>. ¿Como interpretas los coeficientes y si estos son significativos, si se rechaza la hipótesis nula?</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb601"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb601-1"><a href="regresión-lineal-1.html#cb601-1" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span>
-<span id="cb601-2"><a href="regresión-lineal-1.html#cb601-2" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
+<div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb602-1"><a href="regresión-lineal-1.html#cb602-1" tabindex="-1"></a><span class="fu">library</span>(sjPlot)</span>
+<span id="cb602-2"><a href="regresión-lineal-1.html#cb602-2" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:reg7a">
 <caption style="caption-side: top; text-align: center;"><span id="tab:reg7a">Table 18.4: </span> </caption><col><col><thead>
@@ -1290,19 +1290,19 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb602"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb602-1"><a href="regresión-lineal-1.html#cb602-1" tabindex="-1"></a>model1<span class="ot">=</span><span class="fu">lm</span>(sales<span class="sc">~</span>adverts, Album_Sales_1_new)</span>
-<span id="cb602-2"><a href="regresión-lineal-1.html#cb602-2" tabindex="-1"></a></span>
-<span id="cb602-3"><a href="regresión-lineal-1.html#cb602-3" tabindex="-1"></a><span class="co">#summary(model1)</span></span>
-<span id="cb602-4"><a href="regresión-lineal-1.html#cb602-4" tabindex="-1"></a></span>
-<span id="cb602-5"><a href="regresión-lineal-1.html#cb602-5" tabindex="-1"></a><span class="fu">tab_model</span>(</span>
-<span id="cb602-6"><a href="regresión-lineal-1.html#cb602-6" tabindex="-1"></a>  model1,<span class="at">show.df =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb602-7"><a href="regresión-lineal-1.html#cb602-7" tabindex="-1"></a>  <span class="at">CSS =</span> <span class="fu">list</span>(</span>
-<span id="cb602-8"><a href="regresión-lineal-1.html#cb602-8" tabindex="-1"></a>    <span class="at">css.depvarhead =</span> <span class="st">&#39;color: red;&#39;</span>,</span>
-<span id="cb602-9"><a href="regresión-lineal-1.html#cb602-9" tabindex="-1"></a>    <span class="at">css.centeralign =</span> <span class="st">&#39;text-align: left;&#39;</span>, </span>
-<span id="cb602-10"><a href="regresión-lineal-1.html#cb602-10" tabindex="-1"></a>    <span class="at">css.firsttablecol =</span> <span class="st">&#39;font-weight: bold;&#39;</span>, </span>
-<span id="cb602-11"><a href="regresión-lineal-1.html#cb602-11" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
-<span id="cb602-12"><a href="regresión-lineal-1.html#cb602-12" tabindex="-1"></a>  )</span>
-<span id="cb602-13"><a href="regresión-lineal-1.html#cb602-13" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb603"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb603-1"><a href="regresión-lineal-1.html#cb603-1" tabindex="-1"></a>model1<span class="ot">=</span><span class="fu">lm</span>(sales<span class="sc">~</span>adverts, Album_Sales_1_new)</span>
+<span id="cb603-2"><a href="regresión-lineal-1.html#cb603-2" tabindex="-1"></a></span>
+<span id="cb603-3"><a href="regresión-lineal-1.html#cb603-3" tabindex="-1"></a><span class="co">#summary(model1)</span></span>
+<span id="cb603-4"><a href="regresión-lineal-1.html#cb603-4" tabindex="-1"></a></span>
+<span id="cb603-5"><a href="regresión-lineal-1.html#cb603-5" tabindex="-1"></a><span class="fu">tab_model</span>(</span>
+<span id="cb603-6"><a href="regresión-lineal-1.html#cb603-6" tabindex="-1"></a>  model1,<span class="at">show.df =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb603-7"><a href="regresión-lineal-1.html#cb603-7" tabindex="-1"></a>  <span class="at">CSS =</span> <span class="fu">list</span>(</span>
+<span id="cb603-8"><a href="regresión-lineal-1.html#cb603-8" tabindex="-1"></a>    <span class="at">css.depvarhead =</span> <span class="st">&#39;color: red;&#39;</span>,</span>
+<span id="cb603-9"><a href="regresión-lineal-1.html#cb603-9" tabindex="-1"></a>    <span class="at">css.centeralign =</span> <span class="st">&#39;text-align: left;&#39;</span>, </span>
+<span id="cb603-10"><a href="regresión-lineal-1.html#cb603-10" tabindex="-1"></a>    <span class="at">css.firsttablecol =</span> <span class="st">&#39;font-weight: bold;&#39;</span>, </span>
+<span id="cb603-11"><a href="regresión-lineal-1.html#cb603-11" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
+<span id="cb603-12"><a href="regresión-lineal-1.html#cb603-12" tabindex="-1"></a>  )</span>
+<span id="cb603-13"><a href="regresión-lineal-1.html#cb603-13" tabindex="-1"></a>)</span></code></pre></div>
 </details>
 <table style="border-collapse:collapse; border:none;">
 <tr>
@@ -1392,7 +1392,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 </ol>
 <p>En el presente gráfico hay tres valores que hay que evaluar (1,42,169), estos valores se tiene que asegurar que son correctos. Siempre es bueno remover los valores sesgados y rehacer el análisis para observar cuan diferente son los resultas.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb603"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb603-1"><a href="regresión-lineal-1.html#cb603-1" tabindex="-1"></a><span class="fu">plot</span>(model1)  <span class="co"># Evaluar los supuestos, 1. Igualdad de varianza, 2. Normalidad, 4. Datos sesgados (Cook&#39;s Distance)</span></span></code></pre></div>
+<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb604-1"><a href="regresión-lineal-1.html#cb604-1" tabindex="-1"></a><span class="fu">plot</span>(model1)  <span class="co"># Evaluar los supuestos, 1. Igualdad de varianza, 2. Normalidad, 4. Datos sesgados (Cook&#39;s Distance)</span></span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/reg8-1.png" width="672" /><img src="BiomEstadistica_files/figure-html/reg8-2.png" width="672" /><img src="BiomEstadistica_files/figure-html/reg8-3.png" width="672" /><img src="BiomEstadistica_files/figure-html/reg8-4.png" width="672" /></p>
 <hr />
@@ -1407,12 +1407,12 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <p>Aqui enseño como añadir 1. los valores de “cook.distance” a su archivo 2. Añadir una columna de “secuencia” de los datos 3. Crear una gráfica de las distancia de Cook.<br />
 4. Which values have Di larger than 1, which values have Cook’s distances larger 4/n?</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb604"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb604-1"><a href="regresión-lineal-1.html#cb604-1" tabindex="-1"></a><span class="dv">4</span><span class="sc">/</span><span class="fu">length</span>(Album_Sales_1_new<span class="sc">$</span>adverts)</span></code></pre></div>
+<div class="sourceCode" id="cb605"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb605-1"><a href="regresión-lineal-1.html#cb605-1" tabindex="-1"></a><span class="dv">4</span><span class="sc">/</span><span class="fu">length</span>(Album_Sales_1_new<span class="sc">$</span>adverts)</span></code></pre></div>
 </details>
 <pre><code>## [1] 0.02</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb606"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb606-1"><a href="regresión-lineal-1.html#cb606-1" tabindex="-1"></a>Album_Sales_1_new<span class="sc">$</span>cooks.distance<span class="ot">&lt;-</span><span class="fu">cooks.distance</span>(model1)</span>
-<span id="cb606-2"><a href="regresión-lineal-1.html#cb606-2" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
+<div class="sourceCode" id="cb607"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb607-1"><a href="regresión-lineal-1.html#cb607-1" tabindex="-1"></a>Album_Sales_1_new<span class="sc">$</span>cooks.distance<span class="ot">&lt;-</span><span class="fu">cooks.distance</span>(model1)</span>
+<span id="cb607-2"><a href="regresión-lineal-1.html#cb607-2" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:reg9">
 <caption style="caption-side: top; text-align: center;"><span id="tab:reg9">Table 18.5: </span> </caption><col><col><col><thead>
@@ -1436,8 +1436,8 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb607"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb607-1"><a href="regresión-lineal-1.html#cb607-1" tabindex="-1"></a>Album_Sales_1_new<span class="sc">$</span>sequence<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">200</span>)</span>
-<span id="cb607-2"><a href="regresión-lineal-1.html#cb607-2" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
+<div class="sourceCode" id="cb608"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb608-1"><a href="regresión-lineal-1.html#cb608-1" tabindex="-1"></a>Album_Sales_1_new<span class="sc">$</span>sequence<span class="ot">=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">200</span>)</span>
+<span id="cb608-2"><a href="regresión-lineal-1.html#cb608-2" tabindex="-1"></a><span class="fu">head</span>(Album_Sales_1_new)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:reg9">
 <caption style="caption-side: top; text-align: center;"><span id="tab:reg9">Table 18.5: </span> </caption><col><col><col><col><thead>
@@ -1461,7 +1461,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb608"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb608-1"><a href="regresión-lineal-1.html#cb608-1" tabindex="-1"></a><span class="fu">tail</span>(Album_Sales_1_new)</span></code></pre></div>
+<div class="sourceCode" id="cb609"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb609-1"><a href="regresión-lineal-1.html#cb609-1" tabindex="-1"></a><span class="fu">tail</span>(Album_Sales_1_new)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:reg9">
 <caption style="caption-side: top; text-align: center;"><span id="tab:reg9">Table 18.5: </span> </caption><col><col><col><col><thead>
@@ -1485,9 +1485,9 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 </table>
 
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb609"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb609-1"><a href="regresión-lineal-1.html#cb609-1" tabindex="-1"></a><span class="fu">ggplot</span>(Album_Sales_1_new, <span class="fu">aes</span>(sequence, cooks.distance))<span class="sc">+</span></span>
-<span id="cb609-2"><a href="regresión-lineal-1.html#cb609-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb609-3"><a href="regresión-lineal-1.html#cb609-3" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="dv">4</span><span class="sc">/</span><span class="fu">length</span>(Album_Sales_1_new<span class="sc">$</span>adverts), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb610"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb610-1"><a href="regresión-lineal-1.html#cb610-1" tabindex="-1"></a><span class="fu">ggplot</span>(Album_Sales_1_new, <span class="fu">aes</span>(sequence, cooks.distance))<span class="sc">+</span></span>
+<span id="cb610-2"><a href="regresión-lineal-1.html#cb610-2" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb610-3"><a href="regresión-lineal-1.html#cb610-3" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="fu">aes</span>(<span class="at">yintercept=</span><span class="dv">4</span><span class="sc">/</span><span class="fu">length</span>(Album_Sales_1_new<span class="sc">$</span>adverts), <span class="at">colour=</span><span class="st">&quot;red&quot;</span>))</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/reg9-1.png" width="672" /></p>
 <hr />
@@ -1524,8 +1524,8 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <li><p>Valores sesgados, la prueba de Cook’s</p></li>
 </ol>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb610"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb610-1"><a href="regresión-lineal-1.html#cb610-1" tabindex="-1"></a>advertizingReg <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales<span class="sc">~</span>adverts, <span class="at">data =</span> Album_Sales_1_new)</span>
-<span id="cb610-2"><a href="regresión-lineal-1.html#cb610-2" tabindex="-1"></a><span class="fu">summary</span>(advertizingReg)</span></code></pre></div>
+<div class="sourceCode" id="cb611"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb611-1"><a href="regresión-lineal-1.html#cb611-1" tabindex="-1"></a>advertizingReg <span class="ot">&lt;-</span> <span class="fu">lm</span>(sales<span class="sc">~</span>adverts, <span class="at">data =</span> Album_Sales_1_new)</span>
+<span id="cb611-2"><a href="regresión-lineal-1.html#cb611-2" tabindex="-1"></a><span class="fu">summary</span>(advertizingReg)</span></code></pre></div>
 </details>
 <pre><code>## 
 ## Call:
@@ -1546,15 +1546,15 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 ## Multiple R-squared:  0.3346, Adjusted R-squared:  0.3313 
 ## F-statistic: 99.59 on 1 and 198 DF,  p-value: &lt; 2.2e-16</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb612"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb612-1"><a href="regresión-lineal-1.html#cb612-1" tabindex="-1"></a><span class="fu">tab_model</span>(</span>
-<span id="cb612-2"><a href="regresión-lineal-1.html#cb612-2" tabindex="-1"></a>  advertizingReg,<span class="at">show.df =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb612-3"><a href="regresión-lineal-1.html#cb612-3" tabindex="-1"></a>  <span class="at">CSS =</span> <span class="fu">list</span>(</span>
-<span id="cb612-4"><a href="regresión-lineal-1.html#cb612-4" tabindex="-1"></a>    <span class="at">css.depvarhead =</span> <span class="st">&#39;color: red;&#39;</span>,</span>
-<span id="cb612-5"><a href="regresión-lineal-1.html#cb612-5" tabindex="-1"></a>    <span class="at">css.centeralign =</span> <span class="st">&#39;text-align: left;&#39;</span>, </span>
-<span id="cb612-6"><a href="regresión-lineal-1.html#cb612-6" tabindex="-1"></a>    <span class="at">css.firsttablecol =</span> <span class="st">&#39;font-weight: bold;&#39;</span>, </span>
-<span id="cb612-7"><a href="regresión-lineal-1.html#cb612-7" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
-<span id="cb612-8"><a href="regresión-lineal-1.html#cb612-8" tabindex="-1"></a>  )</span>
-<span id="cb612-9"><a href="regresión-lineal-1.html#cb612-9" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb613"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb613-1"><a href="regresión-lineal-1.html#cb613-1" tabindex="-1"></a><span class="fu">tab_model</span>(</span>
+<span id="cb613-2"><a href="regresión-lineal-1.html#cb613-2" tabindex="-1"></a>  advertizingReg,<span class="at">show.df =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb613-3"><a href="regresión-lineal-1.html#cb613-3" tabindex="-1"></a>  <span class="at">CSS =</span> <span class="fu">list</span>(</span>
+<span id="cb613-4"><a href="regresión-lineal-1.html#cb613-4" tabindex="-1"></a>    <span class="at">css.depvarhead =</span> <span class="st">&#39;color: red;&#39;</span>,</span>
+<span id="cb613-5"><a href="regresión-lineal-1.html#cb613-5" tabindex="-1"></a>    <span class="at">css.centeralign =</span> <span class="st">&#39;text-align: left;&#39;</span>, </span>
+<span id="cb613-6"><a href="regresión-lineal-1.html#cb613-6" tabindex="-1"></a>    <span class="at">css.firsttablecol =</span> <span class="st">&#39;font-weight: bold;&#39;</span>, </span>
+<span id="cb613-7"><a href="regresión-lineal-1.html#cb613-7" tabindex="-1"></a>    <span class="at">css.summary =</span> <span class="st">&#39;color: blue;&#39;</span></span>
+<span id="cb613-8"><a href="regresión-lineal-1.html#cb613-8" tabindex="-1"></a>  )</span>
+<span id="cb613-9"><a href="regresión-lineal-1.html#cb613-9" tabindex="-1"></a>)</span></code></pre></div>
 </details>
 <table style="border-collapse:collapse; border:none;">
 <tr>
@@ -1648,18 +1648,18 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <p>A quantity remaining after other things have been subtracted or allowed for. <strong>FROM Wikipedia</strong></p>
 <p>A residual (or fitting deviation), on the other hand, is an observable estimate of the unobservable statistical error.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb613"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb613-1"><a href="regresión-lineal-1.html#cb613-1" tabindex="-1"></a><span class="co"># &quot;advertizingReg&quot;, nota que este no es un data frame pero un modelo</span></span>
-<span id="cb613-2"><a href="regresión-lineal-1.html#cb613-2" tabindex="-1"></a><span class="co"># The main figure</span></span>
-<span id="cb613-3"><a href="regresión-lineal-1.html#cb613-3" tabindex="-1"></a><span class="fu">ggplot</span>(Album_Sales_1_new,<span class="fu">aes</span>(<span class="at">x=</span>adverts, <span class="at">y=</span>sales))<span class="sc">+</span></span>
-<span id="cb613-4"><a href="regresión-lineal-1.html#cb613-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
-<span id="cb613-5"><a href="regresión-lineal-1.html#cb613-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb614"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb614-1"><a href="regresión-lineal-1.html#cb614-1" tabindex="-1"></a><span class="co"># &quot;advertizingReg&quot;, nota que este no es un data frame pero un modelo</span></span>
+<span id="cb614-2"><a href="regresión-lineal-1.html#cb614-2" tabindex="-1"></a><span class="co"># The main figure</span></span>
+<span id="cb614-3"><a href="regresión-lineal-1.html#cb614-3" tabindex="-1"></a><span class="fu">ggplot</span>(Album_Sales_1_new,<span class="fu">aes</span>(<span class="at">x=</span>adverts, <span class="at">y=</span>sales))<span class="sc">+</span></span>
+<span id="cb614-4"><a href="regresión-lineal-1.html#cb614-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">se =</span> <span class="cn">TRUE</span>)<span class="sc">+</span></span>
+<span id="cb614-5"><a href="regresión-lineal-1.html#cb614-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/reg11-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb614"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb614-1"><a href="regresión-lineal-1.html#cb614-1" tabindex="-1"></a><span class="co"># Graficando los residuales, metodo 1</span></span>
-<span id="cb614-2"><a href="regresión-lineal-1.html#cb614-2" tabindex="-1"></a><span class="fu">ggplot</span>(model1, <span class="fu">aes</span>(<span class="at">x=</span>.fitted, <span class="at">y=</span>.resid))<span class="sc">+</span></span>
-<span id="cb614-3"><a href="regresión-lineal-1.html#cb614-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb614-4"><a href="regresión-lineal-1.html#cb614-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)</span></code></pre></div>
+<div class="sourceCode" id="cb615"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb615-1"><a href="regresión-lineal-1.html#cb615-1" tabindex="-1"></a><span class="co"># Graficando los residuales, metodo 1</span></span>
+<span id="cb615-2"><a href="regresión-lineal-1.html#cb615-2" tabindex="-1"></a><span class="fu">ggplot</span>(model1, <span class="fu">aes</span>(<span class="at">x=</span>.fitted, <span class="at">y=</span>.resid))<span class="sc">+</span></span>
+<span id="cb615-3"><a href="regresión-lineal-1.html#cb615-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb615-4"><a href="regresión-lineal-1.html#cb615-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm)</span></code></pre></div>
 </details>
 <p><img src="BiomEstadistica_files/figure-html/reg11-2.png" width="672" /></p>
 </div>
@@ -1670,13 +1670,13 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <p>Cuando R corre un analisis, hace muchos calculos y guarda parate de estos calculos como lista de datos.</p>
 <p>Para ver algunos de los valores calculado uno pone el nombre del modelo y la añade el <strong>$</strong> y deberia aparecer la lista de los valores calculados. o otra alternativa es usar la función ls() = list() para ver el nombre de las variables</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb615"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb615-1"><a href="regresión-lineal-1.html#cb615-1" tabindex="-1"></a><span class="fu">ls</span>(model1)</span></code></pre></div>
+<div class="sourceCode" id="cb616"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb616-1"><a href="regresión-lineal-1.html#cb616-1" tabindex="-1"></a><span class="fu">ls</span>(model1)</span></code></pre></div>
 </details>
 <pre><code>##  [1] &quot;assign&quot;        &quot;call&quot;          &quot;coefficients&quot;  &quot;df.residual&quot;  
 ##  [5] &quot;effects&quot;       &quot;fitted.values&quot; &quot;model&quot;         &quot;qr&quot;           
 ##  [9] &quot;rank&quot;          &quot;residuals&quot;     &quot;terms&quot;         &quot;xlevels&quot;</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb617"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb617-1"><a href="regresión-lineal-1.html#cb617-1" tabindex="-1"></a><span class="co"># model1$residuals  # Por ejemplo para ver los residuales del modelo</span></span></code></pre></div>
+<div class="sourceCode" id="cb618"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb618-1"><a href="regresión-lineal-1.html#cb618-1" tabindex="-1"></a><span class="co"># model1$residuals  # Por ejemplo para ver los residuales del modelo</span></span></code></pre></div>
 </details>
 <hr />
 </div>
@@ -1691,10 +1691,10 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <li><p>Evalúa los supuestos</p></li>
 </ul>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb618"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb618-1"><a href="regresión-lineal-1.html#cb618-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb618-2"><a href="regresión-lineal-1.html#cb618-2" tabindex="-1"></a>Alturas_Humanos <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Alturas_Humanos.csv&quot;</span>)</span>
-<span id="cb618-3"><a href="regresión-lineal-1.html#cb618-3" tabindex="-1"></a></span>
-<span id="cb618-4"><a href="regresión-lineal-1.html#cb618-4" tabindex="-1"></a><span class="fu">head</span>(Alturas_Humanos)</span></code></pre></div>
+<div class="sourceCode" id="cb619"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb619-1"><a href="regresión-lineal-1.html#cb619-1" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb619-2"><a href="regresión-lineal-1.html#cb619-2" tabindex="-1"></a>Alturas_Humanos <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;Data_files_csv/Alturas_Humanos.csv&quot;</span>)</span>
+<span id="cb619-3"><a href="regresión-lineal-1.html#cb619-3" tabindex="-1"></a></span>
+<span id="cb619-4"><a href="regresión-lineal-1.html#cb619-4" tabindex="-1"></a><span class="fu">head</span>(Alturas_Humanos)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:reg13">
 <caption style="caption-side: top; text-align: center;"><span id="tab:reg13">Table 18.6: </span> </caption><col><col><col><thead>

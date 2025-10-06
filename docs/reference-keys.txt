@@ -236,7 +236,8 @@ ejemplo-9.3
 los-limites-del-intervalo
 el-limite-superior
 el-limite-inferior
-menos-o-más-grados-de-libertad
+menos-grados-de-libertad
+más-grados-de-libertad
 muchos-muestreos-y-el-universo
 quiz-estas-preguntas-la-tienen-que-contestar-en-una-asignación.
 pruebas-de-t-un-muesteo

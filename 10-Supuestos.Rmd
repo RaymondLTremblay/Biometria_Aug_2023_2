@@ -15,11 +15,11 @@ colorize <- function(x, color) {
 
 ```
 
-Añadir los siguientes paquetes, Nota la función de **pacman** para intalar los paquetes.  Esta función hace que si le falta un paquete en la lista lo va a instalar sin hacer tener que hacerlo uno por uno. Si quiere hacerlo separado remueve el **#** antes de **install.packages** 
+Añadir los siguientes paquetes, Nota la función de **pacman** para instalar los paquetes.  Esta función hace que si le falta un paquete en la lista lo va a instalar sin hacer tener que hacerlo uno por uno. Si quiere hacerlo separado remueve el **#** antes de **install.packages** 
 
 
 ```{r packages}
-#----Install and Load Packages-----
+#----Instalar los paquetes-----
 #install.packages("car", dependencies = TRUE)
 #install.packages("ggplot2")
 #install.packages("pastecs")
@@ -30,18 +30,19 @@ pacman::p_load(car, pastecs, psych, ggplot2, ggversa, knitr, GGally,
 
 
 # Activar los paquetes
-library(ggversa) # un paquete con datos
-library(knitr)
+
 library(GGally)
 library(tidyverse)
 library(kableExtra)
 library(reshape2)
 library(ggcorrplot)
-library(gridExtra)
-library(car) # Companion to applied regression
-library(ggplot2)  # Data Visualization
-library(pastecs) # Space time Ecological Series
-library(psych)   # Procedures for Psychological, psychometric and Personality Research
+library(gridExtra) # Un paquete para organizar las figuras de ggplot2
+library(car) # Paquete para acompañar laregresión lineal
+library(ggplot2)  # Visualización de datos
+library(pastecs) # Paquete para análisis estadístico
+library(psych)   # Paquete para análisis estadístico en psicología
+library(ggversa) # un paquete con datos
+library(knitr)
 
 ```
 
@@ -59,7 +60,7 @@ La ética en estadística basado en comprobar y cumplir con los supuestos de las
 
 Cuando no se cumple con los supuestos estamos aumentando la probabilidad de tipo de error 1, es decir rechazar la hipótesis nula cuando se debería aceptar o tipo de error 2, cuando se debería aceptar la alterna cuando se debería rechazar.
 
-Por consecuencia es **primodial** que cada investigador cumple con evaluar los supuestos de las pruebas que usa y si no cumple que busca métodos alternos.  Por ejemplo se puede utilizar métodos de análisis no paramétrica, tambien estadística bayesiana o robusta o como alternativas.  
+Por consecuencia es **primordial** que cada investigador cumple con evaluar los supuestos de las pruebas que usa y si no cumple que busca métodos alternos.  Por ejemplo se puede utilizar métodos de análisis no paramétrica, también estadística bayesiana o robusta o como alternativas.  
 
 En el siguiente modulo se habla de como asegurar que los datos cumple con los supuestos básico de las pruebas paramétricas que incluye t-test, ANOVA entre otros.  
 
@@ -283,7 +284,9 @@ a= ggplot(Godwits, aes(sample = mgconsumed)) +
 df <- data.frame(y = rnorm(2000))
 b <- ggplot(df, aes(sample = y))+ 
   stat_qq() + 
-  stat_qq_line(colour="red")
+  stat_qq_line(colour="red")+
+  xlab("Valores teóricos")+
+  ylab("Valores observados")
 
 grid.arrange(a,b,ncol=2)
 ```
@@ -292,24 +295,25 @@ grid.arrange(a,b,ncol=2)
 
 ## La distribución normal
 
-Una segunda alternativa para visualizar si los datos siguen una distribución normal es construir un histograma de los datos y gráficar sobre este la curva normal basándonos en el promedio y la desviación estándar de los mismos datos.  Para construir el histograma se usa la función **geom_histogram** y para la  distribución teórica normal de estos datos se usa la función **stat_function**.  Esto lo demostramos con gráficos adicionales de la Becasa del Mar, donde se representa la razón de consumo y el período en que esto ocurrió. En la Figura (a) vemos la distribución para todos los períodos, y los otros tres en la Figura (b) muestran una distribución para cada uno de los períodos.  Se observa en todos los casos que las distribuciones están sesgadas hacia los valores pequeños (hacia la izquierda).  Esta visualización nos ayuda a evaluar la normalidad de esos datos. NOta que no es una prueba estadística igual como el gráfico de qqplot.
+Una segunda alternativa para visualizar si los datos siguen una distribución normal es construir un histograma de los datos y gráficar sobre este la curva normal basándonos en el promedio y la desviación estándar de los mismos datos.  Para construir el histograma se usa la función **geom_histogram** y para la  distribución teórica normal de estos datos se usa la función **stat_function**.  Esto lo demostramos con gráficos adicionales de la Becasa del Mar, donde se representa la razón de consumo y el período en que esto ocurrió. En la Figura (a) vemos la distribución para todos los períodos, y los otros tres en la Figura (b) muestran una distribución para cada uno de los períodos.  Se observa en todos los casos que las distribuciones están sesgadas hacia los valores pequeños (hacia la izquierda).  Esta visualización nos ayuda a evaluar la normalidad de esos datos. Nota que no es una prueba estadística igual como el gráfico de qqplot.
 
-Nota la formula para calcular la distribución normal. Hay solamente dos parámetros que necesitamos, el promedio $\mu$ y la desviación estándar $\sigma$. Todos los otros son constantes, $\pi$, y  e.  
+Nota la formula para calcular la distribución normal (la densidad). Hay solamente dos parámetros que necesitamos, el promedio $\mu$ y la desviación estándar $\sigma$. Todos los otros son constantes, $\pi$, y  $\log_e$.  
+es la base de los logaritmos naturales.
 
 $$P(x)=\frac{1}{{\sigma\sqrt{ 2\pi}}}{e}^{-\frac{{(x-µ)}^{2}}{{2\sigma}^{2}}}$$
 
 Note que en **geom_histogram** se tiene que incluir 
 
-  **aes(..density..)** 
+  **aes(y=after_stat(density))** 
 
 y añadir dentro de la función **stat_function** todo lo siguiente: 
 
   stat_function(fun = dnorm,
         args = list(mean = mean(Godwits$mgconsumed,
                                 na.rm = TRUE),
-    sd = sd(Godwits$mgconsumed,
-            na.rm = TRUE)),
-            colour = "red", size = 1)
+                      sd = sd(Godwits$mgconsumed,
+                                na.rm = TRUE)),
+        colour = "red", size = 1)
 
 
 El parámetro **dnorm** quiere decir densidad de la distribución normal.  También se necesitan dos parámetros para calcular el promedio (mean) y la desviación estándar (sd).  Con ambos hay que especificar de dónde provienen los datos; en este caso, 
@@ -323,7 +327,7 @@ Además, si hay NA en los datos, hay que añadir **na.rm = TRUE** para excluir l
 
 a=ggplot(Godwits, aes(mgconsumed)) +
   theme(legend.position = "none") +
-  geom_histogram(aes(y=..density..),
+  geom_histogram(aes(y=after_stat(density)),
                  colour="black", fill="white")+
   theme(axis.title=element_text(size=12,face="bold"),
         axis.text = element_text(size=12,face="bold"))+
@@ -336,12 +340,9 @@ a=ggplot(Godwits, aes(mgconsumed)) +
   ggtitle("Todos los datos")
 
 
-
-
-
 b= ggplot(Godwits, aes(mgconsumed)) +
   theme(legend.position = "none") +
-  geom_histogram(aes(y=..density..),
+  geom_histogram(aes(y=after_stat(density)),
                  colour="black", fill="white")+
   theme(axis.title=element_text(size=12,face="bold"),
         axis.text = element_text(size=12,face="bold"))+
@@ -383,7 +384,7 @@ b=ggplot(Sparrows, aes(wt)) +
   theme(legend.position = "none")+
   theme(axis.title=element_text(size=12,face="bold"),
         axis.text = element_text(size=12,face="bold"))+
-  geom_histogram(aes(y=..density..), colour="black",
+  geom_histogram(aes(y=after_stat(density)), colour="black",
                  fill="white") +
   labs(x = "Peso", y = "Densidad") +
   stat_function(fun = dnorm, 
@@ -398,7 +399,7 @@ grid.arrange(a,b,ncol=2)
 
 ## Visualizando la distribuciones con **geom_density**
 
-A continuación se muestra otra alternativa para observar los datos anteriores.  Nada más que estos ahora se representan sustituyendo las funciones **geom_histogram** y **stat_function** por **geom_density** para la construcción de curvas de densidad.  Otra vez utilizaremos la base de datos **SparrowsElphick**.  La curva normal que se genera es tipo gausiana (gaussian en inglés). Nóte que para el segundo conjunto de gráficos, (b), no se le especificó la opción en **kernel** igual a **gaussian** ya que de forma predeterminada la función **geom_density** usa el parámetro **gaussian**; o sea, no es necesario especificarla si eso es lo que se quiere. Una distribución en donde el pico es más alto significa que hay mayor densidad de datos en esa región de la variable en el eje de **X**. Podemos apreciar que la curva de densidad no sigue claramente una distribución normal con respecto a los valores en **X**.
+A continuación se muestra otra alternativa para observar los datos anteriores.  Nada más que estos ahora se representan sustituyendo las funciones **geom_histogram** y **stat_function** por **geom_density** para la construcción de curvas de densidad.  Otra vez utilizaremos la base de datos **SparrowsElphick**.  La curva normal que se genera es tipo gausiana (gaussian en inglés). Note que para el segundo conjunto de gráficos, (b), no se le especificó la opción en **kernel** igual a **gaussian** ya que de forma predeterminada la función **geom_density** usa el parámetro **gaussian**; o sea, no es necesario especificarla si eso es lo que se quiere. Una distribución en donde el pico es más alto significa que hay mayor densidad de datos en esa región de la variable en el eje de **X**. Podemos apreciar que la curva de densidad no sigue claramente una distribución normal con respecto a los valores en **X**.
 
 ```{r supuesto11, message=FALSE}
 
@@ -487,7 +488,7 @@ Brevemente recapitulamos, si los datos no siguen una distribución normal, se de
 ## Seleción de parámetros para correlaciones cuando hay NA
 
 
-Además, los analísis anteriores utilizados emplearon el parámetro **pairwise.complete.obs**, ya que obviaría los **NA** en las columnas que se utilizan para calcular la correlación. Por lo tanto, la cantidad de pares de datos utilizados para calcular las diferentes correlaciones entre variables puede variar si hay **NA** en el archivo.  Tome en consideración que hay otras cuatro alternativas para analizar los datos cuando tenemos **NA** presentes: **everything**, **all.obs**, **complete.obs** y **na.or.complete**.  No vamos a discutir esas alternativas en el presente libro.  Sería bueno que busque información en R para sus usos. Estas alternativas se discutiran en otros modulos.  
+Además, los análisis anteriores utilizados emplearon el parámetro **pairwise.complete.obs**, ya que obviaría los **NA** en las columnas que se utilizan para calcular la correlación. Por lo tanto, la cantidad de pares de datos utilizados para calcular las diferentes correlaciones entre variables puede variar si hay **NA** en el archivo.  Tome en consideración que hay otras cuatro alternativas para analizar los datos cuando tenemos **NA** presentes: **everything**, **all.obs**, **complete.obs** y **na.or.complete**.  No vamos a discutir esas alternativas en el presente libro.  Sería bueno que busque información en R para sus usos. Estas alternativas se discutirán en otros módulos.  
 
 Finalmente, también se utilizó el comando **kable** ya que es una manera efectiva de organizar los resultados en una tabla.
 
@@ -499,7 +500,7 @@ Continuando con el mismo tema, una tercera opción para descubrir la colinealida
 
 En los gráficos de la siguiente Figura observamos los coeficientes de correlación, la distribución de los datos y la visualización de correlación por cada par. Además, vemos el diagrama de caja de los datos cuando hay variables discretas. Note al extremo derecho que la variable **Herbivory** tiene una categoría no identificada, que incluye los **NA**.
 
-Con la función de **ggpairs** podemos calcular las correlaciones entre las variables y a la misma vez producir todos los gráficos entre las variables y gráficos de distribución de densidad de cada variable. En el gráfico podemos observar en la parte izquierda la distribución de los datos en pares.  En la diagonal se observa la densidad de cada una de las variables.  En la parte superior derecha se observa el valor de correlación y en el extremo derecho se observan los diagramas de caja de las variables discretas con relación a la variable de la izquierda.  Este gráfico es sumamente práctico, ya que produce mucha información con pocos pasos.  Desafortunadamente, no hay manera de remover los **NA** al presente.  A consecuencia de esto, al extremo derecho uno observa en las cajas abajo una barra con muchos valores (la de la derecha), pero esta representa todos los valores **NA** en la tabla de datos.  En este caso, la presencia de herbivoria en las plantas no fue recolectada y en cambio se dejó con un **NA**.  Note que aquí no se pueden poner ceros u otros valores.  Las alternativas podrían ser **H** para evidenciar la presencia de herbaria y **n** para las plantas donde no hay evidencia de herbivoría.
+Con la función de **ggpairs** podemos calcular las correlaciones entre las variables y a la misma vez producir todos los gráficos entre las variables y gráficos de distribución de densidad de cada variable. En el gráfico podemos observar en la parte izquierda la distribución de los datos en pares.  En la diagonal se observa la densidad de cada una de las variables.  En la parte superior derecha se observa el valor de correlación y en el extremo derecho se observan los diagramas de caja de las variables discretas con relación a la variable de la izquierda.  Este gráfico es sumamente práctico, ya que produce mucha información con pocos pasos.  Desafortunadamente, no hay manera de remover los **NA** al presente.  A consecuencia de esto, al extremo derecho uno observa en las cajas abajo una barra con muchos valores (la de la derecha), pero esta representa todos los valores **NA** en la tabla de datos.  En este caso, la presencia de herbivoría en las plantas no fue recolectada y en cambio se dejó con un **NA**.  Note que aquí no se pueden poner ceros u otros valores.  Las alternativas podrían ser **H** para evidenciar la presencia de herbaria y **n** para las plantas donde no hay evidencia de herbivoría.
 
 ```{r supuesto16, warning=FALSE, message=FALSE}
 names(dipodium) # para ver los nombres de las variables/columnas

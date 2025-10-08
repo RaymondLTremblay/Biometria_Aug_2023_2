@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 4 Inferencias y Hipótesis | BioEstadística</title>
+<meta name="author" content="">
+<meta name="description" content='Fecha de la ultima revisión ## [1] "2025-10-07"  4.1 Introducción Los parámetros versus un muestreo: En algunos instancia se podría calcular el parámetro (por ejemplo el promedio) en otra palabra...'>
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 4 Inferencias y Hipótesis | BioEstadística">
+<meta property="og:type" content="book">
+<meta property="og:description" content='Fecha de la ultima revisión ## [1] "2025-10-07"  4.1 Introducción Los parámetros versus un muestreo: En algunos instancia se podría calcular el parámetro (por ejemplo el promedio) en otra palabra...'>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 4 Inferencias y Hipótesis | BioEstadística">
+<meta name="twitter:description" content='Fecha de la ultima revisión ## [1] "2025-10-07"  4.1 Introducción Los parámetros versus un muestreo: En algunos instancia se podría calcular el parámetro (por ejemplo el promedio) en otra palabra...'>
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BioEstadística</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introducción al curso de BioEstadística</a></li>
+<li><a class="" href="introducci%C3%B3n-a-la-bioestad%C3%ADstica.html"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></li>
+<li><a class="" href="poblaci%C3%B3n-y-muestreos.html"><span class="header-section-number">3</span> Población y Muestreos</a></li>
+<li><a class="active" href="inferencias-y-hip%C3%B3tesis.html"><span class="header-section-number">4</span> Inferencias y Hipótesis</a></li>
+<li><a class="" href="historia-breve-de-la-estad%C3%ADstica.html"><span class="header-section-number">5</span> Historia breve de la Estadística</a></li>
+<li><a class="" href="medida-de-tendencia-central.html"><span class="header-section-number">6</span> Medida de tendencia central</a></li>
+<li><a class="" href="medidas_de_dispersi%C3%B3n.html"><span class="header-section-number">7</span> Medidas_de_dispersión</a></li>
+<li><a class="" href="estad%C3%ADstica-descriptiva.html"><span class="header-section-number">8</span> Estadística Descriptiva</a></li>
+<li><a class="" href="graficos.html"><span class="header-section-number">9</span> Graficos</a></li>
+<li><a class="" href="supuestos.html"><span class="header-section-number">10</span> Supuestos</a></li>
+<li><a class="" href="estad%C3%ADstica-frecuentista.html"><span class="header-section-number">11</span> Estadística Frecuentista</a></li>
+<li><a class="" href="distribuci%C3%B3n-normal.html"><span class="header-section-number">12</span> Distribución Normal</a></li>
+<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una muestra</a></li>
+<li><a class="" href="prueba-de-t-pareados.html"><span class="header-section-number">14</span> Prueba de t pareados</a></li>
+<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con datos independientes</a></li>
+<li><a class="" href="anova.html"><span class="header-section-number">16</span> ANOVA</a></li>
+<li><a class="" href="correlaci%C3%B3n-y-covarianza.html"><span class="header-section-number">17</span> Correlación y Covarianza</a></li>
+<li><a class="" href="regresi%C3%B3n-lineal-1.html"><span class="header-section-number">18</span> Regresión Lineal</a></li>
+<li><a class="" href="regresi%C3%B3n-logistica.html"><span class="header-section-number">19</span> Regresión Logistica</a></li>
+<li><a class="" href="selecionando-modelos-con-akaike.html"><span class="header-section-number">20</span> Selecionando modelos con AKAIKE</a></li>
+<li><a class="" href="como-funciona-la-selecci%C3%B3n-de-modelos.html"><span class="header-section-number">21</span> #Como funciona la selección de modelos?</a></li>
+<li><a class="" href="pruebas-no-parametricas.html"><span class="header-section-number">22</span> Pruebas no parametricas</a></li>
+<li class="book-part">Appendix</li>
+<li><a class="" href="ejercicios-a.html"><span class="header-section-number">A</span> Ejercicios A</a></li>
+<li><a class="" href="ejercicios-b.html"><span class="header-section-number">B</span> Ejercicios B</a></li>
+<li><a class="" href="ejercicios-c.html"><span class="header-section-number">C</span> Ejercicios C</a></li>
+<li><a class="" href="ejercicios-d.html"><span class="header-section-number">D</span> Ejercicios D</a></li>
+<li><a class="" href="ejercicios-e.html"><span class="header-section-number">E</span> Ejercicios E</a></li>
+<li><a class="" href="ejercicios-f.html"><span class="header-section-number">F</span> Ejercicios F</a></li>
+<li><a class="" href="ejercicios-g.html"><span class="header-section-number">G</span> Ejercicios G</a></li>
+<li><a class="" href="ejercicios-h.html"><span class="header-section-number">H</span> Ejercicios H</a></li>
+<li><a class="" href="ejercicios-i.html"><span class="header-section-number">I</span> Ejercicios I</a></li>
+<li><a class="" href="ejercicios-j.html"><span class="header-section-number">J</span> Ejercicios J</a></li>
+<li><a class="" href="ejercicios-k.html"><span class="header-section-number">K</span> Ejercicios K</a></li>
+<li><a class="" href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><span class="header-section-number">L</span> Ejercicios sobre prueba de t con datos independiente</a></li>
+<li><a class="" href="ejercicios-m.html"><span class="header-section-number">M</span> Ejercicios M</a></li>
+<li><a class="" href="ejercicios-n.html"><span class="header-section-number">N</span> Ejercicios N</a></li>
+<li><a class="" href="ejercicio-o.html"><span class="header-section-number">O</span> Ejercicio O</a></li>
+<li><a class="" href="ejercicios-p.html"><span class="header-section-number">P</span> Ejercicios P</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">Q</span> DATA</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="inferencias-y-hipótesis" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> Inferencias y Hipótesis<a class="anchor" aria-label="anchor" href="#inferencias-y-hip%C3%B3tesis"><i class="fas fa-link"></i></a>
+</h1>
+<p>Fecha de la ultima revisión</p>
+<pre><code>## [1] "2025-10-07"</code></pre>
+<p><img src="Graficos/hex_ggversa.png" width="20%"><img src="Graficos/hex_error.png" width="20%"></p>
+<div id="introducción" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Introducción<a class="anchor" aria-label="anchor" href="#introducci%C3%B3n"><i class="fas fa-link"></i></a>
+</h2>
+<p>Los parámetros versus un muestreo:</p>
+<p>En algunos instancia se podría calcular el parámetro (por ejemplo el promedio) en otra palabra la población (todos los individuos sin que falte ni uno). Si es así tenemos todos los datos. Por ejemplo si la población es cuantos médicos fueron infectado por el COVID-19 en un hospital especifico entre una fechas delimitada es probable que se puede conseguir la información de cada un los médicos, y se podría calcular la proporción de infectado.</p>
+<p>Pero cuando la población es más grande será necesario tener solamente una muestra de la población, si se usa un método al azar de recolección de los datos uno podría inferir cual es el estado basado en las estadística recolectada.</p>
+</div>
+<div id="ejemplo-1" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Ejemplo 1:<a class="anchor" aria-label="anchor" href="#ejemplo-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Por ejemplo en un estudio hecho por la Dra. Patricia Burrowes sobre la frecuencia de una infección común de los coquí ella evaluó la presencia del hongo sobre la piel de estos anfibios y encontró que los individuos en bosque nublado eran más frecuentemente infectado que los del bosque enano. Ella y sus estudiantes muestrearon 299 individuos del bosque nublado y 130 del bosque enano, este esfuerzo fue muy grande. Encontrar los coqui en el campo no fácil y no hay manera de conseguir todas las pequeñas ranas.</p>
+<p>Costo potencial en aptitud evolutiva de <em>Batrachochytrium dendrobatidis</em> en <em>Eleutherodactylus coqui</em>, y comentarios sobre el riesgo de infección relacionado con el ambiente”.</p>
+<p>El tamaño corporal (longitud hocico a cloaca) en adultos de <em>Eleutherodactylus coqui</em> infectados y no infectados con <em>Batrachochytrium dendrobatidis</em> (Bd) fue comparado para determinar el costo potencial en aptitud evolutiva de quitridiomicosis en poblaciones resistentes. Los estudios fueron realizados en dos tipos de bosque a diferentes elevaciones, Bosque Nublado (650 m) y Bosque Nublado Enano (850 m), en El Yunque, Puerto Rico. Nuestros resultados demuestran que los machos infectados con Bd son significativamente más pequeños que los no infectados en el Bosque Nuboso, sin embargo no sucede lo mismo en el Bosque Nublado Enano. Aunque las hembras que están infectadas por Bd también son más pequeñas que las no infectadas, este efecto no es estadísticamente significativo. La prevalencia de Bd y la probabilidad de infección por este hongo son significativamente más altas en el Bosque Nublado (44.1%) que en el Bosque Nublado Enano (20.7%) para ambos sexos. Reportamos las diferencias en factores ambientales en estos dos tipos de bosque en Puerto Rico y discutimos las implicaciones en el crecimiento de Bd y la vulnerabilidad de las ranas a la infección por este patógeno.
+&gt;
+&gt; &gt; Burrowes, P. A., A. V. Longo, and C. A. Rodríguez. 2008b. Potential fitness cost of <em>Batrachochytrium dendrobatidis</em> in <em>Eletherodactylus coqui</em>, and comments on environment-related risk of infection. Herpetotropicos 4:51-57.</p>
+</div>
+<div id="ejemplo-2" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> Ejemplo 2:<a class="anchor" aria-label="anchor" href="#ejemplo-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>En este segundo ejemplo se demuestra la eficiencia de dos vacunas para proteger del virus papiloma humano (VPH) que es una causa principal del cáncer del útero. Hay un estimado que 25% de los adultos están infectado por HPV en un momento en su vida (Lowndes, doi: 10.1017/S0950268805005728) y que este cáncer es el segundo más común en el mundo (Bosch et al. 2002, doi: 10.1136/jcp.55.4.244). El siguiente ejemplo demuestra que las vacunas pueden ser muy efectiva.</p>
+<p>¿Qué tan eficaces son las vacunas contra el VPH?</p>
+<p>Las vacunas contra el VPH son altamente eficaces para prevenir la infección por los tipos de VPH a los que atacan cuando las vacunas se administran antes de la exposición inicial al virus — es decir, antes de que el individuo tenga actividad sexual.</p>
+<p>En los estudios que llevaron a la aprobación de Gardasil y de Cervarix, se encontró que estas vacunas proveen casi 100 % de protección contra infecciones persistentes del cuello uterino por los tipos 16 y 18 de VPH y contra los cambios celulares del cuello uterino que pueden causar estas infecciones persistentes. Gardasil 9 es tan eficaz como Gardasil para la prevención de las enfermedades causadas por los cuatro tipos de VPH (6, 11, 16 y 18), según reacciones similares de anticuerpos en participantes de estudios clínicos. Los estudios que llevaron a la aprobación de Gardasil 9 encontraron que es casi 100 % eficaz en la prevención de enfermedades cervicales (de cuello uterino), de vulva y de vagina causadas por los otros cinco tipos de VPH (31, 33, 45, 52 y 58) a los que se dirige (4). En un documento de posición de 2017, la Organización Mundial de la Salud declaró que las vacunas contra el VPH tienen una eficacia equivalente (5). Se ha encontrado que Cervarix provee protección parcial contra algunos otros tipos de VPH que pueden también causar cáncer pero que no están incluidos en la vacuna, un fenómeno llamado protección cruzada (6).
+&gt;</p>
+<blockquote>
+<blockquote>
+<p>Fuente de información: <a href="https://www.cancer.gov/espanol/cancer/causas-prevencion/riesgo/germenes-infecciosos/hoja-informativa-vacuna-vph" class="uri">https://www.cancer.gov/espanol/cancer/causas-prevencion/riesgo/germenes-infecciosos/hoja-informativa-vacuna-vph</a></p>
+</blockquote>
+</blockquote>
+</div>
+<div id="inferencias-en-estadística" class="section level2" number="4.4">
+<h2>
+<span class="header-section-number">4.4</span> Inferencias en estadística<a class="anchor" aria-label="anchor" href="#inferencias-en-estad%C3%ADstica"><i class="fas fa-link"></i></a>
+</h2>
+<p>El concepto de inferencias en estadística se refiere al proceso de hacer conclusiones basado en un muestreo. Por ejemplo en el primer ejemplo de la infección de hongos en los coquis, uno podría inferir que la proporción de ranas infectada será igual (o muy similar) en otros bosques nublados y enanos de Puerto Rico.</p>
+</div>
+<div id="hipótesis" class="section level2" number="4.5">
+<h2>
+<span class="header-section-number">4.5</span> Hipótesis<a class="anchor" aria-label="anchor" href="#hip%C3%B3tesis"><i class="fas fa-link"></i></a>
+</h2>
+<p>En la sección 6.2 del libro de Havel et al. leer y evaluar la tabla 6.2 para tener unos ejemplos de expresiones que no son una hipótesis y lo que es son. NOTA: importante es el autor menciona aquí son las hipótesis alterna, en otra palabra los que uno piensa que podría ocurrir. Pero esa no es la hipótesis que se prueba, lo que se prueba es la hipótesis NULA, Ho. Cuando se dice la hipótesis NULA es que no hay diferencias entre los grupos. Vea la tabla 6.2 del libro para más ejemplos.</p>
+<p>Ejemplo de hipotesis Nula y Alterna</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="10%">
+<col width="21%">
+<col width="28%">
+<col width="39%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th align="right">NULA, Ho</th>
+<th align="center">ALTERNA, Ha</th>
+<th align="center">No es una hipótesis</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="right">Tratamiento con la vacuna de Salk no tiene efecto sobre el riesgo de infección de polio en niños</td>
+<td align="center">El efecto de la vacuna Salk reduce el riesgo de infección de polio en los niños</td>
+<td align="center">El polio es malo</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="right">Los Beatles no vendieron más discos que cualquier otros grupos de rock</td>
+<td align="center">Los Beatles vendieron más discos que cualquier otro grupo de rock</td>
+<td align="center">La música de los Beatles es obsoleta</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="el-valor-de-p" class="section level2" number="4.6">
+<h2>
+<span class="header-section-number">4.6</span> El valor de p<a class="anchor" aria-label="anchor" href="#el-valor-de-p"><i class="fas fa-link"></i></a>
+</h2>
+<p>El valor de <em>p</em> es la probabilidad de tener una estadística tan extrema si la hipótesis es verdad (en otra palabra la Ho es la correcta). Uno podría decir que es un indice de la evidencia <strong>CONTRA</strong> la hipótesis NULA. PERO NOTA es incorrecto decir que es la probabilidad que la Ho es correcta. Uno dice si el valor de p&gt;0.05 que no hay evidencia para rechazar la hipotesis nula (no dice que la hipotesis nula es correcta).</p>
+<p>Antes de comenzar a hacer el estudio se debería <em>a priori</em> tener una decisión cual sera el nivel de <strong>alpha</strong>, <span class="math inline">\(\alpha\)</span> para rechazar la hipótesis nula. Típicamente el valor critico de <span class="math inline">\(\alpha\)</span> es 0.05 o 5%. Esto quiere decir que si uno repite el experimento 100 veces 5 veces la investigación nos va a dar una resultado equivocado. Que se rechaza la Ho cuando se debería aceptar. Esto una vez en cada 20 experimentos con las mismas condiciones. En muchas ramas de investigación como la física el nivel de <span class="math inline">\(\alpha\)</span> es frecuentemente 0.01 o menos.</p>
+</div>
+<div id="los-errores-de-tipo-i-y-tipo-ii" class="section level2" number="4.7">
+<h2>
+<span class="header-section-number">4.7</span> Los errores de tipo I y tipo II<a class="anchor" aria-label="anchor" href="#los-errores-de-tipo-i-y-tipo-ii"><i class="fas fa-link"></i></a>
+</h2>
+<p>Vea el modulo anterior.</p>
+</div>
+<div id="el-poder-de-las-pruebas-inferenciales-y-lo-parámetros-que-lo-influencia" class="section level2" number="4.8">
+<h2>
+<span class="header-section-number">4.8</span> El poder de las pruebas inferenciales y lo parámetros que lo influencia<a class="anchor" aria-label="anchor" href="#el-poder-de-las-pruebas-inferenciales-y-lo-par%C3%A1metros-que-lo-influencia"><i class="fas fa-link"></i></a>
+</h2>
+<p>Si la hipótesis nula es falsa es probable que se podría rechazar con cierta confianza. El complemento de beta, <span class="math inline">\((1-\beta)\)</span> es la prueba de poder. La prueba de poder es la probabilidad de correctamente rechazar la hipótesis nula cuando es falsa. Para aclara la <span class="math inline">\(\beta\)</span> es la probabilidad de cometer un error tipo II. El <strong>Poder</strong> (the Power) es <span class="math inline">\((1-\beta)\)</span> es la probabilidad de correctamente rechazar una hipótesis nula falsa.</p>
+<p>Evalúa el siguiente gráfico:</p>
+<p>La prueba de poder es influenciada por tres propriedades.</p>
+<ul>
+<li>El nivel del tipo de error I, o sea el <span class="math inline">\(\alpha\)</span>.</li>
+<li>La diferencia entre dos o más promedios que queremos evaluar.</li>
+<li>El tamaño de muestra (n).</li>
+</ul>
+<p>La linea vertical entrecortada representa el valor critico. El área gris obscuro representa el error <span class="math inline">\(\alpha\)</span>, la probabilidad de rechazar la hipótesis nula cuando debería aceptar la hipótesis nula. El área gris liviano representa el error <span class="math inline">\(\beta\)</span>.</p>
+<div class="inline-figure"><img src="Graficos/6-1%20Test%20Power%20Increase%20with%20Sample%20Size.jpg" width="50%"></div>
+<p>Una ilustración de como el <span class="math inline">\(\alpha\)</span> afecta el <span class="math inline">\(\beta\)</span>”</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="poblaci%C3%B3n-y-muestreos.html"><span class="header-section-number">3</span> Población y Muestreos</a></div>
+<div class="next"><a href="historia-breve-de-la-estad%C3%ADstica.html"><span class="header-section-number">5</span> Historia breve de la Estadística</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#inferencias-y-hip%C3%B3tesis"><span class="header-section-number">4</span> Inferencias y Hipótesis</a></li>
+<li><a class="nav-link" href="#introducci%C3%B3n"><span class="header-section-number">4.1</span> Introducción</a></li>
+<li><a class="nav-link" href="#ejemplo-1"><span class="header-section-number">4.2</span> Ejemplo 1:</a></li>
+<li><a class="nav-link" href="#ejemplo-2"><span class="header-section-number">4.3</span> Ejemplo 2:</a></li>
+<li><a class="nav-link" href="#inferencias-en-estad%C3%ADstica"><span class="header-section-number">4.4</span> Inferencias en estadística</a></li>
+<li><a class="nav-link" href="#hip%C3%B3tesis"><span class="header-section-number">4.5</span> Hipótesis</a></li>
+<li><a class="nav-link" href="#el-valor-de-p"><span class="header-section-number">4.6</span> El valor de p</a></li>
+<li><a class="nav-link" href="#los-errores-de-tipo-i-y-tipo-ii"><span class="header-section-number">4.7</span> Los errores de tipo I y tipo II</a></li>
+<li><a class="nav-link" href="#el-poder-de-las-pruebas-inferenciales-y-lo-par%C3%A1metros-que-lo-influencia"><span class="header-section-number">4.8</span> El poder de las pruebas inferenciales y lo parámetros que lo influencia</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BioEstadística</strong>" was written by . It was last built on 2025-10-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Regresión Logistica
+# Regresion Logistica
 
 
 ```{r, eval=TRUE, echo=FALSE}

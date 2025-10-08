@@ -1,4 +1,4 @@
-# Estadística Frecuentista
+# Estadistica Frecuentista
 
 ```{r, eval=TRUE, echo=FALSE}
 colorize <- function(x, color) {

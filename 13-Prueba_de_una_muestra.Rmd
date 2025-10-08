@@ -536,6 +536,22 @@ ggplot(t_distribution, aes(x = t, y = density)) +
 
  
  Mucha gente creen que la cantidad promedio de amigos en Facebook es 338 con una desviación estandard de 43.2.  En un muestro al azar de 50 estudiantes universitarios en un país se calculo que el promedio de estos estudiantes es de 350 amigos.  Al nivel de 5% de error determina si hay evidencia que los estudiante tenga mayor numero de amigos que el promedio anunciado por Facebook  
+ 
+ 
+ 
+```{r}
+library(tidyverse)
+FB_friends=tribble(
+  ~amigos,
+ 3000, 3100, 1348, 5000, 620, 400, 300, 10, 1500, 400,
+  600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500)
+
+FB_friends
+
+t.test(FB_friends$amigos, alternative="two.sided", mu=350, conf.level = .95)
+
+```
+ 
 
 ```{r onesample=20, include=FALSE}
 t=abs((328-350)/((43.2)/sqrt(50)) )
@@ -559,7 +575,7 @@ Un dueño de una impresa dice que insiste que la cantidad de días promedio de e
 
 ```{r onesample21}
 dias_E=tribble(
-  ~dias_e,
+  ~Enfermedad,
   0,6,12,3,3,5,4,1,
   3,9,6,0,7,6,3,4,
   7,4,7,1,0,8,12,3,
@@ -570,7 +586,8 @@ dias_E
 ```
 
 
-```{r onesampl22, include=FALSE}
-t.test(dias_E$dias_e, alternative="two.sided", mu=10, conf.level = .95)
+## **Supuesto**
 
-```
+El supuesto principal de esta prueba es que los datos son aproximadamente normales.  En este caso se puede evaluar con un histograma o una gráfica Q-Q.  En este caso los datos parecen ser aproximadamente normales.
+
+En otra palabra no se pueden usar esta prueba si los datos no son aproximadamente normales, si los datos tienen una distrución Poisson (conteos), o categóricos. 

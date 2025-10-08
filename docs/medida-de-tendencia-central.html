@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Medida de tendencia central | BioEstadística</title>
   <meta name="description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
-  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.44 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Medida de tendencia central | BioEstadística" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2025-10-06" />
+<meta name="date" content="2025-10-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="historia-breve-de-la-estadística.html"/>
-<link rel="next" href="medidas_de_dispersión.html"/>
+<link rel="next" href="medidas_de_dispersion.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -56,8 +56,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -67,7 +68,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -136,15 +137,15 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción al curso de BioEstadística</a>
+<li class="chapter" data-level="1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#introducci%C3%B3n-al-curso-de-bioestad%C3%ADstica"><i class="fa fa-check"></i><b>1</b> Introducción al curso de BioEstadística</a>
 <ul>
-<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#horario-de-clase"><i class="fa fa-check"></i><b>1.0.1</b> Horario de clase</a></li>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1.0.1</b> Horario de clase</a></li>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#libro-obligatorio"><i class="fa fa-check"></i><b>1.1</b> Libro obligatorio:</a>
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#libros-sugeridos"><i class="fa fa-check"></i><b>1.1.1</b> Libros sugeridos</a></li>
 <li class="chapter" data-level="1.1.2" data-path="index.html"><a href="index.html#programados"><i class="fa fa-check"></i><b>1.1.2</b> Programados</a></li>
 <li class="chapter" data-level="1.1.3" data-path="index.html"><a href="index.html#prerequisitos"><i class="fa fa-check"></i><b>1.1.3</b> Prerequisitos</a></li>
-<li class="chapter" data-level="1.1.4" data-path="index.html"><a href="index.html#descripción-del-curso"><i class="fa fa-check"></i><b>1.1.4</b> Descripción del curso</a></li>
+<li class="chapter" data-level="1.1.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#descripci%C3%B3n-del-curso"><i class="fa fa-check"></i><b>1.1.4</b> Descripción del curso</a></li>
 <li class="chapter" data-level="1.1.5" data-path="index.html"><a href="index.html#objetivos-del-curso"><i class="fa fa-check"></i><b>1.1.5</b> Objetivos del curso</a></li>
 <li class="chapter" data-level="1.1.6" data-path="index.html"><a href="index.html#puntuacion"><i class="fa fa-check"></i><b>1.1.6</b> Puntuacion:</a></li>
 <li class="chapter" data-level="1.1.7" data-path="index.html"><a href="index.html#examenes"><i class="fa fa-check"></i><b>1.1.7</b> Examenes:</a></li>
@@ -158,26 +159,26 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.1.15" data-path="index.html"><a href="index.html#protocolo-de-la-clase"><i class="fa fa-check"></i><b>1.1.15</b> Protocolo de la Clase</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html"><i class="fa fa-check"></i><b>2</b> Introducción a la BioEstadística</a>
+<li class="chapter" data-level="2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#introducci%C3%B3n-a-la-bioestad%C3%ADstica"><i class="fa fa-check"></i><b>2</b> Introducción a la BioEstadística</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#el-libro-de-la-clase"><i class="fa fa-check"></i><b>2.1</b> El libro de la clase</a></li>
-<li class="chapter" data-level="2.2" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#el-proceso-de-investigación"><i class="fa fa-check"></i><b>2.2</b> El proceso de investigación:</a></li>
+<li class="chapter" data-level="2.1" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html"><i class="fa fa-check"></i><b>2.1</b> El libro de la clase</a></li>
+<li class="chapter" data-level="2.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#el-proceso-de-investigaci%C3%B3n"><i class="fa fa-check"></i><b>2.2</b> El proceso de investigación:</a></li>
 <li class="chapter" data-level="2.3" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#el-primer-paso"><i class="fa fa-check"></i><b>2.3</b> El primer paso:</a></li>
 <li class="chapter" data-level="2.4" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#el-segundo-paso"><i class="fa fa-check"></i><b>2.4</b> El segundo paso</a></li>
 <li class="chapter" data-level="2.5" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#el-tercer-paso"><i class="fa fa-check"></i><b>2.5</b> El tercer paso:</a></li>
 <li class="chapter" data-level="2.6" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#el-cuarto-paso"><i class="fa fa-check"></i><b>2.6</b> El cuarto paso:</a></li>
 <li class="chapter" data-level="2.7" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#el-quinto-paso"><i class="fa fa-check"></i><b>2.7</b> El quinto paso:</a></li>
 <li class="chapter" data-level="2.8" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#el-sexto-paso"><i class="fa fa-check"></i><b>2.8</b> El sexto paso:</a></li>
-<li class="chapter" data-level="2.9" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#tipo-de-error-de-interpretación-en-estadística"><i class="fa fa-check"></i><b>2.9</b> Tipo de error de interpretación en estadística</a>
+<li class="chapter" data-level="2.9" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#tipo-de-error-de-interpretaci%C3%B3n-en-estad%C3%ADstica"><i class="fa fa-check"></i><b>2.9</b> Tipo de error de interpretación en estadística</a>
 <ul>
 <li class="chapter" data-level="2.9.1" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#consideramos-los-reality-shows"><i class="fa fa-check"></i><b>2.9.1</b> Consideramos los Reality Shows:</a></li>
 <li class="chapter" data-level="2.9.2" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#personalidad-de-las-personas"><i class="fa fa-check"></i><b>2.9.2</b> Personalidad de las personas</a></li>
 </ul></li>
-<li class="chapter" data-level="2.10" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#cuando-que-una-hipótesis-no-es-una-hipótesis"><i class="fa fa-check"></i><b>2.10</b> Cuando que una hipótesis no es una hipótesis?</a>
+<li class="chapter" data-level="2.10" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cuando-que-una-hip%C3%B3tesis-no-es-una-hip%C3%B3tesis"><i class="fa fa-check"></i><b>2.10</b> Cuando que una hipótesis no es una hipótesis?</a>
 <ul>
-<li class="chapter" data-level="2.10.1" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#una-hipótesis-tiene-que-ser-falsificable"><i class="fa fa-check"></i><b>2.10.1</b> Una hipótesis tiene que ser falsificable</a></li>
+<li class="chapter" data-level="2.10.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#una-hip%C3%B3tesis-tiene-que-ser-falsificable"><i class="fa fa-check"></i><b>2.10.1</b> Una hipótesis tiene que ser falsificable</a></li>
 <li class="chapter" data-level="2.10.2" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#ejercicio-1"><i class="fa fa-check"></i><b>2.10.2</b> Ejercicio 1</a></li>
-<li class="chapter" data-level="2.10.3" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#evaluación-de-las-expresiones-falsificables"><i class="fa fa-check"></i><b>2.10.3</b> Evaluación de las expresiones falsificables</a></li>
+<li class="chapter" data-level="2.10.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#evaluaci%C3%B3n-de-las-expresiones-falsificables"><i class="fa fa-check"></i><b>2.10.3</b> Evaluación de las expresiones falsificables</a></li>
 </ul></li>
 <li class="chapter" data-level="2.11" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#variables-independientes-y-dependientes"><i class="fa fa-check"></i><b>2.11</b> Variables Independientes y Dependientes</a></li>
 <li class="chapter" data-level="2.12" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#niveles-de-mediciones"><i class="fa fa-check"></i><b>2.12</b> Niveles de mediciones</a>
@@ -186,46 +187,46 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.12.2" data-path="introducción-a-la-bioestadística.html"><a href="introducción-a-la-bioestadística.html#variables-discretas"><i class="fa fa-check"></i><b>2.12.2</b> Variables Discretas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html"><i class="fa fa-check"></i><b>3</b> Población y Muestreos</a>
+<li class="chapter" data-level="3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#poblaci%C3%B3n-y-muestreos"><i class="fa fa-check"></i><b>3</b> Población y Muestreos</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#qué-es-la-estadística"><i class="fa fa-check"></i><b>3.1</b> ¿Qué es la estadística?</a></li>
-<li class="chapter" data-level="3.2" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-población"><i class="fa fa-check"></i><b>3.2</b> El concepto de población</a></li>
-<li class="chapter" data-level="3.3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#el-concepto-de-muestreo"><i class="fa fa-check"></i><b>3.3</b> El concepto de muestreo</a></li>
+<li class="chapter" data-level="3.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#qu%C3%A9-es-la-estad%C3%ADstica"><i class="fa fa-check"></i><b>3.1</b> ¿Qué es la estadística?</a></li>
+<li class="chapter" data-level="3.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#el-concepto-de-poblaci%C3%B3n"><i class="fa fa-check"></i><b>3.2</b> El concepto de población</a></li>
+<li class="chapter" data-level="3.3" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html"><i class="fa fa-check"></i><b>3.3</b> El concepto de muestreo</a></li>
 <li class="chapter" data-level="3.4" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#griego-y-latin"><i class="fa fa-check"></i><b>3.4</b> Griego y Latin</a></li>
 <li class="chapter" data-level="3.5" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-verdad-versus-un-estimado"><i class="fa fa-check"></i><b>3.5</b> La verdad versus un estimado</a></li>
 <li class="chapter" data-level="3.6" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#muestreos-al-azar"><i class="fa fa-check"></i><b>3.6</b> Muestreos al azar</a></li>
-<li class="chapter" data-level="3.7" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#error-de-muestreo-exactitud-y-precisión"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Exactitud y Precisión</a>
+<li class="chapter" data-level="3.7" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#error-de-muestreo-exactitud-y-precisi%C3%B3n"><i class="fa fa-check"></i><b>3.7</b> Error de muestreo: Exactitud y Precisión</a>
 <ul>
 <li class="chapter" data-level="3.7.1" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-exactitud-se-refiere-a-cuan-cerca-es-el-valor-medido-al-valor-real-de-la-variable-de-interes.-cuan-es-el-largo-de-la-hoja"><i class="fa fa-check"></i><b>3.7.1</b> La exactitud se refiere a cuan cerca es el valor medido al valor real de la variable de interes. Cuan es el largo de la hoja</a></li>
-<li class="chapter" data-level="3.7.2" data-path="población-y-muestreos.html"><a href="población-y-muestreos.html#la-precisión-es-un-estimado-de-cuan-cerca-cada-valor-es-uno-del-otro.-hablando-de-la-mismo-individuo-o-variable."><i class="fa fa-check"></i><b>3.7.2</b> La precisión es un estimado de cuan cerca cada valor es uno del otro. Hablando de la mismo individuo o variable.</a></li>
+<li class="chapter" data-level="3.7.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-precisi%C3%B3n-es-un-estimado-de-cuan-cerca-cada-valor-es-uno-del-otro.-hablando-de-la-mismo-individuo-o-variable."><i class="fa fa-check"></i><b>3.7.2</b> La precisión es un estimado de cuan cerca cada valor es uno del otro. Hablando de la mismo individuo o variable.</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html"><i class="fa fa-check"></i><b>4</b> Inferencias y Hipótesis</a>
+<li class="chapter" data-level="4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#inferencias-y-hip%C3%B3tesis"><i class="fa fa-check"></i><b>4</b> Inferencias y Hipótesis</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#introducción"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
-<li class="chapter" data-level="4.2" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-1"><i class="fa fa-check"></i><b>4.2</b> Ejemplo 1:</a></li>
+<li class="chapter" data-level="4.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#introducci%C3%B3n"><i class="fa fa-check"></i><b>4.1</b> Introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html"><i class="fa fa-check"></i><b>4.2</b> Ejemplo 1:</a></li>
 <li class="chapter" data-level="4.3" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#ejemplo-2"><i class="fa fa-check"></i><b>4.3</b> Ejemplo 2:</a></li>
-<li class="chapter" data-level="4.4" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#inferencias-en-estadística"><i class="fa fa-check"></i><b>4.4</b> Inferencias en estadística</a></li>
-<li class="chapter" data-level="4.5" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#hipótesis"><i class="fa fa-check"></i><b>4.5</b> Hipótesis</a></li>
+<li class="chapter" data-level="4.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#inferencias-en-estad%C3%ADstica"><i class="fa fa-check"></i><b>4.4</b> Inferencias en estadística</a></li>
+<li class="chapter" data-level="4.5" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#hip%C3%B3tesis"><i class="fa fa-check"></i><b>4.5</b> Hipótesis</a></li>
 <li class="chapter" data-level="4.6" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-valor-de-p"><i class="fa fa-check"></i><b>4.6</b> El valor de p</a></li>
 <li class="chapter" data-level="4.7" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#los-errores-de-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>4.7</b> Los errores de tipo I y tipo II</a></li>
-<li class="chapter" data-level="4.8" data-path="inferencias-y-hipótesis.html"><a href="inferencias-y-hipótesis.html#el-poder-de-las-pruebas-inferenciales-y-lo-parámetros-que-lo-influencia"><i class="fa fa-check"></i><b>4.8</b> El poder de las pruebas inferenciales y lo parámetros que lo influencia</a></li>
+<li class="chapter" data-level="4.8" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#el-poder-de-las-pruebas-inferenciales-y-lo-par%C3%A1metros-que-lo-influencia"><i class="fa fa-check"></i><b>4.8</b> El poder de las pruebas inferenciales y lo parámetros que lo influencia</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html"><i class="fa fa-check"></i><b>5</b> Historia breve de la Estadística</a>
+<li class="chapter" data-level="5" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#historia-breve-de-la-estad%C3%ADstica"><i class="fa fa-check"></i><b>5</b> Historia breve de la Estadística</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#la-dama-degustando-té"><i class="fa fa-check"></i><b>5.1</b> La dama degustando té</a></li>
-<li class="chapter" data-level="5.2" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#definición-de-lo-que-es-la-estadística"><i class="fa fa-check"></i><b>5.2</b> Definición de lo que es la estadística</a></li>
-<li class="chapter" data-level="5.3" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#introducción-a-la-historía-de-la-estadística."><i class="fa fa-check"></i><b>5.3</b> Introducción a la Historía de la Estadística.</a></li>
-<li class="chapter" data-level="5.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#gertrude-mary-cox"><i class="fa fa-check"></i><b>5.4</b> Gertrude Mary Cox</a>
+<li class="chapter" data-level="5.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-dama-degustando-t%C3%A9"><i class="fa fa-check"></i><b>5.1</b> La dama degustando té</a></li>
+<li class="chapter" data-level="5.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#definici%C3%B3n-de-lo-que-es-la-estad%C3%ADstica"><i class="fa fa-check"></i><b>5.2</b> Definición de lo que es la estadística</a></li>
+<li class="chapter" data-level="5.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#introducci%C3%B3n-a-la-histor%C3%ADa-de-la-estad%C3%ADstica."><i class="fa fa-check"></i><b>5.3</b> Introducción a la Historía de la Estadística.</a></li>
+<li class="chapter" data-level="5.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html"><i class="fa fa-check"></i><b>5.4</b> Gertrude Mary Cox</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#primera-dama-en-estadística"><i class="fa fa-check"></i><b>5.4.1</b> Primera dama en Estadística</a></li>
+<li class="chapter" data-level="5.4.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#primera-dama-en-estad%C3%ADstica"><i class="fa fa-check"></i><b>5.4.1</b> Primera dama en Estadística</a></li>
 <li class="chapter" data-level="5.4.2" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#revista-biometrics"><i class="fa fa-check"></i><b>5.4.2</b> Revista <em>Biometrics</em></a></li>
-<li class="chapter" data-level="5.4.3" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#libro-diseños-experimentales"><i class="fa fa-check"></i><b>5.4.3</b> Libro: Diseños Experimentales</a></li>
-<li class="chapter" data-level="5.4.4" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#últimas-aportaciones"><i class="fa fa-check"></i><b>5.4.4</b> Últimas aportaciones</a></li>
+<li class="chapter" data-level="5.4.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#libro-dise%C3%B1os-experimentales"><i class="fa fa-check"></i><b>5.4.3</b> Libro: Diseños Experimentales</a></li>
+<li class="chapter" data-level="5.4.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#%C3%BAltimas-aportaciones"><i class="fa fa-check"></i><b>5.4.4</b> Últimas aportaciones</a></li>
 <li class="chapter" data-level="5.4.5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#referencias"><i class="fa fa-check"></i><b>5.4.5</b> Referencias</a></li>
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#algunos-personas-importantes"><i class="fa fa-check"></i><b>5.5</b> Algunos personas importantes</a></li>
-<li class="chapter" data-level="5.6" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#lista-de-estadísticos"><i class="fa fa-check"></i><b>5.6</b> Lista de estadísticos</a></li>
+<li class="chapter" data-level="5.6" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#lista-de-estad%C3%ADsticos"><i class="fa fa-check"></i><b>5.6</b> Lista de estadísticos</a></li>
 <li class="chapter" data-level="5.7" data-path="historia-breve-de-la-estadística.html"><a href="historia-breve-de-la-estadística.html#formula"><i class="fa fa-check"></i><b>5.7</b> Formula</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html"><i class="fa fa-check"></i><b>6</b> Medida de tendencia central</a>
@@ -238,216 +239,217 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.6" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#con-n-pares"><i class="fa fa-check"></i><b>6.6</b> Con <strong>n</strong> pares</a></li>
 <li class="chapter" data-level="6.7" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#la-moda"><i class="fa fa-check"></i><b>6.7</b> La moda</a></li>
 <li class="chapter" data-level="6.8" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#cuando-es-que-el-promedio-mediana-y-moda-son-iguales"><i class="fa fa-check"></i><b>6.8</b> Cuando es que el promedio, mediana y moda son iguales?</a></li>
-<li class="chapter" data-level="6.9" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales."><i class="fa fa-check"></i><b>6.9</b> Distribución cuando los tres valores de tendencia centrtal no son iguales.</a></li>
+<li class="chapter" data-level="6.9" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#distribuci%C3%B3n-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales."><i class="fa fa-check"></i><b>6.9</b> Distribución cuando los tres valores de tendencia centrtal no son iguales.</a></li>
 <li class="chapter" data-level="6.10" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#variables-binomial"><i class="fa fa-check"></i><b>6.10</b> Variables binomial</a>
 <ul>
 <li class="chapter" data-level="6.10.1" data-path="medida-de-tendencia-central.html"><a href="medida-de-tendencia-central.html#preguntas-de-practica-sobre-medidas-de-tendencias-central."><i class="fa fa-check"></i><b>6.10.1</b> Preguntas de practica sobre medidas de tendencias central.</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html"><i class="fa fa-check"></i><b>7</b> Medidas_de_dispersión</a>
+<li class="chapter" data-level="7" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html"><i class="fa fa-check"></i><b>7</b> Medidas_de_dispersion</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#qué-es-la-dispersión-en-estadística"><i class="fa fa-check"></i><b>7.1</b> Qué es la dispersión en estadística</a></li>
-<li class="chapter" data-level="7.2" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#vizualizando-la-dispersión"><i class="fa fa-check"></i><b>7.2</b> Vizualizando la dispersión</a></li>
-<li class="chapter" data-level="7.3" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-rango"><i class="fa fa-check"></i><b>7.3</b> El rango</a></li>
-<li class="chapter" data-level="7.4" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#mínimo-y-máximo"><i class="fa fa-check"></i><b>7.4</b> Mínimo y máximo</a></li>
-<li class="chapter" data-level="7.5" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejemplo-de-la-clase"><i class="fa fa-check"></i><b>7.5</b> Ejemplo de la clase</a>
+<li class="chapter" data-level="7.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#qu%C3%A9-es-la-dispersi%C3%B3n-en-estad%C3%ADstica"><i class="fa fa-check"></i><b>7.1</b> Qué es la dispersión en estadística</a></li>
+<li class="chapter" data-level="7.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#vizualizando-la-dispersi%C3%B3n"><i class="fa fa-check"></i><b>7.2</b> Vizualizando la dispersión</a></li>
+<li class="chapter" data-level="7.3" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#el-rango"><i class="fa fa-check"></i><b>7.3</b> El rango</a></li>
+<li class="chapter" data-level="7.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#m%C3%ADnimo-y-m%C3%A1ximo"><i class="fa fa-check"></i><b>7.4</b> Mínimo y máximo</a></li>
+<li class="chapter" data-level="7.5" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#ejemplo-de-la-clase"><i class="fa fa-check"></i><b>7.5</b> Ejemplo de la clase</a>
 <ul>
-<li class="chapter" data-level="7.5.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#cual-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes-cuando-nacieron-sus-hijos"><i class="fa fa-check"></i><b>7.5.1</b> Cual es el rango de la Edad de los padres de los Estudiantes cuando nacieron sus hijos</a></li>
+<li class="chapter" data-level="7.5.1" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#cual-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes-cuando-nacieron-sus-hijos"><i class="fa fa-check"></i><b>7.5.1</b> Cual es el rango de la Edad de los padres de los Estudiantes cuando nacieron sus hijos</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-varianza"><i class="fa fa-check"></i><b>7.6</b> La varianza</a>
+<li class="chapter" data-level="7.6" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#la-varianza"><i class="fa fa-check"></i><b>7.6</b> La varianza</a>
 <ul>
-<li class="chapter" data-level="7.6.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#este-indice-se-llama-la-desviación-del-promedio-que-es-la-suma-de-los-cuadrados"><i class="fa fa-check"></i><b>7.6.1</b> Este indice se llama la desviación del promedio que es la suma de los cuadrados</a></li>
+<li class="chapter" data-level="7.6.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#este-indice-se-llama-la-desviaci%C3%B3n-del-promedio-que-es-la-suma-de-los-cuadrados"><i class="fa fa-check"></i><b>7.6.1</b> Este indice se llama la desviación del promedio que es la suma de los cuadrados</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#calcular-la-varianza-con-var"><i class="fa fa-check"></i><b>7.7</b> Calcular la varianza con <strong>var()</strong></a></li>
-<li class="chapter" data-level="7.8" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-desviación-estandar"><i class="fa fa-check"></i><b>7.8</b> La desviación estandar</a></li>
-<li class="chapter" data-level="7.9" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-rango-intertcuartil."><i class="fa fa-check"></i><b>7.9</b> El rango intertcuartil.</a></li>
-<li class="chapter" data-level="7.10" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-error-estandard"><i class="fa fa-check"></i><b>7.10</b> El error estandard</a></li>
-<li class="chapter" data-level="7.11" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalo-de-confianza-de-95-del-promedio"><i class="fa fa-check"></i><b>7.11</b> El intervalo de confianza de 95% del promedio</a></li>
-<li class="chapter" data-level="7.12" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalos-de-confianza-de-los-datos"><i class="fa fa-check"></i><b>7.12</b> El intervalos de confianza de los datos</a></li>
-<li class="chapter" data-level="7.13" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#rangos-incluidos-en-intervalos-de-confianza"><i class="fa fa-check"></i><b>7.13</b> Rangos incluidos en intervalos de confianza</a></li>
-<li class="chapter" data-level="7.14" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejemplo-del-intervalo-de-confianza"><i class="fa fa-check"></i><b>7.14</b> Ejemplo del intervalo de confianza</a>
+<li class="chapter" data-level="7.7" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#calcular-la-varianza-con-var"><i class="fa fa-check"></i><b>7.7</b> Calcular la varianza con <strong>var()</strong></a></li>
+<li class="chapter" data-level="7.8" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-desviaci%C3%B3n-estandar"><i class="fa fa-check"></i><b>7.8</b> La desviación estandar</a></li>
+<li class="chapter" data-level="7.9" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#el-rango-intertcuartil."><i class="fa fa-check"></i><b>7.9</b> El rango intertcuartil.</a></li>
+<li class="chapter" data-level="7.10" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#el-error-estandard"><i class="fa fa-check"></i><b>7.10</b> El error estandard</a></li>
+<li class="chapter" data-level="7.11" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#el-intervalo-de-confianza-de-95-del-promedio"><i class="fa fa-check"></i><b>7.11</b> El intervalo de confianza de 95% del promedio</a></li>
+<li class="chapter" data-level="7.12" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#el-intervalos-de-confianza-de-los-datos"><i class="fa fa-check"></i><b>7.12</b> El intervalos de confianza de los datos</a></li>
+<li class="chapter" data-level="7.13" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#rangos-incluidos-en-intervalos-de-confianza"><i class="fa fa-check"></i><b>7.13</b> Rangos incluidos en intervalos de confianza</a></li>
+<li class="chapter" data-level="7.14" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#ejemplo-del-intervalo-de-confianza"><i class="fa fa-check"></i><b>7.14</b> Ejemplo del intervalo de confianza</a>
 <ul>
-<li class="chapter" data-level="7.14.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#el-intervalo-de-confianza-de-colesterol-en-los-iranis"><i class="fa fa-check"></i><b>7.14.1</b> El intervalo de confianza de colesterol en los Iranis</a></li>
+<li class="chapter" data-level="7.14.1" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#el-intervalo-de-confianza-de-colesterol-en-los-iranis"><i class="fa fa-check"></i><b>7.14.1</b> El intervalo de confianza de colesterol en los Iranis</a></li>
 </ul></li>
-<li class="chapter" data-level="7.15" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#otro-ejemplo-de-los-intevalos-de-confianzas"><i class="fa fa-check"></i><b>7.15</b> Otro ejemplo de los intevalos de confianzas</a>
+<li class="chapter" data-level="7.15" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#otro-ejemplo-de-los-intevalos-de-confianzas"><i class="fa fa-check"></i><b>7.15</b> Otro ejemplo de los intevalos de confianzas</a>
 <ul>
-<li class="chapter" data-level="7.15.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#la-altura-de-los-humanos"><i class="fa fa-check"></i><b>7.15.1</b> La altura de los humanos</a></li>
+<li class="chapter" data-level="7.15.1" data-path="medidas_de_dispersion.html"><a href="medidas_de_dispersion.html#la-altura-de-los-humanos"><i class="fa fa-check"></i><b>7.15.1</b> La altura de los humanos</a></li>
 </ul></li>
-<li class="chapter" data-level="7.16" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejercicios-de-practica-para-entender-el-concepto-de-medidas-de-dispersión"><i class="fa fa-check"></i><b>7.16</b> Ejercicios de practica para entender el concepto de <strong>Medidas de dispersión</strong></a>
+<li class="chapter" data-level="7.16" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejercicios-de-practica-para-entender-el-concepto-de-medidas-de-dispersi%C3%B3n"><i class="fa fa-check"></i><b>7.16</b> Ejercicios de practica para entender el concepto de <strong>Medidas de dispersión</strong></a>
 <ul>
-<li class="chapter" data-level="7.16.1" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejercicio-1-ahora-prepara-el-mismo-gráfico-para-los-hombres."><i class="fa fa-check"></i><b>7.16.1</b> Ejercicio 1: Ahora prepara el mismo gráfico para los hombres.</a></li>
-<li class="chapter" data-level="7.16.2" data-path="medidas_de_dispersión.html"><a href="medidas_de_dispersión.html#ejercicio-2-calcula-los-siguientes-indices-de-dispersión"><i class="fa fa-check"></i><b>7.16.2</b> Ejercicio 2: Calcula los siguientes indices de dispersión</a></li>
+<li class="chapter" data-level="7.16.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejercicio-1-ahora-prepara-el-mismo-gr%C3%A1fico-para-los-hombres."><i class="fa fa-check"></i><b>7.16.1</b> Ejercicio 1: Ahora prepara el mismo gráfico para los hombres.</a></li>
+<li class="chapter" data-level="7.16.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejercicio-2-calcula-los-siguientes-indices-de-dispersi%C3%B3n"><i class="fa fa-check"></i><b>7.16.2</b> Ejercicio 2: Calcula los siguientes indices de dispersión</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html"><i class="fa fa-check"></i><b>8</b> Estadística Descriptiva</a>
+<li class="chapter" data-level="8" data-path="estadistica-descriptiva.html"><a href="estadistica-descriptiva.html"><i class="fa fa-check"></i><b>8</b> Estadistica Descriptiva</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#estadistica-descriptiva"><i class="fa fa-check"></i><b>8.1</b> Estadistica descriptiva</a></li>
-<li class="chapter" data-level="8.2" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#analisis-con-muchos-datos"><i class="fa fa-check"></i><b>8.2</b> Analisis con muchos datos</a></li>
-<li class="chapter" data-level="8.3" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#remover-los-na-del-análisis"><i class="fa fa-check"></i><b>8.3</b> Remover los <strong>NA</strong> del análisis</a></li>
-<li class="chapter" data-level="8.4" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#resumen-estadístico-de-una-variable"><i class="fa fa-check"></i><b>8.4</b> Resumen estadístico de una variable</a></li>
-<li class="chapter" data-level="8.5" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#resumen-estadístico-de-multiples-variables"><i class="fa fa-check"></i><b>8.5</b> Resumen Estadístico de multiples variables</a></li>
-<li class="chapter" data-level="8.6" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#los-cuantiles"><i class="fa fa-check"></i><b>8.6</b> Los Cuantiles</a></li>
-<li class="chapter" data-level="8.7" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#el-indice-de-oblicuidad-skewness"><i class="fa fa-check"></i><b>8.7</b> El indice de Oblicuidad: Skewness</a></li>
-<li class="chapter" data-level="8.8" data-path="estadística-descriptiva.html"><a href="estadística-descriptiva.html#el-indice-de-curtosis-kurtosis"><i class="fa fa-check"></i><b>8.8</b> El indice de Curtosis: Kurtosis</a></li>
+<li class="chapter" data-level="8.1" data-path="estadistica-descriptiva.html"><a href="estadistica-descriptiva.html#estadistica-descriptiva-1"><i class="fa fa-check"></i><b>8.1</b> Estadistica descriptiva</a></li>
+<li class="chapter" data-level="8.2" data-path="estadistica-descriptiva.html"><a href="estadistica-descriptiva.html#analisis-con-muchos-datos"><i class="fa fa-check"></i><b>8.2</b> Analisis con muchos datos</a></li>
+<li class="chapter" data-level="8.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#remover-los-na-del-an%C3%A1lisis"><i class="fa fa-check"></i><b>8.3</b> Remover los <strong>NA</strong> del análisis</a></li>
+<li class="chapter" data-level="8.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#resumen-estad%C3%ADstico-de-una-variable"><i class="fa fa-check"></i><b>8.4</b> Resumen estadístico de una variable</a></li>
+<li class="chapter" data-level="8.5" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#resumen-estad%C3%ADstico-de-multiples-variables"><i class="fa fa-check"></i><b>8.5</b> Resumen Estadístico de multiples variables</a></li>
+<li class="chapter" data-level="8.6" data-path="estadistica-descriptiva.html"><a href="estadistica-descriptiva.html#los-cuantiles"><i class="fa fa-check"></i><b>8.6</b> Los Cuantiles</a></li>
+<li class="chapter" data-level="8.7" data-path="estadistica-descriptiva.html"><a href="estadistica-descriptiva.html#el-indice-de-oblicuidad-skewness"><i class="fa fa-check"></i><b>8.7</b> El indice de Oblicuidad: Skewness</a></li>
+<li class="chapter" data-level="8.8" data-path="estadistica-descriptiva.html"><a href="estadistica-descriptiva.html#el-indice-de-curtosis-kurtosis"><i class="fa fa-check"></i><b>8.8</b> El indice de Curtosis: Kurtosis</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="gráficos.html"><a href="gráficos.html"><i class="fa fa-check"></i><b>9</b> Gráficos</a>
+<li class="chapter" data-level="9" data-path="graficos.html"><a href="graficos.html"><i class="fa fa-check"></i><b>9</b> Graficos</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="gráficos.html"><a href="gráficos.html#gráficos-básicos-con-ggplot2"><i class="fa fa-check"></i><b>9.1</b> Gráficos Básicos con ggplot2</a></li>
-<li class="chapter" data-level="9.2" data-path="gráficos.html"><a href="gráficos.html#como-crear-una-gráfica-de-regresión-lineal-usando-ggplot"><i class="fa fa-check"></i><b>9.2</b> Como crear una gráfica de regresión lineal usando ggplot</a>
+<li class="chapter" data-level="9.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#gr%C3%A1ficos-b%C3%A1sicos-con-ggplot2"><i class="fa fa-check"></i><b>9.1</b> Gráficos Básicos con ggplot2</a></li>
+<li class="chapter" data-level="9.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#como-crear-una-gr%C3%A1fica-de-regresi%C3%B3n-lineal-usando-ggplot"><i class="fa fa-check"></i><b>9.2</b> Como crear una gráfica de regresión lineal usando ggplot</a>
 <ul>
-<li class="chapter" data-level="9.2.1" data-path="gráficos.html"><a href="gráficos.html#subir-los-datos-a-rstudio"><i class="fa fa-check"></i><b>9.2.1</b> Subir los datos a RStudio</a></li>
+<li class="chapter" data-level="9.2.1" data-path="graficos.html"><a href="graficos.html#subir-los-datos-a-rstudio"><i class="fa fa-check"></i><b>9.2.1</b> Subir los datos a RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="gráficos.html"><a href="gráficos.html#regresión-lineal"><i class="fa fa-check"></i><b>9.3</b> Regresión lineal</a></li>
-<li class="chapter" data-level="9.4" data-path="gráficos.html"><a href="gráficos.html#añadiendo-color-por-grupo-y-otras-bellezas"><i class="fa fa-check"></i><b>9.4</b> Añadiendo color por grupo y otras bellezas</a></li>
-<li class="chapter" data-level="9.5" data-path="gráficos.html"><a href="gráficos.html#salvar-gráficos-con-ggsave"><i class="fa fa-check"></i><b>9.5</b> Salvar gráficos con <strong>ggsave</strong></a></li>
-<li class="chapter" data-level="9.6" data-path="gráficos.html"><a href="gráficos.html#regresión-simple-con-puntos"><i class="fa fa-check"></i><b>9.6</b> Regresión simple con puntos</a></li>
-<li class="chapter" data-level="9.7" data-path="gráficos.html"><a href="gráficos.html#regresión-simple-con-puntos-y-intervalo-de-confianza"><i class="fa fa-check"></i><b>9.7</b> Regresión simple con puntos y intervalo de confianza</a>
+<li class="chapter" data-level="9.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#regresi%C3%B3n-lineal"><i class="fa fa-check"></i><b>9.3</b> Regresión lineal</a></li>
+<li class="chapter" data-level="9.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#a%C3%B1adiendo-color-por-grupo-y-otras-bellezas"><i class="fa fa-check"></i><b>9.4</b> Añadiendo color por grupo y otras bellezas</a></li>
+<li class="chapter" data-level="9.5" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#salvar-gr%C3%A1ficos-con-ggsave"><i class="fa fa-check"></i><b>9.5</b> Salvar gráficos con <strong>ggsave</strong></a></li>
+<li class="chapter" data-level="9.6" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#regresi%C3%B3n-simple-con-puntos"><i class="fa fa-check"></i><b>9.6</b> Regresión simple con puntos</a></li>
+<li class="chapter" data-level="9.7" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#regresi%C3%B3n-simple-con-puntos-y-intervalo-de-confianza"><i class="fa fa-check"></i><b>9.7</b> Regresión simple con puntos y intervalo de confianza</a>
 <ul>
-<li class="chapter" data-level="9.7.1" data-path="gráficos.html"><a href="gráficos.html#cambio-de-color-del-intervalo-de-confianza"><i class="fa fa-check"></i><b>9.7.1</b> Cambio de color del intervalo de confianza</a></li>
+<li class="chapter" data-level="9.7.1" data-path="graficos.html"><a href="graficos.html#cambio-de-color-del-intervalo-de-confianza"><i class="fa fa-check"></i><b>9.7.1</b> Cambio de color del intervalo de confianza</a></li>
 </ul></li>
-<li class="chapter" data-level="9.8" data-path="gráficos.html"><a href="gráficos.html#regresión-lineal-por-grupo."><i class="fa fa-check"></i><b>9.8</b> Regresión lineal por grupo.</a></li>
-<li class="chapter" data-level="9.9" data-path="gráficos.html"><a href="gráficos.html#histogramas"><i class="fa fa-check"></i><b>9.9</b> Histogramas</a></li>
-<li class="chapter" data-level="9.10" data-path="gráficos.html"><a href="gráficos.html#gráficos-de-caja-box-plots"><i class="fa fa-check"></i><b>9.10</b> Gráficos de caja <strong>box plots</strong></a></li>
-<li class="chapter" data-level="9.11" data-path="gráficos.html"><a href="gráficos.html#gráfico-de-caja-por-grupo"><i class="fa fa-check"></i><b>9.11</b> Gráfico de caja por grupo</a></li>
-<li class="chapter" data-level="9.12" data-path="gráficos.html"><a href="gráficos.html#detección-valores-sesgados-o-átipicos."><i class="fa fa-check"></i><b>9.12</b> Detección valores sesgados o átipicos.</a></li>
-<li class="chapter" data-level="9.13" data-path="gráficos.html"><a href="gráficos.html#gráficos-de-línea-y-intervalo-de-errores"><i class="fa fa-check"></i><b>9.13</b> Gráficos de línea y intervalo de errores</a></li>
-<li class="chapter" data-level="9.14" data-path="gráficos.html"><a href="gráficos.html#la-función-stat_summary-para-calcular-indices-sumativos."><i class="fa fa-check"></i><b>9.14</b> La función <strong>stat_summary</strong> para calcular indices sumativos.</a></li>
-<li class="chapter" data-level="9.15" data-path="gráficos.html"><a href="gráficos.html#diagrama-de-tallo-y-hoja-leaf-and-stem"><i class="fa fa-check"></i><b>9.15</b> Diagrama de tallo y hoja (leaf and stem)</a></li>
+<li class="chapter" data-level="9.8" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#regresi%C3%B3n-lineal-por-grupo."><i class="fa fa-check"></i><b>9.8</b> Regresión lineal por grupo.</a></li>
+<li class="chapter" data-level="9.9" data-path="graficos.html"><a href="graficos.html#histogramas"><i class="fa fa-check"></i><b>9.9</b> Histogramas</a></li>
+<li class="chapter" data-level="9.10" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#gr%C3%A1ficos-de-caja-box-plots"><i class="fa fa-check"></i><b>9.10</b> Gráficos de caja <strong>box plots</strong></a></li>
+<li class="chapter" data-level="9.11" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#gr%C3%A1fico-de-caja-por-grupo"><i class="fa fa-check"></i><b>9.11</b> Gráfico de caja por grupo</a></li>
+<li class="chapter" data-level="9.12" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#detecci%C3%B3n-valores-sesgados-o-%C3%A1tipicos."><i class="fa fa-check"></i><b>9.12</b> Detección valores sesgados o átipicos.</a></li>
+<li class="chapter" data-level="9.13" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#gr%C3%A1ficos-de-l%C3%ADnea-y-intervalo-de-errores"><i class="fa fa-check"></i><b>9.13</b> Gráficos de línea y intervalo de errores</a></li>
+<li class="chapter" data-level="9.14" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-funci%C3%B3n-stat_summary-para-calcular-indices-sumativos."><i class="fa fa-check"></i><b>9.14</b> La función <strong>stat_summary</strong> para calcular indices sumativos.</a></li>
+<li class="chapter" data-level="9.15" data-path="graficos.html"><a href="graficos.html#diagrama-de-tallo-y-hoja-leaf-and-stem"><i class="fa fa-check"></i><b>9.15</b> Diagrama de tallo y hoja (leaf and stem)</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="supuestos.html"><a href="supuestos.html"><i class="fa fa-check"></i><b>10</b> Supuestos</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="supuestos.html"><a href="supuestos.html#qué-son-supuestos"><i class="fa fa-check"></i><b>10.1</b> ¿Qué son supuestos?</a></li>
+<li class="chapter" data-level="10.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#qu%C3%A9-son-supuestos"><i class="fa fa-check"></i><b>10.1</b> ¿Qué son supuestos?</a></li>
 <li class="chapter" data-level="10.2" data-path="supuestos.html"><a href="supuestos.html#homogeneidad-de-varianza"><i class="fa fa-check"></i><b>10.2</b> Homogeneidad de varianza</a></li>
-<li class="chapter" data-level="10.3" data-path="supuestos.html"><a href="supuestos.html#gráficos-de-cajas-condicionales"><i class="fa fa-check"></i><b>10.3</b> Gráficos de cajas condicionales</a>
+<li class="chapter" data-level="10.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#gr%C3%A1ficos-de-cajas-condicionales"><i class="fa fa-check"></i><b>10.3</b> Gráficos de cajas condicionales</a>
 <ul>
-<li class="chapter" data-level="10.3.1" data-path="supuestos.html"><a href="supuestos.html#selección-de-los-datos"><i class="fa fa-check"></i><b>10.3.1</b> Selección de los datos</a></li>
+<li class="chapter" data-level="10.3.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#selecci%C3%B3n-de-los-datos"><i class="fa fa-check"></i><b>10.3.1</b> Selección de los datos</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="supuestos.html"><a href="supuestos.html#homogeneidad-de-varianza-en-modelos-de-regresión"><i class="fa fa-check"></i><b>10.4</b> Homogeneidad de varianza en modelos de regresión</a></li>
+<li class="chapter" data-level="10.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#homogeneidad-de-varianza-en-modelos-de-regresi%C3%B3n"><i class="fa fa-check"></i><b>10.4</b> Homogeneidad de varianza en modelos de regresión</a></li>
 <li class="chapter" data-level="10.5" data-path="supuestos.html"><a href="supuestos.html#los-residuales-de-student-para-detectar-valores-sesgados"><i class="fa fa-check"></i><b>10.5</b> Los residuales de Student para detectar valores sesgados</a></li>
 <li class="chapter" data-level="10.6" data-path="supuestos.html"><a href="supuestos.html#valores-sesgados-con-la-distancia-de-cook-di"><i class="fa fa-check"></i><b>10.6</b> Valores sesgados con la Distancia de Cook, Di</a></li>
 <li class="chapter" data-level="10.7" data-path="supuestos.html"><a href="supuestos.html#causas-principales-de-los-valores-sesgados"><i class="fa fa-check"></i><b>10.7</b> Causas principales de los valores sesgados</a></li>
 <li class="chapter" data-level="10.8" data-path="supuestos.html"><a href="supuestos.html#supuesto-de-normalidad"><i class="fa fa-check"></i><b>10.8</b> Supuesto de normalidad</a></li>
 <li class="chapter" data-level="10.9" data-path="supuestos.html"><a href="supuestos.html#qplot"><i class="fa fa-check"></i><b>10.9</b> qplot</a></li>
 <li class="chapter" data-level="10.10" data-path="supuestos.html"><a href="supuestos.html#geom_qq-y-geom_qq_line"><i class="fa fa-check"></i><b>10.10</b> geom_qq y geom_qq_line</a></li>
-<li class="chapter" data-level="10.11" data-path="supuestos.html"><a href="supuestos.html#la-distribución-normal"><i class="fa fa-check"></i><b>10.11</b> La distribución normal</a></li>
+<li class="chapter" data-level="10.11" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>10.11</b> La distribución normal</a></li>
 <li class="chapter" data-level="10.12" data-path="supuestos.html"><a href="supuestos.html#stat_function"><i class="fa fa-check"></i><b>10.12</b> stat_function</a></li>
 <li class="chapter" data-level="10.13" data-path="supuestos.html"><a href="supuestos.html#visualizando-la-distribuciones-con-geom_density"><i class="fa fa-check"></i><b>10.13</b> Visualizando la distribuciones con <strong>geom_density</strong></a></li>
 <li class="chapter" data-level="10.14" data-path="supuestos.html"><a href="supuestos.html#colinealidad-entre-covariables-con-ggpairs"><i class="fa fa-check"></i><b>10.14</b> Colinealidad entre covariables con <strong>ggpairs</strong></a>
 <ul>
-<li class="chapter" data-level="10.14.1" data-path="supuestos.html"><a href="supuestos.html#tabla-de-correlación-de-kendall"><i class="fa fa-check"></i><b>10.14.1</b> Tabla de correlación de Kendall</a></li>
-<li class="chapter" data-level="10.14.2" data-path="supuestos.html"><a href="supuestos.html#tabla-de-correlación-de-spearman"><i class="fa fa-check"></i><b>10.14.2</b> Tabla de correlación de Spearman</a></li>
+<li class="chapter" data-level="10.14.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#tabla-de-correlaci%C3%B3n-de-kendall"><i class="fa fa-check"></i><b>10.14.1</b> Tabla de correlación de Kendall</a></li>
+<li class="chapter" data-level="10.14.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#tabla-de-correlaci%C3%B3n-de-spearman"><i class="fa fa-check"></i><b>10.14.2</b> Tabla de correlación de Spearman</a></li>
 </ul></li>
-<li class="chapter" data-level="10.15" data-path="supuestos.html"><a href="supuestos.html#seleción-de-parámetros-para-correlaciones-cuando-hay-na"><i class="fa fa-check"></i><b>10.15</b> Seleción de parámetros para correlaciones cuando hay NA</a></li>
+<li class="chapter" data-level="10.15" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#seleci%C3%B3n-de-par%C3%A1metros-para-correlaciones-cuando-hay-na"><i class="fa fa-check"></i><b>10.15</b> Seleción de parámetros para correlaciones cuando hay NA</a></li>
 <li class="chapter" data-level="10.16" data-path="supuestos.html"><a href="supuestos.html#uso-de-ggally-para-ver-correlaciones"><i class="fa fa-check"></i><b>10.16</b> Uso de GGally para ver correlaciones</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html"><i class="fa fa-check"></i><b>11</b> Estadística Frecuentista</a>
+<li class="chapter" data-level="11" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html"><i class="fa fa-check"></i><b>11</b> Estadistica Frecuentista</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste-y-table-de-contingencia"><i class="fa fa-check"></i><b>11.1</b> Bondad de ajuste y Table de Contingencia</a></li>
-<li class="chapter" data-level="11.2" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#qué-son-supuestos-1"><i class="fa fa-check"></i><b>11.2</b> Qué son supuestos</a></li>
-<li class="chapter" data-level="11.3" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#los-supuestos-de-las-pruebas-de-frecuencias."><i class="fa fa-check"></i><b>11.3</b> Los supuestos de las pruebas de frecuencias.</a></li>
-<li class="chapter" data-level="11.4" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#instalar-y-activar-los-siguientes-packages"><i class="fa fa-check"></i><b>11.4</b> Instalar y activar los siguientes packages</a></li>
-<li class="chapter" data-level="11.5" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gregory-mendel-y-sus-guisantes"><i class="fa fa-check"></i><b>11.5</b> Gregory Mendel y sus guisantes</a></li>
-<li class="chapter" data-level="11.6" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#bondad-de-ajuste."><i class="fa fa-check"></i><b>11.6</b> Bondad de Ajuste.</a></li>
-<li class="chapter" data-level="11.7" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#primer-ejemplo"><i class="fa fa-check"></i><b>11.7</b> Primer ejemplo</a></li>
-<li class="chapter" data-level="11.8" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#segundo-ejemplo"><i class="fa fa-check"></i><b>11.8</b> Segundo ejemplo</a>
+<li class="chapter" data-level="11.1" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#bondad-de-ajuste-y-table-de-contingencia"><i class="fa fa-check"></i><b>11.1</b> Bondad de ajuste y Table de Contingencia</a></li>
+<li class="chapter" data-level="11.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#qu%C3%A9-son-supuestos-1"><i class="fa fa-check"></i><b>11.2</b> Qué son supuestos</a></li>
+<li class="chapter" data-level="11.3" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#los-supuestos-de-las-pruebas-de-frecuencias."><i class="fa fa-check"></i><b>11.3</b> Los supuestos de las pruebas de frecuencias.</a></li>
+<li class="chapter" data-level="11.4" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#instalar-y-activar-los-siguientes-packages"><i class="fa fa-check"></i><b>11.4</b> Instalar y activar los siguientes packages</a></li>
+<li class="chapter" data-level="11.5" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#gregory-mendel-y-sus-guisantes"><i class="fa fa-check"></i><b>11.5</b> Gregory Mendel y sus guisantes</a></li>
+<li class="chapter" data-level="11.6" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#bondad-de-ajuste."><i class="fa fa-check"></i><b>11.6</b> Bondad de Ajuste.</a></li>
+<li class="chapter" data-level="11.7" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#primer-ejemplo"><i class="fa fa-check"></i><b>11.7</b> Primer ejemplo</a></li>
+<li class="chapter" data-level="11.8" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#segundo-ejemplo"><i class="fa fa-check"></i><b>11.8</b> Segundo ejemplo</a>
 <ul>
-<li class="chapter" data-level="11.8.1" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#esta-ejercicio-cumple-con-los-supuestos"><i class="fa fa-check"></i><b>11.8.1</b> Esta ejercicio cumple con los supuestos?</a></li>
-<li class="chapter" data-level="11.8.2" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#esta-ejercicio-cumple-con-los-supuestos-1"><i class="fa fa-check"></i><b>11.8.2</b> Esta ejercicio cumple con los supuestos?</a></li>
+<li class="chapter" data-level="11.8.1" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#esta-ejercicio-cumple-con-los-supuestos"><i class="fa fa-check"></i><b>11.8.1</b> Esta ejercicio cumple con los supuestos?</a></li>
+<li class="chapter" data-level="11.8.2" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#esta-ejercicio-cumple-con-los-supuestos-1"><i class="fa fa-check"></i><b>11.8.2</b> Esta ejercicio cumple con los supuestos?</a></li>
 </ul></li>
-<li class="chapter" data-level="11.9" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste, Tabla de contingencia RxC</a></li>
-<li class="chapter" data-level="11.10" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-hipótesis-nula"><i class="fa fa-check"></i><b>11.10</b> La hipótesis NULA</a></li>
-<li class="chapter" data-level="11.11" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-hipótesis-alterna"><i class="fa fa-check"></i><b>11.11</b> La hipótesis alterna</a></li>
-<li class="chapter" data-level="11.12" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#gráfico-de-mosaico"><i class="fa fa-check"></i><b>11.12</b> Gráfico de Mosaico</a></li>
-<li class="chapter" data-level="11.13" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia-de-frecuencia."><i class="fa fa-check"></i><b>11.13</b> Prueba de Independencia de frecuencia.</a></li>
-<li class="chapter" data-level="11.14" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#como-calcular-el-grado-de-libertad"><i class="fa fa-check"></i><b>11.14</b> Como calcular el grado de libertad</a>
+<li class="chapter" data-level="11.9" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc"><i class="fa fa-check"></i><b>11.9</b> Prueba de Bondad de Ajuste, Tabla de contingencia RxC</a></li>
+<li class="chapter" data-level="11.10" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-hip%C3%B3tesis-nula"><i class="fa fa-check"></i><b>11.10</b> La hipótesis NULA</a></li>
+<li class="chapter" data-level="11.11" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-hip%C3%B3tesis-alterna"><i class="fa fa-check"></i><b>11.11</b> La hipótesis alterna</a></li>
+<li class="chapter" data-level="11.12" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#gr%C3%A1fico-de-mosaico"><i class="fa fa-check"></i><b>11.12</b> Gráfico de Mosaico</a></li>
+<li class="chapter" data-level="11.13" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#prueba-de-independencia-de-frecuencia."><i class="fa fa-check"></i><b>11.13</b> Prueba de Independencia de frecuencia.</a></li>
+<li class="chapter" data-level="11.14" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#como-calcular-el-grado-de-libertad"><i class="fa fa-check"></i><b>11.14</b> Como calcular el grado de libertad</a>
 <ul>
-<li class="chapter" data-level="11.14.1" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#esta-ejercicio-cumple-con-los-supuestos-2"><i class="fa fa-check"></i><b>11.14.1</b> Esta ejercicio cumple con los supuestos?</a></li>
+<li class="chapter" data-level="11.14.1" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#esta-ejercicio-cumple-con-los-supuestos-2"><i class="fa fa-check"></i><b>11.14.1</b> Esta ejercicio cumple con los supuestos?</a></li>
 </ul></li>
-<li class="chapter" data-level="11.15" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#la-función-crosstable"><i class="fa fa-check"></i><b>11.15</b> La función <em>CrossTable</em></a>
+<li class="chapter" data-level="11.15" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-funci%C3%B3n-crosstable"><i class="fa fa-check"></i><b>11.15</b> La función <em>CrossTable</em></a>
 <ul>
-<li class="chapter" data-level="11.15.1" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#esta-ejercicio-cumple-con-los-supuestos-3"><i class="fa fa-check"></i><b>11.15.1</b> Esta ejercicio cumple con los supuestos?</a></li>
+<li class="chapter" data-level="11.15.1" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#esta-ejercicio-cumple-con-los-supuestos-3"><i class="fa fa-check"></i><b>11.15.1</b> Esta ejercicio cumple con los supuestos?</a></li>
 </ul></li>
-<li class="chapter" data-level="11.16" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#análisis-con-datos-en-formato-de-tabla"><i class="fa fa-check"></i><b>11.16</b> Análisis con datos en formato de tabla</a></li>
-<li class="chapter" data-level="11.17" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-independencia"><i class="fa fa-check"></i><b>11.17</b> Prueba de independencia</a></li>
-<li class="chapter" data-level="11.18" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#el-color-de-pello-es-independiente-del-sexo"><i class="fa fa-check"></i><b>11.18</b> El color de pello es independiente del sexo</a>
+<li class="chapter" data-level="11.16" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#an%C3%A1lisis-con-datos-en-formato-de-tabla"><i class="fa fa-check"></i><b>11.16</b> Análisis con datos en formato de tabla</a></li>
+<li class="chapter" data-level="11.17" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#prueba-de-independencia"><i class="fa fa-check"></i><b>11.17</b> Prueba de independencia</a></li>
+<li class="chapter" data-level="11.18" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#el-color-de-pello-es-independiente-del-sexo"><i class="fa fa-check"></i><b>11.18</b> El color de pello es independiente del sexo</a>
 <ul>
-<li class="chapter" data-level="11.18.1" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#esta-ejercicio-cumple-con-los-supuestos-4"><i class="fa fa-check"></i><b>11.18.1</b> Esta ejercicio cumple con los supuestos?</a></li>
+<li class="chapter" data-level="11.18.1" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#esta-ejercicio-cumple-con-los-supuestos-4"><i class="fa fa-check"></i><b>11.18.1</b> Esta ejercicio cumple con los supuestos?</a></li>
 </ul></li>
-<li class="chapter" data-level="11.19" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#prueba-de-exacta-de-fisher"><i class="fa fa-check"></i><b>11.19</b> Prueba de Exacta de Fisher</a>
+<li class="chapter" data-level="11.19" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#prueba-de-exacta-de-fisher"><i class="fa fa-check"></i><b>11.19</b> Prueba de Exacta de Fisher</a>
 <ul>
-<li class="chapter" data-level="11.19.1" data-path="estadística-frecuentista.html"><a href="estadística-frecuentista.html#los-supuestos-de-las-prueba-exacta-de-fisher."><i class="fa fa-check"></i><b>11.19.1</b> Los supuestos de las prueba Exacta de Fisher.</a></li>
+<li class="chapter" data-level="11.19.1" data-path="estadistica-frecuentista.html"><a href="estadistica-frecuentista.html#los-supuestos-de-las-prueba-exacta-de-fisher."><i class="fa fa-check"></i><b>11.19.1</b> Los supuestos de las prueba Exacta de Fisher.</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="distribución-normal.html"><a href="distribución-normal.html"><i class="fa fa-check"></i><b>12</b> Distribución Normal</a>
+<li class="chapter" data-level="12" data-path="distribucion-normal.html"><a href="distribucion-normal.html"><i class="fa fa-check"></i><b>12</b> Distribucion Normal</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="distribución-normal.html"><a href="distribución-normal.html#instalar-y-activar-los-siguientes-paquete"><i class="fa fa-check"></i><b>12.1</b> Instalar y activar los siguientes paquete</a></li>
-<li class="chapter" data-level="12.2" data-path="distribución-normal.html"><a href="distribución-normal.html#la-distribución-normal-1"><i class="fa fa-check"></i><b>12.2</b> La distribución normal</a></li>
-<li class="chapter" data-level="12.3" data-path="distribución-normal.html"><a href="distribución-normal.html#evaluando-visualmente-la-distribución"><i class="fa fa-check"></i><b>12.3</b> Evaluando visualmente la distribución</a></li>
-<li class="chapter" data-level="12.4" data-path="distribución-normal.html"><a href="distribución-normal.html#añadiendo-la-distribución-teórica-al-histograma"><i class="fa fa-check"></i><b>12.4</b> Añadiendo la distribución teórica al histograma</a></li>
-<li class="chapter" data-level="12.5" data-path="distribución-normal.html"><a href="distribución-normal.html#evaluando-datos-no-normal"><i class="fa fa-check"></i><b>12.5</b> Evaluando datos no normal</a></li>
-<li class="chapter" data-level="12.6" data-path="distribución-normal.html"><a href="distribución-normal.html#datos-teóricos-con-histograma-y-la-función-de-normalidad"><i class="fa fa-check"></i><b>12.6</b> Datos teóricos con histograma y la función de normalidad</a></li>
-<li class="chapter" data-level="12.7" data-path="distribución-normal.html"><a href="distribución-normal.html#qqplot"><i class="fa fa-check"></i><b>12.7</b> qqplot</a></li>
-<li class="chapter" data-level="12.8" data-path="distribución-normal.html"><a href="distribución-normal.html#pruebas-de-normalidad."><i class="fa fa-check"></i><b>12.8</b> Pruebas de normalidad.</a></li>
-<li class="chapter" data-level="12.9" data-path="distribución-normal.html"><a href="distribución-normal.html#la-prueba-de-shapiro-wilks"><i class="fa fa-check"></i><b>12.9</b> La prueba de Shapiro-Wilks</a></li>
-<li class="chapter" data-level="12.10" data-path="distribución-normal.html"><a href="distribución-normal.html#la-prueba-de-normalidad-de-anderson-darling"><i class="fa fa-check"></i><b>12.10</b> La prueba de normalidad de Anderson-Darling</a></li>
+<li class="chapter" data-level="12.1" data-path="distribucion-normal.html"><a href="distribucion-normal.html#instalar-y-activar-los-siguientes-paquete"><i class="fa fa-check"></i><b>12.1</b> Instalar y activar los siguientes paquete</a></li>
+<li class="chapter" data-level="12.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-distribuci%C3%B3n-normal-1"><i class="fa fa-check"></i><b>12.2</b> La distribución normal</a></li>
+<li class="chapter" data-level="12.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#evaluando-visualmente-la-distribuci%C3%B3n"><i class="fa fa-check"></i><b>12.3</b> Evaluando visualmente la distribución</a></li>
+<li class="chapter" data-level="12.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#a%C3%B1adiendo-la-distribuci%C3%B3n-te%C3%B3rica-al-histograma"><i class="fa fa-check"></i><b>12.4</b> Añadiendo la distribución teórica al histograma</a></li>
+<li class="chapter" data-level="12.5" data-path="distribucion-normal.html"><a href="distribucion-normal.html#evaluando-datos-no-normal"><i class="fa fa-check"></i><b>12.5</b> Evaluando datos no normal</a></li>
+<li class="chapter" data-level="12.6" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#datos-te%C3%B3ricos-con-histograma-y-la-funci%C3%B3n-de-normalidad"><i class="fa fa-check"></i><b>12.6</b> Datos teóricos con histograma y la función de normalidad</a></li>
+<li class="chapter" data-level="12.7" data-path="distribucion-normal.html"><a href="distribucion-normal.html#qqplot"><i class="fa fa-check"></i><b>12.7</b> qqplot</a></li>
+<li class="chapter" data-level="12.8" data-path="distribucion-normal.html"><a href="distribucion-normal.html#pruebas-de-normalidad."><i class="fa fa-check"></i><b>12.8</b> Pruebas de normalidad.</a></li>
+<li class="chapter" data-level="12.9" data-path="distribucion-normal.html"><a href="distribucion-normal.html#la-prueba-de-shapiro-wilks"><i class="fa fa-check"></i><b>12.9</b> La prueba de Shapiro-Wilks</a></li>
+<li class="chapter" data-level="12.10" data-path="distribucion-normal.html"><a href="distribucion-normal.html#la-prueba-de-normalidad-de-anderson-darling"><i class="fa fa-check"></i><b>12.10</b> La prueba de normalidad de Anderson-Darling</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html"><i class="fa fa-check"></i><b>13</b> Prueba de una muestra</a>
 <ul>
 <li class="chapter" data-level="13.1" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#el-promedio-un-estimado"><i class="fa fa-check"></i><b>13.1</b> El promedio, un estimado</a></li>
 <li class="chapter" data-level="13.2" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#ejemplo-9.1-y-9.2."><i class="fa fa-check"></i><b>13.2</b> Ejemplo 9.1 y 9.2.</a></li>
-<li class="chapter" data-level="13.3" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#la-distribución-de-t"><i class="fa fa-check"></i><b>13.3</b> La distribución de t</a></li>
-<li class="chapter" data-level="13.4" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#cuando-es-que-uno-rechaza-la-hipótesis-nula"><i class="fa fa-check"></i><b>13.4</b> Cuando es que uno rechaza la hipótesis nula</a></li>
+<li class="chapter" data-level="13.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-distribuci%C3%B3n-de-t"><i class="fa fa-check"></i><b>13.3</b> La distribución de t</a></li>
+<li class="chapter" data-level="13.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cuando-es-que-uno-rechaza-la-hip%C3%B3tesis-nula"><i class="fa fa-check"></i><b>13.4</b> Cuando es que uno rechaza la hipótesis nula</a></li>
 <li class="chapter" data-level="13.5" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#el-intervalo-de-confianza-de-mu"><i class="fa fa-check"></i><b>13.5</b> El intervalo de confianza de <span class="math inline">\(\mu\)</span></a></li>
 <li class="chapter" data-level="13.6" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#ejemplo-9.3"><i class="fa fa-check"></i><b>13.6</b> Ejemplo 9.3</a></li>
 <li class="chapter" data-level="13.7" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#los-limites-del-intervalo"><i class="fa fa-check"></i><b>13.7</b> Los limites del intervalo</a></li>
 <li class="chapter" data-level="13.8" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#el-limite-superior"><i class="fa fa-check"></i><b>13.8</b> El limite superior</a></li>
 <li class="chapter" data-level="13.9" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#el-limite-inferior"><i class="fa fa-check"></i><b>13.9</b> El limite inferior</a></li>
 <li class="chapter" data-level="13.10" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#menos-grados-de-libertad"><i class="fa fa-check"></i><b>13.10</b> Menos grados de libertad</a></li>
-<li class="chapter" data-level="13.11" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#más-grados-de-libertad"><i class="fa fa-check"></i><b>13.11</b> Más grados de libertad</a></li>
+<li class="chapter" data-level="13.11" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#m%C3%A1s-grados-de-libertad"><i class="fa fa-check"></i><b>13.11</b> Más grados de libertad</a></li>
 <li class="chapter" data-level="13.12" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#muchos-muestreos-y-el-universo"><i class="fa fa-check"></i><b>13.12</b> Muchos muestreos y el universo</a>
 <ul>
-<li class="chapter" data-level="13.12.1" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#quiz-estas-preguntas-la-tienen-que-contestar-en-una-asignación."><i class="fa fa-check"></i><b>13.12.1</b> QUIZ: estas preguntas la tienen que contestar en una asignación.</a></li>
+<li class="chapter" data-level="13.12.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#quiz-estas-preguntas-la-tienen-que-contestar-en-una-asignaci%C3%B3n."><i class="fa fa-check"></i><b>13.12.1</b> QUIZ: estas preguntas la tienen que contestar en una asignación.</a></li>
 </ul></li>
 <li class="chapter" data-level="13.13" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#pruebas-de-t-un-muesteo"><i class="fa fa-check"></i><b>13.13</b> Pruebas de t un muesteo</a></li>
 <li class="chapter" data-level="13.14" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#propinas"><i class="fa fa-check"></i><b>13.14</b> Propinas</a></li>
-<li class="chapter" data-level="13.15" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#cómo-graficar-el-resultado-de-una-prueba-t"><i class="fa fa-check"></i><b>13.15</b> ¿Cómo graficar el resultado de una prueba t?</a></li>
-<li class="chapter" data-level="13.16" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#ejercicio-de-práctica-1-amigos-de-facebook"><i class="fa fa-check"></i><b>13.16</b> Ejercicio de práctica 1: Amigos de Facebook</a></li>
-<li class="chapter" data-level="13.17" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#ejercicio-de-práctica-2-dias-de-enfermedades"><i class="fa fa-check"></i><b>13.17</b> Ejercicio de práctica 2: Dias de enfermedades</a></li>
+<li class="chapter" data-level="13.15" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#c%C3%B3mo-graficar-el-resultado-de-una-prueba-t"><i class="fa fa-check"></i><b>13.15</b> ¿Cómo graficar el resultado de una prueba t?</a></li>
+<li class="chapter" data-level="13.16" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejercicio-de-pr%C3%A1ctica-1-amigos-de-facebook"><i class="fa fa-check"></i><b>13.16</b> Ejercicio de práctica 1: Amigos de Facebook</a></li>
+<li class="chapter" data-level="13.17" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejercicio-de-pr%C3%A1ctica-2-dias-de-enfermedades"><i class="fa fa-check"></i><b>13.17</b> Ejercicio de práctica 2: Dias de enfermedades</a></li>
+<li class="chapter" data-level="13.18" data-path="prueba-de-una-muestra.html"><a href="prueba-de-una-muestra.html#supuesto"><i class="fa fa-check"></i><b>13.18</b> <strong>Supuesto</strong></a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html"><i class="fa fa-check"></i><b>14</b> Prueba de t pareados</a>
 <ul>
 <li class="chapter" data-level="14.1" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#datos-dependientes"><i class="fa fa-check"></i><b>14.1</b> Datos dependientes</a></li>
-<li class="chapter" data-level="14.2" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#visualizar-la-correlación"><i class="fa fa-check"></i><b>14.2</b> Visualizar la correlación</a></li>
+<li class="chapter" data-level="14.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#visualizar-la-correlaci%C3%B3n"><i class="fa fa-check"></i><b>14.2</b> Visualizar la correlación</a></li>
 <li class="chapter" data-level="14.3" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#la-prueba-de-t-pareado"><i class="fa fa-check"></i><b>14.3</b> La prueba de t-pareado</a></li>
 <li class="chapter" data-level="14.4" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#visualizar-la-diferencias"><i class="fa fa-check"></i><b>14.4</b> Visualizar la diferencias</a>
 <ul>
 <li class="chapter" data-level="14.4.1" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#supuesto-de-normalidad-1"><i class="fa fa-check"></i><b>14.4.1</b> Supuesto de normalidad</a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#paired-t-test-números-de-niños-abuela-y-madre"><i class="fa fa-check"></i><b>14.5</b> Paired t-test, Números de niños abuela y madre</a></li>
+<li class="chapter" data-level="14.5" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#paired-t-test-n%C3%BAmeros-de-ni%C3%B1os-abuela-y-madre"><i class="fa fa-check"></i><b>14.5</b> Paired t-test, Números de niños abuela y madre</a></li>
 <li class="chapter" data-level="14.6" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#ejercicio-de-clase"><i class="fa fa-check"></i><b>14.6</b> Ejercicio de clase</a></li>
 <li class="chapter" data-level="14.7" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#cultivador-de-toronjas-con-parcelas-pareadas"><i class="fa fa-check"></i><b>14.7</b> Cultivador de Toronjas con parcelas pareadas</a></li>
-<li class="chapter" data-level="14.8" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#el-número-de-hojas-por-planta-en-diferentes-momentos-tiempo."><i class="fa fa-check"></i><b>14.8</b> El número de Hojas por planta en diferentes momentos (tiempo).</a></li>
+<li class="chapter" data-level="14.8" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#el-n%C3%BAmero-de-hojas-por-planta-en-diferentes-momentos-tiempo."><i class="fa fa-check"></i><b>14.8</b> El número de Hojas por planta en diferentes momentos (tiempo).</a></li>
 <li class="chapter" data-level="14.9" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#anxiedad-y-alacranes"><i class="fa fa-check"></i><b>14.9</b> Anxiedad y Alacranes</a></li>
 <li class="chapter" data-level="14.10" data-path="prueba-de-t-pareados.html"><a href="prueba-de-t-pareados.html#supuestos-de-la-prueba-de-t-con-datos-pareados."><i class="fa fa-check"></i><b>14.10</b> Supuestos de la prueba de t con datos pareados.</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html"><i class="fa fa-check"></i><b>15</b> Prueba de t con datos independientes</a>
 <ul>
 <li class="chapter" data-level="15.1" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#la-prueba-t-con-datos-independiente"><i class="fa fa-check"></i><b>15.1</b> La prueba t con datos independiente</a></li>
-<li class="chapter" data-level="15.2" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#las-hipótesis"><i class="fa fa-check"></i><b>15.2</b> Las hipótesis</a>
+<li class="chapter" data-level="15.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#las-hip%C3%B3tesis"><i class="fa fa-check"></i><b>15.2</b> Las hipótesis</a>
 <ul>
 <li class="chapter" data-level="15.2.1" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#la-nula"><i class="fa fa-check"></i><b>15.2.1</b> La Nula</a></li>
 <li class="chapter" data-level="15.2.2" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#la-alterna"><i class="fa fa-check"></i><b>15.2.2</b> La Alterna</a></li>
 </ul></li>
-<li class="chapter" data-level="15.3" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#comparación-de-dos-grupos"><i class="fa fa-check"></i><b>15.3</b> Comparación de dos grupos</a>
+<li class="chapter" data-level="15.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#comparaci%C3%B3n-de-dos-grupos"><i class="fa fa-check"></i><b>15.3</b> Comparación de dos grupos</a>
 <ul>
 <li class="chapter" data-level="15.3.1" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#la-prueba-t"><i class="fa fa-check"></i><b>15.3.1</b> La prueba t</a></li>
 </ul></li>
-<li class="chapter" data-level="15.4" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#gráficar-el-promedio-y-el-intervalo-de-confianza"><i class="fa fa-check"></i><b>15.4</b> Gráficar el promedio y el intervalo de confianza</a></li>
+<li class="chapter" data-level="15.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#gr%C3%A1ficar-el-promedio-y-el-intervalo-de-confianza"><i class="fa fa-check"></i><b>15.4</b> Gráficar el promedio y el intervalo de confianza</a></li>
 <li class="chapter" data-level="15.5" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#pruebas-de-normalidades"><i class="fa fa-check"></i><b>15.5</b> Pruebas de normalidades</a></li>
-<li class="chapter" data-level="15.6" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#visualización-de-los-datos"><i class="fa fa-check"></i><b>15.6</b> Visualización de los datos</a></li>
+<li class="chapter" data-level="15.6" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#visualizaci%C3%B3n-de-los-datos"><i class="fa fa-check"></i><b>15.6</b> Visualización de los datos</a></li>
 <li class="chapter" data-level="15.7" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#shapiro-wilks-prueba-de-normalidad"><i class="fa fa-check"></i><b>15.7</b> Shapiro-Wilks: Prueba de normalidad</a>
 <ul>
-<li class="chapter" data-level="15.7.1" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#evaluar-si-la-distribución-cumple-con-una-distribución-normal"><i class="fa fa-check"></i><b>15.7.1</b> Evaluar si la distribución cumple con una distribución normal</a></li>
+<li class="chapter" data-level="15.7.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#evaluar-si-la-distribuci%C3%B3n-cumple-con-una-distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>15.7.1</b> Evaluar si la distribución cumple con una distribución normal</a></li>
 <li class="chapter" data-level="15.7.2" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#metodo-1-shapiro.test"><i class="fa fa-check"></i><b>15.7.2</b> Metodo #1: shapiro.test()</a></li>
 <li class="chapter" data-level="15.7.3" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#method-2-byf.shapiro"><i class="fa fa-check"></i><b>15.7.3</b> Method 2: byf.shapiro()</a></li>
 </ul></li>
@@ -455,19 +457,20 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="15.9" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#la-prueba-de-bartlett"><i class="fa fa-check"></i><b>15.9</b> La prueba de Bartlett</a></li>
 <li class="chapter" data-level="15.10" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#prueba-de-levene-para-igualdad-de-varianza"><i class="fa fa-check"></i><b>15.10</b> Prueba de Levene para igualdad de Varianza</a></li>
 <li class="chapter" data-level="15.11" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#prueba-de-fligner-killeen-para-igualdad-de-varianza"><i class="fa fa-check"></i><b>15.11</b> Prueba de Fligner-Killeen para igualdad de Varianza</a></li>
+<li class="chapter" data-level="15.12" data-path="prueba-de-t-con-datos-independientes.html"><a href="prueba-de-t-con-datos-independientes.html#los-supuestos-de-la-prueba-t-de-dos-grupos-independientes"><i class="fa fa-check"></i><b>15.12</b> Los supuestos de la prueba t de dos grupos independientes</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>16</b> ANOVA</a>
 <ul>
 <li class="chapter" data-level="16.0.1" data-path="anova.html"><a href="anova.html#instalar-libreria-si-es-necesario"><i class="fa fa-check"></i><b>16.0.1</b> Instalar libreria si es necesario</a></li>
 <li class="chapter" data-level="16.0.2" data-path="anova.html"><a href="anova.html#activar-libreria"><i class="fa fa-check"></i><b>16.0.2</b> Activar libreria</a></li>
 <li class="chapter" data-level="16.1" data-path="anova.html"><a href="anova.html#anova-1"><i class="fa fa-check"></i><b>16.1</b> ANOVA</a></li>
-<li class="chapter" data-level="16.2" data-path="anova.html"><a href="anova.html#hipótesis-en-anova"><i class="fa fa-check"></i><b>16.2</b> Hipótesis en ANOVA</a></li>
+<li class="chapter" data-level="16.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#hip%C3%B3tesis-en-anova"><i class="fa fa-check"></i><b>16.2</b> Hipótesis en ANOVA</a></li>
 <li class="chapter" data-level="16.3" data-path="anova.html"><a href="anova.html#crear-un-conjunto-de-datos"><i class="fa fa-check"></i><b>16.3</b> Crear un conjunto de datos</a></li>
 <li class="chapter" data-level="16.4" data-path="anova.html"><a href="anova.html#visualizar-los-datos"><i class="fa fa-check"></i><b>16.4</b> Visualizar los datos</a></li>
-<li class="chapter" data-level="16.5" data-path="anova.html"><a href="anova.html#gráficar-los-datos"><i class="fa fa-check"></i><b>16.5</b> Gráficar los datos</a></li>
-<li class="chapter" data-level="16.6" data-path="anova.html"><a href="anova.html#un-gráfico-con-el-intervalo-de-confianza."><i class="fa fa-check"></i><b>16.6</b> Un gráfico con el intervalo de confianza.</a></li>
+<li class="chapter" data-level="16.5" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#gr%C3%A1ficar-los-datos"><i class="fa fa-check"></i><b>16.5</b> Gráficar los datos</a></li>
+<li class="chapter" data-level="16.6" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#un-gr%C3%A1fico-con-el-intervalo-de-confianza."><i class="fa fa-check"></i><b>16.6</b> Un gráfico con el intervalo de confianza.</a></li>
 <li class="chapter" data-level="16.7" data-path="anova.html"><a href="anova.html#graficar-con-nuestro-nuevo-data-frame-sum."><i class="fa fa-check"></i><b>16.7</b> Graficar con nuestro nuevo data frame “sum”.</a></li>
-<li class="chapter" data-level="16.8" data-path="anova.html"><a href="anova.html#estadística-descriptiva-de-los-lagos"><i class="fa fa-check"></i><b>16.8</b> Estadística descriptiva de los Lagos</a></li>
+<li class="chapter" data-level="16.8" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#estad%C3%ADstica-descriptiva-de-los-lagos"><i class="fa fa-check"></i><b>16.8</b> Estadística descriptiva de los Lagos</a></li>
 <li class="chapter" data-level="16.9" data-path="anova.html"><a href="anova.html#los-supuestos-de-anova"><i class="fa fa-check"></i><b>16.9</b> Los supuestos de ANOVA</a></li>
 <li class="chapter" data-level="16.10" data-path="anova.html"><a href="anova.html#datos-al-azar"><i class="fa fa-check"></i><b>16.10</b> Datos al azar</a></li>
 <li class="chapter" data-level="16.11" data-path="anova.html"><a href="anova.html#datos-continuos"><i class="fa fa-check"></i><b>16.11</b> 1. Datos Continuos</a></li>
@@ -479,9 +482,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.17" data-path="anova.html"><a href="anova.html#prueba-de-tukey"><i class="fa fa-check"></i><b>16.17</b> Prueba de Tukey</a></li>
 <li class="chapter" data-level="16.18" data-path="anova.html"><a href="anova.html#super-heroes-and-injuries"><i class="fa fa-check"></i><b>16.18</b> SUPER HEROES and INJURIES</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="correlación-y-covarianza.html"><a href="correlación-y-covarianza.html"><i class="fa fa-check"></i><b>17</b> Correlación y Covarianza</a>
+<li class="chapter" data-level="17" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#correlaci%C3%B3n-y-covarianza"><i class="fa fa-check"></i><b>17</b> Correlación y Covarianza</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="correlación-y-covarianza.html"><a href="correlación-y-covarianza.html#a-detour-in-the-murky-world-of-covariance"><i class="fa fa-check"></i><b>17.1</b> A detour in the Murky world of covariance</a>
+<li class="chapter" data-level="17.1" data-path="correlación-y-covarianza.html"><a href="correlación-y-covarianza.html"><i class="fa fa-check"></i><b>17.1</b> A detour in the Murky world of covariance</a>
 <ul>
 <li class="chapter" data-level="17.1.1" data-path="correlación-y-covarianza.html"><a href="correlación-y-covarianza.html#understanding-covariance-one-needs-to-understand-variance-equation."><i class="fa fa-check"></i><b>17.1.1</b> Understanding covariance one needs to understand variance equation.</a></li>
 <li class="chapter" data-level="17.1.2" data-path="correlación-y-covarianza.html"><a href="correlación-y-covarianza.html#while-the-covariance-is-the-cross-product-of-the-deviation"><i class="fa fa-check"></i><b>17.1.2</b> While the Covariance is the cross product of the deviation</a></li>
@@ -494,23 +497,23 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.5.1" data-path="correlación-y-covarianza.html"><a href="correlación-y-covarianza.html#bootstrapping-correlation"><i class="fa fa-check"></i><b>17.5.1</b> Bootstrapping Correlation</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="18" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html"><i class="fa fa-check"></i><b>18</b> Regresión Lineal</a>
+<li class="chapter" data-level="18" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#regresi%C3%B3n-lineal-1"><i class="fa fa-check"></i><b>18</b> Regresión Lineal</a>
 <ul>
-<li class="chapter" data-level="18.1" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#la-función-lm"><i class="fa fa-check"></i><b>18.1</b> la función lm()</a></li>
-<li class="chapter" data-level="18.2" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#visualización-de-la-regresión"><i class="fa fa-check"></i><b>18.2</b> Visualización de la regresión</a></li>
-<li class="chapter" data-level="18.3" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#el-impacto-de-valores-atípico"><i class="fa fa-check"></i><b>18.3</b> El impacto de valores atípico</a></li>
-<li class="chapter" data-level="18.4" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#la-venta-de-discos-de-música"><i class="fa fa-check"></i><b>18.4</b> La venta de discos de música</a>
+<li class="chapter" data-level="18.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-funci%C3%B3n-lm"><i class="fa fa-check"></i><b>18.1</b> la función lm()</a></li>
+<li class="chapter" data-level="18.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#visualizaci%C3%B3n-de-la-regresi%C3%B3n"><i class="fa fa-check"></i><b>18.2</b> Visualización de la regresión</a></li>
+<li class="chapter" data-level="18.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#el-impacto-de-valores-at%C3%ADpico"><i class="fa fa-check"></i><b>18.3</b> El impacto de valores atípico</a></li>
+<li class="chapter" data-level="18.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-venta-de-discos-de-m%C3%BAsica"><i class="fa fa-check"></i><b>18.4</b> La venta de discos de música</a>
 <ul>
-<li class="chapter" data-level="18.4.1" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#supuestos-de-la-regresión-lineal"><i class="fa fa-check"></i><b>18.4.1</b> Supuestos de la regresión lineal</a></li>
+<li class="chapter" data-level="18.4.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#supuestos-de-la-regresi%C3%B3n-lineal"><i class="fa fa-check"></i><b>18.4.1</b> Supuestos de la regresión lineal</a></li>
 </ul></li>
-<li class="chapter" data-level="18.5" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#cooks-distance"><i class="fa fa-check"></i><b>18.5</b> Cook’s Distance</a></li>
+<li class="chapter" data-level="18.5" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html"><i class="fa fa-check"></i><b>18.5</b> Cook’s Distance</a></li>
 <li class="chapter" data-level="18.6" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#repaso-de-los-pasos"><i class="fa fa-check"></i><b>18.6</b> Repaso de los PASOS</a></li>
 <li class="chapter" data-level="18.7" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#paso-1"><i class="fa fa-check"></i><b>18.7</b> Paso 1</a>
 <ul>
 <li class="chapter" data-level="18.7.1" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#paso-2"><i class="fa fa-check"></i><b>18.7.1</b> Paso 2</a></li>
 </ul></li>
 <li class="chapter" data-level="18.8" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#paso-3"><i class="fa fa-check"></i><b>18.8</b> Paso 3</a></li>
-<li class="chapter" data-level="18.9" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#alternativa-para-gráficar-los-residuales"><i class="fa fa-check"></i><b>18.9</b> Alternativa para Gráficar los residuales</a>
+<li class="chapter" data-level="18.9" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#alternativa-para-gr%C3%A1ficar-los-residuales"><i class="fa fa-check"></i><b>18.9</b> Alternativa para Gráficar los residuales</a>
 <ul>
 <li class="chapter" data-level="18.9.1" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#plot-the-residuals-and-the-fitted-values"><i class="fa fa-check"></i><b>18.9.1</b> Plot the residuals and the fitted values</a></li>
 </ul></li>
@@ -519,54 +522,54 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="18.12" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#ejercicio-2"><i class="fa fa-check"></i><b>18.12</b> Ejercicio #2</a></li>
 <li class="chapter" data-level="18.13" data-path="regresión-lineal-1.html"><a href="regresión-lineal-1.html#datos-sobre-la-orquidea-dipodium"><i class="fa fa-check"></i><b>18.13</b> Datos sobre la orquidea <strong>Dipodium</strong></a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="regresión-logistica.html"><a href="regresión-logistica.html"><i class="fa fa-check"></i><b>19</b> Regresión Logistica</a>
+<li class="chapter" data-level="19" data-path="regresion-logistica.html"><a href="regresion-logistica.html"><i class="fa fa-check"></i><b>19</b> Regresion Logistica</a>
 <ul>
-<li class="chapter" data-level="19.1" data-path="regresión-logistica.html"><a href="regresión-logistica.html#brassavola-cucullata"><i class="fa fa-check"></i><b>19.1</b> <em>Brassavola cucullata</em></a></li>
-<li class="chapter" data-level="19.2" data-path="regresión-logistica.html"><a href="regresión-logistica.html#la-variable-de-respuesta-y."><i class="fa fa-check"></i><b>19.2</b> La variable de respuesta, <strong>Y</strong>.</a></li>
-<li class="chapter" data-level="19.3" data-path="regresión-logistica.html"><a href="regresión-logistica.html#modelo-lineal-generalizado"><i class="fa fa-check"></i><b>19.3</b> Modelo Lineal Generalizado</a></li>
-<li class="chapter" data-level="19.4" data-path="regresión-logistica.html"><a href="regresión-logistica.html#los-supuestos-de-la-regresión-logistica."><i class="fa fa-check"></i><b>19.4</b> Los supuestos de la regresión logistica.</a></li>
-<li class="chapter" data-level="19.5" data-path="regresión-logistica.html"><a href="regresión-logistica.html#comparación-de-modelos-lineal-y-logistico"><i class="fa fa-check"></i><b>19.5</b> Comparación de modelos lineal y logistico</a></li>
-<li class="chapter" data-level="19.6" data-path="regresión-logistica.html"><a href="regresión-logistica.html#regresión-logística"><i class="fa fa-check"></i><b>19.6</b> Regresión logística:</a>
+<li class="chapter" data-level="19.1" data-path="regresion-logistica.html"><a href="regresion-logistica.html#brassavola-cucullata"><i class="fa fa-check"></i><b>19.1</b> <em>Brassavola cucullata</em></a></li>
+<li class="chapter" data-level="19.2" data-path="regresion-logistica.html"><a href="regresion-logistica.html#la-variable-de-respuesta-y."><i class="fa fa-check"></i><b>19.2</b> La variable de respuesta, <strong>Y</strong>.</a></li>
+<li class="chapter" data-level="19.3" data-path="regresion-logistica.html"><a href="regresion-logistica.html#modelo-lineal-generalizado"><i class="fa fa-check"></i><b>19.3</b> Modelo Lineal Generalizado</a></li>
+<li class="chapter" data-level="19.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#los-supuestos-de-la-regresi%C3%B3n-logistica."><i class="fa fa-check"></i><b>19.4</b> Los supuestos de la regresión logistica.</a></li>
+<li class="chapter" data-level="19.5" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#comparaci%C3%B3n-de-modelos-lineal-y-logistico"><i class="fa fa-check"></i><b>19.5</b> Comparación de modelos lineal y logistico</a></li>
+<li class="chapter" data-level="19.6" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#regresi%C3%B3n-log%C3%ADstica"><i class="fa fa-check"></i><b>19.6</b> Regresión logística:</a>
 <ul>
-<li class="chapter" data-level="19.6.1" data-path="regresión-logistica.html"><a href="regresión-logistica.html#generalized-linear-model-glm"><i class="fa fa-check"></i><b>19.6.1</b> Generalized Linear Model = glm</a></li>
-<li class="chapter" data-level="19.6.2" data-path="regresión-logistica.html"><a href="regresión-logistica.html#removiendo-el-intercepto"><i class="fa fa-check"></i><b>19.6.2</b> Removiendo el intercepto</a></li>
-<li class="chapter" data-level="19.6.3" data-path="regresión-logistica.html"><a href="regresión-logistica.html#estimado-las-probabilidades"><i class="fa fa-check"></i><b>19.6.3</b> Estimado las probabilidades</a></li>
+<li class="chapter" data-level="19.6.1" data-path="regresion-logistica.html"><a href="regresion-logistica.html#generalized-linear-model-glm"><i class="fa fa-check"></i><b>19.6.1</b> Generalized Linear Model = glm</a></li>
+<li class="chapter" data-level="19.6.2" data-path="regresion-logistica.html"><a href="regresion-logistica.html#removiendo-el-intercepto"><i class="fa fa-check"></i><b>19.6.2</b> Removiendo el intercepto</a></li>
+<li class="chapter" data-level="19.6.3" data-path="regresion-logistica.html"><a href="regresion-logistica.html#estimado-las-probabilidades"><i class="fa fa-check"></i><b>19.6.3</b> Estimado las probabilidades</a></li>
 </ul></li>
-<li class="chapter" data-level="19.7" data-path="regresión-logistica.html"><a href="regresión-logistica.html#visualizando-una-regresión-logistica"><i class="fa fa-check"></i><b>19.7</b> Visualizando una regresión logistica</a></li>
-<li class="chapter" data-level="19.8" data-path="regresión-logistica.html"><a href="regresión-logistica.html#reducir-solapamiento-de-los-puntos"><i class="fa fa-check"></i><b>19.8</b> Reducir solapamiento de los puntos</a></li>
-<li class="chapter" data-level="19.9" data-path="regresión-logistica.html"><a href="regresión-logistica.html#gráfico-con-ajuste-binomial"><i class="fa fa-check"></i><b>19.9</b> Gráfico con ajuste binomial</a>
+<li class="chapter" data-level="19.7" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#visualizando-una-regresi%C3%B3n-logistica"><i class="fa fa-check"></i><b>19.7</b> Visualizando una regresión logistica</a></li>
+<li class="chapter" data-level="19.8" data-path="regresion-logistica.html"><a href="regresion-logistica.html#reducir-solapamiento-de-los-puntos"><i class="fa fa-check"></i><b>19.8</b> Reducir solapamiento de los puntos</a></li>
+<li class="chapter" data-level="19.9" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#gr%C3%A1fico-con-ajuste-binomial"><i class="fa fa-check"></i><b>19.9</b> Gráfico con ajuste binomial</a>
 <ul>
-<li class="chapter" data-level="19.9.1" data-path="regresión-logistica.html"><a href="regresión-logistica.html#el-modelo-de-regresión-binomial"><i class="fa fa-check"></i><b>19.9.1</b> El modelo de regresión binomial</a></li>
-<li class="chapter" data-level="19.9.2" data-path="regresión-logistica.html"><a href="regresión-logistica.html#vusualizando-diferentes-grupos"><i class="fa fa-check"></i><b>19.9.2</b> Vusualizando diferentes grupos</a></li>
+<li class="chapter" data-level="19.9.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#el-modelo-de-regresi%C3%B3n-binomial"><i class="fa fa-check"></i><b>19.9.1</b> El modelo de regresión binomial</a></li>
+<li class="chapter" data-level="19.9.2" data-path="regresion-logistica.html"><a href="regresion-logistica.html#vusualizando-diferentes-grupos"><i class="fa fa-check"></i><b>19.9.2</b> Vusualizando diferentes grupos</a></li>
 </ul></li>
-<li class="chapter" data-level="19.10" data-path="regresión-logistica.html"><a href="regresión-logistica.html#solapamiento-de-los-ajustes-binomial-por-grupo"><i class="fa fa-check"></i><b>19.10</b> Solapamiento de los ajustes binomial por grupo</a>
+<li class="chapter" data-level="19.10" data-path="regresion-logistica.html"><a href="regresion-logistica.html#solapamiento-de-los-ajustes-binomial-por-grupo"><i class="fa fa-check"></i><b>19.10</b> Solapamiento de los ajustes binomial por grupo</a>
 <ul>
-<li class="chapter" data-level="19.10.1" data-path="regresión-logistica.html"><a href="regresión-logistica.html#evaluate-using-the-length-of-the-longest-leaf"><i class="fa fa-check"></i><b>19.10.1</b> Evaluate using the Length of the longest leaf</a></li>
-<li class="chapter" data-level="19.10.2" data-path="regresión-logistica.html"><a href="regresión-logistica.html#remover-el-valor-sesgado"><i class="fa fa-check"></i><b>19.10.2</b> Remover el valor sesgado</a></li>
+<li class="chapter" data-level="19.10.1" data-path="regresion-logistica.html"><a href="regresion-logistica.html#evaluate-using-the-length-of-the-longest-leaf"><i class="fa fa-check"></i><b>19.10.1</b> Evaluate using the Length of the longest leaf</a></li>
+<li class="chapter" data-level="19.10.2" data-path="regresion-logistica.html"><a href="regresion-logistica.html#remover-el-valor-sesgado"><i class="fa fa-check"></i><b>19.10.2</b> Remover el valor sesgado</a></li>
 </ul></li>
-<li class="chapter" data-level="19.11" data-path="regresión-logistica.html"><a href="regresión-logistica.html#selecionar-el-mejor-modelo"><i class="fa fa-check"></i><b>19.11</b> Selecionar el mejor modelo</a></li>
+<li class="chapter" data-level="19.11" data-path="regresion-logistica.html"><a href="regresion-logistica.html#selecionar-el-mejor-modelo"><i class="fa fa-check"></i><b>19.11</b> Selecionar el mejor modelo</a></li>
 </ul></li>
 <li class="chapter" data-level="20" data-path="selecionando-modelos-con-akaike.html"><a href="selecionando-modelos-con-akaike.html"><i class="fa fa-check"></i><b>20</b> Selecionando modelos con AKAIKE</a>
 <ul>
-<li class="chapter" data-level="20.1" data-path="selecionando-modelos-con-akaike.html"><a href="selecionando-modelos-con-akaike.html#datos-hipótesis-y-modelos"><i class="fa fa-check"></i><b>20.1</b> Datos, hipótesis y modelos</a></li>
+<li class="chapter" data-level="20.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#datos-hip%C3%B3tesis-y-modelos"><i class="fa fa-check"></i><b>20.1</b> Datos, hipótesis y modelos</a></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html"><i class="fa fa-check"></i><b>21</b> #Como funciona la selección de modelos?</a>
+<li class="chapter" data-level="21" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#como-funciona-la-selecci%C3%B3n-de-modelos"><i class="fa fa-check"></i><b>21</b> #Como funciona la selección de modelos?</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#r2"><i class="fa fa-check"></i><b>21.1</b> <span class="math inline">\(R^2\)</span></a>
+<li class="chapter" data-level="21.1" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html"><i class="fa fa-check"></i><b>21.1</b> <span class="math inline">\(R^2\)</span></a>
 <ul>
-<li class="chapter" data-level="21.1.1" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#ejemplo-de-construcción-de-selección-por-r2"><i class="fa fa-check"></i><b>21.1.1</b> Ejemplo de Construcción de selección por <span class="math inline">\(R^2\)</span></a></li>
+<li class="chapter" data-level="21.1.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejemplo-de-construcci%C3%B3n-de-selecci%C3%B3n-por-r2"><i class="fa fa-check"></i><b>21.1.1</b> Ejemplo de Construcción de selección por <span class="math inline">\(R^2\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="21.2" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#pruebas-de-modelos-nulos"><i class="fa fa-check"></i><b>21.2</b> Pruebas de modelos nulos</a></li>
-<li class="chapter" data-level="21.3" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#cual-método-es-más-apropriado"><i class="fa fa-check"></i><b>21.3</b> Cual método es más apropriado?</a></li>
-<li class="chapter" data-level="21.4" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#estimación-de-parámetros-y-múltiples-modelos"><i class="fa fa-check"></i><b>21.4</b> Estimación de parámetros y múltiples modelos</a></li>
-<li class="chapter" data-level="21.5" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#selección-de-modelos-entre-muchos"><i class="fa fa-check"></i><b>21.5</b> Selección de Modelos entre muchos</a></li>
+<li class="chapter" data-level="21.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cual-m%C3%A9todo-es-m%C3%A1s-apropriado"><i class="fa fa-check"></i><b>21.3</b> Cual método es más apropriado?</a></li>
+<li class="chapter" data-level="21.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#estimaci%C3%B3n-de-par%C3%A1metros-y-m%C3%BAltiples-modelos"><i class="fa fa-check"></i><b>21.4</b> Estimación de parámetros y múltiples modelos</a></li>
+<li class="chapter" data-level="21.5" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#selecci%C3%B3n-de-modelos-entre-muchos"><i class="fa fa-check"></i><b>21.5</b> Selección de Modelos entre muchos</a></li>
 <li class="chapter" data-level="21.6" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#model-averaging"><i class="fa fa-check"></i><b>21.6</b> Model Averaging:</a></li>
-<li class="chapter" data-level="21.7" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#inferencias-de-los-modelos-de-selección"><i class="fa fa-check"></i><b>21.7</b> Inferencias de los modelos de selección</a></li>
+<li class="chapter" data-level="21.7" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#inferencias-de-los-modelos-de-selecci%C3%B3n"><i class="fa fa-check"></i><b>21.7</b> Inferencias de los modelos de selección</a></li>
 <li class="chapter" data-level="21.8" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#paso-a-paso"><i class="fa fa-check"></i><b>21.8</b> Paso a Paso</a>
 <ul>
-<li class="chapter" data-level="21.8.1" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#primer-paso-construcción-de-los-modelos"><i class="fa fa-check"></i><b>21.8.1</b> Primer paso: Construcción de los modelos</a></li>
+<li class="chapter" data-level="21.8.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#primer-paso-construcci%C3%B3n-de-los-modelos"><i class="fa fa-check"></i><b>21.8.1</b> Primer paso: Construcción de los modelos</a></li>
 <li class="chapter" data-level="21.8.2" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#limpiar-los-datos"><i class="fa fa-check"></i><b>21.8.2</b> Limpiar los datos</a></li>
-<li class="chapter" data-level="21.8.3" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#construcción-del-modelo"><i class="fa fa-check"></i><b>21.8.3</b> Construcción del modelo</a></li>
+<li class="chapter" data-level="21.8.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#construcci%C3%B3n-del-modelo"><i class="fa fa-check"></i><b>21.8.3</b> Construcción del modelo</a></li>
 <li class="chapter" data-level="21.8.4" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#seleccionar-los-modelos"><i class="fa fa-check"></i><b>21.8.4</b> Seleccionar los modelos</a></li>
 <li class="chapter" data-level="21.8.5" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#extraer-los-parametros-del-modelo-usando-las-sigueientes-funciones"><i class="fa fa-check"></i><b>21.8.5</b> Extraer los parametros del modelo, usando las sigueientes funciones</a></li>
 <li class="chapter" data-level="21.8.6" data-path="como-funciona-la-selección-de-modelos.html"><a href="como-funciona-la-selección-de-modelos.html#intervalos-de-confianza"><i class="fa fa-check"></i><b>21.8.6</b> Intervalos de Confianza</a></li>
@@ -623,7 +626,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="appendix"><span><b>Appendix</b></span></li>
 <li class="chapter" data-level="A" data-path="ejercicios-a.html"><a href="ejercicios-a.html"><i class="fa fa-check"></i><b>A</b> Ejercicios A</a>
 <ul>
-<li class="chapter" data-level="A.1" data-path="ejercicios-a.html"><a href="ejercicios-a.html#en-esta-actividad-estarán-comenzando-a-utilizar-la-plataforma-r."><i class="fa fa-check"></i><b>A.1</b> En esta actividad estarán comenzando a utilizar la plataforma R.</a>
+<li class="chapter" data-level="A.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#en-esta-actividad-estar%C3%A1n-comenzando-a-utilizar-la-plataforma-r."><i class="fa fa-check"></i><b>A.1</b> En esta actividad estarán comenzando a utilizar la plataforma R.</a>
 <ul>
 <li class="chapter" data-level="A.1.1" data-path="ejercicios-a.html"><a href="ejercicios-a.html#primer-paso"><i class="fa fa-check"></i><b>A.1.1</b> Primer paso</a></li>
 <li class="chapter" data-level="A.1.2" data-path="ejercicios-a.html"><a href="ejercicios-a.html#segundo-paso"><i class="fa fa-check"></i><b>A.1.2</b> Segundo paso</a></li>
@@ -658,8 +661,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="D.1" data-path="ejercicios-d.html"><a href="ejercicios-d.html#anova-exercices"><i class="fa fa-check"></i><b>D.1</b> ANOVA exercices</a>
 <ul>
-<li class="chapter" data-level="D.1.1" data-path="ejercicios-d.html"><a href="ejercicios-d.html#el-estudiante-entregará-el-trabajo-en-el-formato-de-.html-en-msteam."><i class="fa fa-check"></i><b>D.1.1</b> El estudiante entregará el trabajo en el formato de .html en MSTeam.</a></li>
-<li class="chapter" data-level="D.1.2" data-path="ejercicios-d.html"><a href="ejercicios-d.html#los-datos-se-encuentrán-en-la-pestaña-del-website-debajo-los-datos-archivos-de-datos.-el-nombre-del-archivo-se-llama"><i class="fa fa-check"></i><b>D.1.2</b> Los datos se encuentrán en la pestaña del website debajo “Los Datos”, “Archivos de Datos”. El nombre del archivo se llama</a></li>
+<li class="chapter" data-level="D.1.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#el-estudiante-entregar%C3%A1-el-trabajo-en-el-formato-de-.html-en-msteam."><i class="fa fa-check"></i><b>D.1.1</b> El estudiante entregará el trabajo en el formato de .html en MSTeam.</a></li>
+<li class="chapter" data-level="D.1.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#los-datos-se-encuentr%C3%A1n-en-la-pesta%C3%B1a-del-website-debajo-los-datos-archivos-de-datos.-el-nombre-del-archivo-se-llama"><i class="fa fa-check"></i><b>D.1.2</b> Los datos se encuentrán en la pestaña del website debajo “Los Datos”, “Archivos de Datos”. El nombre del archivo se llama</a></li>
 <li class="chapter" data-level="D.1.3" data-path="ejercicios-d.html"><a href="ejercicios-d.html#human-birth-database"><i class="fa fa-check"></i><b>D.1.3</b> Human Birth Database</a></li>
 <li class="chapter" data-level="D.1.4" data-path="ejercicios-d.html"><a href="ejercicios-d.html#aqui-los-primeras-6-filas-del-df"><i class="fa fa-check"></i><b>D.1.4</b> Aqui los primeras 6 filas del df</a></li>
 </ul></li>
@@ -674,15 +677,15 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="F" data-path="ejercicios-f.html"><a href="ejercicios-f.html"><i class="fa fa-check"></i><b>F</b> Ejercicios F</a>
 <ul>
-<li class="chapter" data-level="F.1" data-path="ejercicios-f.html"><a href="ejercicios-f.html#ejercicio-de-corelación"><i class="fa fa-check"></i><b>F.1</b> Ejercicio de Corelación:</a>
+<li class="chapter" data-level="F.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejercicio-de-corelaci%C3%B3n"><i class="fa fa-check"></i><b>F.1</b> Ejercicio de Corelación:</a>
 <ul>
-<li class="chapter" data-level="F.1.1" data-path="ejercicios-f.html"><a href="ejercicios-f.html#despues-de-hacer-los-ejercicios-habrá-preguntas-en-msteam-para-contestar."><i class="fa fa-check"></i><b>F.1.1</b> Despues de hacer los ejercicios habrá preguntas en MSTeam para contestar.</a></li>
+<li class="chapter" data-level="F.1.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#despues-de-hacer-los-ejercicios-habr%C3%A1-preguntas-en-msteam-para-contestar."><i class="fa fa-check"></i><b>F.1.1</b> Despues de hacer los ejercicios habrá preguntas en MSTeam para contestar.</a></li>
 <li class="chapter" data-level="F.1.2" data-path="ejercicios-f.html"><a href="ejercicios-f.html#los-datos"><i class="fa fa-check"></i><b>F.1.2</b> Los Datos</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="G" data-path="ejercicios-g.html"><a href="ejercicios-g.html"><i class="fa fa-check"></i><b>G</b> Ejercicios G</a>
 <ul>
-<li class="chapter" data-level="G.1" data-path="ejercicios-g.html"><a href="ejercicios-g.html#regresión-logística-1"><i class="fa fa-check"></i><b>G.1</b> Regresión Logística</a>
+<li class="chapter" data-level="G.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#regresi%C3%B3n-log%C3%ADstica-1"><i class="fa fa-check"></i><b>G.1</b> Regresión Logística</a>
 <ul>
 <li class="chapter" data-level="G.1.1" data-path="ejercicios-g.html"><a href="ejercicios-g.html#karn-and-penrose-data-set"><i class="fa fa-check"></i><b>G.1.1</b> Karn and Penrose data Set</a></li>
 <li class="chapter" data-level="G.1.2" data-path="ejercicios-g.html"><a href="ejercicios-g.html#los-datos-1"><i class="fa fa-check"></i><b>G.1.2</b> Los Datos</a></li>
@@ -692,9 +695,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="H.1" data-path="ejercicios-h.html"><a href="ejercicios-h.html#bondad-de-ajuste"><i class="fa fa-check"></i><b>H.1</b> Bondad de Ajuste</a>
 <ul>
-<li class="chapter" data-level="H.1.1" data-path="ejercicios-h.html"><a href="ejercicios-h.html#encontrarán-dos-ejercicios-de-los-análisis-de-bondad-de-ajuste."><i class="fa fa-check"></i><b>H.1.1</b> Encontrarán dos ejercicios de los análisis de Bondad de Ajuste.</a></li>
+<li class="chapter" data-level="H.1.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#encontrar%C3%A1n-dos-ejercicios-de-los-an%C3%A1lisis-de-bondad-de-ajuste."><i class="fa fa-check"></i><b>H.1.1</b> Encontrarán dos ejercicios de los análisis de Bondad de Ajuste.</a></li>
 <li class="chapter" data-level="H.1.2" data-path="ejercicios-h.html"><a href="ejercicios-h.html#ejercicio-1-3"><i class="fa fa-check"></i><b>H.1.2</b> Ejercicio #1</a></li>
-<li class="chapter" data-level="H.1.3" data-path="ejercicios-h.html"><a href="ejercicios-h.html#musaraña"><i class="fa fa-check"></i><b>H.1.3</b> Musaraña</a></li>
+<li class="chapter" data-level="H.1.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#musara%C3%B1a"><i class="fa fa-check"></i><b>H.1.3</b> Musaraña</a></li>
 <li class="chapter" data-level="H.1.4" data-path="ejercicios-h.html"><a href="ejercicios-h.html#ejercicio-1-4"><i class="fa fa-check"></i><b>H.1.4</b> Ejercicio #1</a></li>
 <li class="chapter" data-level="H.1.5" data-path="ejercicios-h.html"><a href="ejercicios-h.html#mofetas-y-rabia"><i class="fa fa-check"></i><b>H.1.5</b> Mofetas y rabia</a></li>
 <li class="chapter" data-level="H.1.6" data-path="ejercicios-h.html"><a href="ejercicios-h.html#ahora-contesta-las-preguntas-en-msteam."><i class="fa fa-check"></i><b>H.1.6</b> AHORA contesta las preguntas en MSTeam.</a></li>
@@ -702,10 +705,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="I" data-path="ejercicios-i.html"><a href="ejercicios-i.html"><i class="fa fa-check"></i><b>I</b> Ejercicios I</a>
 <ul>
-<li class="chapter" data-level="I.1" data-path="ejercicios-i.html"><a href="ejercicios-i.html#evaluación-de-distribución-normal"><i class="fa fa-check"></i><b>I.1</b> Evaluación de distribución normal</a>
+<li class="chapter" data-level="I.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#evaluaci%C3%B3n-de-distribuci%C3%B3n-normal"><i class="fa fa-check"></i><b>I.1</b> Evaluación de distribución normal</a>
 <ul>
 <li class="chapter" data-level="I.1.1" data-path="ejercicios-i.html"><a href="ejercicios-i.html#construir-un-histograma-con-los-siguientes-datos"><i class="fa fa-check"></i><b>I.1.1</b> Construir un histograma con los siguientes datos</a></li>
-<li class="chapter" data-level="I.1.2" data-path="ejercicios-i.html"><a href="ejercicios-i.html#constuye-un-histograma-de-la-distribución-de-los-pesos-de-los-pajaros."><i class="fa fa-check"></i><b>I.1.2</b> Constuye un histograma de la distribución de los pesos de los pajaros.</a></li>
+<li class="chapter" data-level="I.1.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#constuye-un-histograma-de-la-distribuci%C3%B3n-de-los-pesos-de-los-pajaros."><i class="fa fa-check"></i><b>I.1.2</b> Constuye un histograma de la distribución de los pesos de los pajaros.</a></li>
 <li class="chapter" data-level="I.1.3" data-path="ejercicios-i.html"><a href="ejercicios-i.html#qqplot-1"><i class="fa fa-check"></i><b>I.1.3</b> QQPLOT</a></li>
 <li class="chapter" data-level="I.1.4" data-path="ejercicios-i.html"><a href="ejercicios-i.html#shapiro-wilk-test"><i class="fa fa-check"></i><b>I.1.4</b> Shapiro-Wilk test</a></li>
 <li class="chapter" data-level="I.1.5" data-path="ejercicios-i.html"><a href="ejercicios-i.html#anderson-darling"><i class="fa fa-check"></i><b>I.1.5</b> Anderson-Darling</a></li>
@@ -715,27 +718,27 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="J.1" data-path="ejercicios-j.html"><a href="ejercicios-j.html#pruebas-de-una-muestra"><i class="fa fa-check"></i><b>J.1</b> Pruebas de una muestra</a>
 <ul>
-<li class="chapter" data-level="J.1.1" data-path="ejercicios-j.html"><a href="ejercicios-j.html#ejercicio-de-práctica-1-amigos-de-facebook-1"><i class="fa fa-check"></i><b>J.1.1</b> Ejercicio de práctica 1: Amigos de Facebook</a></li>
-<li class="chapter" data-level="J.1.2" data-path="ejercicios-j.html"><a href="ejercicios-j.html#ejercicio-de-práctica-2-dias-de-enfermedades-1"><i class="fa fa-check"></i><b>J.1.2</b> Ejercicio de práctica 2: Dias de enfermedades</a></li>
+<li class="chapter" data-level="J.1.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejercicio-de-pr%C3%A1ctica-1-amigos-de-facebook-1"><i class="fa fa-check"></i><b>J.1.1</b> Ejercicio de práctica 1: Amigos de Facebook</a></li>
+<li class="chapter" data-level="J.1.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejercicio-de-pr%C3%A1ctica-2-dias-de-enfermedades-1"><i class="fa fa-check"></i><b>J.1.2</b> Ejercicio de práctica 2: Dias de enfermedades</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="K" data-path="ejercicios-k.html"><a href="ejercicios-k.html"><i class="fa fa-check"></i><b>K</b> Ejercicios K</a>
 <ul>
 <li class="chapter" data-level="K.1" data-path="ejercicios-k.html"><a href="ejercicios-k.html#prueba-de-t-con-datos-pareados."><i class="fa fa-check"></i><b>K.1</b> <strong>prueba de t con datos pareados</strong>.</a>
 <ul>
-<li class="chapter" data-level="K.1.1" data-path="ejercicios-k.html"><a href="ejercicios-k.html#el-siguiente-ejercicio-es-para-una-prueba-corta-donde-tendrán-que-contestar-en-msteam."><i class="fa fa-check"></i><b>K.1.1</b> El siguiente ejercicio es para una prueba corta donde tendrán que contestar en MSTeam.</a></li>
-<li class="chapter" data-level="K.1.2" data-path="ejercicios-k.html"><a href="ejercicios-k.html#calcula-el-promedio-y-la-desviación-estandard-del-número-de-hoja-en-cada-tiempo."><i class="fa fa-check"></i><b>K.1.2</b> 1. Calcula el promedio y la desviación estandard del número de hoja en cada tiempo.</a></li>
+<li class="chapter" data-level="K.1.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#el-siguiente-ejercicio-es-para-una-prueba-corta-donde-tendr%C3%A1n-que-contestar-en-msteam."><i class="fa fa-check"></i><b>K.1.1</b> El siguiente ejercicio es para una prueba corta donde tendrán que contestar en MSTeam.</a></li>
+<li class="chapter" data-level="K.1.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#calcula-el-promedio-y-la-desviaci%C3%B3n-estandard-del-n%C3%BAmero-de-hoja-en-cada-tiempo."><i class="fa fa-check"></i><b>K.1.2</b> 1. Calcula el promedio y la desviación estandard del número de hoja en cada tiempo.</a></li>
 <li class="chapter" data-level="K.1.3" data-path="ejercicios-k.html"><a href="ejercicios-k.html#haz-la-prueba-de-t-con-datos-pareados"><i class="fa fa-check"></i><b>K.1.3</b> 2. Haz la <em>prueba de t-con datos pareados</em></a></li>
-<li class="chapter" data-level="K.1.4" data-path="ejercicios-k.html"><a href="ejercicios-k.html#haz-un-gráficos-histograma-de-las-diferencias-entre-el-tiempo-t12-y-t1."><i class="fa fa-check"></i><b>K.1.4</b> 3. Haz un gráficos “histograma” de las diferencias entre el tiempo T12 y T1.</a></li>
+<li class="chapter" data-level="K.1.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#haz-un-gr%C3%A1ficos-histograma-de-las-diferencias-entre-el-tiempo-t12-y-t1."><i class="fa fa-check"></i><b>K.1.4</b> 3. Haz un gráficos “histograma” de las diferencias entre el tiempo T12 y T1.</a></li>
 <li class="chapter" data-level="K.1.5" data-path="ejercicios-k.html"><a href="ejercicios-k.html#determina-si-la-prueba-cumple-con-ellos-supuestos-de-una-prueba-de-t-con-datos-pareados"><i class="fa fa-check"></i><b>K.1.5</b> 4. Determina si la prueba cumple con el/los supuesto(s) de una prueba de t con datos pareados?</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="L" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><i class="fa fa-check"></i><b>L</b> Ejercicios sobre <strong>prueba de t con datos independiente</strong></a>
 <ul>
-<li class="chapter" data-level="L.1" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#el-siguiente-ejercicio-es-para-una-prueba-corta-donde-tendrán-que-contestar-en-msteam.-1"><i class="fa fa-check"></i><b>L.1</b> El siguiente ejercicio es para una prueba corta donde tendrán que contestar en MSTeam.</a>
+<li class="chapter" data-level="L.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#el-siguiente-ejercicio-es-para-una-prueba-corta-donde-tendr%C3%A1n-que-contestar-en-msteam.-1"><i class="fa fa-check"></i><b>L.1</b> El siguiente ejercicio es para una prueba corta donde tendrán que contestar en MSTeam.</a>
 <ul>
 <li class="chapter" data-level="L.1.1" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#tabla-de-que-es-igg-y-algunos-de-sus-causas"><i class="fa fa-check"></i><b>L.1.1</b> Tabla de que es IgG y algunos de sus causas</a></li>
-<li class="chapter" data-level="L.1.2" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#calcular-el-promedio-y-desviación-estandard-y-el-tamaño-de-muestra-de-los-dos-grupos-del-nivel-de-igg"><i class="fa fa-check"></i><b>L.1.2</b> 1. Calcular el promedio y desviación estandard y el tamaño de muestra de los dos grupos del nivel de IgG</a></li>
+<li class="chapter" data-level="L.1.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#calcular-el-promedio-y-desviaci%C3%B3n-estandard-y-el-tama%C3%B1o-de-muestra-de-los-dos-grupos-del-nivel-de-igg"><i class="fa fa-check"></i><b>L.1.2</b> 1. Calcular el promedio y desviación estandard y el tamaño de muestra de los dos grupos del nivel de IgG</a></li>
 <li class="chapter" data-level="L.1.3" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#hacer-la-prueba-para-evaluar-si-las-mujeres-y-hombres-tienen-un-igg-diferente"><i class="fa fa-check"></i><b>L.1.3</b> 2. Hacer la prueba para evaluar si las mujeres y hombres tienen un IgG diferente</a></li>
 <li class="chapter" data-level="L.1.4" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#haz-un-histograma-de-la-variable-igg-por-genero-a-un-color-diferente-por-gender"><i class="fa fa-check"></i><b>L.1.4</b> 3. Haz un histograma de la variable “IgG” por genero, a) un color diferente por “Gender”</a></li>
 <li class="chapter" data-level="L.1.5" data-path="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><a href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html#determina-si-la-prueba-cumple-con-ellos-supuestos-de-una-prueba-de-t-con-datos-independientes"><i class="fa fa-check"></i><b>L.1.5</b> 4. Determina si la prueba cumple con el/los supuesto(s) de una prueba de t con datos independientes?</a></li>
@@ -743,13 +746,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="M" data-path="ejercicios-m.html"><a href="ejercicios-m.html"><i class="fa fa-check"></i><b>M</b> Ejercicios M</a>
 <ul>
-<li class="chapter" data-level="M.1" data-path="ejercicios-m.html"><a href="ejercicios-m.html#ejercicio-de-regresión"><i class="fa fa-check"></i><b>M.1</b> Ejercicio de Regresión</a>
+<li class="chapter" data-level="M.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejercicio-de-regresi%C3%B3n"><i class="fa fa-check"></i><b>M.1</b> Ejercicio de Regresión</a>
 <ul>
 <li class="chapter" data-level="M.1.1" data-path="ejercicios-m.html"><a href="ejercicios-m.html#fungal-growth"><i class="fa fa-check"></i><b>M.1.1</b> Fungal growth</a></li>
 <li class="chapter" data-level="M.1.2" data-path="ejercicios-m.html"><a href="ejercicios-m.html#contesta-las-preguntas-en-msteam"><i class="fa fa-check"></i><b>M.1.2</b> Contesta las preguntas en MSTeam</a></li>
-<li class="chapter" data-level="M.1.3" data-path="ejercicios-m.html"><a href="ejercicios-m.html#distancia-de-las-estrellas-más-brillantes-de-las-que-son-100-años-luz-o-menos"><i class="fa fa-check"></i><b>M.1.3</b> Distancia de las estrellas más brillantes de las que son 100 años luz o menos</a></li>
-<li class="chapter" data-level="M.1.4" data-path="ejercicios-m.html"><a href="ejercicios-m.html#calcular-el-promedio-mediana-moda-y-rango-de-los-datos-de-las-estrellas-más-cercana-a-la-tierra"><i class="fa fa-check"></i><b>M.1.4</b> Calcular el promedio, mediana, moda y rango de los datos de las estrellas más cercana a la tierra</a></li>
-<li class="chapter" data-level="M.1.5" data-path="ejercicios-m.html"><a href="ejercicios-m.html#los-datos-representan-las-poblaciones-en-1000-en-puerto-rico-en-el-año-2020"><i class="fa fa-check"></i><b>M.1.5</b> Los datos representan las poblaciones (en 1’000) en Puerto Rico en el año 2020</a></li>
+<li class="chapter" data-level="M.1.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#distancia-de-las-estrellas-m%C3%A1s-brillantes-de-las-que-son-100-a%C3%B1os-luz-o-menos"><i class="fa fa-check"></i><b>M.1.3</b> Distancia de las estrellas más brillantes de las que son 100 años luz o menos</a></li>
+<li class="chapter" data-level="M.1.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#calcular-el-promedio-mediana-moda-y-rango-de-los-datos-de-las-estrellas-m%C3%A1s-cercana-a-la-tierra"><i class="fa fa-check"></i><b>M.1.4</b> Calcular el promedio, mediana, moda y rango de los datos de las estrellas más cercana a la tierra</a></li>
+<li class="chapter" data-level="M.1.5" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#los-datos-representan-las-poblaciones-en-1000-en-puerto-rico-en-el-a%C3%B1o-2020"><i class="fa fa-check"></i><b>M.1.5</b> Los datos representan las poblaciones (en 1’000) en Puerto Rico en el año 2020</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="N" data-path="ejercicios-n.html"><a href="ejercicios-n.html"><i class="fa fa-check"></i><b>N</b> Ejercicios N</a>
@@ -757,14 +760,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="N.1" data-path="ejercicios-n.html"><a href="ejercicios-n.html#ejercicios-de-tendencia-central"><i class="fa fa-check"></i><b>N.1</b> Ejercicios de tendencia central</a>
 <ul>
 <li class="chapter" data-level="N.1.1" data-path="ejercicios-n.html"><a href="ejercicios-n.html#los-datos-representan-la-cantidad-de-dinero-ganado-por-arttistas-fallecidos-en-milliones-de-dollares"><i class="fa fa-check"></i><b>N.1.1</b> Los datos representan la cantidad de dinero ganado por arttistas (fallecidos) en milliones de dollares</a></li>
-<li class="chapter" data-level="N.1.2" data-path="ejercicios-n.html"><a href="ejercicios-n.html#la-catidad-de-personas-fallecidos-en-acidentes-de-carro-en-año-especifico-en-los-50-estados."><i class="fa fa-check"></i><b>N.1.2</b> La catidad de personas fallecidos en acidentes de carro en año especifico en los 50 estados.</a></li>
-<li class="chapter" data-level="N.1.3" data-path="ejercicios-n.html"><a href="ejercicios-n.html#calcular-el-rango-varianza-desviación-estandard-y-error-estandard"><i class="fa fa-check"></i><b>N.1.3</b> Calcular el rango, varianza, desviación estandard y error estandard</a></li>
+<li class="chapter" data-level="N.1.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#la-catidad-de-personas-fallecidos-en-acidentes-de-carro-en-a%C3%B1o-especifico-en-los-50-estados."><i class="fa fa-check"></i><b>N.1.2</b> La catidad de personas fallecidos en acidentes de carro en año especifico en los 50 estados.</a></li>
+<li class="chapter" data-level="N.1.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#calcular-el-rango-varianza-desviaci%C3%B3n-estandard-y-error-estandard"><i class="fa fa-check"></i><b>N.1.3</b> Calcular el rango, varianza, desviación estandard y error estandard</a></li>
 <li class="chapter" data-level="N.1.4" data-path="ejercicios-n.html"><a href="ejercicios-n.html#haz-un-histograma-de-estos-datos"><i class="fa fa-check"></i><b>N.1.4</b> Haz un histograma de estos datos</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="O" data-path="ejercicio-o.html"><a href="ejercicio-o.html"><i class="fa fa-check"></i><b>O</b> Ejercicio O</a>
 <ul>
-<li class="chapter" data-level="O.1" data-path="ejercicio-o.html"><a href="ejercicio-o.html#ejercicios-de-dispersión"><i class="fa fa-check"></i><b>O.1</b> Ejercicios de dispersión</a>
+<li class="chapter" data-level="O.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejercicios-de-dispersi%C3%B3n"><i class="fa fa-check"></i><b>O.1</b> Ejercicios de dispersión</a>
 <ul>
 <li class="chapter" data-level="O.1.1" data-path="ejercicio-o.html"><a href="ejercicio-o.html#buscar-la-metadata"><i class="fa fa-check"></i><b>O.1.1</b> Buscar la metadata</a></li>
 <li class="chapter" data-level="O.1.2" data-path="ejercicio-o.html"><a href="ejercicio-o.html#visualizar-la-meta-data"><i class="fa fa-check"></i><b>O.1.2</b> Visualizar la meta data</a></li>
@@ -773,7 +776,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="O.1.5" data-path="ejercicio-o.html"><a href="ejercicio-o.html#importante"><i class="fa fa-check"></i><b>O.1.5</b> Importante</a></li>
 <li class="chapter" data-level="O.1.6" data-path="ejercicio-o.html"><a href="ejercicio-o.html#ejercicio-1-5"><i class="fa fa-check"></i><b>O.1.6</b> Ejercicio 1</a></li>
 <li class="chapter" data-level="O.1.7" data-path="ejercicio-o.html"><a href="ejercicio-o.html#ejercicio-2-2"><i class="fa fa-check"></i><b>O.1.7</b> Ejercicio 2</a></li>
-<li class="chapter" data-level="O.1.8" data-path="ejercicio-o.html"><a href="ejercicio-o.html#discusión"><i class="fa fa-check"></i><b>O.1.8</b> Discusión</a></li>
+<li class="chapter" data-level="O.1.8" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#discusi%C3%B3n"><i class="fa fa-check"></i><b>O.1.8</b> Discusión</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="P" data-path="ejercicios-p.html"><a href="ejercicios-p.html"><i class="fa fa-check"></i><b>P</b> Ejercicios P</a>
@@ -781,7 +784,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="P.1" data-path="ejercicios-p.html"><a href="ejercicios-p.html#ejercicios-de-pruebas-de-frecuencia"><i class="fa fa-check"></i><b>P.1</b> Ejercicios de Pruebas de Frecuencia</a>
 <ul>
 <li class="chapter" data-level="P.1.1" data-path="ejercicios-p.html"><a href="ejercicios-p.html#capitulo-7"><i class="fa fa-check"></i><b>P.1.1</b> Capitulo 7</a></li>
-<li class="chapter" data-level="P.1.2" data-path="ejercicios-p.html"><a href="ejercicios-p.html#ejericico-de-práctica-no-para-someter"><i class="fa fa-check"></i><b>P.1.2</b> Ejericico de Práctica (no para someter)</a></li>
+<li class="chapter" data-level="P.1.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#ejericico-de-pr%C3%A1ctica-no-para-someter"><i class="fa fa-check"></i><b>P.1.2</b> Ejericico de Práctica (no para someter)</a></li>
 <li class="chapter" data-level="P.1.3" data-path="ejercicios-p.html"><a href="ejercicios-p.html#ejercicio-para-someter."><i class="fa fa-check"></i><b>P.1.3</b> Ejercicio para someter.</a></li>
 </ul></li>
 </ul></li>
@@ -798,17 +801,17 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="Q.6" data-path="data.html"><a href="data.html#datos-de-karn-and-penrose"><i class="fa fa-check"></i><b>Q.6</b> Datos de Karn and Penrose</a></li>
 <li class="chapter" data-level="Q.7" data-path="data.html"><a href="data.html#introductory-biological-statistics"><i class="fa fa-check"></i><b>Q.7</b> Introductory Biological Statistics</a>
 <ul>
-<li class="chapter" data-level="Q.7.1" data-path="data.html"><a href="data.html#capítulo-3"><i class="fa fa-check"></i><b>Q.7.1</b> Capítulo 3</a></li>
-<li class="chapter" data-level="Q.7.2" data-path="data.html"><a href="data.html#capítulo-4"><i class="fa fa-check"></i><b>Q.7.2</b> Capítulo 4</a></li>
-<li class="chapter" data-level="Q.7.3" data-path="data.html"><a href="data.html#capítulo-9"><i class="fa fa-check"></i><b>Q.7.3</b> Capítulo 9</a></li>
-<li class="chapter" data-level="Q.7.4" data-path="data.html"><a href="data.html#capítulo-10"><i class="fa fa-check"></i><b>Q.7.4</b> Capítulo 10</a></li>
-<li class="chapter" data-level="Q.7.5" data-path="data.html"><a href="data.html#capítulo-11"><i class="fa fa-check"></i><b>Q.7.5</b> Capítulo 11</a></li>
-<li class="chapter" data-level="Q.7.6" data-path="data.html"><a href="data.html#capítulo-12"><i class="fa fa-check"></i><b>Q.7.6</b> Capítulo 12</a></li>
+<li class="chapter" data-level="Q.7.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cap%C3%ADtulo-3"><i class="fa fa-check"></i><b>Q.7.1</b> Capítulo 3</a></li>
+<li class="chapter" data-level="Q.7.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cap%C3%ADtulo-4"><i class="fa fa-check"></i><b>Q.7.2</b> Capítulo 4</a></li>
+<li class="chapter" data-level="Q.7.3" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cap%C3%ADtulo-9"><i class="fa fa-check"></i><b>Q.7.3</b> Capítulo 9</a></li>
+<li class="chapter" data-level="Q.7.4" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cap%C3%ADtulo-10"><i class="fa fa-check"></i><b>Q.7.4</b> Capítulo 10</a></li>
+<li class="chapter" data-level="Q.7.5" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cap%C3%ADtulo-11"><i class="fa fa-check"></i><b>Q.7.5</b> Capítulo 11</a></li>
+<li class="chapter" data-level="Q.7.6" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cap%C3%ADtulo-12"><i class="fa fa-check"></i><b>Q.7.6</b> Capítulo 12</a></li>
 </ul></li>
 <li class="chapter" data-level="Q.8" data-path="data.html"><a href="data.html#aqui-una-lista-y-los-archivos-de-datos"><i class="fa fa-check"></i><b>Q.8</b> Aqui una lista y los archivos de datos</a>
 <ul>
-<li class="chapter" data-level="Q.8.1" data-path="data.html"><a href="data.html#capítulo-13"><i class="fa fa-check"></i><b>Q.8.1</b> Capítulo 13</a></li>
-<li class="chapter" data-level="Q.8.2" data-path="data.html"><a href="data.html#capítulo-14"><i class="fa fa-check"></i><b>Q.8.2</b> Capítulo 14</a></li>
+<li class="chapter" data-level="Q.8.1" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cap%C3%ADtulo-13"><i class="fa fa-check"></i><b>Q.8.1</b> Capítulo 13</a></li>
+<li class="chapter" data-level="Q.8.2" data-path="06-Medidas_de_tendencias_centrales.html"><a href="#cap%C3%ADtulo-14"><i class="fa fa-check"></i><b>Q.8.2</b> Capítulo 14</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -985,300 +988,300 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="medida-de-tendencia-central.html#cb43-1" tabindex="-1"></a>df<span class="ot">=</span><span class="fu">rpois</span>(<span class="dv">5000</span>, <span class="dv">100</span>)</span>
 <span id="cb43-2"><a href="medida-de-tendencia-central.html#cb43-2" tabindex="-1"></a>df</span></code></pre></div>
 </details>
-<pre><code>##    [1] 116  95 101 110 102 111  85 100 113  94  93 111 131 109  98  80  80 100
-##   [19] 115 107 111 117  98  82 101  97  94 106 104  91  96  99  81 102 118  96
-##   [37]  95  99  79  89 114 103 108  95 113  99 103 105 103  93  97  99 115 101
-##   [55]  95 120  84  93  83 119  87 102  91 104  99  83 103 108 110  98  83 114
-##   [73] 109  92 121 111 100  96  93 101  97  96  96  97  98  94 106 108 102 102
-##   [91] 100 108 109  98 100 103 124  99 100  90 113  90  96 113  81  90 121  87
-##  [109]  91 104 105  88 102  88 109  84 104  99  94 103  89  96 100 126 109  94
-##  [127]  99  92  95  90  97 106 101 113  97 102 102  91 121 113  96  98 109  94
-##  [145]  88  99  93  92 107 114 101 104 121 104  97 117  93  86  82 103 103  97
-##  [163]  94 107 106  90  90  96 105  89 108  87 102 101 114 101 111  93 107  88
-##  [181] 107 106 112 102  85 110  87  97 110  85 111 125  88  84 114  86 110 100
-##  [199]  84 115 108 108 100 106  82  90 104 105 105 107 107  88  88 117  78  92
-##  [217]  95 106  95 121  95  97 102  86 122  89  86 100  83 112 105 114  95  98
-##  [235] 115  96  82 115  91  88  93 126  92  87 111  95  94  91  93 122 114  93
-##  [253] 102  93 102  98 109  99  74 103 119  93 111 113 120  98 118  99  93 114
-##  [271]  79 100 117  93  90  87 107  96 105 116 101  97  96  95  99 100  98  93
-##  [289] 102 118  94  93 118 101  91  99 106  86 112  98  92  83 100  81 102  97
-##  [307]  96 108 101 110 109  85  80  99 102 115 110 108 106  94  93  99 112 108
-##  [325] 105 108 101 109  97 105  95  92 101 110  94 111  90 109  93 108  97 107
-##  [343] 104 104 105  96 104  95 100 114  99 107  89 102 115 102 114  92  88  85
-##  [361]  88 116  85 111  95  99  83  85  97 103  90 117 108  91 111  82 125 107
-##  [379]  98 103  94 107  91  97  86 105 112  86  92 104  92  95 101  98 113 101
-##  [397]  93 100 103  97  76 107  95 103  95 119 102 113 103  84 109  92 109 104
-##  [415] 104  99  84  65 101 114 114 100 101  99  86 106 102  96 110 100  80  90
-##  [433] 109 105 114 105 111 110  95  88  96 120 109 100 128  94 114 102  93 110
-##  [451]  80  96  98 102  99  89 122  95 113 108 104  98  89 112  96  89 100 111
-##  [469] 103  97 111  92 100  96 100 101 103 106  99 127  97  91 111 100  91 116
-##  [487]  89 108 101 105  94  87  90 101  98 110  98  84 105  92 114 103 107 106
-##  [505]  98 101 111  87  81  98  97  84  95  97 106  84  96 109 128  99  90 101
-##  [523]  93  91  86 105 103  88  98 100  95 114  79 104 100  98 117 101 101  91
-##  [541] 104 111  85 112 107  92 117 112 112 101 111  91  98  94  81 105 106 108
-##  [559] 105  93  98 111  95  97  91 100 100  90 116  94 112 100  90 103 100 102
-##  [577]  89 106 104  80 103  95  88  93 101 122  97 101 116 119 103  79 102 107
-##  [595]  97  84 106 100 112  92  98  87 112  98  92  89  88 101  98  99 114 117
-##  [613] 113 102 105 103 101 101  76 102 107 110 106  89  92 112  95 102  99  90
-##  [631]  97 118  96 104 105  89 106  97  97  99  90 116  81 104 113  88  93  90
-##  [649]  91 118  88 101 101  86 103  96 108 101 104  92 100 117 105  81  94 100
-##  [667]  97  96  91  98  99  92  94 112 105 116 100 112 107  86  96  96  99  99
-##  [685] 113 105  93 119  90 100 118 109 103 119 101 113 106  89  97 102  97  74
-##  [703]  92  86  84 110 106 106  93  87  97 116 122  89 105  96  97  90 105 109
-##  [721]  98  89 103  99  97 125  87  98 102  98 107  93  95 100  92 105  88  94
-##  [739]  93  87 105  92  99  93  86  97  87  91  85 100 114  89  96 101  85 100
-##  [757] 118  94  84 105  88  99  83  85  81 100 114 101 128  97 106 102 115  90
-##  [775] 109  95  97 102 105  98 100  85  99  77 110  86 101 102  96 109 104  96
-##  [793] 120  88  93  97  93 116  97  93  94 102  99  94 119  89 106  90  97  95
-##  [811]  92 105  84  99  98  97 112  84 101  86 105 113  83  87 110 109 108 110
-##  [829]  81 103 104  97  85  98 116  92  87 111  97 119 108  86 119 102  87 107
-##  [847] 104 121 103 100  97 100 102 105 104 103 100  99  98 125  90 101  97 116
-##  [865]  95  93  95  96 113 117  99 123 111 105 105  97 104 104  86 100 114  93
-##  [883] 108 112 103  96  82 113  87  99  88 105 117 106 108  94  91  94 102  90
-##  [901] 107  96 108 100 106  97 116 110  94  93  94  75 101 107 109 110  96  98
-##  [919] 106 107 104 111 107  98  86  87 100  98 114  94  99 108 102 104  93  92
-##  [937] 115  89 101 103 100  92  97  91 107 107  83 109 101  93  84  96 120 116
-##  [955] 105 129  98 105 108 108  97 127  99 104  96 108  99 119 115  88  85  90
-##  [973] 110  92 130  96  91 104 109  97 101  95 105  98 107  98 112 109  83 114
-##  [991] 107 108 100 100 107 104 105 114  93  93 116 104 116 103 102 100  88 103
-## [1009] 103  88  79 107  97 107 109 100 117  84 122 110 109  96 104  77 107 105
-## [1027]  89 103 101  92  98 104 103 104  98 121 104  93 103  93 115 101 101 116
-## [1045]  88  86 110 111 103  96 111  98 110  92  96 106 100 103 115  81  95  99
-## [1063] 118 119 115  96 112 100 112 102  96  82  91 106  91 109  83 109 100 124
-## [1081]  92 110  94  78 104  97 108 102  92  93 106 108 106 107  99 112  84 113
-## [1099]  82 102 107  90  82  96 118  97 112  80 105 106  92 107  96 113 106 101
-## [1117] 101 100  99 116 111  98  87  93  95 101 102  98 103  92  98  79  88 108
-## [1135]  88 112 119  95  97  94  83  92  95 112  91  94 104  93  98  95 106  98
-## [1153] 106  87 105 103 102  91  99 101  97 101 112 104 109  72  91 103 113 105
-## [1171]  86 106 102 107  96 107 101  95  95  91 106  91  82 121 105 109 101  88
-## [1189] 104  91  95 101 113 100 111 101 106  96 105  86  90 111 116 106  96  84
-## [1207]  84  95 100 107 104  72 106 106 121 101 100  90  80  97  92 105  97  88
-## [1225] 110  98 105 106 108  84 111  94 114 107 100 106 103 104  89 100 111 102
-## [1243]  96  90 110 112 110  99  99 113 112  85  98 125  96 103 112  91 103 100
-## [1261] 101  88 104  95  94  99 105 112 101 101 103 110  98 128  96 101  93 108
-## [1279] 101  95 102  89  91 108  91 105 103 100 112  99 107 103  96 108 112 106
-## [1297] 110 104  95 107  85  89 108  95  95 113  95 114  99  86  84  91 101 115
-## [1315] 100 110 102  95  72  89  93  96 114  94 105 100 103 112 107 104  97 101
-## [1333]  97  97 100  97 104  95  93  95 106  97  87 106 103  99 104  98 100 109
-## [1351] 100 109  93 118  90 107  85 104  99 104  92 101 103  99 109 114 115  90
-## [1369] 101 101  91  96 104 116  92 101 102  88 104 110  77 116  97 108  99  89
-## [1387] 104  94  94  92 109  96  86  93  91  98  92  89 111 106  91 108  98  91
-## [1405]  99 113 119 117  80 103 109 102 121 117 111 115 102 104  97  99  98 105
-## [1423] 118  94  87 118 120 110  90  91 105 109  99 101  98  92  95 104  97  90
-## [1441] 100 108 117 111 103  95 101  96 110  96  94 117 102 112  94 100 108  82
-## [1459] 104 110  85  96  96  85  98  96 107  97  98 100  99  88  91  90  85 120
-## [1477] 103  87 101  97 107 106 101  93 100  97 119  91  96 103  98 102 102 106
-## [1495] 119 105  85 104 117  90  94  94  99 106  90 106 103 107 112  96 104  86
-## [1513] 112 105 107 100 109 103  97 111  99  91  93 119  91 120  89 106  92  83
-## [1531]  98  83  93 104  83 104 112 107 104  80  78 109 108  92 105  99 107  85
-## [1549] 126  81  95 110 109 100 123  83  93 106  95 105 105  91 102  94  93 111
-## [1567]  83  79  99  87 111 115  95  91 101  93 107  76  94  97  90 117 105  94
-## [1585]  92  84 106  94 108 105  93  97 109  95  92  84 103 109  97 100 105  91
-## [1603]  99 107  92  91  93  83  98 100 103 107 103 101  85 104 109 104  90  83
-## [1621]  87  96  77 121  93  89  97  99 115 101 110 118  94  98 108  87 107  90
-## [1639] 113 104 108 112  97  96 108  98  84  92  86 118 114  96  92 102 115  91
-## [1657] 100  94 116 100  99 106  86  84 108 110 111  80 102  96 106  77  80 104
-## [1675] 110 117 102 103  91  91  75 104 101  87  90  94 111  98 100  95  91 110
-## [1693]  89 104  92 113 100 119 108  94  94  88  90  98  93 110 109  96 112 100
-## [1711]  89  97  92 126 100 111  97  88 111 111 125 100  81  92  96 105 121  87
-## [1729]  93 119  82 102  99  88  96  92 100  95  96 103 106  84 104 106 110 111
-## [1747] 105 106  88 105  87  91 101 102 102 109 109 115 107 100 110 102  99  82
-## [1765]  91  94  94  97 103  94  80  84 107 112 104 116 103  96 103 107 102 105
-## [1783]  90 110 101 110  95 101 105 101 118 107  99 103 127  88 110  92 102 100
-## [1801]  84  83  95  97  90 105  79  79  89  95  90  94 105  96  96 110  89 104
-## [1819]  84  96 106 105  93 102  91  81 101 110  96 105  90 101  85  89  80 104
-## [1837]  97  88  94 104  97 100  85 106  68  92 112 101  97 105  84 121 107 100
-## [1855] 114 100 107  91 106  90 109 107  92  92  87 106 105  93  97 113  94  89
-## [1873]  93 105 113 109 109  85  97  91 120  79 107 104  84 105 125  91 113 105
-## [1891]  90 108 100 108  92  86  90  97 102 113 112 102  85  84 124 104 106 110
-## [1909]  97 106  80 102  96 105  87 107  74 109 103 114 114 112  94  97  93  89
-## [1927]  97 101 104 119 102 100 111 119 119 113  98  98 102 102 102 108  90 105
-## [1945] 101  86 123  99  92 124  93 105  85 108  74 114 108 113  90 113 115  96
-## [1963] 106 108  99  89 105  97  83 100  99  99 112  97 116 113 105  98 103  95
-## [1981]  97  97 106 120 105 109 100 100 108  95  95  86  92  90 103 120 107 108
-## [1999] 105  87 112  95  96 113 108 101 119 113 108 106  98 122 111 110  95 100
-## [2017]  99  98  86 105 105  83 103 106 105 105  92  97 111 105  98 105  99 117
-## [2035]  98  94 133  89  96 100  82  98 102  84  84  95  92  97 113  96  99  96
-## [2053] 119 106  89 108  86  96 105 107 100  96 117  96  99  95  99  99 119 102
-## [2071] 102  99  92  97 106  89 100 107 125 104  91 110  65 107 126  90  99  79
-## [2089]  97 103 107 107 102 103  97 100  92  96  93  88 110 101 101 117  86 107
-## [2107]  93  93 101 105  85 100  91  93 116  92  86  91  95  99 131  88 114 106
-## [2125]  80  96  94  98 103 105  93 101  88 102 103 106  96  84  99 114 113 121
-## [2143] 106 111 102  90 101 103  92  98 116  87  99  97  92 110  87  87 103 101
-## [2161] 101 101  98 101  94 102  95 111 113 111  91 125  93 103 118  75  97  81
-## [2179]  93  99 110  92 117  93 111 103  95 106 101  88  92 104 117  91 103 112
-## [2197]  95 105  84  98  93 103 111  91  84 101  89 104 114  88 103 102  98 110
-## [2215] 101  84  91  95  93  94  95 103  96 101 100 107 116  99 116  96 102 104
-## [2233]  90  93  91 109  81 103 104 113 107  95 119  95  94 119 125  92  90  99
-## [2251] 107  92 130  97 109 119 110 104  99 113  91  98 102  87 107 119 102  96
-## [2269] 104 108 123 110  92 115  98 100  96 130 110 116  99  96  98  81 101  92
-## [2287] 112  97 101 110  94 101  87 103 106 103 120 111  94  94 110 112 102 100
-## [2305] 109 108  90  91 103  94 101 107  99 115 118 104 104 111 104 109 112  91
-## [2323]  76  86 100 114 116  95 113  94 108  97 102 104 113  99 119 103  95  87
-## [2341] 112 113  93  86 114  80 114 111 109 102  97  96  96 109  90  81 101 112
-## [2359]  94  99  99  94  91  94 100  92  94 118 113  98  98  95 124  95  94  91
-## [2377]  94 106  92 109  94 115 104 112 104 112  91 103 113  85 100 108 100 100
-## [2395] 126  90 108  93  95 108 113  93 113 105 106 110 113  94 117  97  86 116
-## [2413] 107  99 100 118 109  84 114  91 109 101  98  93  82 116  97  95 112  93
-## [2431]  92  97 104 106  87  98  89  98  98 101  92  98  99 110 107  87  97  92
-## [2449]  95  95 111  91 107 112 102 100 100  92 114  96  99 103 114 107  99  98
-## [2467] 106  94 122 101  89  98 100  91 105 110  93 104 101  92  94 116 108  97
-## [2485]  99 101  93  94  93 102 117  96 106 112  83 103  92 106 105 105  84  95
-## [2503] 100 103  76 111  97 105  77  91  91  95  95 105 105  95 106  94 102  97
-## [2521] 112  99 104 106 100  85  94 101 103  93  77  87 110 113  94 112  95  85
-## [2539]  98 106 105 111 109  94  85 105 108  77 105  94 103  95  95 103  91  82
-## [2557] 101 100 125 104  98 116 108  96 107  89 101  87 110  87  83 103 106 115
-## [2575] 110 109  95  97 102  98  84 100  97 102  98 102  99  91 110 101 104  97
-## [2593] 102  95 132 104 108  91 101  99 104 101 107 108 121 117 102  84  88  96
-## [2611]  89  93  90  82  97 105  93 108  95 108  81  84 103 110 103 101  91 113
-## [2629]  93  95  90  92 101  91  93 115  91  92 107  92  78 103  86 118  88  97
-## [2647] 101 111 118  90  95  97  90  97  98 103 104  89  93  87  90  86  91  88
-## [2665]  90 100 110 102 107 103  88 108  99 110  93  84 104 105  95  93  98 104
-## [2683]  97  84 113 126 106  86  91 122  93 103  98  99 103 104  98  91 108 122
-## [2701]  95  86 102  93 108  89  96 118 100  88  79  99 107  79 110 114 108 102
-## [2719]  98 113 101 122 113 107  99 104 105 115  88  94 112  95  99 102 101  79
-## [2737] 105 101 100 101  85 124 115 101 108 105 106 104  96  97 117  92 104  94
-## [2755]  97 105  86  99  82 103  97 103  83  95 116 103  98 105 101 100 101 114
-## [2773]  93 104  93 105 107  90  89  99 109 112  88 104 101 101 102  95  95  87
-## [2791] 111  92  82 107  96 121  77 110 106 100 103 124 102  86 104 118 104 106
-## [2809]  93 109 101  98  95 104  84  98  85 103  85  94  95 117  96  91  82 110
-## [2827] 104  92 109  91 113 107 106 106  88 102  96 102 116 118 104  92  93  97
-## [2845] 104  98  99 111  98  93 116 116 103 102 101  88  98  88 111  86 100  95
-## [2863]  83 121  99 114  95  93 103  99 107  80 106 108  99  96 108  96 113  85
-## [2881] 111  99 104 117  84 106  91 114  93  95 111 107  92 113 108 104  73  90
-## [2899]  98  76 115  92 106 110  97  92  93 109  95 100  79  92  95 117  99  87
-## [2917] 106 100  93  95 128  93 119  95 112 118  84  94  95 101 100 104 102  78
-## [2935] 101 105 112  77  91  99 104  95  93  82 107 114  93  84  84 124 101  72
-## [2953] 103  77  94 107  93  88 109  86  94  95  91  77 112 108 100  86 102  99
-## [2971] 115 115  88  94  99  97  92 109 104  87  91 109 100 109 102  95 101  97
-## [2989]  99  94  97 118 107 105  96  91 107 100 121 124 125  87  94 107 105  95
-## [3007] 102  92  90 106 105 110  93 105 110 104 110 114 101 100  85 100  91  97
-## [3025]  88  94  99  96 108  98 107  84 105 102  92 106  77  89 119 106  95  93
-## [3043]  90 107 119  93  97  94 102 103  91 104  90  92 101 109 103  85 102 109
-## [3061] 103  78 117  95  94 103 105 104 108  88 103 109 102 112  75  93  94  85
-## [3079] 111 106 111 108 126 106 109 116 105  99  89 107  86 110  96 122 112  94
-## [3097] 104  92 115 105 122  82  96  91 107  96  92  99 101  93  91 104  85  84
-## [3115] 106 104 102  85 110 101 104  92 117 101  95  84  96 117 107  88  95 116
-## [3133] 103  92 116  86  91  83 109  93  96  91 113  91 111  91  80 112  92  93
-## [3151] 101  94  98 115 113 100  88  90  98 114 117 100 114  89  87 123 109  94
-## [3169]  91 110 102 115 108 100  93 107  92  93  98 109 107  86  98  94 110  85
-## [3187]  96 113 101  89 120  82  85  93 101  98 109  82  98 107  95 102  92  88
-## [3205] 103 100  97 123  97 100  86 107 109 111  93 111 115  95  96 102  96  89
-## [3223] 121 118  94  83 113  87 111 103  95  99 107 104  84  91  91  92 118  98
-## [3241]  98  82  94  87 113 104  98  92 118 100 113 102 126  95 101  94  81  92
-## [3259]  83  98  91  91  89  86 114 112  94 104 102  97  93  99 101  97  83  90
-## [3277] 118  96  93  88 108 104  90  97  92 106  92 118  91 103  92  94 101 107
-## [3295] 107 105 111  93  98  85 101  94  91 108 113 104  95 116  98 101  98  88
-## [3313]  98 100 113  97 116 101 103  98  87  94  95  93 103  90  93  99 116  98
-## [3331] 101 111  94  96  97 102 106  94  92 107 125 130 100 100 101  85 109  93
-## [3349] 107 105  89  93 116  97 102 100 105 110 113  79 100  76 117  95  81 108
-## [3367]  83 107 113 116  83  98  95  88  95 108  96 106  88  82 101  90  88 111
-## [3385]  93  92 112 104 102 104  96  97 102  95 110  89  84 101 115 113 104  80
-## [3403] 114  97 108 103 107  86  91 117 106 101 111  89 114 112  86 103 110 113
-## [3421]  87 112  96  90 113  86 105 100  95 111 108  92 117 106 109 102 102  88
-## [3439]  99  92 103 112  89  97  84 109 121  99 103 113 101 114  90 112 102 116
-## [3457] 110  99  83 117 105 112  93  98  95 104  96 104  93 103 103  94  98 104
-## [3475]  94 100  88 106 103 106 104 100 111  94  96 101  99 101  93  94  97 106
-## [3493]  91 102  91 101  89 107 104 112  82 104 104 107 104 109 110  91 102 112
-## [3511]  97 104 125 113 112 116  93  91  93 129 109  93  97  91 105 119 103  90
-## [3529] 108  96 102 102  95  89 104  91  79  94  97  95  93  96  93 103 105  85
-## [3547]  93  95  90 105  94  99  89 107 104 104 114 105 109  90  88 110  95  82
-## [3565]  88  94 105  87  99 111  94 105 106 103  84 117 102 112  96 100  97 101
-## [3583]  85  87 108 100 104 103 105 101 102 118 113 117 101  90 109 103  91 112
-## [3601] 104 120  80  93 127 103  94 117  91  97 113 113 107 109  98  83  95 101
-## [3619]  92  92 104 114  98 120 110 101  99 120 106 103  89 100 114  99 100  96
-## [3637] 104 110 117 106  94 103 100 114  92  97  86 102  95  99 107 104  91  85
-## [3655]  93  97 107 110  82 112 101 103 106 121 100 106 113  85  97 109  89 121
-## [3673] 101 112  99  85  98  92 104 106  95  81  83  92 104 112 110  99  99  82
-## [3691] 113  94 107  88 102 108  97  89 102 114 102  97  83 104 112  99  94 103
-## [3709]  86 102 103  95 105  86  96 116  93  99  95 108 101 109 114  88  98  86
-## [3727] 103 102 108  95  89  89  98  93 113 103 100 112 104  97 111  93  83 100
-## [3745]  96  94  97  86  98 113 108  96  88  95 120 110  93  83 115  74 113 103
-## [3763]  79 114 102 106  96 103  99 108 109 124  96 124  81  94  95  86  91  95
-## [3781] 107  98  94  97 101  90  96 104 138  87  96  98  96 108 112  95  96  99
-## [3799]  98  94 100  94 117  93 101  94 106  98 112 100  93 103 100 122 114  82
-## [3817] 103 101  94  92  89  98 106 112 109  94 102 134 100  95 114 104 114 115
-## [3835]  93 114 110  93  94 118 120 105 104  95  97 109 110 115 112 110  97 113
-## [3853] 108  96  86  98 105  85 111  86 109 122  88 106 102  85 100 117 101 101
-## [3871]  89  88  92 106  94  89  92  85 105  94 126 111 101  94  94 118  89  96
-## [3889] 125 110  92 108 102 104  79  94  90 110 116 113 100 102  99  95  97 106
-## [3907]  98  88  92  90 100  89  92  95 103 106  97 104 103 120 106  98  92  91
-## [3925]  97  95 103  98 112 121 125 105  93 118  99  96 102 102  95 107 102  97
-## [3943] 107 111 101 104  89  97 107 103 104  93  86 116 111 115 128  90  98 102
-## [3961]  87  84 104  93 102 100  83  86  81  95  92 103 113 105 109  96  87  88
-## [3979] 106 110 106 106  79 106 115 118 100 110 118 111  96  96 100 103 101  89
-## [3997]  99 116 110 101  93  95 115  94  83 124 118 105  90 105  95  82  94 113
-## [4015] 108 100  93 105 102  96  97 104  92  91 100 102 114  88 122 104  82 115
-## [4033] 105  92 103 110  94 101 105  94  95 110  92 102 109 111 104  84  97 102
-## [4051]  94 103  95 100  96 101 104  94  95 103  92 101  81 110  93  89 116  96
-## [4069]  99  98 107  99  82 103  85 102 109 117  94 101 117  88  99  91  91  93
-## [4087]  82 108 105  87  84 127 104 101 103 103  88 112  88 113  89  96 112 101
-## [4105] 101 104 110  87 108  93 116  85 110  87 100  88  96 116 105  86 102  85
-## [4123]  92 117 117  87  86  94  88  95  87 107  99  86  80 114  96  84 108  94
-## [4141]  94  99 101 104 119  96  96 121 108  92  99 101 100  91 104 105 108  95
-## [4159] 104 105 100  83  99 103 110 109  99  95 101  90 106 104 107  87  86 121
-## [4177]  98 104  92 110 129 111 113 103 102 106  88 112  93  96  96 113 101 107
-## [4195]  92 105  88 120  98  93  91 105 121  83 102 103 107  94 102  86  90  88
-## [4213]  93  82  92 101 103 115  98 105  93  89  93 103  90 101 102  98 100 104
-## [4231]  95 102  95  90 103  92  86  95  86  89 102  97 103 105  94  78 118 106
-## [4249] 121 110 114 101 116 115 108 117 108 107 106  94  95 109  86 115  99 117
-## [4267] 123 105  80 108  97 105 103 108  91 100 102 104  92  99  91 105  88  94
-## [4285] 110 113  99  98 107  85  88 106 102  85  99 103  89 103  88 103  97  99
-## [4303] 101  90 101 105  86 101  92 110  90  92 103 104  99 117 104 108 108  86
-## [4321] 105 109 105  96  98  95 105  97  97 102  89  98  99  93 105 113  95 112
-## [4339] 109 114 109  99 107  95 100 102  94 130 101  98 107  92  95 100  95 100
-## [4357] 102  89  92 107 114  86  89  99  92  98  97  95 119  98 112 103  93  96
-## [4375] 110 102  97 104 115  93 110 114 100  88 119  92 104  85  93 103  90  82
-## [4393]  97 117 115  94  94 115 101  98 112  87  80  90  93  93 103  97 108 107
-## [4411]  98  99 100 107 130 101 106  99  96 106 131  95 107 103 105  86 100  99
-## [4429]  94 110 112  91  86  90 109 106  91 107  87 134  98 114 102 102  96  95
-## [4447]  99  99 112 114  97 101 113  96  90 106  88 106  86  98  98 112  88 108
-## [4465]  98 105  96  96  90 109 102  99 120  99 105  95  82 100  89  95 110 102
-## [4483]  98  71 118  98 104  98 120 105 103  84 118  97  80 110  84  86  96 104
-## [4501] 109 110  96 112 117 113  81  94  95  88 109  82 107 108  98  90  85 102
-## [4519]  93  91 108  93 108  95  87 107  83  95 110 102 100  88 102 107 112  80
-## [4537]  93 101  93  97 112  89  91 102  94  83  87 101  81 105  92 106 110  97
-## [4555]  96 110 119  93 108  87  89  88 114  99  82 103 108  90 106 101 109 107
-## [4573]  83 106  94 123 102  83 101  92  95 120 103 100  92 103 104  95 106 106
-## [4591]  84  97  93 105  98  84 100  97  97  88  90  98 115  87  88 101 104  98
-## [4609] 100  98 101  92  89  97 103 120  94 100 101  87 105  86  81 108 103 106
-## [4627] 112  90  97  84  92 113  94 120  88  97  94  93 101 112  91  94  85 110
-## [4645] 122 104  97  94 108 103  97 106 101  93 119  87  97  99 108 100 106  98
-## [4663]  95 108 113 106  97 101  90 102  92 116 108 106  74  85 101 102 103  85
-## [4681]  88 103  88 111 111  91 102  98 101 111 109  94  89  95 103 101 108  99
-## [4699] 113  92 109 102 100  84  91  99 107 101 120 119  99  98 125  94  89 103
-## [4717] 110  97  96 107 114 100  98  91  94 101 106 104 106  87  87  95  84 100
-## [4735]  92 122 115  94  99 102 103 104  97 109 108  98 105 100 122 101 111  98
-## [4753] 120 106  98 105  81 110 106 110 109 116  97 105 102  92 110  94  86 109
-## [4771]  84  99 111  84 108  93 108  96  99 112 105 104 111  86 108  83  95 115
-## [4789] 108 106 100  98 104  85  94  91 104  92 119  95 109  90  97  86  90 103
-## [4807] 120 104 105  94  83 103 103  96  90 115 103 135  94  86  90 113  99 107
-## [4825] 100  93  89  97  97  91 106  95  90  83 108 111  91 108  92  99 107 109
-## [4843] 114  93  97 100  82  94 100 101 103  89 104 111  92 107  84  96 106  71
-## [4861]  93  87 106 112 102 110  93 113 108  91  95 108 111 100 111  89  89 111
-## [4879]  91  86 107  86 111  79 100  98 111 100  87  97 121 107  84 101 116 102
-## [4897]  96  89 101 108  86  75  97 105 108 105 104  92 103 100 106  94  89  87
-## [4915]  99  80 103 107 103 108  88 110 112  78  98 109  96 100 104 110 115  94
-## [4933] 104 118 110  85  93 102  99 117  91  97  89  97  97 101  93  99 104  97
-## [4951]  98  94  88  94  79  98 110  96  77 116 115  96 113  73 100  88  98  91
-## [4969]  93 100 100 102 103 104 113  91  99  85 113 110 105  87 102  82 115  90
-## [4987]  83 100 119  82  97  94 107  99 101  81 104  75 120  97</code></pre>
+<pre><code>##    [1]  90 102  92  99  95  93  93  93  89  99  91  97  89  82  92  99  88 107
+##   [19]  92  84 108 100  86 102 111  93 101 106 117 115  94 113  96  96  95 112
+##   [37]  85 113  85 104 110  92 114 103 106  88 105 101 104 100 109 123  94  93
+##   [55] 101 110  98 121  96 108 111  98  83 126 118  86  98 105 102 101 106  93
+##   [73] 111  91 102 108 109 119 101 113 110  85 113  90  98  95  97  90  95  83
+##   [91]  96  90  95 107 120 105 109 103  96  87  96 105  97  83 100  95  87 114
+##  [109]  94  89  99 113  97 102 109 113 105  88  96 111 104  94  97  97 100 101
+##  [127] 102  95 115  90 105 101 109  86  89 111  93 103  88  85 119  97 110  96
+##  [145] 106  95 106  83 116 116 100 108 110 110  88  95  99  99 103  93 105 107
+##  [163] 104 105  92 103 117  86  92 101  95  97 111  95 101  93 101  86  82  89
+##  [181] 102  80 115  95 105  98 105  82 103 102  89 102 104  89 106 114  80  80
+##  [199] 104 103 101 100  98  98 106  85 111  98  99  99 117  88 107  83  95 115
+##  [217] 107  97 100  92  95  80 112 116 106  98  99 100 117  93 104  88 100  88
+##  [235] 107  87 101 108 100 114  99  88 100  94 101 107  94  91 104  93 117 106
+##  [253]  94  77  95 100 110  88 110  90 116  97 127  99  92  95 109 116  93  94
+##  [271]  77  93  89  84  79  87  87 101 108 101 118 105 102 112  93 101 118 103
+##  [289]  93  81 106  96  87 108 104 102  82  91 109  92  85  83  97  97  93  99
+##  [307]  93 105 117  87 104 114 123 108  96 105  89 100 120 105 103  99 117  91
+##  [325]  86  95  80 100 105  91  89  95  99  94 104  95 101  76 110  95  99  93
+##  [343] 107  87 103  85 112  91  87 108  90 118 110 105 113  94  90  94 101  78
+##  [361]  95 108  98  93  92  95 100 105 102  99  89 101  93 100  98 104 106  88
+##  [379]  90  94 105  91  98 104  99 106 103 107  99  82 101  91  93 107 102 114
+##  [397] 105  92  94 111  93  91 112  96  97 110 111  74  97 100 108  94 105  91
+##  [415]  92  84 112  87 100 109  94  99 105  85 115 111 104 102 102  86 108  84
+##  [433]  93  92  94 106  93 117  89 102 106  87  97  86  92  99 108  97 101  92
+##  [451] 104 114  94 109  93  98  91  91  98 106 103  91 120 105  96  92 104  99
+##  [469]  97  98  88  93 110  85  95  99  98 111 111 117  98  89 105  93  99 115
+##  [487]  95 109  97 103 100  95  88 124  94  99  97  94 105  95  91  92  82 104
+##  [505]  89  90  86 113  95  98  89 110 100 102  87  95  94 114 113  99  93  83
+##  [523]  94 101  95  85 105 106 101 111 105  96  78 108 110 102 100  90 104 101
+##  [541] 108 105 119 107 103 126 108 101 111 105 100  99 106 112 103 104  94  98
+##  [559]  89 104  85  96 104  98  96 106 103 105 102 123  90 100  91  97 103 103
+##  [577] 108 121  91  83  87  86 113  96  96 103  90 122  98 104 101  91  84 100
+##  [595]  91 107 110  89  99  89 110  88  90 109 101 101 116  96 100  96  94 101
+##  [613] 108 100 123  92  95  95 105  95  86 102  99  99 101 102 102  97  97 101
+##  [631]  88 110  99 112 104  83  94  93  98 105  92  86  98  99  93 104  92  97
+##  [649]  81  91 107  94 114  86 114 103 108  99 114 101  84  97 102  85 116  84
+##  [667] 106 106 105  99  92 103  98 118  89 101  91  87  92 102 111  95  96 106
+##  [685] 102  96 106 124 102 106  98  97 104 125  98 109  93 106  94 107 109  89
+##  [703]  98 105  84  89 104  99  98 105  94  96 109  90  90 108  94  91  88 102
+##  [721] 105  94 118 111  96  97 113 107  96 108  99  91 114  88 112  90  87  95
+##  [739] 103 110  98 104  83 104 102 103  98  88  96  83  92  94 111 121  95 105
+##  [757]  96  77 112  88 101 114 107  82 103 110  90 113 100  98  84 102 105  95
+##  [775]  92  90  95  94  97 103  84 120  94 110 101 100  91  98  97 111  95  96
+##  [793] 108  75 118  92 101  97  95 111  95  90 118 100 104  98  82 117  93 109
+##  [811] 107  94  93  88  95  96  96 105 122 100  84 113 105 108  81 117  99 108
+##  [829]  98 112 109  98 107 113  97  89  90  93  98 107 100 125 116  85  88 101
+##  [847] 104 111 117 108  85 109  95 115  86 101 112 114 100  99 107 116 124 103
+##  [865] 105 106  92  96  87 113  90 109  89 107  85 110 112  80  92 103 110  94
+##  [883] 102 107  93 106 104 108  95 110  96 106  86 100  90 116 115  96 103  75
+##  [901]  89  94  98  99 104  99  93 114  91  78  98 114  90  89  97  87 100  84
+##  [919]  89 101 101  98 107 100  89 102  93  92  95  87 116  89  92 104 103 106
+##  [937] 100  91 103 130  81 105 113 105  95  83 108 115 102  95  98  91  89  97
+##  [955]  96 110 109 100  88 110  91  99  95  92 108 114  92  90  97  93 113  95
+##  [973]  92  99 112 120  84 114 107  97  99  87  89 102  99  89  95 109 115  94
+##  [991]  94 104  94 105  96 113 107  84  80 117  82  92 116 104 110  84 105  90
+## [1009] 105  90 116 108  93  97 103 106  95 109  85  95 106  98  90  96  85  96
+## [1027]  83 109  95 103  98  79  97 112 106  98  88 100  94  90 118  89 100  97
+## [1045] 111 122 105 113 121  85 108 103 102  93  99 104  90 100  94  78 104 107
+## [1063]  88 100 121 107  87 107  93 111 104  94  98  91 101 105  97  96 101  92
+## [1081] 105 104  95 117 100 122  96 108  70  95  97  93 101 107  78 103 114 100
+## [1099] 102 101 117 115  81  91 109 101  93 113 100 102  93 103  83  99 108 106
+## [1117] 106 103  99 100  93  97  93 105 113 117  95 103 105  84 104  97  96  89
+## [1135]  97  97 102 113 110  74  85  97  95 103  98  93  92 105 108  96 103 105
+## [1153] 119 105 120 109  90  85  83  92 102 103 100 102 100  96  95 103 104  92
+## [1171] 101  94 121 109 100  94 100 100 108  86 114 100  93  99  97  92 108 101
+## [1189] 113 107 107 108 109 105 103 115 107  93  93  98 107 105 106  98 100 102
+## [1207] 105  84 125 103 114  93 106 107  73 103  93  99  96 129 101  92 101 122
+## [1225] 104 100 100 115  76 107  94 114 110  97 104 103 100 107  96 104  93 106
+## [1243]  91  91 108  98 117  96  89 111 101  93 105 105 108 102 112 102 105 129
+## [1261] 109  98  99  90  95  93  99  86  97 101  97 109  95  93  89 114 103  99
+## [1279] 101  99 115 102  88  83  87  86  97  80  87  90  96  98  97 107  92  93
+## [1297] 110 100  98 110 101 106  95 113 118 101  93 104  90 105 110  83 115 114
+## [1315] 103  94  99 105  95 100  91  85 107  91 114 106  90 105 111 117  96 127
+## [1333]  80 102 100  90  94  77 122  99 100 110 100 104  86  88  87  88  98  90
+## [1351] 104  85  91 104 105 104  98 108  97 102 101  98  91  94  99  70  83  99
+## [1369]  93 109  90 100 109 113 113  99 102 103 108 123  97 105  85 110  98  90
+## [1387] 106  93 109  99  95  95  83  96 103  95  88 103  98  72  93 105 102 104
+## [1405] 102 101  94  88 100  95 104  97  97 103  86  85 112  95 110 106 106 106
+## [1423] 103  91  90 106 114  95 102  97 114  85 104 100 108  95 113  99  81 112
+## [1441] 111  95 109 103 119 100 106 105  99 110 106 106  94 108 101  95  92  98
+## [1459] 118 125  93 102  86  96 123  98  99  98 110 108 100  98 100  79  99 114
+## [1477]  99  88  86 104  96  97  93  99  93 107 101 100  96 104 101 101  99 101
+## [1495] 119  93  93  77 116 124  89  94 114  83  80 110 106  98  97 106 109 107
+## [1513] 106  93 110  91  87 101  98  97  93  94 107 110 105  79 102 113 104 116
+## [1531] 108 108 114 109  83 110 106  98 104 101  79 121  93  88 101 102  93 105
+## [1549] 109  85 101  95 125  89 100  93  90 100 105  97 112  94 106  87  96  87
+## [1567]  90  88 115 113 107  99  83 120 108  98  89 105 110 100 110  95 106  99
+## [1585] 110  99 109  86  95 108  90 101  96  86 103  93  94  99 110  89 112 109
+## [1603] 102  90  95 123  85 110  92  94  95 107  96 107  93  86 114  94  95 104
+## [1621]  98 100  95 109 120 116  81  96  87  99 104  94 101 114  87  88  86 102
+## [1639] 100 119 100 111  96 109  87 110  98 107  95  98 100 113 107  97 104 105
+## [1657] 114 128  99 103 110  95 106  96 101 103  98 108  93 109  91  74 104  93
+## [1675] 103  87 100  89 108 108 106 103  80 100  96  96  92  78 103  96 117  90
+## [1693]  95  94 122  74 102  97 105  94 100 102 100 110  96 101  99 102  96 119
+## [1711]  98  94 109  84  90  96  84  87 111  88 101  71  84  93 115  92 105  98
+## [1729]  96 108 125 101 112 103  95 110  90 103 115  82 105 104  87 106  99  78
+## [1747]  92 106 106 104  88 120 110 121 101 106 116  95 110 105 107 100 102  93
+## [1765]  92  97 106 100 105 117  95  95 109 108 100 105 106  86  94  88  97 102
+## [1783]  97  84 113  88  93 110 103 106  96 103  88 102  97 100 112  97  84  99
+## [1801] 109  99 100  98  87 105  79  98 107  85 105  95 110 117  91 114  87 102
+## [1819] 106 121  86  94  90  90 103 109  95 110  88  86 108  91 105  91  97 111
+## [1837]  91 112  92  94 108  88  92 112  90  93  90  90  96  93 114  92  93 108
+## [1855] 101 102  90  96  92  94  92 105  91 106  87 129 104 101  89 102  99  99
+## [1873]  98  98 101 105 107  94  97  80  90 107 103  97 101 108  88 106 104 104
+## [1891]  96 110 109  88 101  95  96  95  94 100 100 101  88 109  86 100  98  92
+## [1909]  96 116  86 105  99  94 102  87 108 111  95  80  89 103 110 106 108  90
+## [1927]  84  98 101 100  80 113  98 107 105  89 106 100  99  89  99 104  87  90
+## [1945]  97  95 105 107 116  88 111  94 121 106  87 105  79  86  86  91 120  94
+## [1963]  96 101  99  87 105  99  98 121  98  96 101 102 111  86 101  85  99  95
+## [1981] 101 101  89 106  92 116 108 116 119  88 104 100  98  93 103 103  95 106
+## [1999]  88  98  83  96  90 119 105  94  98  99  82 111 109 102  94 108 103 112
+## [2017]  99 114 106 101 110  76  97 113  92  92  99 115  85 106 106  89  91 108
+## [2035] 102  93  98 108  91  85 110 112  86 107 111  96  98 103  88 102 118 112
+## [2053]  98 115  97  95 111  90  99 125 102  81  78 107  91 100 100  92 107 109
+## [2071] 111 107 100  99 101  98 107 102 118  82  93  95 112 110  94 103  88 111
+## [2089] 120  94 114 119  96 104  90  97  91 102 103  99  94 111 101  87 100  99
+## [2107] 112  94  94 102 107  93 111 102  75  84 114 105 101  91 104  92  85  90
+## [2125]  87  99  84  88  96 105  99  94 103 113 103 109  95 107 106  88  99  96
+## [2143] 104 105 108  90 116 112  92 114 105 104 115 120 110  95 116  92  87  92
+## [2161]  83  90  99  98 100 113  91 106  96 120  92 103  86 111 102  83 103 104
+## [2179] 112  99 111  85  92  90  97 102 108  95  96 106  96  94  88 106  89 100
+## [2197] 105 101  96  96  99 116  90 123 112 107 100 112  80 107 102 104 115  89
+## [2215]  99  93 108  91 102 108  96  89  97  96  94 105  96  89  90 110 103  93
+## [2233] 115 105 111  92  91 109  95  98  95  97 113  89 100 103 107  93  91  81
+## [2251] 113  90 122  97  95  74 111 106 117 101 112  96 104 105  93 107  91 115
+## [2269] 101 111 102  99 104 107  93  94 105  98 101  87 102  92  86 103  91  91
+## [2287]  89  90  83  95  97 112 108  86 100 111 116 107  90 103 113  93  85 117
+## [2305] 102  76 104 107 111 114 101 104 103 103 104  96 101 106  89 106  91 105
+## [2323]  94 102  90 100 104 104 116 106  92  96  95  89 100  89 100  92 104 102
+## [2341] 110 105 100 114  96  96  91  97 104  93  81  93  94  96 102  96 109 109
+## [2359]  97  88  95  92 107  86  94  98  98 105 114 106  99  93 111 111  93  96
+## [2377]  97  87 117  85 101 102  95  95 114  90 101  95 107 104  91 113 100  90
+## [2395]  83 111  99 104  89 110  89 108 104  99  92  97 105 108 117  94  86 103
+## [2413] 110 111  95 108  87 102  89 111  93  99 115  71 103 101 109 113  86  96
+## [2431]  91 112 101 100  88  94  89 103  95  95  99  81  92 110 101 107  98 118
+## [2449]  98 111  79 107 120  98 109 100  96 108  97 100  95  88  86  89  94  82
+## [2467]  92  87 101  83  98 102  95  92  94  98 106  99  93 116 115  80  96 108
+## [2485] 106  91  90  98 125 102 100  94  91 107 115 116  97 107  96 109 101  91
+## [2503] 108  97  87  97  74  98  89  92  86 113  99 101  99 118 102 101 101  94
+## [2521] 101  95  96 110  88  98 106  86 101  81 105  98  96 108  96  99  81 110
+## [2539] 107  93 105 103  91  91  86  66  98  96 105 105 104 115 103 111 102 102
+## [2557] 130 118 105  98  84 109 115  83  87 122 107 113 101 113 106 109 111 103
+## [2575] 107  95 107 112  96  99 107  91 107  95  94 111 100  90  76 102 119 117
+## [2593] 114  88 104 106  88  97  93 118  91 113 108 109  85  92  85 105 107 112
+## [2611] 101 100  89 133  92  88 123 112 106 102 107  76 108 100  94  92 119 103
+## [2629] 100  86 102 102 100  95 114 100 101 112 104 111 107 113  91  97 109 104
+## [2647]  92  91  98 114 121  91 107 106 104  88 104 103 109  96  87 106  85 108
+## [2665]  95  88  99  95  94  90 100  93  91  96  89  83 110 106 106  85 102 102
+## [2683] 105  85 104  99  92 108 115 101  96 111 114  84 107 120 102 114 119 121
+## [2701] 107  90 111 110 106  82  83  84  90 109 102 106  91 126 102  95  97 104
+## [2719] 112 120  94  93  87 109  99 105  77  94 112  90  98  71  89  95  96 108
+## [2737] 128 104 103 103  94 103  91  77 111 108  95  93  98 117  94 102  90  96
+## [2755]  89 103  92 108 102 102  89  93  94 101 108 109 107  95 108 105 104 101
+## [2773]  82 106 110  77 105 101 104  99 107 101 112  97 111 106  90  99  94 105
+## [2791] 111 102 110 107 102  90  94 106 108 111 101 106 128 128  96 108  89 113
+## [2809] 105 111  99 105  94 120 104 107 105  79  93 108  97 105 101 106 110  90
+## [2827] 108  87 113 105  87  97  96  92 103  97  72 102  96  87 104  88 115  94
+## [2845] 107 119 107 113  93  94  84 101 118 103 122 106 103 112  79 106 101  92
+## [2863]  93  81  88  90  88  84 109 103 107 107 114  95 106 121  94 121  89  99
+## [2881] 106 100 125 125 103 116  94  97 105 103  96 125  96  95 108 112 101 101
+## [2899] 110 104  91 113  77  98 113 104  85 102  99  90  81  84  82  90  95  96
+## [2917]  96 108 118 110 113  99  92 106 106  91  99  96 116 102 106  96 104 109
+## [2935]  86  83  91 121 116 124 105 108 108  97 111 115 105 101 103  99  97 100
+## [2953] 112  92  91 117  95 103 106 106 114 104 100 100 115 110  92 104 111  92
+## [2971] 102 103  93 121  91  98  90 101  90 101 110  94 101 103 112  88  96  98
+## [2989]  86  98 103 108 116 107 106  95  90  94  98 111 111 114 100 103  94  87
+## [3007]  91 104  95  87  96  92  84 103  90  92 112  94  97 102 103  79 115  84
+## [3025] 104 112 114 101  94 101 110  98  94 107  85 124  95 113 107 100 108 114
+## [3043] 100  90  98 105 110  85 108  95 107  83 101 113  80  94 111 112 114 108
+## [3061] 118 114 110 104  99 108  88  88  99  76 109  95  98  81  93  97  91 105
+## [3079] 110  95 102  92 106 108 113 102 103  93 116  86 101  97  91 103  98  97
+## [3097] 102 109 104 114  99 105 102 105 101  95 112  95 107  86  99 122  86 110
+## [3115]  77  88  96 119 112 102 119 103 102 100  99 105  96  95 106 104  98 101
+## [3133]  98 106 138  94 113 107  92  99 115 120  76  97  97 113 111  86 109 108
+## [3151] 109 103  98 108 121 101  96 111 114 102  92  89  96  90 108  98 108 110
+## [3169] 114  93 106 108  93  98  78 113 107  81  87  99 110 129  93  91 107 104
+## [3187] 113  89  98  93 102 108 100 116  97 106 120 101 104  91 127  94  99  96
+## [3205] 115  84  96 110  99  93 103 115  93  94  96 101 119 102  99 113 108  88
+## [3223]  91  99  90 102 102 109  94  95 102  98 110 118 106 102  99 109  99  91
+## [3241] 100  93  92  94 121  97 101  90  96  85 101 104  82 111  98 101  97  98
+## [3259] 107  84 109  86  96  92 113 104  99 111 102 110 100 109  94 105  92  84
+## [3277]  88 105  97 105 101  85  92 109  97  98  80 104  90  94 101 111  99  91
+## [3295] 104  90  95  92  91  83  96  88  95 111  87 106  95  98  75 102  97 117
+## [3313] 101  94  93  98 105 100 113  99  98 108 122 104 120  86 100  83 114  96
+## [3331] 102 119 103 103  98  83 107 104  88 101  98  94 104 108 104 120  96  93
+## [3349] 110  91 103  84  84 115  93  91 108  96 103 100  93 109 106  83 106 119
+## [3367] 104 101 104 103  93 110  77 111 108  98  99  99 116  94 103 112 101  83
+## [3385]  82  92 103 106 102 107  95 102 101  96 109 103 104  91  97 118 104  99
+## [3403] 105 117 108 110  98  92  83 101 126 111  99 102  94 107 108  94 103 103
+## [3421] 106 112  99  93  99 100  89 101 107 102  93  97 100  84  99 108 113 100
+## [3439] 120 106 106  95 130 108  93 106  99  88 111 103 105 108 111 107  89  95
+## [3457]  93  91 103 100 113  85  99 126  94 108  94 102  91  92 118 104  97 100
+## [3475] 110 106 106 128 113  90 113  97 103  92 114  94  92  85  96 106  83  81
+## [3493]  98 113  96  90 108 104 101  99  87  81 110  99 120 103  99 101  97 121
+## [3511] 101  90 102  98 107  93  90 105 112 107 102  95  92 107 102 108  96  89
+## [3529] 109  99 110 102 102 109  90 100 101  94 103  85 110  92 103 120 108 125
+## [3547] 102 118 104  83  96 120 115  96  89  96  99 125  84 102 106 105  83 102
+## [3565] 103 111  98 106 100  96  89  87 105  97  93 106  98 102 102  90  85  93
+## [3583]  88  76 107 106  84  90  82  96  90  92  97 106  91 112 105  85 109 109
+## [3601] 102 106 101 106 102  91  95 110 101  94  91 105 104 101  97  84  90  92
+## [3619] 108  97  99 113  99  87  95  89 113 112 107 104  88 110  86 103  99 101
+## [3637] 121 108 105  96  76 110 105  95  93 101 122  93  84 100  97 106  98  99
+## [3655]  94 101  87 106  93  97 104 100  85  95 106  81  96  81 107  96 101 111
+## [3673] 100  75 113  93  96  93  99  94  94 106  80  96  99 101 102 104 111  97
+## [3691] 102  83 106 100 111 109 110 101 110 117 115  94 108 111 112 105 100  83
+## [3709] 115 101 104  90  98 113 108 101  88 123 103  99  99 110 106 109  90  93
+## [3727]  88 105  90 109 101 109 112  91  94 110 109 118 103  92 105 108  93  83
+## [3745] 108  98 111  87  94 106  95  93  96  90  95 107  92 110 109  97  94  97
+## [3763]  97  86 100 104 101  92  80  98 108 100 108 112  97  78  83  89 106 107
+## [3781] 105 108 103  94  88  80 104 111  95 101 107  95  98  85 112  94  95  94
+## [3799] 103 112 114 101  86 106  99  95  94  98  99  97 106  97 132  95 123 101
+## [3817]  92  97  92  94  98 106 110  87 109  84  92  95  94 118 102 113 106 104
+## [3835]  90  83  87  93 113  84 100  84  96  90 108  82  89 104 100 101 100  91
+## [3853] 103  94  94 111  95  99  92 101 107  93  83  92  90  86 103 109 105 100
+## [3871]  97  97 113  77 101  84  75 105 101  91 114  89  94 106  94 104  98 103
+## [3889]  95 111  98 103  97 106  75 104 106  95 108  96  98 103  99 105 105  93
+## [3907]  97  87 103  89  94 104  94 102 103 106  93  96  86  98 121 103 104 104
+## [3925] 102 107 104 126  95  91  83  73  90 115 107 107  97 100  96 100  99 105
+## [3943]  93 106 100  80  97  91 107  91 111 101 102 112 110  93  89  98 112  88
+## [3961]  80  90 105 107 107 105 101 114 107 110 104  97 107 102  95 107  92  92
+## [3979] 102  92 101 100  88  80  96 107 111 102  91  99 107 101 113 100  93  86
+## [3997] 114  92 101 104  92  95 101  91 101 110  97 112 101 103  76  96 102 103
+## [4015]  93 107 109 101 105 130  95  93 105  99  88  99 114  91  93  95 111  85
+## [4033] 106  99 101 108 103 106 100  98  85 102  80 109 101 109  77 104  90 104
+## [4051] 105 106  79 103 121  88  90  95  94  81  89 103 106 107  95 103  89  86
+## [4069] 110 110  86  84 110 102  91  98  81 109  86  77 101 102 116 111 100  98
+## [4087]  92 115 104 115  97 112 102 110 122 105 102  89 108  93  94 102  94 104
+## [4105]  95 103  93 101 101 106 110 108 112 108  93 107 101  94 120 108 116 105
+## [4123] 100  93 100  84 100 111  90  94  93  75  85 103 114 102  93 117 109  90
+## [4141]  93  94  95 100 106 101  97 103  92 107  99  93  82 101 100 108  99 109
+## [4159]  87 106 123  93 104 113  92 100 109 100 103 106 105  97 115  96 103 107
+## [4177] 105 101  92 104 101 105  73  97 105 109  95 129  99 102 101 100 104  93
+## [4195]  87  93 109  93 108  99 101  98 100  73  97 107 102  93  94 103  89 105
+## [4213]  95 102  95 108  90 100 117 101  96  87  87  91 100  84 107  85  99  90
+## [4231]  83 102  99 102 107  96 109 109 107 105 105 106  94 118  94 132  88 101
+## [4249] 110 103  93 110 114 101 105  90 108 112  93 100 116 101  97  90 105  88
+## [4267] 107  91  96 106  95 108  94  96 116  93 107  89  99 102  86 120 105 108
+## [4285]  77  88  99  91  87  90 113 111  97 102 109  95  93 108 103 115 103 123
+## [4303] 102  90 111  93  96  98  97 107  89  88  87  99 121 127 104 103  86  99
+## [4321] 104  95 101 105  93 108 106  99  99  94 109  97 103  92 112 102  94 112
+## [4339]  96 107  89  95  93 106  97  87 110  89  94  91 118 102 105 113  78 105
+## [4357] 110  94 112 115  92 108 102  98 120 111 106 110  98  84 101 119 112 110
+## [4375] 102  80  83 109 100 103  79 103  99 111  99 115  91  96 102  84  98  88
+## [4393]  99  98  94  83 106 108  96  97  91  84 112  83 125  99  92 108  98 110
+## [4411]  96  89 101  93 113  97 110 117 105  94  99  88 102  93 106  91 100  95
+## [4429]  92  85 103 109  88  78  91 101  74 103  72 114  84  80 111  90 102 106
+## [4447] 102 104 102  98  99 120  98 103 104 105 106  97  92  89 106 109 107 103
+## [4465]  93 105  87  86  86  96  91 103 110 109  86 118 114 103 112 108 110 110
+## [4483]  97 106  94 107  98  91 113  97  97 117 114  99  91 111  98  98  86  95
+## [4501]  95 102 107 122 102 102  95 106  99 100 109  90  99  91  96  99  94  97
+## [4519]  90  96 106 110 102  97  88 102  92  96 117  90  88 102 106  91 100  99
+## [4537]  99 100  89 102 114  99  96  93 115  98 112 107  88  96  82 103  96 121
+## [4555] 120 100 103 116 114 107  96 110 102 106  94 122  92  97  94  91 112  93
+## [4573] 111  96 117 106  96  93  97  90  83  94  89 106 105 105 109 103  80  97
+## [4591]  87 108  95  96  86  77 112 109  93 116  99  87  95 120  81 101  93 104
+## [4609] 109  99 109  95 109  99 109  87  98 111  89  95 117  87 109  90  84 105
+## [4627]  86 103  96  98  97 103 112 103  98  95 109 109 118 109  97  98  87  96
+## [4645]  94 105 105  94  90 102 105  93  95  85 103  99 100  95 105  96 103  85
+## [4663]  87  74  87  93 115  77  97  91  98  90  99 112 114 121 100 111 122  99
+## [4681]  85  83  91  93  91  87  93 107  92 112  99  87  89 104  97  99  95  84
+## [4699]  99 102 105  96 105 111 109  93  83  81 107 110 110 103  94 101 109 132
+## [4717]  93  88 105 108 106 101 123  98 101 108  98  80  95  94  97 108  97  97
+## [4735] 103 122 104 101  99 106 100  87 109 104  99  96 101 102  99  97 101  97
+## [4753] 102  98 102  88  82 106 127  95 102  99  97  86  83 121  86  87  98 110
+## [4771] 103  84  92  94  90  99  93  87  87 106  92 109  98  97 103  90  89  95
+## [4789]  99 102  84 112 109 111 105 102 104 101  97 101 109  97  99  94 107  95
+## [4807]  95 111  80  89 105 114  87 114  93  94 103 104  98  84 124 113  94 120
+## [4825]  91 112 106  83 101  94 113  93 102 123  98  98  96  94  98  82  88 118
+## [4843] 103 121 103 102  91 113 104  89 116  99 105  96 103  88  90  95 104  90
+## [4861]  94  88 109  99  90  91 107  82 110 106 107 112  85  91 104 116 107 111
+## [4879]  97 118 102 107 112 101  85 107 100 102  89  90  94  97  85  95 111 105
+## [4897] 100 103  88  99  85  95 118  92 101  92  77 123  98  98  78 101 106  96
+## [4915]  96 102  82  92  92  91  96  96  98 112 102 115  94  94 100  95 122 100
+## [4933]  86  99 112 101  95  99 104 110  93 103 125  78 115 111 105 113 120 123
+## [4951]  95 101  91  92 101 115 115 102 106 126 104  91  87 102  81 103  99 104
+## [4969]  79  98 102  94  93 116 103 110 103  90  99 100  98  87 109  92  92 104
+## [4987] 117 120 102 109 118 105  99  98  99  89  91  88 101  89</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="medida-de-tendencia-central.html#cb45-1" tabindex="-1"></a>df1<span class="ot">=</span><span class="fu">data.frame</span>(df)</span>
 <span id="cb45-2"><a href="medida-de-tendencia-central.html#cb45-2" tabindex="-1"></a><span class="fu">head</span>(df1)</span></code></pre></div>
 </details>
 <pre><code>##    df
-## 1 116
-## 2  95
-## 3 101
-## 4 110
-## 5 102
-## 6 111</code></pre>
+## 1  90
+## 2 102
+## 3  92
+## 4  99
+## 5  95
+## 6  93</code></pre>
 <p>Lo que uno observa es que los tres valores son muy cercano uno del otro.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="medida-de-tendencia-central.html#cb47-1" tabindex="-1"></a><span class="fu">mean</span>(df1<span class="sc">$</span>df)</span></code></pre></div>
 </details>
-<pre><code>## [1] 100.2002</code></pre>
+<pre><code>## [1] 99.9484</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="medida-de-tendencia-central.html#cb49-1" tabindex="-1"></a><span class="fu">median</span>(df1<span class="sc">$</span>df)</span></code></pre></div>
 </details>
@@ -1286,7 +1289,7 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="medida-de-tendencia-central.html#cb51-1" tabindex="-1"></a><span class="fu">mode</span>(df1<span class="sc">$</span>df)</span></code></pre></div>
 </details>
-<pre><code>## [1] 101</code></pre>
+<pre><code>## [1] 99</code></pre>
 <p>Podemos visualizar estos datos usamos dos gráfico, En el gráfico de la izquierda se ve una distribución normal con las tres lineas (promedio, mediana y moda). En el gráfico de la derecha se observa la misma información pero solamente los valores entre 96 y 101. Se observa que la mediana y el promedio son igual y la moda varia un poco, se encuentra donde la barra es más alta. Se observa que los tres valores son cerca del centro.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="medida-de-tendencia-central.html#cb53-1" tabindex="-1"></a>pro<span class="ot">=</span><span class="fu">mean</span>(df1<span class="sc">$</span>df)</span>
@@ -1294,7 +1297,7 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <span id="cb53-3"><a href="medida-de-tendencia-central.html#cb53-3" tabindex="-1"></a>mod99<span class="ot">=</span><span class="fu">mode</span>(df1<span class="sc">$</span>df)</span>
 <span id="cb53-4"><a href="medida-de-tendencia-central.html#cb53-4" tabindex="-1"></a>mod99</span></code></pre></div>
 </details>
-<pre><code>## [1] 101</code></pre>
+<pre><code>## [1] 99</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="medida-de-tendencia-central.html#cb55-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb55-2"><a href="medida-de-tendencia-central.html#cb55-2" tabindex="-1"></a></span>
@@ -1326,7 +1329,7 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <hr />
 </div>
 <div id="distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales." class="section level2 hasAnchor" number="6.9">
-<h2><span class="header-section-number">6.9</span> Distribución cuando los tres valores de tendencia centrtal no son iguales.<a href="medida-de-tendencia-central.html#distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">6.9</span> Distribución cuando los tres valores de tendencia centrtal no son iguales.<a href="#distribuci%C3%B3n-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales." class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En estas distribuciones uno observa que hay exceso de vaslores pequeños o grande. Esto resulta en que los tres indices de tendencias centrales no se encuentra cerca uno del otro.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="medida-de-tendencia-central.html#cb58-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -1397,10 +1400,10 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <span id="cb63-3"><a href="medida-de-tendencia-central.html#cb63-3" tabindex="-1"></a><span class="fu">head</span>(dfBin)</span></code></pre></div>
 </details>
 <pre><code>##   dfBin
-## 1     1
+## 1     0
 ## 2     1
-## 3     0
-## 4     0
+## 3     1
+## 4     1
 ## 5     1
 ## 6     1</code></pre>
 <p>Ahora vamos a producir el gráfico. Lo que uno observa es que el promedio esta en el centro cerca de .6, pero no hay ningún dato cerca del promedio. El promedio no representa la “tendencia central” de la distribución.</p>
@@ -1410,7 +1413,7 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
 <span id="cb65-3"><a href="medida-de-tendencia-central.html#cb65-3" tabindex="-1"></a>mod<span class="ot">=</span><span class="fu">mode</span>(dfBin<span class="sc">$</span>dfBin)</span>
 <span id="cb65-4"><a href="medida-de-tendencia-central.html#cb65-4" tabindex="-1"></a>mea</span></code></pre></div>
 </details>
-<pre><code>## [1] 0.6012</code></pre>
+<pre><code>## [1] 0.6017</code></pre>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="medida-de-tendencia-central.html#cb67-1" tabindex="-1"></a><span class="fu">ggplot</span>(dfBin, <span class="fu">aes</span>(dfBin))<span class="sc">+</span></span>
 <span id="cb67-2"><a href="medida-de-tendencia-central.html#cb67-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>)<span class="sc">+</span></span>
@@ -1475,7 +1478,7 @@ En el siguiente caso tanto el valor de 6 y 7 se encuentra en el centro, por cons
         </div>
       </div>
 <a href="historia-breve-de-la-estadística.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="medidas_de_dispersión.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="medidas_de_dispersion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Población y Muestreos | BioEstadística</title>
+<meta name="author" content="">
+<meta name="description" content='Fecha de la ultima revisión ## [1] "2025-10-07"  3.1 ¿Qué es la estadística? Usando la definición de Snedecor y Cochran (1989) la estadística son las técnicas para la “recolección, análisis y la...'>
+<meta name="generator" content="bookdown 0.44 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Población y Muestreos | BioEstadística">
+<meta property="og:type" content="book">
+<meta property="og:description" content='Fecha de la ultima revisión ## [1] "2025-10-07"  3.1 ¿Qué es la estadística? Usando la definición de Snedecor y Cochran (1989) la estadística son las técnicas para la “recolección, análisis y la...'>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Población y Muestreos | BioEstadística">
+<meta name="twitter:description" content='Fecha de la ultima revisión ## [1] "2025-10-07"  3.1 ¿Qué es la estadística? Usando la definición de Snedecor y Cochran (1989) la estadística son las técnicas para la “recolección, análisis y la...'>
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.9.0/transition.js"></script><script src="libs/bs3compat-0.9.0/tabs.js"></script><script src="libs/bs3compat-0.9.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BioEstadística</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introducción al curso de BioEstadística</a></li>
+<li><a class="" href="introducci%C3%B3n-a-la-bioestad%C3%ADstica.html"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></li>
+<li><a class="active" href="poblaci%C3%B3n-y-muestreos.html"><span class="header-section-number">3</span> Población y Muestreos</a></li>
+<li><a class="" href="inferencias-y-hip%C3%B3tesis.html"><span class="header-section-number">4</span> Inferencias y Hipótesis</a></li>
+<li><a class="" href="historia-breve-de-la-estad%C3%ADstica.html"><span class="header-section-number">5</span> Historia breve de la Estadística</a></li>
+<li><a class="" href="medida-de-tendencia-central.html"><span class="header-section-number">6</span> Medida de tendencia central</a></li>
+<li><a class="" href="medidas_de_dispersi%C3%B3n.html"><span class="header-section-number">7</span> Medidas_de_dispersión</a></li>
+<li><a class="" href="estad%C3%ADstica-descriptiva.html"><span class="header-section-number">8</span> Estadística Descriptiva</a></li>
+<li><a class="" href="gr%C3%A1ficos.html"><span class="header-section-number">9</span> Gráficos</a></li>
+<li><a class="" href="supuestos.html"><span class="header-section-number">10</span> Supuestos</a></li>
+<li><a class="" href="estad%C3%ADstica-frecuentista.html"><span class="header-section-number">11</span> Estadística Frecuentista</a></li>
+<li><a class="" href="distribuci%C3%B3n-normal.html"><span class="header-section-number">12</span> Distribución Normal</a></li>
+<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una muestra</a></li>
+<li><a class="" href="prueba-de-t-pareados.html"><span class="header-section-number">14</span> Prueba de t pareados</a></li>
+<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con datos independientes</a></li>
+<li><a class="" href="anova.html"><span class="header-section-number">16</span> ANOVA</a></li>
+<li><a class="" href="correlaci%C3%B3n-y-covarianza.html"><span class="header-section-number">17</span> Correlación y Covarianza</a></li>
+<li><a class="" href="regresi%C3%B3n-lineal-1.html"><span class="header-section-number">18</span> Regresión Lineal</a></li>
+<li><a class="" href="regresi%C3%B3n-logistica.html"><span class="header-section-number">19</span> Regresión Logistica</a></li>
+<li><a class="" href="selecionando-modelos-con-akaike.html"><span class="header-section-number">20</span> Selecionando modelos con AKAIKE</a></li>
+<li><a class="" href="como-funciona-la-selecci%C3%B3n-de-modelos.html"><span class="header-section-number">21</span> #Como funciona la selección de modelos?</a></li>
+<li><a class="" href="pruebas-no-parametricas.html"><span class="header-section-number">22</span> Pruebas no parametricas</a></li>
+<li class="book-part">Appendix</li>
+<li><a class="" href="ejercicios-a.html"><span class="header-section-number">A</span> Ejercicios A</a></li>
+<li><a class="" href="ejercicios-b.html"><span class="header-section-number">B</span> Ejercicios B</a></li>
+<li><a class="" href="ejercicios-c.html"><span class="header-section-number">C</span> Ejercicios C</a></li>
+<li><a class="" href="ejercicios-d.html"><span class="header-section-number">D</span> Ejercicios D</a></li>
+<li><a class="" href="ejercicios-e.html"><span class="header-section-number">E</span> Ejercicios E</a></li>
+<li><a class="" href="ejercicios-f.html"><span class="header-section-number">F</span> Ejercicios F</a></li>
+<li><a class="" href="ejercicios-g.html"><span class="header-section-number">G</span> Ejercicios G</a></li>
+<li><a class="" href="ejercicios-h.html"><span class="header-section-number">H</span> Ejercicios H</a></li>
+<li><a class="" href="ejercicios-i.html"><span class="header-section-number">I</span> Ejercicios I</a></li>
+<li><a class="" href="ejercicios-j.html"><span class="header-section-number">J</span> Ejercicios J</a></li>
+<li><a class="" href="ejercicios-k.html"><span class="header-section-number">K</span> Ejercicios K</a></li>
+<li><a class="" href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><span class="header-section-number">L</span> Ejercicios sobre prueba de t con datos independiente</a></li>
+<li><a class="" href="ejercicios-m.html"><span class="header-section-number">M</span> Ejercicios M</a></li>
+<li><a class="" href="ejercicios-n.html"><span class="header-section-number">N</span> Ejercicios N</a></li>
+<li><a class="" href="ejercicio-o.html"><span class="header-section-number">O</span> Ejercicio O</a></li>
+<li><a class="" href="ejercicios-p.html"><span class="header-section-number">P</span> Ejercicios P</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">Q</span> DATA</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="población-y-muestreos" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Población y Muestreos<a class="anchor" aria-label="anchor" href="#poblaci%C3%B3n-y-muestreos"><i class="fas fa-link"></i></a>
+</h1>
+<p>Fecha de la ultima revisión</p>
+<pre><code>## [1] "2025-10-07"</code></pre>
+<p><img src="Graficos/hex_ggversa.png" width="20%"><img src="Graficos/hex_error.png" width="20%"></p>
+<div id="qué-es-la-estadística" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> ¿Qué es la estadística?<a class="anchor" aria-label="anchor" href="#qu%C3%A9-es-la-estad%C3%ADstica"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li><p>Usando la definición de Snedecor y Cochran (1989) la estadística son las técnicas para la “recolección, análisis y la habilidad de tener una conclusión de los datos”.</p></li>
+<li><p>También pudiésemos decir que la estadística es el estudio de la incertidumbre.</p></li>
+</ul>
+</div>
+<div id="el-concepto-de-población" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> El concepto de población<a class="anchor" aria-label="anchor" href="#el-concepto-de-poblaci%C3%B3n"><i class="fas fa-link"></i></a>
+</h2>
+<p>Estos conceptos en estadística es sumamente diferente a la visión popular. En el concepto popular, social y geográfico una población es un conjunto de individuos de una especie o un concepto nacionalista (por ejemplos los Argentinos, o puertoriqueños). Típicamente se refiere a un grupo de individuos en un país, estado. El concepto de población en estadística es diferente en que se refiere a <strong>TODOS</strong> en el universo. Por consecuencia se fuésemos hacer un estudio de la <strong>población</strong> de puertoriqueños, tendríamos que incluir a todos ellos irrelevante de donde vive en el planeta. Por consecuencia el concepto de población en estadística siempre se refiere a todos los individuos <strong>sin que falte ni uno</strong>. Pudiésemos modificar nuestro estudio y decir que se va a estudiar una población más reducida. Por ejemplo la población de los puertoriqueños que viven en Puerto Rico en tal fecha. Aun así seria imposible recolectar datos de cada uno, porque siempre habrá algún individuo que no vamos a poder recolectar los datos. Por consecuencia el <strong>concepto de población</strong> es uno teórico.</p>
+<hr>
+</div>
+<div id="el-concepto-de-muestreo" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> El concepto de muestreo<a class="anchor" aria-label="anchor" href="#el-concepto-de-muestreo"><i class="fas fa-link"></i></a>
+</h2>
+<p>Un muestreo es el subgrupo de la población, donde el objetivo es que este muestro sea representativo de la población. Por ejemplo uno hace una recolección de información para saber cual es el nivel de estrés durante la pandemia de COVID-19 que tuvo los estudiantes universitarios. Seria un trabajo fenomenal recolectar datos sobre <strong>TODOS</strong> los estudiantes, pero su podría recolectar información sobre un subgrupo de ellos con la espera que los datos represente la población de estudiantes universitarios.</p>
+<hr>
+</div>
+<div id="griego-y-latin" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> Griego y Latin<a class="anchor" aria-label="anchor" href="#griego-y-latin"><i class="fas fa-link"></i></a>
+</h2>
+<p>Cuando uno quiere referir a la población/parámetro uno utiliza las letras del alfabeto griego y cuando nos referimos a un muestreo se usa la letra del alfabeto en latín.</p>
+<p>En la siguiente tabla se observa algunos de las variables que veremos en los módulos siguientes. En los próximos módulos regresaremos al significado de estos parámetros.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://haozhu233.github.io/kableExtra/">kableExtra</a></span><span class="op">)</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>variable <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Promedio"</span>, <span class="st">"Mediana"</span>,<span class="st">"Varianza"</span>, <span class="st">"Desviación Estandar"</span>, <span class="st">"Proporción"</span><span class="op">)</span>,</span>
+<span>                 Griego <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"$$\\mu$$"</span>, <span class="st">"$$\\theta$$"</span>, <span class="st">"$$\\sigma_{ }^2$$"</span>,<span class="st">"$$\\sigma$$"</span>, <span class="st">"$$p$$"</span><span class="op">)</span>,</span>
+<span>                 Latin <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"$$\\bar{x}$$"</span>,<span class="st">"$$M$$"</span>,<span class="st">"$$s_{ }^2$$"</span>,<span class="st">"$$s$$"</span> ,<span class="st">"$$\\hat{p}$$"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">df</span>, escape<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">variable</th>
+<th align="left">Griego</th>
+<th align="left">Latin</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Promedio</td>
+<td align="left"><span class="math display">\[\mu\]</span></td>
+<td align="left"><span class="math display">\[\bar{x}\]</span></td>
+</tr>
+<tr class="even">
+<td align="left">Mediana</td>
+<td align="left"><span class="math display">\[\theta\]</span></td>
+<td align="left"><span class="math display">\[M\]</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Varianza</td>
+<td align="left"><span class="math display">\[\sigma_{ }^2\]</span></td>
+<td align="left"><span class="math display">\[s_{ }^2\]</span></td>
+</tr>
+<tr class="even">
+<td align="left">Desviación Estandar</td>
+<td align="left"><span class="math display">\[\sigma\]</span></td>
+<td align="left"><span class="math display">\[s\]</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Proporción</td>
+<td align="left"><span class="math display">\[p\]</span></td>
+<td align="left"><span class="math display">\[\hat{p}\]</span></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="la-verdad-versus-un-estimado" class="section level2" number="3.5">
+<h2>
+<span class="header-section-number">3.5</span> La verdad versus un estimado<a class="anchor" aria-label="anchor" href="#la-verdad-versus-un-estimado"><i class="fas fa-link"></i></a>
+</h2>
+<p>Cuando uno hace una investigación esta buscando la “verdad” en otra palabra estamos a la búsqueda de la información de la población. Desafortunadamente, raramente podemos tener TODA los datos, por consecuencia esperamos que la muestra sea una buena representación de la “verdad”. Se espera que el promedio de la muestra se acerca a promedio del universo (la verdad). Matemáticamente uno lo puede escribir de la siguiente manera <span class="math inline">\(\overline{x}\approx\mu\)</span>. El gran problema en la ciencia es que nunca estamos 100% seguro de los trabajos de investigación porque nunca sabemos el <span class="math inline">\(\mu\)</span>. Este valor es casi siempre desconocido.</p>
+</div>
+<div id="muestreos-al-azar" class="section level2" number="3.6">
+<h2>
+<span class="header-section-number">3.6</span> Muestreos al azar<a class="anchor" aria-label="anchor" href="#muestreos-al-azar"><i class="fas fa-link"></i></a>
+</h2>
+<p>Una de las áreas de estudio importante es saber organizar un estudio para responder a unas preguntas y que no sea sesgado (en ingles “bias”). Cuando se selecciona los datos necesitamos asegurar que los datos sean representativos de la población de interés, el <span class="math inline">\(\mu\)</span>. Si por ejemplo queremos saber el nivel de colesterol en la población de puertoriqueños que viven en Puerto Rico el diseño del muestreo tiene que tomar en cuenta ese grupo y la muestra tiene que representar ese grupo.</p>
+<p>Pregunta corta: Explica el sesgo de los diferentes métodos, como se podría mejorar el muestreo?</p>
+<ol style="list-style-type: decimal">
+<li>¿Cual de las siguientes alternativas es un mejor diseño experimental para deteminar el nivel de colestrerol de los puertoriqueños que viven en Puerto Rico?</li>
+</ol>
+<blockquote>
+<ul>
+<li>Se muestrea estudiantes de la clase de BioEstadística de la UPRH</li>
+<li>Se muestrea paciente que llegan a la oficina de un medico</li>
+<li>Se muestrea paciente que llegan a la sala de emergencia</li>
+<li>Se muestrea gente de multiples edades</li>
+<li>Se muestrea gente de multiples edades y distribuido por toda la isla</li>
+</ul>
+</blockquote>
+</div>
+<div id="error-de-muestreo-exactitud-y-precisión" class="section level2" number="3.7">
+<h2>
+<span class="header-section-number">3.7</span> Error de muestreo: Exactitud y Precisión<a class="anchor" aria-label="anchor" href="#error-de-muestreo-exactitud-y-precisi%C3%B3n"><i class="fas fa-link"></i></a>
+</h2>
+<div id="la-exactitud-se-refiere-a-cuan-cerca-es-el-valor-medido-al-valor-real-de-la-variable-de-interes.-cuan-es-el-largo-de-la-hoja" class="section level3" number="3.7.1">
+<h3>
+<span class="header-section-number">3.7.1</span> La exactitud se refiere a cuan cerca es el valor medido al valor real de la variable de interes. Cuan es el largo de la hoja<a class="anchor" aria-label="anchor" href="#la-exactitud-se-refiere-a-cuan-cerca-es-el-valor-medido-al-valor-real-de-la-variable-de-interes.-cuan-es-el-largo-de-la-hoja"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="la-precisión-es-un-estimado-de-cuan-cerca-cada-valor-es-uno-del-otro.-hablando-de-la-mismo-individuo-o-variable." class="section level3" number="3.7.2">
+<h3>
+<span class="header-section-number">3.7.2</span> La precisión es un estimado de cuan cerca cada valor es uno del otro. Hablando de la mismo individuo o variable.<a class="anchor" aria-label="anchor" href="#la-precisi%C3%B3n-es-un-estimado-de-cuan-cerca-cada-valor-es-uno-del-otro.-hablando-de-la-mismo-individuo-o-variable."><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="Graficos/Accuracy_precision.png" width="100%"></div>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="introducci%C3%B3n-a-la-bioestad%C3%ADstica.html"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></div>
+<div class="next"><a href="inferencias-y-hip%C3%B3tesis.html"><span class="header-section-number">4</span> Inferencias y Hipótesis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#poblaci%C3%B3n-y-muestreos"><span class="header-section-number">3</span> Población y Muestreos</a></li>
+<li><a class="nav-link" href="#qu%C3%A9-es-la-estad%C3%ADstica"><span class="header-section-number">3.1</span> ¿Qué es la estadística?</a></li>
+<li><a class="nav-link" href="#el-concepto-de-poblaci%C3%B3n"><span class="header-section-number">3.2</span> El concepto de población</a></li>
+<li><a class="nav-link" href="#el-concepto-de-muestreo"><span class="header-section-number">3.3</span> El concepto de muestreo</a></li>
+<li><a class="nav-link" href="#griego-y-latin"><span class="header-section-number">3.4</span> Griego y Latin</a></li>
+<li><a class="nav-link" href="#la-verdad-versus-un-estimado"><span class="header-section-number">3.5</span> La verdad versus un estimado</a></li>
+<li><a class="nav-link" href="#muestreos-al-azar"><span class="header-section-number">3.6</span> Muestreos al azar</a></li>
+<li>
+<a class="nav-link" href="#error-de-muestreo-exactitud-y-precisi%C3%B3n"><span class="header-section-number">3.7</span> Error de muestreo: Exactitud y Precisión</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#la-exactitud-se-refiere-a-cuan-cerca-es-el-valor-medido-al-valor-real-de-la-variable-de-interes.-cuan-es-el-largo-de-la-hoja"><span class="header-section-number">3.7.1</span> La exactitud se refiere a cuan cerca es el valor medido al valor real de la variable de interes. Cuan es el largo de la hoja</a></li>
+<li><a class="nav-link" href="#la-precisi%C3%B3n-es-un-estimado-de-cuan-cerca-cada-valor-es-uno-del-otro.-hablando-de-la-mismo-individuo-o-variable."><span class="header-section-number">3.7.2</span> La precisión es un estimado de cuan cerca cada valor es uno del otro. Hablando de la mismo individuo o variable.</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BioEstadística</strong>" was written by . It was last built on 2025-10-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

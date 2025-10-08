@@ -1,0 +1,1940 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Chapter 11 Estadística Frecuentista | BioEstadística</title>
+
+    <meta name="author" content="" />
+  
+   <meta name="description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
+   <meta name="generator" content="placeholder" />
+  <meta property="og:title" content="Chapter 11 Estadística Frecuentista | BioEstadística" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 11 Estadística Frecuentista | BioEstadística" />
+  
+  <meta name="twitter:description" content="Este libro digital es una introdución al estudio de BioEstadistica" />
+  
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet" />
+    <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script>
+    <script src="libs/bs3compat-0.9.0/transition.js"></script>
+    <script src="libs/bs3compat-0.9.0/tabs.js"></script>
+    <script src="libs/bs3compat-0.9.0/bs3compat.js"></script>
+    <link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet" />
+    <script src="libs/bs4_book-1.0.0/bs4_book.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+      <link rel="stylesheet" href="style.css" />
+  
+</head>
+
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book">
+    <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BioEstadística</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+      </form>
+
+      <nav aria-label="Table of contents">
+        <h2>Table of contents</h2>
+        <div id="book-toc"></div>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="#">View book source <i class="fab fa-github"></i></a></li></p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="col-sm-12 col-md-9 col-lg-7" id="content">
+<div id="estadística-frecuentista" class="section level1" number="11">
+<h1><span class="header-section-number">Chapter 11</span> Estadística Frecuentista</h1>
+<hr />
+<div id="bondad-de-ajuste-y-table-de-contingencia" class="section level2" number="11.1">
+<h2><span class="header-section-number">11.1</span> Bondad de ajuste y Table de Contingencia</h2>
+<p>Este tipo de prueba es frecuentemente conocido erróneamente como la prueba de Chi cuadrado. Los tipos de datos necesarios son distintos a las pruebas anteriores. En las pruebas que en los próximos módulos siempre habrá por lo menos una variable donde la unidad era el número de individuos, el largo o ancho en una unidad (cm, metro, celsius, etc) o sea una variable continua. Ahora para la pruebas de Bondad de ajuste y Tabla de Contingencia se contabiliza el número de eventos por categoría. En otra palabra es la frecuencia que ocurre un evento.</p>
+<p>En esta sección no estamos interesado en evaluar los valores con datos que son continuos como la altura o el tamaño. Las variables que se usa son variables categóricas, o sea los valores son la frecuencia de un evento (o la ausencia de un evento).</p>
+<blockquote>
+<p>Los datos tienen que caer exactamente en una categoría, por ejemplo</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>vivo o muerto.</li>
+<li>presente o ausente.</li>
+<li>blanco, rojo, verde, azul.</li>
+<li>estar embarazada o no.</li>
+<li>Tiene el fenotipo dominante o recesivo.</li>
+<li>En una herencia mendeliana, los individuos son homocigóticos recesivo, dominantes o heterocigóticos.</li>
+</ul>
+</blockquote>
+<hr />
+</div>
+<div id="qué-son-supuestos-1" class="section level2" number="11.2">
+<h2><span class="header-section-number">11.2</span> Qué son supuestos</h2>
+<p>Cuando hablamos de supuestos estamos hablando de las condiciones necesarias para que la prueba sea utilizada. El incumplimiento de los supuestos resulta en que el los resultados de la prueba tenga un nivel de tipo de error I y tipo de error II más grande que los especificado (por ejemplo si selecciona un <span class="math inline">\(\alpha\)</span> de 0.05, el error seria más grande). Si se usa datos usa datos erróneos puede ser que la prueba sea completamente invalida.</p>
+<hr />
+</div>
+<div id="los-supuestos-de-las-pruebas-de-frecuencias." class="section level2" number="11.3">
+<h2><span class="header-section-number">11.3</span> Los supuestos de las pruebas de frecuencias.</h2>
+<ul>
+<li>Los datos son frecuencias.</li>
+<li>Las frecuencias son mutuamente exclusivas (no caen en múltiples categorías).</li>
+<li>Las observaciones son independiente una de la otra.</li>
+<li>Cada categoría tiene una <strong>frecuencia esperada</strong> suficiente grande:
+<ul>
+<li>ninguna de las <strong>frecuencia esperada</strong> sea menor de 5 cuando hay 4 o menos categorías</li>
+<li>no más de 20% de las categorías que tengan un valor esperado de &lt; 5 cuando hay más de 5 categorías y ninguna tiene un valor <strong>esperado</strong> menor de 1.</li>
+</ul></li>
+</ul>
+<hr />
+</div>
+<div id="instalar-y-activar-los-siguientes-packages" class="section level2" number="11.4">
+<h2><span class="header-section-number">11.4</span> Instalar y activar los siguientes packages</h2>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="estadística-frecuentista.html#cb346-1" tabindex="-1"></a><span class="co">#----Instalar los paquetes si es necesario-----</span></span>
+<span id="cb346-2"><a href="estadística-frecuentista.html#cb346-2" tabindex="-1"></a><span class="co">#install.packages(&quot;gmodels&quot;)</span></span>
+<span id="cb346-3"><a href="estadística-frecuentista.html#cb346-3" tabindex="-1"></a><span class="co">#install.packages(&quot;MASS&quot;)</span></span>
+<span id="cb346-4"><a href="estadística-frecuentista.html#cb346-4" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">&quot;pacman&quot;</span>)) <span class="fu">install.packages</span>(<span class="st">&quot;pacman&quot;</span>)</span>
+<span id="cb346-5"><a href="estadística-frecuentista.html#cb346-5" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(gmodels, MASS, gt)</span>
+<span id="cb346-6"><a href="estadística-frecuentista.html#cb346-6" tabindex="-1"></a></span>
+<span id="cb346-7"><a href="estadística-frecuentista.html#cb346-7" tabindex="-1"></a><span class="co">#------Activar los paquetes-----</span></span>
+<span id="cb346-8"><a href="estadística-frecuentista.html#cb346-8" tabindex="-1"></a></span>
+<span id="cb346-9"><a href="estadística-frecuentista.html#cb346-9" tabindex="-1"></a><span class="fu">library</span>(gmodels) <span class="do">## Análisis de datos de frecuencia</span></span>
+<span id="cb346-10"><a href="estadística-frecuentista.html#cb346-10" tabindex="-1"></a><span class="fu">library</span>(MASS) <span class="do">## graficar los datos con la función &quot;mosaicpLot&quot;</span></span>
+<span id="cb346-11"><a href="estadística-frecuentista.html#cb346-11" tabindex="-1"></a><span class="fu">library</span>(gt) <span class="do">## &quot;Grammer of Tables&quot;, tablas más bonitas</span></span></code></pre></div>
+<hr />
+</div>
+<div id="gregory-mendel-y-sus-guisantes" class="section level2" number="11.5">
+<h2><span class="header-section-number">11.5</span> Gregory Mendel y sus guisantes</h2>
+<p>Gregory Mendel (1822-1884) el padre de herencia “mendeliana” estaba interesada en determinar como se hereda las características de los organismos. En clases de biología y genética uno de los primeros ejemplos de herencia mendeliana es evaluar si cumple con lo que Mendel sugerió que es la razón de herencia. Si un fenotipo es heredado por un mecanismo sencillo de un gen con solamente dos alelos donde uno de los alelos es dominante y el otro es recesivo entonces hay solamente dos fenotipos posible. Por consecuencia lo más básico es determinar si la frecuencia de los fenotipos en una población sigue una razón mendeliana de 3:1, en otra palabra por cada 3 individuos de un fenotipo “x” hay un individuo del fenotipo “y”.</p>
+<p>Los datos que estaremos usando provenien directamente de los trabajos de Mendel. Aquí esta la publicación original en aleman y la referencia a la traducción en ingles.</p>
+<p>Mendel, J.G. (1866). “Versuche über Pflanzenhybriden”, Verhandlungen des naturforschenden Vereines in Brünn, Bd. IV für das Jahr, 1865, Abhandlungen: 3–47, [1]. For the English translation, see: Druery, C.T.; Bateson, William (1901). “Experiments in plant hybridization” (PDF). Journal of the Royal Horticultural Society. 26: 1–32.</p>
+<p>Tabla de los resultados de experimentos original de Gregor Mendel con semillas redondas y arrugadas. Cada uno represente un experimento y la cantidad de guisantes redondos o arrugadas.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Plantas</th>
+<th align="right">redonda</th>
+<th align="right">arrugada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="right">45</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="right">27</td>
+<td align="right">8</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="right">24</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td align="right">19</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td align="right">32</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td align="right">26</td>
+<td align="right">6</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td align="right">88</td>
+<td align="right">24</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td align="right">22</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td align="right">28</td>
+<td align="right">6</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td align="right">25</td>
+<td align="right">7</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td align="right">336</td>
+<td align="right">101</td>
+</tr>
+</tbody>
+</table>
+<p>En la pagina número 10 del articulo observamos los resultados de diferentes experimentos. En el experimento 1, la Planta #1, produjo un total de 57 semillas donde 45 eran redonda y 12 eran arrugadas. Si lo que esperamos es una razón de 3:1, los que se se espera es que 0.75:0.25 que seria las proporciones esperada. Creamos un vector de datos de los valores observados (obs) y un vector de datos para la proporción esperada (esp).</p>
+<hr />
+</div>
+<div id="bondad-de-ajuste." class="section level2" number="11.6">
+<h2><span class="header-section-number">11.6</span> Bondad de Ajuste.</h2>
+<p>La prueba de bondad de ajuste y de tabla de contingencia son pruebas que evalúa la cantidad/frecuencia en las categorías y lo compara con un modelo nulo. En este caso lo que se compará es la cantidad de la frecuencia observada <span class="math inline">\(o\)</span>, con la frecuencia esperada <span class="math inline">\(e\)</span>. La formula es la siguiente</p>
+<p><span class="math display">\[\chi^2=\sum_{n=i}^n\frac{\left(o-e\right)^2}{e}\]</span></p>
+<p>Usamos un ejemplo sencillo de los datos de Mendel haciendo los cálculos a mano de una proporción 3:1 de herencia de los fenotipos redonda:arrugada. Los datos son de la primer linea de uno de los experimentos que hizo Mendel.</p>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="estadística-frecuentista.html#cb347-1" tabindex="-1"></a><span class="dv">57</span><span class="sc">*</span>.<span class="dv">75</span></span></code></pre></div>
+<pre><code>## [1] 42.75</code></pre>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="estadística-frecuentista.html#cb349-1" tabindex="-1"></a><span class="dv">57</span><span class="sc">*</span>.<span class="dv">25</span></span></code></pre></div>
+<pre><code>## [1] 14.25</code></pre>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="estadística-frecuentista.html#cb351-1" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb351-2"><a href="estadística-frecuentista.html#cb351-2" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb351-3"><a href="estadística-frecuentista.html#cb351-3" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Calculos =</span> <span class="fu">c</span>(<span class="st">&quot;Observado&quot;</span>,<span class="st">&quot;Esperado&quot;</span>, <span class="st">&quot;(o-e)&quot;</span>, <span class="st">&quot;(o-e)^2&quot;</span>, <span class="st">&quot;$$</span><span class="sc">\\</span><span class="st">frac{(o-e)^2}{e}$$&quot;</span>, <span class="st">&quot;$$</span><span class="sc">\\</span><span class="st">chi_{total}^2$$&quot;</span>),</span>
+<span id="cb351-4"><a href="estadística-frecuentista.html#cb351-4" tabindex="-1"></a>                 <span class="at">Redonda =</span> <span class="fu">c</span>(<span class="dv">45</span>, <span class="fl">42.75</span>, <span class="fl">2.25</span>,<span class="fl">5.0625</span>, <span class="fl">0.1184</span>, <span class="st">&quot;&quot;</span>),</span>
+<span id="cb351-5"><a href="estadística-frecuentista.html#cb351-5" tabindex="-1"></a>                 <span class="at">Arrugada =</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="fl">14.25</span>, <span class="sc">-</span><span class="fl">2.25</span>,<span class="fl">5.0625</span> ,<span class="fl">0.3553</span>, <span class="st">&quot;&quot;</span>),</span>
+<span id="cb351-6"><a href="estadística-frecuentista.html#cb351-6" tabindex="-1"></a>                 <span class="at">Total =</span> <span class="fu">c</span>(<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="fl">0.4737</span>))</span>
+<span id="cb351-7"><a href="estadística-frecuentista.html#cb351-7" tabindex="-1"></a></span>
+<span id="cb351-8"><a href="estadística-frecuentista.html#cb351-8" tabindex="-1"></a><span class="fu">kable</span>(df, <span class="at">escape=</span><span class="cn">FALSE</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Calculos</th>
+<th align="left">Redonda</th>
+<th align="left">Arrugada</th>
+<th align="left">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Observado</td>
+<td align="left">45</td>
+<td align="left">12</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Esperado</td>
+<td align="left">42.75</td>
+<td align="left">14.25</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">(o-e)</td>
+<td align="left">2.25</td>
+<td align="left">-2.25</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">(o-e)^2</td>
+<td align="left">5.0625</td>
+<td align="left">5.0625</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math display">\[\frac{(o-e)^2}{e}\]</span></td>
+<td align="left">0.1184</td>
+<td align="left">0.3553</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math display">\[\chi_{total}^2\]</span></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0.4737</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Los pasos para calcular el Chi Cuadrado:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>Los valores esperados, en este caso fue una proporción de 3:1</li>
+<li>Las diferencias</li>
+<li>Cuadrar las diferencias</li>
+<li>División por el valor esperado (da los Chi Square parcial)</li>
+<li>Sumar los valores en #4.</li>
+<li>buscar en una tabla de Chi Square el valor critico de Chi Square para la cantidad de grupos menos 1 y el <span class="math inline">\(\alpha\)</span> correspondiente. En este caso se busca un <span class="math inline">\(\alpha\)</span> de 0.05 y el grado de libertad (n-1) = 2-1, n es el número de grupos.</li>
+</ul>
+</blockquote>
+<p>Para determinar si es significado el valor de Chi Square observado se compara con el valor critico (de la tabla). Aquí usamos R para conseguir este valor. Note aquí se usa (1-0.05= 0.95) y el grado de libertad que es 1. Ahora se compara ese valor con 0.4737, Si el valor observado es menor que el valor 3.841459 se acepta la hipótesis nula. En este caso no hay evidencia que los fenotipos se hereden diferente a 3:1.</p>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="estadística-frecuentista.html#cb352-1" tabindex="-1"></a><span class="fu">qchisq</span>(<span class="fl">0.95</span>, <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 3.841459</code></pre>
+<p>No hay ninguna razón de hacer los cálculos a mano si tenemos a R para hacerlo. Nota aquí se hace la misma prueba con los mismos datos y tenemos el mismo resultado.</p>
+<hr />
+</div>
+<div id="primer-ejemplo" class="section level2" number="11.7">
+<h2><span class="header-section-number">11.7</span> Primer ejemplo</h2>
+<p>Lo que uno observa es el valor de la prueba de Bondad de ajuste tiene un Chi Cuadrado de 0.48, p =.49. Como el valor de <em>p</em> es mayor a 0.05, no se rechaza la hipótesis nula y que la frecuencia no es diferente de una proporción de 3:1.</p>
+<div class="sourceCode" id="cb354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb354-1"><a href="estadística-frecuentista.html#cb354-1" tabindex="-1"></a>obs<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">45</span>,<span class="dv">12</span>) <span class="co"># los valores observado</span></span>
+<span id="cb354-2"><a href="estadística-frecuentista.html#cb354-2" tabindex="-1"></a>esp<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.75</span>,<span class="fl">0.25</span>) <span class="co"># este el modelo nulo</span></span>
+<span id="cb354-3"><a href="estadística-frecuentista.html#cb354-3" tabindex="-1"></a></span>
+<span id="cb354-4"><a href="estadística-frecuentista.html#cb354-4" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x=</span>obs, <span class="at">p=</span>esp)</span></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  obs
+## X-squared = 0.47368, df = 1, p-value = 0.4913</code></pre>
+<div class="sourceCode" id="cb356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb356-1"><a href="estadística-frecuentista.html#cb356-1" tabindex="-1"></a><span class="co"># Cuando el valor de p es mayor a 0.05 se acepta la hipotesis nula</span></span>
+<span id="cb356-2"><a href="estadística-frecuentista.html#cb356-2" tabindex="-1"></a><span class="co"># Es el caso presente que la la herencia es de 3:1</span></span></code></pre></div>
+<hr />
+</div>
+<div id="segundo-ejemplo" class="section level2" number="11.8">
+<h2><span class="header-section-number">11.8</span> Segundo ejemplo</h2>
+<p>Ahora evaluamos si la frecuencia de semillas redondas:arrugadas de todo el experimento sigue un patrón de 3:1. Se observa un Chi cuadrado de 0.83 y un valor de p=0.36, otra vez el valor es por encima de 0.05, y se concluye que la frecuencia de semillas redondas:redondas no es distintas a 3:1. Se acepta la hipotesis nula.</p>
+<p>Vemos que a re-evaluar los experimentos de G. Mendel tenemos un resultado que apoya su predicciones. Nota que G. Mendel <strong>NO</strong> tenia pruebas estadísticas para determinar si las frecuencias eran diferente o no de 3:1. El hizo observaciones y llego a unas conclusiones. Se acuerda cuando fue desarrollado este método y por quien?</p>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="estadística-frecuentista.html#cb357-1" tabindex="-1"></a>obs<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">336</span>,<span class="dv">101</span>)</span>
+<span id="cb357-2"><a href="estadística-frecuentista.html#cb357-2" tabindex="-1"></a>esp<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.75</span>,<span class="fl">0.25</span>)</span>
+<span id="cb357-3"><a href="estadística-frecuentista.html#cb357-3" tabindex="-1"></a></span>
+<span id="cb357-4"><a href="estadística-frecuentista.html#cb357-4" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x=</span>obs, <span class="at">p=</span>esp)</span></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  obs
+## X-squared = 0.83066, df = 1, p-value = 0.3621</code></pre>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="estadística-frecuentista.html#cb359-1" tabindex="-1"></a>obs<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">16</span>)</span>
+<span id="cb359-2"><a href="estadística-frecuentista.html#cb359-2" tabindex="-1"></a>esp<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fl">0.50</span>,<span class="fl">0.50</span>)</span>
+<span id="cb359-3"><a href="estadística-frecuentista.html#cb359-3" tabindex="-1"></a></span>
+<span id="cb359-4"><a href="estadística-frecuentista.html#cb359-4" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x=</span>obs, <span class="at">p=</span>esp)</span></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  obs
+## X-squared = 4.5455, df = 1, p-value = 0.03301</code></pre>
+<div id="esta-ejercicio-cumple-con-los-supuestos" class="section level3" number="11.8.1">
+<h3><span class="header-section-number">11.8.1</span> Esta ejercicio cumple con los supuestos?</h3>
+<hr />
+<p><img src="Graficos/Tweety.svg.png" width="25%" style="float:right; padding:10px" /></p>
+<ol style="list-style-type: decimal">
+<li><p>Ejercicio: Cien pajaritos recibieron semillas de girasol con rayas negras o semillas negras. Setenta y cinco eligieron semillas negras. ¿Podemos concluir que la población de la que se tomó esta muestra tiene preferencia por las semillas de girasol negras sobre las semillas de girasol rayadas? (traducido del extracto 7.1 de Havel et al.).</p>
+<ul>
+<li>¿Cual es la hipótesis nula?</li>
+<li>¿Cual es la hipótesis alterna?</li>
+<li>Calcula los valores esperados</li>
+<li>Calcula el chi cuadrado</li>
+<li>¿Se rechaza o acepta la Ho?</li>
+</ul></li>
+</ol>
+</div>
+<div id="esta-ejercicio-cumple-con-los-supuestos-1" class="section level3" number="11.8.2">
+<h3><span class="header-section-number">11.8.2</span> Esta ejercicio cumple con los supuestos?</h3>
+<hr />
+<hr />
+</div>
+</div>
+<div id="prueba-de-bondad-de-ajuste-tabla-de-contingencia-rxc" class="section level2" number="11.9">
+<h2><span class="header-section-number">11.9</span> Prueba de Bondad de Ajuste, Tabla de contingencia RxC</h2>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="estadística-frecuentista.html#cb361-1" tabindex="-1"></a><span class="co">#install.packages(&quot;MASS&quot;, dependencies = TRUE)</span></span></code></pre></div>
+<p>Esta prueba se usa para</p>
+<p>Los siguientes datos son de Field, Miles and Field 2012.</p>
+<p>Este conjunto de datos represente un experimento ficticio de tratar de entrenar 200 gatos para que bailan basado en si se la da una recompensa o no. Este esta basado en el concepto del psicólogo Ruso Ivan Pavlov (1849-1936) de que se puede enseñar o sea motivar a una acción dando una recompensa. Ese proceso se llama “condicionar” un proceso de aprendizaje que ocurre entre la asociación de un estimulo ambiental y un comportamiento.</p>
+<p>&lt;<a href="https://en.wikipedia.org/wiki/Ivan_Pavlov" class="uri">https://en.wikipedia.org/wiki/Ivan_Pavlov</a>&gt;</p>
+<p>Primero entramos los datos directamente en una tabla</p>
+<p>Los datos son los siguientes:</p>
+<p>A 38 gatos se la ha dado una recompensa, y de estos 28 bailaron y 10 no bailaron. A 162 no se la dado recompensa, y de estos 48 bailaron y 114 no bailaron.</p>
+<p>Se crea dos listas con los resultados y se une estas dos filas con <strong>cbind()</strong> y después se la añade un nombre a las filas con <strong>rownames()</strong>. Vemos ahora la tabla de frecuencias de cuantos gatos bailaron o no y si fueron entrenado por comido o cariño. Nota que no se puede añadir la tilde <strong>~</strong> a la <strong>n</strong> de cariño.</p>
+<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="estadística-frecuentista.html#cb362-1" tabindex="-1"></a><span class="co">#Crear la tabla de contingencia</span></span>
+<span id="cb362-2"><a href="estadística-frecuentista.html#cb362-2" tabindex="-1"></a></span>
+<span id="cb362-3"><a href="estadística-frecuentista.html#cb362-3" tabindex="-1"></a>comida <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">28</span>)</span>
+<span id="cb362-4"><a href="estadística-frecuentista.html#cb362-4" tabindex="-1"></a>carino <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">114</span>,<span class="dv">48</span>)</span>
+<span id="cb362-5"><a href="estadística-frecuentista.html#cb362-5" tabindex="-1"></a>catsTable <span class="ot">&lt;-</span> <span class="fu">cbind</span>(comida, carino) <span class="co"># la función &quot;cbind&quot;, une listas en columnas, la &quot;c&quot; es para columna</span></span>
+<span id="cb362-6"><a href="estadística-frecuentista.html#cb362-6" tabindex="-1"></a></span>
+<span id="cb362-7"><a href="estadística-frecuentista.html#cb362-7" tabindex="-1"></a></span>
+<span id="cb362-8"><a href="estadística-frecuentista.html#cb362-8" tabindex="-1"></a><span class="fu">rownames</span>(catsTable)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;No_bailan&quot;</span>, <span class="st">&quot;bailan&quot;</span>) <span class="co"># Añade el nombre a las filas</span></span>
+<span id="cb362-9"><a href="estadística-frecuentista.html#cb362-9" tabindex="-1"></a></span>
+<span id="cb362-10"><a href="estadística-frecuentista.html#cb362-10" tabindex="-1"></a>catsTable</span></code></pre></div>
+<pre><code>##           comida carino
+## No_bailan     10    114
+## bailan        28     48</code></pre>
+<hr />
+</div>
+<div id="la-hipótesis-nula" class="section level2" number="11.10">
+<h2><span class="header-section-number">11.10</span> La hipótesis NULA</h2>
+<p>La hipótesis nula es que la cantidad de gatos que bailan o no es independiente de si recibieron comida o cariño.</p>
+</div>
+<div id="la-hipótesis-alterna" class="section level2" number="11.11">
+<h2><span class="header-section-number">11.11</span> La hipótesis alterna</h2>
+<p>La cantidad de gatos que bailan depende que si recibieron cariño o comida.</p>
+</div>
+<div id="gráfico-de-mosaico" class="section level2" number="11.12">
+<h2><span class="header-section-number">11.12</span> Gráfico de Mosaico</h2>
+<p>Podemos visualizar la frecuencia de los datos con un gráfico de mosaico. Si la hipótesis nula la organización de las cajas deberían ser más o menos de la misma proporción (relativo a su frecuencia). En este caso lo que uno observa es que los que reciben comida y no bailan, la caja es mucha más pequeña que los que bailan y reciben comida. Nota que esto no es una prueba es una visualización de los datos y puede ayudar a entender el patrón.</p>
+<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="estadística-frecuentista.html#cb364-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(catsTable, <span class="at">color =</span><span class="cn">TRUE</span>) <span class="co"># El packete MASS</span></span></code></pre></div>
+<p><img src="BiomEstadistica_files/figure-html/freq10-1.png" width="672" /></p>
+<hr />
+<p>Haz un tabla con diferentes cantidad de frecuencia y gráfico los con mosaicplot para evaluar como cambia el gráfico.</p>
+<hr />
+</div>
+<div id="prueba-de-independencia-de-frecuencia." class="section level2" number="11.13">
+<h2><span class="header-section-number">11.13</span> Prueba de Independencia de frecuencia.</h2>
+<p>En ingles se le conoce como “Contingency Tables”</p>
+<p>Los valores esperados en esta caso son calculados directamente de la tabla. Para cada celda <span class="math inline">\(E_{ij}\)</span> donde la {i} representa la fila y la {j} las columnas. El valor esperado se calcula multiplicando la suma de la fila por la suma <span class="math inline">\({R_i}\)</span> de la suma de la columna <span class="math inline">\({C_j}\)</span>. La formula de los valores esperados es la siguiente, donde la N es la suma total de datos. El primer paso es sumar la filas y la columnas de la tabla.</p>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="estadística-frecuentista.html#cb365-1" tabindex="-1"></a>catsTable</span></code></pre></div>
+<pre><code>##           comida carino
+## No_bailan     10    114
+## bailan        28     48</code></pre>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="estadística-frecuentista.html#cb367-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb367-2"><a href="estadística-frecuentista.html#cb367-2" tabindex="-1"></a>ct<span class="ot">=</span><span class="fu">tribble</span>(<span class="sc">~</span>fila, <span class="sc">~</span>comida, <span class="sc">~</span>carino, <span class="sc">~</span>suma,</span>
+<span id="cb367-3"><a href="estadística-frecuentista.html#cb367-3" tabindex="-1"></a>           <span class="st">&quot;No_balian&quot;</span>, <span class="dv">10</span>, <span class="dv">114</span>, <span class="dv">124</span>,</span>
+<span id="cb367-4"><a href="estadística-frecuentista.html#cb367-4" tabindex="-1"></a>           <span class="st">&quot;bailan&quot;</span>, <span class="dv">28</span>, <span class="dv">48</span>, <span class="dv">64</span>,</span>
+<span id="cb367-5"><a href="estadística-frecuentista.html#cb367-5" tabindex="-1"></a>           <span class="st">&quot;suma&quot;</span>, <span class="dv">38</span>, <span class="dv">162</span>, <span class="dv">200</span>)</span>
+<span id="cb367-6"><a href="estadística-frecuentista.html#cb367-6" tabindex="-1"></a>ct</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 4
+##   fila      comida carino  suma
+##   &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+## 1 No_balian     10    114   124
+## 2 bailan        28     48    64
+## 3 suma          38    162   200</code></pre>
+<ul>
+<li>R= Rows</li>
+<li>C= Columns</li>
+<li>E = Estimate</li>
+<li>N = Sum</li>
+</ul>
+<p><span class="math display">\[E_{ij}=\frac{\left(R_i\cdot C_j\right)}{N}\]</span></p>
+<ul>
+<li>F= Fila</li>
+<li>C= Columna</li>
+<li>E = Estimado</li>
+<li>N = Suma</li>
+</ul>
+<p><span class="math display">\[E_{ij}=\frac{\left(F_i\cdot C_j\right)}{N}\]</span>.</p>
+<p>Cálculos dos de los valores esperados</p>
+<ul>
+<li>Los gatos que reciban comida y bailan</li>
+</ul>
+<p><span class="math display">\[E_{12}=\frac{\left(R_2\cdot C_1\right)}{N}= \frac{(38*76)}{200}=14.44\]</span></p>
+<ul>
+<li>Los gatos que reciban cariño y no bailan</li>
+</ul>
+<p><span class="math display">\[E_{21}=\frac{\left(R_1\cdot C_2\right)}{N}= \frac{(124*162)}{200}=100.44\]</span> La prueba es exactamente igual como la anterior donde comparamos el valor observado con el valor esperado. Por ser más de una fila la formula cambia.</p>
+<p><span class="math display">\[\chi^2=\sum_{n=i}^n\sum_{n=j}^n\frac{\left(o-e\right)^2}{e}\]</span></p>
+<p>El Chi Cuadrado final es</p>
+<p><span class="math display">\[\chi^2=\frac{(10-23.56)^2}{23.56}+\frac{(28-14.44)^2}{14.44}+\frac{(114-100.44)^2}{100.44}+\frac{(48-61.56)^2}{61.56}=25.36\]</span></p>
+<p><span class="math display">\[\chi^2=25.36\]</span></p>
+</div>
+<div id="como-calcular-el-grado-de-libertad" class="section level2" number="11.14">
+<h2><span class="header-section-number">11.14</span> Como calcular el grado de libertad</h2>
+<div id="n-columnas-4" class="section level5" number="11.14.0.0.1">
+<h5><span class="header-section-number">11.14.0.0.1</span> N columnas = 4</h5>
+</div>
+<div id="n-filas-2" class="section level5" number="11.14.0.0.2">
+<h5><span class="header-section-number">11.14.0.0.2</span> N filas = 2</h5>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="estadística-frecuentista.html#cb369-1" tabindex="-1"></a>df<span class="ot">=</span>(<span class="dv">4-1</span>)<span class="sc">*</span>(<span class="dv">2-1</span>)</span>
+<span id="cb369-2"><a href="estadística-frecuentista.html#cb369-2" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<p>Cual es valor de Chi Cuadrado critico</p>
+<p>1-.95 = 0.05</p>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="estadística-frecuentista.html#cb371-1" tabindex="-1"></a><span class="fu">qchisq</span>(.<span class="dv">95</span>,<span class="dv">1</span> )</span></code></pre></div>
+<pre><code>## [1] 3.841459</code></pre>
+</div>
+<div id="esta-ejercicio-cumple-con-los-supuestos-2" class="section level3" number="11.14.1">
+<h3><span class="header-section-number">11.14.1</span> Esta ejercicio cumple con los supuestos?</h3>
+<hr />
+</div>
+</div>
+<div id="la-función-crosstable" class="section level2" number="11.15">
+<h2><span class="header-section-number">11.15</span> La función <em>CrossTable</em></h2>
+<p>Con esta función se calcula el chi cuadrado con los valores esperados. Nota la leyenda al principio para poder entender la organización de los datos. El grado de liberta se calcula con la siguiente formula, el numero de filas -1 multiplicado por la cantidad de columnas -1, df= (R-1)(C-1). df = es para grado de libertad. Si tiene solamente 1 grado de libertad hay que usar el resultado de la prueba de <strong>Yates de continuidad</strong>, que hace una corrección para la poca cantidad de grados de libertad.</p>
+<p><span class="math display">\[\chi^2=\sum_{n=i}^n\sum_{n=j}^n\frac{\left(\left|o-e\right|-0.5\right)^2}{e}\]</span></p>
+<p>Instalar el paquete <strong>gmodels</strong> para la función CrossTable</p>
+<p>p &lt;0.05 se rechaza la hipotesis nula</p>
+<p>p &gt;0.05 se acepta la hipotesis nula</p>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="estadística-frecuentista.html#cb373-1" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span>
+<span id="cb373-2"><a href="estadística-frecuentista.html#cb373-2" tabindex="-1"></a><span class="fu">CrossTable</span>(catsTable, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb373-3"><a href="estadística-frecuentista.html#cb373-3" tabindex="-1"></a>           <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SAS&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##  
+##    Cell Contents
+## |-------------------------|
+## |                       N |
+## |              Expected N |
+## | Chi-square contribution |
+## |           N / Row Total |
+## |           N / Col Total |
+## |         N / Table Total |
+## |-------------------------|
+## 
+##  
+## Total Observations in Table:  200 
+## 
+##  
+##              |  
+##              |    comida |    carino | Row Total | 
+## -------------|-----------|-----------|-----------|
+##    No_bailan |        10 |       114 |       124 | 
+##              |    23.560 |   100.440 |           | 
+##              |     7.804 |     1.831 |           | 
+##              |     0.081 |     0.919 |     0.620 | 
+##              |     0.263 |     0.704 |           | 
+##              |     0.050 |     0.570 |           | 
+## -------------|-----------|-----------|-----------|
+##       bailan |        28 |        48 |        76 | 
+##              |    14.440 |    61.560 |           | 
+##              |    12.734 |     2.987 |           | 
+##              |     0.368 |     0.632 |     0.380 | 
+##              |     0.737 |     0.296 |           | 
+##              |     0.140 |     0.240 |           | 
+## -------------|-----------|-----------|-----------|
+## Column Total |        38 |       162 |       200 | 
+##              |     0.190 |     0.810 |           | 
+## -------------|-----------|-----------|-----------|
+## 
+##  
+## Statistics for All Table Factors
+## 
+## 
+## Pearson&#39;s Chi-squared test 
+## ------------------------------------------------------------
+## Chi^2 =  25.35569     d.f. =  1     p =  4.767434e-07 
+## 
+## Pearson&#39;s Chi-squared test with Yates&#39; continuity correction 
+## ------------------------------------------------------------
+## Chi^2 =  23.52028     d.f. =  1     p =  1.236041e-06 
+## 
+##  
+## Fisher&#39;s Exact Test for Count Data
+## ------------------------------------------------------------
+## Sample estimate odds ratio:  0.1519927 
+## 
+## Alternative hypothesis: true odds ratio is not equal to 1
+## p =  1.311709e-06 
+## 95% confidence interval:  0.06086544 0.352389 
+## 
+## Alternative hypothesis: true odds ratio is less than 1
+## p =  7.7122e-07 
+## 95% confidence interval:  0 0.3131634 
+## 
+## Alternative hypothesis: true odds ratio is greater than 1
+## p =  0.9999999 
+## 95% confidence interval:  0.07015399 Inf 
+## 
+## 
+## </code></pre>
+<p>p = 0.000000477</p>
+<hr />
+<p><a href="https://www.youtube.com/watch?v=Uw6W8NaJmfo">Enlace a un Video de la serpiente</a></p>
+<p><img src="Graficos/Northern_Water_Snake.jpg" width="60%" style="float:right; padding:10px" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Ejercicio: Un herpetólogo sospecha que las serpientes de agua hembras que se alimentan en el lago Michigan migran a los estanques del interior en el otoño para dar a luz a sus crías. Si esta hipótesis es correcta, cabría esperar que las hembras fueran mucho más propensas a migrar en ese momento que los machos. Se recopilaron los siguientes datos. (De Havel et al.)</li>
+</ol>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Migrantes</th>
+<th align="right">No Migrantes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Hembra</td>
+<td align="right">25</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td>Machos</td>
+<td align="right">4</td>
+<td align="right">30</td>
+</tr>
+</tbody>
+</table>
+<pre><code>- ¿Cual es la hipótesis nula?
+- ¿cual es la hipótesis alterna?
+- calcula los valores esperados
+- calcula el chi cuadrado
+- ¿Se rechaza o acepta la Ho?</code></pre>
+<hr />
+<div id="esta-ejercicio-cumple-con-los-supuestos-3" class="section level3" number="11.15.1">
+<h3><span class="header-section-number">11.15.1</span> Esta ejercicio cumple con los supuestos?</h3>
+</div>
+</div>
+<div id="análisis-con-datos-en-formato-de-tabla" class="section level2" number="11.16">
+<h2><span class="header-section-number">11.16</span> Análisis con datos en formato de tabla</h2>
+<p>Estos son los mismos datos pero no sumado, en otra palabra es información específica sobre cada gato y su tratamiento y si bailo o no. La ventaja de este método es que uno no tiene que hacer el calculo y sumar la frecuancias, se deja la función <strong>CrossTable</strong> hacer la suma. Miran bien la tabla.</p>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="estadística-frecuentista.html#cb376-1" tabindex="-1"></a><span class="do">## La data sin sumar</span></span>
+<span id="cb376-2"><a href="estadística-frecuentista.html#cb376-2" tabindex="-1"></a></span>
+<span id="cb376-3"><a href="estadística-frecuentista.html#cb376-3" tabindex="-1"></a>Training<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">38</span>), <span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">162</span>))</span>
+<span id="cb376-4"><a href="estadística-frecuentista.html#cb376-4" tabindex="-1"></a></span>
+<span id="cb376-5"><a href="estadística-frecuentista.html#cb376-5" tabindex="-1"></a>Dance<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">10</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">28</span>),  <span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">114</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">48</span>))</span>
+<span id="cb376-6"><a href="estadística-frecuentista.html#cb376-6" tabindex="-1"></a></span>
+<span id="cb376-7"><a href="estadística-frecuentista.html#cb376-7" tabindex="-1"></a>Training<span class="ot">&lt;-</span><span class="fu">factor</span>(Training, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Food as Reward&quot;</span>, <span class="st">&quot;Affection as Reward&quot;</span>))</span>
+<span id="cb376-8"><a href="estadística-frecuentista.html#cb376-8" tabindex="-1"></a></span>
+<span id="cb376-9"><a href="estadística-frecuentista.html#cb376-9" tabindex="-1"></a>Dance<span class="ot">&lt;-</span><span class="fu">factor</span>(Dance, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;No&quot;</span>, <span class="st">&quot;Yes&quot;</span>))</span>
+<span id="cb376-10"><a href="estadística-frecuentista.html#cb376-10" tabindex="-1"></a></span>
+<span id="cb376-11"><a href="estadística-frecuentista.html#cb376-11" tabindex="-1"></a>catsData<span class="ot">&lt;-</span><span class="fu">data.frame</span>(Training, Dance)</span>
+<span id="cb376-12"><a href="estadística-frecuentista.html#cb376-12" tabindex="-1"></a><span class="do">## catsData Los datos completos</span></span>
+<span id="cb376-13"><a href="estadística-frecuentista.html#cb376-13" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">head</span>(catsData, <span class="at">n=</span><span class="dv">6</span>))</span></code></pre></div>
+<div id="jtlwczacrr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jtlwczacrr table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#jtlwczacrr thead, #jtlwczacrr tbody, #jtlwczacrr tfoot, #jtlwczacrr tr, #jtlwczacrr td, #jtlwczacrr th {
+  border-style: none;
+}
+
+#jtlwczacrr p {
+  margin: 0;
+  padding: 0;
+}
+
+#jtlwczacrr .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#jtlwczacrr .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#jtlwczacrr .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#jtlwczacrr .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jtlwczacrr .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jtlwczacrr .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jtlwczacrr .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jtlwczacrr .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jtlwczacrr .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#jtlwczacrr .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#jtlwczacrr .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jtlwczacrr .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jtlwczacrr .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jtlwczacrr .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jtlwczacrr .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jtlwczacrr .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#jtlwczacrr .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#jtlwczacrr .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#jtlwczacrr .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jtlwczacrr .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#jtlwczacrr .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jtlwczacrr .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jtlwczacrr .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jtlwczacrr .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jtlwczacrr .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jtlwczacrr .gt_left {
+  text-align: left;
+}
+
+#jtlwczacrr .gt_center {
+  text-align: center;
+}
+
+#jtlwczacrr .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jtlwczacrr .gt_font_normal {
+  font-weight: normal;
+}
+
+#jtlwczacrr .gt_font_bold {
+  font-weight: bold;
+}
+
+#jtlwczacrr .gt_font_italic {
+  font-style: italic;
+}
+
+#jtlwczacrr .gt_super {
+  font-size: 65%;
+}
+
+#jtlwczacrr .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#jtlwczacrr .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#jtlwczacrr .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#jtlwczacrr .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#jtlwczacrr .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#jtlwczacrr .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#jtlwczacrr .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#jtlwczacrr .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#jtlwczacrr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Training">Training</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Dance">Dance</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Training" class="gt_row gt_center">Food as Reward</td>
+<td headers="Dance" class="gt_row gt_center">Yes</td></tr>
+    <tr><td headers="Training" class="gt_row gt_center">Food as Reward</td>
+<td headers="Dance" class="gt_row gt_center">Yes</td></tr>
+    <tr><td headers="Training" class="gt_row gt_center">Food as Reward</td>
+<td headers="Dance" class="gt_row gt_center">Yes</td></tr>
+    <tr><td headers="Training" class="gt_row gt_center">Food as Reward</td>
+<td headers="Dance" class="gt_row gt_center">Yes</td></tr>
+    <tr><td headers="Training" class="gt_row gt_center">Food as Reward</td>
+<td headers="Dance" class="gt_row gt_center">Yes</td></tr>
+    <tr><td headers="Training" class="gt_row gt_center">Food as Reward</td>
+<td headers="Dance" class="gt_row gt_center">Yes</td></tr>
+  </tbody>
+  
+</table>
+</div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="estadística-frecuentista.html#cb377-1" tabindex="-1"></a><span class="fu">gt</span>(<span class="fu">tail</span>(catsData, <span class="at">n=</span><span class="dv">5</span>))</span></code></pre></div>
+<div id="qfjewksxmq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qfjewksxmq table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#qfjewksxmq thead, #qfjewksxmq tbody, #qfjewksxmq tfoot, #qfjewksxmq tr, #qfjewksxmq td, #qfjewksxmq th {
+  border-style: none;
+}
+
+#qfjewksxmq p {
+  margin: 0;
+  padding: 0;
+}
+
+#qfjewksxmq .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#qfjewksxmq .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#qfjewksxmq .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#qfjewksxmq .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#qfjewksxmq .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#qfjewksxmq .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#qfjewksxmq .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#qfjewksxmq .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#qfjewksxmq .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#qfjewksxmq .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#qfjewksxmq .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#qfjewksxmq .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#qfjewksxmq .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#qfjewksxmq .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#qfjewksxmq .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qfjewksxmq .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#qfjewksxmq .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#qfjewksxmq .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#qfjewksxmq .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qfjewksxmq .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#qfjewksxmq .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qfjewksxmq .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#qfjewksxmq .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qfjewksxmq .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qfjewksxmq .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qfjewksxmq .gt_left {
+  text-align: left;
+}
+
+#qfjewksxmq .gt_center {
+  text-align: center;
+}
+
+#qfjewksxmq .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#qfjewksxmq .gt_font_normal {
+  font-weight: normal;
+}
+
+#qfjewksxmq .gt_font_bold {
+  font-weight: bold;
+}
+
+#qfjewksxmq .gt_font_italic {
+  font-style: italic;
+}
+
+#qfjewksxmq .gt_super {
+  font-size: 65%;
+}
+
+#qfjewksxmq .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#qfjewksxmq .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#qfjewksxmq .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#qfjewksxmq .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#qfjewksxmq .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#qfjewksxmq .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#qfjewksxmq .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#qfjewksxmq .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#qfjewksxmq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Training">Training</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Dance">Dance</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Training" class="gt_row gt_center">Affection as Reward</td>
+<td headers="Dance" class="gt_row gt_center">No</td></tr>
+    <tr><td headers="Training" class="gt_row gt_center">Affection as Reward</td>
+<td headers="Dance" class="gt_row gt_center">No</td></tr>
+    <tr><td headers="Training" class="gt_row gt_center">Affection as Reward</td>
+<td headers="Dance" class="gt_row gt_center">No</td></tr>
+    <tr><td headers="Training" class="gt_row gt_center">Affection as Reward</td>
+<td headers="Dance" class="gt_row gt_center">No</td></tr>
+    <tr><td headers="Training" class="gt_row gt_center">Affection as Reward</td>
+<td headers="Dance" class="gt_row gt_center">No</td></tr>
+  </tbody>
+  
+</table>
+</div>
+<hr />
+<p>Nota que aquí se llama cada columna aparte en la función (catsData<span class="math inline">\(Training, catsData\)</span>Dance).</p>
+</div>
+<div id="prueba-de-independencia" class="section level2" number="11.17">
+<h2><span class="header-section-number">11.17</span> Prueba de independencia</h2>
+<div class="sourceCode" id="cb378"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb378-1"><a href="estadística-frecuentista.html#cb378-1" tabindex="-1"></a><span class="co"># usando los datos en formato de data frame **catsData**</span></span>
+<span id="cb378-2"><a href="estadística-frecuentista.html#cb378-2" tabindex="-1"></a><span class="fu">CrossTable</span>(catsData<span class="sc">$</span>Training, catsData<span class="sc">$</span>Dance, </span>
+<span id="cb378-3"><a href="estadística-frecuentista.html#cb378-3" tabindex="-1"></a>           <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, <span class="at">expected =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb378-4"><a href="estadística-frecuentista.html#cb378-4" tabindex="-1"></a>           <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##    Cell Contents
+## |-------------------------|
+## |                   Count |
+## |         Expected Values |
+## | Chi-square contribution |
+## |             Row Percent |
+## |          Column Percent |
+## |           Total Percent |
+## |            Std Residual |
+## |-------------------------|
+## 
+## Total Observations in Table:  200 
+## 
+##                     | catsData$Dance 
+##   catsData$Training |       No  |      Yes  | Row Total | 
+## --------------------|-----------|-----------|-----------|
+##      Food as Reward |       28  |       10  |       38  | 
+##                     |   14.440  |   23.560  |           | 
+##                     |   12.734  |    7.804  |           | 
+##                     |   73.684% |   26.316% |   19.000% | 
+##                     |   36.842% |    8.065% |           | 
+##                     |   14.000% |    5.000% |           | 
+##                     |    3.568  |   -2.794  |           | 
+## --------------------|-----------|-----------|-----------|
+## Affection as Reward |       48  |      114  |      162  | 
+##                     |   61.560  |  100.440  |           | 
+##                     |    2.987  |    1.831  |           | 
+##                     |   29.630% |   70.370% |   81.000% | 
+##                     |   63.158% |   91.935% |           | 
+##                     |   24.000% |   57.000% |           | 
+##                     |   -1.728  |    1.353  |           | 
+## --------------------|-----------|-----------|-----------|
+##        Column Total |       76  |      124  |      200  | 
+##                     |   38.000% |   62.000% |           | 
+## --------------------|-----------|-----------|-----------|
+## 
+##  
+## Statistics for All Table Factors
+## 
+## 
+## Pearson&#39;s Chi-squared test 
+## ------------------------------------------------------------
+## Chi^2 =  25.35569     d.f. =  1     p =  4.767434e-07 
+## 
+## Pearson&#39;s Chi-squared test with Yates&#39; continuity correction 
+## ------------------------------------------------------------
+## Chi^2 =  23.52028     d.f. =  1     p =  1.236041e-06 
+## 
+##  
+## Fisher&#39;s Exact Test for Count Data
+## ------------------------------------------------------------
+## Sample estimate odds ratio:  6.579265 
+## 
+## Alternative hypothesis: true odds ratio is not equal to 1
+## p =  1.311709e-06 
+## 95% confidence interval:  2.837773 16.42969 
+## 
+## Alternative hypothesis: true odds ratio is less than 1
+## p =  0.9999999 
+## 95% confidence interval:  0 14.25436 
+## 
+## Alternative hypothesis: true odds ratio is greater than 1
+## p =  7.7122e-07 
+## 95% confidence interval:  3.193221 Inf 
+## 
+## 
+##  
+##        Minimum expected frequency: 14.44</code></pre>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="estadística-frecuentista.html#cb380-1" tabindex="-1"></a><span class="co"># Se puede hacer un grafico de los resultados</span></span>
+<span id="cb380-2"><a href="estadística-frecuentista.html#cb380-2" tabindex="-1"></a></span>
+<span id="cb380-3"><a href="estadística-frecuentista.html#cb380-3" tabindex="-1"></a>Ta2<span class="ot">=</span> <span class="fu">xtabs</span>(<span class="sc">~</span>Training<span class="sc">+</span>Dance, <span class="at">data=</span>catsData)</span>
+<span id="cb380-4"><a href="estadística-frecuentista.html#cb380-4" tabindex="-1"></a>Ta2</span></code></pre></div>
+<pre><code>##                      Dance
+## Training               No Yes
+##   Food as Reward       28  10
+##   Affection as Reward  48 114</code></pre>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="estadística-frecuentista.html#cb382-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(Ta2, <span class="at">shade=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="BiomEstadistica_files/figure-html/freq18-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="el-color-de-pello-es-independiente-del-sexo" class="section level2" number="11.18">
+<h2><span class="header-section-number">11.18</span> El color de pello es independiente del sexo</h2>
+<p>En la siguiente tabla se encuentra el color de pello de estudiantes de la UPR. La hipótesis es que el color de pelo no esta asociado al sexo de los estudiantes.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Color de Pello</th>
+<th align="right">Mujer</th>
+<th align="right">Hombre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">Negro</td>
+<td align="right">32</td>
+<td align="right">55</td>
+</tr>
+<tr class="even">
+<td align="right">Marrón</td>
+<td align="right">43</td>
+<td align="right">65</td>
+</tr>
+<tr class="odd">
+<td align="right">Rubio</td>
+<td align="right">16</td>
+<td align="right">64</td>
+</tr>
+<tr class="even">
+<td align="right">Rojo</td>
+<td align="right">9</td>
+<td align="right">16</td>
+</tr>
+</tbody>
+</table>
+<p>Creamos</p>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="estadística-frecuentista.html#cb383-1" tabindex="-1"></a>Negro<span class="ot">=</span><span class="fu">c</span>(<span class="dv">32</span>,<span class="dv">55</span>)</span>
+<span id="cb383-2"><a href="estadística-frecuentista.html#cb383-2" tabindex="-1"></a>Marron<span class="ot">=</span><span class="fu">c</span>(<span class="dv">43</span>, <span class="dv">65</span>)</span>
+<span id="cb383-3"><a href="estadística-frecuentista.html#cb383-3" tabindex="-1"></a>Rubio<span class="ot">=</span><span class="fu">c</span>(<span class="dv">16</span>,<span class="dv">64</span>)</span>
+<span id="cb383-4"><a href="estadística-frecuentista.html#cb383-4" tabindex="-1"></a>Rojo<span class="ot">=</span><span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">16</span>)</span>
+<span id="cb383-5"><a href="estadística-frecuentista.html#cb383-5" tabindex="-1"></a></span>
+<span id="cb383-6"><a href="estadística-frecuentista.html#cb383-6" tabindex="-1"></a>HairColour<span class="ot">=</span><span class="fu">cbind</span>(Negro,Marron, Rubio,Rojo) </span>
+<span id="cb383-7"><a href="estadística-frecuentista.html#cb383-7" tabindex="-1"></a><span class="fu">rownames</span>(HairColour)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;Mujer&quot;</span>, <span class="st">&quot;Hombre&quot;</span>) <span class="co"># Añade el nombre a las filas</span></span>
+<span id="cb383-8"><a href="estadística-frecuentista.html#cb383-8" tabindex="-1"></a></span>
+<span id="cb383-9"><a href="estadística-frecuentista.html#cb383-9" tabindex="-1"></a>HairColour</span></code></pre></div>
+<pre><code>##        Negro Marron Rubio Rojo
+## Mujer     32     43    16    9
+## Hombre    55     65    64   16</code></pre>
+<ul>
+<li>Cada categoría tiene una <strong>frecuencia esperada</strong> suficiente grande:
+<ul>
+<li>ninguna de las <strong>frecuencia esperada</strong> sea menor de 5 cuando hay 4 o menos categorías</li>
+<li>no más de 20% de las categorías que tengan un valor esperado de &lt; 5 cuando hay más de 5 categorías y ninguna tiene un valor <strong>esperado</strong> menor de 1. Puediese tener valores esperados entre 1 y 5 pero no más de 20% de las categorias</li>
+</ul></li>
+</ul>
+<p>¿Cual es la hipótesis nula? ¿Cual es la hipótesis alterna?</p>
+<p>El resultado de la prueba. ¿Se acepta o rechaza la hipótesis nula?</p>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="estadística-frecuentista.html#cb385-1" tabindex="-1"></a><span class="fu">CrossTable</span>(HairColour, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SPSS&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+##    Cell Contents
+## |-------------------------|
+## |                   Count |
+## |         Expected Values |
+## | Chi-square contribution |
+## |             Row Percent |
+## |          Column Percent |
+## |           Total Percent |
+## |            Std Residual |
+## |-------------------------|
+## 
+## Total Observations in Table:  300 
+## 
+##              |  
+##              |    Negro  |   Marron  |    Rubio  |     Rojo  | Row Total | 
+## -------------|-----------|-----------|-----------|-----------|-----------|
+##        Mujer |       32  |       43  |       16  |        9  |      100  | 
+##              |   29.000  |   36.000  |   26.667  |    8.333  |           | 
+##              |    0.310  |    1.361  |    4.267  |    0.053  |           | 
+##              |   32.000% |   43.000% |   16.000% |    9.000% |   33.333% | 
+##              |   36.782% |   39.815% |   20.000% |   36.000% |           | 
+##              |   10.667% |   14.333% |    5.333% |    3.000% |           | 
+##              |    0.557  |    1.167  |   -2.066  |    0.231  |           | 
+## -------------|-----------|-----------|-----------|-----------|-----------|
+##       Hombre |       55  |       65  |       64  |       16  |      200  | 
+##              |   58.000  |   72.000  |   53.333  |   16.667  |           | 
+##              |    0.155  |    0.681  |    2.133  |    0.027  |           | 
+##              |   27.500% |   32.500% |   32.000% |    8.000% |   66.667% | 
+##              |   63.218% |   60.185% |   80.000% |   64.000% |           | 
+##              |   18.333% |   21.667% |   21.333% |    5.333% |           | 
+##              |   -0.394  |   -0.825  |    1.461  |   -0.163  |           | 
+## -------------|-----------|-----------|-----------|-----------|-----------|
+## Column Total |       87  |      108  |       80  |       25  |      300  | 
+##              |   29.000% |   36.000% |   26.667% |    8.333% |           | 
+## -------------|-----------|-----------|-----------|-----------|-----------|
+## 
+##  
+## Statistics for All Table Factors
+## 
+## 
+## Pearson&#39;s Chi-squared test 
+## ------------------------------------------------------------
+## Chi^2 =  8.987184     d.f. =  3     p =  0.02946177 
+## 
+## 
+##  
+## Fisher&#39;s Exact Test for Count Data
+## ------------------------------------------------------------
+## Alternative hypothesis: two.sided
+## p =  0.02410446 
+## 
+##  
+##        Minimum expected frequency: 8.333333</code></pre>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="estadística-frecuentista.html#cb387-1" tabindex="-1"></a><span class="co">#df=(R-1)*(C-1)</span></span>
+<span id="cb387-2"><a href="estadística-frecuentista.html#cb387-2" tabindex="-1"></a>df<span class="ot">=</span>(<span class="dv">2-1</span>)<span class="sc">*</span>(<span class="dv">4-1</span>)</span>
+<span id="cb387-3"><a href="estadística-frecuentista.html#cb387-3" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="estadística-frecuentista.html#cb389-1" tabindex="-1"></a>.<span class="dv">2</span><span class="sc">*</span><span class="dv">8</span></span></code></pre></div>
+<pre><code>## [1] 1.6</code></pre>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="estadística-frecuentista.html#cb391-1" tabindex="-1"></a><span class="fu">qchisq</span>(.<span class="dv">95</span>,<span class="dv">3</span> )</span></code></pre></div>
+<pre><code>## [1] 7.814728</code></pre>
+<div id="esta-ejercicio-cumple-con-los-supuestos-4" class="section level3" number="11.18.1">
+<h3><span class="header-section-number">11.18.1</span> Esta ejercicio cumple con los supuestos?</h3>
+<hr />
+</div>
+</div>
+<div id="prueba-de-exacta-de-fisher" class="section level2" number="11.19">
+<h2><span class="header-section-number">11.19</span> Prueba de Exacta de Fisher</h2>
+<p>La prueba Exacta de Fisher es similar a la prueba de Bondad de Ajuste para evaluar si hay asociación entre dos variables categorías. La diferencia importante es que no es necesario que el valor esperado sea mayor de 5. Por consecuencia se puede usar con muestras más pequeñas.</p>
+<hr />
+<div id="los-supuestos-de-las-prueba-exacta-de-fisher." class="section level3" number="11.19.1">
+<h3><span class="header-section-number">11.19.1</span> Los supuestos de las prueba Exacta de Fisher.</h3>
+<blockquote>
+<ul>
+<li>Los datos son frecuencias.</li>
+<li>Las frecuencias son mutuamente exclusivas (no caen en múltiples categorías).</li>
+<li>Las observaciones son independiente una de la otra.</li>
+<li>La tabla tiene 2 filas y 2 columnas.</li>
+</ul>
+</blockquote>
+<p>Usando los datos de serpientes del ejemplo 7.4 del libro de Havel et al.</p>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="estadística-frecuentista.html#cb393-1" tabindex="-1"></a>responde <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>,<span class="dv">3</span>)</span>
+<span id="cb393-2"><a href="estadística-frecuentista.html#cb393-2" tabindex="-1"></a>no_responde <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">6</span>)</span>
+<span id="cb393-3"><a href="estadística-frecuentista.html#cb393-3" tabindex="-1"></a>serpiente <span class="ot">&lt;-</span> <span class="fu">cbind</span>(responde, no_responde)</span>
+<span id="cb393-4"><a href="estadística-frecuentista.html#cb393-4" tabindex="-1"></a><span class="fu">rownames</span>(serpiente)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">&quot;Estimulo_ariba&quot;</span>, <span class="st">&quot;Estimulo_lateral&quot;</span>) <span class="co"># Añade el nombre a las filas</span></span>
+<span id="cb393-5"><a href="estadística-frecuentista.html#cb393-5" tabindex="-1"></a></span>
+<span id="cb393-6"><a href="estadística-frecuentista.html#cb393-6" tabindex="-1"></a>serpiente</span></code></pre></div>
+<pre><code>##                  responde no_responde
+## Estimulo_ariba          6           1
+## Estimulo_lateral        3           6</code></pre>
+<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="estadística-frecuentista.html#cb395-1" tabindex="-1"></a><span class="fu">CrossTable</span>(serpiente, <span class="at">fisher =</span> <span class="cn">TRUE</span>, <span class="at">chisq =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb395-2"><a href="estadística-frecuentista.html#cb395-2" tabindex="-1"></a>           <span class="at">expected =</span> <span class="cn">TRUE</span>, <span class="at">sresid =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&quot;SAS&quot;</span>) <span class="co"># esa prueba no deberia usarse</span></span></code></pre></div>
+<pre><code>## 
+##  
+##    Cell Contents
+## |-------------------------|
+## |                       N |
+## |              Expected N |
+## | Chi-square contribution |
+## |           N / Row Total |
+## |           N / Col Total |
+## |         N / Table Total |
+## |-------------------------|
+## 
+##  
+## Total Observations in Table:  16 
+## 
+##  
+##                  |  
+##                  |    responde | no_responde |   Row Total | 
+## -----------------|-------------|-------------|-------------|
+##   Estimulo_ariba |           6 |           1 |           7 | 
+##                  |       3.938 |       3.062 |             | 
+##                  |       1.080 |       1.389 |             | 
+##                  |       0.857 |       0.143 |       0.438 | 
+##                  |       0.667 |       0.143 |             | 
+##                  |       0.375 |       0.062 |             | 
+## -----------------|-------------|-------------|-------------|
+## Estimulo_lateral |           3 |           6 |           9 | 
+##                  |       5.062 |       3.938 |             | 
+##                  |       0.840 |       1.080 |             | 
+##                  |       0.333 |       0.667 |       0.562 | 
+##                  |       0.333 |       0.857 |             | 
+##                  |       0.188 |       0.375 |             | 
+## -----------------|-------------|-------------|-------------|
+##     Column Total |           9 |           7 |          16 | 
+##                  |       0.562 |       0.438 |             | 
+## -----------------|-------------|-------------|-------------|
+## 
+##  
+## Statistics for All Table Factors
+## 
+## 
+## Pearson&#39;s Chi-squared test 
+## ------------------------------------------------------------
+## Chi^2 =  4.390023     d.f. =  1     p =  0.03614983 
+## 
+## Pearson&#39;s Chi-squared test with Yates&#39; continuity correction 
+## ------------------------------------------------------------
+## Chi^2 =  2.519526     d.f. =  1     p =  0.1124444 
+## 
+##  
+## Fisher&#39;s Exact Test for Count Data
+## ------------------------------------------------------------
+## Sample estimate odds ratio:  10.02595 
+## 
+## Alternative hypothesis: true odds ratio is not equal to 1
+## p =  0.06013986 
+## 95% confidence interval:  0.7110878 638.2231 
+## 
+## Alternative hypothesis: true odds ratio is less than 1
+## p =  0.9968531 
+## 95% confidence interval:  0 314.7984 
+## 
+## Alternative hypothesis: true odds ratio is greater than 1
+## p =  0.05454545 
+## 95% confidence interval:  0.9601491 Inf 
+## 
+## 
+## </code></pre>
+<div class="sourceCode" id="cb397"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb397-1"><a href="estadística-frecuentista.html#cb397-1" tabindex="-1"></a><span class="do">### Esta ejercicio cumple con los supuestos?</span></span></code></pre></div>
+<p>Se puede visualizar los datos con el Mosaico</p>
+<div class="sourceCode" id="cb398"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb398-1"><a href="estadística-frecuentista.html#cb398-1" tabindex="-1"></a><span class="fu">mosaicplot</span>(serpiente)</span></code></pre></div>
+<p><img src="BiomEstadistica_files/figure-html/freq22-1.png" width="672" /></p>
+<p>Nota que se usa la misma función que anterior pero en los resultados hay que fijarse en la sección que dice <strong>Fisher’s Exact test</strong>. Lo que uno observa es que el valor de <strong>p</strong> es menor de 0.05 por consecuencia se rechaza la hipótesis nula. Lo que significa es que para la serpiente el angulo donde proviene el estimulo resulta en una repuesta diferente.</p>
+<hr />
+<div class="sourceCode" id="cb399"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb399-1"><a href="estadística-frecuentista.html#cb399-1" tabindex="-1"></a><span class="fu">fisher.test</span>(serpiente)</span></code></pre></div>
+<pre><code>## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  serpiente
+## p-value = 0.06014
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##    0.7110878 638.2231455
+## sample estimates:
+## odds ratio 
+##   10.02595</code></pre>
+
+</div>
+</div>
+</div>
+  </main>
+
+  <div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <div id="book-on-this-page"></div>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          <li><a id="book-source" href="#">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="#">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5">
+  <div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BioEstadística</strong>" was written by . It was last built on 2025-10-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+<script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+
+</html>

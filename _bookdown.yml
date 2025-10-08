@@ -17,3 +17,4 @@ rmd_files: ["index.Rmd", "02-Intro.Rmd", "03-Poblaciones_Muestras.Rmd",
 language:
   ui:
     chapter_name: "Chapter "
+encoding: "UTF-8"    

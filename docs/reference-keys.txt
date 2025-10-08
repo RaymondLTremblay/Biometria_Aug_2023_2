@@ -117,7 +117,7 @@ cuando-es-que-el-promedio-mediana-y-moda-son-iguales
 distribución-cuando-los-tres-valores-de-tendencia-centrtal-no-son-iguales.
 variables-binomial
 preguntas-de-practica-sobre-medidas-de-tendencias-central.
-medidas_de_dispersión
+medidas_de_dispersion
 qué-es-la-dispersión-en-estadística
 vizualizando-la-dispersión
 el-rango
@@ -140,8 +140,8 @@ la-altura-de-los-humanos
 ejercicios-de-practica-para-entender-el-concepto-de-medidas-de-dispersión
 ejercicio-1-ahora-prepara-el-mismo-gráfico-para-los-hombres.
 ejercicio-2-calcula-los-siguientes-indices-de-dispersión
-estadística-descriptiva
 estadistica-descriptiva
+estadistica-descriptiva-1
 analisis-con-muchos-datos
 remover-los-na-del-análisis
 resumen-estadístico-de-una-variable
@@ -149,7 +149,7 @@ resumen-estadístico-de-multiples-variables
 los-cuantiles
 el-indice-de-oblicuidad-skewness
 el-indice-de-curtosis-kurtosis
-gráficos
+graficos
 gráficos-básicos-con-ggplot2
 como-crear-una-gráfica-de-regresión-lineal-usando-ggplot
 subir-los-datos-a-rstudio
@@ -187,7 +187,7 @@ tabla-de-correlación-de-kendall
 tabla-de-correlación-de-spearman
 seleción-de-parámetros-para-correlaciones-cuando-hay-na
 uso-de-ggally-para-ver-correlaciones
-estadística-frecuentista
+estadistica-frecuentista
 bondad-de-ajuste-y-table-de-contingencia
 qué-son-supuestos-1
 los-supuestos-de-las-pruebas-de-frecuencias.
@@ -215,7 +215,7 @@ el-color-de-pello-es-independiente-del-sexo
 esta-ejercicio-cumple-con-los-supuestos-4
 prueba-de-exacta-de-fisher
 los-supuestos-de-las-prueba-exacta-de-fisher.
-distribución-normal
+distribucion-normal
 instalar-y-activar-los-siguientes-paquete
 la-distribución-normal-1
 evaluando-visualmente-la-distribución
@@ -245,6 +245,7 @@ propinas
 cómo-graficar-el-resultado-de-una-prueba-t
 ejercicio-de-práctica-1-amigos-de-facebook
 ejercicio-de-práctica-2-dias-de-enfermedades
+supuesto
 prueba-de-t-pareados
 datos-dependientes
 visualizar-la-correlación
@@ -275,6 +276,7 @@ prueba-de-igualdad-de-varianza
 la-prueba-de-bartlett
 prueba-de-levene-para-igualdad-de-varianza
 prueba-de-fligner-killeen-para-igualdad-de-varianza
+los-supuestos-de-la-prueba-t-de-dos-grupos-independientes
 anova
 instalar-libreria-si-es-necesario
 activar-libreria
@@ -325,7 +327,7 @@ porque-podemos-usar-la-alternativas-anterior
 ejercicio-1-1
 ejercicio-2
 datos-sobre-la-orquidea-dipodium
-regresión-logistica
+regresion-logistica
 brassavola-cucullata
 la-variable-de-respuesta-y.
 modelo-lineal-generalizado

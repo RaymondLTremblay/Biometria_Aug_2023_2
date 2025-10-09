@@ -53,7 +53,7 @@ integridad-academica
 comentario-sobre-grabar-videos-yo-audio-de-las-clases
 espacio-libre-de-acoso-sexual
 protocolo-de-la-clase
-introducción-a-la-bioestadística
+introduccion-a-la-bioestadística
 el-libro-de-la-clase
 el-proceso-de-investigación
 el-primer-paso
@@ -73,7 +73,7 @@ variables-independientes-y-dependientes
 niveles-de-mediciones
 variables-continuas
 variables-discretas
-población-y-muestreos
+poblacion-y-muestreos
 qué-es-la-estadística
 el-concepto-de-población
 el-concepto-de-muestreo
@@ -83,7 +83,7 @@ muestreos-al-azar
 error-de-muestreo-exactitud-y-precisión
 la-exactitud-se-refiere-a-cuan-cerca-es-el-valor-medido-al-valor-real-de-la-variable-de-interes.-cuan-es-el-largo-de-la-hoja
 la-precisión-es-un-estimado-de-cuan-cerca-cada-valor-es-uno-del-otro.-hablando-de-la-mismo-individuo-o-variable.
-inferencias-y-hipótesis
+inferencias-y-hipotesis
 introducción
 ejemplo-1
 ejemplo-2

@@ -1,4 +1,4 @@
-book_filename: "BiomEstadistica"
+book_filename: "BioEstadistica"
 output_dir: docs
 delete_merged_file: true
 edit: https://github.com/RaymondLTremblay/Biometria/edit/main/%s

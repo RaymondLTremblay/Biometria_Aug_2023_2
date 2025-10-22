@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2025-10-09" />
+<meta name="date" content="2025-10-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -894,7 +894,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb275-2"><a href="graficos.html#cb275-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm, <span class="at">colour=</span><span class="st">&quot;red&quot;</span>)<span class="sc">+</span></span>
 <span id="cb275-3"><a href="graficos.html#cb275-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="co"># linear model</span></span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot6-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot6-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="añadiendo-color-por-grupo-y-otras-bellezas" class="section level2 hasAnchor" number="9.4">
@@ -915,7 +915,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb278-2"><a href="graficos.html#cb278-2" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method=</span>lm,<span class="at">colour=</span><span class="st">&quot;blue&quot;</span>)<span class="sc">+</span></span>
 <span id="cb278-3"><a href="graficos.html#cb278-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot7-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot7-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="graficos.html#cb279-1" tabindex="-1"></a><span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(Sepal.Length, Petal.Length,<span class="at">colour=</span>Species)) <span class="sc">+</span></span>
 <span id="cb279-2"><a href="graficos.html#cb279-2" tabindex="-1"></a>      <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">col =</span> Species)) <span class="sc">+</span></span>
@@ -923,7 +923,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb279-4"><a href="graficos.html#cb279-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;El largo del Sépalo&quot;</span>, <span class="at">y =</span> <span class="st">&quot;El largo del Pétalo&quot;</span>)<span class="sc">+</span></span>
 <span id="cb279-5"><a href="graficos.html#cb279-5" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Gráfica básica de </span><span class="sc">\n</span><span class="st"> geom_point con regresión lineal&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot7-2.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot7-2.png" width="672" /></p>
 <hr />
 </div>
 <div id="salvar-gráficos-con-ggsave" class="section level2 hasAnchor" number="9.5">
@@ -941,7 +941,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb281-3"><a href="graficos.html#cb281-3" tabindex="-1"></a>          <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">se =</span> F) <span class="sc">+</span>  <span class="co"># se = F, remueve el intervalo de confianza</span></span>
 <span id="cb281-4"><a href="graficos.html#cb281-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Exam Anxiety&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Exam Performance %&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot9-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot9-1.png" width="672" /></p>
 </div>
 <div id="regresión-simple-con-puntos-y-intervalo-de-confianza" class="section level2 hasAnchor" number="9.7">
 <h2><span class="header-section-number">9.7</span> Regresión simple con puntos y intervalo de confianza<a href="graficos.html#regresión-simple-con-puntos-y-intervalo-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -951,7 +951,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb282-3"><a href="graficos.html#cb282-3" tabindex="-1"></a>          <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;Red&quot;</span>)<span class="sc">+</span> </span>
 <span id="cb282-4"><a href="graficos.html#cb282-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Exam Anxiety&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Exam Performance %&quot;</span>) </span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot10-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot10-1.png" width="672" /></p>
 <div id="cambio-de-color-del-intervalo-de-confianza" class="section level3 hasAnchor" number="9.7.1">
 <h3><span class="header-section-number">9.7.1</span> Cambio de color del intervalo de confianza<a href="graficos.html#cambio-de-color-del-intervalo-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -960,7 +960,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb283-3"><a href="graficos.html#cb283-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;Red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">&quot;orange&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb283-4"><a href="graficos.html#cb283-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Exam Anxiety&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Exam Performance %&quot;</span>) </span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot11-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot11-1.png" width="672" /></p>
 <hr />
 </div>
 </div>
@@ -974,7 +974,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb284-4"><a href="graficos.html#cb284-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Exam Anxiety Score&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Exam Performance %&quot;</span>)<span class="sc">+</span></span>
 <span id="cb284-5"><a href="graficos.html#cb284-5" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Basic geom_point and linear regression&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot12-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot12-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="histogramas" class="section level2 hasAnchor" number="9.9">
@@ -1012,7 +1012,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb290-2"><a href="graficos.html#cb290-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">colour=</span><span class="st">&quot;white&quot;</span>, <span class="at">fill=</span><span class="st">&quot;#4E8EFC&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb290-3"><a href="graficos.html#cb290-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Hygiene (Day 1 of Festival)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot15-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot15-1.png" width="672" /></p>
 <p>Evaluar los datos resumidos, para detectar porque el gráfico se extiende a valores mayor de 4. Nota que el día 1, el valor máximo es de 20. Este probablemente fue un error de poner los datos un la hoja de Excel. Lo que se puede hacer es remover este participante del analisis.</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="graficos.html#cb291-1" tabindex="-1"></a><span class="fu">summary</span>(DownloadFestival)</span></code></pre></div>
@@ -1064,7 +1064,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb295-3"><a href="graficos.html#cb295-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">colour=</span><span class="st">&quot;white&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb295-4"><a href="graficos.html#cb295-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Hygiene (Day 1 of Festival)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frequency&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot18-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot18-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="gráficos-de-caja-box-plots" class="section level2 hasAnchor" number="9.10">
@@ -1077,7 +1077,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb296-4"><a href="graficos.html#cb296-4" tabindex="-1"></a></span>
 <span id="cb296-5"><a href="graficos.html#cb296-5" tabindex="-1"></a>festivalBoxplot <span class="sc">+</span> <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Ambos géneros&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Higiene (Día 1 del Festival)&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot19-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot19-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="gráfico-de-caja-por-grupo" class="section level2 hasAnchor" number="9.11">
@@ -1090,7 +1090,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb297-4"><a href="graficos.html#cb297-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;yellow&quot;</span>, <span class="at">alpha=</span><span class="fl">0.1</span>) <span class="sc">+</span> </span>
 <span id="cb297-5"><a href="graficos.html#cb297-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Genero&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Higiene (Día 2 del Festival)&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot20-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot20-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="detección-valores-sesgados-o-átipicos." class="section level2 hasAnchor" number="9.12">
@@ -1170,14 +1170,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="graficos.html#cb304-1" tabindex="-1"></a><span class="fu">ggplot</span>(hiccups, <span class="fu">aes</span>(<span class="at">y=</span>Num_Hiccups,<span class="at">x=</span>Intervention))<span class="sc">+</span> </span>
 <span id="cb304-2"><a href="graficos.html#cb304-2" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.y =</span> <span class="st">&quot;mean&quot;</span>, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot24-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot24-1.png" width="672" /></p>
 <p>Añade la linea que conecta los promedios y los intervalos de confianza</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb305"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb305-1"><a href="graficos.html#cb305-1" tabindex="-1"></a><span class="fu">ggplot</span>(hiccups, <span class="fu">aes</span>(<span class="at">y=</span>Num_Hiccups,<span class="at">x=</span>Intervention))<span class="sc">+</span> </span>
 <span id="cb305-2"><a href="graficos.html#cb305-2" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.y =</span> <span class="st">&quot;mean&quot;</span>, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>)<span class="sc">+</span> </span>
 <span id="cb305-3"><a href="graficos.html#cb305-3" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.y =</span> <span class="st">&quot;mean&quot;</span>, <span class="at">geom =</span> <span class="st">&quot;line&quot;</span>, <span class="fu">aes</span>(<span class="at">group =</span> <span class="dv">1</span>),<span class="at">colour =</span> <span class="st">&quot;Red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) </span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 <p>Annade el interval de confianza</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="graficos.html#cb306-1" tabindex="-1"></a><span class="fu">ggplot</span>(hiccups, <span class="fu">aes</span>(<span class="at">y=</span>Num_Hiccups,<span class="at">x=</span>Intervention))<span class="sc">+</span> </span>
@@ -1186,7 +1186,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb306-4"><a href="graficos.html#cb306-4" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun.data =</span> mean_cl_boot, <span class="at">geom =</span> <span class="st">&quot;errorbar&quot;</span>, <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">colour=</span><span class="st">&quot;blue&quot;</span>) <span class="sc">+</span> </span>
 <span id="cb306-5"><a href="graficos.html#cb306-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Intervention&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Mean Number of Hiccups and 95% CI&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 </div>
 <div id="diagrama-de-tallo-y-hoja-leaf-and-stem" class="section level2 hasAnchor" number="9.15">
 <h2><span class="header-section-number">9.15</span> Diagrama de tallo y hoja (leaf and stem)<a href="graficos.html#diagrama-de-tallo-y-hoja-leaf-and-stem" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -1221,7 +1221,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb309"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb309-1"><a href="graficos.html#cb309-1" tabindex="-1"></a><span class="fu">ggplot</span>(Exam_Anxiety, <span class="fu">aes</span>(Anxiety))<span class="sc">+</span></span>
 <span id="cb309-2"><a href="graficos.html#cb309-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/ggplot25-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/ggplot25-1.png" width="672" /></p>
 <p>Stem leaf for two groups</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="graficos.html#cb310-1" tabindex="-1"></a><span class="fu">library</span>(aplpack)</span></code></pre></div>

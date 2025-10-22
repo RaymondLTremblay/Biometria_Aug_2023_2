@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2025-10-09" />
+<meta name="date" content="2025-10-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -833,7 +833,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="estadistica-descriptiva" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">Chapter 8</span> Estadistica Descriptiva<a href="estadistica-descriptiva.html#estadistica-descriptiva" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Fecha de la ultima revisión</p>
-<pre><code>## [1] &quot;2025-10-09&quot;</code></pre>
+<pre><code>## [1] &quot;2025-10-22&quot;</code></pre>
 <p><img src="Graficos/hex_ggversa.png" width="20%" /><img src="Graficos/hex_error.png" width="20%" /></p>
 <p>Activar los Paquetes</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
@@ -944,7 +944,7 @@ Usa R y construye una lista o data frame con los siguientes datos y calcular el 
 <span id="cb205-3"><a href="estadistica-descriptiva.html#cb205-3" tabindex="-1"></a><span class="fu">ggplot</span>(KP, <span class="fu">aes</span>(Weigth_lb))<span class="sc">+</span></span>
 <span id="cb205-4"><a href="estadistica-descriptiva.html#cb205-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color=</span><span class="st">&quot;white&quot;</span>, <span class="at">fill=</span><span class="st">&quot;orange&quot;</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <p>### Start here</p>
 <blockquote>
 <p>Una bióloga estaba preocupado por los posibles efectos sobre la salud de los que particpan a un festivales de música. Entonces, un año fue al un Festival en el Reino Unido (Download Festival UK). Ella midió la higiene del los que participaron al concierto n= 810 durante el festival de 3 días. Cada día intentaba encontrar a todas las personas que censó el primer día. Los valores asignado fueron de 0 a 4 sobre el nivel de limpieza por como olia los participantes</p>
@@ -1168,7 +1168,7 @@ Usa R usa el data.frame <strong>Camas_Hospital</strong> en el paquete <strong>gg
 <span id="cb240-2"><a href="estadistica-descriptiva.html#cb240-2" tabindex="-1"></a>  <span class="fu">geom_density</span>()<span class="sc">+</span></span>
 <span id="cb240-3"><a href="estadistica-descriptiva.html#cb240-3" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span>.<span class="dv">01</span>,<span class="dv">1</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/desc12-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/desc12-1.png" width="672" /></p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
 <div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="estadistica-descriptiva.html#cb241-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Graficos/Skewness.png&quot;</span>)</span></code></pre></div>
 </details>
@@ -1286,7 +1286,7 @@ Usa R usa el data.frame <strong>Camas_Hospital</strong> en el paquete <strong>gg
 <span id="cb256-18"><a href="estadistica-descriptiva.html#cb256-18" tabindex="-1"></a>    <span class="fu">ggplotGrob</span>(whole),</span>
 <span id="cb256-19"><a href="estadistica-descriptiva.html#cb256-19" tabindex="-1"></a>    <span class="at">xmin =</span> <span class="sc">-</span><span class="fl">1.8</span>, <span class="at">xmax =</span> <span class="fl">1.4</span>, <span class="at">ymin =</span> <span class="fl">0.005</span>, <span class="at">ymax =</span> <span class="fl">0.075</span>)</span></code></pre></div>
 </details>
-<p><img src="BiomEstadistica_files/figure-html/desc17-1.png" width="672" /></p>
+<p><img src="BioEstadistica_files/figure-html/desc17-1.png" width="672" /></p>
 <p>Ahora se calcula el indice de curtosis y comparamos los valores. Como regla el nivel de curtosis esta significativo si los valores de curtosis se enuentra en los siguientes rangos, y se acerca cero no hay curtosis (lo que uno espera para una distribución normal.</p>
 <ul>
 <li>Menor de -1.0 los datos están muy aplanados (Uniforme, normalR).</li>

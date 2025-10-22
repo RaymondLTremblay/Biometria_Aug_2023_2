@@ -23,7 +23,7 @@
 <meta name="author" content="" />
 
 
-<meta name="date" content="2025-10-09" />
+<meta name="date" content="2025-10-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -835,21 +835,21 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="ejercicios-de-dispersión" class="section level2 hasAnchor" number="37.1">
 <h2><span class="header-section-number">O.1</span> Ejercicios de dispersión<a href="ejercicio-o.html#ejercicios-de-dispersión" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb789"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb789-1"><a href="ejercicio-o.html#cb789-1" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
-<span id="cb789-2"><a href="ejercicio-o.html#cb789-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb791"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb791-1"><a href="ejercicio-o.html#cb791-1" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb791-2"><a href="ejercicio-o.html#cb791-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </details>
 <hr />
 <div id="buscar-la-metadata" class="section level3 hasAnchor" number="37.1.1">
 <h3><span class="header-section-number">O.1.1</span> Buscar la metadata<a href="ejercicio-o.html#buscar-la-metadata" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb790"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb790-1"><a href="ejercicio-o.html#cb790-1" tabindex="-1"></a>codes<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-codebook.csv&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb792"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb792-1"><a href="ejercicio-o.html#cb792-1" tabindex="-1"></a>codes<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&#39;https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-codebook.csv&#39;</span>)</span></code></pre></div>
 </details>
 <hr />
 </div>
 <div id="visualizar-la-meta-data" class="section level3 hasAnchor" number="37.1.2">
 <h3><span class="header-section-number">O.1.2</span> Visualizar la meta data<a href="ejercicio-o.html#visualizar-la-meta-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb791"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb791-1"><a href="ejercicio-o.html#cb791-1" tabindex="-1"></a><span class="fu">gt</span>(codes)</span></code></pre></div>
+<div class="sourceCode" id="cb793"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb793-1"><a href="ejercicio-o.html#cb793-1" tabindex="-1"></a><span class="fu">gt</span>(codes)</span></code></pre></div>
 </details>
 <div id="dczploukyc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#dczploukyc table {
@@ -1587,18 +1587,18 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="buscar-los-datos" class="section level3 hasAnchor" number="37.1.3">
 <h3><span class="header-section-number">O.1.3</span> Buscar los datos<a href="ejercicio-o.html#buscar-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb792"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb792-1"><a href="ejercicio-o.html#cb792-1" tabindex="-1"></a><span class="co">#mydat&lt;- read.csv(&#39;https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv&#39;)</span></span>
-<span id="cb792-2"><a href="ejercicio-o.html#cb792-2" tabindex="-1"></a></span>
-<span id="cb792-3"><a href="ejercicio-o.html#cb792-3" tabindex="-1"></a></span>
-<span id="cb792-4"><a href="ejercicio-o.html#cb792-4" tabindex="-1"></a><span class="co">#mydat_compl &lt;- read.csv(&#39;https://covid.ourworldindata.org/data/owid-covid-data.csv&#39;)</span></span>
-<span id="cb792-5"><a href="ejercicio-o.html#cb792-5" tabindex="-1"></a></span>
-<span id="cb792-6"><a href="ejercicio-o.html#cb792-6" tabindex="-1"></a><span class="co">#mydat=mydat_compl</span></span>
-<span id="cb792-7"><a href="ejercicio-o.html#cb792-7" tabindex="-1"></a></span>
-<span id="cb792-8"><a href="ejercicio-o.html#cb792-8" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb792-9"><a href="ejercicio-o.html#cb792-9" tabindex="-1"></a>mydat <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;Data_files_csv/owid-covid-data.xlsx&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb794"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb794-1"><a href="ejercicio-o.html#cb794-1" tabindex="-1"></a><span class="co">#mydat&lt;- read.csv(&#39;https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv&#39;)</span></span>
+<span id="cb794-2"><a href="ejercicio-o.html#cb794-2" tabindex="-1"></a></span>
+<span id="cb794-3"><a href="ejercicio-o.html#cb794-3" tabindex="-1"></a></span>
+<span id="cb794-4"><a href="ejercicio-o.html#cb794-4" tabindex="-1"></a><span class="co">#mydat_compl &lt;- read.csv(&#39;https://covid.ourworldindata.org/data/owid-covid-data.csv&#39;)</span></span>
+<span id="cb794-5"><a href="ejercicio-o.html#cb794-5" tabindex="-1"></a></span>
+<span id="cb794-6"><a href="ejercicio-o.html#cb794-6" tabindex="-1"></a><span class="co">#mydat=mydat_compl</span></span>
+<span id="cb794-7"><a href="ejercicio-o.html#cb794-7" tabindex="-1"></a></span>
+<span id="cb794-8"><a href="ejercicio-o.html#cb794-8" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb794-9"><a href="ejercicio-o.html#cb794-9" tabindex="-1"></a>mydat <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;Data_files_csv/owid-covid-data.xlsx&quot;</span>)</span></code></pre></div>
 </details>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb793"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb793-1"><a href="ejercicio-o.html#cb793-1" tabindex="-1"></a><span class="fu">head</span>(mydat, <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb795"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb795-1"><a href="ejercicio-o.html#cb795-1" tabindex="-1"></a><span class="fu">head</span>(mydat, <span class="dv">4</span>)</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:five">
 <caption style="caption-side: top; text-align: center;"><span id="tab:five">Table O.1: </span> </caption><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><thead>
@@ -1620,12 +1620,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <p>Seleccionar las variables y filtrar los datos para hacer un subgrupo con datos solamente de Puerto Rico</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb794"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb794-1"><a href="ejercicio-o.html#cb794-1" tabindex="-1"></a>df1<span class="ot">=</span>mydat <span class="sc">%&gt;%</span></span>
-<span id="cb794-2"><a href="ejercicio-o.html#cb794-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(location,date, total_cases, new_cases, life_expectancy)<span class="sc">%&gt;%</span></span>
-<span id="cb794-3"><a href="ejercicio-o.html#cb794-3" tabindex="-1"></a>  <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">&quot;Puerto Rico&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb794-4"><a href="ejercicio-o.html#cb794-4" tabindex="-1"></a>  <span class="fu">head</span>() </span>
-<span id="cb794-5"><a href="ejercicio-o.html#cb794-5" tabindex="-1"></a></span>
-<span id="cb794-6"><a href="ejercicio-o.html#cb794-6" tabindex="-1"></a>  <span class="fu">gt</span>(df1)</span></code></pre></div>
+<div class="sourceCode" id="cb796"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb796-1"><a href="ejercicio-o.html#cb796-1" tabindex="-1"></a>df1<span class="ot">=</span>mydat <span class="sc">%&gt;%</span></span>
+<span id="cb796-2"><a href="ejercicio-o.html#cb796-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(location,date, total_cases, new_cases, life_expectancy)<span class="sc">%&gt;%</span></span>
+<span id="cb796-3"><a href="ejercicio-o.html#cb796-3" tabindex="-1"></a>  <span class="fu">filter</span>(location <span class="sc">==</span> <span class="st">&quot;Puerto Rico&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb796-4"><a href="ejercicio-o.html#cb796-4" tabindex="-1"></a>  <span class="fu">head</span>() </span>
+<span id="cb796-5"><a href="ejercicio-o.html#cb796-5" tabindex="-1"></a></span>
+<span id="cb796-6"><a href="ejercicio-o.html#cb796-6" tabindex="-1"></a>  <span class="fu">gt</span>(df1)</span></code></pre></div>
 </details>
 <div id="yfydaezlpx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#yfydaezlpx table {
@@ -2126,7 +2126,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="ver-el-nombre-de-todos-los-paises-incluido-en-el-archivo" class="section level3 hasAnchor" number="37.1.4">
 <h3><span class="header-section-number">O.1.4</span> Ver el nombre de todos los paises incluido en el archivo<a href="ejercicio-o.html#ver-el-nombre-de-todos-los-paises-incluido-en-el-archivo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb795"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb795-1"><a href="ejercicio-o.html#cb795-1" tabindex="-1"></a><span class="fu">unique</span>(mydat<span class="sc">$</span>location)  <span class="co"># la función &quot;unique&quot; es para saber los valores únicos un una columna</span></span></code></pre></div>
+<div class="sourceCode" id="cb797"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb797-1"><a href="ejercicio-o.html#cb797-1" tabindex="-1"></a><span class="fu">unique</span>(mydat<span class="sc">$</span>location)  <span class="co"># la función &quot;unique&quot; es para saber los valores únicos un una columna</span></span></code></pre></div>
 </details>
 <pre><code>##   [1] &quot;Afghanistan&quot;                      &quot;Africa&quot;                          
 ##   [3] &quot;Albania&quot;                          &quot;Algeria&quot;                         
@@ -2274,11 +2274,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>(5 puntos)</p>
 <p>Selecciona otro país del Caribe y calcula los mismo parámetros</p>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb797"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb797-1"><a href="ejercicio-o.html#cb797-1" tabindex="-1"></a>mydat<span class="sc">%&gt;%</span></span>
-<span id="cb797-2"><a href="ejercicio-o.html#cb797-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(location,date, total_cases, new_cases, life_expectancy)<span class="sc">%&gt;%</span></span>
-<span id="cb797-3"><a href="ejercicio-o.html#cb797-3" tabindex="-1"></a>  <span class="fu">filter</span>(location <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Puerto Rico&quot;</span>, <span class="st">&quot;Cuba&quot;</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb797-4"><a href="ejercicio-o.html#cb797-4" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">3</span>)<span class="sc">%&gt;%</span></span>
-<span id="cb797-5"><a href="ejercicio-o.html#cb797-5" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb799"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb799-1"><a href="ejercicio-o.html#cb799-1" tabindex="-1"></a>mydat<span class="sc">%&gt;%</span></span>
+<span id="cb799-2"><a href="ejercicio-o.html#cb799-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(location,date, total_cases, new_cases, life_expectancy)<span class="sc">%&gt;%</span></span>
+<span id="cb799-3"><a href="ejercicio-o.html#cb799-3" tabindex="-1"></a>  <span class="fu">filter</span>(location <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Puerto Rico&quot;</span>, <span class="st">&quot;Cuba&quot;</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb799-4"><a href="ejercicio-o.html#cb799-4" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">3</span>)<span class="sc">%&gt;%</span></span>
+<span id="cb799-5"><a href="ejercicio-o.html#cb799-5" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div>
 </details>
 <div id="xshvkgxofd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#xshvkgxofd table {
@@ -2761,16 +2761,16 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <hr />
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb798"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb798-1"><a href="ejercicio-o.html#cb798-1" tabindex="-1"></a><span class="fu">library</span>(statip)</span>
-<span id="cb798-2"><a href="ejercicio-o.html#cb798-2" tabindex="-1"></a></span>
-<span id="cb798-3"><a href="ejercicio-o.html#cb798-3" tabindex="-1"></a>mydat <span class="sc">%&gt;%</span></span>
-<span id="cb798-4"><a href="ejercicio-o.html#cb798-4" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(location,date, total_cases, new_cases, life_expectancy)<span class="sc">%&gt;%</span></span>
-<span id="cb798-5"><a href="ejercicio-o.html#cb798-5" tabindex="-1"></a>  <span class="fu">filter</span>(location <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Puerto Rico&quot;</span>, <span class="st">&quot;Cuba&quot;</span>, <span class="st">&quot;Jamaica&quot;</span>, <span class="st">&quot;Costa Rica&quot;</span>, <span class="st">&quot;Haiti&quot;</span>, <span class="st">&quot;Bahamas&quot;</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb798-6"><a href="ejercicio-o.html#cb798-6" tabindex="-1"></a>  <span class="fu">group_by</span>(location) <span class="sc">%&gt;%</span></span>
-<span id="cb798-7"><a href="ejercicio-o.html#cb798-7" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean=</span><span class="fu">mean</span>(new_cases, <span class="at">na.rm=</span>T),</span>
-<span id="cb798-8"><a href="ejercicio-o.html#cb798-8" tabindex="-1"></a>            <span class="at">median=</span><span class="fu">median</span>(new_cases, <span class="at">na.rm=</span>T), </span>
-<span id="cb798-9"><a href="ejercicio-o.html#cb798-9" tabindex="-1"></a>            <span class="at">de=</span><span class="fu">sd</span>(new_cases, <span class="at">na.rm=</span>T))  <span class="sc">%&gt;%</span></span>
-<span id="cb798-10"><a href="ejercicio-o.html#cb798-10" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb800"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb800-1"><a href="ejercicio-o.html#cb800-1" tabindex="-1"></a><span class="fu">library</span>(statip)</span>
+<span id="cb800-2"><a href="ejercicio-o.html#cb800-2" tabindex="-1"></a></span>
+<span id="cb800-3"><a href="ejercicio-o.html#cb800-3" tabindex="-1"></a>mydat <span class="sc">%&gt;%</span></span>
+<span id="cb800-4"><a href="ejercicio-o.html#cb800-4" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(location,date, total_cases, new_cases, life_expectancy)<span class="sc">%&gt;%</span></span>
+<span id="cb800-5"><a href="ejercicio-o.html#cb800-5" tabindex="-1"></a>  <span class="fu">filter</span>(location <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Puerto Rico&quot;</span>, <span class="st">&quot;Cuba&quot;</span>, <span class="st">&quot;Jamaica&quot;</span>, <span class="st">&quot;Costa Rica&quot;</span>, <span class="st">&quot;Haiti&quot;</span>, <span class="st">&quot;Bahamas&quot;</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb800-6"><a href="ejercicio-o.html#cb800-6" tabindex="-1"></a>  <span class="fu">group_by</span>(location) <span class="sc">%&gt;%</span></span>
+<span id="cb800-7"><a href="ejercicio-o.html#cb800-7" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean=</span><span class="fu">mean</span>(new_cases, <span class="at">na.rm=</span>T),</span>
+<span id="cb800-8"><a href="ejercicio-o.html#cb800-8" tabindex="-1"></a>            <span class="at">median=</span><span class="fu">median</span>(new_cases, <span class="at">na.rm=</span>T), </span>
+<span id="cb800-9"><a href="ejercicio-o.html#cb800-9" tabindex="-1"></a>            <span class="at">de=</span><span class="fu">sd</span>(new_cases, <span class="at">na.rm=</span>T))  <span class="sc">%&gt;%</span></span>
+<span id="cb800-10"><a href="ejercicio-o.html#cb800-10" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code></pre></div>
 </details>
 <div id="ivmuduwvse" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#ivmuduwvse table {
@@ -3238,11 +3238,11 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 </table>
 </div>
 <details class=chunk-details><summary class=chunk-summary><span class=chunk-summary-text>Code</span></summary>
-<div class="sourceCode" id="cb799"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb799-1"><a href="ejercicio-o.html#cb799-1" tabindex="-1"></a>mydat<span class="sc">%&gt;%</span></span>
-<span id="cb799-2"><a href="ejercicio-o.html#cb799-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(location,date, total_cases, new_cases, life_expectancy)<span class="sc">%&gt;%</span></span>
-<span id="cb799-3"><a href="ejercicio-o.html#cb799-3" tabindex="-1"></a>  <span class="fu">filter</span>(location <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Puerto Rico&quot;</span>, <span class="st">&quot;Cuba&quot;</span>, <span class="st">&quot;Jamaica&quot;</span>, <span class="st">&quot;Costa Rica&quot;</span>, <span class="st">&quot;Haiti&quot;</span>, <span class="st">&quot;Bahamas&quot;</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb799-4"><a href="ejercicio-o.html#cb799-4" tabindex="-1"></a>  <span class="fu">group_by</span>(location)<span class="sc">%&gt;%</span></span>
-<span id="cb799-5"><a href="ejercicio-o.html#cb799-5" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mode=</span>statip<span class="sc">::</span><span class="fu">mfv</span>(new_cases))</span></code></pre></div>
+<div class="sourceCode" id="cb801"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb801-1"><a href="ejercicio-o.html#cb801-1" tabindex="-1"></a>mydat<span class="sc">%&gt;%</span></span>
+<span id="cb801-2"><a href="ejercicio-o.html#cb801-2" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(location,date, total_cases, new_cases, life_expectancy)<span class="sc">%&gt;%</span></span>
+<span id="cb801-3"><a href="ejercicio-o.html#cb801-3" tabindex="-1"></a>  <span class="fu">filter</span>(location <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">&quot;Puerto Rico&quot;</span>, <span class="st">&quot;Cuba&quot;</span>, <span class="st">&quot;Jamaica&quot;</span>, <span class="st">&quot;Costa Rica&quot;</span>, <span class="st">&quot;Haiti&quot;</span>, <span class="st">&quot;Bahamas&quot;</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb801-4"><a href="ejercicio-o.html#cb801-4" tabindex="-1"></a>  <span class="fu">group_by</span>(location)<span class="sc">%&gt;%</span></span>
+<span id="cb801-5"><a href="ejercicio-o.html#cb801-5" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mode=</span>statip<span class="sc">::</span><span class="fu">mfv</span>(new_cases))</span></code></pre></div>
 </details>
 <table class="huxtable" data-quarto-disable-processing="true"  style="margin-left: auto; margin-right: auto;" id="tab:ten">
 <caption style="caption-side: top; text-align: center;"><span id="tab:ten">Table O.2: </span> </caption><col><thead>

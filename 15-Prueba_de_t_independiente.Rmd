@@ -231,16 +231,16 @@ Probamos con otro set de datos de uds.  En este caso la variable de respuesta es
 
 
 ```{r tind8}
-gender=c("m", "m", "f", "f", "m", 
-         "f","f","m", "f", "f", "f")
+gender=c("m", "m", "m", "m", "m",
+         "f","f", "f", "f", "f")
 
-dist_km=c(10,20, 11, 40, 19, 
-       8.1, 203, 4.4, 16, 29, 19)
+altura =c(68, 65, 66, 81, 63,
+          63, 58, 66, 61, 69 )
 
-df=data.frame(gender, dist_km)
+df=data.frame(gender, altura)
 head(df)
 
-model2=t.test(dist_km~gender, data=df)
+model2=t.test(altura~gender, data=df)
 model2
 ```
 

@@ -103,7 +103,7 @@ head(father.son)
 ***
 ## Visualizar la correlación
 
-Antes de hacer la prueba es recomendado hacer un gráfico de puntos para visualizar los datos y observar si hay un patrón. Vemos a medida que aumenta la altura de los padres los hijos tienden a estar más altos.  parece que hay una correlación en la altura de los hijos basado en la altura del padre. Por consecuencia la altura de los hijos no son independiente de la altura de los padres.  Aunque hay evidencia que el ambiente, tal como el acceso a recursos (comida, leche, etc) tiene impacto sobre la altura de los humanos, la genética también tiene impacto to sobre la altura de los humanos. 
+Antes de hacer la prueba es recomendado hacer un gráfico de puntos para visualizar los datos y observar si hay un patrón. Vemos a medida que aumenta la altura de los padres los hijos tienden a estar más altos.  Parece que hay una correlación en la altura de los hijos basado en la altura del padre. Por consecuencia la altura de los hijos no son independiente de la altura de los padres.  Aunque hay evidencia que el ambiente, tal como el acceso a recursos (comida, leche, etc) tiene impacto sobre la altura de los humanos, la genética también tiene impacto to sobre la altura de los humanos, y la genética no es una variable asignada al azar. 
 
 
 ```{r tpare3}
@@ -131,7 +131,7 @@ La prueba de t con datos pareados.
 
 $$\left|t\right|=\bar{\frac{d}{\frac{s_d}{\sqrt{n}}}}$$
 
-Si el valor absoluto de las estadísticas de la prueba $\begin{array}{l}t=\left|t\right|\\\end{array}$ es mayor que el valor crítico, entonces la diferencia es significativa. El nivel critico del valor **p** corresponde al indicado en la tabla de la prueba tomando en cuanta el grado de libertad, la cantidad de error I y si es de un lado o ambos lados.
+Si el valor absoluto de las estadísticas de la prueba $\begin{array}{l}t=\left|t\right|\\\end{array}$ es mayor que el valor crítico, entonces la diferencia es significativa. El nivel crítico del valor **p** corresponde al indicado en la tabla de la prueba tomando en cuanta el grado de libertad, la cantidad de error I y si es de un lado o ambos lados.
 
 
 Las opciones para esta prueba son las siguientes en roja
@@ -154,11 +154,13 @@ t.test(father.son$fheight, father.son$sheight, paired=TRUE)
 Podemos visualizar la diferencia entre los hijos y los padres.  Vemos el promedio si no tuviese diferencia (la linea azul), esto es nuestra hipótesis nula, y el estimado (el promedio de la diferencias es rojo, con el intervalo de confianza en las lineas entrecortada).  Si nuestro estimado (el intervalo de confianza de 95%) hubiese incluido la linea azul la prueba no seria significativa, y se aceptaría la hipótesis nula. 
 
 ```{r tpare5}
-father.son$heightDiff<-father.son$fheight-father.son$sheight # para calcular la diferencia entre el padre y el hijo. 
+father.son$heightDiff<-father.son$fheight-father.son$sheight # para calcular la diferencia entre el padre y el hijo.
+
+
 ggplot(father.son, aes(x=fheight-sheight))+
   geom_density()+
   geom_vline(xintercept = mean(father.son$heightDiff), colour="red")+
-  geom_vline(xintercept = mean(father.son$father.son$heightDiff)+ 2*c(-1,1)*sd(father.son$heightDiff)/sqrt(nrow(father.son)), linetype=2)+
+  geom_vline(xintercept = mean(father.son$heightDiff) + 1.96 * c(-1, 1) * sd(father.son$heightDiff) / sqrt(nrow(father.son)), linetype = 2) +
   geom_vline(xintercept = 0, colour="blue")+
   rlt_theme+
   xlab("Diferencia en altura entre padres y hijos")+
@@ -172,10 +174,10 @@ ggplot(father.son, aes(x=fheight-sheight))+
 
 Cual metodo para determinar si las diferencias cumple normalidad?
 
+```{r tpare5a}
+shapiro.test(father.son$heightDiff)
 
-
-
-
+```
 
 
 ***

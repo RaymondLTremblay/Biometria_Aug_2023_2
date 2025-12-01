@@ -176,6 +176,8 @@ Se evalúa tres modelos:
 ### Generalized Linear Model = glm
 
 ```{r reglog6}
+
+names(completeBrass)
 BrassModel.1 <- glm(Flor_si_no ~ Cant_hojas,
                     data = Brass, family = binomial())
 
@@ -189,6 +191,30 @@ summary(BrassModel.2)
 BrassModel.3 <- glm(Flor_si_no ~ Cant_hojas+Largo_Hoja_cm,
                     data = Brass, family = binomial())
 summary(BrassModel.3)
+```
+
+
+```{r}
+names(completeBrass)
+model1=glm(Flowers_Y_N~Leaf_Num, data=completeBrass, family=binomial())
+summary(model1)
+
+```
+
+
+Do a figure of the above model
+
+```{r}
+library(ggplot2)
+ggplot(completeBrass, aes(Leaf_Num, Flowers_Y_N))+
+  geom_point()+
+  stat_smooth(method="glm", se=TRUE, method.args = list(family=binomial))
+```
+
+
+library(ggplot2)
+library(latex2exp)
+
 
 
 ```
@@ -219,18 +245,20 @@ $$P(Y)\quad =\quad \frac { 1 }{ 1+{ e }^{ -((intercepto)+pendiente*variable.pred
 
 ```{r reglog8}
 
-summary(BrassModel.1)
+summary(model1)
 
 exp(1) #= e
 e=exp(1) 
 e
 
 
-P_10=1/(1+2.7182818284^-(-3.065 +0.0297*150))
+P_10=1/(1+2.7182818284^-(-3.088 +0.0299*150))
 P_10
 
-P_10=1/(1+exp(1)^-(-3.065 +0.0297*100))
-P_10
+1/(1+exp(1)^-(-3.065 +0.0299*150))
+
+
+
 P_25=1/(1+exp(-(-3.065 +0.0297*25)))
 P_25
 

@@ -34,7 +34,7 @@ Hay dos acercamiento principales para inferir. El método tradicional es determi
 
 El acercamiento alterno, la selección de modelo ofrece una alternativa en donde uno compara múltiples hipótesis y produce su inferencia de estos resultados. La selección de modelos es basado en la teoría de verosimilitud (likelihood). Las ventajas es que el investigador no esta limitado a evaluar un solo modelo donde el umbral es uno que es arbitrario (el modelo nulo con un valor de p \<0.05). Los modelos pueden ser comparado uno con el otro y organizado por su peso (**weight** o sea el apoyo estadístico), ofreciendo una medida relativa de apoyo contra las otras hipótesis. En caso que hay modelos que tienen el mismo apoyo uno puede seleccionar los mejores modelos y calcular un modelo promedio.
 
-# #Como funciona la selección de modelos?
+## Como funciona la selección de modelos?
 
 El acercamiento filosófico de selección de modelos es evaluar múltiples hipótesis y evaluar la evidencia que apoya estas. Por consecuencia el primer paso es articular un grupo de hipótesis razonables. Segundo es que cada hipótesis tiene que ser adaptado a los datos observados con una función matemática. El tercer paso es seleccionar un método de selección de modelos y comparar los resultados.
 
@@ -88,7 +88,9 @@ model2=lm(BMI ~ Age + Cholesterol + Glucose, data = reg.multiple) # El Modelo m�
 #model2
 #summary(model2)
 
-ALL_models=dredge(model2, extra="R^2") # Evaluación de todas las compbinaciones/alternativas (modelos)
+ALL_models=dredge(model2, extra="R^2") # Evaluación de todas las combinaciones/alternativas (modelos)
+
+ALL_models
 ```
 
 ```{r akiake4, message=FALSE}
@@ -211,6 +213,8 @@ El primer paso es remover todos los participantes donde le falta algún informac
 ```{r akaike6}
 DFMaria_student=na.omit(DFMaria_student)
 
+
+unique(DFMaria_student$Escolaridad)
 ```
 
 ### Construcción del modelo
@@ -220,6 +224,8 @@ head(DFMaria_student)
 
 Huracan_Dep=lm(Index_Dep5T~factor(Sexo)+Escolaridad+Num_Pers_Hogar+
                 Sala_Mens_Antes+ Sala_Mens_Desp, data=DFMaria_student)
+
+summary(Huracan_Dep)
 
 ```
 

@@ -92,6 +92,32 @@ $$s^{ 2 }=\frac { \sum { { ({ x }_{ i }-\bar { x } ) }^{ 2 } }  }{ n-1 }$$
 ![Covariance]
 $$cov(x,y)=\frac { \sum { ({ x }_{ i }-\bar { x } _{ i })({ y }_{ i }-\bar { y } _{ i }) }  }{ n-1 } $$
 
+```{r}
+advert=c(5,4,4,6,8)
+Coca=c(8,9,10,13,15)
+
+data=data.frame(advert,Coca)
+
+data
+
+mean_advert=mean(data$advert)
+mean_Coca=mean(data$Coca)
+
+data$diff_advert=data$advert-mean_advert
+data$diff_Coca=data$Coca-mean_Coca
+
+data
+data$prod_diff=data$diff_advert*data$diff_Coca
+
+sum(data$prod_diff)/(nrow(data)-1)
+```
+
+
+```{r}
+ggplot(data)+
+  geom_point(aes(x=advert, y=Coca))
+```
+
 
 
 
@@ -135,9 +161,14 @@ The function to calculate the correlation coefficient is "cor"
 The function to determine if the correlation vetween the 2 variables is significant (in other words, different from zero) is "cor.test".
   
 ```{r corr4, warning=FALSE}
-cor(df$x_val, df$y_val)
-cor.test(df$x_val, df$y_val)
+r=cor(df$x_val, df$y_val)
+#cor.test(df$x_val, df$y_val)
 
+r=cor(data$advert, data$Coca)
+r
+r^2
+
+cor.test(data$advert, data$Coca)
 ```
  
  
@@ -192,12 +223,12 @@ The package GGally, if you omit "ggplot2::aes(colour=Gender)", the figure will b
 
  
 
-```{r corr7, warning=FALSE}
+```{r corr7, warning=FALSE, message=FALSE}
 library(GGally)
 head(examData)
 
-
-ggpairs(examData, ggplot2::aes(colour=Gender))
+ggpairs(examData)
+#ggpairs(examData, ggplot2::aes(colour=Gender))
 
 ```
 
@@ -240,6 +271,8 @@ rcorr(as.matrix(examData[,c("Exam","Anxiety","Revise")]))
 ```
 
 
+
+***
 
 
 

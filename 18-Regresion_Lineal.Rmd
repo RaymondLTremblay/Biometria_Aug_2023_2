@@ -219,6 +219,7 @@ El modelo lineal con la función **lm()**. ¿Como interpretas los coeficientes y
 library(sjPlot)
 head(Album_Sales_1_new)
 
+
 model1=lm(sales~adverts, Album_Sales_1_new)
 
 #summary(model1)
@@ -409,7 +410,7 @@ plot(model2)
 
 
 ```{r reg 16, eval=FALSE, include=FALSE}
-ggplot(Alturas_Humanos, aes(Peso_kg, Altura_cm))+
+ggplot(Alturas_Humanos, aes(Peso_kg, Altura_cm, color=Genero))+
 geom_point()+
 geom_smooth(method=lm)+
 theme(axis.title=element_text(size=20,face="bold"),

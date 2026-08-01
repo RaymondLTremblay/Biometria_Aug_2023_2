@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Capítulo 2 Introducción a la BioEstadística | BioEstadística</title>
+<meta name="author" content="">
+<meta name="description" content="2.1 El libro de la clase Ningún libro es obligatorio Libros sugeridos: Discovering Statistics Using R, Andy Field, Jeremy Miles, Zoë Field. 2012. Sage Publications. ISBN: 978-1-4462-0462-1 Fecha...">
+<meta name="generator" content="bookdown 0.47 with bs4_book()">
+<meta property="og:title" content="Capítulo 2 Introducción a la BioEstadística | BioEstadística">
+<meta property="og:type" content="book">
+<meta property="og:description" content="2.1 El libro de la clase Ningún libro es obligatorio Libros sugeridos: Discovering Statistics Using R, Andy Field, Jeremy Miles, Zoë Field. 2012. Sage Publications. ISBN: 978-1-4462-0462-1 Fecha...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Capítulo 2 Introducción a la BioEstadística | BioEstadística">
+<meta name="twitter:description" content="2.1 El libro de la clase Ningún libro es obligatorio Libros sugeridos: Discovering Statistics Using R, Andy Field, Jeremy Miles, Zoë Field. 2012. Sage Publications. ISBN: 978-1-4462-0462-1 Fecha...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/Source_Sans_3-0.4.10/font.css" rel="stylesheet">
+<link href="libs/Fira_Code-0.4.10/font.css" rel="stylesheet">
+<link href="libs/Lora-0.4.10/font.css" rel="stylesheet">
+<script src="libs/bs3compat-0.11.0/transition.js"></script><script src="libs/bs3compat-0.11.0/tabs.js"></script><script src="libs/bs3compat-0.11.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BioEstadística</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introducción al curso de BioEstadística</a></li>
+<li><a class="active" href="introducci%C3%B3n-a-la-bioestad%C3%ADstica.html"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></li>
+<li><a class="" href="poblacion-y-muestreos.html"><span class="header-section-number">3</span> Poblacion y Muestreos</a></li>
+<li><a class="" href="inferencias-y-hipotesis.html"><span class="header-section-number">4</span> Inferencias y Hipotesis</a></li>
+<li><a class="" href="historia-breve-de-la-estad%C3%ADstica.html"><span class="header-section-number">5</span> Historia breve de la Estadística</a></li>
+<li><a class="" href="medida-de-tendencia-central.html"><span class="header-section-number">6</span> Medida de tendencia central</a></li>
+<li><a class="" href="medidas_de_dispersion.html"><span class="header-section-number">7</span> Medidas_de_dispersion</a></li>
+<li><a class="" href="estadistica-descriptiva.html"><span class="header-section-number">8</span> Estadistica Descriptiva</a></li>
+<li><a class="" href="graficos.html"><span class="header-section-number">9</span> Graficos</a></li>
+<li><a class="" href="supuestos.html"><span class="header-section-number">10</span> Supuestos</a></li>
+<li><a class="" href="estadistica-frecuentista.html"><span class="header-section-number">11</span> Estadistica Frecuentista</a></li>
+<li><a class="" href="distribucion-normal.html"><span class="header-section-number">12</span> Distribucion Normal</a></li>
+<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una muestra</a></li>
+<li><a class="" href="prueba-de-t-pareados.html"><span class="header-section-number">14</span> Prueba de t pareados</a></li>
+<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con datos independientes</a></li>
+<li><a class="" href="anova.html"><span class="header-section-number">16</span> ANOVA</a></li>
+<li><a class="" href="correlaci%C3%B3n-y-covarianza.html"><span class="header-section-number">17</span> Correlación y Covarianza</a></li>
+<li><a class="" href="regresi%C3%B3n-lineal-1.html"><span class="header-section-number">18</span> Regresión Lineal</a></li>
+<li><a class="" href="regresion-logistica.html"><span class="header-section-number">19</span> Regresion Logistica</a></li>
+<li><a class="" href="selecionando-modelos-con-akaike.html"><span class="header-section-number">20</span> Selecionando modelos con AKAIKE</a></li>
+<li><a class="" href="pruebas-no-parametricas.html"><span class="header-section-number">21</span> Pruebas no parametricas</a></li>
+<li><a class="" href="referencias-1.html">Referencias</a></li>
+<li class="book-part">Appendix</li>
+<li><a class="" href="ejercicios-a.html"><span class="header-section-number">A</span> Ejercicios A</a></li>
+<li><a class="" href="ejercicios-b.html"><span class="header-section-number">B</span> Ejercicios B</a></li>
+<li><a class="" href="ejercicios-c.html"><span class="header-section-number">C</span> Ejercicios C</a></li>
+<li><a class="" href="ejercicios-d.html"><span class="header-section-number">D</span> Ejercicios D</a></li>
+<li><a class="" href="ejercicios-e.html"><span class="header-section-number">E</span> Ejercicios E</a></li>
+<li><a class="" href="ejercicios-f.html"><span class="header-section-number">F</span> Ejercicios F</a></li>
+<li><a class="" href="ejercicios-g.html"><span class="header-section-number">G</span> Ejercicios G</a></li>
+<li><a class="" href="ejercicios-h.html"><span class="header-section-number">H</span> Ejercicios H</a></li>
+<li><a class="" href="ejercicios-i.html"><span class="header-section-number">I</span> Ejercicios I</a></li>
+<li><a class="" href="ejercicios-j.html"><span class="header-section-number">J</span> Ejercicios J</a></li>
+<li><a class="" href="ejercicios-k.html"><span class="header-section-number">K</span> Ejercicios K</a></li>
+<li><a class="" href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><span class="header-section-number">L</span> Ejercicios sobre prueba de t con datos independiente</a></li>
+<li><a class="" href="ejercicios-m.html"><span class="header-section-number">M</span> Ejercicios M</a></li>
+<li><a class="" href="ejercicios-n.html"><span class="header-section-number">N</span> Ejercicios N</a></li>
+<li><a class="" href="ejercicio-o.html"><span class="header-section-number">O</span> Ejercicio O</a></li>
+<li><a class="" href="ejercicios-p.html"><span class="header-section-number">P</span> Ejercicios P</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">Q</span> DATA</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/RaymondLTremblay/BioEstadistica">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introducción-a-la-bioestadística" class="section level1" number="2">
+<h1>
+<span class="header-section-number">Capítulo 2</span> Introducción a la BioEstadística<a class="anchor" aria-label="anchor" href="#introducci%C3%B3n-a-la-bioestad%C3%ADstica"><i class="fas fa-link"></i></a>
+</h1>
+<p><img src="Graficos/hex_ggversa.png" alt="" width="20%"><img src="Graficos/hex_error.png" alt="" width="20%"></p>
+<div id="el-libro-de-la-clase" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> El libro de la clase<a class="anchor" aria-label="anchor" href="#el-libro-de-la-clase"><i class="fas fa-link"></i></a>
+</h2>
+<p>Ningún libro es obligatorio</p>
+<p>Libros sugeridos:</p>
+<p>Discovering Statistics Using R, Andy Field, Jeremy Miles, Zoë Field. 2012. Sage Publications. ISBN: 978-1-4462-0462-1</p>
+<div style="page-break-after: always;"></div>
+<hr>
+<p>Fecha de la última revisión</p>
+<pre><code>## [1] "2026-08-01"</code></pre>
+</div>
+<div id="el-proceso-de-investigación" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> El proceso de investigación:<a class="anchor" aria-label="anchor" href="#el-proceso-de-investigaci%C3%B3n"><i class="fas fa-link"></i></a>
+</h2>
+<p>En este curso se estará enfatizando los análisis cuantitativo, esto es simplemente que analizamos los datos para llegar a una conclusión o interpretación sobre un tema. Naturalmente el proceso de seleccionar los datos puede ser un reto grande. Cómo uno selecciona los datos y el desarrollo de la investigación depende del diseño experimental. El diseño es el procedimiento de como uno recolecta los datos y como los vamos a analizar. En este curso no estaremos evaluando métodos cualitativos de análisis. Este método cualitativo se refiere a evaluar principalmente opiniones, motivaciones o razones que influencia o impacta una situación. En los métodos cuantitativos es necesario que los resultados sean de una forma o otra numéricos o categóricos.</p>
+<p>El proceso de investigación cuantitativo tiene múltiples pasos y podemos visualizar los pasos con un diagrama de flujo.</p>
+<div class="figure">
+<span style="display:block;" id="fig:c02-fig-proceso"></span>
+<img src="Graficos/Proceso_Investigacion.png" alt="El proceso de investigación" width="60%"><p class="caption">
+Figure 2.1: El proceso de investigación
+</p>
+</div>
+<hr>
+</div>
+<div id="el-primer-paso" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> El primer paso:<a class="anchor" aria-label="anchor" href="#el-primer-paso"><i class="fas fa-link"></i></a>
+</h2>
+<p>Todo comienza con una pregunta que te llama la atención. Esta pregunta proviene de haber observado tu ambiente. Puede que sea algo muy sencillo (por ejemplo: si la cantidad de estudiantes registrado en una sección impacta su rendimiento), o puede ser una pregunta más complicada (por ejemplo, cuál es el impacto de la lactancia sobre el desarrollo de las células, órganos, la bioquímica y inteligencia de los niños).</p>
+<hr>
+</div>
+<div id="el-segundo-paso" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> El segundo paso<a class="anchor" aria-label="anchor" href="#el-segundo-paso"><i class="fas fa-link"></i></a>
+</h2>
+<p>El próximo paso es desarrollar una hipótesis. Hay dos tipos de hipótesis, la hipótesis nula y la hipótesis alterna. SIEMPRE uno comprueba la hipótesis NULA. La nula en la forma más sencilla, es que los grupos son iguales. En otras palabras, si regresamos a la pregunta del primer paso, el rendimiento de los estudiantes es irrelevante de la cantidad de estudiantes en el salón; en otras palabras, es igual si hay pocos o muchos estudiantes. La hipótesis alterna es que “que la cantidad de estudiantes en un salón impacta el rendimiento de los estudiantes”. Hay otros tipos de hipótesis nula que veremos más tarde.</p>
+<div class="definicion">
+<p>La <strong>hipótesis nula (<span class="math inline">\(H_0\)</span>)</strong> propone que no hay efecto ni diferencia entre los grupos. La <strong>hipótesis alterna (<span class="math inline">\(H_1\)</span>)</strong> propone que sí existe un efecto o diferencia. En una prueba estadística <strong>siempre se pone a prueba la hipótesis nula</strong>.</p>
+</div>
+<ul>
+<li>Si <strong>no se rechaza</strong> la hipótesis nula, quiere decir que NO hay evidencia suficiente de que los grupos sean diferentes (ojo: esto no prueba que sean iguales).</li>
+<li>Si se <strong>rechaza</strong> la hipótesis nula, hay evidencia de que los dos grupos son diferentes.</li>
+</ul>
+<div class="nota">
+<p>En estadística <strong>no se “acepta” la hipótesis nula</strong>: una prueba solo puede darnos evidencia para <strong>rechazarla</strong> o no. Que no la rechacemos significa que los datos no aportaron evidencia suficiente en su contra, no que sea verdadera. Por eso en este libro decimos <strong>“no rechazar”</strong> en lugar de “aceptar”.</p>
+</div>
+<hr>
+</div>
+<div id="el-tercer-paso" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> El tercer paso:<a class="anchor" aria-label="anchor" href="#el-tercer-paso"><i class="fas fa-link"></i></a>
+</h2>
+<p>Ahora hay que definir cuáles son las variables (datos) que se van a recolectar para evaluar la hipótesis. Por ejemplo, cuántos grupos de estudiantes se seleccionarán (2, 3, 10 salones?), La información se recolectará de cuántos estudiantes por salón (todos, la mitad, los que aparezcan, o se seleccionarán los estudiantes al azar, y si se seleccionan al azar, cuál es el mecanismo para seleccionarlos de esta forma). Cuál será el índice de “rendimiento” (el entusiasmo de cada estudiante, la nota de un examen, de un trabajo, la nota final). Si se selecciona la nota final, la información será la nota numérica o alfabética (A, B, C, D, o F).</p>
+<p>Tomando la información anterior en consideración esto determinará el diseño experimental y las pruebas estadísticas que se deberán utilizar en el quinto paso.</p>
+<hr>
+</div>
+<div id="el-cuarto-paso" class="section level2" number="2.6">
+<h2>
+<span class="header-section-number">2.6</span> El cuarto paso:<a class="anchor" aria-label="anchor" href="#el-cuarto-paso"><i class="fas fa-link"></i></a>
+</h2>
+<p>Recolectar los datos. Este se debe hacer de una forma sistemática, con la información bien apuntado y subir la información en una hoja de cálculo (spreadsheet), como MS Excel, Google Sheet y Numbers. Es mi sugerencia de <strong>NUNCA</strong> utilizar un programa como SPSS o JMP para poner los datos, ya que con estos programas si en el futuro se quiere tener acceso a los datos, y no tiene el programado o el programado ha cambiado de versión muchas veces los datos no se pueden leer (experiencia personal).</p>
+<div class="consejo">
+<p>Guarda siempre tus datos en un formato abierto (<code>.csv</code> o <code>.xlsx</code>). Evita capturarlos directamente dentro de programas propietarios: si cambias de programa o de versión, corres el riesgo de no poder volver a leer tus propios datos.</p>
+</div>
+<hr>
+</div>
+<div id="el-quinto-paso" class="section level2" number="2.7">
+<h2>
+<span class="header-section-number">2.7</span> El quinto paso:<a class="anchor" aria-label="anchor" href="#el-quinto-paso"><i class="fas fa-link"></i></a>
+</h2>
+<p>En este paso se hará los gráficos y los análisis estadísticos para evaluar la hipótesis.</p>
+<hr>
+</div>
+<div id="el-sexto-paso" class="section level2" number="2.8">
+<h2>
+<span class="header-section-number">2.8</span> El sexto paso:<a class="anchor" aria-label="anchor" href="#el-sexto-paso"><i class="fas fa-link"></i></a>
+</h2>
+<p>Rechazar o no rechazar la hipótesis nula.</p>
+<hr>
+</div>
+<div id="tipo-de-error-de-interpretación-en-estadística" class="section level2" number="2.9">
+<h2>
+<span class="header-section-number">2.9</span> Tipo de error de interpretación en estadística<a class="anchor" aria-label="anchor" href="#tipo-de-error-de-interpretaci%C3%B3n-en-estad%C3%ADstica"><i class="fas fa-link"></i></a>
+</h2>
+<p>El concepto básico en estadística, y probablemente el más difícil a captar es que en el mundo existe la <em>verdad</em>, pero cuando uno recolecta datos, no necesariamente los datos de la muestra representa la <em>verdad</em> o se acerca a la realidad. Por consecuencia siempre hay una posibilidad de que los datos nos engañen, y si nos engañan estamos cometiendo un error al rechazar o no rechazar la hipótesis nula. Por consecuencia aunque uno tome todas las precauciones para tener un diseño experimental adecuado es posible que los datos no representen el universo de los datos (la verdad).</p>
+<p>Típicamente se rechaza la hipótesis nula si el valor de <strong>p</strong> es <em>menor</em> de 0.05 (p &lt; 0.05). No es necesario que el valor sea menor de 0.05 para rechazar la hipótesis, en cierta condiciones el valor crítico pudiese ser mayor o menor de 0.05. El valor de <strong>p</strong> representa la probabilidad de observar datos tan extremos como los obtenidos (o más), <strong>suponiendo que la hipótesis nula es cierta</strong>. Un valor de <strong>p</strong> pequeño constituye evidencia en contra de la hipótesis nula. Por consecuencia un valor de <strong>p</strong> = 0.05, significa que hay 5% de probabilidad de cometer un error al rechazar la hipótesis nula cuando en realidad es cierta, si repetimos la investigación 100 veces (una razón de 1:20). Entonces este representa un tipo de error posible, frecuentemente nominado tipo de error 1 o alfa. En otras palabras, es la probabilidad de rechazar la hipótesis nula cuando en realidad es cierta. El otro tipo de error, tipo 2 o beta, representa el error de no rechazar la hipótesis nula cuando en realidad es falsa (se debería haber rechazado).</p>
+<p>Los tres términos usado en estadística para de los dos tipos de errores</p>
+<ul>
+<li>Tipo de error I, alfa, falso positivos</li>
+<li>Tipo de error II, beta, falso negativos</li>
+</ul>
+<div class="nota">
+<p><strong>Error de tipo I (<span class="math inline">\(\alpha\)</span>)</strong>: rechazar una hipótesis nula que en realidad es cierta (un <em>falso positivo</em>).
+<strong>Error de tipo II (<span class="math inline">\(\beta\)</span>)</strong>: no rechazar una hipótesis nula que en realidad es falsa (un <em>falso negativo</em>).</p>
+</div>
+<p>Aquí un gráfico de los tipos de errores. El gráfico representa los dos tipos de error y las dos condiciones en que no se hace un error.</p>
+<div class="figure">
+<span style="display:block;" id="fig:c02-fig-errores"></span>
+<img src="Graficos/Hipothesis_Grid.png" alt="Los dos tipos de error en una prueba de hipótesis" width="70%"><p class="caption">
+Figure 2.2: Los dos tipos de error en una prueba de hipótesis
+</p>
+</div>
+<hr>
+<p>Ahora vamos a considerar un ejemplo básico de preguntas que se podría evaluar. En este tiempo moderno un tipo de programas a la televisión bien común son los “Reality Shows”. Donde típicamente participa individuos supuestamente “normal” que no sean actores profesionales. Aquí una lista de algunos de los “Reality Shows”.</p>
+<div id="consideramos-los-reality-shows" class="section level3" number="2.9.1">
+<h3>
+<span class="header-section-number">2.9.1</span> Consideramos los Reality Shows:<a class="anchor" aria-label="anchor" href="#consideramos-los-reality-shows"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Kardashians</li>
+<li>The Bachelorette</li>
+<li>Survivors</li>
+<li>Big Brother</li>
+<li>Shark Tank</li>
+<li>Skin Wars</li>
+<li>Hell’s Kitchen</li>
+</ul>
+</div>
+<div id="personalidad-de-las-personas" class="section level3" number="2.9.2">
+<h3>
+<span class="header-section-number">2.9.2</span> Personalidad de las personas<a class="anchor" aria-label="anchor" href="#personalidad-de-las-personas"><i class="fas fa-link"></i></a>
+</h3>
+<p>Uno se podría preguntar qué tipo de personas son seleccionadas para participar en estos tipos de programas. Una hipótesis que son gente con tipo de personalidad bien específica o que sean personas “normales”. Una hipótesis es que son gente que cumple con unas características tal como <em>Trastorno de personalidad narcisista</em> (TPN): estas personas, a veces caracterizadas como megalómanas, muestran un patrón a largo plazo de comportamiento anormal caracterizado por sentimientos exagerados de importancia personal, necesidad excesiva de admiración y falta de empatía.</p>
+<hr>
+<p>En un ejemplo de <strong>Field et al. 2014</strong> se demuestra la siguiente información sobre personas que solicitaron ser parte de uno de estos <em>Reality Show</em> que se llama <em>Big Brother</em>.</p>
+<p>Una hipótesis es que los productores de estos <em>Reality Shows</em> seleccionan gente con características de TPN más a menudo que las gente que no tienen esta condición. Podemos comprobar esto recolectando datos de los que solicitan y los que fueron aceptados o no para participar en Big Brother (United Kingdom). Se entrevistaron 7662 personas para seleccionar 12, a cada uno se le hizo una prueba para ver si tenía síntomas de TPN.<br>
+***</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th align="right">No TNP</th>
+<th align="right">TPN</th>
+<th align="right">Total</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Seleccionado</td>
+<td align="right">3</td>
+<td align="right">9</td>
+<td align="right">12</td>
+</tr>
+<tr class="even">
+<td>Rechazado</td>
+<td align="right">6805</td>
+<td align="right">845</td>
+<td align="right">7650</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td align="right">6808</td>
+<td align="right">854</td>
+<td align="right">7662</td>
+</tr>
+</tbody>
+</table></div>
+<p>Lo que uno observa es que la gente identificada con características que cumplen con <strong>TPN</strong> son más propensas a ser seleccionadas para participar en el programa. Si fuese que la selección hubiese sido al azar, uno esperaría solamente 1 o 2 personas al máximo con la condición de TPN, no 9 personas. Más tarde aprenderemos como calcular el valor esperado exacto.</p>
+<hr>
+</div>
+</div>
+<div id="cuándo-una-hipótesis-no-es-una-hipótesis" class="section level2" number="2.10">
+<h2>
+<span class="header-section-number">2.10</span> ¿Cuándo una hipótesis no es una hipótesis?<a class="anchor" aria-label="anchor" href="#cu%C3%A1ndo-una-hip%C3%B3tesis-no-es-una-hip%C3%B3tesis"><i class="fas fa-link"></i></a>
+</h2>
+<div id="una-hipótesis-tiene-que-ser-falsificable" class="section level3" number="2.10.1">
+<h3>
+<span class="header-section-number">2.10.1</span> Una hipótesis tiene que ser falsificable<a class="anchor" aria-label="anchor" href="#una-hip%C3%B3tesis-tiene-que-ser-falsificable"><i class="fas fa-link"></i></a>
+</h3>
+<p>Esto quiere decir hay que tener un mecanismo para determinar la veracidad de una expresión. Por ejemplo, de las 4 expresiones siguientes hay 2 que no pueden ser falsificables. Ahora tómate el tiempo de evaluar las siguientes expresiones y trata de determinar si son hipótesis falsificables. Desafortunadamente, en el vocabulario popular los términos hipótesis y teoría se usan para describir cualquier pensamiento que la gente QUISIERA que fuera verídico. También se hace hipótesis o mejor dicho expresiones que no son falsificable. En nuestra sociedad, donde cualquier persona se puede llamar especialista en un tema, los comentarios no falsificables dominan y resultan en confusión para la gente. Es importante en ciencia que los temas y las áreas de investigación sean falsificables.</p>
+<div class="historia">
+<p>La idea de que una hipótesis científica debe ser <strong>falsable</strong> proviene del filósofo <strong>Karl Popper</strong>, en su obra <em>Logik der Forschung</em> (1934), traducida al español como <em>La lógica de la investigación científica</em>.</p>
+</div>
+<hr>
+</div>
+<div id="ejercicio-1" class="section level3" number="2.10.2">
+<h3>
+<span class="header-section-number">2.10.2</span> Ejercicio 1<a class="anchor" aria-label="anchor" href="#ejercicio-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Lin Manuel es el mejor actor del mundo</li>
+<li>Todos los cisnes son blancos</li>
+<li>El aumento en producción de semillas en una planta X aumenta con el tamaño poblacional de esta especie.</li>
+<li>Los Beatles vendieron más discos que cualquier otro grupo artístico.</li>
+</ul>
+<hr>
+</div>
+<div id="evaluación-de-las-expresiones-falsificables" class="section level3" number="2.10.3">
+<h3>
+<span class="header-section-number">2.10.3</span> Evaluación de las expresiones falsificables<a class="anchor" aria-label="anchor" href="#evaluaci%C3%B3n-de-las-expresiones-falsificables"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<p>Lin Manuel es el mejor actor del mundo.</p>
+<p>Esta expresión no es una hipótesis falsificable porque el concepto de <strong>mejor</strong> es uno que es basado en un juicio individual. En otras palabras, ¿cómo se mide lo “<strong>mejor</strong>” y quién toma la decisión sobre esta medida cualitativa? Si Ud. proviene de una cultura diferente la apreciación a la música cambia dramáticamente.</p>
+</li>
+<li>
+<p>Todos los cisnes son blancos</p>
+<p>El problema con esta expresión es la palabra “Todos”. En ningún momento aun que uno trate nunca se podría encontrar “todos” los cisnes para evaluar si son blancos o no. Por consecuencia no es falsificable. El concepto de “todos” aquí asume que ninguno quedará sin evaluar, lo cual es imposible.</p>
+</li>
+<li>
+<p>El aumento en producción de semillas en una planta X aumenta el tamaño poblacional de esta especie.</p>
+<p>Este es una hipótesis falsificable por que uno puede hacer un experimento para evaluar la relación que hay entre la producción de semillas y el tamaño poblacional de una especie de plantas.</p>
+</li>
+<li>
+<p>Los Beatles vendieron más discos que cualquier otro grupo artístico.</p>
+<p>Este es una hipótesis falsificable porque se puede contabilizar la cantidad de discos vendidos por los Beatles y otros grupos y determinar si es cierto o no.</p>
+</li>
+</ul>
+<hr>
+</div>
+</div>
+<div id="variables-independientes-y-dependientes" class="section level2" number="2.11">
+<h2>
+<span class="header-section-number">2.11</span> Variables Independientes y Dependientes<a class="anchor" aria-label="anchor" href="#variables-independientes-y-dependientes"><i class="fas fa-link"></i></a>
+</h2>
+<p>-La variable Independiente: es la variable que impacta (teóricamente) la variable dependiente (puede ser que no impacta el resultado). Típicamente la <strong>x</strong> en un modelo es la variable independiente.</p>
+<p>-La variable Dependiente: es la variable que recibe el efecto (teóricamente) de la variable independiente. La variable dependiente depende de la variable independiente. Las <strong>y’s</strong> en un modelo son las variables dependientes.</p>
+<hr>
+</div>
+<div id="niveles-de-mediciones" class="section level2" number="2.12">
+<h2>
+<span class="header-section-number">2.12</span> Niveles de mediciones<a class="anchor" aria-label="anchor" href="#niveles-de-mediciones"><i class="fas fa-link"></i></a>
+</h2>
+<div id="variables-continuas" class="section level3" number="2.12.1">
+<h3>
+<span class="header-section-number">2.12.1</span> Variables continuas<a class="anchor" aria-label="anchor" href="#variables-continuas"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<p>Las variables con datos continuos:</p>
+<ul>
+<li><p>Son valores que son contiguos o por lo menos existe o pudiese existir los valores intermedios.</p></li>
+<li><p>Ejemplo 1</p></li>
+<li><p>la distancia entre el valor 13 y 15 es igual que 101 y 103, hay dos unidades que los separa.</p></li>
+<li><p>Aunque no se haya observado el 14 ni el 102 en un recogido de datos estos valores tienen potencialmente existir, en otra palabra estos valores son posibles en el universo de los datos.</p></li>
+<li>
+<p>Ejemplo 2</p>
+<ul>
+<li>Si se mide el tamaño de una célula biológica en micrómetros (µm, <span class="math inline">\(10^{-6}\)</span>). Los valores intermedios y contiguos existen. Por ejemplo, el largo de las células de <em>Escherichia coli</em> (<em>E. coli</em>) adulta son de 5.27µm en promedio con una desviación estándar de 0.87µm. Esto significa que hay células de diferentes tamaños que van de menos de 2µm a más de 10µm de largo, y todos los valores pueden existir en este rango (ref: <a href="https://doi.org/10.1098/rsos.160417" class="uri">https://doi.org/10.1098/rsos.160417</a>). Más tarde veremos como se puede llegar a la conclusión que las células varían entre 2µm a más de 10µm de largo, cuando uno tiene solamente el promedio y la desviación estándar.</li>
+</ul>
+</li>
+</ul>
+<p>Ejemplo 3</p>
+<ul>
+<li>El número de hermanos, si por ejemplo yo pregunto a seis estudiantes cuantos hermanos tiene. Yo podría tener la siguiente lista. Aunque que no hubo ningún estudiante que tenga 1 hermano o 6 hermanos, es posible esta alternativas. Note algo especial aquí es que nadie puede tener 2.4 hermanos, los valores tienen que ser números enteros. Cuando son conteos así, la distribución de los datos provienen de una distribución <strong>Poisson</strong> (veremos más tarde).<br>
+</li>
+<li>Números de hermanos (0, 2, 5, 3, 8, 4)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="variables-discretas" class="section level3" number="2.12.2">
+<h3>
+<span class="header-section-number">2.12.2</span> Variables Discretas<a class="anchor" aria-label="anchor" href="#variables-discretas"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Categórica o Discreta
+<ul>
+<li>Variables Nominales
+<ul>
+<li>Hombres y Mujeres</li>
+<li>Omnívoro, vegetariano, vegano, carnívoro</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Variable Ordinal
+<ul>
+<li>Datos donde hay un orden en los valores
+<ul>
+<li>primero, segundo, tercero, etc.</li>
+<li>A, B, C, D, F (nota de estudiantes)</li>
+<li>pequeño, mediano, grande</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Variable Binomial
+<ul>
+<li>Tiene solamente dos alternativas
+<ul>
+<li>Vivo o muerto</li>
+<li>Vive en PR o No vive en PR</li>
+<li>Está embarazada o No está embarazada</li>
+<li>Tiene flores o no tiene flores</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html"><span class="header-section-number">1</span> Introducción al curso de BioEstadística</a></div>
+<div class="next"><a href="poblacion-y-muestreos.html"><span class="header-section-number">3</span> Poblacion y Muestreos</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#introducci%C3%B3n-a-la-bioestad%C3%ADstica"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></li>
+<li><a class="nav-link" href="#el-libro-de-la-clase"><span class="header-section-number">2.1</span> El libro de la clase</a></li>
+<li><a class="nav-link" href="#el-proceso-de-investigaci%C3%B3n"><span class="header-section-number">2.2</span> El proceso de investigación:</a></li>
+<li><a class="nav-link" href="#el-primer-paso"><span class="header-section-number">2.3</span> El primer paso:</a></li>
+<li><a class="nav-link" href="#el-segundo-paso"><span class="header-section-number">2.4</span> El segundo paso</a></li>
+<li><a class="nav-link" href="#el-tercer-paso"><span class="header-section-number">2.5</span> El tercer paso:</a></li>
+<li><a class="nav-link" href="#el-cuarto-paso"><span class="header-section-number">2.6</span> El cuarto paso:</a></li>
+<li><a class="nav-link" href="#el-quinto-paso"><span class="header-section-number">2.7</span> El quinto paso:</a></li>
+<li><a class="nav-link" href="#el-sexto-paso"><span class="header-section-number">2.8</span> El sexto paso:</a></li>
+<li>
+<a class="nav-link" href="#tipo-de-error-de-interpretaci%C3%B3n-en-estad%C3%ADstica"><span class="header-section-number">2.9</span> Tipo de error de interpretación en estadística</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#consideramos-los-reality-shows"><span class="header-section-number">2.9.1</span> Consideramos los Reality Shows:</a></li>
+<li><a class="nav-link" href="#personalidad-de-las-personas"><span class="header-section-number">2.9.2</span> Personalidad de las personas</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#cu%C3%A1ndo-una-hip%C3%B3tesis-no-es-una-hip%C3%B3tesis"><span class="header-section-number">2.10</span> ¿Cuándo una hipótesis no es una hipótesis?</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#una-hip%C3%B3tesis-tiene-que-ser-falsificable"><span class="header-section-number">2.10.1</span> Una hipótesis tiene que ser falsificable</a></li>
+<li><a class="nav-link" href="#ejercicio-1"><span class="header-section-number">2.10.2</span> Ejercicio 1</a></li>
+<li><a class="nav-link" href="#evaluaci%C3%B3n-de-las-expresiones-falsificables"><span class="header-section-number">2.10.3</span> Evaluación de las expresiones falsificables</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#variables-independientes-y-dependientes"><span class="header-section-number">2.11</span> Variables Independientes y Dependientes</a></li>
+<li>
+<a class="nav-link" href="#niveles-de-mediciones"><span class="header-section-number">2.12</span> Niveles de mediciones</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#variables-continuas"><span class="header-section-number">2.12.1</span> Variables continuas</a></li>
+<li><a class="nav-link" href="#variables-discretas"><span class="header-section-number">2.12.2</span> Variables Discretas</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/RaymondLTremblay/BioEstadistica/blob/master/02-Intro.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/RaymondLTremblay/BioEstadistica/edit/master/02-Intro.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BioEstadística</strong>" was written by . It was last built on 2026-08-01.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

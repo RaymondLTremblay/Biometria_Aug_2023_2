@@ -1,14 +1,129 @@
-p.caption {
-  color: #777;
-  margin-top: 10px;
+/* ============================================================
+   BioEstadística — Tema "Bosque / naturaleza"
+   Paleta:  bosque #1f5c3d · oro/ámbar #e0a52e · pizarra #3f4a54 · crema #f7faf8
+   (Tipografías y color primario se definen en _output.yml vía
+    bs4_book/bslib; aquí van los acentos y los callouts.)
+   ============================================================ */
+
+:root {
+  --bosque:       #1f5c3d;
+  --bosque-osc:   #164229;
+  --bosque-claro: #2e7d54;
+  --oro:          #e0a52e;
+  --oro-claro:    #f0d089;
+  --pizarra:      #3f4a54;
+  --crema:        #f7faf8;
+  --tinta:        #2b2b2b;
 }
-p code {
-  white-space: inherit;
+
+/* --- Encabezados --- */
+h1, h2, h3, h4, h5, h6 { color: var(--bosque); letter-spacing: .2px; }
+h1 { border-bottom: 3px solid var(--oro); padding-bottom: .3rem; }
+h2 { border-bottom: 1px solid #e2e9e4; padding-bottom: .2rem; }
+
+/* --- Enlaces --- */
+a, main a { color: var(--bosque); }
+a:hover   { color: var(--oro); }
+
+/* --- Código --- */
+code { color: var(--bosque-osc); }
+pre  {
+  border-left: 4px solid var(--oro);
+  border-radius: 4px;
+  background: #fbfcfb;
 }
-pre {
-  word-break: normal;
-  word-wrap: normal;
+
+/* --- Tablas --- */
+table { border-collapse: collapse; }
+table thead th {
+  background: var(--bosque);
+  color: #fff;
+  border-color: var(--bosque-osc);
 }
-pre code {
-  white-space: inherit;
+table tbody tr:nth-child(even) { background: #eef4f0; }
+
+/* --- Citas --- */
+blockquote {
+  border-left: 4px solid var(--oro);
+  color: var(--pizarra);
+  background: #f6f9f6;
+  padding: .5rem .9rem;
 }
+
+/* ============================================================
+   CALLOUTS   —  uso:   ::: {.nota}  texto  :::
+   ============================================================ */
+div.nota, div.consejo, div.advertencia, div.peligro, div.historia,
+div.definicion, div.formula, div.supuestos, div.interpretacion {
+  border-radius: 6px;
+  padding: .8rem 1rem;
+  margin: 1.2rem 0;
+  border-left: 5px solid #999;
+  background: #f5f5f5;
+}
+div.nota::before, div.consejo::before, div.advertencia::before,
+div.peligro::before, div.historia::before, div.definicion::before,
+div.formula::before, div.supuestos::before, div.interpretacion::before {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .35rem;
+  letter-spacing: .3px;
+}
+
+/* Nota (información general) */
+div.nota            { border-left-color:#3f6fb0; background:#eef3fa; }
+div.nota::before    { content:"📝 NOTA"; color:#2c5590; }
+
+/* Consejo (buenas prácticas) */
+div.consejo         { border-left-color:#2e8b57; background:#eef7f1; }
+div.consejo::before { content:"💡 CONSEJO"; color:#226b43; }
+
+/* Advertencia (cuidado) */
+div.advertencia         { border-left-color:var(--oro); background:#fdf6e6; }
+div.advertencia::before { content:"⚠️ ADVERTENCIA"; color:#9a7413; }
+
+/* Peligro / Error frecuente */
+div.peligro         { border-left-color:#b23b3b; background:#fbeeee; }
+div.peligro::before { content:"⛔ ¡CUIDADO!"; color:#8f2a2a; }
+
+/* Historia (contexto histórico) */
+div.historia         { border-left-color:#7a5c99; background:#f4eff8; }
+div.historia::before { content:"📜 HISTORIA"; color:#5d4478; }
+
+/* Definición (término clave) */
+div.definicion         { border-left-color:var(--bosque); background:#eef4f0; }
+div.definicion::before { content:"📘 DEFINICIÓN"; color:var(--bosque); }
+
+/* Fórmula (ecuación / cálculo) */
+div.formula         { border-left-color:var(--pizarra); background:#eef1f4; }
+div.formula::before { content:"🧮 FÓRMULA"; color:var(--pizarra); }
+
+/* Supuestos (assumptions de la prueba) */
+div.supuestos         { border-left-color:#6b7a3a; background:#f2f4e9; }
+div.supuestos::before { content:"📋 SUPUESTOS"; color:#556130; }
+
+/* Interpretación (cómo leer el resultado) */
+div.interpretacion         { border-left-color:var(--oro); background:#fbf3df; }
+div.interpretacion::before { content:"🔎 INTERPRETACIÓN"; color:#9a7413; }
+
+/* ============================================================
+   Banner de portada (uso: ::: {.banner-cover} ... :::)
+   ============================================================ */
+div.banner-cover {
+  background: linear-gradient(135deg, var(--bosque) 0%, var(--bosque-osc) 100%);
+  color: #fff;
+  padding: 1.3rem 1.5rem;
+  border-radius: 8px;
+  border-left: 6px solid var(--oro);
+  margin: 1rem 0 1.5rem 0;
+  font-size: 1.05rem;
+}
+div.banner-cover strong { color: var(--oro-claro); }
+
+/* ============================================================
+   Ajustes heredados del style.css original
+   ============================================================ */
+p.caption { color:#777; margin-top:10px; }
+p code    { white-space: inherit; }
+pre       { word-break: normal; word-wrap: normal; }
+pre code  { white-space: inherit; }

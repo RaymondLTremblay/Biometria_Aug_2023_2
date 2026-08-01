@@ -121,11 +121,19 @@ head(Drug)
 - NOTA: la prueba de Shapiro-Wilk en la última línea. 
 
 ```{r nopara3}
+library(pastecs)
 names(drugData)
 by(drugData[,c(3:4)], drugData$drug, stat.desc, basic=TRUE, norm=TRUE)
 
 #shapiro.test(drugData$sundayBDI)  # this is to look at all the data, it is not the appropriate way to do the analisis of normality, why?
 #shapiro.test(drugData$wedsBDI) # this is to look at all the data, it is not the appropriate way to do the analisis of normality, why?
+
+shapiro.test(drugData$sundayBDI[drugData$drug=="Alcohol"])
+shapiro.test(drugData$sundayBDI[drugData$drug=="Ecstasy"])
+shapiro.test(drugData$wedsBDI[drugData$drug=="Alcohol"])
+shapiro.test(drugData$wedsBDI[drugData$drug=="Ecstasy"])
+
+
 ```
 
 
@@ -156,14 +164,14 @@ Cuando los datos no son normales o contienen outliers, ya que la prueba de Leven
 
 
 ```{r nopara5}
-
+library(DescTools)
 #leveneTest(drugData$sundayBDI, drugData$drug, center = "mean")
-leveneTest(drugData$sundayBDI, drugData$drug, center = "median")
+DescTools::LeveneTest(drugData$sundayBDI, drugData$drug, center = "median")
 
 
 
 #leveneTest(drugData$wedsBDI, drugData$drug, center = "mean")
-leveneTest(drugData$wedsBDI, drugData$drug, center = "median")
+car::leveneTest(drugData$wedsBDI, drugData$drug, center = "median")
 ```
 
 
@@ -235,7 +243,10 @@ wedModel
 
 ```{r nopara8}
 sunModel2<-wilcox.test(sundayBDI ~ drug, data = drugData, exact = FALSE, correct= FALSE, conf.int=T)
+
 sunModel2
+
+
 wedModel2<-wilcox.test(wedsBDI ~ drug, data = drugData, exact = FALSE, correct= FALSE, conf.int=T)
 wedModel2
 
@@ -283,27 +294,28 @@ wilcox.test(Disney ~ Gender, data = DF,exact = FALSE, correct= FALSE, conf.int=T
 ***
 
 
-## Comparing two related conditions: the Wilcoxon signed-rank test (similar to paired t-test)
-### Do not confuse with the Wilcoxon rank-sum test (similar to unpaired t-test)
+## Comparing two related conditions: the **Wilcoxon signed-rank test** (similar to paired t-test)
+
+### Do not confuse with the  **Wilcoxon rank-sum test** (Mann Whitney U) (similar to unpaired t-test)
 
 La prueba no paramétrica más común para datos pareados es la Prueba de rangos con signo de Wilcoxon.
 
 ### ¿Qué es y cuándo se usa?
 
-Se utiliza para comparar dos muestras relacionadas (por ejemplo, mediciones antes y después en los mismos individuos).
-Es una alternativa a la t de Student para muestras dependientes cuando los datos no cumplen normalidad o son ordinales.
-Evalúa si la mediana de las diferencias entre los pares es cero.
+- Se utiliza para comparar dos muestras relacionadas (por ejemplo, mediciones antes y después en los mismos individuos).
+- Es una alternativa a la t de Student para muestras dependientes cuando los datos no cumplen normalidad o son ordinales.
+- Evalúa si la mediana de las diferencias entre los pares es cero.
 
 ### Características principales:
 
-Ordena las diferencias absolutas entre pares y les asigna rangos.
-Considera el signo (+/-) de cada diferencia.
-Calcula la suma de rangos positivos y negativos para determinar si hay diferencia significativa.
+- Ordena las diferencias absolutas entre pares y les asigna rangos.
+- Considera el signo (+/-) de cada diferencia.
+- Calcula la suma de rangos positivos y negativos para determinar si hay diferencia significativa.
 
 ### Ejemplo típico:
 
-Comparar presión arterial antes y después de un tratamiento en los mismos pacientes.
-Evaluar el efecto de una intervención educativa en el mismo grupo.
+- Comparar presión arterial antes y después de un tratamiento en los mismos pacientes.
+- Evaluar el efecto de una intervención educativa en el mismo grupo.
 
 We now want to compare the results from Sunday and Wendsday, but now the data come from the same individuals.
 
@@ -321,19 +333,50 @@ head(drugData)
 drugData
 by(drugData$BDIchange, drugData$drug, stat.desc, basic = FALSE, norm = TRUE)
 
+shapiro.test(drugData$BDIchange[drugData$drug=="Alcohol"])
+
+shapiro.test(drugData$BDIchange[drugData$drug=="Ecstasy"])
+
+```
 
 
 
+```{r}
 boxplot<-ggplot(drugData, aes(drug, BDIchange)) + 
   geom_boxplot()
 boxplot
+```
 
-alcoholData<-subset(drugData, drug == "Alcohol") # subset the data for alcohol
-ecstasyData<-subset(drugData, drug == "Ecstasy") # subset the data for ecstasy
 
+```{r}
+#alcoholData<-subset(drugData, drug == "Alcohol") # subset the data for alcohol
+#ecstasyData<-subset(drugData, drug == "Ecstasy") # subset the data for ecstasy
+```
+
+
+
+```{r}
+library(tidyverse)
+
+alcoholData = drugData %>% 
+  filter(drug == "Alcohol")
+
+
+ecstasyData = drugData %>%
+  filter(drug == "Ecstasy")
+```
+
+
+
+```{r}
 
 alcoholModel<-wilcox.test(alcoholData$wedsBDI, alcoholData$sundayBDI,  paired = TRUE, exact = TRUE, correct= FALSE)
 alcoholModel
+
+```
+
+
+```{r}
 
 ecstasyModel<-wilcox.test(ecstasyData$wedsBDI, ecstasyData$sundayBDI, paired = TRUE, exact = FALSE,correct= FALSE)   # Note that the option "exact=FALSE" has to be added becase there are ties.  
 ecstasyModel
@@ -347,15 +390,14 @@ ecstasyModel
 
 This is a test similar to ANOVA, thus multiple groups, 3+ grupos
 
-However, you test for the differences in than rank among groups (not the mean).   
+However, you test for the differences to determine if rank among groups is different (not the mean).   
 
 The null hypothesis is that the sum or mean rank in Ho: G1 = G2 = G3......Gk
-The alternative hypothesis is that at least one of the groups rank is different from another one.  
-
+The alternative hypothesis is that at least one of the groups "mean rank" is different from another one.  
 
 La prueba de Kruskal-Wallis es una prueba no paramétrica que se utiliza para comparar tres o más grupos independientes y determinar si provienen de la misma distribución. Es la alternativa no paramétrica al ANOVA de una vía cuando los datos:
 
-### No cumplen el supuesto de normalidad.
+### No tiene que cumplir el supuesto de normalidad o igualdad de varianza.
 
 Son ordinales o no se puede asumir homogeneidad de varianzas.
 
@@ -412,6 +454,7 @@ These data suggest that higher intake of soy foods and soy isoflavones is associ
 Now let us look at the data from Field, soya.csv. 
 
 ```{r nopara12}
+
 library(readr)
 
 Soyadf <- read_csv("Data_files_csv/Soya.csv")
@@ -424,10 +467,19 @@ unique(Soyadf$Soya)
 
 ## Hacer un boxplot de los datos en un nuevo chunk
 
+reorder the x axis so that the levels are in order from low to high consumption of soya from none to high.
+
 ```{r nopara13}
 library(ggplot2)
 
-ggplot(Soyadf, aes(x=Soya, y=Sperm, fill=Soya))+
+unique(Soyadf$Soya)
+
+Soyadf$Soya2 <- factor(Soyadf$Soya, levels = c("No Soya Meals",
+                                               "1 Soya Meal Per Week",
+                                               "4 Soyal Meals Per Week",
+                                               "7 Soya Meals Per Week"))
+
+ggplot(Soyadf, aes(x=Soya2, y=Sperm, fill=Soya2))+
   geom_boxplot()+
   theme(axis.text.x = element_text(angle = 90))
 ```
@@ -437,7 +489,11 @@ ggplot(Soyadf, aes(x=Soya, y=Sperm, fill=Soya))+
 
 
 Descriptive statistics
+
+
+ Use the by() function to get the statistics for each group.
  When adding "norm=TRUE" will perform Shapiro_Wilks Normality test. 
+ 
 ```{r nopara14}
 library(pastecs)
 
@@ -493,14 +549,11 @@ La prueba aproximativa (Monte Carlo) de Fisher-Pitman es una prueba no paramétr
 - Flexible y robusta.
 
 
-
-
-
-
 ```{r nopara16}
 
 library(coin)
 #Approximative (Monte Carlo) Fisher-Pitman test
+
 modelkt=kruskal_test(Sperm~as.factor(Soya), data=Soyadf, distribution = approximate(nresample = 10000))
 modelkt
 
@@ -508,6 +561,7 @@ modelkt
 ```
 
 ***
+
 ## Para ver los rangos y las medianas por grupo
 
 
@@ -553,9 +607,17 @@ La prueba post hoc tipo Tukey (prueba de Nemenyi) es un método no paramétrico 
 
 ```{r nopara18}
 library(PMCMRplus)
+
+# Alternative 1
 kwAllPairsNemenyiTest(Sperm~as.factor(Soya) , data=Soyadf)
+```
 
 
+
+
+```{r}
+
+# Alternative 2
 
 model1=kwAllPairsNemenyiTest(Sperm~as.factor(Soya) , data=Soyadf) # para más detalles
 summary(model1)

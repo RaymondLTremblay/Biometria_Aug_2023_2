@@ -1,4 +1,6 @@
-fig:unnamed-chunk-15
+fig:c02-fig-proceso
+fig:c02-fig-errores
+fig:unnamed-chunk-13
 tab:supesto14
 fig:onesamp12
 tab:anova1
@@ -54,7 +56,7 @@ integridad-academica
 comentario-sobre-grabar-videos-yo-audio-de-las-clases
 espacio-libre-de-acoso-sexual
 protocolo-de-la-clase
-introduccion-a-la-bioestadística
+introducción-a-la-bioestadística
 el-libro-de-la-clase
 el-proceso-de-investigación
 el-primer-paso
@@ -66,7 +68,7 @@ el-sexto-paso
 tipo-de-error-de-interpretación-en-estadística
 consideramos-los-reality-shows
 personalidad-de-las-personas
-cuando-que-una-hipótesis-no-es-una-hipótesis
+cuándo-una-hipótesis-no-es-una-hipótesis
 una-hipótesis-tiene-que-ser-falsificable
 ejercicio-1
 evaluación-de-las-expresiones-falsificables
@@ -393,13 +395,13 @@ the-following-approach-is-better-because-it-can-deal-with-ties-values-that-are-e
 class-excercise
 how-many-time-have-you-gone-to-disney-and-is-there-a-difference-between-genders
 comparing-two-related-conditions-the-wilcoxon-signed-rank-test-similar-to-paired-t-test
-do-not-confuse-with-the-wilcoxon-rank-sum-test-similar-to-unpaired-t-test
+do-not-confuse-with-the-wilcoxon-rank-sum-test-mann-whitney-u-similar-to-unpaired-t-test
 qué-es-y-cuándo-se-usa
 características-principales
 ejemplo-típico
 bdi-becks-depression-index-change
 krukall-wallis-test
-no-cumplen-el-supuesto-de-normalidad.
+no-tiene-que-cumplir-el-supuesto-de-normalidad-o-igualdad-de-varianza.
 cómo-funciona-1
 hipótesis-1
 ejemplo-de-uso-1

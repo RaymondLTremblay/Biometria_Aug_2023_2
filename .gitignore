@@ -1,4 +1,23 @@
+# --- RStudio ---
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# --- macOS / Dropbox ---
+.DS_Store
+*conflicted copy*
+
+# --- Artefactos de compilación de bookdown / knitr (se regeneran) ---
+/_bookdown_files/
+/file*/
+*.knit.md
+*.utf8.md
+/BioEstadistica.Rmd
+/BioEstadistica_files/
+/BiomEstadistica_files/
+/Biometria_files/
+
+# --- Datos demasiado grandes para GitHub (guárdalos aparte) ---
+/Datos/Vehicle_collision_NY_Kaggle.csv
+/nchs_births_2001.csv

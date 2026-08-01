@@ -1,14 +1,14 @@
-# Poblacion y Muestreos
+# Población y Muestreo
 
 
 
-Fecha de la ultima revisión
-```{r echo=FALSE}
+Fecha de la última revisión
+```{r c03-fecha, echo=FALSE}
 
 Sys.Date()
 ```
 
-```{r, eval=TRUE, echo=FALSE}
+```{r c03-colorize, eval=TRUE, echo=FALSE}
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -21,7 +21,7 @@ colorize <- function(x, color) {
 #`r colorize("some words in red", "red")`
 ```
 
-```{r, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
+```{r c03-hex, echo=FALSE, fig.show="hold", out.width="20%", fig.align="default"}
 knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
 ```
 
@@ -36,28 +36,36 @@ knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
 
 ## El concepto de población
 
-Estos conceptos en estadística es sumamente diferente a la visión popular. En el concepto popular, social y geográfico una población es un conjunto de individuos de una especie o un concepto nacionalista (por ejemplos los Argentinos, o puertoriqueños). Típicamente se refiere a un grupo de individuos en un país, estado.  El concepto de población en estadística es diferente en que se refiere a **TODOS** en el universo.   Por consecuencia se fuésemos hacer un estudio de la **población** de puertoriqueños, tendríamos que incluir a todos ellos irrelevante de donde vive en el planeta.  Por consecuencia el concepto de población en estadística siempre se refiere a todos los individuos **sin que falte ni uno**.  Pudiésemos modificar nuestro estudio y decir que se va a estudiar una población más reducida. Por ejemplo la población de los puertoriqueños que viven en Puerto Rico en tal fecha.   Aun así seria imposible recolectar datos de cada uno, porque siempre habrá algún individuo que no vamos a poder recolectar los datos.  Por consecuencia el **concepto de población** es uno teórico.  
+Estos conceptos en estadística son sumamente diferentes a la visión popular. En el concepto popular, social y geográfico una población es un conjunto de individuos de una especie o un concepto nacionalista (por ejemplo, los argentinos o los puertorriqueños). Típicamente se refiere a un grupo de individuos en un país o estado.  El concepto de población en estadística es diferente en que se refiere a **TODOS** en el universo.   Por consecuencia, si fuésemos a hacer un estudio de la **población** de puertorriqueños, tendríamos que incluirlos a todos, sin importar dónde vivan en el planeta.  Por consecuencia el concepto de población en estadística siempre se refiere a todos los individuos **sin que falte ni uno**.  Pudiésemos modificar nuestro estudio y decir que se va a estudiar una población más reducida. Por ejemplo la población de los puertoriqueños que viven en Puerto Rico en tal fecha.   Aun así sería imposible recolectar datos de cada uno, porque siempre habrá algún individuo que no vamos a poder recolectar los datos.  Por consecuencia el **concepto de población** es uno teórico.
+
+::: {.definicion}
+En estadística, la **población** es el conjunto de **todos** los individuos u observaciones de interés (el universo), sin que falte ninguno. Casi siempre es imposible medirla por completo, por lo que trabajamos con una **muestra**.
+:::
 
 ***
 ## El concepto de muestreo
 
-Un muestreo es el subgrupo de la población, donde el objetivo es que este muestro sea representativo de la población.  Por ejemplo uno hace una recolección de información para saber cual es el nivel de estrés durante la pandemia de COVID-19 que tuvo los estudiantes universitarios. Seria un trabajo fenomenal recolectar datos sobre **TODOS** los estudiantes, pero su podría recolectar información sobre un subgrupo de ellos con la espera que los datos represente la población de estudiantes universitarios. 
+Una **muestra** es el subgrupo de la población que se obtiene mediante un **muestreo** (el proceso de selección); el objetivo es que la muestra sea representativa de la población.  Por ejemplo uno hace una recolección de información para saber cuál fue el nivel de estrés durante la pandemia de COVID-19 que tuvieron los estudiantes universitarios. Seria un trabajo fenomenal recolectar datos sobre **TODOS** los estudiantes, pero se podría recolectar información sobre un subgrupo de ellos con la esperanza de que los datos representen a la población de estudiantes universitarios. 
 
 
 ***
 
-## Griego y Latin 
+## Griego y latín
 
-Cuando uno quiere referir a la población/parámetro uno utiliza las letras del alfabeto griego y cuando nos referimos a un muestreo se usa la letra del alfabeto en latín.  
+Cuando nos referimos a la población usamos un **parámetro**, escrito con letras del alfabeto griego; cuando nos referimos a la muestra usamos un **estadístico** (o estimador), escrito con letras del alfabeto latino.  
 
-En la siguiente tabla se observa algunos de las variables que veremos en los módulos siguientes. En los próximos módulos regresaremos al significado de estos parámetros. 
+En la siguiente tabla se observan algunas de las variables que veremos en los módulos siguientes. En los próximos módulos regresaremos al significado de estos parámetros.
+
+::: {.nota}
+Un **parámetro** describe a la población (se escribe con letra griega, p. ej. $\mu$, $\sigma$) y casi siempre es desconocido. Un **estadístico** o estimador se calcula a partir de la muestra (se escribe con letra latina, p. ej. $\bar{x}$, $s$) y sirve para estimar el parámetro.
+:::
 
 
-```{r pop1}
+```{r c03-tabla}
 library(gt)
 library(knitr)
 library(kableExtra)
-df <- data.frame(variable = c("Promedio", "Mediana","Varianza", "Desviación Estandar", "Proporción"),
+df <- data.frame(variable = c("Promedio", "Mediana","Varianza", "Desviación Estándar", "Proporción"),
                  Griego = c("$$\\mu$$", "$$\\theta$$", "$$\\sigma_{ }^2$$","$$\\sigma$$", "$$p$$"),
                  Latin = c("$$\\bar{x}$$","$$M$$","$$s_{ }^2$$","$$s$$" ,"$$\\hat{p}$$"))
 
@@ -67,34 +75,34 @@ kable(df, escape=FALSE)
 
 ## La verdad versus un estimado
 
-Cuando uno hace una investigación esta buscando la "verdad" en otra palabra estamos a la búsqueda de la información de la población. Desafortunadamente, raramente podemos tener TODA los datos, por consecuencia esperamos que la muestra sea una buena representación de la "verdad". Se espera que el promedio de la muestra se acerca a promedio del universo (la verdad). Matemáticamente uno lo puede escribir de la siguiente manera  $\overline{x}\approx\mu$. El gran problema en la ciencia es que nunca estamos 100% seguro de los trabajos de investigación porque nunca sabemos el $\mu$.  Este valor es casi siempre desconocido.  
+Cuando uno hace una investigación está buscando la "verdad"; en otras palabras, estamos a la búsqueda de la información de la población. Desafortunadamente, raramente podemos tener TODOS los datos, por consecuencia esperamos que la muestra sea una buena representación de la "verdad". Se espera que el promedio de la muestra se acerque al promedio del universo (la verdad). Matemáticamente uno lo puede escribir de la siguiente manera  $\overline{x}\approx\mu$. El gran problema en la ciencia es que nunca estamos 100% seguros de los trabajos de investigación porque nunca sabemos el $\mu$.  Este valor es casi siempre desconocido.  
 
 
 
 ## Muestreos al azar
 
-Una de las áreas de estudio importante es saber organizar un estudio para responder a unas preguntas y que no sea sesgado (en ingles "bias"). Cuando se selecciona los datos necesitamos asegurar que los datos sean representativos de la población de interés, el $\mu$.   Si por ejemplo queremos saber el nivel de colesterol en la población de puertoriqueños que viven en Puerto Rico el diseño del muestreo tiene que tomar en cuenta ese grupo y la muestra tiene que representar ese grupo.  
+Una de las áreas de estudio importante es saber organizar un estudio para responder a unas preguntas y que no sea sesgado (en inglés "bias"). Cuando se seleccionan los datos necesitamos asegurar que los datos sean representativos de la población de interés, el $\mu$.   Si por ejemplo queremos saber el nivel de colesterol en la población de puertoriqueños que viven en Puerto Rico el diseño del muestreo tiene que tomar en cuenta ese grupo y la muestra tiene que representar ese grupo.  
 
 
-Pregunta corta:  Explica el sesgo de los diferentes métodos, como se podría mejorar el muestreo?
+Pregunta corta:  Explica el sesgo de los diferentes métodos. ¿Cómo se podría mejorar el muestreo?
 
 
- 1.  ¿Cual de las siguientes alternativas es un mejor diseño experimental para deteminar el nivel de colestrerol de los puertoriqueños que viven en Puerto Rico?
+ 1.  ¿Cuál de las siguientes alternativas es un mejor diseño experimental para determinar el nivel de colesterol de los puertorriqueños que viven en Puerto Rico?
 
->  + Se muestrea estudiantes de la clase de BioEstadística de la UPRH
->  + Se muestrea paciente que llegan a la oficina de un medico
->  + Se muestrea paciente que llegan a la sala de emergencia
->  + Se muestrea gente de multiples edades
->  + Se muestrea gente de multiples edades y distribuido por toda la isla
+>  + Se muestrean estudiantes de la clase de BioEstadística de la UPRH
+>  + Se muestrean pacientes que llegan a la oficina de un médico
+>  + Se muestrean pacientes que llegan a la sala de emergencia
+>  + Se muestrea gente de múltiples edades
+>  + Se muestrea gente de múltiples edades y distribuida por toda la isla
 >
     
 ## Error de muestreo: Exactitud y Precisión
 
-### La exactitud se refiere a cuan cerca es el valor medido al valor real de la variable de interes.  Cuan es el largo de la hoja 
+::: {.definicion}
+La **exactitud** se refiere a cuán cerca está el valor medido del valor real de la variable de interés (por ejemplo, el largo real de la hoja). La **precisión** se refiere a cuán cerca están las mediciones repetidas unas de otras, sobre el mismo individuo o variable.
+:::
 
-### La precisión es un estimado de cuan cerca cada valor es uno del otro.  Hablando de la mismo individuo o variable.
 
-
-```{r pop2, echo=FALSE, fig.show = "hold", out.width = "100%", fig.align = "default"}
+```{r c03-fig-exactitud, echo=FALSE, fig.show="hold", out.width="100%", fig.align="default"}
 knitr::include_graphics(c("Graficos/Accuracy_precision.png"))
 ```

@@ -1,12 +1,5 @@
 ---
 title: "BioEstadística"
-output:
-  bookdown::gitbook:
-    highlight: tango
-    code_folding: hide
-
-
-    
 author: ""
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -14,7 +7,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 
 description: |
-  Este libro digital es una introdución al estudio de BioEstadistica
+  Este libro digital es una introducción al estudio de la BioEstadística
 link-citations: yes
 
 editor_options: 
@@ -28,7 +21,14 @@ editor_options:
 
 # Introducción al curso de BioEstadística
 
-**Instructor:** Raymond L. Tremblay, PhD  
+::: {.banner-cover}
+**Bienvenidos a BioEstadística.** Un curso práctico de estadística aplicada a la
+biología con R, RStudio y RMarkdown: aprenderás a explorar datos, verificar
+supuestos, elegir la prueba adecuada y **interpretar** correctamente tus
+resultados para contestar preguntas biológicas.
+:::
+
+**Instructor:** Raymond L. Tremblay, PhD
 
 **Oficina**: NL 104			 		 
 **Teléfono**: (787) 850-9497 (dept de biología)			  		

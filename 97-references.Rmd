@@ -1,4 +1,33 @@
-# Referencias {-}
+# Referencias y lecturas recomendadas {-}
+
+Este curso no depende de un solo libro. La siguiente lista reúne el texto principal del curso y varias lecturas recomendadas para profundizar en la bioestadística y en el uso de R. Son buenos complementos a los temas que vimos en cada capítulo.
+
+## Libro de texto del curso {-}
+
+- Havel, J. E., Hampton, R. E., y Meiners, S. J. (2019). *Introductory Biological Statistics* (4.ª ed.). Waveland Press.
+
+## Bioestadística (general) {-}
+
+- Whitlock, M. C., y Schluter, D. (2020). *The Analysis of Biological Data* (3.ª ed.). W. H. Freeman / Macmillan.
+- Sokal, R. R., y Rohlf, F. J. (2012). *Biometry: The Principles and Practice of Statistics in Biological Research* (4.ª ed.). W. H. Freeman.
+- Zar, J. H. (2010). *Biostatistical Analysis* (5.ª ed.). Pearson / Prentice Hall.
+- Quinn, G. P., y Keough, M. J. (2002). *Experimental Design and Data Analysis for Biologists*. Cambridge University Press.
+- Motulsky, H. (2018). *Intuitive Biostatistics: A Nonmathematical Guide to Statistical Thinking* (4.ª ed.). Oxford University Press.
+
+## Estadística y análisis de datos con R {-}
+
+- Field, A., Miles, J., y Field, Z. (2012). *Discovering Statistics Using R*. SAGE. (Fuente de varios de los conjuntos de datos usados en el curso.)
+- Logan, M. (2010). *Biostatistical Design and Analysis Using R*. Wiley-Blackwell.
+- Crawley, M. J. (2013). *The R Book* (2.ª ed.). Wiley.
+- Dalgaard, P. (2008). *Introductory Statistics with R* (2.ª ed.). Springer.
+- Wickham, H., Çetinkaya-Rundel, M., y Grolemund, G. (2023). *R for Data Science* (2.ª ed.). O'Reilly. Disponible en línea en inglés (<https://r4ds.hadley.nz/>) y en español (<https://es.r4ds.hadley.nz/>).
+- Tremblay, R. L., y Hernández-Serrano, J. A. (2018). *Gráficas Versátiles con ggplot2: Análisis de Datos*.
+
+<!--
+Nota: si en el futuro añades citas con @clave en el texto (usando book.bib o
+packages.bib), puedes descomentar el siguiente bloque para que la bibliografía
+generada automáticamente aparezca aquí:
 
 ::: {#refs}
 :::
+-->

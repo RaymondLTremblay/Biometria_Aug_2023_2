@@ -18,6 +18,19 @@
 /BiomEstadistica_files/
 /Biometria_files/
 
+# --- Salidas de render en la raíz (la versión publicada va en /docs/) ---
+/BioEstadistica.html
+/*.utf8.md
+
+# --- Imágenes generadas por ggsave() en la raíz (se regeneran en cada build) ---
+/Indice_depresión.png
+/Iris_size.png
+/Normal.png
+/t-distribution.png
+/qq_plot.png
+/qq_plot.pdf
+/Mi_super_grafico.png
+
 # --- Datos demasiado grandes para GitHub (guárdalos aparte) ---
 /Datos/Vehicle_collision_NY_Kaggle.csv
 /nchs_births_2001.csv

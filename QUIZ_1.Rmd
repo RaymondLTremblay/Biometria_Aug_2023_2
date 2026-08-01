@@ -21,15 +21,15 @@ colorize <- function(x, color) {
 
 ### Usando los datos siguientes calcula los siguientes estadísticos 
 
-#### Evalua cada uno y despues abrá MSTeam para contestar las preguntas
+#### Evalúa cada uno y después abre MSTeam para contestar las preguntas
 
   - promedio
   - mediana
   - moda
   - varianza
   - los cuantiles (2.5, 25, 50, 75, 97.5)
-  - desviación estandar
-  - error estandard
+  - desviación estándar
+  - error estándar
   - el intervalo de confianza de 95% del promedio
   - Haz un histograma de los datos
     - incluir un color de su preferencia
@@ -45,7 +45,7 @@ library(DescTools)
   
 ***  
 
-Los Datos:  Los datos muestran el número de "homerun" al bate de la liga Americana de baseball en los ultimos 30 años. Cada número es la cantidad máxima de Homerun en uno de los años.  
+Los Datos: los datos muestran el número de "home runs" de la Liga Americana de béisbol en los últimos 30 años. Cada número es la cantidad máxima de home runs en uno de los años.
   
 
 

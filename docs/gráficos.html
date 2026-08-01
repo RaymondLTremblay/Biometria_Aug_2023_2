@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Capítulo 9 Gráficos | BioEstadística</title>
+<meta name="author" content="">
+<meta name="description" content='Fecha de la última revisión ## [1] "2026-08-01" library(ggplot2)  9.1 Gráficos Básicos con ggplot2 Este módulo es una introducción corta a la visualización de los datos. El paquete principal que...'>
+<meta name="generator" content="bookdown 0.47 with bs4_book()">
+<meta property="og:title" content="Capítulo 9 Gráficos | BioEstadística">
+<meta property="og:type" content="book">
+<meta property="og:description" content='Fecha de la última revisión ## [1] "2026-08-01" library(ggplot2)  9.1 Gráficos Básicos con ggplot2 Este módulo es una introducción corta a la visualización de los datos. El paquete principal que...'>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Capítulo 9 Gráficos | BioEstadística">
+<meta name="twitter:description" content='Fecha de la última revisión ## [1] "2026-08-01" library(ggplot2)  9.1 Gráficos Básicos con ggplot2 Este módulo es una introducción corta a la visualización de los datos. El paquete principal que...'>
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/Source_Sans_3-0.4.10/font.css" rel="stylesheet">
+<link href="libs/Fira_Code-0.4.10/font.css" rel="stylesheet">
+<link href="libs/Lora-0.4.10/font.css" rel="stylesheet">
+<script src="libs/bs3compat-0.11.0/transition.js"></script><script src="libs/bs3compat-0.11.0/tabs.js"></script><script src="libs/bs3compat-0.11.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BioEstadística</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introducción al curso de BioEstadística</a></li>
+<li><a class="" href="introducci%C3%B3n-a-la-bioestad%C3%ADstica.html"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></li>
+<li><a class="" href="poblaci%C3%B3n-y-muestreo.html"><span class="header-section-number">3</span> Población y Muestreo</a></li>
+<li><a class="" href="inferencias-e-hip%C3%B3tesis.html"><span class="header-section-number">4</span> Inferencias e Hipótesis</a></li>
+<li><a class="" href="historia-breve-de-la-estad%C3%ADstica.html"><span class="header-section-number">5</span> Historia breve de la Estadística</a></li>
+<li><a class="" href="medidas-de-tendencia-central.html"><span class="header-section-number">6</span> Medidas de tendencia central</a></li>
+<li><a class="" href="medidas-de-dispersi%C3%B3n.html"><span class="header-section-number">7</span> Medidas de dispersión</a></li>
+<li><a class="" href="estad%C3%ADstica-descriptiva.html"><span class="header-section-number">8</span> Estadística Descriptiva</a></li>
+<li><a class="active" href="gr%C3%A1ficos.html"><span class="header-section-number">9</span> Gráficos</a></li>
+<li><a class="" href="supuestos.html"><span class="header-section-number">10</span> Supuestos</a></li>
+<li><a class="" href="estad%C3%ADstica-frecuentista.html"><span class="header-section-number">11</span> Estadística Frecuentista</a></li>
+<li><a class="" href="distribuci%C3%B3n-normal.html"><span class="header-section-number">12</span> Distribución Normal</a></li>
+<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una Muestra</a></li>
+<li><a class="" href="prueba-de-t-para-datos-pareados.html"><span class="header-section-number">14</span> Prueba de t para Datos Pareados</a></li>
+<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con Datos Independientes</a></li>
+<li><a class="" href="anova.html"><span class="header-section-number">16</span> ANOVA</a></li>
+<li><a class="" href="correlaci%C3%B3n-y-covarianza.html"><span class="header-section-number">17</span> Correlación y Covarianza</a></li>
+<li><a class="" href="regresi%C3%B3n-lineal-1.html"><span class="header-section-number">18</span> Regresión Lineal</a></li>
+<li><a class="" href="regresi%C3%B3n-log%C3%ADstica.html"><span class="header-section-number">19</span> Regresión Logística</a></li>
+<li><a class="" href="selecci%C3%B3n-de-modelos-con-el-criterio-de-akaike.html"><span class="header-section-number">20</span> Selección de Modelos con el Criterio de Akaike</a></li>
+<li><a class="" href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">21</span> Pruebas No Paramétricas</a></li>
+<li><a class="" href="referencias-1.html">Referencias</a></li>
+<li class="book-part">Appendix</li>
+<li><a class="" href="ejercicios-a.html"><span class="header-section-number">A</span> Ejercicios A</a></li>
+<li><a class="" href="ejercicios-b.html"><span class="header-section-number">B</span> Ejercicios B</a></li>
+<li><a class="" href="ejercicios-c.html"><span class="header-section-number">C</span> Ejercicios C</a></li>
+<li><a class="" href="ejercicios-d.html"><span class="header-section-number">D</span> Ejercicios D</a></li>
+<li><a class="" href="ejercicios-e.html"><span class="header-section-number">E</span> Ejercicios E</a></li>
+<li><a class="" href="ejercicios-f.html"><span class="header-section-number">F</span> Ejercicios F</a></li>
+<li><a class="" href="ejercicios-g.html"><span class="header-section-number">G</span> Ejercicios G</a></li>
+<li><a class="" href="ejercicios-h.html"><span class="header-section-number">H</span> Ejercicios H</a></li>
+<li><a class="" href="ejercicios-i.html"><span class="header-section-number">I</span> Ejercicios I</a></li>
+<li><a class="" href="ejercicios-j.html"><span class="header-section-number">J</span> Ejercicios J</a></li>
+<li><a class="" href="ejercicios-k.html"><span class="header-section-number">K</span> Ejercicios K</a></li>
+<li><a class="" href="ejercicios-l-prueba-de-t-con-datos-independientes.html"><span class="header-section-number">L</span> Ejercicios L: prueba de t con datos independientes</a></li>
+<li><a class="" href="ejercicios-m.html"><span class="header-section-number">M</span> Ejercicios M</a></li>
+<li><a class="" href="ejercicios-n.html"><span class="header-section-number">N</span> Ejercicios N</a></li>
+<li><a class="" href="ejercicio-o.html"><span class="header-section-number">O</span> Ejercicio O</a></li>
+<li><a class="" href="ejercicios-p.html"><span class="header-section-number">P</span> Ejercicios P</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">Q</span> DATA</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/RaymondLTremblay/BioEstadistica">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="gráficos" class="section level1" number="9">
+<h1>
+<span class="header-section-number">Capítulo 9</span> Gráficos<a class="anchor" aria-label="anchor" href="#gr%C3%A1ficos"><i class="fas fa-link"></i></a>
+</h1>
+<p>Fecha de la última revisión</p>
+<pre><code>## [1] "2026-08-01"</code></pre>
+<div class="sourceCode" id="cb268"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
+<div id="gráficos-básicos-con-ggplot2" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Gráficos Básicos con ggplot2<a class="anchor" aria-label="anchor" href="#gr%C3%A1ficos-b%C3%A1sicos-con-ggplot2"><i class="fas fa-link"></i></a>
+</h2>
+<p>Este módulo es una introducción corta a la visualización de los datos. El paquete principal que se usa es <strong>ggplot2</strong>. La visualización de datos es un área especializada y no se le podrá hacer justicia al mismo tiempo que se estudia la estadística; aquí se presenta solo una introducción breve. La visualización ayuda a entender los datos, ya que su dispersión influye en qué prueba se puede utilizar y en el significado de los análisis.</p>
+<p>La información utilizada en este documento proviene en parte del libro <em>Discovering Statistics using R</em> por Andy Field, Jeremy Miles y Zoë Field (2014).</p>
+</div>
+<div id="como-crear-una-gráfica-de-regresión-lineal-usando-ggplot" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Como crear una gráfica de regresión lineal usando ggplot<a class="anchor" aria-label="anchor" href="#como-crear-una-gr%C3%A1fica-de-regresi%C3%B3n-lineal-usando-ggplot"><i class="fas fa-link"></i></a>
+</h2>
+<ol style="list-style-type: decimal">
+<li>Subir los datos “Exam Anxiety” Los archivos de datos que se usan en el libro se encuentran en este enlace, <a href="https://studysites.sagepub.com/dsur/study/articles.htm" class="uri">https://studysites.sagepub.com/dsur/study/articles.htm</a>
+</li>
+</ol>
+<p>Seleccionar el archivo <strong>Exam Anxiety</strong>. Note que la hoja de datos hay que abrirla en Excel u otro programa y guardarla en formato <strong>.csv</strong> antes de seguir los próximos pasos. El siguiente paso es poner el archivo de datos en su proyecto de RStudio.</p>
+<div id="subir-los-datos-a-rstudio" class="section level3" number="9.2.1">
+<h3>
+<span class="header-section-number">9.2.1</span> Subir los datos a RStudio<a class="anchor" aria-label="anchor" href="#subir-los-datos-a-rstudio"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb269"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span><span class="va">Exam_Anxiety</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"Data_files_csv/Exam Anxiety.csv"</span><span class="op">)</span></span></code></pre></div>
+<p>Para visualizar las primeras y ultimas 6 filas usar <strong>head()</strong> y <strong>tail()</strong> respectivamente.</p>
+<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span><span class="op">)</span> <span class="co"># para las primeras 6 filas</span></span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##    Code Revise  Exam Anxiety Gender
+##   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; 
+## 1     1      4    40    86.3 Male  
+## 2     2     11    65    88.7 Female
+## 3     3     27    80    70.2 Male  
+## 4     4     53    80    61.3 Male  
+## 5     5      4    40    89.5 Male  
+## 6     6     22    70    60.5 Female</code></pre>
+<div class="sourceCode" id="cb272"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##    Code Revise  Exam Anxiety Gender
+##   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; 
+## 1    98     23    70    75.8 Male  
+## 2    99     13    55    71.0 Female
+## 3   100     14    75    78.2 Female
+## 4   101      1     2    82.3 Male  
+## 5   102      9    40    79.0 Male  
+## 6   103     20    50    91.1 Female</code></pre>
+<p>Para ver el nombre de las variables en el archivo se usa la función <strong>names</strong>. Vemos que hay cinco columnas: <strong>Code</strong>, un código que identifica al estudiante; <strong>Revise</strong>, el tiempo que el estudiante estudió antes del examen; <strong>Exam</strong>, la nota del estudiante; <strong>Anxiety</strong>, un índice de ansiedad antes del examen; y <strong>Gender</strong>, el género del estudiante.</p>
+<div class="sourceCode" id="cb274"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Code"    "Revise"  "Exam"    "Anxiety" "Gender"</code></pre>
+<hr>
+</div>
+</div>
+<div id="regresión-lineal" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Regresión lineal<a class="anchor" aria-label="anchor" href="#regresi%C3%B3n-lineal"><i class="fas fa-link"></i></a>
+</h2>
+<p>El primer gráfico es una regresión lineal. Para producirla se necesitan dos variables con datos continuos; seleccionamos el nivel de ansiedad y la nota del examen. Para hacer una regresión lineal que sigue el patrón <span class="math inline">\(y = mx + b\)</span>, se usa la función <code>geom_smooth(method = lm)</code>, donde <strong>lm</strong> se refiere a modelo lineal (en inglés <em>linear model</em>). Nota que con ggplot2 hay que primero identificar de dónde provienen los datos (<strong>Exam_Anxiety</strong>), después cuáles son las variables que se van a utilizar (en este caso <strong>y = Exam, x = Anxiety</strong>), y por último qué tipo de gráfico se quiere, que en este caso es una regresión lineal.</p>
+<div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Anxiety</span>, <span class="va">Exam</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="va">lm</span>, colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="co"># linear model</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-8-1.png" alt="" width="672"></div>
+<hr>
+</div>
+<div id="añadiendo-color-por-grupo-y-otras-bellezas" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> Añadiendo color por grupo y otras bellezas<a class="anchor" aria-label="anchor" href="#a%C3%B1adiendo-color-por-grupo-y-otras-bellezas"><i class="fas fa-link"></i></a>
+</h2>
+<p>Aquí utilizaremos un conjunto de datos muy común en R para demostrar análisis y gráficos. Se llama <strong>iris</strong> y contiene información sobre las características florales de tres especies del género <em>Iris</em>. En este gráfico se añaden cuatro componentes: 1) un punto para cada par de valores <strong>Sepal.Length, Petal.Length</strong>; 2) se cambian los nombres de los ejes <strong>y</strong> y <strong>x</strong> con la función <strong>labs()</strong> (labels); 3) se añade un título con <strong>ggtitle()</strong>; y 4) cada especie tiene un color distinto, lo cual se logra fácilmente con <strong>col = Species</strong>.</p>
+<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species
+## 145          6.7         3.3          5.7         2.5 virginica
+## 146          6.7         3.0          5.2         2.3 virginica
+## 147          6.3         2.5          5.0         1.9 virginica
+## 148          6.5         3.0          5.2         2.0 virginica
+## 149          6.2         3.4          5.4         2.3 virginica
+## 150          5.9         3.0          5.1         1.8 virginica</code></pre>
+<div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Sepal.Length</span>, <span class="va">Petal.Length</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="va">lm</span>,colour<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-9-1.png" alt="" width="672"></div>
+<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">iris</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Sepal.Length</span>, <span class="va">Petal.Length</span>,colour<span class="op">=</span><span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>col <span class="op">=</span> <span class="va">Species</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span>  </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"El largo del Sépalo"</span>, y <span class="op">=</span> <span class="st">"El largo del Pétalo"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Gráfica básica de \n geom_point con regresión lineal"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-9-2.png" alt="" width="672"></div>
+<hr>
+</div>
+<div id="salvar-gráficos-con-ggsave" class="section level2" number="9.5">
+<h2>
+<span class="header-section-number">9.5</span> Salvar gráficos con <strong>ggsave</strong><a class="anchor" aria-label="anchor" href="#salvar-gr%C3%A1ficos-con-ggsave"><i class="fas fa-link"></i></a>
+</h2>
+<p>Para guardar un gráfico y usarlo en otros programas o presentaciones (por ejemplo, <strong>MS PowerPoint</strong>) se usa la función <strong>ggsave()</strong>. Se pone entre comillas el nombre que se quiere dar a la figura y la extensión indica el tipo de archivo (por ejemplo .tiff, .png, .pdf). Nota que aquí se guarda en una carpeta llamada “Graficos”; esto no es necesario: si no la incluyes, se guardará en la carpeta del proyecto.</p>
+<div class="consejo">
+<p><code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a></code> guarda el <strong>último</strong> gráfico que se dibujó. Para más control, guarda el gráfico en un objeto (<code>p &lt;- ggplot(...)</code>) y luego usa <code>ggsave("figura.png", plot = p)</code>.</p>
+</div>
+<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"Iris_size.png"</span><span class="op">)</span> <span class="co"># .tiff, .png, .jpeg, .jpg</span></span></code></pre></div>
+</div>
+<div id="regresión-simple-con-puntos" class="section level2" number="9.6">
+<h2>
+<span class="header-section-number">9.6</span> Regresión simple con puntos<a class="anchor" aria-label="anchor" href="#regresi%C3%B3n-simple-con-puntos"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">scatter</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Anxiety</span>, <span class="va">Exam</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">scatter</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>shape<span class="op">=</span><span class="fl">20</span>, colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, colour <span class="op">=</span> <span class="st">"blue"</span>, se <span class="op">=</span> <span class="cn">F</span><span class="op">)</span> <span class="op">+</span>  <span class="co"># se = F, remueve el intervalo de confianza</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Exam Anxiety"</span>, y <span class="op">=</span> <span class="st">"Exam Performance %"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-11-1.png" alt="" width="672"></div>
+</div>
+<div id="regresión-simple-con-puntos-y-intervalo-de-confianza" class="section level2" number="9.7">
+<h2>
+<span class="header-section-number">9.7</span> Regresión simple con puntos y intervalo de confianza<a class="anchor" aria-label="anchor" href="#regresi%C3%B3n-simple-con-puntos-y-intervalo-de-confianza"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">scatter</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Anxiety</span>, <span class="va">Exam</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">scatter</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>          <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, colour <span class="op">=</span> <span class="st">"Red"</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Exam Anxiety"</span>, y <span class="op">=</span> <span class="st">"Exam Performance %"</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-12-1.png" alt="" width="672"></div>
+<div id="cambio-de-color-del-intervalo-de-confianza" class="section level3" number="9.7.1">
+<h3>
+<span class="header-section-number">9.7.1</span> Cambio de color del intervalo de confianza<a class="anchor" aria-label="anchor" href="#cambio-de-color-del-intervalo-de-confianza"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">scatter</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Anxiety</span>, <span class="va">Exam</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">scatter</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span>, colour <span class="op">=</span> <span class="st">"Red"</span>, alpha <span class="op">=</span> <span class="fl">0.2</span>, fill <span class="op">=</span> <span class="st">"orange"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Exam Anxiety"</span>, y <span class="op">=</span> <span class="st">"Exam Performance %"</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-13-1.png" alt="" width="672"></div>
+<hr>
+</div>
+</div>
+<div id="regresión-lineal-por-grupo." class="section level2" number="9.8">
+<h2>
+<span class="header-section-number">9.8</span> Regresión lineal por grupo.<a class="anchor" aria-label="anchor" href="#regresi%C3%B3n-lineal-por-grupo."><i class="fas fa-link"></i></a>
+</h2>
+<p>Para separar y tener una linea por grupo se usa la función <strong>colour</strong> y se añade la variable de factor. En este caso la variable <strong>Gender</strong> para separar entre hombres y mujer. Se enseña también la función <strong>ggtitle()</strong> para añadir un titulo al gráfico.</p>
+<div class="sourceCode" id="cb285"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">Exam</span>, x<span class="op">=</span><span class="va">Anxiety</span>, colour<span class="op">=</span><span class="va">Gender</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>colour<span class="op">=</span><span class="st">"coral"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method<span class="op">=</span><span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span>  <span class="co"># lm (linear model) es para modelos lineales </span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Exam Anxiety Score"</span>, y <span class="op">=</span> <span class="st">"Exam Performance %"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ggtitle</a></span><span class="op">(</span><span class="st">"Basic geom_point and linear regression"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-14-1.png" alt="" width="672"></div>
+<hr>
+</div>
+<div id="histogramas" class="section level2" number="9.9">
+<h2>
+<span class="header-section-number">9.9</span> Histogramas<a class="anchor" aria-label="anchor" href="#histogramas"><i class="fas fa-link"></i></a>
+</h2>
+<p>Un histograma es un gráfico que representa la frecuencia de los valores de un conjunto de datos. Por consecuencia, en el eje de <strong>x</strong> se encuentra una variable continua y en el eje de <strong>y</strong> la frecuencia. La frecuencia es la cantidad de veces que aparecen los valores de <strong>x</strong> en el conjunto de datos.</p>
+<p>Se necesita el archivo <em>DownloadFestival</em> que se encuentra debajo la pestaña de <strong>Los Datos</strong>. El ejemplo proviene de Field et al. (2014).</p>
+<pre><code>Una bióloga estaba preocupada por los posibles efectos sobre la salud de quienes participan en un festival de música. Un año fue al Download Festival del Reino Unido y midió la higiene de los asistentes al concierto (n = 810) durante los 3 días del festival. Cada día intentaba encontrar a todas las personas que había censado el primer día. Los valores asignados iban de 0 a 4 según el nivel de limpieza, por cómo olían los participantes:
++ 0 = hueles como un cadáver. 
++ 4 = hueles a rosas dulces en un fresco día de primavera</code></pre>
+<p>La hipótesis es que la higiene personal de los asistentes al concierto disminuiría dramáticamente durante los 3 días del festival.</p>
+<p>Construyendo histogramas y detectando valores atípicos. Nota los valores <strong>NA</strong>, estos son los participantes que no se pudieron encontrar en los siguientes días.</p>
+<div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">FD</span>, n<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 2 × 5
+##   ticknumb gender  day1  day2  day3
+##      &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     2111 Male    2.64  1.35  1.61
+## 2     2229 Female  0.97  1.41  0.29</code></pre>
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">FD</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##   ticknumb gender  day1  day2  day3
+##      &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     4749 Female  0.52 NA       NA
+## 2     4756 Female  2.91  0.94    NA
+## 3     4758 Female  2.61  1.44    NA
+## 4     4759 Female  1.47 NA       NA
+## 5     4760 Male    1.28 NA       NA
+## 6     4765 Female  1.26 NA       NA</code></pre>
+<p>Aquí vemos el resultado y encontramos un problema: hay participantes con valores fuera del rango 0 a 4, que es la escala de higiene. Aunque es difícil de ver, como el gráfico se extiende más allá de 4, hay un indicio de un problema, ya que sabemos que los valores solo pueden estar entre 0 y 4.</p>
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">FD</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">day1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>colour<span class="op">=</span><span class="st">"white"</span>, fill<span class="op">=</span><span class="st">"#4E8EFC"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Hygiene (Day 1 of Festival)"</span>, y <span class="op">=</span> <span class="st">"Frequency"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-17-1.png" alt="" width="672"></div>
+<p>Evaluamos los datos resumidos para detectar por qué el gráfico se extiende a valores mayores de 4. Nota que en el día 1 el valor máximo es 20. Esto probablemente fue un error al introducir los datos en la hoja de Excel. Lo que se puede hacer es remover a este participante del análisis.</p>
+<div class="advertencia">
+<p><strong>Siempre grafica y resume tus datos antes de analizarlos.</strong> Un histograma o un <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> revelan valores imposibles (aquí, un 20 en una escala de 0 a 4) que casi siempre son errores de captura. Corregirlos o eliminarlos <em>antes</em> del análisis evita conclusiones equivocadas.</p>
+</div>
+<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">DownloadFestival</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##     ticknumb          gender         day1             day2       
+##  Min.   :2111   Length   :810   Min.   : 0.020   Min.   :0.0000  
+##  1st Qu.:3096   N.unique :  2   1st Qu.: 1.312   1st Qu.:0.4100  
+##  Median :3620   N.blank  :  0   Median : 1.790   Median :0.7900  
+##  Mean   :3616   Min.nchar:  4   Mean   : 1.793   Mean   :0.9609  
+##  3rd Qu.:4155   Max.nchar:  6   3rd Qu.: 2.230   3rd Qu.:1.3500  
+##  Max.   :4765                   Max.   :20.020   Max.   :3.4400  
+##                                                  NAs    :546     
+##       day3       
+##  Min.   :0.0200  
+##  1st Qu.:0.4400  
+##  Median :0.7600  
+##  Mean   :0.9765  
+##  3rd Qu.:1.5250  
+##  Max.   :3.4100  
+##  NAs    :687</code></pre>
+<p>Se pueden remover valores de un conjunto de datos usando la función <strong>subset()</strong>; en este caso, de la columna <strong>day1</strong> se seleccionan solamente los valores menores de 5, y así eliminamos el valor de 20.</p>
+<p>Usamos otra vez <strong>summary( )</strong> para asegurarnos que se solucionó el problema. Ahora vemos que el valor máximo es 3.69.</p>
+<div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Festivalday1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">DownloadFestival</span>, <span class="va">day1</span><span class="op">&lt;</span><span class="fl">5</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">Festivalday1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##     ticknumb          gender         day1            day2       
+##  Min.   :2111   Length   :809   Min.   :0.020   Min.   :0.0000  
+##  1st Qu.:3096   N.unique :  2   1st Qu.:1.310   1st Qu.:0.4100  
+##  Median :3620   N.blank  :  0   Median :1.790   Median :0.7900  
+##  Mean   :3616   Min.nchar:  4   Mean   :1.771   Mean   :0.9553  
+##  3rd Qu.:4154   Max.nchar:  6   3rd Qu.:2.230   3rd Qu.:1.3350  
+##  Max.   :4765                   Max.   :3.690   Max.   :3.4400  
+##                                                 NAs    :546     
+##       day3       
+##  Min.   :0.0200  
+##  1st Qu.:0.4400  
+##  Median :0.7600  
+##  Mean   :0.9765  
+##  3rd Qu.:1.5250  
+##  Max.   :3.4100  
+##  NAs    :686</code></pre>
+<p>Ahora usando el nuevo data frame hacemos el gráfico otra vez</p>
+<div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">festivalHistogram</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">Festivalday1</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">day1</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">festivalHistogram</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"orange"</span>, colour<span class="op">=</span><span class="st">"white"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Hygiene (Day 1 of Festival)"</span>, y <span class="op">=</span> <span class="st">"Frequency"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-20-1.png" alt="" width="672"></div>
+<hr>
+</div>
+<div id="gráficos-de-caja-box-plots" class="section level2" number="9.10">
+<h2>
+<span class="header-section-number">9.10</span> Gráficos de caja <strong>box plots</strong><a class="anchor" aria-label="anchor" href="#gr%C3%A1ficos-de-caja-box-plots"><i class="fas fa-link"></i></a>
+</h2>
+<p>Para crear un gráfico de caja se usa la función <strong>geom_boxplot()</strong>, si hay solamente un grupo en <strong>x</strong> se pone <strong>x=1</strong> y en la <strong>y</strong> la variable continua.</p>
+<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">festivalBoxplot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">Festivalday1</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fl">1</span>,y<span class="op">=</span><span class="va">day1</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span></span>
+<span><span class="va">festivalBoxplot</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Ambos géneros"</span>, y <span class="op">=</span> <span class="st">"Higiene (Día 1 del Festival)"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-21-1.png" alt="" width="672"></div>
+<hr>
+</div>
+<div id="gráfico-de-caja-por-grupo" class="section level2" number="9.11">
+<h2>
+<span class="header-section-number">9.11</span> Gráfico de caja por grupo<a class="anchor" aria-label="anchor" href="#gr%C3%A1fico-de-caja-por-grupo"><i class="fas fa-link"></i></a>
+</h2>
+<p>Para producir un gráfico de caja por múltiples grupos, en <strong>x</strong> se añade la variable categórica y en <strong>y</strong> la variable continua. Si se quiere un color diferente por caja se usa la función <strong>color</strong> con el nombre en de la variable en <strong>x</strong>.</p>
+<div class="sourceCode" id="cb298"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">festivalBoxplot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">Festivalday1</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">gender</span>,y<span class="op">=</span><span class="va">day2</span>, colour<span class="op">=</span><span class="va">gender</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">festivalBoxplot</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"yellow"</span>, alpha<span class="op">=</span><span class="fl">0.1</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Genero"</span>, y <span class="op">=</span> <span class="st">"Higiene (Día 2 del Festival)"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-22-1.png" alt="" width="672"></div>
+<hr>
+</div>
+<div id="detección-valores-sesgados-o-átipicos." class="section level2" number="9.12">
+<h2>
+<span class="header-section-number">9.12</span> Detección valores sesgados o átipicos.<a class="anchor" aria-label="anchor" href="#detecci%C3%B3n-valores-sesgados-o-%C3%A1tipicos."><i class="fas fa-link"></i></a>
+</h2>
+<p>En la función de abajo, denominada <strong>Valoressesgados</strong>, uno puede determinar el porcentaje de valores atípicos (extremos). Como R no tiene esta función, se construye una para calcular los porcentajes. Si seleccionamos una de las columnas, el día 3 del concierto, vemos que hay 4% de los valores por fuera del intervalo de 95% y 2.4% por fuera del intervalo de confianza de 99%.</p>
+<div class="sourceCode" id="cb299"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Valoressesgados</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">variable</span>, <span class="va">digits</span> <span class="op">=</span> <span class="fl">2</span><span class="op">)</span><span class="op">{</span></span>
+<span>  </span>
+<span>  <span class="va">zvariable</span><span class="op">&lt;-</span><span class="op">(</span><span class="va">variable</span><span class="op">-</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">variable</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">variable</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">IC95</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">zvariable</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="fl">1.96</span>  <span class="co"># error de 95%</span></span>
+<span>  <span class="va">IC99</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">zvariable</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="fl">2.58</span>   <span class="co"># error de 99%</span></span>
+<span>  <span class="va">IC999</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="va">zvariable</span><span class="op">)</span> <span class="op">&gt;=</span> <span class="fl">3.29</span>  <span class="co"># error de 99.9%</span></span>
+<span>  </span>
+<span>  <span class="va">ncases</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/na.fail.html">na.omit</a></span><span class="op">(</span><span class="va">zvariable</span><span class="op">)</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="va">percentaje95</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">IC95</span>, <span class="va">IC95</span> <span class="op">==</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="va">ncases</span>, <span class="va">digits</span><span class="op">)</span></span>
+<span>  <span class="va">percentaje99</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">IC99</span>, <span class="va">IC99</span> <span class="op">==</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="va">ncases</span>, <span class="va">digits</span><span class="op">)</span></span>
+<span>  <span class="va">percentaje999</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="fl">100</span><span class="op">*</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">IC999</span>, <span class="va">IC999</span> <span class="op">==</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op">/</span><span class="va">ncases</span>, <span class="va">digits</span><span class="op">)</span></span>
+<span>  </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"Valor absoluto z-score mayor de 1.96 = "</span>, <span class="va">percentaje95</span>, <span class="st">"%"</span>, <span class="st">"\n"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"Valor absoluto z-score mayor de 2.58 = "</span>,  <span class="va">percentaje99</span>, <span class="st">"%"</span>, <span class="st">"\n"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="st">"Valor absoluto z-score mayor de 3.29 = "</span>,  <span class="va">percentaje999</span>, <span class="st">"%"</span>, <span class="st">"\n"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span></span>
+<span><span class="fu">Valoressesgados</span><span class="op">(</span><span class="va">FD</span><span class="op">$</span><span class="va">day3</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Valor absoluto z-score mayor de 1.96 =  4.07 % 
+## Valor absoluto z-score mayor de 2.58 =  2.44 % 
+## Valor absoluto z-score mayor de 3.29 =  0.81 %</code></pre>
+<hr>
+</div>
+<div id="gráficos-de-línea-y-intervalo-de-errores" class="section level2" number="9.13">
+<h2>
+<span class="header-section-number">9.13</span> Gráficos de línea y intervalo de errores<a class="anchor" aria-label="anchor" href="#gr%C3%A1ficos-de-l%C3%ADnea-y-intervalo-de-errores"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Cómo reorganizar los datos al formato correcto de data frame (el conjunto original no está en el formato adecuado) con la función <code>stack</code>.</li>
+<li>Cómo añadir el promedio de la variable con <code>stat_summary</code>.</li>
+<li>Cómo conectar los promedios con una línea y cambiar su color.</li>
+<li>Cómo añadir las barras de error y su color (los intervalos de confianza del 95%, creados con <code><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html">stat_summary()</a></code> y el argumento <code>mean_cl_boot</code>, son intervalos de confianza por <em>bootstrap</em> calculados con <code><a href="https://rdrr.io/pkg/Hmisc/man/smean.sd.html">smean.cl.boot()</a></code> del paquete Hmisc).</li>
+</ul>
+<p>Installar la library(Hmisc)</p>
+<div class="sourceCode" id="cb301"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://hbiostat.org/R/Hmisc/">Hmisc</a></span><span class="op">)</span> <span class="co"># Se necesita este paquete para poner los intervalos de confianza</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span><span class="va">Hiccups</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"Data_files_csv/Hiccups.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">Hiccups</span>, n<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 2 × 4
+##   Baseline Tongue Carotid Rectum
+##      &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+## 1       15      9       7      2
+## 2       13     18       7      4</code></pre>
+<p>Es necesario re-organizar los datos, ya que las 4 diferentes variables están diferentes columnas, necesitamos que están todos los datos en una columna. Se usa la función <strong>stack</strong>. Subseguientemente, se asigna un nombre nuevo a las columnas</p>
+<div class="sourceCode" id="cb303"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">hiccups</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/utils/stack.html">stack</a></span><span class="op">(</span><span class="va">Hiccups</span><span class="op">)</span> <span class="co"># organizar los datos en dos columnas con la función **stack**</span></span>
+<span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">hiccups</span><span class="op">)</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Num_Hiccups"</span>,<span class="st">"Intervention"</span><span class="op">)</span> <span class="co"># Cambiar el nombre de las columnas</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">hiccups</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##   Num_Hiccups Intervention
+## 1          15     Baseline
+## 2          13     Baseline
+## 3           9     Baseline
+## 4           7     Baseline
+## 5          11     Baseline
+## 6          14     Baseline</code></pre>
+<hr>
+</div>
+<div id="la-función-stat_summary-para-calcular-indices-sumativos." class="section level2" number="9.14">
+<h2>
+<span class="header-section-number">9.14</span> La función <strong>stat_summary</strong> para calcular indices sumativos.<a class="anchor" aria-label="anchor" href="#la-funci%C3%B3n-stat_summary-para-calcular-indices-sumativos."><i class="fas fa-link"></i></a>
+</h2>
+<p>Nota que el promedio (<em>mean</em>) se añade como un punto, unido también por una línea, mediante el argumento <strong>fun</strong> de <code>stat_summary</code>. Los intervalos de confianza se añaden con <strong>fun.data = mean_cl_boot</strong> y <strong>geom = “errorbar”</strong>.</p>
+<p>Se necesita la librería <strong>Hmisc</strong> para calcular los intervalos de confianza.</p>
+<div class="sourceCode" id="cb305"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">hiccups</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">Num_Hiccups</span>,x<span class="op">=</span><span class="va">Intervention</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html">stat_summary</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="st">"mean"</span>, geom <span class="op">=</span> <span class="st">"point"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-26-1.png" alt="" width="672"></div>
+<p>Añade la linea que conecta los promedios y los intervalos de confianza</p>
+<div class="sourceCode" id="cb306"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">hiccups</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">Num_Hiccups</span>,x<span class="op">=</span><span class="va">Intervention</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html">stat_summary</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="st">"mean"</span>, geom <span class="op">=</span> <span class="st">"point"</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html">stat_summary</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="st">"mean"</span>, geom <span class="op">=</span> <span class="st">"line"</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>group <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,colour <span class="op">=</span> <span class="st">"Red"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-27-1.png" alt="" width="672"></div>
+<p>Annade el interval de confianza</p>
+<div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">hiccups</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">Num_Hiccups</span>,x<span class="op">=</span><span class="va">Intervention</span><span class="op">)</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html">stat_summary</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="st">"mean"</span>, geom <span class="op">=</span> <span class="st">"point"</span><span class="op">)</span><span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html">stat_summary</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="st">"mean"</span>, geom <span class="op">=</span> <span class="st">"line"</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>group <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,colour <span class="op">=</span> <span class="st">"Red"</span>, linetype <span class="op">=</span> <span class="st">"dashed"</span><span class="op">)</span><span class="op">+</span>      </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html">stat_summary</a></span><span class="op">(</span>fun.data <span class="op">=</span> <span class="va">mean_cl_boot</span>, geom <span class="op">=</span> <span class="st">"errorbar"</span>, width <span class="op">=</span> <span class="fl">0.2</span>, colour<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Intervention"</span>, y <span class="op">=</span> <span class="st">"Mean Number of Hiccups and 95% CI"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-28-1.png" alt="" width="672"></div>
+</div>
+<div id="diagrama-de-tallo-y-hoja-leaf-and-stem" class="section level2" number="9.15">
+<h2>
+<span class="header-section-number">9.15</span> Diagrama de tallo y hoja (leaf and stem)<a class="anchor" aria-label="anchor" href="#diagrama-de-tallo-y-hoja-leaf-and-stem"><i class="fas fa-link"></i></a>
+</h2>
+<p>Este diagrama muestra la distribución de los datos usando el método sugerido por John Tukey</p>
+<div class="sourceCode" id="cb308"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/stem.html">stem</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span><span class="op">$</span><span class="va">Anxiety</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##   The decimal point is 1 digit(s) to the right of the |
+## 
+##   0 | 0
+##   0 | 
+##   1 | 0
+##   1 | 
+##   2 | 0
+##   2 | 7
+##   3 | 
+##   3 | 57
+##   4 | 4
+##   4 | 
+##   5 | 113
+##   5 | 79
+##   6 | 1122444
+##   6 | 5588999
+##   7 | 00112222333334
+##   7 | 5556666778899999
+##   8 | 111111222222223344
+##   8 | 555555556667889
+##   9 | 00001112344
+##   9 | 568</code></pre>
+<div class="sourceCode" id="cb310"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Anxiety</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"white"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c09-29-1.png" alt="" width="672"></div>
+<p>Stem leaf for two groups</p>
+<div class="sourceCode" id="cb311"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.uni-bielefeld.de/fakultaeten/wirtschaftswissenschaften/fakultaet/lehrende-ehemalige/pwolf/wolf_aplpack/index.xml">aplpack</a></span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/aplpack/man/stem.leaf.html">stem.leaf</a></span><span class="op">(</span><span class="va">co2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 1 | 2: represents 12
+##  leaf unit: 1
+##             n: 468
+##     8    31* | 33344444
+##    70    31. | 55555556666666666666667777777777788888888888888899999999999999
+##   135    32* | 00000000000000001111111111112222222222222222333333333333444444444
+##   187    32. | 5555555566666666677777777777777778888888889999999999
+##   233    33* | 0000000011111111112222222222233333333344444444
+##   (40)   33. | 5555556666666666777777777888889999999999
+##   195    34* | 000000011111112222222222233333334444444
+##   156    34. | 5555555566666666777777788888889999999
+##   119    35* | 00000111111122222222223333333333444444444
+##    78    35. | 555555555666666667777777788888899999999999999
+##    33    36* | 0000001111112222333333444444
+##     5    36. | 55566</code></pre>
+<div class="sourceCode" id="cb314"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/aplpack/man/stem.leaf.html">stem.leaf.backback</a></span><span class="op">(</span><span class="va">Exam_Anxiety</span><span class="op">$</span><span class="va">Anxiety</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">30</span><span class="op">]</span>,<span class="va">Exam_Anxiety</span><span class="op">$</span><span class="va">Anxiety</span><span class="op">[</span><span class="fl">31</span><span class="op">:</span><span class="fl">60</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: word '0.0560000000000116' too long ...  and has been split to '0.05600000000' and '00116'_________________________________
+##   1 | 2: represents 12, leaf unit: 1 
+## Exam_Anxiety$Anxiety[1:30]
+##                     Exam_Anxiety$Anxiety[31:60]
+## LO:                 LO: 37.132   
+## 0.05600000000       43.58        
+## 00116 27.46                      
+## 34.714                           
+## _________________________________
+##              |  5* |03       4   
+##              |  5. |8        5   
+##    7     4310|  6* |2        6   
+##    9       95|  6. |789      9   
+##   13     3100|  7* |01234   14   
+##   (6)  997555|  7. |555899  (6)  
+##   11    21100|  8* |122234  10   
+##    6     9986|  8. |99       4   
+##    2        1|  9* |3        2   
+##    1        5|  9. |7        1   
+##              | 10* |             
+## _________________________________
+## n:         30       30       
+## _________________________________</code></pre>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="estad%C3%ADstica-descriptiva.html"><span class="header-section-number">8</span> Estadística Descriptiva</a></div>
+<div class="next"><a href="supuestos.html"><span class="header-section-number">10</span> Supuestos</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#gr%C3%A1ficos"><span class="header-section-number">9</span> Gráficos</a></li>
+<li><a class="nav-link" href="#gr%C3%A1ficos-b%C3%A1sicos-con-ggplot2"><span class="header-section-number">9.1</span> Gráficos Básicos con ggplot2</a></li>
+<li>
+<a class="nav-link" href="#como-crear-una-gr%C3%A1fica-de-regresi%C3%B3n-lineal-usando-ggplot"><span class="header-section-number">9.2</span> Como crear una gráfica de regresión lineal usando ggplot</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#subir-los-datos-a-rstudio"><span class="header-section-number">9.2.1</span> Subir los datos a RStudio</a></li></ul>
+</li>
+<li><a class="nav-link" href="#regresi%C3%B3n-lineal"><span class="header-section-number">9.3</span> Regresión lineal</a></li>
+<li><a class="nav-link" href="#a%C3%B1adiendo-color-por-grupo-y-otras-bellezas"><span class="header-section-number">9.4</span> Añadiendo color por grupo y otras bellezas</a></li>
+<li><a class="nav-link" href="#salvar-gr%C3%A1ficos-con-ggsave"><span class="header-section-number">9.5</span> Salvar gráficos con ggsave</a></li>
+<li><a class="nav-link" href="#regresi%C3%B3n-simple-con-puntos"><span class="header-section-number">9.6</span> Regresión simple con puntos</a></li>
+<li>
+<a class="nav-link" href="#regresi%C3%B3n-simple-con-puntos-y-intervalo-de-confianza"><span class="header-section-number">9.7</span> Regresión simple con puntos y intervalo de confianza</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#cambio-de-color-del-intervalo-de-confianza"><span class="header-section-number">9.7.1</span> Cambio de color del intervalo de confianza</a></li></ul>
+</li>
+<li><a class="nav-link" href="#regresi%C3%B3n-lineal-por-grupo."><span class="header-section-number">9.8</span> Regresión lineal por grupo.</a></li>
+<li><a class="nav-link" href="#histogramas"><span class="header-section-number">9.9</span> Histogramas</a></li>
+<li><a class="nav-link" href="#gr%C3%A1ficos-de-caja-box-plots"><span class="header-section-number">9.10</span> Gráficos de caja box plots</a></li>
+<li><a class="nav-link" href="#gr%C3%A1fico-de-caja-por-grupo"><span class="header-section-number">9.11</span> Gráfico de caja por grupo</a></li>
+<li><a class="nav-link" href="#detecci%C3%B3n-valores-sesgados-o-%C3%A1tipicos."><span class="header-section-number">9.12</span> Detección valores sesgados o átipicos.</a></li>
+<li><a class="nav-link" href="#gr%C3%A1ficos-de-l%C3%ADnea-y-intervalo-de-errores"><span class="header-section-number">9.13</span> Gráficos de línea y intervalo de errores</a></li>
+<li><a class="nav-link" href="#la-funci%C3%B3n-stat_summary-para-calcular-indices-sumativos."><span class="header-section-number">9.14</span> La función stat_summary para calcular indices sumativos.</a></li>
+<li><a class="nav-link" href="#diagrama-de-tallo-y-hoja-leaf-and-stem"><span class="header-section-number">9.15</span> Diagrama de tallo y hoja (leaf and stem)</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/RaymondLTremblay/BioEstadistica/blob/master/09_Graficos.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/RaymondLTremblay/BioEstadistica/edit/master/09_Graficos.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BioEstadística</strong>" was written by . It was last built on 2026-08-01.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

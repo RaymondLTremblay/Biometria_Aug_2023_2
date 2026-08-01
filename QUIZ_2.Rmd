@@ -1,4 +1,4 @@
-# Quiz 3
+# Quiz 2
 
 ------------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ colorize <- function(x, color) {
 
 Use los datos siguientes para la primera pregunta
 
-Aqui se encuentra un grupo de datos de la distancia a estrellas en años luz.
+Aquí se encuentra un grupo de datos de la distancia a estrellas en años luz.
 
 ```{r, eval=FALSE}
 library(tidyverse)
@@ -34,9 +34,8 @@ Distancia_Estrellas=tribble(~Distancia,
 Distancia_Estrellas
 ```
 
-```{r}
-sd(
-Distancia_Estrellas$Distancia)
+```{r, eval=FALSE}
+sd(Distancia_Estrellas$Distancia)
 ```
 
 
@@ -164,17 +163,17 @@ Pop_PR_2022
 ## Calcular el quantile 50
 ```{r, echo=FALSE, eval=FALSE}
 
-quantile(Muni_2022$Pop_N, p=c(0.01, 0.10, .25, .50, .75, 0.99))
-median(Muni_2022$Pop_N)
-mean(Muni_2022$Pop_N)
+quantile(Pop_PR_2022$Pop_N, p=c(0.01, 0.10, .25, .50, .75, 0.99))
+median(Pop_PR_2022$Pop_N)
+mean(Pop_PR_2022$Pop_N)
 ```
 ***
 
-Calcular el indice de oblicuidad de los datos de los tamaños de población de PR
+Calcular el índice de oblicuidad (asimetría) de los datos de los tamaños de población de PR
 
 ```{r, echo=FALSE, eval=FALSE}
 library(e1071)
-e1071::skewness(Muni_2022$Pop_N)
+e1071::skewness(Pop_PR_2022$Pop_N)
 ```
 
 
@@ -182,7 +181,7 @@ e1071::skewness(Muni_2022$Pop_N)
 
 ```{r, echo=FALSE, eval=FALSE}
 
-ggplot(Muni_2022, aes(Pop_N))+
+ggplot(Pop_PR_2022, aes(Pop_N))+
   geom_histogram()
 ```
 

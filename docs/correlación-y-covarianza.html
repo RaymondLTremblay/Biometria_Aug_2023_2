@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Capítulo 17 Correlación y Covarianza | BioEstadística</title>
 <meta name="author" content="">
-<meta name="description" content='Fecha de la ultima revisión ## [1] "2026-08-01" library(ggplot2) library(readr) DownloadFestival &lt;- read_csv("Data_files_csv/DownloadFestival.csv")  dlf=DownloadFestival #use shorter data.frame...'>
+<meta name="description" content='Fecha de la última revisión ## [1] "2026-08-01" library(ggplot2) library(readr) DownloadFestival &lt;- read_csv("Data_files_csv/DownloadFestival.csv")  dlf=DownloadFestival # usa un nombre más corto...'>
 <meta name="generator" content="bookdown 0.47 with bs4_book()">
 <meta property="og:title" content="Capítulo 17 Correlación y Covarianza | BioEstadística">
 <meta property="og:type" content="book">
-<meta property="og:description" content='Fecha de la ultima revisión ## [1] "2026-08-01" library(ggplot2) library(readr) DownloadFestival &lt;- read_csv("Data_files_csv/DownloadFestival.csv")  dlf=DownloadFestival #use shorter data.frame...'>
+<meta property="og:description" content='Fecha de la última revisión ## [1] "2026-08-01" library(ggplot2) library(readr) DownloadFestival &lt;- read_csv("Data_files_csv/DownloadFestival.csv")  dlf=DownloadFestival # usa un nombre más corto...'>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Capítulo 17 Correlación y Covarianza | BioEstadística">
-<meta name="twitter:description" content='Fecha de la ultima revisión ## [1] "2026-08-01" library(ggplot2) library(readr) DownloadFestival &lt;- read_csv("Data_files_csv/DownloadFestival.csv")  dlf=DownloadFestival #use shorter data.frame...'>
+<meta name="twitter:description" content='Fecha de la última revisión ## [1] "2026-08-01" library(ggplot2) library(readr) DownloadFestival &lt;- read_csv("Data_files_csv/DownloadFestival.csv")  dlf=DownloadFestival # usa un nombre más corto...'>
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/Source_Sans_3-0.4.10/font.css" rel="stylesheet">
@@ -71,25 +71,25 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introducción al curso de BioEstadística</a></li>
 <li><a class="" href="introducci%C3%B3n-a-la-bioestad%C3%ADstica.html"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></li>
-<li><a class="" href="poblacion-y-muestreos.html"><span class="header-section-number">3</span> Poblacion y Muestreos</a></li>
-<li><a class="" href="inferencias-y-hipotesis.html"><span class="header-section-number">4</span> Inferencias y Hipotesis</a></li>
+<li><a class="" href="poblaci%C3%B3n-y-muestreo.html"><span class="header-section-number">3</span> Población y Muestreo</a></li>
+<li><a class="" href="inferencias-e-hip%C3%B3tesis.html"><span class="header-section-number">4</span> Inferencias e Hipótesis</a></li>
 <li><a class="" href="historia-breve-de-la-estad%C3%ADstica.html"><span class="header-section-number">5</span> Historia breve de la Estadística</a></li>
-<li><a class="" href="medida-de-tendencia-central.html"><span class="header-section-number">6</span> Medida de tendencia central</a></li>
-<li><a class="" href="medidas_de_dispersion.html"><span class="header-section-number">7</span> Medidas_de_dispersion</a></li>
-<li><a class="" href="estadistica-descriptiva.html"><span class="header-section-number">8</span> Estadistica Descriptiva</a></li>
-<li><a class="" href="graficos.html"><span class="header-section-number">9</span> Graficos</a></li>
+<li><a class="" href="medidas-de-tendencia-central.html"><span class="header-section-number">6</span> Medidas de tendencia central</a></li>
+<li><a class="" href="medidas-de-dispersi%C3%B3n.html"><span class="header-section-number">7</span> Medidas de dispersión</a></li>
+<li><a class="" href="estad%C3%ADstica-descriptiva.html"><span class="header-section-number">8</span> Estadística Descriptiva</a></li>
+<li><a class="" href="gr%C3%A1ficos.html"><span class="header-section-number">9</span> Gráficos</a></li>
 <li><a class="" href="supuestos.html"><span class="header-section-number">10</span> Supuestos</a></li>
-<li><a class="" href="estadistica-frecuentista.html"><span class="header-section-number">11</span> Estadistica Frecuentista</a></li>
-<li><a class="" href="distribucion-normal.html"><span class="header-section-number">12</span> Distribucion Normal</a></li>
-<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una muestra</a></li>
-<li><a class="" href="prueba-de-t-pareados.html"><span class="header-section-number">14</span> Prueba de t pareados</a></li>
-<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con datos independientes</a></li>
+<li><a class="" href="estad%C3%ADstica-frecuentista.html"><span class="header-section-number">11</span> Estadística Frecuentista</a></li>
+<li><a class="" href="distribuci%C3%B3n-normal.html"><span class="header-section-number">12</span> Distribución Normal</a></li>
+<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una Muestra</a></li>
+<li><a class="" href="prueba-de-t-para-datos-pareados.html"><span class="header-section-number">14</span> Prueba de t para Datos Pareados</a></li>
+<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con Datos Independientes</a></li>
 <li><a class="" href="anova.html"><span class="header-section-number">16</span> ANOVA</a></li>
 <li><a class="active" href="correlaci%C3%B3n-y-covarianza.html"><span class="header-section-number">17</span> Correlación y Covarianza</a></li>
 <li><a class="" href="regresi%C3%B3n-lineal-1.html"><span class="header-section-number">18</span> Regresión Lineal</a></li>
-<li><a class="" href="regresion-logistica.html"><span class="header-section-number">19</span> Regresion Logistica</a></li>
-<li><a class="" href="selecionando-modelos-con-akaike.html"><span class="header-section-number">20</span> Selecionando modelos con AKAIKE</a></li>
-<li><a class="" href="pruebas-no-parametricas.html"><span class="header-section-number">21</span> Pruebas no parametricas</a></li>
+<li><a class="" href="regresi%C3%B3n-log%C3%ADstica.html"><span class="header-section-number">19</span> Regresión Logística</a></li>
+<li><a class="" href="selecci%C3%B3n-de-modelos-con-el-criterio-de-akaike.html"><span class="header-section-number">20</span> Selección de Modelos con el Criterio de Akaike</a></li>
+<li><a class="" href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">21</span> Pruebas No Paramétricas</a></li>
 <li><a class="" href="referencias-1.html">Referencias</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="ejercicios-a.html"><span class="header-section-number">A</span> Ejercicios A</a></li>
@@ -103,7 +103,7 @@
 <li><a class="" href="ejercicios-i.html"><span class="header-section-number">I</span> Ejercicios I</a></li>
 <li><a class="" href="ejercicios-j.html"><span class="header-section-number">J</span> Ejercicios J</a></li>
 <li><a class="" href="ejercicios-k.html"><span class="header-section-number">K</span> Ejercicios K</a></li>
-<li><a class="" href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><span class="header-section-number">L</span> Ejercicios sobre prueba de t con datos independiente</a></li>
+<li><a class="" href="ejercicios-l-prueba-de-t-con-datos-independientes.html"><span class="header-section-number">L</span> Ejercicios L: prueba de t con datos independientes</a></li>
 <li><a class="" href="ejercicios-m.html"><span class="header-section-number">M</span> Ejercicios M</a></li>
 <li><a class="" href="ejercicios-n.html"><span class="header-section-number">N</span> Ejercicios N</a></li>
 <li><a class="" href="ejercicio-o.html"><span class="header-section-number">O</span> Ejercicio O</a></li>
@@ -120,22 +120,22 @@
 <h1>
 <span class="header-section-number">Capítulo 17</span> Correlación y Covarianza<a class="anchor" aria-label="anchor" href="#correlaci%C3%B3n-y-covarianza"><i class="fas fa-link"></i></a>
 </h1>
-<p>Fecha de la ultima revisión</p>
+<p>Fecha de la última revisión</p>
 <pre><code>## [1] "2026-08-01"</code></pre>
 <p><img src="Graficos/hex_ggversa.png" alt="" width="20%"><img src="Graficos/hex_error.png" alt="" width="20%"></p>
-<div class="sourceCode" id="cb553"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb557"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb554"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb558"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
 <span><span class="va">DownloadFestival</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"Data_files_csv/DownloadFestival.csv"</span><span class="op">)</span></span>
 <span></span>
 <span></span>
 <span></span>
-<span><span class="va">dlf</span><span class="op">=</span><span class="va">DownloadFestival</span>  <span class="co">#use shorter data.frame names to make your life easier..... </span></span>
+<span><span class="va">dlf</span><span class="op">=</span><span class="va">DownloadFestival</span>  <span class="co"># usa un nombre más corto para el data.frame y facilitar el trabajo</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:corr1">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c17-5">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:corr1">Table 17.1: </span> </caption>
+<span id="tab:c17-5">Table 17.1: </span> </caption>
 <col>
 <col>
 <col>
@@ -193,11 +193,11 @@
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb555"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb559"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:corr1">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c17-5">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:corr1">Table 17.1: </span> </caption>
+<span id="tab:c17-5">Table 17.1: </span> </caption>
 <col>
 <col>
 <col>
@@ -255,7 +255,7 @@
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb556"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb560"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##     ticknumb          gender         day1             day2       
 ##  Min.   :2111   Length   :810   Min.   : 0.020   Min.   :0.0000  
@@ -273,18 +273,18 @@
 ##  3rd Qu.:1.5250  
 ##  Max.   :3.4100  
 ##  NAs    :687</code></pre>
-<div class="sourceCode" id="cb558"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb562"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dlf2</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">dlf</span>, <span class="va">dlf</span><span class="op">$</span><span class="va">day1</span><span class="op">&lt;</span><span class="fl">5</span><span class="op">)</span>  </span>
 <span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dlf2</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">day1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"white"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/corr1-1.png" alt="" width="672"></div>
-<div class="sourceCode" id="cb559"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c17-5-1.png" alt="" width="672"></div>
+<div class="sourceCode" id="cb563"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dlf2</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:corr2">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c17-6">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:corr2">Table 17.2: </span> </caption>
+<span id="tab:c17-6">Table 17.2: </span> </caption>
 <col>
 <col>
 <col>
@@ -342,11 +342,14 @@
 </tr>
 </tbody>
 </table></div>
-<div id="a-detour-in-the-murky-world-of-covariance" class="section level2" number="17.1">
+<div id="un-desvío-por-el-turbio-mundo-de-la-covarianza" class="section level2" number="17.1">
 <h2>
-<span class="header-section-number">17.1</span> A detour in the Murky world of covariance<a class="anchor" aria-label="anchor" href="#a-detour-in-the-murky-world-of-covariance"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.1</span> Un desvío por el turbio mundo de la covarianza<a class="anchor" aria-label="anchor" href="#un-desv%C3%ADo-por-el-turbio-mundo-de-la-covarianza"><i class="fas fa-link"></i></a>
 </h2>
-<p>The objective is to evaluate whether variables covary, that is if the variable explain in part the part of the other.</p>
+<div class="definicion">
+<p><strong>Covarianza vs. correlación.</strong> La <em>covarianza</em> mide si dos variables varían juntas, pero su magnitud depende de las unidades de medida, por lo que es difícil de interpretar. La <em>correlación</em> (r) estandariza la covarianza dividiéndola entre el producto de las desviaciones estándar, de modo que siempre queda entre <span class="math inline">\(-1\)</span> y <span class="math inline">\(+1\)</span>, sin importar las unidades.</p>
+</div>
+<p>El objetivo es evaluar si dos variables covarían, es decir, si una variable explica en parte la variación de la otra.</p>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
 <th>Advert watched</th>
@@ -383,27 +386,29 @@
 </tr>
 </tbody>
 </table></div>
-<div id="understanding-covariance-one-needs-to-understand-variance-equation." class="section level3" number="17.1.1">
+<div id="para-entender-la-covarianza-primero-hay-que-entender-la-ecuación-de-la-varianza" class="section level3" number="17.1.1">
 <h3>
-<span class="header-section-number">17.1.1</span> Understanding covariance one needs to understand variance equation.<a class="anchor" aria-label="anchor" href="#understanding-covariance-one-needs-to-understand-variance-equation."><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.1.1</span> Para entender la covarianza primero hay que entender la ecuación de la varianza<a class="anchor" aria-label="anchor" href="#para-entender-la-covarianza-primero-hay-que-entender-la-ecuaci%C3%B3n-de-la-varianza"><i class="fas fa-link"></i></a>
 </h3>
-<p>![Variance of single variable]
+<p><strong>Varianza de una sola variable</strong>
 <span class="math display">\[s^{ 2 }=\frac { \sum { { ({ x }_{ i }-\bar { x } ) }^{ 2 } }  }{ n-1 }\]</span></p>
 </div>
-<div id="while-the-covariance-is-the-cross-product-of-the-deviation" class="section level3" number="17.1.2">
+<div id="la-covarianza-es-el-producto-cruzado-de-las-desviaciones" class="section level3" number="17.1.2">
 <h3>
-<span class="header-section-number">17.1.2</span> While the Covariance is the cross product of the deviation<a class="anchor" aria-label="anchor" href="#while-the-covariance-is-the-cross-product-of-the-deviation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.1.2</span> La covarianza es el producto cruzado de las desviaciones<a class="anchor" aria-label="anchor" href="#la-covarianza-es-el-producto-cruzado-de-las-desviaciones"><i class="fas fa-link"></i></a>
 </h3>
-<p>![Covariance]
-<span class="math display">\[cov(x,y)=\frac { \sum { ({ x }_{ i }-\bar { x } _{ i })({ y }_{ i }-\bar { y } _{ i }) }  }{ n-1 } \]</span></p>
-<div class="sourceCode" id="cb560"><pre class="downlit sourceCode r">
+<p><strong>Covarianza</strong>
+<span class="math display">\[cov(x,y)=\frac { \sum { ({ x }_{ i }-\bar { x })({ y }_{ i }-\bar { y }) }  }{ n-1 } \]</span></p>
+<div class="sourceCode" id="cb564"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">advert</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">4</span>,<span class="fl">4</span>,<span class="fl">6</span>,<span class="fl">8</span><span class="op">)</span></span>
 <span><span class="va">Coca</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>,<span class="fl">9</span>,<span class="fl">10</span>,<span class="fl">13</span>,<span class="fl">15</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">data</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">advert</span>,<span class="va">Coca</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">data</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c17-7">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c17-7">Table 17.3: </span> </caption>
 <col>
 <col>
 <thead><tr>
@@ -433,7 +438,7 @@
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb561"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb565"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mean_advert</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">advert</span><span class="op">)</span></span>
 <span><span class="va">mean_Coca</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">Coca</span><span class="op">)</span></span>
 <span></span>
@@ -441,7 +446,9 @@
 <span><span class="va">data</span><span class="op">$</span><span class="va">diff_Coca</span><span class="op">=</span><span class="va">data</span><span class="op">$</span><span class="va">Coca</span><span class="op">-</span><span class="va">mean_Coca</span></span>
 <span></span>
 <span><span class="va">data</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c17-7">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c17-7">Table 17.3: </span> </caption>
 <col>
 <col>
 <col>
@@ -485,25 +492,25 @@
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb562"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb566"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data</span><span class="op">$</span><span class="va">prod_diff</span><span class="op">=</span><span class="va">data</span><span class="op">$</span><span class="va">diff_advert</span><span class="op">*</span><span class="va">data</span><span class="op">$</span><span class="va">diff_Coca</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">prod_diff</span><span class="op">)</span><span class="op">/</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">-</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] 4.25</code></pre>
-<div class="sourceCode" id="cb564"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb568"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">advert</span>, y<span class="op">=</span><span class="va">Coca</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/unnamed-chunk-85-1.png" alt="" width="672"></div>
-<div class="sourceCode" id="cb565"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c17-8-1.png" alt="" width="672"></div>
+<div class="sourceCode" id="cb569"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x_val</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">5</span>,<span class="fl">4</span>,<span class="fl">4</span>,<span class="fl">6</span>,<span class="fl">8</span><span class="op">)</span></span>
 <span><span class="va">y_val</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">8</span>,<span class="fl">9</span>,<span class="fl">10</span>,<span class="fl">13</span>,<span class="fl">15</span><span class="op">)</span></span>
 <span><span class="va">Person</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span><span class="op">)</span></span>
 <span><span class="va">meanx</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">x_val</span><span class="op">)</span></span>
 <span><span class="va">df</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Person</span>,<span class="va">x_val</span>,<span class="va">y_val</span><span class="op">)</span></span>
 <span><span class="va">df</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:corr3">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c17-9">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:corr3">Table 17.3: </span> </caption>
+<span id="tab:c17-9">Table 17.4: </span> </caption>
 <col>
 <col>
 <col>
@@ -540,39 +547,38 @@
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb566"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb570"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Person</span>,y<span class="op">=</span><span class="va">x_val</span><span class="op">)</span>,colour<span class="op">=</span><span class="st">"Blue"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>data<span class="op">=</span><span class="va">df</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Person</span>,y<span class="op">=</span><span class="va">y_val</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>yintercept<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">x_val</span><span class="op">)</span><span class="op">)</span>,colour<span class="op">=</span><span class="st">"Blue"</span><span class="op">)</span><span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>yintercept<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">y_val</span><span class="op">)</span><span class="op">)</span>,colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/corr3-1.png" alt="" width="672"></div>
-<p>Because in most cases variables are collected having different measurement scales we have to standardize using the standard deviation</p>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c17-9-1.png" alt="" width="672"></div>
+<p>Como en la mayoría de los casos las variables se miden en escalas diferentes, tenemos que estandarizarlas usando la desviación estándar.</p>
 </div>
 </div>
-<div id="thus-we-have-to-use-the-correlation-coefficient" class="section level2" number="17.2">
+<div id="por-eso-usamos-el-coeficiente-de-correlación" class="section level2" number="17.2">
 <h2>
-<span class="header-section-number">17.2</span> Thus we have to use the Correlation Coefficient:<a class="anchor" aria-label="anchor" href="#thus-we-have-to-use-the-correlation-coefficient"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.2</span> Por eso usamos el coeficiente de correlación<a class="anchor" aria-label="anchor" href="#por-eso-usamos-el-coeficiente-de-correlaci%C3%B3n"><i class="fas fa-link"></i></a>
 </h2>
-</div>
-<div id="this-most-common-is-the-pearson-product-moment-correlation-coefficient-or-pearson-correlation-coeffcient." class="section level2" number="17.3">
-<h2>
-<span class="header-section-number">17.3</span> This most common is the Pearson product-moment correlation coefficient or Pearson correlation coeffcient.<a class="anchor" aria-label="anchor" href="#this-most-common-is-the-pearson-product-moment-correlation-coefficient-or-pearson-correlation-coeffcient."><i class="fas fa-link"></i></a>
-</h2>
-<p><span class="math display">\[r=\frac { cov(x,y) }{ { s }_{ x }{ s }_{ y } } =\frac { \sum { ({ x }_{ i }-\bar { x } _{ i })({ y }_{ i }-\bar { y } _{ i }) }  }{ n-1{ s }_{ x }{ s }_{ y } }\]</span></p>
-<p>The function to calculate the correlation coefficient is “cor”</p>
-<p>The function to determine if the correlation vetween the 2 variables is significant (in other words, different from zero) is “cor.test”.</p>
-<div class="sourceCode" id="cb567"><pre class="downlit sourceCode r">
+<div id="el-más-común-es-el-coeficiente-de-correlación-producto-momento-de-pearson" class="section level3" number="17.2.1">
+<h3>
+<span class="header-section-number">17.2.1</span> El más común es el coeficiente de correlación producto-momento de Pearson<a class="anchor" aria-label="anchor" href="#el-m%C3%A1s-com%C3%BAn-es-el-coeficiente-de-correlaci%C3%B3n-producto-momento-de-pearson"><i class="fas fa-link"></i></a>
+</h3>
+<p><span class="math display">\[r=\frac { cov(x,y) }{ { s }_{ x }{ s }_{ y } } =\frac { \sum { ({ x }_{ i }-\bar { x })({ y }_{ i }-\bar { y }) }  }{ (n-1)\, { s }_{ x }{ s }_{ y } }\]</span></p>
+<p>La función para calcular el coeficiente de correlación es <strong>cor()</strong>.</p>
+<p>La función para determinar si la correlación entre las 2 variables es significativa (es decir, diferente de cero) es <strong>cor.test()</strong>.</p>
+<div class="sourceCode" id="cb571"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">r</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">x_val</span>, <span class="va">df</span><span class="op">$</span><span class="va">y_val</span><span class="op">)</span></span>
 <span><span class="co">#cor.test(df$x_val, df$y_val)</span></span>
 <span></span>
 <span><span class="va">r</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">advert</span>, <span class="va">data</span><span class="op">$</span><span class="va">Coca</span><span class="op">)</span></span>
 <span><span class="va">r</span></span></code></pre></div>
 <pre><code>## [1] 0.8711651</code></pre>
-<div class="sourceCode" id="cb569"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb573"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">r</span><span class="op">^</span><span class="fl">2</span></span></code></pre></div>
 <pre><code>## [1] 0.7589286</code></pre>
-<div class="sourceCode" id="cb571"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb575"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">data</span><span class="op">$</span><span class="va">advert</span>, <span class="va">data</span><span class="op">$</span><span class="va">Coca</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##  Pearson's product-moment correlation
@@ -585,23 +591,26 @@
 ## sample estimates:
 ##       cor 
 ## 0.8711651</code></pre>
-<p>The correlation of coefficient square <span class="math inline">\({ R }^{ 2 }\)</span> (known as the coefficient of determination) is a measure of the amount of variability in one variable that is shared by the other.</p>
-<p>Simple table of correlation tests</p>
+<p>El cuadrado del coeficiente de correlación, <span class="math inline">\({ R }^{ 2 }\)</span> (conocido como el coeficiente de determinación), es una medida de la cantidad de variabilidad de una variable que es compartida por la otra.</p>
+<div class="advertencia">
+<p><strong>Correlación no implica causalidad.</strong> Una correlación fuerte entre dos variables no prueba que una cause la otra; ambas podrían estar influidas por una tercera variable, o la relación podría ser una coincidencia. La correlación solo describe cuánto se asocian linealmente dos variables.</p>
+</div>
+<p>Tabla resumen de las pruebas de correlación:</p>
 <ol style="list-style-type: decimal">
-<li>Pearson test, assumes normal bivariate distribution,</li>
-<li>Spearman test, no assumption of normality,</li>
-<li>Kendall test, no assumption of normality, better when sample size are small</li>
+<li>Prueba de Pearson: asume una distribución normal bivariada.</li>
+<li>Prueba de Spearman: no asume normalidad.</li>
+<li>Prueba de Kendall: no asume normalidad, mejor cuando el tamaño de muestra es pequeño.</li>
 </ol>
-<p>Let us a look at Anxiety and exam results.</p>
-<p>Choose the data set, examData</p>
-<div class="sourceCode" id="cb573"><pre class="downlit sourceCode r">
+<p>Veamos la relación entre la ansiedad y los resultados de los exámenes.</p>
+<p>Elige el conjunto de datos examData.</p>
+<div class="sourceCode" id="cb577"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
 <span><span class="va">Exam_Anxiety</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"Data_files_csv/Exam Anxiety.csv"</span><span class="op">)</span></span>
 <span><span class="va">examData</span><span class="op">=</span><span class="va">Exam_Anxiety</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">examData</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:corr5">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c17-11">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:corr5">Table 17.4: </span> </caption>
+<span id="tab:c17-11">Table 17.5: </span> </caption>
 <col>
 <col>
 <col>
@@ -659,11 +668,11 @@
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb574"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb578"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">examData</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">Exam</span>, x<span class="op">=</span><span class="va">Anxiety</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/corr5-1.png" alt="" width="672"></div>
-<div class="sourceCode" id="cb575"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c17-11-1.png" alt="" width="672"></div>
+<div class="sourceCode" id="cb579"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.test.html">cor.test</a></span><span class="op">(</span><span class="va">examData</span><span class="op">$</span><span class="va">Exam</span>,<span class="va">examData</span><span class="op">$</span><span class="va">Anxiety</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## 
 ##  Pearson's product-moment correlation
@@ -676,8 +685,11 @@
 ## sample estimates:
 ##        cor 
 ## -0.4409934</code></pre>
-<p>One the basic assumption of the Pearson correlation is that the data be bivariate normally distributed. NOTE: WHAT WE MEAN ABOUT THE “ASSUMPTION” IS THAT WE ARE CONFIDENT THAT THE UNIVERSE IS NORMALLY DISTRIBUTED, NOT NECESARILY THAT OUR DATA ARE (SUBSET).</p>
-<div class="sourceCode" id="cb577"><pre class="downlit sourceCode r">
+<div class="supuestos">
+<p>La correlación de <strong>Pearson</strong> asume: una relación lineal entre las variables, una distribución normal bivariada, y ausencia de valores atípicos extremos (que pueden distorsionar mucho a <em>r</em>). Si estos supuestos no se cumplen, usa Spearman o Kendall.</p>
+</div>
+<p>Uno de los supuestos básicos de la correlación de Pearson es que los datos tengan una distribución normal bivariada. NOTA: lo que queremos decir con el “supuesto” es que confiamos en que el universo (la población) tiene una distribución normal, no necesariamente que nuestros datos (la muestra) la tengan.</p>
+<div class="sourceCode" id="cb581"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.rforge.net/png/">png</a></span><span class="op">)</span></span>
 <span></span>
@@ -685,18 +697,19 @@
 <span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="va">img3_path</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Graficos/Bivariate_normal.png" alt="" width="421"></div>
 </div>
-<div id="what-does-that-mean" class="section level2" number="17.4">
+</div>
+<div id="qué-significa-esto" class="section level2" number="17.3">
 <h2>
-<span class="header-section-number">17.4</span> What does that mean<a class="anchor" aria-label="anchor" href="#what-does-that-mean"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.3</span> ¿Qué significa esto?<a class="anchor" aria-label="anchor" href="#qu%C3%A9-significa-esto"><i class="fas fa-link"></i></a>
 </h2>
-<p>Here is a really cool graph that does the figures and most of the analysis in one one shot.
-The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure will be black and white, and not seperated by gender.</p>
-<div class="sourceCode" id="cb578"><pre class="downlit sourceCode r">
+<p>Aquí hay un gráfico muy útil que produce las figuras y la mayor parte del análisis de una sola vez.
+Con el paquete GGally, si omites “ggplot2::aes(colour=Gender)”, la figura será en blanco y negro y no estará separada por género.</p>
+<div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggobi.github.io/ggally/">GGally</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">examData</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:corr7">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c17-13">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:corr7">Table 17.5: </span> </caption>
+<span id="tab:c17-13">Table 17.6: </span> </caption>
 <col>
 <col>
 <col>
@@ -754,28 +767,27 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb579"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb583"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggpairs.html">ggpairs</a></span><span class="op">(</span><span class="va">examData</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/corr7-1.png" alt="" width="672"></div>
-<div class="sourceCode" id="cb580"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c17-13-1.png" alt="" width="672"></div>
+<div class="sourceCode" id="cb584"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#ggpairs(examData, ggplot2::aes(colour=Gender))</span></span></code></pre></div>
-<p>In this code I removed the first column, which is just the code of the individual, by examData[,c(2:5)], by removing column #1.</p>
-<div class="sourceCode" id="cb581"><pre class="downlit sourceCode r">
+<p>En este código eliminé la primera columna, que es solamente el código del individuo, usando examData[,c(2:5)] (es decir, quitando la columna #1).</p>
+<div class="sourceCode" id="cb585"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggobi.github.io/ggally/reference/ggpairs.html">ggpairs</a></span><span class="op">(</span><span class="va">examData</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span><span class="op">]</span>, <span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>colour<span class="op">=</span><span class="va">Gender</span><span class="op">)</span><span class="op">)</span> </span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/corr8-1.png" alt="" width="672"></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c17-14-1.png" alt="" width="672"></div>
 <ol style="list-style-type: decimal">
 <li>
 </ol>
-<p>USar el data set siguiente</p>
-<p>con las variables,</p>
+<p>Usa el siguiente conjunto de datos, con las variables:</p>
 <ul>
-<li>Flower Size</li>
-<li>Num_Fr = Number off Fruits</li>
-<li>w_sepals_dorsal = width of the dorsal sepal</li>
-<li>front_lip_length = Front lip length</li>
-<li>wf = an index of female selection</li>
+<li>Flower Size = tamaño de la flor</li>
+<li>Num_Fr = número de frutos</li>
+<li>w_sepals_dorsal = ancho del sépalo dorsal</li>
+<li>front_lip_length = largo del labio frontal</li>
+<li>wf = un índice de selección femenina</li>
 </ul>
-<div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb586"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
 <span><span class="va">Lep_rupPetal_All_Data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"Data_files_csv/Lep_rupPetal_All_Data.csv"</span><span class="op">)</span></span>
 <span><span class="va">Lep</span><span class="op">=</span><span class="va">Lep_rupPetal_All_Data</span></span>
@@ -789,8 +801,8 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
 ## [25] "midlobe_lenght"   "anther_cap_open"  "dist_b_w_sepals"  "ST_L _column"    
 ## [29] "w_mf"             "ST_L_column2"     "Sqrt_Num_Fl0.5"   "Log_flower size" 
 ## [33] "Arcsin_Perc_FR"</code></pre>
-<p>A table of the correlation coefficients</p>
-<div class="sourceCode" id="cb584"><pre class="downlit sourceCode r">
+<p>Una tabla de los coeficientes de correlación</p>
+<div class="sourceCode" id="cb588"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://hbiostat.org/R/Hmisc/">Hmisc</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/Hmisc/man/rcorr.html">rcorr</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span><span class="op">(</span><span class="va">examData</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Exam"</span>,<span class="st">"Anxiety"</span>,<span class="st">"Revise"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code>##          Exam Anxiety Revise
@@ -807,26 +819,29 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
 ## Anxiety  0            0    
 ## Revise   0    0</code></pre>
 <hr>
-<p>When the data do not comply with the assumption of normality you need to use Spearman or Kendall</p>
-<p>Choose “The Biggest Liar.csv” data set, contest, where this occurs every year in a pub.</p>
-<p>World’s Biggest Liar is an annual competition for telling lies, held in Cumbria, England at the Stanton Inn Bridge Pub.</p>
-<div class="sourceCode" id="cb586"><pre class="downlit sourceCode r">
+<p>Cuando los datos no cumplen con el supuesto de normalidad, hay que usar Spearman o Kendall.</p>
+<div class="consejo">
+<p>Spearman y Kendall son correlaciones <strong>de rango</strong> (usan el orden de los datos, no sus valores), por lo que son robustas ante la no-normalidad y los valores atípicos. Kendall suele preferirse cuando el tamaño de muestra es pequeño o hay muchos empates.</p>
+</div>
+<p>Elige el conjunto de datos “The Biggest Liar.csv”, un concurso que ocurre cada año en un pub.</p>
+<p>El “World’s Biggest Liar” (El mentiroso más grande del mundo) es una competencia anual para decir mentiras, celebrada en Cumbria, Inglaterra, en el Stanton Inn Bridge Pub.</p>
+<div class="sourceCode" id="cb590"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://www.rforge.net/png/">png</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">img4_path</span><span class="op">&lt;-</span><span class="st">"Graficos/Stanton.png"</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/include_graphics.html">include_graphics</a></span><span class="op">(</span><span class="va">img4_path</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="Graficos/Stanton.png" alt="" width="500px"></div>
-<div class="sourceCode" id="cb587"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb591"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://hbiostat.org/R/Hmisc/">Hmisc</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
 <span><span class="va">The_Biggest_Liar</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"Data_files_csv/The Biggest Liar.csv"</span><span class="op">)</span></span>
 <span><span class="va">liarData</span><span class="op">=</span><span class="va">The_Biggest_Liar</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">liarData</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:corr12">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c17-18">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:corr12">Table 17.6: </span> </caption>
+<span id="tab:c17-18">Table 17.7: </span> </caption>
 <col>
 <col>
 <col>
@@ -868,41 +883,41 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb588"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb592"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">liarData</span><span class="op">$</span><span class="va">Position</span>, <span class="va">liarData</span><span class="op">$</span><span class="va">Creativity</span>, method <span class="op">=</span> <span class="st">"pearson"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] -0.3060314</code></pre>
-<div class="sourceCode" id="cb590"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb594"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">liarData</span><span class="op">$</span><span class="va">Position</span>, <span class="va">liarData</span><span class="op">$</span><span class="va">Creativity</span>, method <span class="op">=</span> <span class="st">"spearman"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] -0.3732184</code></pre>
-<div class="sourceCode" id="cb592"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">liarData</span><span class="op">$</span><span class="va">Position</span>, <span class="va">liarData</span><span class="op">$</span><span class="va">Creativity</span>, method <span class="op">=</span> <span class="st">"kendall"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## [1] -0.3002413</code></pre>
 </div>
-<div id="extra-stuff" class="section level2" number="17.5">
+<div id="material-adicional" class="section level2" number="17.4">
 <h2>
-<span class="header-section-number">17.5</span> EXTRA Stuff<a class="anchor" aria-label="anchor" href="#extra-stuff"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.4</span> Material adicional<a class="anchor" aria-label="anchor" href="#material-adicional"><i class="fas fa-link"></i></a>
 </h2>
-<div id="bootstrapping-correlation" class="section level3" number="17.5.1">
+<div id="correlación-por-bootstrap" class="section level3" number="17.4.1">
 <h3>
-<span class="header-section-number">17.5.1</span> Bootstrapping Correlation<a class="anchor" aria-label="anchor" href="#bootstrapping-correlation"><i class="fas fa-link"></i></a>
+<span class="header-section-number">17.4.1</span> Correlación por bootstrap<a class="anchor" aria-label="anchor" href="#correlaci%C3%B3n-por-bootstrap"><i class="fas fa-link"></i></a>
 </h3>
-<p>THERE is no need to make assumptions of the distribution, you can let your data speak for itself, and construct the correlation coeffcients and 95% confidence interval.</p>
-<p>We first create a function</p>
-<div class="sourceCode" id="cb594"><pre class="downlit sourceCode r">
+<p>Con el bootstrap no hay necesidad de hacer supuestos sobre la distribución: puedes dejar que los datos hablen por sí mismos y construir el coeficiente de correlación y su intervalo de confianza de 95%.</p>
+<p>Primero creamos una función:</p>
+<div class="sourceCode" id="cb598"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bootTau</span><span class="op">=</span><span class="kw">function</span><span class="op">(</span><span class="va">liarData</span>,<span class="va">i</span><span class="op">)</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">liarData</span><span class="op">$</span><span class="va">Position</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>,<span class="va">liarData</span><span class="op">$</span><span class="va">Creativity</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>,</span>
 <span>                                use<span class="op">=</span><span class="st">"complete.obs"</span>,method <span class="op">=</span> <span class="st">"kendall"</span><span class="op">)</span></span></code></pre></div>
-<p>The function is then called and executed</p>
-<div class="sourceCode" id="cb595"><pre class="downlit sourceCode r">
+<p>Luego se llama y se ejecuta la función:</p>
+<div class="sourceCode" id="cb599"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">boot</span><span class="op">)</span></span>
 <span><span class="va">boot_kendall</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/boot/man/boot.html">boot</a></span><span class="op">(</span><span class="va">liarData</span>,<span class="va">bootTau</span>, <span class="fl">1000</span><span class="op">)</span></span>
 <span><span class="va">boot_kendall</span></span></code></pre></div>
-<p>To calculate the 95% confidence interval</p>
-<div class="sourceCode" id="cb596"><pre class="downlit sourceCode r">
+<p>Para calcular el intervalo de confianza de 95%:</p>
+<div class="sourceCode" id="cb600"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/boot/man/boot.ci.html">boot.ci</a></span><span class="op">(</span><span class="va">boot_kendall</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb597"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb601"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">liarData</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Creativity</span>, <span class="va">Position</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/corr16-1.png" alt="" width="672"></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c17-22-1.png" alt="" width="672"></div>
 
 </div>
 </div>
@@ -915,16 +930,17 @@ The package GGally, if you omit “ggplot2::aes(colour=Gender)”, the figure wi
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#correlaci%C3%B3n-y-covarianza"><span class="header-section-number">17</span> Correlación y Covarianza</a></li>
 <li>
-<a class="nav-link" href="#a-detour-in-the-murky-world-of-covariance"><span class="header-section-number">17.1</span> A detour in the Murky world of covariance</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#understanding-covariance-one-needs-to-understand-variance-equation."><span class="header-section-number">17.1.1</span> Understanding covariance one needs to understand variance equation.</a></li>
-<li><a class="nav-link" href="#while-the-covariance-is-the-cross-product-of-the-deviation"><span class="header-section-number">17.1.2</span> While the Covariance is the cross product of the deviation</a></li>
+<a class="nav-link" href="#un-desv%C3%ADo-por-el-turbio-mundo-de-la-covarianza"><span class="header-section-number">17.1</span> Un desvío por el turbio mundo de la covarianza</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#para-entender-la-covarianza-primero-hay-que-entender-la-ecuaci%C3%B3n-de-la-varianza"><span class="header-section-number">17.1.1</span> Para entender la covarianza primero hay que entender la ecuación de la varianza</a></li>
+<li><a class="nav-link" href="#la-covarianza-es-el-producto-cruzado-de-las-desviaciones"><span class="header-section-number">17.1.2</span> La covarianza es el producto cruzado de las desviaciones</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#thus-we-have-to-use-the-correlation-coefficient"><span class="header-section-number">17.2</span> Thus we have to use the Correlation Coefficient:</a></li>
-<li><a class="nav-link" href="#this-most-common-is-the-pearson-product-moment-correlation-coefficient-or-pearson-correlation-coeffcient."><span class="header-section-number">17.3</span> This most common is the Pearson product-moment correlation coefficient or Pearson correlation coeffcient.</a></li>
-<li><a class="nav-link" href="#what-does-that-mean"><span class="header-section-number">17.4</span> What does that mean</a></li>
 <li>
-<a class="nav-link" href="#extra-stuff"><span class="header-section-number">17.5</span> EXTRA Stuff</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#bootstrapping-correlation"><span class="header-section-number">17.5.1</span> Bootstrapping Correlation</a></li></ul>
+<a class="nav-link" href="#por-eso-usamos-el-coeficiente-de-correlaci%C3%B3n"><span class="header-section-number">17.2</span> Por eso usamos el coeficiente de correlación</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#el-m%C3%A1s-com%C3%BAn-es-el-coeficiente-de-correlaci%C3%B3n-producto-momento-de-pearson"><span class="header-section-number">17.2.1</span> El más común es el coeficiente de correlación producto-momento de Pearson</a></li></ul>
+</li>
+<li><a class="nav-link" href="#qu%C3%A9-significa-esto"><span class="header-section-number">17.3</span> ¿Qué significa esto?</a></li>
+<li>
+<a class="nav-link" href="#material-adicional"><span class="header-section-number">17.4</span> Material adicional</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#correlaci%C3%B3n-por-bootstrap"><span class="header-section-number">17.4.1</span> Correlación por bootstrap</a></li></ul>
 </li>
 </ul>
 

@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Capítulo 7 Medidas de dispersión | BioEstadística</title>
+<meta name="author" content="">
+<meta name="description" content='Fecha de la última revisión ## [1] "2026-08-01"  7.1 Qué es la dispersión en estadística Las medidas o índices de dispersión son indicadores de cuán variables son los datos entre sí. Si todos los...'>
+<meta name="generator" content="bookdown 0.47 with bs4_book()">
+<meta property="og:title" content="Capítulo 7 Medidas de dispersión | BioEstadística">
+<meta property="og:type" content="book">
+<meta property="og:description" content='Fecha de la última revisión ## [1] "2026-08-01"  7.1 Qué es la dispersión en estadística Las medidas o índices de dispersión son indicadores de cuán variables son los datos entre sí. Si todos los...'>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Capítulo 7 Medidas de dispersión | BioEstadística">
+<meta name="twitter:description" content='Fecha de la última revisión ## [1] "2026-08-01"  7.1 Qué es la dispersión en estadística Las medidas o índices de dispersión son indicadores de cuán variables son los datos entre sí. Si todos los...'>
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/Source_Sans_3-0.4.10/font.css" rel="stylesheet">
+<link href="libs/Fira_Code-0.4.10/font.css" rel="stylesheet">
+<link href="libs/Lora-0.4.10/font.css" rel="stylesheet">
+<script src="libs/bs3compat-0.11.0/transition.js"></script><script src="libs/bs3compat-0.11.0/tabs.js"></script><script src="libs/bs3compat-0.11.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BioEstadística</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introducción al curso de BioEstadística</a></li>
+<li><a class="" href="introducci%C3%B3n-a-la-bioestad%C3%ADstica.html"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></li>
+<li><a class="" href="poblaci%C3%B3n-y-muestreo.html"><span class="header-section-number">3</span> Población y Muestreo</a></li>
+<li><a class="" href="inferencias-e-hip%C3%B3tesis.html"><span class="header-section-number">4</span> Inferencias e Hipótesis</a></li>
+<li><a class="" href="historia-breve-de-la-estad%C3%ADstica.html"><span class="header-section-number">5</span> Historia breve de la Estadística</a></li>
+<li><a class="" href="medidas-de-tendencia-central.html"><span class="header-section-number">6</span> Medidas de tendencia central</a></li>
+<li><a class="active" href="medidas-de-dispersi%C3%B3n.html"><span class="header-section-number">7</span> Medidas de dispersión</a></li>
+<li><a class="" href="estad%C3%ADstica-descriptiva.html"><span class="header-section-number">8</span> Estadística Descriptiva</a></li>
+<li><a class="" href="gr%C3%A1ficos.html"><span class="header-section-number">9</span> Gráficos</a></li>
+<li><a class="" href="supuestos.html"><span class="header-section-number">10</span> Supuestos</a></li>
+<li><a class="" href="estad%C3%ADstica-frecuentista.html"><span class="header-section-number">11</span> Estadística Frecuentista</a></li>
+<li><a class="" href="distribuci%C3%B3n-normal.html"><span class="header-section-number">12</span> Distribución Normal</a></li>
+<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una Muestra</a></li>
+<li><a class="" href="prueba-de-t-para-datos-pareados.html"><span class="header-section-number">14</span> Prueba de t para Datos Pareados</a></li>
+<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con Datos Independientes</a></li>
+<li><a class="" href="anova.html"><span class="header-section-number">16</span> ANOVA</a></li>
+<li><a class="" href="correlaci%C3%B3n-y-covarianza.html"><span class="header-section-number">17</span> Correlación y Covarianza</a></li>
+<li><a class="" href="regresi%C3%B3n-lineal-1.html"><span class="header-section-number">18</span> Regresión Lineal</a></li>
+<li><a class="" href="regresi%C3%B3n-log%C3%ADstica.html"><span class="header-section-number">19</span> Regresión Logística</a></li>
+<li><a class="" href="selecci%C3%B3n-de-modelos-con-el-criterio-de-akaike.html"><span class="header-section-number">20</span> Selección de Modelos con el Criterio de Akaike</a></li>
+<li><a class="" href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">21</span> Pruebas No Paramétricas</a></li>
+<li><a class="" href="referencias-1.html">Referencias</a></li>
+<li class="book-part">Appendix</li>
+<li><a class="" href="ejercicios-a.html"><span class="header-section-number">A</span> Ejercicios A</a></li>
+<li><a class="" href="ejercicios-b.html"><span class="header-section-number">B</span> Ejercicios B</a></li>
+<li><a class="" href="ejercicios-c.html"><span class="header-section-number">C</span> Ejercicios C</a></li>
+<li><a class="" href="ejercicios-d.html"><span class="header-section-number">D</span> Ejercicios D</a></li>
+<li><a class="" href="ejercicios-e.html"><span class="header-section-number">E</span> Ejercicios E</a></li>
+<li><a class="" href="ejercicios-f.html"><span class="header-section-number">F</span> Ejercicios F</a></li>
+<li><a class="" href="ejercicios-g.html"><span class="header-section-number">G</span> Ejercicios G</a></li>
+<li><a class="" href="ejercicios-h.html"><span class="header-section-number">H</span> Ejercicios H</a></li>
+<li><a class="" href="ejercicios-i.html"><span class="header-section-number">I</span> Ejercicios I</a></li>
+<li><a class="" href="ejercicios-j.html"><span class="header-section-number">J</span> Ejercicios J</a></li>
+<li><a class="" href="ejercicios-k.html"><span class="header-section-number">K</span> Ejercicios K</a></li>
+<li><a class="" href="ejercicios-l-prueba-de-t-con-datos-independientes.html"><span class="header-section-number">L</span> Ejercicios L: prueba de t con datos independientes</a></li>
+<li><a class="" href="ejercicios-m.html"><span class="header-section-number">M</span> Ejercicios M</a></li>
+<li><a class="" href="ejercicios-n.html"><span class="header-section-number">N</span> Ejercicios N</a></li>
+<li><a class="" href="ejercicio-o.html"><span class="header-section-number">O</span> Ejercicio O</a></li>
+<li><a class="" href="ejercicios-p.html"><span class="header-section-number">P</span> Ejercicios P</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">Q</span> DATA</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/RaymondLTremblay/BioEstadistica">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="medidas-de-dispersión" class="section level1" number="7">
+<h1>
+<span class="header-section-number">Capítulo 7</span> Medidas de dispersión<a class="anchor" aria-label="anchor" href="#medidas-de-dispersi%C3%B3n"><i class="fas fa-link"></i></a>
+</h1>
+<p>Fecha de la última revisión</p>
+<pre><code>## [1] "2026-08-01"</code></pre>
+<p><img src="Graficos/hex_ggversa.png" alt="" width="20%"><img src="Graficos/hex_error.png" alt="" width="20%"></p>
+<hr>
+<div id="qué-es-la-dispersión-en-estadística" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> Qué es la dispersión en estadística<a class="anchor" aria-label="anchor" href="#qu%C3%A9-es-la-dispersi%C3%B3n-en-estad%C3%ADstica"><i class="fas fa-link"></i></a>
+</h2>
+<p>Las medidas o índices de dispersión son indicadores de cuán variables son los datos entre sí. Si todos los valores son iguales, no hay dispersión. Hay múltiples índices de dispersión; vamos a evaluar solamente algunos de ellos. Para más información pueden ir al siguiente enlace <a href="https://en.wikipedia.org/wiki/Statistical_dispersion" class="uri">https://en.wikipedia.org/wiki/Statistical_dispersion</a>.</p>
+<p>Los indices que estaremos estudiando son los siguientes</p>
+<ul>
+<li>el rango</li>
+<li>la varianza</li>
+<li>la desviación estándar</li>
+<li>el error estándar</li>
+<li>el rango intercuartil</li>
+<li>el intervalo de confianza de 95%</li>
+</ul>
+<hr>
+</div>
+<div id="visualizando-la-dispersión" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> Visualizando la dispersión<a class="anchor" aria-label="anchor" href="#visualizando-la-dispersi%C3%B3n"><i class="fas fa-link"></i></a>
+</h2>
+<p>Primero miramos un gráfico donde tenemos datos donde el promedio es igual pero las dispersiones son diferentes. Lo que uno observa es que en la distribución azul los datos son más similares entre sí, y en la distribución roja los valores son más diferentes. En el primer conjunto de datos se usa 500 valores con un promedio de 100 y una desviación estándar de 10, en el segundo se produce un conjunto de datos de 500 valores con un promedio de 100 y una desviación estándar de 30.</p>
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">8690</span><span class="op">)</span> <span class="co"># esto es para que los valores se queden iguales cada vez que se corre el análisis</span></span>
+<span><span class="va">a</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">1000</span>, <span class="fl">100</span>, <span class="fl">10</span><span class="op">)</span> <span class="co"># la función para generar datos al azar con una distribución normal</span></span>
+<span><span class="co">#a</span></span>
+<span><span class="va">dfa</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dfa</span>, n<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##            a
+## 1  122.45061
+## 2   96.32812
+## 3   97.62805
+## 4  104.08504
+## 5   87.87156
+## 6   96.03265
+## 7   95.25282
+## 8   93.10139
+## 9  120.29985
+## 10 110.93526</code></pre>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span> <span class="co"># r is for random</span></span>
+<span> <span class="co"># norm =distribución normal</span></span>
+<span><span class="co">#a</span></span>
+<span><span class="va">b</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">500</span>, <span class="fl">100</span>, <span class="fl">50</span><span class="op">)</span></span>
+<span><span class="va">dfb</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dfa</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="va">dfb</span>, mapping<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">b</span>,fill<span class="op">=</span><span class="st">"red"</span>, alpha<span class="op">=</span><span class="fl">.5</span> <span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">100</span>, colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c07-6-1.png" alt="" width="60%"></div>
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"Graficos/dispersion.png"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Graficos/dispersion.png" alt="" width="60%" style="display: block; margin: auto;"></div>
+<hr>
+</div>
+<div id="el-rango" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> El rango<a class="anchor" aria-label="anchor" href="#el-rango"><i class="fas fa-link"></i></a>
+</h2>
+<p>El rango está definido por el valor mínimo y el valor máximo de un conjunto de datos. Se usa la función <strong>range()</strong>. Usamos los dos conjuntos de datos ya creado anteriormente para visualizar los rangos de la distribuciones de los gráficos. Lo que uno observa es que el valor mínimo del primer conjunto de datos es 59.17 y el máximo es 137.12. Para el segundo conjunto de datos el valor mínimo es 1.86 y el máximo es 203.88.</p>
+<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">dfa</span><span class="op">$</span><span class="va">a</span><span class="op">)</span> </span></code></pre></div>
+<pre><code>## [1]  71.43399 133.12174</code></pre>
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">dfb</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] -37.13864 243.07602</code></pre>
+</div>
+<div id="mínimo-y-máximo" class="section level2" number="7.4">
+<h2>
+<span class="header-section-number">7.4</span> Mínimo y máximo<a class="anchor" aria-label="anchor" href="#m%C3%ADnimo-y-m%C3%A1ximo"><i class="fas fa-link"></i></a>
+</h2>
+<p>El rango de una distribución es lo mismo que el mínimo y máximo</p>
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">dfa</span><span class="op">$</span><span class="va">a</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 71.43399</code></pre>
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">dfa</span><span class="op">$</span><span class="va">a</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 133.1217</code></pre>
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">dfb</span><span class="op">$</span><span class="va">b</span>, na.rm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span> <span class="co"># si hay valores NA en los datos</span></span></code></pre></div>
+<pre><code>## [1] -37.13864</code></pre>
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">dfb</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 243.076</code></pre>
+<hr>
+</div>
+<div id="ejemplo-de-la-clase" class="section level2" number="7.5">
+<h2>
+<span class="header-section-number">7.5</span> Ejemplo de la clase<a class="anchor" aria-label="anchor" href="#ejemplo-de-la-clase"><i class="fas fa-link"></i></a>
+</h2>
+<div id="cuál-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes-cuando-nacieron-sus-hijos" class="section level3" number="7.5.1">
+<h3>
+<span class="header-section-number">7.5.1</span> ¿Cuál es el rango de la edad de los padres de los estudiantes cuando nacieron sus hijos?<a class="anchor" aria-label="anchor" href="#cu%C3%A1l-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes-cuando-nacieron-sus-hijos"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Create mode() function to calculate mode</span></span>
+<span><span class="va">mode</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">na.rm</span> <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  </span>
+<span>  <span class="kw">if</span><span class="op">(</span><span class="va">na.rm</span><span class="op">)</span><span class="op">{</span> <span class="co">#if na.rm is TRUE, remove NA values from input x</span></span>
+<span>    <span class="va">x</span> <span class="op">=</span> <span class="va">x</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">]</span></span>
+<span>  <span class="op">}</span></span>
+<span></span>
+<span>  <span class="va">val</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span>  <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="va">val</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.min.html">which.max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tabulate.html">tabulate</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/match.html">match</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">val</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Edad</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">23</span>, <span class="fl">27</span>, <span class="fl">33</span>, <span class="fl">23</span>, <span class="fl">21</span>, <span class="fl">25</span>, <span class="fl">30</span>, <span class="fl">27</span>, <span class="fl">26</span>, <span class="fl">23</span>,</span>
+<span>       <span class="fl">21</span>, <span class="fl">28</span>, <span class="fl">33</span>, <span class="fl">35</span>, <span class="fl">27</span>, <span class="fl">15</span>, <span class="fl">21</span>, <span class="fl">22</span>, <span class="fl">28</span>, <span class="fl">33</span>,</span>
+<span>       <span class="fl">29</span>, <span class="fl">23</span>, <span class="fl">22</span>, <span class="fl">26</span>, <span class="fl">21</span>, <span class="fl">27</span>, <span class="fl">29</span>, <span class="fl">28</span><span class="op">)</span></span>
+<span><span class="co">#Edad</span></span>
+<span><span class="va">Edad_df</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Edad</span><span class="op">)</span></span>
+<span><span class="va">Edad_df</span></span></code></pre></div>
+<pre><code>##    Edad
+## 1    23
+## 2    27
+## 3    33
+## 4    23
+## 5    21
+## 6    25
+## 7    30
+## 8    27
+## 9    26
+## 10   23
+## 11   21
+## 12   28
+## 13   33
+## 14   35
+## 15   27
+## 16   15
+## 17   21
+## 18   22
+## 19   28
+## 20   33
+## 21   29
+## 22   23
+## 23   22
+## 24   26
+## 25   21
+## 26   27
+## 27   29
+## 28   28</code></pre>
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">Edad</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 15 35</code></pre>
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">Edad_df</span><span class="op">$</span><span class="va">Edad</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 15 35</code></pre>
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Edad_df</span><span class="op">$</span><span class="va">Edad</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 25.92857</code></pre>
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">Edad_df</span><span class="op">$</span><span class="va">Edad</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 26.5</code></pre>
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mode.html">mode</a></span><span class="op">(</span><span class="va">Edad</span><span class="op">)</span> <span class="co"># para correr "mode" necesita correr la función mode arriba</span></span></code></pre></div>
+<pre><code>## [1] 23</code></pre>
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">Edad</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 21.03175</code></pre>
+<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Edad_papa</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">25</span>, <span class="fl">29</span>, <span class="fl">35</span>, <span class="fl">25</span>, <span class="fl">25</span>, <span class="fl">25</span>, <span class="fl">30</span>, <span class="fl">29</span>, <span class="fl">31</span>, <span class="fl">28</span>,</span>
+<span>            <span class="fl">26</span>, <span class="fl">29</span>, <span class="fl">31</span>, <span class="fl">36</span>, <span class="fl">27</span>, <span class="fl">21</span>, <span class="fl">21</span>, <span class="fl">22</span>, <span class="fl">48</span>, <span class="fl">15</span>, </span>
+<span>            <span class="fl">62</span>, <span class="fl">21</span>, <span class="fl">24</span>, <span class="fl">32</span>, <span class="fl">25</span>, <span class="fl">26</span>, <span class="fl">28</span>, <span class="fl">33</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Edad_papa_df</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Edad_papa</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Edad_papa_df</span><span class="op">$</span><span class="va">Edad_papa</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 28.89286</code></pre>
+<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/median.html">median</a></span><span class="op">(</span><span class="va">Edad_papa_df</span><span class="op">$</span><span class="va">Edad_papa</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 27.5</code></pre>
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mode.html">mode</a></span><span class="op">(</span><span class="va">Edad_papa_df</span><span class="op">$</span><span class="va">Edad_papa</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 25</code></pre>
+<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">Edad_papa_df</span><span class="op">$</span><span class="va">Edad_papa</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 15 62</code></pre>
+<div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">Edad_papa_df</span><span class="op">$</span><span class="va">Edad_papa</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 79.06217</code></pre>
+<div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Dist_V</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">14</span>, <span class="fl">71</span>, <span class="fl">16</span>, <span class="fl">43</span>, <span class="fl">32</span>, <span class="fl">17.1</span>, <span class="fl">11</span>, <span class="fl">53</span>, <span class="fl">16.2</span>, <span class="fl">47</span>, <span class="fl">18.2</span>, <span class="fl">39</span>, <span class="fl">9</span>, <span class="fl">16.2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Dist_V</span><span class="op">)</span> <span class="co"># para poner los datos un un data frame</span></span>
+<span></span>
+<span><span class="va">df</span></span></code></pre></div>
+<pre><code>##    Dist_V
+## 1    14.0
+## 2    71.0
+## 3    16.0
+## 4    43.0
+## 5    32.0
+## 6    17.1
+## 7    11.0
+## 8    53.0
+## 9    16.2
+## 10   47.0
+## 11   18.2
+## 12   39.0
+## 13    9.0
+## 14   16.2</code></pre>
+<p>Calcular la varianza</p>
+<div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">Dist_V</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 359.3963</code></pre>
+<p>Desviación estándar</p>
+<div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">Dist_V</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 18.95775</code></pre>
+<p>Error estándar</p>
+<div class="sourceCode" id="cb127"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">error_e</span><span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">Dist_V</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">Dist_V</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">error_e</span></span></code></pre></div>
+<pre><code>## [1] 5.066672</code></pre>
+<p>95% de la distribución</p>
+<div class="sourceCode" id="cb129"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Limite_inferior_a</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">Dist_V</span><span class="op">)</span><span class="op">-</span><span class="op">(</span><span class="va">error_e</span><span class="op">*</span><span class="fl">1.96</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Limite_superior_a</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">Dist_V</span><span class="op">)</span><span class="op">+</span><span class="op">(</span><span class="va">error_e</span><span class="op">*</span><span class="fl">1.96</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">Limite_inferior_a</span></span></code></pre></div>
+<pre><code>## [1] 18.83361</code></pre>
+<div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Limite_superior_a</span></span></code></pre></div>
+<pre><code>## [1] 38.69496</code></pre>
+<hr>
+</div>
+</div>
+<div id="la-varianza" class="section level2" number="7.6">
+<h2>
+<span class="header-section-number">7.6</span> La varianza<a class="anchor" aria-label="anchor" href="#la-varianza"><i class="fas fa-link"></i></a>
+</h2>
+<div class="definicion">
+<p>La <strong>varianza</strong> (<span class="math inline">\(s^2\)</span>) es el promedio de las diferencias al cuadrado entre cada valor y la media (dividido entre <span class="math inline">\(n-1\)</span>). La <strong>desviación estándar</strong> (<span class="math inline">\(s\)</span>) es su raíz cuadrada, y tiene las mismas unidades que los datos.</p>
+</div>
+<p>Los pasos para calcular la varianza son los siguientes</p>
+<ul>
+<li>tener un conjunto de datos, aquí lo llamamos <strong>Data</strong>
+</li>
+<li>convertir esta lista en un data frame</li>
+<li>Calcular el promedio de los datos</li>
+<li>restar el promedio a cada valor y elevar la diferencia al cuadrado</li>
+<li>sumar esos cuadrados y dividir entre <strong>n-1</strong>, donde <strong>n</strong> es la cantidad de datos</li>
+<li>el numerador se llama la <strong>suma de los cuadrados</strong> = SS</li>
+</ul>
+<p><span class="math display">\[{ s }^{ 2 }=\frac { \sum { { ({ x }_{ i }-\bar { x }  })^{ 2 } }  }{ n-1 }=\frac{SS}{n-1}\]</span></p>
+<div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="va">Data</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span><span class="op">)</span></span>
+<span><span class="va">Data_df</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Data</span><span class="op">)</span></span>
+<span><span class="va">Data_df</span></span></code></pre></div>
+<pre><code>##   Data
+## 1    1
+## 2    2
+## 3    3
+## 4    4
+## 5    5
+## 6    6</code></pre>
+<div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Data_df</span><span class="op">$</span><span class="va">mean_Data</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Data</span><span class="op">)</span>   <span class="co"># Aqui se añade el promedio a cada fila</span></span>
+<span><span class="va">Data_df</span></span></code></pre></div>
+<pre><code>##   Data mean_Data
+## 1    1       3.5
+## 2    2       3.5
+## 3    3       3.5
+## 4    4       3.5
+## 5    5       3.5
+## 6    6       3.5</code></pre>
+<div class="sourceCode" id="cb137"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Data_df</span><span class="op">$</span><span class="va">Diff</span><span class="op">=</span><span class="va">Data_df</span><span class="op">$</span><span class="va">Data</span><span class="op">-</span><span class="va">Data_df</span><span class="op">$</span><span class="va">mean_Data</span> </span>
+<span>          <span class="co"># Calcular la diferencia entre el promedio y el valor x</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Data_df</span><span class="op">$</span><span class="va">Diff</span><span class="op">)</span> <span class="co"># si las diferencias no se elevan al cuadrado, la suma será cero.</span></span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb139"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Data_df</span><span class="op">$</span><span class="va">SS</span><span class="op">=</span><span class="op">(</span><span class="va">Data_df</span><span class="op">$</span><span class="va">Data</span><span class="op">-</span><span class="va">Data_df</span><span class="op">$</span><span class="va">mean_Data</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span> <span class="co"># SS para la suma de los cuadrados </span></span>
+<span><span class="va">Data_df</span></span></code></pre></div>
+<pre><code>##   Data mean_Data Diff   SS
+## 1    1       3.5 -2.5 6.25
+## 2    2       3.5 -1.5 2.25
+## 3    3       3.5 -0.5 0.25
+## 4    4       3.5  0.5 0.25
+## 5    5       3.5  1.5 2.25
+## 6    6       3.5  2.5 6.25</code></pre>
+<div class="sourceCode" id="cb141"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Data_df</span><span class="op">$</span><span class="va">SS</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 17.5</code></pre>
+<div id="este-indice-se-llama-la-desviación-del-promedio-que-es-la-suma-de-los-cuadrados" class="section level3" number="7.6.1">
+<h3>
+<span class="header-section-number">7.6.1</span> Este indice se llama la desviación del promedio que es la suma de los cuadrados<a class="anchor" aria-label="anchor" href="#este-indice-se-llama-la-desviaci%C3%B3n-del-promedio-que-es-la-suma-de-los-cuadrados"><i class="fas fa-link"></i></a>
+</h3>
+<hr>
+</div>
+</div>
+<div id="calcular-la-varianza-con-var" class="section level2" number="7.7">
+<h2>
+<span class="header-section-number">7.7</span> Calcular la varianza con <strong>var()</strong><a class="anchor" aria-label="anchor" href="#calcular-la-varianza-con-var"><i class="fas fa-link"></i></a>
+</h2>
+<p>Ahora la manera fácil de hacer los análisis, usar la función <strong>var</strong>, y no hay que hacer ninguno de los pasos anteriores. Pero es importante que sepa como es el procedimiento de calcular la varianza. Nota que la varianza es un índice de la diferencia entre el promedio y cada valor. Es importante elevar al cuadrado las diferencias; de lo contrario, la suma sería cero. La varianza es más informativa cuando los datos provienen de una distribución aproximadamente normal y no están muy sesgados.</p>
+<div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">Data</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 3.5</code></pre>
+<hr>
+</div>
+<div id="la-desviación-estándar" class="section level2" number="7.8">
+<h2>
+<span class="header-section-number">7.8</span> La desviación estándar<a class="anchor" aria-label="anchor" href="#la-desviaci%C3%B3n-est%C3%A1ndar"><i class="fas fa-link"></i></a>
+</h2>
+<p>La varianza es un índice que no está en la misma unidad que los valores recolectados; por ejemplo, si se recolectan los datos en centímetros, la varianza está en centímetros cuadrados. Por eso no siempre es la mejor para describir la dispersión. Para resolver esto, sacamos la raíz cuadrada de la varianza. La desviación estándar se usa para describir la dispersión; en otras palabras, cuán diferentes son los datos entre sí. Es más informativa cuando los datos provienen de una distribución aproximadamente normal y no están muy sesgados.</p>
+<p><span class="math display">\[{ s }=\sqrt { \frac { \sum { { ({ x }_{ i }-\bar { x }  })^{ 2 } }  }{ n-1 }  }\]</span>
+o más sencillo</p>
+<p><span class="math display">\[s=\sqrt{s^2}\]</span></p>
+<p>la función <strong>sd</strong>, “standard deviation” es sumamente fácil de calcular en R.</p>
+<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Data_df</span><span class="op">$</span><span class="va">Data</span><span class="op">)</span>  <span class="co"># deviación estandard</span></span></code></pre></div>
+<pre><code>## [1] 1.870829</code></pre>
+<hr>
+</div>
+<div id="el-rango-intercuartil" class="section level2" number="7.9">
+<h2>
+<span class="header-section-number">7.9</span> El rango intercuartil<a class="anchor" aria-label="anchor" href="#el-rango-intercuartil"><i class="fas fa-link"></i></a>
+</h2>
+<p>La función básica es <strong>quantile</strong>; si la dejamos sin más instrucciones, calcula las siguientes probabilidades: 0%, 25%, 50% (mediana), 75% y 100%. Pero si uno quiere los valores que se encuentran en una posición específica hay que usar <strong>type = 1</strong>, como se ve en el segundo ejemplo. Hay 9 tipos de cuantiles con esta función, definidos en RStudio. Escribe <strong>?quantile</strong> en la consola o en el área de <strong>help</strong> para ver las otras alternativas.</p>
+<div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">Data</span><span class="op">)</span> <span class="co"># la función básica (0%, 25%, 50% (mediana), 75%, 100%)</span></span></code></pre></div>
+<pre><code>##   0%  25%  50%  75% 100% 
+## 1.00 2.25 3.50 4.75 6.00</code></pre>
+<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Seleccionar los cuantiles específicos.</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">Data</span>, probs <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.025</span>, <span class="fl">0.25</span>, <span class="fl">0.50</span>,<span class="fl">.75</span>, <span class="fl">.975</span><span class="op">)</span><span class="op">)</span>   </span></code></pre></div>
+<pre><code>##  2.5%   25%   50%   75% 97.5% 
+## 1.125 2.250 3.500 4.750 5.875</code></pre>
+<p>Para explicar estos conceptos mejor visualizamos los datos</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>i</th>
+<th align="right">x[i]</th>
+<th align="center">Mediana</th>
+<th align="center">Cuartiles</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="right">03</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="right">19</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="right">27</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td align="right">33</td>
+<td align="center"></td>
+<td align="center">Q1=33</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td align="right">52</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td align="right">60</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td align="right">77</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td align="right">87</td>
+<td align="center">Q2=87</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td align="right">99</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td align="right">101</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td align="right">122</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td align="right">137</td>
+<td align="center"></td>
+<td align="center">Q3=137</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td align="right">140</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td align="right">142</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td align="right">150</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table></div>
+<p>Ahora usamos la función <strong>quantile</strong> con el type=1 de calcular los cuartiles y ver si tenemos los mismos resultados.</p>
+<div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">19</span>,<span class="fl">27</span>,<span class="fl">33</span>,<span class="fl">52</span>,<span class="fl">60</span>,<span class="fl">77</span>,<span class="fl">87</span>,<span class="fl">99</span>,<span class="fl">101</span>,<span class="fl">122</span>,<span class="fl">137</span>,<span class="fl">140</span>,<span class="fl">142</span>,<span class="fl">150</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">dat</span>, type <span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##   0%  25%  50%  75% 100% 
+##    3   33   87  137  150</code></pre>
+<div class="sourceCode" id="cb153"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 49.2145</code></pre>
+<hr>
+</div>
+<div id="el-error-estándar" class="section level2" number="7.10">
+<h2>
+<span class="header-section-number">7.10</span> El error estándar<a class="anchor" aria-label="anchor" href="#el-error-est%C3%A1ndar"><i class="fas fa-link"></i></a>
+</h2>
+<p>El término correcto es <em>error estándar de la media</em>, pero típicamente se acorta a <em>error estándar</em>. El error estándar describe la posible dispersión del <strong>promedio</strong>; en otras palabras, cuán confiados estamos en el estimado del promedio. Cuanto más grande es el error estándar, menos confiados estamos en el promedio.</p>
+<div class="nota">
+<p>No confundas la <strong>desviación estándar</strong> con el <strong>error estándar</strong>. La desviación estándar describe cuánto varían <strong>los datos</strong> entre sí. El error estándar describe cuánto variaría <strong>el promedio</strong> si repitiéramos el muestreo: <span class="math inline">\(ES = s/\sqrt{n}\)</span>. Por eso el error estándar siempre es menor que la desviación estándar y disminuye al aumentar <span class="math inline">\(n\)</span>.</p>
+</div>
+<p>La formula de error estándar es la siguiente usando la desviación estándar</p>
+<p><span class="math display">\[s_{\overline{x}}=\frac{s}{\sqrt{n}}\]</span></p>
+<p>o usando la varianza, donde la <strong>n</strong> es la cantidad de datos</p>
+<p><span class="math display">\[s_{\overline{x}}=\sqrt{\frac{s^2}{n}}\]</span></p>
+<p>Ahora usamos los datos mostrados al principio del módulo. Calculamos el error estándar de ambas distribuciones (es = error estándar). No hay una función en R base para el error estándar, así que creamos la fórmula. Vemos que cuando hay más dispersión, el error estándar es más grande.</p>
+<div class="sourceCode" id="cb155"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">dfa</span><span class="op">$</span><span class="va">a</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 1000</code></pre>
+<div class="sourceCode" id="cb157"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">es_a</span><span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">dfa</span><span class="op">$</span><span class="va">a</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">dfa</span><span class="op">$</span><span class="va">a</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">es_b</span><span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">dfb</span><span class="op">$</span><span class="va">b</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">dfb</span><span class="op">$</span><span class="va">b</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">es_a</span></span></code></pre></div>
+<pre><code>## [1] 0.312044</code></pre>
+<div class="sourceCode" id="cb159"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">es_b</span></span></code></pre></div>
+<pre><code>## [1] 2.263016</code></pre>
+<hr>
+</div>
+<div id="el-intervalo-de-confianza-de-95-del-promedio" class="section level2" number="7.11">
+<h2>
+<span class="header-section-number">7.11</span> El intervalo de confianza de 95% del promedio<a class="anchor" aria-label="anchor" href="#el-intervalo-de-confianza-de-95-del-promedio"><i class="fas fa-link"></i></a>
+</h2>
+<p>Ya que hemos calculado el error estándar podemos calcular la dispersión de los promedios. Esto quiere decir que, si repitiéramos el estudio muchas veces, el 95% de los intervalos calculados así contendrían el verdadero promedio de la población. Uno calcula los límites usando las siguientes fórmulas.</p>
+<div class="interpretacion">
+<p>Un intervalo de confianza del 95% <strong>no</strong> significa que haya 95% de probabilidad de que el verdadero promedio esté en <em>este</em> intervalo concreto. Significa que, si repitiéramos el estudio muchas veces, aproximadamente el 95% de los intervalos así construidos contendrían el verdadero promedio de la población.</p>
+</div>
+<p><span class="math display">\[\text{Límite 95\% superior} = \overline{x} + \left(ES \cdot 1.96\right)\]</span></p>
+<p><span class="math display">\[\text{Límite 95\% inferior} = \overline{x} - \left(ES \cdot 1.96\right)\]</span></p>
+<div class="sourceCode" id="cb161"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Limite_inferior_a</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">dfa</span><span class="op">$</span><span class="va">a</span><span class="op">)</span><span class="op">-</span><span class="op">(</span><span class="va">es_a</span><span class="op">*</span><span class="fl">1.96</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Limite_superior_a</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">dfa</span><span class="op">$</span><span class="va">a</span><span class="op">)</span><span class="op">+</span><span class="op">(</span><span class="va">es_a</span><span class="op">*</span><span class="fl">1.96</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Limite_inferior_a</span> <span class="co"># limite inferior 95%</span></span></code></pre></div>
+<pre><code>## [1] 99.42551</code></pre>
+<div class="sourceCode" id="cb163"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">dfa</span><span class="op">$</span><span class="va">a</span><span class="op">)</span>   <span class="co"># El promedio</span></span></code></pre></div>
+<pre><code>## [1] 100.0371</code></pre>
+<div class="sourceCode" id="cb165"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Limite_superior_a</span> <span class="co"># el limite superior 95%</span></span></code></pre></div>
+<pre><code>## [1] 100.6487</code></pre>
+<div class="sourceCode" id="cb167"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Limite_inferior_b</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">dfb</span><span class="op">$</span><span class="va">b</span><span class="op">)</span><span class="op">-</span><span class="op">(</span><span class="va">es_b</span><span class="op">*</span><span class="fl">1.96</span><span class="op">)</span></span>
+<span><span class="va">Limite_superior_b</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">dfb</span><span class="op">$</span><span class="va">b</span><span class="op">)</span><span class="op">+</span><span class="op">(</span><span class="va">es_b</span><span class="op">*</span><span class="fl">1.96</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">mean_b</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">dfb</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span>
+<span><span class="va">Limite_inferior_b</span></span></code></pre></div>
+<pre><code>## [1] 95.22752</code></pre>
+<div class="sourceCode" id="cb169"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">dfb</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 99.66303</code></pre>
+<div class="sourceCode" id="cb171"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Limite_superior_b</span></span></code></pre></div>
+<pre><code>## [1] 104.0985</code></pre>
+<p>Visualizando el intervalos de confianza del promedio. Lo que uno observa es que el promedio puede quedar en lugares diferentes porque el conjunto de datos fue más pequeño en el segundo gráfico. Además vemos que el intervalo de 95% de confianza del promedio en el segundo es más amplio.</p>
+<div class="inline-figure"><img src="Graficos/CI_a1.png" alt="" width="60%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb173"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">CI_b</span><span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dfb</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"blue"</span>, colour<span class="op">=</span><span class="st">"white"</span>, alpha<span class="op">=</span><span class="fl">.5</span>, binwidth <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span><span class="va">mean_b</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="va">Limite_inferior_b</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"black"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="va">Limite_superior_b</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"black"</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"Graficos/CI_b.png"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="Graficos/CI_b.png" alt="" width="60%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb174"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#library(easyGgplot2)</span></span>
+<span><span class="co">#ggplot2.multiplot(CI_b.png,CI_b.png, cols=2)</span></span></code></pre></div>
+<hr>
+</div>
+<div id="el-intervalo-de-confianza-de-los-datos" class="section level2" number="7.12">
+<h2>
+<span class="header-section-number">7.12</span> El intervalo de confianza de los datos<a class="anchor" aria-label="anchor" href="#el-intervalo-de-confianza-de-los-datos"><i class="fas fa-link"></i></a>
+</h2>
+<p>Para tener una idea de la distribución de los datos y de cuál es el porcentaje de valores incluido (asumiendo una distribución normal), podemos crear un gráfico que muestra el porcentaje incluido según la desviación estándar. Nota que aquí no se trata de la dispersión del promedio, sino de la dispersión de los datos en la población.</p>
+<hr>
+</div>
+<div id="rangos-incluidos-en-intervalos-de-confianza" class="section level2" number="7.13">
+<h2>
+<span class="header-section-number">7.13</span> Rangos incluidos en intervalos de confianza<a class="anchor" aria-label="anchor" href="#rangos-incluidos-en-intervalos-de-confianza"><i class="fas fa-link"></i></a>
+</h2>
+<p>Calculamos el promedio y la desviación estándar de los datos; lo haremos por género. El rango promedio ± 1 sd incluye 68.2% de los datos, promedio ± 2 sd incluye 95.4% de los datos,</p>
+<div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="va"><a href="https://rapporter.github.io/pander/">pander</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/pander/man/panderOptions.html">panderOptions</a></span><span class="op">(</span><span class="st">'table.split.table'</span>, <span class="cn">Inf</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/pander/man/set.caption.html">set.caption</a></span><span class="op">(</span><span class="st">"Rangos incluidos en intervalos de confianza"</span><span class="op">)</span></span>
+<span><span class="va">my.data</span> <span class="op">&lt;-</span> <span class="st">"</span></span>
+<span><span class="st">| sd  | rango incluido |</span></span>
+<span><span class="st">| 0  | el promedio    | </span></span>
+<span><span class="st">| ±1 |  68.2% |</span></span>
+<span><span class="st">| ±2 |  95.4% |</span></span>
+<span><span class="st">| ±3 | 99.7% |</span></span>
+<span><span class="st">| ±4 | 99.99% |"</span></span>
+<span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.delim</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/textconnections.html">textConnection</a></span><span class="op">(</span><span class="va">my.data</span><span class="op">)</span>,header<span class="op">=</span><span class="cn">FALSE</span>,sep<span class="op">=</span><span class="st">"|"</span>,strip.white<span class="op">=</span><span class="cn">TRUE</span>,stringsAsFactors<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/unname.html">unname</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">as.list</a></span><span class="op">(</span><span class="va">df</span><span class="op">[</span><span class="fl">1</span>,<span class="op">]</span><span class="op">)</span><span class="op">)</span> <span class="co"># put headers on</span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df</span><span class="op">[</span><span class="op">-</span><span class="fl">1</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">1</span>,<span class="op">-</span><span class="fl">4</span><span class="op">)</span><span class="op">]</span> <span class="co"># remove first row</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/row.names.html">row.names</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span><span class="op">&lt;-</span><span class="cn">NULL</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/pander/man/pander.html">pander</a></span><span class="op">(</span><span class="va">df</span>, style <span class="op">=</span> <span class="st">'rmarkdown'</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<caption>Rangos incluidos en intervalos de confianza</caption>
+<thead><tr class="header">
+<th align="center">sd</th>
+<th align="center">rango incluido</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="center">0</td>
+<td align="center">el promedio</td>
+</tr>
+<tr class="even">
+<td align="center">±1</td>
+<td align="center">68.2%</td>
+</tr>
+<tr class="odd">
+<td align="center">±2</td>
+<td align="center">95.4%</td>
+</tr>
+<tr class="even">
+<td align="center">±3</td>
+<td align="center">99.7%</td>
+</tr>
+<tr class="odd">
+<td align="center">±4</td>
+<td align="center">99.99%</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+</div>
+<div id="ejemplo-del-intervalo-de-confianza" class="section level2" number="7.14">
+<h2>
+<span class="header-section-number">7.14</span> Ejemplo del intervalo de confianza<a class="anchor" aria-label="anchor" href="#ejemplo-del-intervalo-de-confianza"><i class="fas fa-link"></i></a>
+</h2>
+<div id="el-intervalo-de-confianza-del-colesterol-en-los-iraníes" class="section level3" number="7.14.1">
+<h3>
+<span class="header-section-number">7.14.1</span> El intervalo de confianza del colesterol en los iraníes<a class="anchor" aria-label="anchor" href="#el-intervalo-de-confianza-del-colesterol-en-los-iran%C3%ADes"><i class="fas fa-link"></i></a>
+</h3>
+<p>Comenzamos con evaluar el intervalo de confianza de los datos con datos teóricos. Por ejemplo, el nivel de colesterol en el plasma varía en los humanos. En el siguiente artículo <em>Plasma total cholesterol level and some related factors in northern Iranian people</em>. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3783780/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3783780/</a></p>
+<p>Usamos los datos para las mujeres con un promedio de 196.7 y una desviación estándar de 39.11. Con estos datos asumimos que provienen de una distribución normal y que representan a las mujeres del resto del mundo.</p>
+<div class="sourceCode" id="cb176"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Creamos un conjunto de datos para los análisis</span></span>
+<span></span>
+<span><span class="va">Col</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">200000</span>, <span class="fl">196.7</span>, <span class="fl">39.11</span><span class="op">)</span></span>
+<span><span class="va">Col</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Col</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">promCol</span><span class="op">=</span><span class="va">Col</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>Mean<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Col</span><span class="op">)</span><span class="op">)</span></span>
+<span>  </span>
+<span><span class="va">sdCol</span><span class="op">=</span><span class="va">Col</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>sd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Col</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<hr>
+<p>Visualizar los datos: ¿Conoce su nivel de colesterol total? ¿Dónde se encuentra en esta distribución? ¿Está dentro del 68%? Nota que la suma de todos los porcentajes es igual a 100%.</p>
+<div class="sourceCode" id="cb177"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">grid</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gtable.r-lib.org">gtable</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">lims</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">28</span>, <span class="fl">350</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">breaks.major2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">79</span>, <span class="fl">118</span>, <span class="fl">157</span>, </span>
+<span>                 <span class="fl">197</span>, <span class="fl">235</span>, <span class="fl">274</span>, <span class="fl">314</span><span class="op">)</span></span>
+<span><span class="va">breaks.minor2</span><span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">79</span>, <span class="fl">118</span>, <span class="fl">157</span>,<span class="fl">197</span>, </span>
+<span>                <span class="fl">235</span>, <span class="fl">274</span>, <span class="fl">314</span>,<span class="fl">379</span><span class="op">)</span></span>
+<span><span class="va">breaks.comb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">breaks.major2</span>, <span class="va">breaks.minor2</span><span class="op">-</span><span class="fl">1.0E-6</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">labels.comb</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">79</span>, <span class="st">"\n-3sd"</span>, <span class="fl">118</span>, <span class="st">"\n-2sd"</span>, <span class="fl">157</span>, <span class="st">"\n-1sd"</span>, <span class="fl">197</span>, <span class="st">"\npromedio"</span>,</span>
+<span>                 <span class="fl">235</span>,  <span class="st">"\n+1sd"</span>,<span class="fl">274</span>, <span class="st">"\n+2sd"</span>, <span class="fl">314</span>,<span class="st">"\n+3sd"</span>, <span class="fl">379</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb178"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Colesterol_Inter</span><span class="op">=</span><span class="va">Col</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Col</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"blue"</span>, colour<span class="op">=</span><span class="st">"white"</span>,alpha<span class="op">=</span><span class="fl">.5</span>, binwidth <span class="op">=</span> <span class="fl">5</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promCol</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"black"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promCol</span><span class="op">-</span><span class="va">sdCol</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promCol</span><span class="op">+</span><span class="va">sdCol</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span><span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promCol</span><span class="op">-</span><span class="fl">2</span><span class="op">*</span><span class="va">sdCol</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promCol</span><span class="op">+</span><span class="fl">2</span><span class="op">*</span><span class="va">sdCol</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span><span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promCol</span><span class="op">-</span><span class="fl">3</span><span class="op">*</span><span class="va">sdCol</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"orange"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promCol</span><span class="op">+</span><span class="fl">3</span><span class="op">*</span><span class="va">sdCol</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"orange"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>expand<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span><span class="op">)</span>, limit<span class="op">=</span><span class="va">lims</span>, </span>
+<span>                                minor_breaks<span class="op">=</span><span class="va">breaks.minor2</span>, </span>
+<span>                                breaks<span class="op">=</span><span class="va">breaks.comb</span>,</span>
+<span>                                labels<span class="op">=</span><span class="va">labels.comb</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Nivel de colesterol"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x<span class="op">=</span><span class="fl">180</span>, y <span class="op">=</span> <span class="fl">10000</span>, label<span class="op">=</span><span class="st">"34.1%"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x<span class="op">=</span><span class="fl">210</span>, y <span class="op">=</span> <span class="fl">10000</span>, label<span class="op">=</span><span class="st">"34.1%"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x<span class="op">=</span><span class="fl">140</span>, y <span class="op">=</span> <span class="fl">10000</span>, label<span class="op">=</span><span class="st">"13.6%"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x<span class="op">=</span><span class="fl">250</span>, y <span class="op">=</span> <span class="fl">10000</span>, label<span class="op">=</span><span class="st">"13.6%"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x<span class="op">=</span><span class="fl">90</span>, y <span class="op">=</span> <span class="fl">10000</span>, label<span class="op">=</span><span class="st">"2.1%"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x<span class="op">=</span><span class="fl">295</span>, y <span class="op">=</span> <span class="fl">10000</span>, label<span class="op">=</span><span class="st">"2.1%"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x<span class="op">=</span><span class="fl">70</span>, y <span class="op">=</span> <span class="fl">10000</span>, label<span class="op">=</span><span class="st">"0.1%"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate</a></span><span class="op">(</span><span class="st">"text"</span>, x<span class="op">=</span><span class="fl">330</span>, y <span class="op">=</span> <span class="fl">10000</span>, label<span class="op">=</span><span class="st">"0.1%"</span><span class="op">)</span></span>
+<span><span class="va">Colesterol_Inter</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c07-36-1.png" alt="" width="60%"></div>
+<div class="sourceCode" id="cb179"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"Graficos/Colesterol_Inter.png"</span><span class="op">)</span></span></code></pre></div>
+<hr>
+</div>
+</div>
+<div id="otro-ejemplo-de-los-intervalos-de-confianza" class="section level2" number="7.15">
+<h2>
+<span class="header-section-number">7.15</span> Otro ejemplo de los intervalos de confianza<a class="anchor" aria-label="anchor" href="#otro-ejemplo-de-los-intervalos-de-confianza"><i class="fas fa-link"></i></a>
+</h2>
+<div id="la-altura-de-los-humanos" class="section level3" number="7.15.1">
+<h3>
+<span class="header-section-number">7.15.1</span> La altura de los humanos<a class="anchor" aria-label="anchor" href="#la-altura-de-los-humanos"><i class="fas fa-link"></i></a>
+</h3>
+<p>Para evaluar el 95% de intervalo de confianza usaremos datos de la alturas de 500 adultos. Estos datos fueron descargados del siguiente sitio web. Están disponibles debajo, en la pestaña de “Los Datos”. <a href="https://www.kaggle.com/yersever/500-person-gender-height-weight-bodymassindex/data" class="uri">https://www.kaggle.com/yersever/500-person-gender-height-weight-bodymassindex/data</a></p>
+<hr>
+<div class="sourceCode" id="cb180"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span></span>
+<span><span class="va">Alturas_Humanos</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"Data_files_csv/Alturas_Humanos.csv"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">Alturas_Humanos</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div id="lazwdgmrxm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#lazwdgmrxm table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lazwdgmrxm thead, #lazwdgmrxm tbody, #lazwdgmrxm tfoot, #lazwdgmrxm tr, #lazwdgmrxm td, #lazwdgmrxm th {
+  border-style: none;
+}
+
+#lazwdgmrxm p {
+  margin: 0;
+  padding: 0;
+}
+
+#lazwdgmrxm .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#lazwdgmrxm .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lazwdgmrxm .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lazwdgmrxm .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lazwdgmrxm .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lazwdgmrxm .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lazwdgmrxm .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lazwdgmrxm .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lazwdgmrxm .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#lazwdgmrxm .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#lazwdgmrxm .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lazwdgmrxm .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lazwdgmrxm .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lazwdgmrxm .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lazwdgmrxm .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lazwdgmrxm .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#lazwdgmrxm .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#lazwdgmrxm .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#lazwdgmrxm .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lazwdgmrxm .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#lazwdgmrxm .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lazwdgmrxm .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lazwdgmrxm .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lazwdgmrxm .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lazwdgmrxm .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lazwdgmrxm .gt_left {
+  text-align: left;
+}
+
+#lazwdgmrxm .gt_center {
+  text-align: center;
+}
+
+#lazwdgmrxm .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lazwdgmrxm .gt_font_normal {
+  font-weight: normal;
+}
+
+#lazwdgmrxm .gt_font_bold {
+  font-weight: bold;
+}
+
+#lazwdgmrxm .gt_font_italic {
+  font-style: italic;
+}
+
+#lazwdgmrxm .gt_super {
+  font-size: 65%;
+}
+
+#lazwdgmrxm .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#lazwdgmrxm .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#lazwdgmrxm .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#lazwdgmrxm .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#lazwdgmrxm .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lazwdgmrxm .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lazwdgmrxm .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#lazwdgmrxm .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#lazwdgmrxm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<div class="inline-table"><table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Genero">Genero</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Altura_cm">Altura_cm</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="Peso_kg">Peso_kg</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr>
+<td headers="Genero" class="gt_row gt_left">Hombres</td>
+<td headers="Altura_cm" class="gt_row gt_right">174</td>
+<td headers="Peso_kg" class="gt_row gt_right">96</td>
+</tr>
+<tr>
+<td headers="Genero" class="gt_row gt_left">Hombres</td>
+<td headers="Altura_cm" class="gt_row gt_right">189</td>
+<td headers="Peso_kg" class="gt_row gt_right">87</td>
+</tr>
+<tr>
+<td headers="Genero" class="gt_row gt_left">Mujer</td>
+<td headers="Altura_cm" class="gt_row gt_right">185</td>
+<td headers="Peso_kg" class="gt_row gt_right">110</td>
+</tr>
+<tr>
+<td headers="Genero" class="gt_row gt_left">Mujer</td>
+<td headers="Altura_cm" class="gt_row gt_right">195</td>
+<td headers="Peso_kg" class="gt_row gt_right">104</td>
+</tr>
+<tr>
+<td headers="Genero" class="gt_row gt_left">Hombres</td>
+<td headers="Altura_cm" class="gt_row gt_right">149</td>
+<td headers="Peso_kg" class="gt_row gt_right">61</td>
+</tr>
+<tr>
+<td headers="Genero" class="gt_row gt_left">Hombres</td>
+<td headers="Altura_cm" class="gt_row gt_right">189</td>
+<td headers="Peso_kg" class="gt_row gt_right">104</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Calculamos los promedios y las desviación estándar para añadirlos al gráfico</p>
+<div class="sourceCode" id="cb181"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">Alturas_Humanos</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## # A tibble: 6 × 3
+##   Genero  Altura_cm Peso_kg
+##   &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;
+## 1 Hombres       174      96
+## 2 Hombres       189      87
+## 3 Mujer         185     110
+## 4 Mujer         195     104
+## 5 Hombres       149      61
+## 6 Hombres       189     104</code></pre>
+<div class="sourceCode" id="cb183"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">Alturas_Humanos</span><span class="op">$</span><span class="va">Genero</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 500</code></pre>
+<div class="sourceCode" id="cb185"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Parametros para las Mujeres</span></span>
+<span><span class="va">promM</span><span class="op">=</span><span class="va">Alturas_Humanos</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Genero</span>, <span class="va">Altura_cm</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Genero</span><span class="op">==</span><span class="st">"Mujer"</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>MeanM<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Altura_cm</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">promM</span> </span></code></pre></div>
+<pre><code>## # A tibble: 1 × 1
+##   MeanM
+##   &lt;dbl&gt;
+## 1  170.</code></pre>
+<div class="sourceCode" id="cb187"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sdM</span><span class="op">=</span><span class="va">Alturas_Humanos</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Genero</span>, <span class="va">Altura_cm</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Genero</span><span class="op">==</span><span class="st">"Mujer"</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>sd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Altura_cm</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">sdM</span> </span></code></pre></div>
+<pre><code>## # A tibble: 1 × 1
+##      sd
+##   &lt;dbl&gt;
+## 1  15.7</code></pre>
+<div class="sourceCode" id="cb189"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Parametros para las Hombres</span></span>
+<span><span class="va">promH</span><span class="op">=</span><span class="va">Alturas_Humanos</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Genero</span>, <span class="va">Altura_cm</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Genero</span><span class="op">==</span><span class="st">"Hombres"</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>Mean<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Altura_cm</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">sdH</span><span class="op">=</span><span class="va">Alturas_Humanos</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Genero</span>, <span class="va">Altura_cm</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Genero</span><span class="op">==</span><span class="st">"Hombres"</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>sd<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Altura_cm</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>Aquí el gráfico de la distribución de los datos con un histograma, y promedio (negro), el rango de 68% entre las barras azules y el de 95% entre las barras rojas.</p>
+<div class="sourceCode" id="cb190"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Alturas_Mujer</span><span class="op">=</span><span class="va">Alturas_Humanos</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Genero</span>, <span class="va">Altura_cm</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Genero</span><span class="op">==</span><span class="st">"Mujer"</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Altura_cm</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>fill<span class="op">=</span><span class="st">"blue"</span>, colour<span class="op">=</span><span class="st">"yellow"</span>,alpha<span class="op">=</span><span class="fl">.5</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promM</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"black"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promM</span><span class="op">-</span><span class="va">sdM</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"blue"</span>, size<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promM</span><span class="op">+</span><span class="va">sdM</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span><span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promM</span><span class="op">-</span><span class="fl">2</span><span class="op">*</span><span class="va">sdM</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">promM</span><span class="op">+</span><span class="fl">2</span><span class="op">*</span><span class="va">sdM</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"Graficos/Alturas_Mujer.jpeg"</span><span class="op">)</span> <span class="co"># .png, .tiff, etc</span></span></code></pre></div>
+<hr>
+</div>
+</div>
+<div id="ejercicios-de-práctica-para-entender-el-concepto-de-medidas-de-dispersión" class="section level2" number="7.16">
+<h2>
+<span class="header-section-number">7.16</span> Ejercicios de práctica para entender el concepto de <strong>Medidas de dispersión</strong><a class="anchor" aria-label="anchor" href="#ejercicios-de-pr%C3%A1ctica-para-entender-el-concepto-de-medidas-de-dispersi%C3%B3n"><i class="fas fa-link"></i></a>
+</h2>
+<div id="ejercicio-1-ahora-prepara-el-mismo-gráfico-para-los-hombres." class="section level3" number="7.16.1">
+<h3>
+<span class="header-section-number">7.16.1</span> Ejercicio 1: Ahora prepara el mismo gráfico para los hombres.<a class="anchor" aria-label="anchor" href="#ejercicio-1-ahora-prepara-el-mismo-gr%C3%A1fico-para-los-hombres."><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="ejercicio-2-calcula-los-siguientes-indices-de-dispersión" class="section level3" number="7.16.2">
+<h3>
+<span class="header-section-number">7.16.2</span> Ejercicio 2: Calcula los siguientes indices de dispersión<a class="anchor" aria-label="anchor" href="#ejercicio-2-calcula-los-siguientes-indices-de-dispersi%C3%B3n"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>el rango</li>
+<li>la varianza</li>
+<li>la desviación estándar</li>
+<li>el error estándar</li>
+<li>el rango intercuartil</li>
+<li>el intervalo de confianza de 95%</li>
+</ul>
+<p>La cantidad de pisos de los edificios más altos del mundo.</p>
+<p>88, 88, 110, 88, 80, 69, 102, 78, 70, 55,
+79, 85, 80, 100, 60, 90, 77, 55, 75, 55,
+54, 60, 75, 64, 105, 56, 71, 70, 65, 72</p>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="medidas-de-tendencia-central.html"><span class="header-section-number">6</span> Medidas de tendencia central</a></div>
+<div class="next"><a href="estad%C3%ADstica-descriptiva.html"><span class="header-section-number">8</span> Estadística Descriptiva</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#medidas-de-dispersi%C3%B3n"><span class="header-section-number">7</span> Medidas de dispersión</a></li>
+<li><a class="nav-link" href="#qu%C3%A9-es-la-dispersi%C3%B3n-en-estad%C3%ADstica"><span class="header-section-number">7.1</span> Qué es la dispersión en estadística</a></li>
+<li><a class="nav-link" href="#visualizando-la-dispersi%C3%B3n"><span class="header-section-number">7.2</span> Visualizando la dispersión</a></li>
+<li><a class="nav-link" href="#el-rango"><span class="header-section-number">7.3</span> El rango</a></li>
+<li><a class="nav-link" href="#m%C3%ADnimo-y-m%C3%A1ximo"><span class="header-section-number">7.4</span> Mínimo y máximo</a></li>
+<li>
+<a class="nav-link" href="#ejemplo-de-la-clase"><span class="header-section-number">7.5</span> Ejemplo de la clase</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#cu%C3%A1l-es-el-rango-de-la-edad-de-los-padres-de-los-estudiantes-cuando-nacieron-sus-hijos"><span class="header-section-number">7.5.1</span> ¿Cuál es el rango de la edad de los padres de los estudiantes cuando nacieron sus hijos?</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#la-varianza"><span class="header-section-number">7.6</span> La varianza</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#este-indice-se-llama-la-desviaci%C3%B3n-del-promedio-que-es-la-suma-de-los-cuadrados"><span class="header-section-number">7.6.1</span> Este indice se llama la desviación del promedio que es la suma de los cuadrados</a></li></ul>
+</li>
+<li><a class="nav-link" href="#calcular-la-varianza-con-var"><span class="header-section-number">7.7</span> Calcular la varianza con var()</a></li>
+<li><a class="nav-link" href="#la-desviaci%C3%B3n-est%C3%A1ndar"><span class="header-section-number">7.8</span> La desviación estándar</a></li>
+<li><a class="nav-link" href="#el-rango-intercuartil"><span class="header-section-number">7.9</span> El rango intercuartil</a></li>
+<li><a class="nav-link" href="#el-error-est%C3%A1ndar"><span class="header-section-number">7.10</span> El error estándar</a></li>
+<li><a class="nav-link" href="#el-intervalo-de-confianza-de-95-del-promedio"><span class="header-section-number">7.11</span> El intervalo de confianza de 95% del promedio</a></li>
+<li><a class="nav-link" href="#el-intervalo-de-confianza-de-los-datos"><span class="header-section-number">7.12</span> El intervalo de confianza de los datos</a></li>
+<li><a class="nav-link" href="#rangos-incluidos-en-intervalos-de-confianza"><span class="header-section-number">7.13</span> Rangos incluidos en intervalos de confianza</a></li>
+<li>
+<a class="nav-link" href="#ejemplo-del-intervalo-de-confianza"><span class="header-section-number">7.14</span> Ejemplo del intervalo de confianza</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#el-intervalo-de-confianza-del-colesterol-en-los-iran%C3%ADes"><span class="header-section-number">7.14.1</span> El intervalo de confianza del colesterol en los iraníes</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#otro-ejemplo-de-los-intervalos-de-confianza"><span class="header-section-number">7.15</span> Otro ejemplo de los intervalos de confianza</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#la-altura-de-los-humanos"><span class="header-section-number">7.15.1</span> La altura de los humanos</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#ejercicios-de-pr%C3%A1ctica-para-entender-el-concepto-de-medidas-de-dispersi%C3%B3n"><span class="header-section-number">7.16</span> Ejercicios de práctica para entender el concepto de Medidas de dispersión</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ejercicio-1-ahora-prepara-el-mismo-gr%C3%A1fico-para-los-hombres."><span class="header-section-number">7.16.1</span> Ejercicio 1: Ahora prepara el mismo gráfico para los hombres.</a></li>
+<li><a class="nav-link" href="#ejercicio-2-calcula-los-siguientes-indices-de-dispersi%C3%B3n"><span class="header-section-number">7.16.2</span> Ejercicio 2: Calcula los siguientes indices de dispersión</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/RaymondLTremblay/BioEstadistica/blob/master/07_Medidad_de_dispersi%C3%B3n.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/RaymondLTremblay/BioEstadistica/edit/master/07_Medidad_de_dispersi%C3%B3n.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BioEstadística</strong>" was written by . It was last built on 2026-08-01.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

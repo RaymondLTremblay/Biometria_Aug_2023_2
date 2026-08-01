@@ -2,7 +2,7 @@
 
 
 
-```{r, eval=TRUE, echo=FALSE}
+```{r c16-1, eval=TRUE, echo=FALSE}
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -17,21 +17,21 @@ colorize <- function(x, color) {
 
 ```
 
-Fecha de la ultima revisión
+Fecha de la última revisión
 
-```{r echo=FALSE}
+```{r c16-2, echo=FALSE}
 
 Sys.Date()
 ```
 
-```{r, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
+```{r c16-3, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
 knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
 ```
 
 
 Chunk para poder cambiar el color del texto
 
-```{r, eval=TRUE, echo=FALSE}
+```{r c16-4, eval=TRUE, echo=FALSE}
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -44,7 +44,7 @@ colorize <- function(x, color) {
 
 ### Instalar libreria si es necesario
 
-```{r install libraries}
+```{r c16-5}
 
 #install.packages("car")
 #install.packages("pastecs")
@@ -55,7 +55,7 @@ colorize <- function(x, color) {
 
 ### Activar libreria
 
-```{r activar librerias}
+```{r c16-6}
 library(tidyverse)
 library(ggplot2)
 
@@ -73,21 +73,25 @@ Análisis de varianza es un método para comparar 3 o más promedios, al
 contrario de la prueba de t que es para comparar 2 promedios solamente.
 Entonces ANOVA es una extensión de la prueba t. La hipótesis nula es Ho:
 los promedios de los grupos son iguales. ANOVA fue desarrollado por
-Ronald Fisher y es basado en evaluar la varianza total del experimento y
-comparar esta con la varianza en los grupos. Típicamente si la varianza
-explicado entre los grupos es más grande que la varianza dentro los
-grupos se rechaza la hipótesis nula. A continuación veremos como hacer
+Ronald Fisher y se basa en evaluar la varianza total del experimento y
+compararla con la varianza dentro de los grupos. Típicamente, si la varianza
+explicada entre los grupos es más grande que la varianza dentro de los
+grupos, se rechaza la hipótesis nula. A continuación veremos cómo hacer
 estos cálculos.
+
+::: {.definicion}
+**ANOVA (Análisis de Varianza).** Prueba que compara los promedios de 3 o más grupos analizando cómo se reparte la variabilidad total: la variabilidad *entre* grupos frente a la variabilidad *dentro* de los grupos. Si la variabilidad entre grupos es grande en relación con la de dentro (un valor de *F* grande), se rechaza la hipótesis nula de que todos los promedios son iguales.
+:::
 
 Primero hay que explicar porque es necesario ANOVA y no hacer múltiples
 prueba de t. Recuerda que típicamente rechazamos la hipótesis nula
-cuando el valor de p es menor de 0.05, el tipo de error I. A cada vez
-que se hace una prueba t hay 5% de error. Por consecuencia si uno hace
-múltiples pruebas t, hay una posibilidad que se recheza la hipótesis
-nula cuando se debería aceptar. Cuan grande es ese error si uno hace
-múltiples pruebas t.
+cuando el valor de p es menor de 0.05, el tipo de error I. Cada vez
+que se hace una prueba t hay 5% de error. Por consiguiente, si uno hace
+múltiples pruebas t, hay una posibilidad de que se rechace la hipótesis
+nula cuando no se debería rechazar. ¿Cuán grande es ese error si uno hace
+múltiples pruebas t?
 
-```{r anova1}
+```{r c16-7}
 library(tibble)
 Tipo_errorI=tribble(
   ~Cantidad_Grupo_k, ~C, ~"0.05", ~"0.01",
@@ -101,24 +105,28 @@ huxtable(Tipo_errorI)%>%
     theme_article(header_col = FALSE)%>%
   set_bottom_border(row = 1, col = everywhere, value = 1) %>% 
   set_caption("La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)")%>%
-  add_footnote("* C=k(k-1)/2, que es la cantidad de comparación")
+  add_footnote("* C=k(k-1)/2, que es la cantidad de comparaciones")
 ```
 
-Nota que si tienes 4 grupos tendrá que hacer 6 pruebas de t, y eso eleva
-la probabilidad de cometer un tipo de error I a 26%, mucho más alto que
+::: {.advertencia}
+Hacer muchas pruebas de *t* infla la probabilidad de cometer al menos un error de tipo I (rechazar Ho por azar). Con 4 grupos (6 comparaciones) esa probabilidad sube a ~26%, muy por encima del 5% deseado. ANOVA controla el error para el conjunto completo de comparaciones.
+:::
+
+Nota que si tienes 4 grupos tendrás que hacer 6 pruebas de t, y eso eleva
+la probabilidad de cometer un error de tipo I a 26%, mucho más alto que
 el 5% que uno quisiera. Cuando uno hace la prueba de ANOVA y selecciona
 el nivel de error de 5%, es que el conjunto de todas las pruebas tiene
 ese nivel error posible.
 
 ## Hipótesis en ANOVA
 
-La hipótesis nula en ANOVA, es que todos los grupos tienen el mismo
-promedio, o mejor dicho que no hay evidencia que los promedios sean
-distintos. Filosoficamente uno NUNCA uede decir que algo es similar es
-que uno puede decir que no hay evidencia que sean diferentes. Esto
-proviene de el punto imprtante que uno hace un muestreo de la población,
-por consecuencia siempre hay la posibilidad que los datos (el muestreo)
-NO representa la población y hay un tipo de error II (que no se rechaza
+La hipótesis nula en ANOVA es que todos los grupos tienen el mismo
+promedio, o mejor dicho, que no hay evidencia de que los promedios sean
+distintos. Filosóficamente, uno NUNCA puede decir que algo es igual; solo
+puede decir que no hay evidencia de que sean diferentes. Esto
+proviene del punto importante de que uno hace un muestreo de la población;
+por consiguiente, siempre existe la posibilidad de que los datos (el muestreo)
+NO representen la población y se cometa un error de tipo II (no rechazar
 la hipótesis nula cuando se debería rechazar).
 
 H0: $H_o:\ \mu_1=\mu_2=\mu_3=...=\mu_k$ Ha: Por lo menos uno de los
@@ -131,8 +139,8 @@ grupos no es igual a los demás.
 Ejemplo: Vamos asumir que tenemos 3 grupos, k=3 y que la hipótesis nula
 es la siguiente
 
--   Ho: G1=G2=G3, p \>= 0.05
--   Ha: Por lo menos uno de estos grupos no es igual a los demas.
+-   Ho: G1=G2=G3, p >= 0.05
+-   Ha: Por lo menos uno de estos grupos no es igual a los demás.
 
 Si encontramos un valor de p \<0.05, rechazamos la hipótesis nula y de
 una de las posibles combinaciones pudiese ser G1=G2, G1=G3, pero G2 no
@@ -143,20 +151,20 @@ es igual a G3.
 
 ## Crear un conjunto de datos
 
-Aquí observamos la cantidad de fósforo por parte de millón observado en
-la misma especie de planta cerca tres lagos de Puerto Rico . Los datos
-son ficticios es para demostrar el proceso de hacer los análisis. Se
-observa datos de plantas 3 lagos en Pueto Rico (Caraizo, DosBocas y
+Aquí observamos la cantidad de fósforo (en partes por millón) observada en
+la misma especie de planta cerca de tres lagos de Puerto Rico. Los datos
+son ficticios, para demostrar el proceso de hacer los análisis. Se
+observan datos de plantas de 3 lagos en Puerto Rico (Caraizo, DosBocas y
 Guineo).
 
 Nuestra hipótesis nula es que la cantidad de fósforo (partes por
-million) en la plantas es igual en los tres lagos.
+millón) en las plantas es igual en los tres lagos.
 
 > -   $H_o:\ \mu_C=\mu_{DB}=\mu_G$
 > -   Por lo menos en uno de estos lagos las plantas tienen una
 >     concentración de fósforo diferente
 
-```{r anova2}
+```{r c16-8}
 
 
 id<-(1:16)
@@ -174,13 +182,13 @@ fosforo
 ## Visualizar los datos
 
 Hacemos un gráfico de los datos. Calculamos el promedio de todos los
-valores de "Y" (concentración de fósforo en las plantas) y se gráfica,
-vemos que muchos de los valores de las plantas son por debajo los
-valores de la linea y muchos de los valores están por encima. Se observa
-que la concentración de fósforo en plantas que provienen de los lagos
-Caraizo y Guineo son lejos del promedio.
+valores de "Y" (concentración de fósforo en las plantas) y lo graficamos.
+Vemos que muchos de los valores de las plantas están por debajo de la
+línea y muchos otros están por encima. Se observa
+que la concentración de fósforo en las plantas que provienen de los lagos
+Caraizo y Guineo está lejos del promedio.
 
-```{r anova3}
+```{r c16-9}
 
 mean_fosforo=mean(fosforo$Cant_Fos)
 mean_fosforo
@@ -191,27 +199,27 @@ ggplot(fosforo, aes(Lagos, Cant_Fos, colour=Lagos))+
 
 ```
 
-Otra alternativa y una que ayuda a entender como se hace el cálculos es
-observar la diferencias entre el valor de la "y" y el promedio, o sea
+Otra alternativa, y una que ayuda a entender cómo se hacen los cálculos, es
+observar las diferencias entre el valor de la "y" y el promedio, o sea
 los residuales.
 `r colorize("Nota que esto se parece a la grafica de residuales de la regresión lineal", "blue")`.
 Vimos también este tipo de gráfico para la prueba de t.
 
-```{r anova4}
+```{r c16-10}
 plot(1:16, Cant_Fos, ylim=c(0, 60), ylab="y", xlab = "order", pch=21, bg="red")
 abline(h=mean(Cant_Fos), col="blue")
 for(i in 1:16) lines(c(i,i), c(mean(Cant_Fos), Cant_Fos[i]), col="green")
 
 ```
 
-Ahora vamos a separar el gráfico y ver los residuales por grupo, en otra
-palabra, cual son los residuales entre los valores y el promedio dentro
-de los mismos grupos. Se observa en este caso que hay mucho menos
-varianza entre los valores de un mismo grupo. Este es un indice que los
-lagos explica la varianza (en parte) en concentración de fósforo en las
+Ahora vamos a separar el gráfico y ver los residuales por grupo, en otras
+palabras, cuáles son los residuales entre los valores y el promedio dentro
+de cada grupo. Se observa en este caso que hay mucho menos
+varianza entre los valores de un mismo grupo. Este es un indicio de que los
+lagos explican (en parte) la varianza en la concentración de fósforo en las
 plantas.
 
-```{r anova5}
+```{r c16-11}
 
 plot(1:16, Cant_Fos, ylim=c(0, 70), ylab="y", xlab = "order", pch=21, bg="black")
 abline(h=mean(Cant_Fos[Lagos=="Caraizo"]), col="blue")
@@ -235,11 +243,11 @@ for (i in 1:length(index)){
 
 Datos donde los grupos son iguales
 
-En este ejemplo de vemos dos de los grupos donde los residuales solapan,
-este es probable que resulta que estos dos grupos (azul y rojo) no sean
+En este ejemplo vemos dos de los grupos donde los residuales se solapan;
+es probable que estos dos grupos (azul y rojo) no sean
 diferentes.
 
-```{r anova6}
+```{r c16-12}
 
 
 id<-(1:16)
@@ -254,7 +262,7 @@ fosforo2<-data.frame(id,Cant_Fos,Lagos)
 attach(fosforo2)
 ```
 
-```{r anova7}
+```{r c16-13}
 
 plot(1:16, Cant_Fos, ylim=c(0, 70), ylab="y", xlab = "order", pch=21, bg="black")
 abline(h=mean(Cant_Fos[Lagos=="Caraizo"]), col="blue")
@@ -274,23 +282,23 @@ for (i in 1:length(index)){
 
 ------------------------------------------------------------------------
 
-## Gráficar los datos
+## Graficar los datos
 
-Gráfica de los datos para observar si hay un patrón observable. Repito
+Grafica los datos para observar si hay un patrón. Repito
 este punto múltiples veces ya que en mi carrera he visto mucha gente
 haciendo análisis de datos y hacen un análisis estadístico y rechazan la
-hipótesis nula. Si habría tomado el tiempo de visualizar los datos se
-habrían dado cuenta que no era posible este resultado porque los datos
-de los grupos solapan completamente.
+hipótesis nula. Si hubieran tomado el tiempo de visualizar los datos, se
+habrían dado cuenta de que ese resultado no era posible, porque los datos
+de los grupos se solapan completamente.
 
-NOTA Aquí los tres pasos para producir un gráfico con el promedio de
-cada grupo. 1. los datos con geom\_point 2. los promedios con
-stat\_summary(fun.y = mean, geom = "point"), para calcular el promedio
-del grupo 3. Una linea que une los promedios con stat\_summary(fun.y =
-mean, geom = "line"), note la diferencia entre los dos uno usa "point"
-el otro usa "line".
+NOTA: aquí los tres pasos para producir un gráfico con el promedio de
+cada grupo: 1. los datos con `geom_point()`; 2. los promedios con
+`stat_summary(fun = mean, geom = "point")`, para calcular el promedio
+del grupo; 3. una línea que une los promedios con `stat_summary(fun =
+mean, geom = "line")`. Nota la diferencia entre los dos: uno usa "point"
+y el otro usa "line".
 
-```{r anova8}
+```{r c16-14}
 library(ggplot2)
 ggplot(fosforo, aes(x=Lagos, y=Cant_Fos, colour=Lagos))+
 geom_point()+
@@ -310,10 +318,10 @@ función "summarySE". Los pasos son identificar la variable continua (en
 este caso measurevar="Cant\_Fos") y la variable discreta que identifica
 los grupos groupvars="Lagos". Esto crea un nuevo data frame con los
 datos resumidos que incluye, el nombre de los grupos (Lagos), el tamaño
-de muestra (N), el promedio de la variable (Cant\_Fos), la desviación
-estandar (sd), el error estandar (se) y intervalo de confianza (ci).
+de muestra (N), el promedio de la variable (Cant_Fos), la desviación
+estándar (sd), el error estándar (se) y el intervalo de confianza (ci).
 
-```{r anova9}
+```{r c16-15}
 library(Rmisc)
 
 sum = summarySE(fosforo, 
@@ -329,11 +337,11 @@ sum
 ## Graficar con nuestro nuevo data frame "sum".
 
 Para calcular el 95% del intervalo de confianza del promedio se usa la
-siguiente formula $\overline{x}\ \pm2\cdot se$. Las barras representa el
-95% de donde pudiese estar el promedio si repetimos el mismo experimento
+siguiente fórmula $\overline{x}\ \pm2\cdot se$. Las barras representan el
+95% de donde pudiese estar el promedio si repitiéramos el mismo experimento
 100 veces.
 
-```{r anova10}
+```{r c16-16}
 ggplot(sum, aes(x=Lagos, 
                 y=Cant_Fos)) +
   geom_point(colour="blue")+ 
@@ -348,7 +356,7 @@ ggplot(sum, aes(x=Lagos,
 
 ## Estadística descriptiva de los Lagos
 
-```{r anova11}
+```{r c16-17}
 
 library(pastecs)
 by(fosforo$Cant_Fos, fosforo$Lagos, stat.desc)
@@ -359,62 +367,66 @@ by(fosforo$Cant_Fos, fosforo$Lagos, stat.desc)
 
 ## Los supuestos de ANOVA
 
-Hay 4 supuestos que tenemos que evaluar cuando se hace un ANOVA.
+::: {.supuestos}
+Hay 4 supuestos que tenemos que evaluar cuando se hace un ANOVA:
 
-> -   Los datos de cada grupo es una muestra al azar de la poblaciones
-> -   La característica medida es son continuas.
-> -   Igualdad de varianza: el error en la varianza en cada grupo es
->     igual
-> -   La variables continuas tienen una distribución normal.
+- Los datos de cada grupo son una muestra al azar de la población (independencia).
+- La característica medida es continua.
+- Igualdad de varianza: la varianza en cada grupo es igual (homocedasticidad).
+- La variable continua tiene una distribución aproximadamente normal dentro de cada grupo.
+:::
 
 ------------------------------------------------------------------------
 
 ## Datos al azar
 
-Este paso es uno de diseño experimental. Que los datos sean
-representativos de la poblaciones de interés, y que no sean sesgados a
-un subgrupo. Por ejemplo uno esta probando una vacuno para COVID-19 y la
-prueba evalúa solamente con gente en muy buena condición física (por
-ejemplos atletas). La selección de los participantes tiene que reflejar
+Este paso es de diseño experimental: que los datos sean
+representativos de la población de interés y que no estén sesgados hacia
+un subgrupo. Por ejemplo, si uno está probando una vacuna para COVID-19 y la
+prueba se evalúa solamente con gente en muy buena condición física (por
+ejemplo, atletas), la selección de los participantes no reflejaría
 la población a quien se estaría ofreciendo la vacuna.
 
 ------------------------------------------------------------------------
 
-## 1. Datos Continuos
+## 1. Datos continuos
 
-Los datos tienen que valores continuos, no pueden ser discretos. Por
-ejemplo, no pueden ser binarios (vivo/muerto), tampoco no pueden ser
-conteos (0,1,2,3), si hay poca variación. \*\*\* \#\# 2. Igualdad de
-varianza
+Los datos tienen que tener valores continuos, no pueden ser discretos. Por
+ejemplo, no pueden ser binarios (vivo/muerto), y tampoco pueden ser
+conteos (0,1,2,3) si hay poca variación.
 
-La cantidad de dispersión en cada grupo tiene que ser bien similar uno
-al otro. Esto lo podemos comprobar con una prueba. La hipótesis nula es
-que cada grupo tiene una varianza igual. La hipotesis alterna es que por
+***
+
+## 2. Igualdad de varianza
+
+La cantidad de dispersión en cada grupo tiene que ser bastante similar de un
+grupo a otro. Esto lo podemos comprobar con una prueba. La hipótesis nula es
+que cada grupo tiene la misma varianza. La hipótesis alterna es que por
 lo menos uno de los grupos no tiene la misma varianza.
 
 > -   $$Ho: {s}^{2}_1={s}^{2}_2={s}^{2}_3…{s}^{2}_k$$
-> -   Ha: Por lo menos uno d elos grupos no tiene la misma varianza que
->     los otros. (similar a la Ha de ANOVA)
+> -   Ha: Por lo menos uno de los grupos no tiene la misma varianza que
+>     los otros (similar a la Ha de ANOVA).
 
 ------------------------------------------------------------------------
 
-## 3. La prueba de Levene's test
+## 3. La prueba de Levene
 
 La prueba de Levene es probablemente la prueba de igualdad de varianza
-la más común aunque hay otras alternativas también. Puede encontrar
-información sobre la prueba de Levene y otras de la pruebas aquí
-<https://en.wikipedia.org/wiki/Levene%27s_test>. Para evaluar sin hay
-diferencias en la varianza entre los grupos de usa la función
-**leveneTest()**. Si el valor de p es mayor de 0.05 se acepta la
+más común, aunque hay otras alternativas también. Puedes encontrar
+información sobre la prueba de Levene y otras pruebas aquí:
+<https://en.wikipedia.org/wiki/Levene%27s_test>. Para evaluar si hay
+diferencias en la varianza entre los grupos se usa la función
+**leveneTest()**. Si el valor de p es mayor de 0.05, no se rechaza la
 hipótesis nula.
-`r colorize("Si no cumple con el supuesto de igualdad de varianza ver el modulo de Kruskal-Wallis para una alternariva como evaluar los datos", "red")`
+`r colorize("Si no se cumple el supuesto de igualdad de varianza, ver el módulo de Kruskal-Wallis para una alternativa de cómo evaluar los datos", "red")`
 
 Con los datos de la concentración de fósforo en las plantas de tres
-lagos, la prueba de Levene da un resultado de p \> 0.21, lo que indica
-que no hay evidencia que la varianza es distinta entre los grupos, por
-consecuencia se acepta la hipótesis nula.
+lagos, la prueba de Levene da un resultado de p > 0.21, lo que indica
+que no hay evidencia de que la varianza sea distinta entre los grupos; por
+consiguiente, no se rechaza la hipótesis nula.
 
-```{r anova12}
+```{r c16-18}
 
 library(car)
 leveneTest(fosforo$Cant_Fos, fosforo$Lagos)
@@ -425,16 +437,16 @@ leveneTest(fosforo$Cant_Fos, fosforo$Lagos)
 ## 4. Normalidad
 
 Tenemos que evaluar si los datos tienen una distribución normal. Como se
-ha discutido en un modulo anterior hay múltiples alternativas. Vamos a
-limitarnos a usar la prueba de qqplot. Vemos que los datos más o menos
-siguen la linea, entonces podemos usar ANOVA. En este caso tenemos pocos
-datos pero si tuviesemos más seria apropiado evaluar cada una aparte. Lo
-más sencillo seria de cambiar la primera linea del siguiente script
-**ggplot(fosforo, aes(sample = Cant\_Fos, group=Lagos))**. En este caso
-tendríamos 3 lineas.
-`r colorize("Si no cumple con el supuesto de normalidad ver el modulo de Kruskal-Wallis para una alternariva como evaluar los datos", "red")`
+ha discutido en un módulo anterior, hay múltiples alternativas. Vamos a
+limitarnos a usar el gráfico Q-Q. Vemos que los datos más o menos
+siguen la línea, entonces podemos usar ANOVA. En este caso tenemos pocos
+datos, pero si tuviésemos más sería apropiado evaluar cada grupo aparte. Lo
+más sencillo sería cambiar la primera línea del siguiente script:
+**ggplot(fosforo, aes(sample = Cant_Fos, group=Lagos))**. En este caso
+tendríamos 3 líneas.
+`r colorize("Si no se cumple el supuesto de normalidad, ver el módulo de Kruskal-Wallis para una alternativa de cómo evaluar los datos", "red")`
 
-```{r anova13}
+```{r c16-19}
 ggplot(fosforo, aes(sample = Cant_Fos)) +
   stat_qq() +
   stat_qq_line(colour="blue")+
@@ -453,18 +465,18 @@ ggplot(fosforo, aes(sample = Cant_Fos)) +
 
 ## La prueba de ANOVA
 
-Finalmente llegamos a la prueba de ANOVA, se usa la función **aov()**.
-En la primera linea vemos el resultado de comparar los tres lagos, ven
-que hay 2 grados de libertad (df=2), esto quiere decir que esta incluido
-en el analisis 3 grapos, porque el grado de libertad de calcula tomando
-la suma de la cantidad de grupos k-1, y este ejercicio tenemos 3-1=2. En
-la misma linea obsertva el valor de p, vemos que se rechaza la hipótesis
-nula (p \<0.05). Ya sabemos que por lo menos uno de los grupos no es
-igual a los demás. Pero todavía no sabemos que pares son diferentes o si
-todos. En la segunda linea se observa lo otros datos del experimento, lo
-que aquí se llama los residuales.
+Finalmente llegamos a la prueba de ANOVA; se usa la función **aov()**.
+En la primera línea vemos el resultado de comparar los tres lagos. Vemos
+que hay 2 grados de libertad (df=2), lo que quiere decir que están incluidos
+3 grupos en el análisis, porque el grado de libertad se calcula como
+la cantidad de grupos menos uno (k-1), y en este ejercicio tenemos 3-1=2. En
+la misma línea observa el valor de p: vemos que se rechaza la hipótesis
+nula (p < 0.05). Ya sabemos que por lo menos uno de los grupos no es
+igual a los demás, pero todavía no sabemos qué pares son diferentes ni si
+lo son todos. En la segunda línea se observan los otros datos del experimento,
+lo que aquí se llama los residuales.
 
-```{r anova14}
+```{r c16-20}
 LagosModel<-aov(Cant_Fos~Lagos, data = fosforo)
 
 
@@ -474,23 +486,23 @@ summary(LagosModel)
 
 ```
 
-Una alternativa para evaluar si los datos tienen una igualdad de
-varianza y normalidad es usar la función **plot()**, esta función
-presenta 4 gráficos donde vamos aquí explicar solamente las dos
-primeras. En el primer gráfico se observa una distribución de los
-residuales por grupo. Si los datos están más o menos distribuido de
-forma similar entre los grupos (que los datos de cada grupo tiene más o
+Una alternativa para evaluar si los datos cumplen con la igualdad de
+varianza y la normalidad es usar la función **plot()**. Esta función
+presenta 4 gráficos, de los cuales aquí explicaremos solamente los dos
+primeros. En el primer gráfico se observa la distribución de los
+residuales por grupo. Si los datos están más o menos distribuidos de
+forma similar entre los grupos (es decir, si cada grupo tiene más o
 menos la misma cantidad de datos negativos y positivos alrededor del
-residual cero y que esta distribución se ve similar) se suguiere que hay
+residual cero y esta distribución se ve similar), se sugiere que hay
 igualdad de varianza entre los grupos.
 
-En el segundo gráfico se observa en qqplot. Si los datos están cerca de
-la linea entrecortada se asume que tiene una distribución normal. Nota
-que hay tres datos que tienen números (5, 3, 12), estos son datos que
-posiblemente sean atípicos, y hay que evaluar si estos datos impacta el
-resultados (veremos esto más tarde, con la prueba de Cooks).
+En el segundo gráfico se observa el gráfico Q-Q. Si los datos están cerca de
+la línea entrecortada, se asume que tienen una distribución normal. Nota
+que hay tres datos que aparecen con números (5, 3, 12); estos son datos que
+posiblemente sean atípicos, y hay que evaluar si impactan el
+resultado (veremos esto más tarde, con la distancia de Cook).
 
-```{r anova15}
+```{r c16-21}
 plot(LagosModel)
 
 
@@ -498,33 +510,37 @@ plot(LagosModel)
 
 ## PRUEBA de Post-Hoc
 
-Importante este paso
+Importante: este paso
 `r colorize("se hace solamente si se rechaza la hipótesis nula de la prueba de ANOVA", "blue")`.
-Si aceptamos la hipótesis nula ya se acabo, no hay más nada que hacer y
-este paso aquí no se evalúa. Este tipo de prueba Post-Hoc se refiere a
+Si no rechazamos la hipótesis nula, ya terminamos: no hay más nada que hacer y
+este paso no se evalúa. Una prueba Post-Hoc se refiere a
 una prueba que se hace después de otra. Ya se hizo la de ANOVA y se
-rechazo y ahora queremos evaluar cual de los grupos es distinto uno al
-otro.
+rechazó, y ahora queremos evaluar cuál de los grupos es distinto de los
+otros.
 
-Hay en la literatura más de 10 pruebas que se puede utilizar después de
-un ANOVA, para tener un poco más de información pueden ir al siguiente
-website <https://www.statisticshowto.com/post-hoc/>. Aquí vamos a
-presentar solamente dos de estás. Estas dos son frecuentemente
-utilizadas en ciencias medicas por ser las primeras haber sido
-desarrolladas. Nota que el nivel de tipo de error I, es por el conjunto
-total de las pruebas hecha. Si selecciona un alfa de 0.05, entonces la
-probabilidad de cometer el error tipo I es de 5% para el total de
+En la literatura hay más de 10 pruebas que se pueden utilizar después de
+un ANOVA; para tener un poco más de información pueden ir al siguiente
+sitio web: <https://www.statisticshowto.com/post-hoc/>. Aquí vamos a
+presentar solamente dos de estas. Estas dos son frecuentemente
+utilizadas en ciencias médicas por ser de las primeras en haberse
+desarrollado. Nota que el nivel de error de tipo I es para el conjunto
+total de las pruebas hechas. Si se selecciona un alfa de 0.05, entonces la
+probabilidad de cometer el error de tipo I es de 5% para el total de
 pruebas.
 
 > -   Bonferroni test
 > -   Tukey test
 
+::: {.nota}
+Las pruebas Post-Hoc (Bonferroni, Tukey) se hacen **solo si el ANOVA rechaza la hipótesis nula**. El ANOVA dice que *al menos un* grupo difiere; las pruebas Post-Hoc identifican *cuáles* pares difieren, ajustando el error de tipo I por el número de comparaciones.
+:::
+
 ## Prueba de Bonferroni
 
-Vemos ahora el se hizo 3 pruebas, y cada una tiene un valor de p menor
-de 5%, por consecuencia cada grupo es distinto uno del otro.
+Vemos ahora que se hicieron 3 pruebas, y cada una tiene un valor de p menor
+de 5%; por consiguiente, cada grupo es distinto de los otros.
 
-```{r anova16}
+```{r c16-22}
 pairwise.t.test(fosforo$Cant_Fos, fosforo$Lagos, p.adjust.method = "bonferroni") # Nota aqui se usa los datos originales, el error de todos las pruebas se limita a 5%.  
 
 
@@ -533,13 +549,13 @@ pairwise.t.test(fosforo$Cant_Fos, fosforo$Lagos, p.adjust.method = "bonferroni")
 ## Prueba de Tukey
 
 En la prueba de Tukey vemos el resultado de las pruebas Post-Hoc. El
-resultado es lo mismo que la prueba anterior donde cada grupo es
-significativamente diferente uno del otro. En mucha ocasiones el resulto
-puede diferir. Si esto ocurre hay que evaluar bien cual es el nivel de
-confiabilidad que queremos. Algunos pruebas Post\_Hoc tienden a rechazar
-con meas frecuencia que otra.
+resultado es el mismo que el de la prueba anterior: cada grupo es
+significativamente diferente de los otros. En muchas ocasiones el resultado
+puede diferir. Si esto ocurre, hay que evaluar bien cuál es el nivel de
+confiabilidad que queremos. Algunas pruebas Post-Hoc tienden a rechazar
+con más frecuencia que otras.
 
-```{r anova17}
+```{r c16-23}
 library(multcomp)
 postHocs.1<-glht(LagosModel, linfct = mcp(Lagos = "Tukey"))  
 summary(postHocs.1)
@@ -550,7 +566,7 @@ summary(postHocs.1)
 
 Vea la sección de ejercicio
 
-```{r anova18, eval=FALSE, echo=FALSE}
+```{r c16-24, eval=FALSE, echo=FALSE}
 
 
 library(readr)
@@ -562,7 +578,7 @@ unique(Superhero$heronames)
 
 #### Rename the categories with super hero names
 
-```{r anova19, eval=FALSE,echo=FALSE}
+```{r c16-25, eval=FALSE, echo=FALSE}
 #Superhero
 Superhero$heronames<-factor(Superhero$hero, levels = c(1:4), 
      labels = c("Spiderman","Superman", "Hulk", "Ninja Turtle"))
@@ -570,7 +586,7 @@ Superhero
 names(Superhero)
 ```
 
-> -   Evaluar la distribución de los datos de respuestas (los en Y)
+> -   Evaluar la distribución de los datos de respuesta (los de Y)
 > -   Evaluar la homogeneidad de varianza
 > -   Visualizar los datos Puntos y promedios y intervalo de confianza
 > -   Hacer la prueba de ANOVA con aov()
@@ -578,18 +594,18 @@ names(Superhero)
 > -   Evaluar la gráfica de qq, para la normalidad
 > -   Hacer la prueba de post-hoc si es necesario!!!!!
 
-```{r anova20, eval=FALSE,echo=FALSE}
+```{r c16-26, eval=FALSE, echo=FALSE}
 library(ggplot2)
 line <- ggplot(Superhero, aes(heronames, injury))
 line +geom_point()+
-  stat_summary(fun.y = mean, geom = "line", size = 1, 
+  stat_summary(fun = mean, geom = "line", size = 1, 
                     aes(group=1), colour = "#FF6633")+
-  stat_summary(fun.y = mean, geom = "point", size = 3, 
+  stat_summary(fun = mean, geom = "point", size = 3, 
              aes(group=1), colour = "red")
 
 ```
 
-```{r anva21, eval=FALSE, echo=FALSE}
+```{r c16-27, eval=FALSE, echo=FALSE}
 
 library(car)
 car::leveneTest(Superhero$injury, Superhero$heronames)
@@ -597,7 +613,7 @@ car::leveneTest(Superhero$injury, Superhero$heronames)
 bartlett.test(injury~heronames, data=Superhero)
 ```
 
-```{r anova22, eval=FALSE, echo=FALSE}
+```{r c16-28, eval=FALSE, echo=FALSE}
 
 library(Rmisc)   # this is a function to create 
 #a data frame of summary data
@@ -620,7 +636,7 @@ ggplot(sum2, aes(x=heronames,
 
 ```
 
-```{r anova23, eval=FALSE, echo=FALSE}
+```{r c16-29, eval=FALSE, echo=FALSE}
 # Hacer la prueba de ANOVA con aov()
 SuperHeroModel<-aov(injury~heronames, data = Superhero)
 
@@ -628,7 +644,7 @@ summary(SuperHeroModel)
 #summary.lm(SuperHeroModel)
 ```
 
-```{r anova24, eval=FALSE, echo=FALSE}
+```{r c16-30, eval=FALSE, echo=FALSE}
 # Evaluar la figura de los residuales
 # Evaluar la grafica de qq
 plot(SuperHeroModel)
@@ -636,7 +652,7 @@ plot(SuperHeroModel)
 
 ```
 
-```{r anova25, eval=FALSE, echo=FALSE}
+```{r c16-31, eval=FALSE, echo=FALSE}
 # Hacer la prueba de post-hoc si es necesario!!!!!
 pairwise.t.test(Superhero$injury, Superhero$heronames, p.adjust.method = "bonferroni")
 

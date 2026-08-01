@@ -33,12 +33,12 @@ Este quiz es para evaluar tu comprensión de la bondad de ajuste en estadística
 | Hembra | 25        | 2            |
 | Machos | 4         | 30           |
 
-    - ¿Cual es la hipótesis nula? (2 puntos)
-    - ¿cual es la hipótesis alterna? (2 puntos)
-    - calcula los valores esperados (2 puntos)
-    - calcula el chi cuadrado (5 puntos)
-    - ¿Se rechaza o acepta la Ho? (2 puntos)
-    - Intepreta los resultados (3 puntos)
+    - ¿Cuál es la hipótesis nula? (2 puntos)
+    - ¿Cuál es la hipótesis alterna? (2 puntos)
+    - Calcula los valores esperados (2 puntos)
+    - Calcula el chi-cuadrado (5 puntos)
+    - ¿Se rechaza o no la Ho? (2 puntos)
+    - Interpreta los resultados (3 puntos)
 
 
 Pon los datos en un "chunk", y haz la prueba de bondad de ajuste en R.

@@ -1,9 +1,9 @@
-# Selecionando modelos con AKAIKE
+# Selección de Modelos con el Criterio de Akaike
 
 
 
 
-```{r, eval=TRUE, echo=FALSE}
+```{r c20-1, eval=TRUE, echo=FALSE}
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -28,25 +28,29 @@ rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bol
 
 ## Datos, hipótesis y modelos
 
-La ciencia es un proceso para aprender sobre nuestro entorno en donde múltiples ideas, de vez en cuando contradictorias, trata de explicar como el mundo funciona. Típicamente uno comienza con una idea, una expresión verbal, que se desarrolla como una hipótesis. Luego es necesario expresar esa hipótesis con una ecuación matemática o sea un modelo. El concepto de modelos en la ciencia es que explica un proceso simplificado (por ejemplo biológico) que da una apreciación sobre los factores que son responsable para el patrón observado. Por consecuencia cuan bien los datos reflejan el modelo también refleja un apoyo sobre la hipótesis.
+::: {.definicion}
+**Selección de modelos.** Enfoque que compara varias hipótesis (modelos) a la vez y las clasifica por su apoyo relativo en los datos, en lugar de rechazar una sola hipótesis nula. Se basa en el principio de **parsimonia**: entre modelos con ajuste similar, se prefiere el más sencillo. El AIC formaliza esto premiando el buen ajuste y penalizando la complejidad (el número de parámetros).
+:::
 
-Hay dos acercamiento principales para inferir. El método tradicional es determinar si la hipótesis nula puede ser rechazado basado un conjunto de datos. Rechazar la hipótesis es rechazada cuando una prueba estadística resulta en un valor por encima de un umbral, típicamente p \< 0.05. Rechazar la hipótesis nula es evidencia para muchos que la hipótesis alterna es CORRECTA. Aunque parece ser un juego de palabra, es que realmente estamos solamente diciendo que `r colorize("no hay apoyo para la hipótesis nula", "red")`. La razón es que no estamos probando si la hipótesis alterna es `r colorize("veridica", "red")`. Es importante recordar que la descripción de la hipótesis alterna (la descripción de esa) puede ser equivocada.
+La ciencia es un proceso para aprender sobre nuestro entorno, en el que múltiples ideas, a veces contradictorias, tratan de explicar cómo funciona el mundo. Típicamente uno comienza con una idea, una expresión verbal, que se desarrolla como una hipótesis. Luego es necesario expresar esa hipótesis con una ecuación matemática, o sea un modelo. El concepto de modelo en la ciencia es que explica un proceso simplificado (por ejemplo, biológico) que da una apreciación sobre los factores responsables del patrón observado. Por consiguiente, cuán bien los datos se ajustan al modelo también refleja el apoyo a la hipótesis.
 
-El acercamiento alterno, la selección de modelo ofrece una alternativa en donde uno compara múltiples hipótesis y produce su inferencia de estos resultados. La selección de modelos es basado en la teoría de verosimilitud (likelihood). Las ventajas es que el investigador no esta limitado a evaluar un solo modelo donde el umbral es uno que es arbitrario (el modelo nulo con un valor de p \<0.05). Los modelos pueden ser comparado uno con el otro y organizado por su peso (**weight** o sea el apoyo estadístico), ofreciendo una medida relativa de apoyo contra las otras hipótesis. En caso que hay modelos que tienen el mismo apoyo uno puede seleccionar los mejores modelos y calcular un modelo promedio.
+Hay dos acercamientos principales para hacer inferencia. El método tradicional consiste en determinar si la hipótesis nula puede ser rechazada con base en un conjunto de datos. La hipótesis nula se rechaza cuando una prueba estadística resulta en un valor por debajo de un umbral, típicamente p < 0.05. Para muchos, rechazar la hipótesis nula es evidencia de que la hipótesis alterna es CORRECTA. Aunque parezca un juego de palabras, en realidad solo estamos diciendo que `r colorize("no hay apoyo para la hipótesis nula", "red")`. La razón es que no estamos probando si la hipótesis alterna es `r colorize("verídica", "red")`. Es importante recordar que la descripción de la hipótesis alterna puede ser equivocada.
 
-## Como funciona la selección de modelos?
+El acercamiento alterno, la selección de modelos, ofrece una alternativa en la que uno compara múltiples hipótesis y produce su inferencia a partir de estos resultados. La selección de modelos se basa en la teoría de la verosimilitud (likelihood). La ventaja es que el investigador no está limitado a evaluar un solo modelo con un umbral arbitrario (el modelo nulo con un valor de p < 0.05). Los modelos pueden ser comparados unos con otros y organizados por su peso (**weight**, o sea el apoyo estadístico), ofreciendo una medida relativa de apoyo frente a las otras hipótesis. En caso de que haya modelos con el mismo apoyo, uno puede seleccionar los mejores modelos y calcular un modelo promedio.
 
-El acercamiento filosófico de selección de modelos es evaluar múltiples hipótesis y evaluar la evidencia que apoya estas. Por consecuencia el primer paso es articular un grupo de hipótesis razonables. Segundo es que cada hipótesis tiene que ser adaptado a los datos observados con una función matemática. El tercer paso es seleccionar un método de selección de modelos y comparar los resultados.
+## ¿Cómo funciona la selección de modelos?
+
+El acercamiento filosófico de selección de modelos es evaluar múltiples hipótesis y evaluar la evidencia que apoya estas. Por consecuencia el primer paso es articular un grupo de hipótesis razonables. Segundo, cada hipótesis tiene que ser adaptada a los datos observados con una función matemática. El tercer paso es seleccionar un método de selección de modelos y comparar los resultados.
 
 ## $R^2$
 
-El acercamiento tradicional en la literatura es el $R^2$ o el coeficiente de determinación. Que es un acercamiento sencillo de selección de modelo. Donde mayor es el valor de $R^2$ mayor es el ajuste (Fit) del modelo. Este acercamiento no toma en cuenta la complejidad de los modelos y siempre selecciona modelos más complejos. La razón es que selecciona modelos más complejos es que a añadir más variables a un modelo (por ejemplo regresión lineal múltiples), añadir otra variable explica en parte la variación aunque esta nueva variable explica muy poco, pero ya que explica un componente aumenta el $R^2$ . Por consecuencia no toma en cuenta el concepto de parsimonia, donde deberíamos seleccionar el modelos más sencillo tomando encenta el ajuste y la complejidad del modelo. Un método de selección de modelos debería tomar en cuenta la complejidad de los modelos y penalizar por modelos excesivamente complejos.
+El acercamiento tradicional en la literatura es el $R^2$, o coeficiente de determinación, que es un método sencillo de selección de modelos. Mientras mayor es el valor de $R^2$, mayor es el ajuste (fit) del modelo. Este acercamiento no toma en cuenta la complejidad de los modelos y tiende a seleccionar siempre los modelos más complejos. La razón es que, al añadir más variables a un modelo (por ejemplo, en una regresión lineal múltiple), cada variable nueva explica en parte la variación; aunque explique muy poco, como explica algo, aumenta el $R^2$. Por consiguiente, no toma en cuenta el concepto de parsimonia, según el cual deberíamos seleccionar el modelo más sencillo tomando en cuenta tanto el ajuste como la complejidad del modelo. Un buen método de selección de modelos debería tomar en cuenta la complejidad y penalizar los modelos excesivamente complejos.
 
 ### Ejemplo de Construcción de selección por $R^2$
 
-Seleccionamos los datos de modulo regresión multiples (TF5). Sobre el **Biomass Index** y comoo esta corelacionado con la edad, el nivel de colesterol y glucosa en la sangre.
+Seleccionamos los datos del módulo de regresión múltiple sobre el **Biomass Index (BMI)** y cómo está correlacionado con la edad, el nivel de colesterol y la glucosa en la sangre.
 
-```{r akaike1}
+```{r c20-2}
 
 library(readxl)
 
@@ -57,17 +61,17 @@ head(reg.multiple)
 
 ```
 
-#### Installar los siguientes paquetes si no lo tienen instalado 
-```{r}
+#### Instalar los siguientes paquetes si no los tienen instalados
+```{r c20-3}
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load("MuMIn", "formattable")
 
 ```
 
 
-Se construye un modelo con todos los parametros. Vemos que el $R^2= 0.0785$.
+Se construye un modelo con todos los parámetros. Vemos que el $R^2= 0.0785$.
 
-```{r akaike2}
+```{r c20-4}
 library(car)
 library(sjPlot)
 model <- lm(BMI ~ Age + Cholesterol + Glucose, data = reg.multiple)
@@ -77,9 +81,9 @@ tab_model(model)
 
 ------------------------------------------------------------------------
 
-Ahora evaluamos todas las posibles combinaciones de modelos. Considera la columna de $R^2$ y los valores para cada modelo. Los que se observa es que el modelos con más variables tiene un $R^2$ más alto seguido con modelos con dos variables. La pregunta principal, un modelo con cuatro variables con un $R^2=.127$ es significativamente mejor que un modelo de 2 variables con un $R^2=.1185$. Usando el método tradicional no hay mecanismos para seleccionar y evaluar cual de los modelos es el mejor tomando en cuenta la complejidad del modelo. NOTA: ***NA*** en la tabla quiere decir que esta variable no esta incluida en el modelo.
+Ahora evaluamos todas las posibles combinaciones de modelos. Considera la columna de $R^2$ y los valores para cada modelo. Lo que se observa es que el modelo con más variables tiene el $R^2$ más alto, seguido por los modelos con dos variables. La pregunta principal es: ¿un modelo con más variables y un $R^2=0.127$ es significativamente mejor que un modelo de 2 variables con un $R^2=0.1185$? Usando el método tradicional no hay un mecanismo para seleccionar y evaluar cuál de los modelos es el mejor tomando en cuenta la complejidad del modelo. NOTA: ***NA*** en la tabla quiere decir que esa variable no está incluida en el modelo.
 
-```{r akaike3, message=FALSE}
+```{r c20-5, message=FALSE}
 library(MASS)
 library(MuMIn)
 
@@ -93,7 +97,7 @@ ALL_models=dredge(model2, extra="R^2") # Evaluación de todas las combinaciones/
 ALL_models
 ```
 
-```{r akiake4, message=FALSE}
+```{r c20-6, message=FALSE}
 library(formattable)
 
 formattable(ALL_models, digits=5, format="html")
@@ -102,80 +106,88 @@ formattable(ALL_models, digits=5, format="html")
 
 ## Pruebas de modelos nulos
 
-La prueba de verosimilitud (PV) es el método más utilizado de las pruebas de hipótesis nula. La PV compara pares de modelos, cuando el la verosimilitud de un modelos más complejo es significativamente más grande que el modelo sencillo, el modelo complejo es aceptado y vise versa. Tipicamente se usa como indice el chi cuadrado $\chi^2$. En este caso al contrario del $R^2$, la selección de un modelo más complejo cuando tiene un PV más grande tiene beneficio aunque sea más complejo el modelo. La desventaja es que prueba no es independiente por consecuencia infla el error de tipo I o sea el $\alpha$. Otro punto importante es que la complejidad se añade de forma sucesiva a los modelos, por consecuencia
+La prueba de verosimilitud (PV) es uno de los métodos más utilizados en las pruebas de hipótesis nula. La PV compara pares de modelos: cuando la verosimilitud de un modelo más complejo es significativamente mayor que la del modelo sencillo, se acepta el modelo complejo, y viceversa. Típicamente se usa como índice el chi-cuadrado, $\chi^2$. En este caso, al contrario del $R^2$, seleccionar un modelo más complejo cuando tiene una verosimilitud mayor sí tiene sentido, aunque sea más complejo. La desventaja es que las pruebas no son independientes y, por consiguiente, inflan el error de tipo I (o sea, el $\alpha$). Otro punto importante es que la complejidad se añade de forma sucesiva a los modelos; por consiguiente, las comparaciones deben hacerse entre modelos anidados (jerárquicos).
 
 ------------------------------------------------------------------------
 
 Tabla de métodos comunes para selección de modelos
 
-En la siguiente tabla tenemos mencionado cinco métodos de selección de modelos. El primero que fue desarrollado fue el de **Akaike Information criterion** ( ref), por consecuencia es el más utilizado por ser el más conocido. Pero hay múltiples otros que no están mencionado aquí como el Bayes Factor y el Mallow's $C_p$. Puede encontrar más información en el siguiente enlace.
+En la siguiente tabla mencionamos cinco métodos de selección de modelos. El primero en desarrollarse fue el **Criterio de Información de Akaike (AIC)**, y es el más utilizado por ser el más conocido. Pero hay muchos otros que no se mencionan aquí, como el Factor de Bayes y el $C_p$ de Mallows. Puedes encontrar más información en el siguiente enlace:
 
 <https://en.wikipedia.org/wiki/Model_selection#Criteria>
 
-| Selección de modelos | Formula                                                                                               | Criterio de selección                                                    |
-|----------------------|----------------------------------------|------------------------------------------------------------|
-| $Verosimilitud$      | $\\-2\left\{\ln\left[L(\theta_p\ |y\right)]+\ln\left[L(\theta_{p+q}\ | y\right)]\right\}$ | Ajuste |                                                            |
-| $AIC$                | $\\AIC=-2\ln\left[L(\theta_p\ |y\right)]+2p$ | Ajuste y complejidad                                                |
-| $AIC_c$              | $\\AIC_c=-2\ln\left[L(\theta_p\ |y\right)]+2p\left(\frac{n}{n-p-1}\right)$ | Ajuste y complejidad, con corrección para tamaño de muestra pequeña |
-| $Schwartz$           | $\\SC=-2\ln\left[L(\theta_p\ |y\right)]+p\cdot\ln\left(n\right)$ | Ajuste y complejidad, tamaño de muestra                             |
-| $R_{adj}^2$          | $R_{adj}^2=1-\frac{RSS/n-p-1}{\frac{\sum_{n=i}^n\left(y_i-\overline{y}\right)^2}{n-1}}$             | Ajuste                                                     |
+| Selección de modelos | Fórmula | Criterio de selección |
+|---|---|---|
+| Verosimilitud | $-2\left\{\ln\left[L(\theta_p \mid y)\right]-\ln\left[L(\theta_{p+q} \mid y)\right]\right\}$ | Ajuste |
+| $AIC$ | $AIC=-2\ln\left[L(\theta_p \mid y)\right]+2p$ | Ajuste y complejidad |
+| $AIC_c$ | $AIC_c=-2\ln\left[L(\theta_p \mid y)\right]+2p\left(\frac{n}{n-p-1}\right)$ | Ajuste y complejidad, con corrección para tamaño de muestra pequeño |
+| $SC$ (Schwarz) | $SC=-2\ln\left[L(\theta_p \mid y)\right]+p\cdot\ln\left(n\right)$ | Ajuste, complejidad y tamaño de muestra |
+| $R_{adj}^2$ | $R_{adj}^2=1-\frac{RSS/(n-p-1)}{\frac{\sum_{i=1}^n\left(y_i-\overline{y}\right)^2}{n-1}}$ | Ajuste |
 
-\*\* Las ideas y conceptos mencionado siguen en parte Johnson and Omland 2004.
+*Las ideas y conceptos mencionados siguen en parte a Johnson y Omland (2004).*
+
+::: {.formula}
+En el AIC, $L(\theta_p \mid y)$ es la verosimilitud del modelo dados los datos, $p$ es el número de parámetros y $n$ el tamaño de muestra. El término $2p$ penaliza la complejidad. $AIC_c$ añade una corrección para muestras pequeñas y se recomienda cuando $n/p < 40$. **Menor AIC = mejor modelo.**
+:::
 
 ------------------------------------------------------------------------
 
-## Cual método es más apropriado?
+## ¿Cuál método es más apropiado?
 
-Métodos que maximizan la verosimilitud solamente tiene una limitaciones en respeto a la parsimonia del modelo. En múltiples áreas de estudio se esta moviendo a métodos que no incluye solamente la verosimilitud pero la complejidad de los modelos. En general el meetodo que más se usa es el AIC en parte porque esta fundado en el Criterio de Información de **Kullback-Leibler**, pero hay otros que prefieren por ejemplo el criterio de información de Schwarz debido que este selecciona modelos más parsimonia. Nota que en este último toma en cuenta no solamente el ajuste, la complejidad pero el tamaño de muestra. El Schwarz es conocido también como el **Bayesian Information Criterion**, BIC, aunque no tiene nada de Bayesiano en el método de análisis. Para aclarar, el BIC no usa información previa para hacer los cálculos, y se puede usar tanto con análisis tradicional como Bayesiano.
+Los métodos que maximizan solamente la verosimilitud tienen limitaciones respecto a la parsimonia del modelo. En múltiples áreas de estudio se están moviendo hacia métodos que no incluyen solamente la verosimilitud, sino también la complejidad de los modelos. En general, el método que más se usa es el AIC, en parte porque está fundado en el Criterio de Información de **Kullback-Leibler**; pero hay quienes prefieren, por ejemplo, el criterio de información de Schwarz, debido a que este selecciona modelos más parsimoniosos. Nota que este último toma en cuenta no solamente el ajuste y la complejidad, sino también el tamaño de muestra. El Schwarz es conocido también como el **Bayesian Information Criterion (BIC)**, aunque no tiene nada de bayesiano en el método de análisis. Para aclarar, el BIC no usa información previa para hacer los cálculos, y se puede usar tanto con análisis tradicional como bayesiano.
 
 ***
 
 ## Estimación de parámetros y múltiples modelos
 
-En muchos estudios el objetivo principal es estimar los parámetros para poder inferir algún proceso biológico o comportamiento humano. Por ejemplo, ¿*cual es la dosis apropiada de algún antibiótico para reducir el crecimiento de bacteria y el tiempo del tratamiento?*. Cuando hay un buen apoyo para un modelo especifico, los estimados de los parámetros de la verosimilitud pueden ser utilizados. Pero de vez en cuando hay apoyo para múltiples modelos, en otra palabra hay apoyo iguales para múltiples modelos, lo que resulta un problema seleccionar un modelo que sea **mejor** que otro. En este caso si hay más de un modelo se utiliza el promedio de los modelos. Los estimados de los parámetros de un modelo promedio son robustos en dos aspectos, 1) reduce el sesgo de seleccionar modelos y 2) toma en cuenta la incertidumbre en los modelos.
+En muchos estudios el objetivo principal es estimar los parámetros para poder inferir algún proceso biológico o comportamiento humano. Por ejemplo, ¿*cuál es la dosis apropiada de algún antibiótico para reducir el crecimiento de bacterias y el tiempo del tratamiento?*. Cuando hay un buen apoyo para un modelo específico, se pueden utilizar los estimados de los parámetros obtenidos por verosimilitud. Pero de vez en cuando hay apoyo similar para múltiples modelos, lo que dificulta seleccionar un modelo que sea **mejor** que otro. En este caso, si hay más de un modelo, se utiliza el promedio de los modelos. Los estimados de los parámetros de un modelo promedio son robustos en dos aspectos, 1) reduce el sesgo de seleccionar modelos y 2) toma en cuenta la incertidumbre en los modelos.
 
 ***
 
 ## Selección de Modelos entre muchos
 
-¿Como seleccionar el **mejor** modelo entre muchos? Si por ejemplo usamos el indice de Akaike (AIC), cada modelo fue ajustado a los datos y el indice de $AIC_i$ fue calculado, la diferencia entre los valores de AIC, $\Delta_i$ y el mejor modelo, $AIC_{\min}$ es calculado. El **mejor** modelo en el conjunto evaluado es el modelo con un AIC más pequeño, $AIC_{\min}$.
+¿Cómo seleccionar el **mejor** modelo entre muchos? Si, por ejemplo, usamos el índice de Akaike (AIC), cada modelo se ajusta a los datos y se calcula su índice $AIC_i$. Luego se calcula la diferencia entre el AIC de cada modelo y el del mejor modelo, $\Delta_i = AIC_i - AIC_{\min}$. El **mejor** modelo en el conjunto evaluado es el modelo con un AIC más pequeño, $AIC_{\min}$.
 
-$\Delta _i=AIC_i-AIC_{\min }$
+$$\Delta _i=AIC_i-AIC_{\min}$$
+
+::: {.nota}
+Regla práctica para $\Delta_i$: un $\Delta_i$ entre 0 y 2 indica que el modelo tiene un apoyo esencialmente igual al del mejor modelo; entre 4 y 7, apoyo considerablemente menor; y mayor de 10, prácticamente ningún apoyo.
+:::
 
 La verosimilitud (likelihood) de un modelo, $g_i$, dado los datos, $y$, es calculado de la siguiente forma.
 
-$L(g_i\ |y)=\exp\left(\frac{-1}{2\cdot\Delta_i}\right)$,
+$L(g_i \mid y)=\exp\left(-\frac{\Delta_i}{2}\right)$,
 
 Comparar pares de modelos, particularmente el **mejor** modelo y los otros, tiene un indice que se llama **evidence ratio, ER** y traducido aquí como **la razón de evidencia.**
 
-$ER=\frac{L(g_{mejor}\ |y)}{L(g_i\ |y)}$,
+$ER=\frac{L(g_{mejor} \mid y)}{L(g_i \mid y)}$,
 
 Los valores de verosimilitud se pueden normalizar para que la suma de los modelos sea 1.
 
-$W_i=\frac{\exp\left(-\frac{1}{2\cdot\Delta_i}\right)}{\sum_{j=i}^R\exp\left(-\frac{1}{2\cdot\Delta j}\right)}$,
+$W_i=\frac{\exp\left(-\frac{\Delta_i}{2}\right)}{\sum_{j=1}^R\exp\left(-\frac{\Delta_j}{2}\right)}$,
 
-Este valor conocido como el **weight de Akaike**, o el peso de los modelos puede ser interpretado como una probabilidad que el modelo $i$ es el mejor modelo de los modelos evaluados.
+Este valor, conocido como el **peso de Akaike** (weight), puede interpretarse como la probabilidad de que el modelo $i$ sea el mejor de los modelos evaluados.
 
 ***
 
-## Model Averaging:
+## Promediado de modelos (Model Averaging)
 
-Cuando no hay un modelo único apoyado por los datos, no hay apoyo sustancial para un modelo único. Modelos que no tienen mucho apoyo pudiese incluir ciertas condiciones, por ejemplo si se usa el peso de los modelos y este no es muy grande $w_{best}<0.09$ o si la diferencia entre los modelos tienen un $\Delta AIC$ de menor 2. En este caso se necesita calcular los promedios ponderado de los parámetros, $\tilde{\theta}$.
+A veces no hay un único modelo con apoyo sustancial de los datos. Esto puede identificarse con ciertas condiciones; por ejemplo, si el peso del mejor modelo no es muy grande ($w_{best}<0.9$) o si la diferencia entre los modelos tiene un $\Delta AIC$ menor de 2. En este caso se necesita calcular los promedios ponderados de los parámetros, $\tilde{\theta}$.
 
-$\tilde{\theta}=\sum_{n=1}^Rw_i\tilde{\theta}_i$
+$\tilde{\theta}=\sum_{i=1}^Rw_i\tilde{\theta}_i$
 
-donde el $\tilde{\theta}_i$ es el estimado de $\tilde{\theta}$ del modelo $i_{th}$ de los \*mejores\* modelos. De esta forma los parámetros del modelo están ponderado por su apoyo $w_{best}$. En adición se puede calcular la varianza de los parámetros con la siguiente formula.
+donde $\tilde{\theta}_i$ es el estimado de $\tilde{\theta}$ del modelo $i$ del conjunto de *mejores* modelos. De esta forma, los parámetros del modelo están ponderados por su apoyo $w_i$. Además, se puede calcular la varianza de los parámetros con la siguiente fórmula:
 
-$\hat{var}(\tilde{\theta})=\sum_{n=1}^Rw_i[\hat{var}\left(\tilde{\theta}\ |g_i\right)+\ (\tilde{\theta}-\hat{\theta})^2 ]$
+$\hat{var}(\tilde{\theta})=\sum_{i=1}^Rw_i\left[\hat{var}\left(\tilde{\theta} \mid g_i\right)+ (\tilde{\theta}-\hat{\theta})^2 \right]$
 
-donde $\hat{var}\left(\tilde{\theta}\ |g_i\right)$ es el estimado de la varianza de $\theta$ del modelo $i_{th}$. El estimador de varianza puede ser utilizado para evaluar la precisión de los estimados del conjunto de modelos considerados. Esto permite generar intervalos de confianza de los parámetros para tomar en consideración la incertidumbre de los modelos de selección.
+donde $\hat{var}\left(\tilde{\theta} \mid g_i\right)$ es el estimado de la varianza de $\theta$ del modelo $i$. El estimador de varianza puede utilizarse para evaluar la precisión de los estimados del conjunto de modelos considerados. Esto permite generar intervalos de confianza de los parámetros que toman en consideración la incertidumbre de la selección de modelos.
 
 `r colorize("hacer una lista de las condiciones para selección de modelos con su referencias", "red")`
 
 ***
 ## Inferencias de los modelos de selección
 
-La selección de modelos es una herramienta para inferir procesos no observados basado en datos que demuestra un patrón. Datos que claramente apoya una hipótesis entre muchas evaluadas puede inferir procesos que pudiese haber generado los datos observados.
+La selección de modelos es una herramienta para inferir procesos no observados a partir de datos que demuestran un patrón. Los datos que claramente apoyan una hipótesis entre muchas evaluadas permiten inferir los procesos que pudieron haber generado los datos observados.
 
 
 ***
@@ -183,11 +195,11 @@ La selección de modelos es una herramienta para inferir procesos no observados 
 
 ### Primer paso: Construcción de los modelos
 
-El primer paso es construir los modelos que queremos comparar, para facilitar el ejemplo usamos un modelos complejo y comparamos todas las diferentes alternativas. NOTA: que este no es necesariamente el mejor acercamiento, ya que uno debería tener a priori una serie de modelos candidatos.
+El primer paso es construir los modelos que queremos comparar. Para facilitar el ejemplo usamos un modelo complejo y comparamos todas las diferentes alternativas. NOTA: este no es necesariamente el mejor acercamiento, ya que uno debería tener a priori una serie de modelos candidatos.
 
-Los datos son para evaluar sin hay efecto de cambio de nivel de ansiedad y depresión en la población de Puerto Rico luego del Huracán María. Los datos presentado son solamente parcial y incluye solamente un de los indices el del nivel de depresión después de 5 o más semanas luego del Huracán (Tremblay et al. sin publicar). La hipótesis es que algunos factores sociales y/o económico influencia el nivel de depresión en la gente.
+Los datos son para evaluar si hay un efecto sobre el nivel de ansiedad y depresión en la población de Puerto Rico luego del Huracán María. Los datos presentados son solamente parciales e incluyen solamente uno de los índices: el del nivel de depresión 5 o más semanas después del Huracán (Tremblay et al., sin publicar). La hipótesis es que algunos factores sociales y/o económicos influyen en el nivel de depresión de la gente.
 
-```{r akaike5}
+```{r c20-7}
 library(readr)
 DFMaria_student <- read_csv("Data_files_csv/DFMaria_student.csv")
 ```
@@ -196,21 +208,21 @@ Metadata:
 
 -   Sexo, 1= Mujer; 2 = Hombres
 
--   Escolaridad, major el número más escolaridad tiene
+-   Escolaridad: mientras mayor el número, más escolaridad tiene la persona
 
--   Num\_Pers\_Hogar, Cantidad de persona que comparte el hogar familiar
+-   Num_Pers_Hogar: cantidad de personas que comparten el hogar familiar
 
 -   Sala\_Mens\_Antes, El salario mensual antes del Huracán María, mayor el número mayor el salario
 
 -   Sala\_Mens\_Desp, El salario mensual después del Huracán María, mayor el número mayor el salario
 
--   Index\_Dep5T, Un indice de depresión 5 o más semanas después del Huracán.
+-   Index_Dep5T: un índice de depresión 5 o más semanas después del Huracán.
 
 ### Limpiar los datos
 
-El primer paso es remover todos los participantes donde le falta algún información.
+El primer paso es remover a todos los participantes a los que les falta alguna información.
 
-```{r akaike6}
+```{r c20-8}
 DFMaria_student=na.omit(DFMaria_student)
 
 
@@ -219,7 +231,7 @@ unique(DFMaria_student$Escolaridad)
 
 ### Construcción del modelo
 
-```{r akaike7}
+```{r c20-9}
 head(DFMaria_student)
 
 Huracan_Dep=lm(Index_Dep5T~factor(Sexo)+Escolaridad+Num_Pers_Hogar+
@@ -229,7 +241,7 @@ summary(Huracan_Dep)
 
 ```
 
-```{r akaike8}
+```{r c20-10}
 ggplot(DFMaria_student, aes(y=Index_Dep5T,x=Sala_Mens_Desp))+
   geom_smooth(method = lm)
 ```
@@ -238,15 +250,15 @@ ggplot(DFMaria_student, aes(y=Index_Dep5T,x=Sala_Mens_Desp))+
 
 #### Observar el resultado del modelo lineal completo.
 
-```{r akaike9}
+```{r c20-11}
 summary(Huracan_Dep)
 
 ```
 
-#### Evaluar todas los modelos. 
-Se ordena los modelos comenzando con el mejor, y si resta el valor de AICc con el mejor modelo, menor es el AICc mejor es el modelo. Los modelos que se estará aceptando son los que tienen un delta de menos <-2.00 (comparando con el mejor modelo), $\Delta_i=AIC_i-AIC_{\min}$.  En otra palabra los modelos que difieren más de un AICc de 2.0 no se aceptan como buenos modelos. En este caso los seis primeros modelos son igual de bueno, y no hay evidencia que uno es mejor que el otro. Cuando hay más de un modelo se tiene que calcular los promedios ponderados de los parámetros $\beta_i$ .  
+#### Evaluar todos los modelos
+Se ordenan los modelos comenzando con el mejor. Se resta el valor de AICc de cada modelo del AICc del mejor modelo; mientras menor es esa diferencia, mejor es el modelo. Los modelos que se aceptan son los que tienen un delta menor de 2.00 comparado con el mejor modelo, $\Delta_i=AIC_i-AIC_{\min}$. En otras palabras, los modelos que difieren en más de 2.0 unidades de AICc no se aceptan como buenos modelos. En este caso, los seis primeros modelos son igual de buenos y no hay evidencia de que uno sea mejor que otro. Cuando hay más de un modelo, se tienen que calcular los promedios ponderados de los parámetros $\beta_i$.  
 
-```{r akaike10, echo=FALSE, message=FALSE, warning=FALSE}
+```{r c20-12, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(huxtable)
 
@@ -268,7 +280,7 @@ set_caption("Criterios de Selección de Modelos")
 
 Con la función **dredge** del paquete **MuMIn** podemos evaluar todas las combinaciones de modelos
 
-```{r akaik11}
+```{r c20-13}
 library(MASS)
 library(MuMIn)
 
@@ -287,9 +299,9 @@ formattable(ALL_models, digits=4, format="html")
 ```
 
 ***
-#### Calcular el coeficientes ponderados
+#### Calcular los coeficientes ponderados
 
-```{r akaike12, message=FALSE, warning=FALSE}
+```{r c20-14, message=FALSE, warning=FALSE}
 #allmodels=format(round(ALL_models, digits=3), scientific=FALSE)
 #library(data.table)
 #write.csv(allmodels, "allmodelsdata.csv")
@@ -299,8 +311,8 @@ formattable(ALL_models, digits=4, format="html")
 ***
 ### Seleccionar los modelos 
 
-Seleccionar los modelos que tienen un delta AICc menor de 2 y calcular el promedio de los coeficientes de los modelos. Nota el conjunto de coeficientes debajo **subset**, esto son los coeficientes de las variables del conjunto de modelos que tienen un delta AICc menor de 2. 
-```{r akaike13}
+Seleccionar los modelos que tienen un delta AICc menor de 2 y calcular el promedio de los coeficientes de esos modelos. Nota el conjunto de coeficientes bajo **subset**: estos son los coeficientes de las variables del conjunto de modelos que tienen un delta AICc menor de 2.
+```{r c20-15}
 
 # calculate the model average 
 model.avg(ALL_models, subset = delta < 2)
@@ -318,8 +330,8 @@ model.avg(ALL_models, subset = delta < 2)
 
 *** 
 
-### Extraer los parametros del modelo, usando las sigueientes funciones
-```{r akaike14}
+### Extraer los parámetros del modelo usando las siguientes funciones
+```{r c20-16}
 bestModelsResults=data.frame(bestModels$coefmat.subset)
  names(bestModelsResults)
  bestModelsResults
@@ -334,8 +346,8 @@ is.data.frame(BMR)
 ***
 
 ### Intervalos de Confianza 
-Los Intervalos de confianza de los parámetros se extraje del modelo usando la siguiente funciones. 
-```{r akaike15}
+Los intervalos de confianza de los parámetros se extraen del modelo usando las siguientes funciones.
+```{r c20-17}
 library(ggplot2)
 library(coefplot)
 
@@ -350,7 +362,7 @@ names(BMR)
 ***
 
 ### Visualizar los coeficientes con los intervalos de confianza
-```{r akaike16}
+```{r c20-18}
 ggplot(BMR, mapping=aes(x=Variables, y = Coef_Estimate,
        ymin = LowerBound, ymax = UpperBound, colour=Variables))+
   geom_point()+
@@ -377,10 +389,6 @@ Johnson, J. B., K. S. Omland. 2004. Model selection in ecology and evolution. TR
 ***
 > “Activities reported in this website was supported by the National Institute of General Medical Sciences of the National Institutes of Health under Award Number R25GM121270. The content is solely the
 responsibility of the authors and does not necessarily represent the official views of the National
-Institutes of Health.”``
+Institutes of Health.”
 
-
-
-
-aic
 

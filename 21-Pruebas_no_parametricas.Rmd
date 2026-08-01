@@ -1,6 +1,6 @@
-# Pruebas no parametricas
+# Pruebas No Paramétricas
 
-```{r, eval=TRUE, echo=FALSE}
+```{r c21-1, eval=TRUE, echo=FALSE}
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -22,9 +22,13 @@ rlt_theme <- theme(axis.title.y = element_text(colour="grey20",size=15,face="bol
 ***
 
 
-## Non-parametric tests
+## Pruebas no paramétricas
 
 Todas las pruebas anteriores asumen que los datos tienen ciertas características, como distribución normal y homogeneidad de varianza. Si los datos NO cumplen con estos supuestos, entonces no se deben usar esas pruebas y se deben explorar pruebas alternativas. Un conjunto de pruebas conocidas son las pruebas no paramétricas o pruebas libres de distribución.
+
+::: {.definicion}
+**Pruebas no paramétricas.** Pruebas que no requieren que los datos sigan una distribución específica (como la normal). En vez de usar los valores originales, la mayoría trabaja con los **rangos** de los datos, lo que las hace robustas frente a valores atípicos y distribuciones sesgadas. Suelen probar hipótesis sobre la mediana o la distribución, no sobre la media.
+:::
 
 La mayoría de estas pruebas no utilizan los datos originales, sino que emplean los rangos de los datos. Esto se hace asignando “nuevos valores” a los datos originales: el valor más bajo recibe el rango 1, el siguiente valor más bajo el rango 2, y así sucesivamente. De esta manera, el valor más alto obtiene el rango más alto.
 
@@ -41,7 +45,7 @@ Al convertir los datos en rangos, se elimina la magnitud real de las diferencias
 
 ## Los paquetes 
 
-```{r packages21}
+```{r c21-2}
 #install.packages("car")
 #install.packages("clinfun")
 #install.packages("ggplot2")
@@ -50,9 +54,9 @@ Al convertir los datos en rangos, se elimina la magnitud real de las diferencias
 ```
 
 
-##  Activating packages
+## Activar los paquetes
 
-```{r activating packages}
+```{r c21-3}
 library(car)  # Companion to applied Regression
 library(clinfun) # Clinical Trial Design and Data Analysis Functions
 library(ggplot2) # Graphic production
@@ -61,7 +65,7 @@ library(pgirmess) # Spatial Analysis and Data Mining for Field Ecologist
 ```
 
 
-## Wilcoxon rank-sum test
+## Prueba de suma de rangos de Wilcoxon
 
 La función "gl()" es una función que genera factores especificando el patrón de sus niveles:
 
@@ -85,8 +89,8 @@ https://en.wikipedia.org/wiki/Beck_Depression_Inventory
 
 
 
-##  Enter raw data
-```{r nopara1}
+## Ingresar los datos
+```{r c21-4}
 
 sundayBDI<-c(15, 35, 16, 18, 19, 
              17, 27, 16, 13, 20, 
@@ -103,10 +107,10 @@ drugData<-data.frame(Gender, drug, sundayBDI, wedsBDI)
 drugData
 ```
 
-### Or Import the data
+### O importar los datos
 
-### Exploratory analysis
-```{r nopara2}
+### Análisis exploratorio
+```{r c21-5}
 library(readr)
 Drug <- read_csv("Data_files_csv/Drug.csv")
 
@@ -120,7 +124,7 @@ head(Drug)
 
 - NOTA: la prueba de Shapiro-Wilk en la última línea. 
 
-```{r nopara3}
+```{r c21-6}
 library(pastecs)
 names(drugData)
 by(drugData[,c(3:4)], drugData$drug, stat.desc, basic=TRUE, norm=TRUE)
@@ -137,9 +141,9 @@ shapiro.test(drugData$wedsBDI[drugData$drug=="Ecstasy"])
 ```
 
 
-### Haz un diagrama para observar la distribucion de los datos.
+### Haz un diagrama para observar la distribución de los datos.
 
-```{r nopara4}
+```{r c21-7}
 library(ggplot2)
 
 ggplot(drugData, aes(x=sundayBDI, fill=drug))+
@@ -163,7 +167,7 @@ Cuando los datos no son normales o contienen outliers, ya que la prueba de Leven
 
 
 
-```{r nopara5}
+```{r c21-8}
 library(DescTools)
 #leveneTest(drugData$sundayBDI, drugData$drug, center = "mean")
 DescTools::LeveneTest(drugData$sundayBDI, drugData$drug, center = "median")
@@ -179,9 +183,9 @@ car::leveneTest(drugData$wedsBDI, drugData$drug, center = "median")
 ***
 
 
-## Wilcoxon rank-sum test
+## Prueba de suma de rangos de Wilcoxon (Mann-Whitney U)
 
-El Wilcoxon rank-sum test (también conocido como prueba de Mann-Whitney U) es una prueba no paramétrica utilizada para comparar dos muestras independientes y determinar si provienen de la misma distribución.
+La prueba de suma de rangos de Wilcoxon (también conocida como prueba de Mann-Whitney U) es una prueba no paramétrica utilizada para comparar dos muestras independientes y determinar si provienen de la misma distribución.
 
 ### ¿Cuándo se usa?
 
@@ -208,14 +212,14 @@ wilcox.test(x, y = NULL, alternative = c("two.sided", "less", "greater"),
 
 
 
-## This is how to assing the Rank by Hand...... This is an example, the scripts will do this automatically.  
+## Cómo asignar los rangos a mano (ejemplo; los scripts lo hacen automáticamente)
 
-Look for the smallest value......in the wedsBDI......  
-
-
+Busca el valor más pequeño… en wedsBDI…
 
 
-```{r nopara6}
+
+
+```{r c21-9}
 drugData$wedsRank=rank(drugData$wedsBDI)
 drugData
 
@@ -223,9 +227,9 @@ drugData
 
 ***
 
-## Wilcoxon test: A non-parametric test 
+## Prueba de Wilcoxon: una prueba no paramétrica
 
-```{r nopara7}
+```{r c21-10}
 names(drugData)
 head(drugData)
 sunModel<-wilcox.test(sundayBDI ~ drug, data = drugData)
@@ -239,9 +243,13 @@ wedModel
 
 ***
 
-## the following approach is better because it can deal with ties (values that are equal)
+## El siguiente acercamiento es mejor porque puede manejar empates (valores iguales)
 
-```{r nopara8}
+::: {.consejo}
+Cuando hay **empates** (valores iguales) en los datos, R no puede calcular el valor-p exacto y muestra una advertencia. En esos casos se añade `exact = FALSE` a `wilcox.test()` para usar la aproximación normal.
+:::
+
+```{r c21-11}
 sunModel2<-wilcox.test(sundayBDI ~ drug, data = drugData, exact = FALSE, correct= FALSE, conf.int=T)
 
 sunModel2
@@ -254,12 +262,12 @@ wedModel2
 
 ***
 
-## Class Excercise
-## How many time have you gone to Disney, and is there a difference between genders?
+## Ejercicio de clase
+## ¿Cuántas veces has ido a Disney? ¿Hay diferencia entre géneros?
 
-Use Wilcoxon Test
+Usa la prueba de Wilcoxon.
 
-```{r nopara9}
+```{r c21-12}
 
 Disney=c(3,5,0,1,2,
          0,2,0,2,3,
@@ -277,7 +285,7 @@ DF
 ```
 
 ***
-```{r nopara10}
+```{r c21-13}
 ggplot(DF, aes(y=Disney, x=Gender))+
   geom_boxplot()
 
@@ -294,9 +302,9 @@ wilcox.test(Disney ~ Gender, data = DF,exact = FALSE, correct= FALSE, conf.int=T
 ***
 
 
-## Comparing two related conditions: the **Wilcoxon signed-rank test** (similar to paired t-test)
+## Comparar dos condiciones relacionadas: la **prueba de rangos con signo de Wilcoxon** (similar a la prueba de t pareada)
 
-### Do not confuse with the  **Wilcoxon rank-sum test** (Mann Whitney U) (similar to unpaired t-test)
+### No confundir con la **prueba de suma de rangos de Wilcoxon** (Mann-Whitney U), que es similar a la prueba de t no pareada
 
 La prueba no paramétrica más común para datos pareados es la Prueba de rangos con signo de Wilcoxon.
 
@@ -317,10 +325,10 @@ La prueba no paramétrica más común para datos pareados es la Prueba de rangos
 - Comparar presión arterial antes y después de un tratamiento en los mismos pacientes.
 - Evaluar el efecto de una intervención educativa en el mismo grupo.
 
-We now want to compare the results from Sunday and Wendsday, but now the data come from the same individuals.
+Ahora queremos comparar los resultados del domingo y del miércoles, pero esta vez los datos provienen de los mismos individuos.
 
-## BDI = Becks depression index Change
-```{r nopara11}
+## Cambio en el BDI (Índice de Depresión de Beck)
+```{r c21-14}
 drugData$BDIchange<-drugData$wedsBDI-drugData$sundayBDI # calculate differences
 
 
@@ -341,21 +349,21 @@ shapiro.test(drugData$BDIchange[drugData$drug=="Ecstasy"])
 
 
 
-```{r}
+```{r c21-15}
 boxplot<-ggplot(drugData, aes(drug, BDIchange)) + 
   geom_boxplot()
 boxplot
 ```
 
 
-```{r}
+```{r c21-16}
 #alcoholData<-subset(drugData, drug == "Alcohol") # subset the data for alcohol
 #ecstasyData<-subset(drugData, drug == "Ecstasy") # subset the data for ecstasy
 ```
 
 
 
-```{r}
+```{r c21-17}
 library(tidyverse)
 
 alcoholData = drugData %>% 
@@ -368,7 +376,7 @@ ecstasyData = drugData %>%
 
 
 
-```{r}
+```{r c21-18}
 
 alcoholModel<-wilcox.test(alcoholData$wedsBDI, alcoholData$sundayBDI,  paired = TRUE, exact = TRUE, correct= FALSE)
 alcoholModel
@@ -376,7 +384,7 @@ alcoholModel
 ```
 
 
-```{r}
+```{r c21-19}
 
 ecstasyModel<-wilcox.test(ecstasyData$wedsBDI, ecstasyData$sundayBDI, paired = TRUE, exact = FALSE,correct= FALSE)   # Note that the option "exact=FALSE" has to be added becase there are ties.  
 ecstasyModel
@@ -386,14 +394,18 @@ ecstasyModel
 
 ***
 
-## Krukall-Wallis Test
+## Prueba de Kruskal-Wallis
 
-This is a test similar to ANOVA, thus multiple groups, 3+ grupos
+::: {.nota}
+**Equivalencias no paramétricas:** la prueba de suma de rangos de Wilcoxon (Mann-Whitney U) es la alternativa a la *t* independiente; la prueba de rangos con signo de Wilcoxon es la alternativa a la *t* pareada; y la prueba de Kruskal-Wallis es la alternativa al ANOVA de una vía.
+:::
 
-However, you test for the differences to determine if rank among groups is different (not the mean).   
+Es una prueba similar al ANOVA, para múltiples grupos (3 o más).
 
-The null hypothesis is that the sum or mean rank in Ho: G1 = G2 = G3......Gk
-The alternative hypothesis is that at least one of the groups "mean rank" is different from another one.  
+Sin embargo, se evalúan las diferencias para determinar si el rango entre los grupos es diferente (no la media).
+
+La hipótesis nula es que la suma (o el promedio) de los rangos es igual entre los grupos, Ho: G1 = G2 = G3 … Gk.
+La hipótesis alterna es que por lo menos el "rango promedio" de uno de los grupos es diferente del de otro.
 
 La prueba de Kruskal-Wallis es una prueba no paramétrica que se utiliza para comparar tres o más grupos independientes y determinar si provienen de la misma distribución. Es la alternativa no paramétrica al ANOVA de una vía cuando los datos:
 
@@ -420,7 +432,7 @@ Evaluar diferencias en tiempo de recuperación entre varios tratamientos.
 
 ***
 
-## Soya and the effect on sperm production in human males.
+## La soya y su efecto sobre la producción de esperma en varones humanos
 
 ### Soy food and isoflavone intake in relation to semen quality parameters among men from an infertility clinic
 
@@ -429,7 +441,7 @@ Jorge E. Chavarro  Thomas L. Toth  Sonita M. Sadio  Russ Hauser
 Hum Reprod. 2008 Nov;23(11):2584-90. doi: 10.1093/humrep/den243. Epub 2008 Jul 23.
 
 
-They found that the amount of sperm production is reduced in males which consume more soya 
+El estudio encontró que la concentración de esperma es menor en los varones que consumen más soya. A continuación se reproduce el resumen (Abstract) original del artículo.
 
 ## Abstract
 
@@ -451,9 +463,9 @@ These data suggest that higher intake of soy foods and soy isoflavones is associ
 
 
 
-Now let us look at the data from Field, soya.csv. 
+Ahora veamos los datos de Field, soya.csv.
 
-```{r nopara12}
+```{r c21-20}
 
 library(readr)
 
@@ -467,9 +479,9 @@ unique(Soyadf$Soya)
 
 ## Hacer un boxplot de los datos en un nuevo chunk
 
-reorder the x axis so that the levels are in order from low to high consumption of soya from none to high.
+Reordena el eje x para que los niveles vayan de menor a mayor consumo de soya (de ninguno a alto).
 
-```{r nopara13}
+```{r c21-21}
 library(ggplot2)
 
 unique(Soyadf$Soya)
@@ -488,13 +500,13 @@ ggplot(Soyadf, aes(x=Soya2, y=Sperm, fill=Soya2))+
 ***
 
 
-Descriptive statistics
+Estadística descriptiva
 
 
- Use the by() function to get the statistics for each group.
- When adding "norm=TRUE" will perform Shapiro_Wilks Normality test. 
+ Usa la función by() para obtener las estadísticas de cada grupo.
+ Al añadir "norm=TRUE" se realiza la prueba de normalidad de Shapiro-Wilk.
  
-```{r nopara14}
+```{r c21-22}
 library(pastecs)
 
 by(Soyadf$Sperm, Soyadf$Soya, stat.desc, basic = FALSE, norm = TRUE)
@@ -506,12 +518,12 @@ by(Soyadf$Sperm, Soyadf$Soya, stat.desc, basic = FALSE, norm = TRUE)
 
 ***
 
-## Kruskall Wallis test is similar to an ANOVA without assuming normal distribution or equality of variance.  
+## La prueba de Kruskal-Wallis es similar a un ANOVA, sin asumir distribución normal ni igualdad de varianza
 
-HO: R1=R2=R3=R4
-HA: Por lo menos uno los grupos es diferente
+HO: R1 = R2 = R3 = R4
+HA: Por lo menos uno de los grupos es diferente.
 
-```{r nopara15}
+```{r c21-23}
 
 
 # Traditional approach
@@ -523,9 +535,9 @@ kruskal.test(Sperm~as.factor(Soya), data=Soyadf)
 
 ***
 
-## A better approach is to use the "coin" package
+## Un mejor acercamiento: el paquete "coin"
 
-This is better approach because it uses similation to calculate the distribution of the test statistic under the null hypothesis.
+Este acercamiento es mejor porque usa simulación para calcular la distribución del estadístico de prueba bajo la hipótesis nula.
 
 La prueba aproximativa (Monte Carlo) de Fisher-Pitman es una prueba no paramétrica basada en permutaciones que se utiliza para comparar dos muestras independientes. Es una alternativa a la prueba de rangos de Wilcoxon o a la prueba t cuando se quiere evitar hacer supuestos sobre la distribución subyacente.
 
@@ -549,7 +561,7 @@ La prueba aproximativa (Monte Carlo) de Fisher-Pitman es una prueba no paramétr
 - Flexible y robusta.
 
 
-```{r nopara16}
+```{r c21-24}
 
 library(coin)
 #Approximative (Monte Carlo) Fisher-Pitman test
@@ -565,7 +577,7 @@ modelkt
 ## Para ver los rangos y las medianas por grupo
 
 
-```{r nopara17}
+```{r c21-25}
 Soyadf$Ranks=rank(Soyadf$Sperm)
 head(Soyadf)
 by(Soyadf$Ranks, Soyadf$Soya, median)
@@ -574,11 +586,11 @@ by(Soyadf$Ranks, Soyadf$Soya, median)
 
 ***
 
-Post Hoc TUKEY like test (Nemenyi test)
-The values shown are the p=values,  the pair are significantly different if the p is below 0.05
+Prueba post hoc tipo Tukey (prueba de Nemenyi).
+Los valores que se muestran son los valores-p; el par es significativamente diferente si el p está por debajo de 0.05.
 
 
-### Note   
+### Nota
 
 
 La prueba post hoc tipo Tukey (prueba de Nemenyi) es un método no paramétrico utilizado para realizar comparaciones múltiples entre grupos después de aplicar la prueba de Kruskal-Wallis (o Friedman, según el caso).
@@ -605,7 +617,7 @@ La prueba post hoc tipo Tukey (prueba de Nemenyi) es un método no paramétrico 
 - Datos ordinales o no normales, con k ≥ 3 grupos independientes.
 
 
-```{r nopara18}
+```{r c21-26}
 library(PMCMRplus)
 
 # Alternative 1
@@ -615,7 +627,7 @@ kwAllPairsNemenyiTest(Sperm~as.factor(Soya) , data=Soyadf)
 
 
 
-```{r}
+```{r c21-27}
 
 # Alternative 2
 

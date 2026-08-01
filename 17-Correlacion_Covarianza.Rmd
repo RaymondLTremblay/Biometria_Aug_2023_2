@@ -2,7 +2,7 @@
 
 
 
-```{r, eval=TRUE, echo=FALSE}
+```{r c17-1, eval=TRUE, echo=FALSE}
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -17,32 +17,32 @@ colorize <- function(x, color) {
 
 ```
 
-Fecha de la ultima revisión
-```{r echo=FALSE}
+Fecha de la última revisión
+```{r c17-2, echo=FALSE}
 
 Sys.Date()
 ```  
 
-```{r, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
+```{r c17-3, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
 knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
 ```
 
 
-```{r}
+```{r c17-4}
 library(ggplot2)
 ```
 
  
  
  
-```{r corr1, warning=FALSE}
+```{r c17-5, warning=FALSE}
 
 library(readr)
 DownloadFestival <- read_csv("Data_files_csv/DownloadFestival.csv")
 
 
 
-dlf=DownloadFestival  #use shorter data.frame names to make your life easier..... 
+dlf=DownloadFestival  # usa un nombre más corto para el data.frame y facilitar el trabajo
 head(dlf)
 tail(dlf)
 
@@ -60,16 +60,20 @@ ggplot(dlf2, aes(day1))+
  
  
   
-```{r corr2, warning=FALSE}
+```{r c17-6, warning=FALSE}
 library(ggplot2)
 head(dlf2)
 ```
   
-## A detour in the Murky world of covariance
+## Un desvío por el turbio mundo de la covarianza
+
+::: {.definicion}
+**Covarianza vs. correlación.** La *covarianza* mide si dos variables varían juntas, pero su magnitud depende de las unidades de medida, por lo que es difícil de interpretar. La *correlación* (r) estandariza la covarianza dividiéndola entre el producto de las desviaciones estándar, de modo que siempre queda entre $-1$ y $+1$, sin importar las unidades.
+:::
 
 
 
-The objective is to evaluate whether variables covary, that is if the variable explain in part the part of the other.  
+El objetivo es evaluar si dos variables covarían, es decir, si una variable explica en parte la variación de la otra.  
 
 
 | Advert watched 	| 5 	| 4 	| 4  	| 6  	| 8  	|
@@ -79,20 +83,19 @@ The objective is to evaluate whether variables covary, that is if the variable e
 |                	|   	|   	|    	|    	|    	|
 
 
-### Understanding covariance one needs to understand variance equation.  
+### Para entender la covarianza primero hay que entender la ecuación de la varianza
 
-
-![Variance of single variable]
+**Varianza de una sola variable**
 $$s^{ 2 }=\frac { \sum { { ({ x }_{ i }-\bar { x } ) }^{ 2 } }  }{ n-1 }$$
 
 
 
-### While the Covariance is the cross product of the deviation
+### La covarianza es el producto cruzado de las desviaciones
 
-![Covariance]
-$$cov(x,y)=\frac { \sum { ({ x }_{ i }-\bar { x } _{ i })({ y }_{ i }-\bar { y } _{ i }) }  }{ n-1 } $$
+**Covarianza**
+$$cov(x,y)=\frac { \sum { ({ x }_{ i }-\bar { x })({ y }_{ i }-\bar { y }) }  }{ n-1 } $$
 
-```{r}
+```{r c17-7}
 advert=c(5,4,4,6,8)
 Coca=c(8,9,10,13,15)
 
@@ -113,7 +116,7 @@ sum(data$prod_diff)/(nrow(data)-1)
 ```
 
 
-```{r}
+```{r c17-8}
 ggplot(data)+
   geom_point(aes(x=advert, y=Coca))
 ```
@@ -122,7 +125,7 @@ ggplot(data)+
 
 
 
-```{r corr3, warning=FALSE}
+```{r c17-9, warning=FALSE}
 
 x_val=c(5,4,4,6,8)
 y_val=c(8,9,10,13,15)
@@ -143,24 +146,23 @@ geom_hline(aes(yintercept=mean(df$y_val)),colour="red")
 
 
 
-Because in most cases variables are collected having different measurement scales we have to standardize using the standard deviation
+Como en la mayoría de los casos las variables se miden en escalas diferentes, tenemos que estandarizarlas usando la desviación estándar.
 
 
-## Thus we have to use the Correlation Coefficient: 
+## Por eso usamos el coeficiente de correlación
 
-## This most common is the Pearson product-moment correlation coefficient or Pearson correlation coeffcient.  
+### El más común es el coeficiente de correlación producto-momento de Pearson
 
-
-$$r=\frac { cov(x,y) }{ { s }_{ x }{ s }_{ y } } =\frac { \sum { ({ x }_{ i }-\bar { x } _{ i })({ y }_{ i }-\bar { y } _{ i }) }  }{ n-1{ s }_{ x }{ s }_{ y } }$$
-
+$$r=\frac { cov(x,y) }{ { s }_{ x }{ s }_{ y } } =\frac { \sum { ({ x }_{ i }-\bar { x })({ y }_{ i }-\bar { y }) }  }{ (n-1)\, { s }_{ x }{ s }_{ y } }$$
 
 
 
-The function to calculate the correlation coefficient is "cor"
 
-The function to determine if the correlation vetween the 2 variables is significant (in other words, different from zero) is "cor.test".
+La función para calcular el coeficiente de correlación es **cor()**.
+
+La función para determinar si la correlación entre las 2 variables es significativa (es decir, diferente de cero) es **cor.test()**.
   
-```{r corr4, warning=FALSE}
+```{r c17-10, warning=FALSE}
 r=cor(df$x_val, df$y_val)
 #cor.test(df$x_val, df$y_val)
 
@@ -172,25 +174,29 @@ cor.test(data$advert, data$Coca)
 ```
  
  
- The correlation of coefficient square ${ R }^{ 2 }$ (known as the coefficient of determination) is a measure of the amount of variability in one variable that is shared by the other. 
+ El cuadrado del coeficiente de correlación, ${ R }^{ 2 }$ (conocido como el coeficiente de determinación), es una medida de la cantidad de variabilidad de una variable que es compartida por la otra.
+
+::: {.advertencia}
+**Correlación no implica causalidad.** Una correlación fuerte entre dos variables no prueba que una cause la otra; ambas podrían estar influidas por una tercera variable, o la relación podría ser una coincidencia. La correlación solo describe cuánto se asocian linealmente dos variables.
+::: 
  
  
  
  
- Simple table of correlation tests
+ Tabla resumen de las pruebas de correlación:
  
- 1. Pearson test, assumes normal bivariate distribution, 
- 2. Spearman test, no assumption of normality,
- 3. Kendall test, no assumption of normality, better when sample size are small
- 
- 
- 
- Let us a look at Anxiety and exam results.
- 
- Choose the data set, examData
+ 1. Prueba de Pearson: asume una distribución normal bivariada.
+ 2. Prueba de Spearman: no asume normalidad.
+ 3. Prueba de Kendall: no asume normalidad, mejor cuando el tamaño de muestra es pequeño.
  
  
-```{r corr5, warning=FALSE }
+ 
+ Veamos la relación entre la ansiedad y los resultados de los exámenes.
+ 
+ Elige el conjunto de datos examData.
+ 
+ 
+```{r c17-11, warning=FALSE}
 library(readr)
 Exam_Anxiety <- read_csv("Data_files_csv/Exam Anxiety.csv")
 examData=Exam_Anxiety
@@ -203,10 +209,14 @@ cor.test(examData$Exam,examData$Anxiety)
 ```
   
 
-One the basic assumption of the Pearson correlation is that the data be bivariate normally distributed. NOTE: WHAT WE MEAN ABOUT THE "ASSUMPTION" IS THAT WE ARE CONFIDENT THAT THE UNIVERSE IS NORMALLY DISTRIBUTED, NOT NECESARILY THAT OUR DATA ARE (SUBSET).
+::: {.supuestos}
+La correlación de **Pearson** asume: una relación lineal entre las variables, una distribución normal bivariada, y ausencia de valores atípicos extremos (que pueden distorsionar mucho a *r*). Si estos supuestos no se cumplen, usa Spearman o Kendall.
+:::
+
+Uno de los supuestos básicos de la correlación de Pearson es que los datos tengan una distribución normal bivariada. NOTA: lo que queremos decir con el "supuesto" es que confiamos en que el universo (la población) tiene una distribución normal, no necesariamente que nuestros datos (la muestra) la tengan.
 
 
-```{r corr6, warning=FALSE}
+```{r c17-12, warning=FALSE}
 
 library(knitr)
 library(png)
@@ -216,14 +226,14 @@ include_graphics(img3_path)
 ```
 
 
-## What does that mean
+## ¿Qué significa esto?
 
-Here is a really cool graph that does the figures and most of the analysis in one one shot.
-The package GGally, if you omit "ggplot2::aes(colour=Gender)", the figure will be black and white, and not seperated by gender.
+Aquí hay un gráfico muy útil que produce las figuras y la mayor parte del análisis de una sola vez.
+Con el paquete GGally, si omites "ggplot2::aes(colour=Gender)", la figura será en blanco y negro y no estará separada por género.
 
  
 
-```{r corr7, warning=FALSE, message=FALSE}
+```{r c17-13, warning=FALSE, message=FALSE}
 library(GGally)
 head(examData)
 
@@ -234,25 +244,23 @@ ggpairs(examData)
 
 
 
-In this code I removed the first column, which is just the code of the individual, by examData[,c(2:5)], by removing column #1. 
+En este código eliminé la primera columna, que es solamente el código del individuo, usando examData[,c(2:5)] (es decir, quitando la columna #1). 
 
-```{r corr8, warning=FALSE}
+```{r c17-14, warning=FALSE}
 ggpairs(examData[,c(2:5)], ggplot2::aes(colour=Gender)) 
 ```
 
 
 1. 
 
-USar el data set siguiente 
+Usa el siguiente conjunto de datos, con las variables:
 
-con las variables,
-
-  + Flower Size
-  + Num_Fr = Number off Fruits
-  + w_sepals_dorsal = width of the dorsal sepal
-  + front_lip_length = Front lip length 
-  + wf = an index of female selection 
-```{r corr9}
+  + Flower Size = tamaño de la flor
+  + Num_Fr = número de frutos
+  + w_sepals_dorsal = ancho del sépalo dorsal
+  + front_lip_length = largo del labio frontal
+  + wf = un índice de selección femenina
+```{r c17-15}
 library(readr)
 Lep_rupPetal_All_Data <- read_csv("Data_files_csv/Lep_rupPetal_All_Data.csv")
 Lep=Lep_rupPetal_All_Data
@@ -262,9 +270,9 @@ names(Lep)
  
 
 
-A table of the correlation coefficients
+Una tabla de los coeficientes de correlación
 
-```{r corr10, warning=FALSE}
+```{r c17-16, warning=FALSE}
 library(Hmisc)
 rcorr(as.matrix(examData[,c("Exam","Anxiety","Revise")]))
 
@@ -276,14 +284,18 @@ rcorr(as.matrix(examData[,c("Exam","Anxiety","Revise")]))
 
 
 
-When the data do not comply with the assumption of normality you need to use Spearman or Kendall
+Cuando los datos no cumplen con el supuesto de normalidad, hay que usar Spearman o Kendall.
 
-Choose "The Biggest Liar.csv" data set, contest, where this occurs every year in a pub.   
+::: {.consejo}
+Spearman y Kendall son correlaciones **de rango** (usan el orden de los datos, no sus valores), por lo que son robustas ante la no-normalidad y los valores atípicos. Kendall suele preferirse cuando el tamaño de muestra es pequeño o hay muchos empates.
+:::
 
-World's Biggest Liar is an annual competition for telling lies, held in Cumbria, England at the Stanton Inn Bridge Pub.
+Elige el conjunto de datos "The Biggest Liar.csv", un concurso que ocurre cada año en un pub.
+
+El "World's Biggest Liar" (El mentiroso más grande del mundo) es una competencia anual para decir mentiras, celebrada en Cumbria, Inglaterra, en el Stanton Inn Bridge Pub.
 
 
-```{r corr11, out.width="500px"}
+```{r c17-17, out.width="500px"}
 
 library(knitr)
 library(png)
@@ -293,7 +305,7 @@ include_graphics(img4_path)
 ```
 
 
-```{r corr12}
+```{r c17-18}
 library(Hmisc)
 library(readr)
 The_Biggest_Liar <- read_csv("Data_files_csv/The Biggest Liar.csv")
@@ -314,33 +326,32 @@ cor(liarData$Position, liarData$Creativity, method = "kendall")
 
 
 
-## EXTRA Stuff
+## Material adicional
 
-### Bootstrapping Correlation 
+### Correlación por bootstrap
 
+Con el bootstrap no hay necesidad de hacer supuestos sobre la distribución: puedes dejar que los datos hablen por sí mismos y construir el coeficiente de correlación y su intervalo de confianza de 95%.
 
-THERE is no need to make assumptions of the distribution, you can let your data speak for itself, and construct the correlation coeffcients and 95% confidence interval.
+Primero creamos una función:
 
-We first create a function
-
-```{r corr13}
+```{r c17-19}
 bootTau=function(liarData,i)cor(liarData$Position[i],liarData$Creativity[i],
                                 use="complete.obs",method = "kendall")
 ```
 
 
-The function is then called and executed
+Luego se llama y se ejecuta la función:
 
-```{r corr14, eval=FALSE}
+```{r c17-20, eval=FALSE}
 library(boot)
 boot_kendall=boot(liarData,bootTau, 1000)
 boot_kendall
 ```
 
 
-To calculate the 95% confidence interval
+Para calcular el intervalo de confianza de 95%:
 
-```{r corr15, eval=FALSE}
+```{r c17-21, eval=FALSE}
 boot.ci(boot_kendall)
 ```
 
@@ -349,7 +360,7 @@ boot.ci(boot_kendall)
 
 
 
-```{r corr16}
+```{r c17-22}
 ggplot(liarData, aes(Creativity, Position))+
   geom_point()
 ```

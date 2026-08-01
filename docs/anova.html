@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Capítulo 16 ANOVA | BioEstadística</title>
 <meta name="author" content="">
-<meta name="description" content='Fecha de la ultima revisión ## [1] "2026-08-01" Chunk para poder cambiar el color del texto  16.0.1 Instalar libreria si es necesario #install.packages("car") #install.packages("pastecs")...'>
+<meta name="description" content='Fecha de la última revisión ## [1] "2026-08-01" Chunk para poder cambiar el color del texto  16.0.1 Instalar libreria si es necesario #install.packages("car") #install.packages("pastecs")...'>
 <meta name="generator" content="bookdown 0.47 with bs4_book()">
 <meta property="og:title" content="Capítulo 16 ANOVA | BioEstadística">
 <meta property="og:type" content="book">
-<meta property="og:description" content='Fecha de la ultima revisión ## [1] "2026-08-01" Chunk para poder cambiar el color del texto  16.0.1 Instalar libreria si es necesario #install.packages("car") #install.packages("pastecs")...'>
+<meta property="og:description" content='Fecha de la última revisión ## [1] "2026-08-01" Chunk para poder cambiar el color del texto  16.0.1 Instalar libreria si es necesario #install.packages("car") #install.packages("pastecs")...'>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Capítulo 16 ANOVA | BioEstadística">
-<meta name="twitter:description" content='Fecha de la ultima revisión ## [1] "2026-08-01" Chunk para poder cambiar el color del texto  16.0.1 Instalar libreria si es necesario #install.packages("car") #install.packages("pastecs")...'>
+<meta name="twitter:description" content='Fecha de la última revisión ## [1] "2026-08-01" Chunk para poder cambiar el color del texto  16.0.1 Instalar libreria si es necesario #install.packages("car") #install.packages("pastecs")...'>
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/Source_Sans_3-0.4.10/font.css" rel="stylesheet">
@@ -71,25 +71,25 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introducción al curso de BioEstadística</a></li>
 <li><a class="" href="introducci%C3%B3n-a-la-bioestad%C3%ADstica.html"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></li>
-<li><a class="" href="poblacion-y-muestreos.html"><span class="header-section-number">3</span> Poblacion y Muestreos</a></li>
-<li><a class="" href="inferencias-y-hipotesis.html"><span class="header-section-number">4</span> Inferencias y Hipotesis</a></li>
+<li><a class="" href="poblaci%C3%B3n-y-muestreo.html"><span class="header-section-number">3</span> Población y Muestreo</a></li>
+<li><a class="" href="inferencias-e-hip%C3%B3tesis.html"><span class="header-section-number">4</span> Inferencias e Hipótesis</a></li>
 <li><a class="" href="historia-breve-de-la-estad%C3%ADstica.html"><span class="header-section-number">5</span> Historia breve de la Estadística</a></li>
-<li><a class="" href="medida-de-tendencia-central.html"><span class="header-section-number">6</span> Medida de tendencia central</a></li>
-<li><a class="" href="medidas_de_dispersion.html"><span class="header-section-number">7</span> Medidas_de_dispersion</a></li>
-<li><a class="" href="estadistica-descriptiva.html"><span class="header-section-number">8</span> Estadistica Descriptiva</a></li>
-<li><a class="" href="graficos.html"><span class="header-section-number">9</span> Graficos</a></li>
+<li><a class="" href="medidas-de-tendencia-central.html"><span class="header-section-number">6</span> Medidas de tendencia central</a></li>
+<li><a class="" href="medidas-de-dispersi%C3%B3n.html"><span class="header-section-number">7</span> Medidas de dispersión</a></li>
+<li><a class="" href="estad%C3%ADstica-descriptiva.html"><span class="header-section-number">8</span> Estadística Descriptiva</a></li>
+<li><a class="" href="gr%C3%A1ficos.html"><span class="header-section-number">9</span> Gráficos</a></li>
 <li><a class="" href="supuestos.html"><span class="header-section-number">10</span> Supuestos</a></li>
-<li><a class="" href="estadistica-frecuentista.html"><span class="header-section-number">11</span> Estadistica Frecuentista</a></li>
-<li><a class="" href="distribucion-normal.html"><span class="header-section-number">12</span> Distribucion Normal</a></li>
-<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una muestra</a></li>
-<li><a class="" href="prueba-de-t-pareados.html"><span class="header-section-number">14</span> Prueba de t pareados</a></li>
-<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con datos independientes</a></li>
+<li><a class="" href="estad%C3%ADstica-frecuentista.html"><span class="header-section-number">11</span> Estadística Frecuentista</a></li>
+<li><a class="" href="distribuci%C3%B3n-normal.html"><span class="header-section-number">12</span> Distribución Normal</a></li>
+<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una Muestra</a></li>
+<li><a class="" href="prueba-de-t-para-datos-pareados.html"><span class="header-section-number">14</span> Prueba de t para Datos Pareados</a></li>
+<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con Datos Independientes</a></li>
 <li><a class="active" href="anova.html"><span class="header-section-number">16</span> ANOVA</a></li>
 <li><a class="" href="correlaci%C3%B3n-y-covarianza.html"><span class="header-section-number">17</span> Correlación y Covarianza</a></li>
 <li><a class="" href="regresi%C3%B3n-lineal-1.html"><span class="header-section-number">18</span> Regresión Lineal</a></li>
-<li><a class="" href="regresion-logistica.html"><span class="header-section-number">19</span> Regresion Logistica</a></li>
-<li><a class="" href="selecionando-modelos-con-akaike.html"><span class="header-section-number">20</span> Selecionando modelos con AKAIKE</a></li>
-<li><a class="" href="pruebas-no-parametricas.html"><span class="header-section-number">21</span> Pruebas no parametricas</a></li>
+<li><a class="" href="regresi%C3%B3n-log%C3%ADstica.html"><span class="header-section-number">19</span> Regresión Logística</a></li>
+<li><a class="" href="selecci%C3%B3n-de-modelos-con-el-criterio-de-akaike.html"><span class="header-section-number">20</span> Selección de Modelos con el Criterio de Akaike</a></li>
+<li><a class="" href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">21</span> Pruebas No Paramétricas</a></li>
 <li><a class="" href="referencias-1.html">Referencias</a></li>
 <li class="book-part">Appendix</li>
 <li><a class="" href="ejercicios-a.html"><span class="header-section-number">A</span> Ejercicios A</a></li>
@@ -103,7 +103,7 @@
 <li><a class="" href="ejercicios-i.html"><span class="header-section-number">I</span> Ejercicios I</a></li>
 <li><a class="" href="ejercicios-j.html"><span class="header-section-number">J</span> Ejercicios J</a></li>
 <li><a class="" href="ejercicios-k.html"><span class="header-section-number">K</span> Ejercicios K</a></li>
-<li><a class="" href="ejercicios-sobre-prueba-de-t-con-datos-independiente.html"><span class="header-section-number">L</span> Ejercicios sobre prueba de t con datos independiente</a></li>
+<li><a class="" href="ejercicios-l-prueba-de-t-con-datos-independientes.html"><span class="header-section-number">L</span> Ejercicios L: prueba de t con datos independientes</a></li>
 <li><a class="" href="ejercicios-m.html"><span class="header-section-number">M</span> Ejercicios M</a></li>
 <li><a class="" href="ejercicios-n.html"><span class="header-section-number">N</span> Ejercicios N</a></li>
 <li><a class="" href="ejercicio-o.html"><span class="header-section-number">O</span> Ejercicio O</a></li>
@@ -120,7 +120,7 @@
 <h1>
 <span class="header-section-number">Capítulo 16</span> ANOVA<a class="anchor" aria-label="anchor" href="#anova"><i class="fas fa-link"></i></a>
 </h1>
-<p>Fecha de la ultima revisión</p>
+<p>Fecha de la última revisión</p>
 <pre><code>## [1] "2026-08-01"</code></pre>
 <p><img src="Graficos/hex_ggversa.png" alt="" width="20%"><img src="Graficos/hex_error.png" alt="" width="20%"></p>
 <p>Chunk para poder cambiar el color del texto</p>
@@ -128,7 +128,7 @@
 <h3>
 <span class="header-section-number">16.0.1</span> Instalar libreria si es necesario<a class="anchor" aria-label="anchor" href="#instalar-libreria-si-es-necesario"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb526"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb530"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#install.packages("car")</span></span>
 <span><span class="co">#install.packages("pastecs")</span></span>
 <span><span class="co">#install.packages("multcomp")</span></span>
@@ -139,7 +139,7 @@
 <h3>
 <span class="header-section-number">16.0.2</span> Activar libreria<a class="anchor" aria-label="anchor" href="#activar-libreria"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb527"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb531"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span></span>
@@ -158,19 +158,22 @@
 contrario de la prueba de t que es para comparar 2 promedios solamente.
 Entonces ANOVA es una extensión de la prueba t. La hipótesis nula es Ho:
 los promedios de los grupos son iguales. ANOVA fue desarrollado por
-Ronald Fisher y es basado en evaluar la varianza total del experimento y
-comparar esta con la varianza en los grupos. Típicamente si la varianza
-explicado entre los grupos es más grande que la varianza dentro los
-grupos se rechaza la hipótesis nula. A continuación veremos como hacer
+Ronald Fisher y se basa en evaluar la varianza total del experimento y
+compararla con la varianza dentro de los grupos. Típicamente, si la varianza
+explicada entre los grupos es más grande que la varianza dentro de los
+grupos, se rechaza la hipótesis nula. A continuación veremos cómo hacer
 estos cálculos.</p>
+<div class="definicion">
+<p><strong>ANOVA (Análisis de Varianza).</strong> Prueba que compara los promedios de 3 o más grupos analizando cómo se reparte la variabilidad total: la variabilidad <em>entre</em> grupos frente a la variabilidad <em>dentro</em> de los grupos. Si la variabilidad entre grupos es grande en relación con la de dentro (un valor de <em>F</em> grande), se rechaza la hipótesis nula de que todos los promedios son iguales.</p>
+</div>
 <p>Primero hay que explicar porque es necesario ANOVA y no hacer múltiples
 prueba de t. Recuerda que típicamente rechazamos la hipótesis nula
-cuando el valor de p es menor de 0.05, el tipo de error I. A cada vez
-que se hace una prueba t hay 5% de error. Por consecuencia si uno hace
-múltiples pruebas t, hay una posibilidad que se recheza la hipótesis
-nula cuando se debería aceptar. Cuan grande es ese error si uno hace
-múltiples pruebas t.</p>
-<div class="sourceCode" id="cb528"><pre class="downlit sourceCode r">
+cuando el valor de p es menor de 0.05, el tipo de error I. Cada vez
+que se hace una prueba t hay 5% de error. Por consiguiente, si uno hace
+múltiples pruebas t, hay una posibilidad de que se rechace la hipótesis
+nula cuando no se debería rechazar. ¿Cuán grande es ese error si uno hace
+múltiples pruebas t?</p>
+<div class="sourceCode" id="cb532"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tibble.tidyverse.org/">tibble</a></span><span class="op">)</span></span>
 <span><span class="va">Tipo_errorI</span><span class="op">=</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span></span>
 <span>  <span class="op">~</span><span class="va">Cantidad_Grupo_k</span>, <span class="op">~</span><span class="va">C</span>, <span class="op">~</span><span class="st">"0.05"</span>, <span class="op">~</span><span class="st">"0.01"</span>,</span>
@@ -184,10 +187,10 @@ múltiples pruebas t.</p>
 <span>    <span class="fu"><a href="https://hughjonesd.github.io/huxtable/reference/themes.html">theme_article</a></span><span class="op">(</span>header_col <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://hughjonesd.github.io/huxtable/reference/borders.html">set_bottom_border</a></span><span class="op">(</span>row <span class="op">=</span> <span class="fl">1</span>, col <span class="op">=</span> <span class="va">everywhere</span>, value <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="https://hughjonesd.github.io/huxtable/reference/caption.html">set_caption</a></span><span class="op">(</span><span class="st">"La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)"</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://hughjonesd.github.io/huxtable/reference/add_footnote.html">add_footnote</a></span><span class="op">(</span><span class="st">"* C=k(k-1)/2, que es la cantidad de comparación"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:anova1">
+<span>  <span class="fu"><a href="https://hughjonesd.github.io/huxtable/reference/add_footnote.html">add_footnote</a></span><span class="op">(</span><span class="st">"* C=k(k-1)/2, que es la cantidad de comparaciones"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c16-7">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:anova1">Table 16.1: </span> La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)</caption>
+<span id="tab:c16-7">Table 16.1: </span> La probabilidad de cometer un error tipo I usando la prueba de t para cada pares de prueba (C)</caption>
 <col>
 <col>
 <col>
@@ -229,11 +232,14 @@ múltiples pruebas t.</p>
 <td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;">0.54</td>
 <td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 0pt 6pt 6pt;">0.14</td>
 </tr>
-<tr><td class="huxtable-cell" colspan="4" style="border-style: solid solid solid solid; border-width: 0.8pt 0pt 0pt 0pt;">* C=k(k-1)/2, que es la cantidad de comparación</td></tr>
+<tr><td class="huxtable-cell" colspan="4" style="border-style: solid solid solid solid; border-width: 0.8pt 0pt 0pt 0pt;">* C=k(k-1)/2, que es la cantidad de comparaciones</td></tr>
 </tbody>
 </table></div>
-<p>Nota que si tienes 4 grupos tendrá que hacer 6 pruebas de t, y eso eleva
-la probabilidad de cometer un tipo de error I a 26%, mucho más alto que
+<div class="advertencia">
+<p>Hacer muchas pruebas de <em>t</em> infla la probabilidad de cometer al menos un error de tipo I (rechazar Ho por azar). Con 4 grupos (6 comparaciones) esa probabilidad sube a ~26%, muy por encima del 5% deseado. ANOVA controla el error para el conjunto completo de comparaciones.</p>
+</div>
+<p>Nota que si tienes 4 grupos tendrás que hacer 6 pruebas de t, y eso eleva
+la probabilidad de cometer un error de tipo I a 26%, mucho más alto que
 el 5% que uno quisiera. Cuando uno hace la prueba de ANOVA y selecciona
 el nivel de error de 5%, es que el conjunto de todas las pruebas tiene
 ese nivel error posible.</p>
@@ -242,13 +248,13 @@ ese nivel error posible.</p>
 <h2>
 <span class="header-section-number">16.2</span> Hipótesis en ANOVA<a class="anchor" aria-label="anchor" href="#hip%C3%B3tesis-en-anova"><i class="fas fa-link"></i></a>
 </h2>
-<p>La hipótesis nula en ANOVA, es que todos los grupos tienen el mismo
-promedio, o mejor dicho que no hay evidencia que los promedios sean
-distintos. Filosoficamente uno NUNCA uede decir que algo es similar es
-que uno puede decir que no hay evidencia que sean diferentes. Esto
-proviene de el punto imprtante que uno hace un muestreo de la población,
-por consecuencia siempre hay la posibilidad que los datos (el muestreo)
-NO representa la población y hay un tipo de error II (que no se rechaza
+<p>La hipótesis nula en ANOVA es que todos los grupos tienen el mismo
+promedio, o mejor dicho, que no hay evidencia de que los promedios sean
+distintos. Filosóficamente, uno NUNCA puede decir que algo es igual; solo
+puede decir que no hay evidencia de que sean diferentes. Esto
+proviene del punto importante de que uno hace un muestreo de la población;
+por consiguiente, siempre existe la posibilidad de que los datos (el muestreo)
+NO representen la población y se cometa un error de tipo II (no rechazar
 la hipótesis nula cuando se debería rechazar).</p>
 <p>H0: <span class="math inline">\(H_o:\ \mu_1=\mu_2=\mu_3=...=\mu_k\)</span> Ha: Por lo menos uno de los
 grupos no es igual a los demás.</p>
@@ -261,7 +267,7 @@ por los menos uno de ellos es distinto.</li>
 es la siguiente</p>
 <ul>
 <li>Ho: G1=G2=G3, p &gt;= 0.05</li>
-<li>Ha: Por lo menos uno de estos grupos no es igual a los demas.</li>
+<li>Ha: Por lo menos uno de estos grupos no es igual a los demás.</li>
 </ul>
 <p>Si encontramos un valor de p &lt;0.05, rechazamos la hipótesis nula y de
 una de las posibles combinaciones pudiese ser G1=G2, G1=G3, pero G2 no
@@ -275,13 +281,13 @@ rechaza la hipótesis nula?</li>
 <h2>
 <span class="header-section-number">16.3</span> Crear un conjunto de datos<a class="anchor" aria-label="anchor" href="#crear-un-conjunto-de-datos"><i class="fas fa-link"></i></a>
 </h2>
-<p>Aquí observamos la cantidad de fósforo por parte de millón observado en
-la misma especie de planta cerca tres lagos de Puerto Rico . Los datos
-son ficticios es para demostrar el proceso de hacer los análisis. Se
-observa datos de plantas 3 lagos en Pueto Rico (Caraizo, DosBocas y
+<p>Aquí observamos la cantidad de fósforo (en partes por millón) observada en
+la misma especie de planta cerca de tres lagos de Puerto Rico. Los datos
+son ficticios, para demostrar el proceso de hacer los análisis. Se
+observan datos de plantas de 3 lagos en Puerto Rico (Caraizo, DosBocas y
 Guineo).</p>
 <p>Nuestra hipótesis nula es que la cantidad de fósforo (partes por
-million) en la plantas es igual en los tres lagos.</p>
+millón) en las plantas es igual en los tres lagos.</p>
 <blockquote>
 <ul>
 <li><span class="math inline">\(H_o:\ \mu_C=\mu_{DB}=\mu_G\)</span></li>
@@ -289,7 +295,7 @@ million) en la plantas es igual en los tres lagos.</p>
 concentración de fósforo diferente</li>
 </ul>
 </blockquote>
-<div class="sourceCode" id="cb529"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb533"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">id</span><span class="op">&lt;-</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">16</span><span class="op">)</span></span>
 <span><span class="va">Cant_Fos</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">55</span>,<span class="fl">56</span>,<span class="fl">64</span>,<span class="fl">45</span>,<span class="fl">44</span>,</span>
 <span>            <span class="fl">37</span>,<span class="fl">36</span>,<span class="fl">35</span>,<span class="fl">38</span>,<span class="fl">39</span>,</span>
@@ -299,9 +305,9 @@ concentración de fósforo diferente</li>
 <span>              labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Caraizo"</span>, <span class="st">"DosBocas"</span>, <span class="st">"Guineo"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">fosforo</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">id</span>,<span class="va">Cant_Fos</span>,<span class="va">Lagos</span><span class="op">)</span></span>
 <span><span class="va">fosforo</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:anova2">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c16-8">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:anova2">Table 16.2: </span> </caption>
+<span id="tab:c16-8">Table 16.2: </span> </caption>
 <col>
 <col>
 <col>
@@ -399,37 +405,37 @@ concentración de fósforo diferente</li>
 <span class="header-section-number">16.4</span> Visualizar los datos<a class="anchor" aria-label="anchor" href="#visualizar-los-datos"><i class="fas fa-link"></i></a>
 </h2>
 <p>Hacemos un gráfico de los datos. Calculamos el promedio de todos los
-valores de “Y” (concentración de fósforo en las plantas) y se gráfica,
-vemos que muchos de los valores de las plantas son por debajo los
-valores de la linea y muchos de los valores están por encima. Se observa
-que la concentración de fósforo en plantas que provienen de los lagos
-Caraizo y Guineo son lejos del promedio.</p>
-<div class="sourceCode" id="cb530"><pre class="downlit sourceCode r">
+valores de “Y” (concentración de fósforo en las plantas) y lo graficamos.
+Vemos que muchos de los valores de las plantas están por debajo de la
+línea y muchos otros están por encima. Se observa
+que la concentración de fósforo en las plantas que provienen de los lagos
+Caraizo y Guineo está lejos del promedio.</p>
+<div class="sourceCode" id="cb534"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mean_fosforo</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">fosforo</span><span class="op">$</span><span class="va">Cant_Fos</span><span class="op">)</span></span>
 <span><span class="va">mean_fosforo</span></span></code></pre></div>
 <pre><code>## [1] 33.75</code></pre>
-<div class="sourceCode" id="cb532"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb536"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">fosforo</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Lagos</span>, <span class="va">Cant_Fos</span>, colour<span class="op">=</span><span class="va">Lagos</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_jitter.html">geom_jitter</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_hline</a></span><span class="op">(</span>yintercept <span class="op">=</span> <span class="va">mean_fosforo</span><span class="op">)</span> <span class="co"># geom_hline = linea horizontal</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/anova3-1.png" alt="" width="672"></div>
-<p>Otra alternativa y una que ayuda a entender como se hace el cálculos es
-observar la diferencias entre el valor de la “y” y el promedio, o sea
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c16-9-1.png" alt="" width="672"></div>
+<p>Otra alternativa, y una que ayuda a entender cómo se hacen los cálculos, es
+observar las diferencias entre el valor de la “y” y el promedio, o sea
 los residuales.
 <span style="color: blue;">Nota que esto se parece a la grafica de residuales de la regresión lineal</span>.
 Vimos también este tipo de gráfico para la prueba de t.</p>
-<div class="sourceCode" id="cb533"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb537"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">16</span>, <span class="va">Cant_Fos</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">60</span><span class="op">)</span>, ylab<span class="op">=</span><span class="st">"y"</span>, xlab <span class="op">=</span> <span class="st">"order"</span>, pch<span class="op">=</span><span class="fl">21</span>, bg<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Cant_Fos</span><span class="op">)</span>, col<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fl">16</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">i</span>,<span class="va">i</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Cant_Fos</span><span class="op">)</span>, <span class="va">Cant_Fos</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="st">"green"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/anova4-1.png" alt="" width="672"></div>
-<p>Ahora vamos a separar el gráfico y ver los residuales por grupo, en otra
-palabra, cual son los residuales entre los valores y el promedio dentro
-de los mismos grupos. Se observa en este caso que hay mucho menos
-varianza entre los valores de un mismo grupo. Este es un indice que los
-lagos explica la varianza (en parte) en concentración de fósforo en las
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c16-10-1.png" alt="" width="672"></div>
+<p>Ahora vamos a separar el gráfico y ver los residuales por grupo, en otras
+palabras, cuáles son los residuales entre los valores y el promedio dentro
+de cada grupo. Se observa en este caso que hay mucho menos
+varianza entre los valores de un mismo grupo. Este es un indicio de que los
+lagos explican (en parte) la varianza en la concentración de fósforo en las
 plantas.</p>
-<div class="sourceCode" id="cb534"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb538"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">16</span>, <span class="va">Cant_Fos</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">70</span><span class="op">)</span>, ylab<span class="op">=</span><span class="st">"y"</span>, xlab <span class="op">=</span> <span class="st">"order"</span>, pch<span class="op">=</span><span class="fl">21</span>, bg<span class="op">=</span><span class="st">"black"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Cant_Fos</span><span class="op">[</span><span class="va">Lagos</span><span class="op">==</span><span class="st">"Caraizo"</span><span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Cant_Fos</span><span class="op">[</span><span class="va">Lagos</span><span class="op">==</span><span class="st">"DosBocas"</span><span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span>
@@ -444,13 +450,13 @@ plantas.</p>
 <span>  <span class="kw">else</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">index</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, <span class="va">index</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Cant_Fos</span><span class="op">[</span><span class="va">Lagos</span><span class="op">==</span><span class="st">"DosBocas"</span><span class="op">]</span><span class="op">)</span>, <span class="va">Cant_Fos</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span>
 <span><span class="op">}</span> </span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/anova5-1.png" alt="" width="672"></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c16-11-1.png" alt="" width="672"></div>
 <hr>
 <p>Datos donde los grupos son iguales</p>
-<p>En este ejemplo de vemos dos de los grupos donde los residuales solapan,
-este es probable que resulta que estos dos grupos (azul y rojo) no sean
+<p>En este ejemplo vemos dos de los grupos donde los residuales se solapan;
+es probable que estos dos grupos (azul y rojo) no sean
 diferentes.</p>
-<div class="sourceCode" id="cb535"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb539"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">id</span><span class="op">&lt;-</span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">16</span><span class="op">)</span></span>
 <span><span class="va">Cant_Fos</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">52</span>,<span class="fl">66</span>,<span class="fl">60</span>,<span class="fl">54</span>,<span class="fl">64</span>,</span>
 <span>            <span class="fl">56</span>,<span class="fl">58</span>,<span class="fl">65</span>,<span class="fl">49</span>,<span class="fl">58</span>,</span>
@@ -461,7 +467,7 @@ diferentes.</p>
 <span><span class="va">fosforo2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">id</span>,<span class="va">Cant_Fos</span>,<span class="va">Lagos</span><span class="op">)</span></span>
 <span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">fosforo2</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb536"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb540"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">16</span>, <span class="va">Cant_Fos</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">70</span><span class="op">)</span>, ylab<span class="op">=</span><span class="st">"y"</span>, xlab <span class="op">=</span> <span class="st">"order"</span>, pch<span class="op">=</span><span class="fl">21</span>, bg<span class="op">=</span><span class="st">"black"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Cant_Fos</span><span class="op">[</span><span class="va">Lagos</span><span class="op">==</span><span class="st">"Caraizo"</span><span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span>h<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Cant_Fos</span><span class="op">[</span><span class="va">Lagos</span><span class="op">==</span><span class="st">"DosBocas"</span><span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span>
@@ -476,26 +482,25 @@ diferentes.</p>
 <span>  <span class="kw">else</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">index</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>, <span class="va">index</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Cant_Fos</span><span class="op">[</span><span class="va">Lagos</span><span class="op">==</span><span class="st">"DosBocas"</span><span class="op">]</span><span class="op">)</span>, <span class="va">Cant_Fos</span><span class="op">[</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span>
 <span><span class="op">}</span> </span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/anova7-1.png" alt="" width="672"></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c16-13-1.png" alt="" width="672"></div>
 <hr>
 </div>
-<div id="gráficar-los-datos" class="section level2" number="16.5">
+<div id="graficar-los-datos" class="section level2" number="16.5">
 <h2>
-<span class="header-section-number">16.5</span> Gráficar los datos<a class="anchor" aria-label="anchor" href="#gr%C3%A1ficar-los-datos"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.5</span> Graficar los datos<a class="anchor" aria-label="anchor" href="#graficar-los-datos"><i class="fas fa-link"></i></a>
 </h2>
-<p>Gráfica de los datos para observar si hay un patrón observable. Repito
+<p>Grafica los datos para observar si hay un patrón. Repito
 este punto múltiples veces ya que en mi carrera he visto mucha gente
 haciendo análisis de datos y hacen un análisis estadístico y rechazan la
-hipótesis nula. Si habría tomado el tiempo de visualizar los datos se
-habrían dado cuenta que no era posible este resultado porque los datos
-de los grupos solapan completamente.</p>
-<p>NOTA Aquí los tres pasos para producir un gráfico con el promedio de
-cada grupo. 1. los datos con geom_point 2. los promedios con
-stat_summary(fun.y = mean, geom = “point”), para calcular el promedio
-del grupo 3. Una linea que une los promedios con stat_summary(fun.y =
-mean, geom = “line”), note la diferencia entre los dos uno usa “point”
-el otro usa “line”.</p>
-<div class="sourceCode" id="cb537"><pre class="downlit sourceCode r">
+hipótesis nula. Si hubieran tomado el tiempo de visualizar los datos, se
+habrían dado cuenta de que ese resultado no era posible, porque los datos
+de los grupos se solapan completamente.</p>
+<p>NOTA: aquí los tres pasos para producir un gráfico con el promedio de
+cada grupo: 1. los datos con <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>; 2. los promedios con
+<code>stat_summary(fun = mean, geom = "point")</code>, para calcular el promedio
+del grupo; 3. una línea que une los promedios con <code>stat_summary(fun = mean, geom = "line")</code>. Nota la diferencia entre los dos: uno usa “point”
+y el otro usa “line”.</p>
+<div class="sourceCode" id="cb541"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">fosforo</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Lagos</span>, y<span class="op">=</span><span class="va">Cant_Fos</span>, colour<span class="op">=</span><span class="va">Lagos</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
@@ -503,7 +508,7 @@ el otro usa “line”.</p>
 <span>                    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>group<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, colour <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/stat_summary.html">stat_summary</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="va">mean</span>, geom <span class="op">=</span> <span class="st">"line"</span>, size <span class="op">=</span> <span class="fl">1</span>, </span>
 <span>             <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>group<span class="op">=</span><span class="fl">1</span><span class="op">)</span>, colour <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/anova8-1.png" alt="" width="672"></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c16-14-1.png" alt="" width="672"></div>
 <hr>
 </div>
 <div id="un-gráfico-con-el-intervalo-de-confianza." class="section level2" number="16.6">
@@ -516,17 +521,17 @@ este caso measurevar=“Cant_Fos”) y la variable discreta que identifica
 los grupos groupvars=“Lagos”. Esto crea un nuevo data frame con los
 datos resumidos que incluye, el nombre de los grupos (Lagos), el tamaño
 de muestra (N), el promedio de la variable (Cant_Fos), la desviación
-estandar (sd), el error estandar (se) y intervalo de confianza (ci).</p>
-<div class="sourceCode" id="cb538"><pre class="downlit sourceCode r">
+estándar (sd), el error estándar (se) y el intervalo de confianza (ci).</p>
+<div class="sourceCode" id="cb542"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">Rmisc</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">sum</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/Rmisc/man/summarySE.html">summarySE</a></span><span class="op">(</span><span class="va">fosforo</span>, </span>
 <span>                measurevar<span class="op">=</span><span class="st">"Cant_Fos"</span>, </span>
 <span>                groupvars<span class="op">=</span><span class="st">"Lagos"</span><span class="op">)</span></span>
 <span><span class="va">sum</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:anova9">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c16-15">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:anova9">Table 16.3: </span> </caption>
+<span id="tab:c16-15">Table 16.3: </span> </caption>
 <col>
 <col>
 <col>
@@ -575,24 +580,24 @@ estandar (sd), el error estandar (se) y intervalo de confianza (ci).</p>
 <span class="header-section-number">16.7</span> Graficar con nuestro nuevo data frame “sum”.<a class="anchor" aria-label="anchor" href="#graficar-con-nuestro-nuevo-data-frame-sum."><i class="fas fa-link"></i></a>
 </h2>
 <p>Para calcular el 95% del intervalo de confianza del promedio se usa la
-siguiente formula <span class="math inline">\(\overline{x}\ \pm2\cdot se\)</span>. Las barras representa el
-95% de donde pudiese estar el promedio si repetimos el mismo experimento
+siguiente fórmula <span class="math inline">\(\overline{x}\ \pm2\cdot se\)</span>. Las barras representan el
+95% de donde pudiese estar el promedio si repitiéramos el mismo experimento
 100 veces.</p>
-<div class="sourceCode" id="cb539"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">sum</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Lagos</span>, </span>
 <span>                y<span class="op">=</span><span class="va">Cant_Fos</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span>colour<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span><span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">geom_errorbar</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>ymin<span class="op">=</span><span class="va">Cant_Fos</span><span class="op">-</span><span class="fl">2</span><span class="op">*</span><span class="va">se</span>,</span>
 <span>                    ymax<span class="op">=</span><span class="va">Cant_Fos</span><span class="op">+</span><span class="fl">2</span><span class="op">*</span><span class="va">se</span><span class="op">)</span>, </span>
 <span>                width<span class="op">=</span><span class="fl">.2</span>, size<span class="op">=</span><span class="fl">0.7</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/anova10-1.png" alt="" width="672"></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c16-16-1.png" alt="" width="672"></div>
 <hr>
 </div>
 <div id="estadística-descriptiva-de-los-lagos" class="section level2" number="16.8">
 <h2>
 <span class="header-section-number">16.8</span> Estadística descriptiva de los Lagos<a class="anchor" aria-label="anchor" href="#estad%C3%ADstica-descriptiva-de-los-lagos"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb540"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb544"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SciViews/pastecs">pastecs</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/by.html">by</a></span><span class="op">(</span><span class="va">fosforo</span><span class="op">$</span><span class="va">Cant_Fos</span>, <span class="va">fosforo</span><span class="op">$</span><span class="va">Lagos</span>, <span class="va">stat.desc</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## fosforo$Lagos: Caraizo
@@ -624,73 +629,77 @@ siguiente formula <span class="math inline">\(\overline{x}\ \pm2\cdot se\)</span
 <h2>
 <span class="header-section-number">16.9</span> Los supuestos de ANOVA<a class="anchor" aria-label="anchor" href="#los-supuestos-de-anova"><i class="fas fa-link"></i></a>
 </h2>
-<p>Hay 4 supuestos que tenemos que evaluar cuando se hace un ANOVA.</p>
-<blockquote>
+<div class="supuestos">
+<p>Hay 4 supuestos que tenemos que evaluar cuando se hace un ANOVA:</p>
 <ul>
-<li>Los datos de cada grupo es una muestra al azar de la poblaciones</li>
-<li>La característica medida es son continuas.</li>
-<li>Igualdad de varianza: el error en la varianza en cada grupo es
-igual</li>
-<li>La variables continuas tienen una distribución normal.</li>
+<li>Los datos de cada grupo son una muestra al azar de la población (independencia).</li>
+<li>La característica medida es continua.</li>
+<li>Igualdad de varianza: la varianza en cada grupo es igual (homocedasticidad).</li>
+<li>La variable continua tiene una distribución aproximadamente normal dentro de cada grupo.</li>
 </ul>
-</blockquote>
+</div>
 <hr>
 </div>
 <div id="datos-al-azar" class="section level2" number="16.10">
 <h2>
 <span class="header-section-number">16.10</span> Datos al azar<a class="anchor" aria-label="anchor" href="#datos-al-azar"><i class="fas fa-link"></i></a>
 </h2>
-<p>Este paso es uno de diseño experimental. Que los datos sean
-representativos de la poblaciones de interés, y que no sean sesgados a
-un subgrupo. Por ejemplo uno esta probando una vacuno para COVID-19 y la
-prueba evalúa solamente con gente en muy buena condición física (por
-ejemplos atletas). La selección de los participantes tiene que reflejar
+<p>Este paso es de diseño experimental: que los datos sean
+representativos de la población de interés y que no estén sesgados hacia
+un subgrupo. Por ejemplo, si uno está probando una vacuna para COVID-19 y la
+prueba se evalúa solamente con gente en muy buena condición física (por
+ejemplo, atletas), la selección de los participantes no reflejaría
 la población a quien se estaría ofreciendo la vacuna.</p>
 <hr>
 </div>
 <div id="datos-continuos" class="section level2" number="16.11">
 <h2>
-<span class="header-section-number">16.11</span> 1. Datos Continuos<a class="anchor" aria-label="anchor" href="#datos-continuos"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.11</span> 1. Datos continuos<a class="anchor" aria-label="anchor" href="#datos-continuos"><i class="fas fa-link"></i></a>
 </h2>
-<p>Los datos tienen que valores continuos, no pueden ser discretos. Por
-ejemplo, no pueden ser binarios (vivo/muerto), tampoco no pueden ser
-conteos (0,1,2,3), si hay poca variación. *** ## 2. Igualdad de
-varianza</p>
-<p>La cantidad de dispersión en cada grupo tiene que ser bien similar uno
-al otro. Esto lo podemos comprobar con una prueba. La hipótesis nula es
-que cada grupo tiene una varianza igual. La hipotesis alterna es que por
+<p>Los datos tienen que tener valores continuos, no pueden ser discretos. Por
+ejemplo, no pueden ser binarios (vivo/muerto), y tampoco pueden ser
+conteos (0,1,2,3) si hay poca variación.</p>
+<hr>
+</div>
+<div id="igualdad-de-varianza" class="section level2" number="16.12">
+<h2>
+<span class="header-section-number">16.12</span> 2. Igualdad de varianza<a class="anchor" aria-label="anchor" href="#igualdad-de-varianza"><i class="fas fa-link"></i></a>
+</h2>
+<p>La cantidad de dispersión en cada grupo tiene que ser bastante similar de un
+grupo a otro. Esto lo podemos comprobar con una prueba. La hipótesis nula es
+que cada grupo tiene la misma varianza. La hipótesis alterna es que por
 lo menos uno de los grupos no tiene la misma varianza.</p>
 <blockquote>
 <ul>
 <li><span class="math display">\[Ho: {s}^{2}_1={s}^{2}_2={s}^{2}_3…{s}^{2}_k\]</span></li>
-<li>Ha: Por lo menos uno d elos grupos no tiene la misma varianza que
-los otros. (similar a la Ha de ANOVA)</li>
+<li>Ha: Por lo menos uno de los grupos no tiene la misma varianza que
+los otros (similar a la Ha de ANOVA).</li>
 </ul>
 </blockquote>
 <hr>
 </div>
-<div id="la-prueba-de-levenes-test" class="section level2" number="16.12">
+<div id="la-prueba-de-levene" class="section level2" number="16.13">
 <h2>
-<span class="header-section-number">16.12</span> 3. La prueba de Levene’s test<a class="anchor" aria-label="anchor" href="#la-prueba-de-levenes-test"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.13</span> 3. La prueba de Levene<a class="anchor" aria-label="anchor" href="#la-prueba-de-levene"><i class="fas fa-link"></i></a>
 </h2>
 <p>La prueba de Levene es probablemente la prueba de igualdad de varianza
-la más común aunque hay otras alternativas también. Puede encontrar
-información sobre la prueba de Levene y otras de la pruebas aquí
-<a href="https://en.wikipedia.org/wiki/Levene%27s_test" class="uri">https://en.wikipedia.org/wiki/Levene%27s_test</a>. Para evaluar sin hay
-diferencias en la varianza entre los grupos de usa la función
-<strong>leveneTest()</strong>. Si el valor de p es mayor de 0.05 se acepta la
+más común, aunque hay otras alternativas también. Puedes encontrar
+información sobre la prueba de Levene y otras pruebas aquí:
+<a href="https://en.wikipedia.org/wiki/Levene%27s_test" class="uri">https://en.wikipedia.org/wiki/Levene%27s_test</a>. Para evaluar si hay
+diferencias en la varianza entre los grupos se usa la función
+<strong>leveneTest()</strong>. Si el valor de p es mayor de 0.05, no se rechaza la
 hipótesis nula.
-<span style="color: red;">Si no cumple con el supuesto de igualdad de varianza ver el modulo de Kruskal-Wallis para una alternariva como evaluar los datos</span></p>
+<span style="color: red;">Si no se cumple el supuesto de igualdad de varianza, ver el módulo de Kruskal-Wallis para una alternativa de cómo evaluar los datos</span></p>
 <p>Con los datos de la concentración de fósforo en las plantas de tres
 lagos, la prueba de Levene da un resultado de p &gt; 0.21, lo que indica
-que no hay evidencia que la varianza es distinta entre los grupos, por
-consecuencia se acepta la hipótesis nula.</p>
-<div class="sourceCode" id="cb542"><pre class="downlit sourceCode r">
+que no hay evidencia de que la varianza sea distinta entre los grupos; por
+consiguiente, no se rechaza la hipótesis nula.</p>
+<div class="sourceCode" id="cb546"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/bprice2652/car_repo">car</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/car/man/leveneTest.html">leveneTest</a></span><span class="op">(</span><span class="va">fosforo</span><span class="op">$</span><span class="va">Cant_Fos</span>, <span class="va">fosforo</span><span class="op">$</span><span class="va">Lagos</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:anova12">
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c16-18">
 <caption style="caption-side: top; text-align: center;">
-<span id="tab:anova12">Table 16.4: </span> </caption>
+<span id="tab:c16-18">Table 16.4: </span> </caption>
 <col>
 <col>
 <col>
@@ -714,51 +723,51 @@ consecuencia se acepta la hipótesis nula.</p>
 </table></div>
 <hr>
 </div>
-<div id="normalidad" class="section level2" number="16.13">
+<div id="normalidad" class="section level2" number="16.14">
 <h2>
-<span class="header-section-number">16.13</span> 4. Normalidad<a class="anchor" aria-label="anchor" href="#normalidad"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.14</span> 4. Normalidad<a class="anchor" aria-label="anchor" href="#normalidad"><i class="fas fa-link"></i></a>
 </h2>
 <p>Tenemos que evaluar si los datos tienen una distribución normal. Como se
-ha discutido en un modulo anterior hay múltiples alternativas. Vamos a
-limitarnos a usar la prueba de qqplot. Vemos que los datos más o menos
-siguen la linea, entonces podemos usar ANOVA. En este caso tenemos pocos
-datos pero si tuviesemos más seria apropiado evaluar cada una aparte. Lo
-más sencillo seria de cambiar la primera linea del siguiente script
+ha discutido en un módulo anterior, hay múltiples alternativas. Vamos a
+limitarnos a usar el gráfico Q-Q. Vemos que los datos más o menos
+siguen la línea, entonces podemos usar ANOVA. En este caso tenemos pocos
+datos, pero si tuviésemos más sería apropiado evaluar cada grupo aparte. Lo
+más sencillo sería cambiar la primera línea del siguiente script:
 <strong>ggplot(fosforo, aes(sample = Cant_Fos, group=Lagos))</strong>. En este caso
-tendríamos 3 lineas.
-<span style="color: red;">Si no cumple con el supuesto de normalidad ver el modulo de Kruskal-Wallis para una alternariva como evaluar los datos</span></p>
-<div class="sourceCode" id="cb543"><pre class="downlit sourceCode r">
+tendríamos 3 líneas.
+<span style="color: red;">Si no se cumple el supuesto de normalidad, ver el módulo de Kruskal-Wallis para una alternativa de cómo evaluar los datos</span></p>
+<div class="sourceCode" id="cb547"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">fosforo</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>sample <span class="op">=</span> <span class="va">Cant_Fos</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">stat_qq</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">stat_qq_line</a></span><span class="op">(</span>colour<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Valores teóricos"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Valores observados"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/anova13-1.png" alt="" width="672"></div>
-<div class="sourceCode" id="cb544"><pre class="downlit sourceCode r">
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c16-19-1.png" alt="" width="672"></div>
+<div class="sourceCode" id="cb548"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">fosforo</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>sample <span class="op">=</span> <span class="va">Cant_Fos</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">stat_qq</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">stat_qq_line</a></span><span class="op">(</span>colour<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Lagos</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"Valores teóricos"</span><span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"Valores observados"</span><span class="op">)</span></span></code></pre></div>
-<div class="inline-figure"><img src="BioEstadistica_files/figure-html/anova13-2.png" alt="" width="672"></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c16-19-2.png" alt="" width="672"></div>
 <hr>
 </div>
-<div id="la-prueba-de-anova" class="section level2" number="16.14">
+<div id="la-prueba-de-anova" class="section level2" number="16.15">
 <h2>
-<span class="header-section-number">16.14</span> La prueba de ANOVA<a class="anchor" aria-label="anchor" href="#la-prueba-de-anova"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.15</span> La prueba de ANOVA<a class="anchor" aria-label="anchor" href="#la-prueba-de-anova"><i class="fas fa-link"></i></a>
 </h2>
-<p>Finalmente llegamos a la prueba de ANOVA, se usa la función <strong>aov()</strong>.
-En la primera linea vemos el resultado de comparar los tres lagos, ven
-que hay 2 grados de libertad (df=2), esto quiere decir que esta incluido
-en el analisis 3 grapos, porque el grado de libertad de calcula tomando
-la suma de la cantidad de grupos k-1, y este ejercicio tenemos 3-1=2. En
-la misma linea obsertva el valor de p, vemos que se rechaza la hipótesis
-nula (p &lt;0.05). Ya sabemos que por lo menos uno de los grupos no es
-igual a los demás. Pero todavía no sabemos que pares son diferentes o si
-todos. En la segunda linea se observa lo otros datos del experimento, lo
-que aquí se llama los residuales.</p>
-<div class="sourceCode" id="cb545"><pre class="downlit sourceCode r">
+<p>Finalmente llegamos a la prueba de ANOVA; se usa la función <strong>aov()</strong>.
+En la primera línea vemos el resultado de comparar los tres lagos. Vemos
+que hay 2 grados de libertad (df=2), lo que quiere decir que están incluidos
+3 grupos en el análisis, porque el grado de libertad se calcula como
+la cantidad de grupos menos uno (k-1), y en este ejercicio tenemos 3-1=2. En
+la misma línea observa el valor de p: vemos que se rechaza la hipótesis
+nula (p &lt; 0.05). Ya sabemos que por lo menos uno de los grupos no es
+igual a los demás, pero todavía no sabemos qué pares son diferentes ni si
+lo son todos. En la segunda línea se observan los otros datos del experimento,
+lo que aquí se llama los residuales.</p>
+<div class="sourceCode" id="cb549"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">LagosModel</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span><span class="op">(</span><span class="va">Cant_Fos</span><span class="op">~</span><span class="va">Lagos</span>, data <span class="op">=</span> <span class="va">fosforo</span><span class="op">)</span></span>
 <span></span>
 <span></span>
@@ -768,43 +777,43 @@ que aquí se llama los residuales.</p>
 ## Residuals   13    520      40                     
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
-<p>Una alternativa para evaluar si los datos tienen una igualdad de
-varianza y normalidad es usar la función <strong>plot()</strong>, esta función
-presenta 4 gráficos donde vamos aquí explicar solamente las dos
-primeras. En el primer gráfico se observa una distribución de los
-residuales por grupo. Si los datos están más o menos distribuido de
-forma similar entre los grupos (que los datos de cada grupo tiene más o
+<p>Una alternativa para evaluar si los datos cumplen con la igualdad de
+varianza y la normalidad es usar la función <strong>plot()</strong>. Esta función
+presenta 4 gráficos, de los cuales aquí explicaremos solamente los dos
+primeros. En el primer gráfico se observa la distribución de los
+residuales por grupo. Si los datos están más o menos distribuidos de
+forma similar entre los grupos (es decir, si cada grupo tiene más o
 menos la misma cantidad de datos negativos y positivos alrededor del
-residual cero y que esta distribución se ve similar) se suguiere que hay
+residual cero y esta distribución se ve similar), se sugiere que hay
 igualdad de varianza entre los grupos.</p>
-<p>En el segundo gráfico se observa en qqplot. Si los datos están cerca de
-la linea entrecortada se asume que tiene una distribución normal. Nota
-que hay tres datos que tienen números (5, 3, 12), estos son datos que
-posiblemente sean atípicos, y hay que evaluar si estos datos impacta el
-resultados (veremos esto más tarde, con la prueba de Cooks).</p>
-<div class="sourceCode" id="cb547"><pre class="downlit sourceCode r">
+<p>En el segundo gráfico se observa el gráfico Q-Q. Si los datos están cerca de
+la línea entrecortada, se asume que tienen una distribución normal. Nota
+que hay tres datos que aparecen con números (5, 3, 12); estos son datos que
+posiblemente sean atípicos, y hay que evaluar si impactan el
+resultado (veremos esto más tarde, con la distancia de Cook).</p>
+<div class="sourceCode" id="cb551"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">LagosModel</span><span class="op">)</span></span></code></pre></div>
-<p><img src="BioEstadistica_files/figure-html/anova15-1.png" alt="" width="672"><img src="BioEstadistica_files/figure-html/anova15-2.png" alt="" width="672"><img src="BioEstadistica_files/figure-html/anova15-3.png" alt="" width="672"><img src="BioEstadistica_files/figure-html/anova15-4.png" alt="" width="672"></p>
+<p><img src="BioEstadistica_files/figure-html/c16-21-1.png" alt="" width="672"><img src="BioEstadistica_files/figure-html/c16-21-2.png" alt="" width="672"><img src="BioEstadistica_files/figure-html/c16-21-3.png" alt="" width="672"><img src="BioEstadistica_files/figure-html/c16-21-4.png" alt="" width="672"></p>
 </div>
-<div id="prueba-de-post-hoc" class="section level2" number="16.15">
+<div id="prueba-de-post-hoc" class="section level2" number="16.16">
 <h2>
-<span class="header-section-number">16.15</span> PRUEBA de Post-Hoc<a class="anchor" aria-label="anchor" href="#prueba-de-post-hoc"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.16</span> PRUEBA de Post-Hoc<a class="anchor" aria-label="anchor" href="#prueba-de-post-hoc"><i class="fas fa-link"></i></a>
 </h2>
-<p>Importante este paso
+<p>Importante: este paso
 <span style="color: blue;">se hace solamente si se rechaza la hipótesis nula de la prueba de ANOVA</span>.
-Si aceptamos la hipótesis nula ya se acabo, no hay más nada que hacer y
-este paso aquí no se evalúa. Este tipo de prueba Post-Hoc se refiere a
+Si no rechazamos la hipótesis nula, ya terminamos: no hay más nada que hacer y
+este paso no se evalúa. Una prueba Post-Hoc se refiere a
 una prueba que se hace después de otra. Ya se hizo la de ANOVA y se
-rechazo y ahora queremos evaluar cual de los grupos es distinto uno al
-otro.</p>
-<p>Hay en la literatura más de 10 pruebas que se puede utilizar después de
-un ANOVA, para tener un poco más de información pueden ir al siguiente
-website <a href="https://www.statisticshowto.com/post-hoc/" class="uri">https://www.statisticshowto.com/post-hoc/</a>. Aquí vamos a
-presentar solamente dos de estás. Estas dos son frecuentemente
-utilizadas en ciencias medicas por ser las primeras haber sido
-desarrolladas. Nota que el nivel de tipo de error I, es por el conjunto
-total de las pruebas hecha. Si selecciona un alfa de 0.05, entonces la
-probabilidad de cometer el error tipo I es de 5% para el total de
+rechazó, y ahora queremos evaluar cuál de los grupos es distinto de los
+otros.</p>
+<p>En la literatura hay más de 10 pruebas que se pueden utilizar después de
+un ANOVA; para tener un poco más de información pueden ir al siguiente
+sitio web: <a href="https://www.statisticshowto.com/post-hoc/" class="uri">https://www.statisticshowto.com/post-hoc/</a>. Aquí vamos a
+presentar solamente dos de estas. Estas dos son frecuentemente
+utilizadas en ciencias médicas por ser de las primeras en haberse
+desarrollado. Nota que el nivel de error de tipo I es para el conjunto
+total de las pruebas hechas. Si se selecciona un alfa de 0.05, entonces la
+probabilidad de cometer el error de tipo I es de 5% para el total de
 pruebas.</p>
 <blockquote>
 <ul>
@@ -812,14 +821,17 @@ pruebas.</p>
 <li>Tukey test</li>
 </ul>
 </blockquote>
+<div class="nota">
+<p>Las pruebas Post-Hoc (Bonferroni, Tukey) se hacen <strong>solo si el ANOVA rechaza la hipótesis nula</strong>. El ANOVA dice que <em>al menos un</em> grupo difiere; las pruebas Post-Hoc identifican <em>cuáles</em> pares difieren, ajustando el error de tipo I por el número de comparaciones.</p>
 </div>
-<div id="prueba-de-bonferroni" class="section level2" number="16.16">
+</div>
+<div id="prueba-de-bonferroni" class="section level2" number="16.17">
 <h2>
-<span class="header-section-number">16.16</span> Prueba de Bonferroni<a class="anchor" aria-label="anchor" href="#prueba-de-bonferroni"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.17</span> Prueba de Bonferroni<a class="anchor" aria-label="anchor" href="#prueba-de-bonferroni"><i class="fas fa-link"></i></a>
 </h2>
-<p>Vemos ahora el se hizo 3 pruebas, y cada una tiene un valor de p menor
-de 5%, por consecuencia cada grupo es distinto uno del otro.</p>
-<div class="sourceCode" id="cb548"><pre class="downlit sourceCode r">
+<p>Vemos ahora que se hicieron 3 pruebas, y cada una tiene un valor de p menor
+de 5%; por consiguiente, cada grupo es distinto de los otros.</p>
+<div class="sourceCode" id="cb552"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/pairwise.t.test.html">pairwise.t.test</a></span><span class="op">(</span><span class="va">fosforo</span><span class="op">$</span><span class="va">Cant_Fos</span>, <span class="va">fosforo</span><span class="op">$</span><span class="va">Lagos</span>, p.adjust.method <span class="op">=</span> <span class="st">"bonferroni"</span><span class="op">)</span> <span class="co"># Nota aqui se usa los datos originales, el error de todos las pruebas se limita a 5%.  </span></span></code></pre></div>
 <pre><code>## 
 ##  Pairwise comparisons using t tests with pooled SD 
@@ -832,17 +844,17 @@ de 5%, por consecuencia cada grupo es distinto uno del otro.</p>
 ## 
 ## P value adjustment method: bonferroni</code></pre>
 </div>
-<div id="prueba-de-tukey" class="section level2" number="16.17">
+<div id="prueba-de-tukey" class="section level2" number="16.18">
 <h2>
-<span class="header-section-number">16.17</span> Prueba de Tukey<a class="anchor" aria-label="anchor" href="#prueba-de-tukey"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.18</span> Prueba de Tukey<a class="anchor" aria-label="anchor" href="#prueba-de-tukey"><i class="fas fa-link"></i></a>
 </h2>
 <p>En la prueba de Tukey vemos el resultado de las pruebas Post-Hoc. El
-resultado es lo mismo que la prueba anterior donde cada grupo es
-significativamente diferente uno del otro. En mucha ocasiones el resulto
-puede diferir. Si esto ocurre hay que evaluar bien cual es el nivel de
-confiabilidad que queremos. Algunos pruebas Post_Hoc tienden a rechazar
-con meas frecuencia que otra.</p>
-<div class="sourceCode" id="cb550"><pre class="downlit sourceCode r">
+resultado es el mismo que el de la prueba anterior: cada grupo es
+significativamente diferente de los otros. En muchas ocasiones el resultado
+puede diferir. Si esto ocurre, hay que evaluar bien cuál es el nivel de
+confiabilidad que queremos. Algunas pruebas Post-Hoc tienden a rechazar
+con más frecuencia que otras.</p>
+<div class="sourceCode" id="cb554"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://codeberg.org/thothorn/multcomp">multcomp</a></span><span class="op">)</span></span>
 <span><span class="va">postHocs.1</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/multcomp/man/glht.html">glht</a></span><span class="op">(</span><span class="va">LagosModel</span>, linfct <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/multcomp/man/glht.html">mcp</a></span><span class="op">(</span>Lagos <span class="op">=</span> <span class="st">"Tukey"</span><span class="op">)</span><span class="op">)</span>  </span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">postHocs.1</span><span class="op">)</span></span></code></pre></div>
@@ -863,18 +875,18 @@ con meas frecuencia que otra.</p>
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## (Adjusted p values reported -- single-step method)</code></pre>
 </div>
-<div id="super-heroes-and-injuries" class="section level2" number="16.18">
+<div id="super-heroes-and-injuries" class="section level2" number="16.19">
 <h2>
-<span class="header-section-number">16.18</span> SUPER HEROES and INJURIES<a class="anchor" aria-label="anchor" href="#super-heroes-and-injuries"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.19</span> SUPER HEROES and INJURIES<a class="anchor" aria-label="anchor" href="#super-heroes-and-injuries"><i class="fas fa-link"></i></a>
 </h2>
 <p>Vea la sección de ejercicio</p>
-<div id="rename-the-categories-with-super-hero-names" class="section level4" number="16.18.0.1">
+<div id="rename-the-categories-with-super-hero-names" class="section level4" number="16.19.0.1">
 <h4>
-<span class="header-section-number">16.18.0.1</span> Rename the categories with super hero names<a class="anchor" aria-label="anchor" href="#rename-the-categories-with-super-hero-names"><i class="fas fa-link"></i></a>
+<span class="header-section-number">16.19.0.1</span> Rename the categories with super hero names<a class="anchor" aria-label="anchor" href="#rename-the-categories-with-super-hero-names"><i class="fas fa-link"></i></a>
 </h4>
 <blockquote>
 <ul>
-<li>Evaluar la distribución de los datos de respuestas (los en Y)</li>
+<li>Evaluar la distribución de los datos de respuesta (los de Y)</li>
 <li>Evaluar la homogeneidad de varianza</li>
 <li>Visualizar los datos Puntos y promedios y intervalo de confianza</li>
 <li>Hacer la prueba de ANOVA con aov()</li>
@@ -888,7 +900,7 @@ con meas frecuencia que otra.</p>
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con datos independientes</a></div>
+<div class="prev"><a href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con Datos Independientes</a></div>
 <div class="next"><a href="correlaci%C3%B3n-y-covarianza.html"><span class="header-section-number">17</span> Correlación y Covarianza</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
@@ -903,20 +915,21 @@ con meas frecuencia que otra.</p>
 <li><a class="nav-link" href="#hip%C3%B3tesis-en-anova"><span class="header-section-number">16.2</span> Hipótesis en ANOVA</a></li>
 <li><a class="nav-link" href="#crear-un-conjunto-de-datos"><span class="header-section-number">16.3</span> Crear un conjunto de datos</a></li>
 <li><a class="nav-link" href="#visualizar-los-datos"><span class="header-section-number">16.4</span> Visualizar los datos</a></li>
-<li><a class="nav-link" href="#gr%C3%A1ficar-los-datos"><span class="header-section-number">16.5</span> Gráficar los datos</a></li>
+<li><a class="nav-link" href="#graficar-los-datos"><span class="header-section-number">16.5</span> Graficar los datos</a></li>
 <li><a class="nav-link" href="#un-gr%C3%A1fico-con-el-intervalo-de-confianza."><span class="header-section-number">16.6</span> Un gráfico con el intervalo de confianza.</a></li>
 <li><a class="nav-link" href="#graficar-con-nuestro-nuevo-data-frame-sum."><span class="header-section-number">16.7</span> Graficar con nuestro nuevo data frame “sum”.</a></li>
 <li><a class="nav-link" href="#estad%C3%ADstica-descriptiva-de-los-lagos"><span class="header-section-number">16.8</span> Estadística descriptiva de los Lagos</a></li>
 <li><a class="nav-link" href="#los-supuestos-de-anova"><span class="header-section-number">16.9</span> Los supuestos de ANOVA</a></li>
 <li><a class="nav-link" href="#datos-al-azar"><span class="header-section-number">16.10</span> Datos al azar</a></li>
-<li><a class="nav-link" href="#datos-continuos"><span class="header-section-number">16.11</span> 1. Datos Continuos</a></li>
-<li><a class="nav-link" href="#la-prueba-de-levenes-test"><span class="header-section-number">16.12</span> 3. La prueba de Levene’s test</a></li>
-<li><a class="nav-link" href="#normalidad"><span class="header-section-number">16.13</span> 4. Normalidad</a></li>
-<li><a class="nav-link" href="#la-prueba-de-anova"><span class="header-section-number">16.14</span> La prueba de ANOVA</a></li>
-<li><a class="nav-link" href="#prueba-de-post-hoc"><span class="header-section-number">16.15</span> PRUEBA de Post-Hoc</a></li>
-<li><a class="nav-link" href="#prueba-de-bonferroni"><span class="header-section-number">16.16</span> Prueba de Bonferroni</a></li>
-<li><a class="nav-link" href="#prueba-de-tukey"><span class="header-section-number">16.17</span> Prueba de Tukey</a></li>
-<li><a class="nav-link" href="#super-heroes-and-injuries"><span class="header-section-number">16.18</span> SUPER HEROES and INJURIES</a></li>
+<li><a class="nav-link" href="#datos-continuos"><span class="header-section-number">16.11</span> 1. Datos continuos</a></li>
+<li><a class="nav-link" href="#igualdad-de-varianza"><span class="header-section-number">16.12</span> 2. Igualdad de varianza</a></li>
+<li><a class="nav-link" href="#la-prueba-de-levene"><span class="header-section-number">16.13</span> 3. La prueba de Levene</a></li>
+<li><a class="nav-link" href="#normalidad"><span class="header-section-number">16.14</span> 4. Normalidad</a></li>
+<li><a class="nav-link" href="#la-prueba-de-anova"><span class="header-section-number">16.15</span> La prueba de ANOVA</a></li>
+<li><a class="nav-link" href="#prueba-de-post-hoc"><span class="header-section-number">16.16</span> PRUEBA de Post-Hoc</a></li>
+<li><a class="nav-link" href="#prueba-de-bonferroni"><span class="header-section-number">16.17</span> Prueba de Bonferroni</a></li>
+<li><a class="nav-link" href="#prueba-de-tukey"><span class="header-section-number">16.18</span> Prueba de Tukey</a></li>
+<li><a class="nav-link" href="#super-heroes-and-injuries"><span class="header-section-number">16.19</span> SUPER HEROES and INJURIES</a></li>
 </ul>
 
       <div class="book-extra">

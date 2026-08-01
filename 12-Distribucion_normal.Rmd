@@ -1,11 +1,16 @@
-# Distribucion Normal
+# Distribución Normal
 
-## Instalar y activar los siguientes paquete
+Fecha de la última revisión
+```{r c12-1, echo=FALSE}
+Sys.Date()
+```
+
+## Instalar y activar los siguientes paquetes
 
 
 
 
-```{r norm1, eval=FALSE}
+```{r c12-2, eval=FALSE}
 
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load( car, GGally, ggversa, pastecs, psych, pander, ggplot2, nortest, Hmisc, boot, knitr,tidyverse, gt, gridExtra)
@@ -15,7 +20,7 @@ pacman::p_load( car, GGally, ggversa, pastecs, psych, pander, ggplot2, nortest, 
 
 
 Activar los Paquetes
-```{r norm2, warning=FALSE}
+```{r c12-3, warning=FALSE}
 library(nortest) # paquete para probar la normalidad
 library(car) # paquete para análisis de correlación
 library(ggplot2)  # paquete para visualizar los datos
@@ -33,7 +38,7 @@ library(gridExtra)
 
 ```
 
-```{r, eval=TRUE, echo=FALSE}
+```{r c12-4, eval=TRUE, echo=FALSE}
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -53,21 +58,29 @@ colorize <- function(x, color) {
 ## La distribución normal 
 
  
-Es modulo está enfocado en entender diferentes aspectos de la distribución normal. Muchas pruebas como la prueba de t, correlaciones, regresiones y ANOVA depende que algunos de los conjuntos de datos cumple con una distribución normal. Este tipo de pruebas se pueden referir a pruebas paramétricas.  
+Este módulo está enfocado en entender diferentes aspectos de la distribución normal. Muchas pruebas, como la prueba de *t*, las correlaciones, las regresiones y el ANOVA, dependen de que algunos de los conjuntos de datos cumplan con una distribución normal. Este tipo de pruebas se conocen como pruebas paramétricas.  
 
-La distribución normal tiene una ecuación que describe su distribución.  Lo que que se observa es que la ecuación depende de solamente dos valores desconocidos, el promedio universal, µ y la desviación universal $\sigma$. Nota que aquí estamos considerando todos los datos sobre un variable. Por ejemplo si esta hablando de del tamaño de un especie de pájaro ( El quetzal), es que tendríamos que tener TODOS los datos de cada uno de ellos.   Primero vemos como se ve esta distribución y después explicamos porque aunque no tenemos todos los datos una aproximación es suficiente.   
+La distribución normal tiene una ecuación que describe su distribución.  Lo que se observa es que la ecuación depende solamente de dos valores desconocidos: el promedio universal, $\mu$, y la desviación universal, $\sigma$. Nota que aquí estamos considerando todos los datos sobre una variable. Por ejemplo, si estamos hablando del tamaño de una especie de pájaro (el quetzal), tendríamos que tener TODOS los datos de cada uno de ellos. Primero veremos cómo se ve esta distribución y después explicamos por qué, aunque no tenemos todos los datos, una aproximación es suficiente.   
 
 
- $$P(x)=\frac{1}{{\sigma\sqrt{ 2\pi}}}{e}^{-\frac{{(x-µ)}^{2}}{{2\sigma}^{2}}}$$
+ $$P(x)=\frac{1}{{\sigma\sqrt{ 2\pi}}}{e}^{-\frac{(x-\mu)^{2}}{{2\sigma}^{2}}}$$
+
+::: {.formula}
+En la ecuación de la distribución normal, $x$ es el valor de la variable, $\mu$ es la media poblacional, $\sigma$ es la desviación estándar poblacional, $\pi \approx 3.1416$ y $e \approx 2.7183$. Toda la forma de la curva queda determinada únicamente por $\mu$ (dónde se centra) y $\sigma$ (qué tan ancha es).
+:::
  
  
  
 
 
-El promedio de la población $\mu=\frac{\sum{{x}_{i}}}{{n}_{i}}$, se usa la letra "mu", y se refiere al promedio universal.  Esto quiere decir que no falta ningún dato.  Nota que la distribución es en forma de campana, donde 50% de los datos están por encima del promedio y 50% están por debajo el promedio. Debido que la distribución tiene unos parámetros específico se puede predecir información cuando los datos cumple con tal distribución.      
+El promedio de la población $\mu=\frac{\sum{{x}_{i}}}{{n}_{i}}$, se usa la letra "mu", y se refiere al promedio universal.  Esto quiere decir que no falta ningún dato.  Nota que la distribución tiene forma de campana, donde 50% de los datos están por encima del promedio y 50% están por debajo del promedio. Debido a que la distribución tiene unos parámetros específicos, se puede predecir información cuando los datos cumplen con tal distribución.
+
+::: {.definicion}
+**Distribución normal.** Es una distribución de probabilidad continua, simétrica y con forma de campana, descrita por completo por dos parámetros: la media ($\mu$) y la desviación estándar ($\sigma$). El área total bajo la curva es igual a 1, y aproximadamente el 68%, el 95% y el 99.7% de los datos caen a $\pm 1$, $\pm 2$ y $\pm 3$ desviaciones estándar de la media (la regla empírica).
+:::      
 
 
-```{r norm3}
+```{r c12-5}
 #set.seed(123458)
 
 dfnorm=rnorm(10, 0,1)
@@ -94,13 +107,13 @@ Usaremos datos que hemos visto en el modulo T5.
 Se necesita el archivo **DownloadFestival** que se encuentra debajo la pestaña de **Los Datos**. El ejemplo proviene de Field et al. (2014).
 
 
->  Una bióloga estaba preocupado por los posibles efectos sobre la salud de los que particpan a un festivales de música. Entonces, un año fue al Download Festival en el Reino Unido (Download Festival UK). Ella midió la higiene del los que participaron al concierto n= 810 durante el festival de 3 días. Cada día intentaba encontrar a todas las personas que censó el primer día. Los valores asignado fueron de 0 a 4 sobre el nivel de limpieza por como olia los participantes
+>  Una bióloga estaba preocupada por los posibles efectos sobre la salud de los que participan en un festival de música. Entonces, un año fue al Download Festival en el Reino Unido (Download Festival UK). Ella midió la higiene de los que participaron en el concierto (n = 810) durante el festival de 3 días. Cada día intentaba encontrar a todas las personas que censó el primer día. Los valores asignados fueron de 0 a 4 sobre el nivel de limpieza, según cómo olían los participantes
 
 >    + 0 = hueles como un cadáver. 
 >    + 4 = hueles a rosas dulces en un fresco día de primavera
     
 
-```{r norm4, warning=FALSE}
+```{r c12-6, warning=FALSE}
 
 library(readr)
 DownloadFestival_No_Outlier_ <- read_csv("Data_files_csv/DownloadFestival_No_Outlier.csv")
@@ -114,7 +127,7 @@ head(dlf) # ver las 3 primeras filas
 
 Se nota en el histograma que la mayoría de los datos de la higiene de los participantes en el primer día se parece bastante a una distribución normal.  Nota que los valores en el eje de **y** es la frecuencia de los valores en el conjunto de datos.  
 
-```{r norm5, warning=FALSE}
+```{r c12-7, warning=FALSE}
 ggplot(dlf, aes(day1))+
   geom_histogram(color="white", fill="red")
 ```
@@ -123,9 +136,9 @@ ggplot(dlf, aes(day1))+
 ## Añadiendo la distribución teórica al histograma
 
 
-Ahora vamos a añadir la siguiente formula al gráfico  $P(x)=\frac{1}{{\sigma\sqrt{ 2\pi}}}{e}^{-\frac{{(x-µ)}^{2}}{{2\sigma}^{2}}}$.  De esta forma podemos comparar los datos reales (las barras roja) con la distribución teorica si el promedio y la desviación estandar es igual a los datos.  
+Ahora vamos a añadir la siguiente formula al gráfico  $P(x)=\frac{1}{{\sigma\sqrt{ 2\pi}}}{e}^{-\frac{(x-\mu)^{2}}{{2\sigma}^{2}}}$.  De esta forma podemos comparar los datos reales (las barras rojas) con la distribución teórica, suponiendo que el promedio y la desviación estándar son iguales a los de los datos.  
 
-Se añade el promedio y la desviación estándar con la siguientes funciones.  La función *stat_function()** es para calcular parámetros.  
+Se añade el promedio y la desviación estándar con las siguientes funciones. La función **stat_function()** es para calcular parámetros.  
                 
                 stat_function(fun = dnorm,   # dnorm = la densidad de la distribución normal
                 args = list(
@@ -133,12 +146,12 @@ Se añade el promedio y la desviación estándar con la siguientes funciones.  L
                 sd = sd(dlf$day2, na.rm = TRUE))) # sd = la desviación estandar de los datos
 
 
-Ahora nota que el eje de **y** no son frecuencias pero son densidades.  La suma de todas las densidades es igual a 1.0.  Vea que la linea teórica se acerca bastante a las barras del histograma.   Este proceso NO es una prueba para determinar si los datos cumple con una distribución normal. Aunque con experiencia visualizando los datos uno puede tener un buen apreciación si los datos cumple suficientemente con la distribución normal para usar las pruebas paramétricas.   
+Ahora nota que el eje de **y** ya no son frecuencias, sino densidades. El área total bajo la curva es igual a 1.0. Vea que la línea teórica se acerca bastante a las barras del histograma. Este proceso NO es una prueba para determinar si los datos cumplen con una distribución normal. Aunque, con experiencia visualizando los datos, uno puede tener una buena apreciación de si los datos cumplen suficientemente con la distribución normal para usar las pruebas paramétricas.   
 
  
-```{r norm6, warning=FALSE, message=FALSE}
+```{r c12-8, warning=FALSE, message=FALSE}
 hist.dlfc1 <- ggplot(dlf, aes(day1)) + 
-  geom_histogram(aes(y=..density..), colour="white", fill="red") + 
+  geom_histogram(aes(y=after_stat(density)), colour="white", fill="red") + 
   labs(x="Higiene día 1", y = "Densidad")+
   stat_function(fun = dnorm, 
                 args = list(mean = mean(dlf$day1, na.rm = TRUE), 
@@ -157,9 +170,9 @@ Usamos los datos del segundo día y comparamos con el primer día.  En este caso
 
 Evalúa y compara con el día tres
 
-```{r norm7, warning=FALSE}
+```{r c12-9, warning=FALSE}
 hist.dlfc2 <- ggplot(dlf, aes(day2)) + 
-  geom_histogram(aes(y=..density..), colour="white", fill="blue") + 
+  geom_histogram(aes(y=after_stat(density)), colour="white", fill="blue") + 
   labs(x="Higiene día 2", y = "Densidad")+
   stat_function(fun = dnorm, 
                 args = list(mean = mean(dlf$day2, na.rm = TRUE), 
@@ -179,22 +192,22 @@ hist.dlfc2
 Aquí creo una conjunto de datos al azar con la función **rnorm** y se presenta un histograma y se añade la linea teórica de la distribución normal.  
   
 
-La función **rnorm** creea una lista de datos una promedio y una dispersión específica.  
+La función **rnorm** crea una lista de datos con un promedio y una dispersión específicos.  
 
     rnorm(n, mean, sd)
-    rnorm = (la cantidad de datos generados, promedio, la desviación estandard)
+    rnorm = (la cantidad de datos generados, promedio, la desviación estándar)
 
-Es necesario convertir la lista en un **data.frame** en un **tibble** para usar los datos en **ggplot2**. Como los datos provienen de una distribución normal la linea teórica (casi) sigue perfectamente las barras de frecuencia.  Más datos que uno tiene más similar las distribución observada (las barras) a la distribución teórica (la linea). 
+Es necesario convertir la lista en un **data.frame** o en un **tibble** para usar los datos en **ggplot2**. Como los datos provienen de una distribución normal, la línea teórica sigue (casi) perfectamente las barras de frecuencia. Mientras más datos uno tiene, más similar es la distribución observada (las barras) a la distribución teórica (la línea). 
 
-Haz unos ejercicio de reducir y aumentar el tamaño de muestra, **n** y compara las distribuciones.  Evalúa cuando cuando son muy pequeño  (n de 30 o menos). 
+Haz unos ejercicios reduciendo y aumentando el tamaño de muestra, **n**, y compara las distribuciones. Evalúa qué pasa cuando son muy pequeñas (n de 30 o menos). 
 
-```{r norm8, warning=FALSE}
+```{r c12-10, warning=FALSE}
 
 #rnorm(10, 100, 10)
 
 x=rnorm(10000, 10, 2)
 
-dfx=as.tibble(x)
+dfx=as_tibble(x)
 
 gt(head(dfx, n=3)) # Los primeros 3 datos del tibble 
 library(ggplot2)
@@ -202,7 +215,7 @@ library(ggplot2)
 
 hist.x <- ggplot(dfx, aes(value)) + 
   theme(legend.position = "none") + 
-  geom_histogram(aes(y=..density..), bins=40,colour="black", fill="white") + 
+  geom_histogram(aes(y=after_stat(density)), bins=40,colour="black", fill="white") + 
   labs(x="Variable", y = "Densidad")+
   stat_function(fun = dnorm, args = list(mean = mean(dfx$value, 
                 na.rm = TRUE), 
@@ -216,12 +229,12 @@ hist.x
 
 ##  qqplot
 
-El gráfico Q-Q, o gráfico cuantil-cuantil, es una herramienta gráfica que nos ayuda a evaluar si un conjunto de datos proviene de alguna distribución teórica. Por ejemplo, si ejecutamos un análisis estadístico que asume que nuestra variable dependiente está normalmente distribuida, podemos usar un gráfico Q-Q normal para verificar esa suposición, se puede también evaluar otras distribuciones. Nota que es solo una verificación visual, no una prueba estadística. Esto nos permite visualizar si los datos cumple si o no con la distribución teórica.  
+El gráfico Q-Q, o gráfico cuantil-cuantil, es una herramienta gráfica que nos ayuda a evaluar si un conjunto de datos proviene de alguna distribución teórica. Por ejemplo, si ejecutamos un análisis estadístico que asume que nuestra variable dependiente está normalmente distribuida, podemos usar un gráfico Q-Q normal para verificar esa suposición; también se pueden evaluar otras distribuciones. Nota que es solo una verificación visual, no una prueba estadística. Esto nos permite visualizar si los datos cumplen o no con la distribución teórica.  
 
-Un diagrama Q-Q es un diagrama de dispersión y compara dos conjuntos de cuantiles uno observado y el otro teórico. Si ambos conjuntos de cuantiles provienen de una distribución normal, deberíamos ver los puntos formando una línea que es más o menos recta. Usamos los datos del primer y el segundo día de la higiene de los participantes al concierto de rock.  Vean que los puntos están en el primer gráfico siguen una linea recta y la linea teórica (`r colorize("color azul", "blue")`) sigue estos puntos.  Esto sugiere que los datos siguen una distribución normal.  En el segundo gráfico vemos que los datos observados no siguen los datos teóricos (`r colorize("color rojo", "red")`). 
+Un diagrama Q-Q es un diagrama de dispersión y compara dos conjuntos de cuantiles uno observado y el otro teórico. Si ambos conjuntos de cuantiles provienen de una distribución normal, deberíamos ver los puntos formando una línea que es más o menos recta. Usamos los datos del primer y del segundo día de la higiene de los participantes al concierto de rock. Vean que los puntos en el primer gráfico siguen una línea recta y la línea teórica (`r colorize("color azul", "blue")`) sigue estos puntos.  Esto sugiere que los datos siguen una distribución normal.  En el segundo gráfico vemos que los datos observados no siguen los datos teóricos (`r colorize("color rojo", "red")`). 
 
 
-```{r norm9, warning=FALSE}
+```{r c12-11, warning=FALSE}
 
 
 d=ggplot(dlf, aes(sample=day1))+
@@ -235,6 +248,10 @@ e=ggplot(dlf, aes(sample=day2))+
 grid.arrange(d,e, ncol=2)
 ```
 
+::: {.interpretacion}
+**Cómo leer un gráfico Q-Q.** Si los puntos observados caen aproximadamente sobre la línea recta de referencia, los datos son compatibles con la distribución normal. Desviaciones sistemáticas indican falta de normalidad: una curvatura en forma de "S" sugiere colas más pesadas o más ligeras de lo normal, mientras que puntos que se despegan en un extremo sugieren sesgo (asimetría) en esa dirección.
+:::
+
 
 
 
@@ -243,30 +260,34 @@ grid.arrange(d,e, ncol=2)
  
 ## Pruebas de normalidad.
 
-Los ejemplos arriba no son pruebas, son visualización de los datos y con experiencia uno puede reconocer los con juntos de datos que cumple o no con una distribución normal.  Al principio, cuando uno comienza a estudiar la estadística esto puede ser un poco confuso.  Hay pruebas donde uno puede utiliza para evaluar y rechazar o aceptar si los datos cumple con distribución normal.  Estos se introduce ahora por qué muchas de estas pruebas tienden a tener un tipo de error Tipo II alto.  En otra palabra se rechaza la hipótesis nula (los datos provienen de una distribución normal) cuando son suficiente normal para las pruebas que se van a usar.  Vamos a ver dos de estas pruebas aunque hay muchos en la literatura.  
+Los ejemplos arriba no son pruebas, son visualización de los datos y con experiencia uno puede reconocer los con juntos de datos que cumple o no con una distribución normal.  Al principio, cuando uno comienza a estudiar la estadística esto puede ser un poco confuso.  Hay pruebas que uno puede utilizar para evaluar y decidir si rechazar o no rechazar la hipótesis de que los datos provienen de una distribución normal. Estas pruebas hay que interpretarlas con cuidado porque son muy sensibles al tamaño de muestra. Con muestras grandes tienden a **sobre-rechazar** la hipótesis nula (Ho: los datos provienen de una distribución normal): rechazan Ho —un error de Tipo I— incluso cuando los datos son suficientemente normales para las pruebas paramétricas que se van a usar. Con muestras muy pequeñas ocurre lo contrario: les falta poder y cometen errores de Tipo II (no rechazan Ho aunque los datos no sean normales). Vamos a ver dos de estas pruebas, aunque hay muchas en la literatura.  
 
 Por ejemplo Wikipedia menciona por lo menos 8 diferentes pruebas de normalidad <https://en.wikipedia.org/wiki/Normality_test>.
+
+::: {.advertencia}
+Las pruebas de normalidad son muy sensibles al tamaño de muestra. Con muestras grandes rechazan la hipótesis nula ante desviaciones triviales de la normalidad (que no afectan a las pruebas paramétricas), y con muestras muy pequeñas casi nunca la rechazan por falta de poder. Por eso no conviene depender solo del valor-*p* de estas pruebas: combínalo siempre con la inspección visual (histograma y gráfico Q-Q).
+:::
 
 ## La prueba de Shapiro-Wilks
 
 La prueba de Shapiro-Wilk es un prueba para determinar si un muestreo proviene de una distribución normal. Los datos se ponen en orden de los valores y se calcula el estadística de **W**. Aquí no vamos enseñar como hacer los cálculos los que le interesa pueden ir al a la siguiente pagina de <https://en.wikipedia.org/wiki/Shapiro–Wilk_test>.  Lo importante es que 
 
-Ho: los datos no son diferentes de una distribución normal
-Ha: los datos no concuerda con una distribución normal.
+Ho: los datos provienen de una distribución normal.  
+Ha: los datos NO provienen de una distribución normal.
 
-Por consecuencia si se rechaza la hipótesis nula uno dice que los datos no cumplen con una distribución normal. 
+Por consiguiente, si se rechaza la hipótesis nula, uno concluye que los datos no cumplen con una distribución normal. 
 
-Problemas con la prueba. La prueba es sensitiva al tamaño de muestra. Esto quiere decir que cando el tamaño de muestra es demasiado pequeño o grande tiende a dar errores de Tipo II y Tipo I respectivamente.  
+Problemas con la prueba: la prueba es sensible al tamaño de muestra. Esto quiere decir que cuando el tamaño de muestra es demasiado pequeño o demasiado grande, tiende a dar errores de Tipo II y de Tipo I, respectivamente.  
 
 Reglas básica.  
   1. no utilizar la prueba si el tamaño de muestra es menor de 50
-  2. no utilizar la prueba si el tamaño de muestra de muy grande (mayor de 200)
-    a. Nota que algunos programa han podido hacer modificación a la formula y ahora se puede utilizar tamaño de muestra hasta 2000  (Stata, SPSS, SAS).  
+  2. no utilizar la prueba si el tamaño de muestra es muy grande (mayor de 200)
+    a. Nota que algunos programas han hecho modificaciones a la fórmula y ahora se puede utilizar con tamaños de muestra de hasta 2000 (Stata, SPSS, SAS).  
 
 
- La función **shapiro.test()** es para evaluar una variable a la vez.  Nota que aquí los datos de higiene del primer día sugiere que no cumple con una distribución normal. Cuando las dos alternativas anteriores los daots se ven bastante norma (histograma y qqplot)
+ La función **shapiro.test()** es para evaluar una variable a la vez.  Nota que aquí los datos de higiene del primer día sugieren que no cumplen con una distribución normal, aun cuando en las dos alternativas anteriores (histograma y qqplot) los datos se ven bastante normales.
 
-```{r norm10, warning=FALSE}
+```{r c12-12, warning=FALSE}
 shapiro.test(dlf$day1)
 length(dlf$day1)
 ```
@@ -279,14 +300,14 @@ La prueba de Anderson-Darling es una prueba omnibus (una prueba general) EDF par
 
 Se necesita la librería **nortest** y la función **ad.test**
 
-Miran ahora que la distribución de los datos cumplen con normalidad cuando la de Shapiro-Wilk rechaza la hipótesis nula.  
+Miren ahora que la prueba de Anderson-Darling sugiere que los datos cumplen con la normalidad, mientras que la de Shapiro-Wilk rechaza la hipótesis nula.  
 El mensaje es que es posible que diferentes pruebas le den información distinta y hay que estar claro sobre los supuestos y la sensitividad de estas pruebas. 
 
 La prueba de Anderson Darling es una de las más poderosas para evaluar si los datos provienen de una distribución normal.  D'Agostino (1986) sugiere que la prueba puede ser utilizada con tamaño de muestra tan bajo como n=8.  
 
     *Ralph B. D'Agostino (1986). "Tests for the Normal Distribution". In D'Agostino, R.B.; Stephens, M.A. (eds.). Goodness-of-Fit Techniques. New York: Marcel Dekker. ISBN 0-8247-7487-6.* 
 
-```{r norm11, warning=FALSE}
+```{r c12-13, warning=FALSE}
 library(nortest)
 
 ad.test(dlf$day1)

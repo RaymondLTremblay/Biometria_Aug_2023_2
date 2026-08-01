@@ -1,8 +1,8 @@
-# Estadistica Descriptiva
+# Estadística Descriptiva
 
 
 
-```{r, eval=TRUE, echo=FALSE}
+```{r c08-1, eval=TRUE, echo=FALSE}
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
     sprintf("\\textcolor{%s}{%s}", color, x)
@@ -17,21 +17,21 @@ colorize <- function(x, color) {
 
 ```
 
-Fecha de la ultima revisión
-```{r echo=FALSE}
+Fecha de la última revisión
+```{r c08-2, echo=FALSE}
 
 Sys.Date()
 ```
 
 
-```{r, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
+```{r c08-3, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
 knitr::include_graphics(c("Graficos/hex_ggversa.png", "Graficos/hex_error.png"))
 ```
 
 
 
 Activar los Paquetes
-```{r desc1, warning=FALSE}
+```{r c08-4, warning=FALSE}
 
 library(ggplot2)  # paquete para visualizar los datos
 library(ggversa) # paquete para diferentes conjuntos de datos
@@ -47,12 +47,12 @@ library(e1071)
 ```
 
 ***
-## Estadistica descriptiva
+## Estadística descriptiva
 
-En los módulos de "Medidas de Tendencias Central" y "Medidas de Dispersión" se explicó donde proviene estos parámetros y como calcular estos.  En este módulo aprenderemos diferentes funciones como calcular estos parámetros individualmente y herramienta como calcular todos y otros parámetros todo juntos.  
+En los módulos de "Medidas de tendencia central" y "Medidas de dispersión" se explicó de dónde provienen estos parámetros y cómo calcularlos. En este módulo aprenderemos distintas funciones para calcularlos individualmente, y herramientas para obtenerlos todos (y otros) a la vez.  
 
 
-Los indices que veremos aquí incluye
+Los índices que veremos aquí incluyen
 
   - el promedio
   - la mediana
@@ -60,20 +60,18 @@ Los indices que veremos aquí incluye
   - el mínimo
   - el máximo
   - los cuantiles
-  - el indice Oblicuidad (en ingles "Skewness")
-  - el indice de Curtosis ( en ingles "Kurtosis")
+  - el índice de oblicuidad (en inglés "Skewness")
+  - el índice de curtosis (en inglés "Kurtosis")
 
-Aqui creamos un conjunto de datos de 100 datos con un promedio de 100 y una desviación estándar de 10. Nota que la función **set.seed()** es que el comienzo la simulación sea igual a cada vez que se corre, y se el mismo resultado.  Esto se añade solamente cuando uno esta enseñando y que los resultados sean consistente.   
+Aquí creamos un conjunto de 100 datos con un promedio de 100 y una desviación estándar de 10. Nota que la función **set.seed()** hace que la simulación comience igual cada vez que se corre, dando el mismo resultado. Esto se usa solo cuando uno está enseñando, para que los resultados sean consistentes.   
  
  
- seed for constant values
- 
-```{r desc2, warning=FALSE}
+```{r c08-5, warning=FALSE}
 
 # rnorm(n=100, mean=100, sd=10) # genera un número al azar de una distribución normal
 
 
-set.seed(12345) # para que los resultados sean consistente
+set.seed(12345) # para que los resultados sean consistentes
 x=rnorm(100, 100, 10) #(100 datos, x=100, sd=10)
 
 #x 
@@ -95,9 +93,9 @@ max(df$x) # el valor máximo
 ***
 
 
-## Analisis con muchos datos
+## Análisis con muchos datos
 
-Usaremos datos que hemos visto en el modulo Producción de Gráficos.  
+Usaremos datos que hemos visto en el módulo Producción de Gráficos.  
 
 Se necesita el archivo **DownloadFestival** que se encuentra debajo la pestaña de **Los Datos**. El ejemplo proviene de Field et al. (2014).
 
@@ -110,7 +108,7 @@ Se necesita el archivo **DownloadFestival** que se encuentra debajo la pestaña 
   
   
   
-```{r}
+```{r c08-6}
 library(readr)
 Karn_Penrose_infant_survivorship <- read_csv("Data_files_csv/Karn_Penrose_infant_survivorship.csv")
 
@@ -122,11 +120,11 @@ head(KP)
 ```
   
   
-```{r}
+```{r c08-7}
 summary(KP)
 ```
   
-```{r}
+```{r c08-8}
 library(ggplot2)
 
 ggplot(KP, aes(Weigth_lb))+
@@ -135,15 +133,13 @@ ggplot(KP, aes(Weigth_lb))+
   
   
   
-  ### Start here
-  
- >  Una bióloga estaba preocupado por los posibles efectos sobre la salud de los que particpan a un festivales de música. Entonces, un año fue al un Festival en el Reino Unido (Download Festival UK). Ella midió la higiene del los que participaron al concierto n= 810 durante el festival de 3 días. Cada día intentaba encontrar a todas las personas que censó el primer día. Los valores asignado fueron de 0 a 4 sobre el nivel de limpieza por como olia los participantes
+  >  Una bióloga estaba preocupado por los posibles efectos sobre la salud de los que particpan a un festivales de música. Entonces, un año fue al un Festival en el Reino Unido (Download Festival UK). Ella midió la higiene del los que participaron al concierto n= 810 durante el festival de 3 días. Cada día intentaba encontrar a todas las personas que censó el primer día. Los valores asignado fueron de 0 a 4 sobre el nivel de limpieza por como olia los participantes
 
 >    + 0 = hueles como un cadáver. 
 >    + 4 = hueles a rosas dulces en un fresco día de primavera 
 
 
-```{r desc3, warning=FALSE}
+```{r c08-9, warning=FALSE}
 
 library(readr)
 DownloadFestival_No_Outlier <- read_csv("DownloadFestival_No_Outlier.csv")
@@ -155,9 +151,9 @@ dlf
 
 ## Remover los **NA** del análisis
 
-Con los datos de los participantes al festival como en algunos diá hay participantes donde no tienen los datos se añadió un **NA**, es estos casos para que el análisis se logra hay que añadir a la función **na.rm=TRUE** que significa remover la **NA**.  Para dar se cuenta remueve **na.rm=TRUE** cuando se usa el "día2" o "día3", y evalúa que pasa.  
+En los datos del festival, en algunos días hay participantes sin datos, así que se añadió un **NA**. En esos casos, para que el análisis funcione, hay que añadir el argumento **na.rm=TRUE**, que significa remover los **NA**. Para darte cuenta, quita **na.rm=TRUE** cuando uses "day2" o "day3" y evalúa qué pasa.  
  
-```{r desc4, warning=FALSE}
+```{r c08-10, warning=FALSE}
 
 library(tidyverse)
 
@@ -177,11 +173,11 @@ median(dlf$day1, na.rm=TRUE)
 
 ## Resumen estadístico de una variable
 
-Para ver los estadístico mencionado arriba (menos la moda, oblicuidad y curtosis) se puede usar la función **stat.desc()** del paquete **pastecs**. Para facilitar la lectura de los valores se usa la función "round(x, 3), el tres en esta caso representa la cantidad de valores significativos que se demuestra.  Si no usamos **round()** los valores aparece en notación científicas.  
+Para ver los estadísticos mencionados arriba (menos la moda, la oblicuidad y la curtosis) se puede usar la función **stat.desc()** del paquete **pastecs**. Para facilitar la lectura se usa la función `round(x, 3)`; el 3 indica la cantidad de decimales que se muestran. Si no usamos **round()**, los valores aparecen en notación científica.  
 
 Nota que hay muchos más parámetros calculados.  Aparece en la lista en orden el valor mínimo: min(), el valor máximo: max(), la mediana: median, el promedio: mean, la desviación estándar; std.dev entre otros.  
 
-```{r desc5, warning=FALSE}
+```{r c08-11, warning=FALSE}
 
 library(pastecs)
 stat.desc(dlf[,c("day1")])
@@ -193,9 +189,9 @@ round(stat.desc(dlf[,c("day1")]), 2)
 
 ## Resumen Estadístico de multiples variables
 
-Si uno quiere evaluar múltiples variables continua todas juntos se puede usar la misma función pero el componente **c()** se añade todas las variables de interés.   
+Si uno quiere evaluar múltiples variables continuas a la vez, se puede usar la misma función; dentro de **c()** se añaden todas las variables de interés.   
 
-```{r desc6, warning=FALSE}
+```{r c08-12, warning=FALSE}
 mean(dlf$day1, na.rm=TRUE)
 round(stat.desc(dlf[,c("day1","day2","day3")]), digits=3) # round reduce a 3 valores significativo
 ```
@@ -203,7 +199,7 @@ round(stat.desc(dlf[,c("day1","day2","day3")]), digits=3) # round reduce a 3 val
 ***
 
 3. Quiz 3:
-    Usa R usa el data.frame **Camas_Hospital** en el paquete **ggversa**.  Contesta en **MSTeam Form** con tu respuesta.  Selecciona la variable **Camas** que representa el "número de camas por 1000 personas en muchos países.  ¿Cual es el rango (range)?  
+    Usa R usa el data.frame **Camas_Hospital** en el paquete **ggversa**.  Contesta en **MSTeam Form** con tu respuesta.  Selecciona la variable **Camas**, que representa el número de camas por cada 1000 personas en muchos países. ¿Cuál es el rango (range)?  
 
 
  
@@ -211,60 +207,64 @@ round(stat.desc(dlf[,c("day1","day2","day3")]), digits=3) # round reduce a 3 val
  
 ## Los Cuantiles
  
- Los cuantiles son los valores a intervalos específicos de una variable aleatoria continua.  Los cuantiles son frecuentemente una mejor interpretación de la distribución cuando los valores no tienen una distribución normal.  Típicamente, la distribución se divide en 4 partes con las siguientes partes (los cuantiles 0.25, 0.50 = la mediana, 0.75) y se define como **cuartiles**. Para meas detalle pueden ver el siguiente enlace <https://en.wikipedia.org/wiki/Quantile>. 
+ Los cuantiles son los valores en intervalos específicos de una variable aleatoria continua. A menudo dan una mejor interpretación de la distribución cuando los valores no siguen una distribución normal. Típicamente, la distribución se divide en 4 partes (los cuantiles 0.25, 0.50 = la mediana, 0.75), que se conocen como **cuartiles**. Para más detalle pueden ver el siguiente enlace <https://en.wikipedia.org/wiki/Quantile>. 
  
- En el siguiente ejemplo se demuestra como tulizar la función **quantiles** y seleccionar los cuantiles deseados con el comopnente de **probs=c(x,x,x)**.  
+ En el siguiente ejemplo se muestra cómo utilizar la función **quantile** y seleccionar los cuantiles deseados con el componente **probs = c(...)**.  
  
-```{r desc7, warning=FALSE}
+```{r c08-13, warning=FALSE}
 
 quantile(dlf$day1,probs=c(0.05, 0.1, 0.25, 0.5, 0.75, 0.95, 0.99), na.rm=TRUE)
 ```
 
 
-Se puede usar también la función **describe** en el paquete **pshych** que le da automáticamente estos cuantiles.  
+Se puede usar también la función **describe** del paquete **psych**, que da automáticamente estos cuantiles.  
 
 
-```{r desc8, warning=FALSE}
+```{r c08-14, warning=FALSE}
 describe(dlf$day1)
 ```
 
 
 ***
 
-## El indice de Oblicuidad: Skewness
+## El índice de oblicuidad (Skewness)
 
-El indice de oblicuidad es un indice que describe la simetría en una distribución alrededor de su promedio. Otra manera de describirlo es el tercer momento, por que los datos se poner a un exponente elevado al ^3. 
+::: {.definicion}
+La **oblicuidad** (*skewness*) mide la **asimetría** de una distribución. Es **positiva** cuando la cola larga está a la derecha, **negativa** cuando está a la izquierda, y ≈ 0 cuando la distribución es simétrica.
+:::
 
-La formula es la siguiente.  Lo que se darán cuenta es muy similar a la varianza pero note que las diferencias se poner al ^3. Para meas información vea este enlace <https://en.wikipedia.org/wiki/Skewness>.     
+El índice de oblicuidad describe la (a)simetría de una distribución alrededor de su promedio. Otra forma de describirlo es como el **tercer momento**, porque las diferencias respecto al promedio se elevan a la potencia 3. 
 
-$$\frac{1}{N}\sum_{i=}^N\left(\frac{x_i-\overline{x}}{\sigma}\right)^3$$
+La fórmula es la siguiente. Es muy similar a la de la varianza, pero note que las diferencias se elevan a la potencia 3. Para más información vea este enlace <https://en.wikipedia.org/wiki/Skewness>.     
+
+$$\text{Oblicuidad} = \frac{1}{N}\sum_{i=1}^N\left(\frac{x_i-\overline{x}}{\sigma}\right)^3$$
 
 Primero voy a crear tres conjuntos de datos
 
 + con distribución normal
-+ oblicuidad a la izquierda
-+ oblicuidad a la derecha
++ sesgada a la derecha (oblicuidad positiva)
++ sesgada a la izquierda (oblicuidad negativa)
 
-```{r desc9, warning=FALSE}
+```{r c08-15, warning=FALSE}
 normal=rnorm(100000, .5, .15)
-obliz=rbeta(100000, 1.5,5)
-obldr=rbeta(100000, 5.5,2)
+obl_derecha=rbeta(100000, 1.5,5)
+obl_izquierda=rbeta(100000, 5.5,2)
 
-normal=as.tibble(normal)
+normal=as_tibble(normal)
 
-obliz=as.tibble(obliz)
+obl_derecha=as_tibble(obl_derecha)
 
-obldr=as.tibble(obldr)
+obl_izquierda=as_tibble(obl_izquierda)
 
 ```
 
 
 Ahora unimos los data frames y se añade nombres a las columnas
 
-```{r desc10, warning=FALSE}
-df=cbind(normal, obliz, obldr)
+```{r c08-16, warning=FALSE}
+df=cbind(normal, obl_derecha, obl_izquierda)
 head(df, n=2)
-df <- setNames(df, c("normal","obliz","obldr"))
+df <- setNames(df, c("normal","obl_derecha","obl_izquierda"))
 
 head(df, n=2)
 
@@ -272,10 +272,10 @@ head(df, n=2)
 El próximo paso es apilar cada columna una sobre la otra.  La razón que queremos esto es que deseamos reproducir las variables en un mismo gráfico 
 
 
-```{r desc11, warning=FALSE}
+```{r c08-17, warning=FALSE}
 library(tidyverse)
 df2=df%>%
-  gather(key = "Distribución", value="valor", c(normal, obliz, obldr))
+  gather(key = "Distribución", value="valor", c(normal, obl_derecha, obl_izquierda))
 head(df2, n=3)
 # unique(df2$Distribución) # función para ver el nombre de las variables en la columna Distribución
 ```
@@ -283,7 +283,7 @@ head(df2, n=3)
 Ahora vamos a ver los datos un gráfico. Vemos que la distribución de los datos son muy diferentes, tanto la distribución en azul y verde están sesgado a unos valores y tienen una cola o valores más grande (azul) o pequeños (verde) que si fuese una distribución normal.   
 
 
-```{r desc12, warning=FALSE}
+```{r c08-18, warning=FALSE}
 ggplot(df2, (aes(valor, colour=Distribución)))+
   geom_density()+
   xlim(-.01,1)
@@ -292,22 +292,22 @@ ggsave("Graficos/Skewness.png")
 ```
 
 
-Ahora se calcula el indice de oblicuidad y comparamos los valores.  Como regla cuando el nivel de oblicuidad esta entre
+Ahora se calcula el índice de oblicuidad y comparamos los valores. Como regla, cuando el nivel de oblicuidad está entre
 
 + -0.5 y 0.5 se considera dentro de una distribución simétrica (normal).
-+ -1.0 y -0.5 o entre 0.5 y 1.o los valores tienen una oblicuidad moderada.
++ -1.0 y -0.5, o entre 0.5 y 1.0, los valores tienen una oblicuidad moderada.
 + Menor de -1.0 o mayor de 1.0 los datos tienen una oblicuidad grande.  
 
 
-Ahora evaluamos la oblicuidad de los tres gráficos. se usa la función de **skewness** en el paquete **e1071**
+Ahora evaluamos la oblicuidad de las tres distribuciones usando la función **skewness** del paquete **e1071**.
 
-Para los datos de una distribución normal el valor es muy cerca a cero. Para los datos sesgado a la izquierda el indice de oblicuidad es positivo y el sesgado a derecha es negativo.  
+Para una distribución normal (simétrica) el valor es muy cercano a cero. Los datos **sesgados a la derecha** (con cola hacia la derecha) tienen oblicuidad **positiva**, y los **sesgados a la izquierda**, oblicuidad **negativa**.  
 
-```{r desc13, warning=FALSE}
+```{r c08-19, warning=FALSE}
 library(e1071)
 e1071::skewness(normal$value) # la oblicuidad de los datos de una distribución normal
-e1071::skewness(obliz$value) # la oblicuidad de los datos sesgado a la izquierda
-e1071::skewness(obldr$value) # la oblicuidad de los datos sesgado a la derecha
+e1071::skewness(obl_derecha$value) # sesgada a la derecha -> oblicuidad positiva
+e1071::skewness(obl_izquierda$value) # sesgada a la izquierda -> oblicuidad negativa
 ```
 
 
@@ -315,13 +315,17 @@ e1071::skewness(obldr$value) # la oblicuidad de los datos sesgado a la derecha
 
 ***
 
-## El indice de Curtosis: Kurtosis
+## El índice de curtosis (Kurtosis)
 
-El indice de curtosis es un índice que describe la cola de la una distribución alrededor de su promedio. Otra manera de describirlo es el cuarto momento, por que los datos se poner a un exponente elevado al ^4. El curtosis mide la propensidad de tener daos atípicos.  
+::: {.definicion}
+La **curtosis** (*kurtosis*) mide el peso de las **colas** de una distribución. En exceso, es **positiva** cuando las colas son pesadas (más valores atípicos que la normal) y **negativa** cuando son ligeras. La normal tiene curtosis en exceso ≈ 0.
+:::
 
-La formula es la siguiente.  Lo que se darán cuenta es muy similar a la varianza pero note que las diferencias se poner al ^4. Para más información vea este enlace <https://www.wikiwand.com/en/Kurtosis>.     
+El índice de curtosis describe las **colas** de una distribución. Otra forma de describirlo es como el **cuarto momento**, porque las diferencias respecto al promedio se elevan a la potencia 4. La curtosis mide la propensión a tener datos atípicos (colas pesadas).  
 
-$$\frac{1}{N}\sum_{i=}^N\left(\frac{x_i-\overline{x}}{\sigma}\right)^4$$
+La fórmula es la siguiente. Es muy similar a la de la varianza, pero note que las diferencias se elevan a la potencia 4. Para más información vea este enlace <https://www.wikiwand.com/en/Kurtosis>.     
+
+$$\text{Curtosis} = \frac{1}{N}\sum_{i=1}^N\left(\frac{x_i-\overline{x}}{\sigma}\right)^4$$
 
 Primero voy a crear cuatro conjuntos de datos
 
@@ -331,7 +335,7 @@ Primero voy a crear cuatro conjuntos de datos
 + distribución uniforme
  
 
-```{r desc14, warning=FALSE}
+```{r c08-20, warning=FALSE}
 library(PearsonDS)
 library(rmutil)
 
@@ -347,22 +351,22 @@ normal=rnorm(100000, 0,1)
 laplace=rlaplace(500000, m=0, s=1)
 
 
-normal=as.tibble(normal)
+normal=as_tibble(normal)
 
-normalR=as.tibble(normalR)
+normalR=as_tibble(normalR)
 
-normalE=as.tibble(normalE)
+normalE=as_tibble(normalE)
 
-Unif=as.tibble(Unif)
+Unif=as_tibble(Unif)
 
-laplace=as.tibble(laplace)
+laplace=as_tibble(laplace)
 
 ```
 
 
 Ahora unimos los data frames y se añade nombres a las columnas
 
-```{r desc15, warning=FALSE}
+```{r c08-21, warning=FALSE}
 df=cbind(normal, normalR, normalE, Unif, laplace)
 head(df, n=2)
 df <- setNames(df, c("normal","normalR","normalE", "Unif", "laplace"))
@@ -373,7 +377,7 @@ head(df, n=2)
 El próximo paso es apilar cada columna una sobre la otra.  La razón que queremos esto es que deseamos reproducir las variables en un mismo gráfico 
 
 
-```{r desc16, warning=FALSE}
+```{r c08-22, warning=FALSE}
 library(tidyverse)
 df2=df%>%
   gather(key = "Distribución", value="valor", c(normal, normalR, normalE, Unif, laplace))
@@ -381,12 +385,12 @@ head(df2, n=3)
 # unique(df2$Distribución) #función  para ver el nombre de las variables en la columna Distribución
 ```
 
-Ahora vamos a ver los datos en un gráfico. Vemos que la distribución de los datos son muy diferentes, Tiene que concentrar no en el pico de la distribución pero las colas de los datos. Nota la distribución normal que es de color amarillo, y comparar si la colas están por debajo o por encima de esta distribución normal.  
+Ahora vamos a ver los datos en un gráfico. Vemos que la distribución de los datos son muy diferentes, Hay que concentrarse no en el pico de la distribución, sino en las colas de los datos. Fíjate en la distribución normal (color amarillo) y compara si las colas de las demás están por debajo o por encima de ella.  
 
-Tanto la distribución uniforme (color rosa) y normal reducido (normalR, color azul) las curvas pasan de bajo la curva normal.  Al contrarío la linea verde y roja son distribuciones que pasan por encima de la curva normal, entonces las colas son más predominante. 
+Tanto la distribución uniforme (color rosa) como la normal reducida (normalR, color azul) pasan por debajo de la curva normal. Al contrario, las líneas verde y roja pasan por encima, por lo que sus colas son más predominantes. 
 
 
-```{r desc17, warning=FALSE}
+```{r c08-23, warning=FALSE}
 whole=ggplot(df2, (aes(valor, colour=Distribución)))+
   geom_density(adjust=5)+
   xlim(-5,5)
@@ -411,43 +415,43 @@ sub + annotation_custom(
 ```
 
 
-Ahora se calcula el indice de curtosis y comparamos los valores.  Como regla el nivel de curtosis esta significativo si los valores de curtosis se enuentra en los siguientes rangos, y se acerca cero no hay curtosis (lo que uno espera para una distribución normal.
+Ahora se calcula el índice de curtosis (en exceso) y comparamos los valores. Cuando se acerca a cero no hay exceso de curtosis, que es lo que uno espera de una distribución normal:
 
 + Menor de -1.0 los datos están muy aplanados (Uniforme, normalR).
 + Mayor de 1.0 (la distribución de Laplace).  
 
 
-Ahora evaluamos la oblicuidad de los tres gráficos. se usa la función de **kurtosis** en el paquete **e1071**
+Ahora evaluamos la curtosis de las distribuciones usando la función **kurtosis** del paquete **e1071**.
 
-Para los datos de una distribución normal el valor es muy cerca a cero. Para los datos que tienen exceso de cola el valor de curtosis es negativos y cuando el valor de curtosis es positivo hay exceso de datos en la cola.
+Para una distribución normal el valor es muy cercano a cero. Cuando hay **exceso de colas** (colas pesadas, como en Laplace) la curtosis es **positiva**; cuando las colas son ligeras (como en la uniforme) la curtosis es **negativa**.
 
-```{r desc18, warning=FALSE}
+```{r c08-24, warning=FALSE}
 library(e1071)
 e1071::kurtosis(normal$value) # curtosis de los datos de una distribución normal
 e1071::kurtosis(normalR$value) # curtosis de los datos restringido
 e1071::kurtosis(normalE$value) # curtosis de los datos con más colas
-e1071::kurtosis(Unif$value) # curtosis de distribución informe, falta de colas
+e1071::kurtosis(Unif$value) # curtosis de una distribución uniforme, colas ligeras
 e1071::kurtosis(laplace$value) # curtosis de distribución Laplace, exceso de colas
 
 ```
 
 Quiz 1
 
-```{r desc19, echo=FALSE, eval=FALSE}
+```{r c08-25, echo=FALSE, eval=FALSE}
 x=c(4, 6, 7, 3, 9, 10, 19, 52)
 mean(x)
 ```
 
 Quiz 2
 
-```{r desc20, echo=FALSE, eval=FALSE}
+```{r c08-26, echo=FALSE, eval=FALSE}
 y=c(1, NA, 1, 2, 73, 6, 2, 78, 16, 16, 87, 5)
 median(y, na.rm=TRUE)
 ```
 
 Quiz 3
 
-```{r desc21, echo=FALSE, eval=FALSE}
+```{r c08-27, echo=FALSE, eval=FALSE}
 library(ggversa)
 head(Camas_Hospital)
 
@@ -459,7 +463,7 @@ skewness(Camas_Hospital$Camas)
 kurtosis((Camas_Hospital$Camas))
 ```
 
-```{r desc22, echo=FALSE, eval=FALSE}
+```{r c08-28, echo=FALSE, eval=FALSE}
 ggplot(Camas_Hospital, aes(Camas))+
   geom_histogram()
 ```
@@ -467,7 +471,7 @@ ggplot(Camas_Hospital, aes(Camas))+
 
 
 
-```{r desc23, echo=FALSE, eval=FALSE}
+```{r c08-29, echo=FALSE, eval=FALSE}
 dfNormal=data.frame(data=rnorm(1000000))
 head(dfNormal)
 

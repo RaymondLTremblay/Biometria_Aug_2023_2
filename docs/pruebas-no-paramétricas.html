@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Capítulo 21 Pruebas No Paramétricas | BioEstadística</title>
+<meta name="author" content="">
+<meta name="description" content="21.1 Pruebas no paramétricas Todas las pruebas anteriores asumen que los datos tienen ciertas características, como distribución normal y homogeneidad de varianza. Si los datos NO cumplen con...">
+<meta name="generator" content="bookdown 0.47 with bs4_book()">
+<meta property="og:title" content="Capítulo 21 Pruebas No Paramétricas | BioEstadística">
+<meta property="og:type" content="book">
+<meta property="og:description" content="21.1 Pruebas no paramétricas Todas las pruebas anteriores asumen que los datos tienen ciertas características, como distribución normal y homogeneidad de varianza. Si los datos NO cumplen con...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Capítulo 21 Pruebas No Paramétricas | BioEstadística">
+<meta name="twitter:description" content="21.1 Pruebas no paramétricas Todas las pruebas anteriores asumen que los datos tienen ciertas características, como distribución normal y homogeneidad de varianza. Si los datos NO cumplen con...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/Source_Sans_3-0.4.10/font.css" rel="stylesheet">
+<link href="libs/Fira_Code-0.4.10/font.css" rel="stylesheet">
+<link href="libs/Lora-0.4.10/font.css" rel="stylesheet">
+<script src="libs/bs3compat-0.11.0/transition.js"></script><script src="libs/bs3compat-0.11.0/tabs.js"></script><script src="libs/bs3compat-0.11.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BioEstadística</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introducción al curso de BioEstadística</a></li>
+<li><a class="" href="introducci%C3%B3n-a-la-bioestad%C3%ADstica.html"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></li>
+<li><a class="" href="poblaci%C3%B3n-y-muestreo.html"><span class="header-section-number">3</span> Población y Muestreo</a></li>
+<li><a class="" href="inferencias-e-hip%C3%B3tesis.html"><span class="header-section-number">4</span> Inferencias e Hipótesis</a></li>
+<li><a class="" href="historia-breve-de-la-estad%C3%ADstica.html"><span class="header-section-number">5</span> Historia breve de la Estadística</a></li>
+<li><a class="" href="medidas-de-tendencia-central.html"><span class="header-section-number">6</span> Medidas de tendencia central</a></li>
+<li><a class="" href="medidas-de-dispersi%C3%B3n.html"><span class="header-section-number">7</span> Medidas de dispersión</a></li>
+<li><a class="" href="estad%C3%ADstica-descriptiva.html"><span class="header-section-number">8</span> Estadística Descriptiva</a></li>
+<li><a class="" href="gr%C3%A1ficos.html"><span class="header-section-number">9</span> Gráficos</a></li>
+<li><a class="" href="supuestos.html"><span class="header-section-number">10</span> Supuestos</a></li>
+<li><a class="" href="estad%C3%ADstica-frecuentista.html"><span class="header-section-number">11</span> Estadística Frecuentista</a></li>
+<li><a class="" href="distribuci%C3%B3n-normal.html"><span class="header-section-number">12</span> Distribución Normal</a></li>
+<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una Muestra</a></li>
+<li><a class="" href="prueba-de-t-para-datos-pareados.html"><span class="header-section-number">14</span> Prueba de t para Datos Pareados</a></li>
+<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con Datos Independientes</a></li>
+<li><a class="" href="anova.html"><span class="header-section-number">16</span> ANOVA</a></li>
+<li><a class="" href="correlaci%C3%B3n-y-covarianza.html"><span class="header-section-number">17</span> Correlación y Covarianza</a></li>
+<li><a class="" href="regresi%C3%B3n-lineal-1.html"><span class="header-section-number">18</span> Regresión Lineal</a></li>
+<li><a class="" href="regresi%C3%B3n-log%C3%ADstica.html"><span class="header-section-number">19</span> Regresión Logística</a></li>
+<li><a class="" href="selecci%C3%B3n-de-modelos-con-el-criterio-de-akaike.html"><span class="header-section-number">20</span> Selección de Modelos con el Criterio de Akaike</a></li>
+<li><a class="active" href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">21</span> Pruebas No Paramétricas</a></li>
+<li><a class="" href="referencias-1.html">Referencias</a></li>
+<li class="book-part">Appendix</li>
+<li><a class="" href="ejercicios-a.html"><span class="header-section-number">A</span> Ejercicios A</a></li>
+<li><a class="" href="ejercicios-b.html"><span class="header-section-number">B</span> Ejercicios B</a></li>
+<li><a class="" href="ejercicios-c.html"><span class="header-section-number">C</span> Ejercicios C</a></li>
+<li><a class="" href="ejercicios-d.html"><span class="header-section-number">D</span> Ejercicios D</a></li>
+<li><a class="" href="ejercicios-e.html"><span class="header-section-number">E</span> Ejercicios E</a></li>
+<li><a class="" href="ejercicios-f.html"><span class="header-section-number">F</span> Ejercicios F</a></li>
+<li><a class="" href="ejercicios-g.html"><span class="header-section-number">G</span> Ejercicios G</a></li>
+<li><a class="" href="ejercicios-h.html"><span class="header-section-number">H</span> Ejercicios H</a></li>
+<li><a class="" href="ejercicios-i.html"><span class="header-section-number">I</span> Ejercicios I</a></li>
+<li><a class="" href="ejercicios-j.html"><span class="header-section-number">J</span> Ejercicios J</a></li>
+<li><a class="" href="ejercicios-k.html"><span class="header-section-number">K</span> Ejercicios K</a></li>
+<li><a class="" href="ejercicios-l-prueba-de-t-con-datos-independientes.html"><span class="header-section-number">L</span> Ejercicios L: prueba de t con datos independientes</a></li>
+<li><a class="" href="ejercicios-m.html"><span class="header-section-number">M</span> Ejercicios M</a></li>
+<li><a class="" href="ejercicios-n.html"><span class="header-section-number">N</span> Ejercicios N</a></li>
+<li><a class="" href="ejercicio-o.html"><span class="header-section-number">O</span> Ejercicio O</a></li>
+<li><a class="" href="ejercicios-p.html"><span class="header-section-number">P</span> Ejercicios P</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">Q</span> DATA</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/RaymondLTremblay/BioEstadistica">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="pruebas-no-paramétricas" class="section level1" number="21">
+<h1>
+<span class="header-section-number">Capítulo 21</span> Pruebas No Paramétricas<a class="anchor" aria-label="anchor" href="#pruebas-no-param%C3%A9tricas"><i class="fas fa-link"></i></a>
+</h1>
+<hr>
+<div id="pruebas-no-paramétricas-1" class="section level2" number="21.1">
+<h2>
+<span class="header-section-number">21.1</span> Pruebas no paramétricas<a class="anchor" aria-label="anchor" href="#pruebas-no-param%C3%A9tricas-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Todas las pruebas anteriores asumen que los datos tienen ciertas características, como distribución normal y homogeneidad de varianza. Si los datos NO cumplen con estos supuestos, entonces no se deben usar esas pruebas y se deben explorar pruebas alternativas. Un conjunto de pruebas conocidas son las pruebas no paramétricas o pruebas libres de distribución.</p>
+<div class="definicion">
+<p><strong>Pruebas no paramétricas.</strong> Pruebas que no requieren que los datos sigan una distribución específica (como la normal). En vez de usar los valores originales, la mayoría trabaja con los <strong>rangos</strong> de los datos, lo que las hace robustas frente a valores atípicos y distribuciones sesgadas. Suelen probar hipótesis sobre la mediana o la distribución, no sobre la media.</p>
+</div>
+<p>La mayoría de estas pruebas no utilizan los datos originales, sino que emplean los rangos de los datos. Esto se hace asignando “nuevos valores” a los datos originales: el valor más bajo recibe el rango 1, el siguiente valor más bajo el rango 2, y así sucesivamente. De esta manera, el valor más alto obtiene el rango más alto.</p>
+<p>Luego, el análisis se realiza sobre los rangos y NO sobre los valores originales.</p>
+<p><strong>¿Por qué esto reduce la influencia de valores extremos?</strong></p>
+<p>Al convertir los datos en rangos, se elimina la magnitud real de las diferencias entre valores. Un valor extremadamente grande o pequeño solo recibe el rango más alto o más bajo, sin afectar de manera desproporcionada el resultado del análisis. Esto hace que las pruebas no paramétricas sean más robustas frente a outliers y distribuciones sesgadas.</p>
+<hr>
+</div>
+<div id="los-paquetes" class="section level2" number="21.2">
+<h2>
+<span class="header-section-number">21.2</span> Los paquetes<a class="anchor" aria-label="anchor" href="#los-paquetes"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb734"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#install.packages("car")</span></span>
+<span><span class="co">#install.packages("clinfun")</span></span>
+<span><span class="co">#install.packages("ggplot2")</span></span>
+<span><span class="co">#install.packages("pastecs")</span></span>
+<span><span class="co">#install.packages("pgirmess")</span></span></code></pre></div>
+</div>
+<div id="activar-los-paquetes" class="section level2" number="21.3">
+<h2>
+<span class="header-section-number">21.3</span> Activar los paquetes<a class="anchor" aria-label="anchor" href="#activar-los-paquetes"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb735"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/bprice2652/car_repo">car</a></span><span class="op">)</span>  <span class="co"># Companion to applied Regression</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">clinfun</span><span class="op">)</span> <span class="co"># Clinical Trial Design and Data Analysis Functions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span> <span class="co"># Graphic production</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SciViews/pastecs">pastecs</a></span><span class="op">)</span> <span class="co"># Package for analysis of Space -Time ecological Series</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/pgiraudoux/pgirmess">pgirmess</a></span><span class="op">)</span> <span class="co"># Spatial Analysis and Data Mining for Field Ecologist</span></span></code></pre></div>
+</div>
+<div id="prueba-de-suma-de-rangos-de-wilcoxon" class="section level2" number="21.4">
+<h2>
+<span class="header-section-number">21.4</span> Prueba de suma de rangos de Wilcoxon<a class="anchor" aria-label="anchor" href="#prueba-de-suma-de-rangos-de-wilcoxon"><i class="fas fa-link"></i></a>
+</h2>
+<p>La función “gl()” es una función que genera factores especificando el patrón de sus niveles:</p>
+<p>gl(n, k, length = n*k, labels = 1:n, ordered = FALSE)</p>
+<div id="la-hipótesis" class="section level3" number="21.4.1">
+<h3>
+<span class="header-section-number">21.4.1</span> La hipótesis:<a class="anchor" aria-label="anchor" href="#la-hip%C3%B3tesis"><i class="fas fa-link"></i></a>
+</h3>
+<p>El nivel de depresión posterior al consumo de alcohol es el mismo que el de quienes consumen éxtasis.</p>
+<p>¿Es esta la hipótesis nula o alternativa?</p>
+<p>Los datos provienen de 20 participantes, 10 que bebieron alcohol y 10 que tomaron éxtasis. Después de su consumo, se aplicó el Inventario de Depresión de Beck a cada participante. El Inventario de Depresión de Beck (BDI) es un cuestionario autoinformado que evalúa la gravedad de la depresión en adolescentes y adultos. Consta de 21 ítems, cada uno con cuatro opciones de respuesta que reflejan diferentes niveles de síntomas depresivos. Cada ítem se puntúa de 0 a 3, y la puntuación total se obtiene sumando las puntuaciones de todos los ítems.</p>
+<p>La escala va de 0 (feliz) a 63 (muy deprimido).</p>
+<p><a href="https://www.ismanet.org/doctoryourspirit/pdfs/Beck-Depression-Inventory-BDI.pdf" class="uri">https://www.ismanet.org/doctoryourspirit/pdfs/Beck-Depression-Inventory-BDI.pdf</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Beck_Depression_Inventory" class="uri">https://en.wikipedia.org/wiki/Beck_Depression_Inventory</a></p>
+</div>
+</div>
+<div id="ingresar-los-datos" class="section level2" number="21.5">
+<h2>
+<span class="header-section-number">21.5</span> Ingresar los datos<a class="anchor" aria-label="anchor" href="#ingresar-los-datos"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb736"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sundayBDI</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15</span>, <span class="fl">35</span>, <span class="fl">16</span>, <span class="fl">18</span>, <span class="fl">19</span>, </span>
+<span>             <span class="fl">17</span>, <span class="fl">27</span>, <span class="fl">16</span>, <span class="fl">13</span>, <span class="fl">20</span>, </span>
+<span>             <span class="fl">16</span>, <span class="fl">15</span>, <span class="fl">20</span>, <span class="fl">15</span>, <span class="fl">16</span>, </span>
+<span>             <span class="fl">13</span>, <span class="fl">14</span>, <span class="fl">19</span>, <span class="fl">18</span>, <span class="fl">18</span><span class="op">)</span></span>
+<span><span class="va">wedsBDI</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">28</span>, <span class="fl">35</span>, <span class="fl">35</span>, <span class="fl">24</span>, <span class="fl">39</span>, <span class="fl">32</span>, </span>
+<span>           <span class="fl">27</span>, <span class="fl">29</span>, <span class="fl">36</span>, <span class="fl">35</span>, <span class="fl">5</span>, <span class="fl">6</span>, </span>
+<span>           <span class="fl">30</span>, <span class="fl">8</span>, <span class="fl">9</span>, <span class="fl">7</span>, <span class="fl">6</span>, <span class="fl">17</span>, </span>
+<span>           <span class="fl">3</span>, <span class="fl">10</span><span class="op">)</span></span>
+<span><span class="va">drug</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/gl.html">gl</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">10</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ecstasy"</span>, <span class="st">"Alcohol"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">Gender</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/gl.html">gl</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">10</span>, labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Male"</span>, <span class="st">"Female"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">drugData</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Gender</span>, <span class="va">drug</span>, <span class="va">sundayBDI</span>, <span class="va">wedsBDI</span><span class="op">)</span></span>
+<span><span class="va">drugData</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-4">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-4">Table 21.1: </span> </caption>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Gender</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">drug</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">sundayBDI</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">wedsBDI</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">28</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">35</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">35</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">24</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">19</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">39</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">32</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">27</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">27</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">29</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">13</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">36</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">20</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">35</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">5</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">6</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">20</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">30</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">8</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">9</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">13</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">7</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">14</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">6</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">19</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">17</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">3</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">10</td>
+</tr>
+</tbody>
+</table></div>
+<div id="o-importar-los-datos" class="section level3" number="21.5.1">
+<h3>
+<span class="header-section-number">21.5.1</span> O importar los datos<a class="anchor" aria-label="anchor" href="#o-importar-los-datos"><i class="fas fa-link"></i></a>
+</h3>
+</div>
+<div id="análisis-exploratorio" class="section level3" number="21.5.2">
+<h3>
+<span class="header-section-number">21.5.2</span> Análisis exploratorio<a class="anchor" aria-label="anchor" href="#an%C3%A1lisis-exploratorio"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb737"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span><span class="va">Drug</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"Data_files_csv/Drug.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">Drug</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-5">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-5">Table 21.2: </span> </caption>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">drug</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">sundayBDI</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">wedsBDI</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">28</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">35</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">35</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">24</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">19</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">39</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">32</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="estadísticas-descriptivas." class="section level3" number="21.5.3">
+<h3>
+<span class="header-section-number">21.5.3</span> Estadísticas descriptivas.<a class="anchor" aria-label="anchor" href="#estad%C3%ADsticas-descriptivas."><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Nota: aquí podemos usar drugData[,c(2:3)], lo que indica que queremos las estadísticas para las columnas 2 y 3, y que estas estén separadas por la variable drug (columna 1).</p></li>
+<li><p>NOTA: la prueba de Shapiro-Wilk en la última línea.</p></li>
+</ul>
+<div class="sourceCode" id="cb738"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SciViews/pastecs">pastecs</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Gender"    "drug"      "sundayBDI" "wedsBDI"</code></pre>
+<div class="sourceCode" id="cb740"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/by.html">by</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">]</span>, <span class="va">drugData</span><span class="op">$</span><span class="va">drug</span>, <span class="va">stat.desc</span>, basic<span class="op">=</span><span class="cn">TRUE</span>, norm<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## drugData$drug: Ecstasy
+##                 sundayBDI     wedsBDI
+## nbr.val       10.00000000  10.0000000
+## nbr.null       0.00000000   0.0000000
+## nbr.na         0.00000000   0.0000000
+## min           13.00000000  24.0000000
+## max           35.00000000  39.0000000
+## range         22.00000000  15.0000000
+## sum          196.00000000 320.0000000
+## median        17.50000000  33.5000000
+## mean          19.60000000  32.0000000
+## SE.mean        2.08806130   1.5129074
+## CI.mean.0.95   4.72352283   3.4224344
+## var           43.60000000  22.8888889
+## std.dev        6.60302961   4.7842334
+## coef.var       0.33688927   0.1495073
+## skewness       1.23571300  -0.2191665
+## skew.2SE       0.89929826  -0.1594999
+## kurtosis       0.26030385  -1.4810114
+## kurt.2SE       0.09754697  -0.5549982
+## normtest.W     0.81063991   0.9411413
+## normtest.p     0.01952060   0.5657814
+## ------------------------------------------------------------ 
+## drugData$drug: Alcohol
+##                 sundayBDI      wedsBDI
+## nbr.val       10.00000000 1.000000e+01
+## nbr.null       0.00000000 0.000000e+00
+## nbr.na         0.00000000 0.000000e+00
+## min           13.00000000 3.000000e+00
+## max           20.00000000 3.000000e+01
+## range          7.00000000 2.700000e+01
+## sum          164.00000000 1.010000e+02
+## median        16.00000000 7.500000e+00
+## mean          16.40000000 1.010000e+01
+## SE.mean        0.71802197 2.514182e+00
+## CI.mean.0.95   1.62427855 5.687475e+00
+## var            5.15555556 6.321111e+01
+## std.dev        2.27058485 7.950542e+00
+## coef.var       0.13845030 7.871823e-01
+## skewness       0.11686189 1.500374e+00
+## skew.2SE       0.08504701 1.091907e+00
+## kurtosis      -1.49015904 1.079110e+00
+## kurt.2SE      -0.55842624 4.043886e-01
+## normtest.W     0.95946584 7.534665e-01
+## normtest.p     0.77976459 3.933024e-03</code></pre>
+<div class="sourceCode" id="cb742"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#shapiro.test(drugData$sundayBDI)  # this is to look at all the data, it is not the appropriate way to do the analisis of normality, why?</span></span>
+<span><span class="co">#shapiro.test(drugData$wedsBDI) # this is to look at all the data, it is not the appropriate way to do the analisis of normality, why?</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">$</span><span class="va">sundayBDI</span><span class="op">[</span><span class="va">drugData</span><span class="op">$</span><span class="va">drug</span><span class="op">==</span><span class="st">"Alcohol"</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  drugData$sundayBDI[drugData$drug == "Alcohol"]
+## W = 0.95947, p-value = 0.7798</code></pre>
+<div class="sourceCode" id="cb744"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">$</span><span class="va">sundayBDI</span><span class="op">[</span><span class="va">drugData</span><span class="op">$</span><span class="va">drug</span><span class="op">==</span><span class="st">"Ecstasy"</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  drugData$sundayBDI[drugData$drug == "Ecstasy"]
+## W = 0.81064, p-value = 0.01952</code></pre>
+<div class="sourceCode" id="cb746"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">$</span><span class="va">wedsBDI</span><span class="op">[</span><span class="va">drugData</span><span class="op">$</span><span class="va">drug</span><span class="op">==</span><span class="st">"Alcohol"</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  drugData$wedsBDI[drugData$drug == "Alcohol"]
+## W = 0.75347, p-value = 0.003933</code></pre>
+<div class="sourceCode" id="cb748"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">$</span><span class="va">wedsBDI</span><span class="op">[</span><span class="va">drugData</span><span class="op">$</span><span class="va">drug</span><span class="op">==</span><span class="st">"Ecstasy"</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  drugData$wedsBDI[drugData$drug == "Ecstasy"]
+## W = 0.94114, p-value = 0.5658</code></pre>
+</div>
+<div id="haz-un-diagrama-para-observar-la-distribución-de-los-datos." class="section level3" number="21.5.4">
+<h3>
+<span class="header-section-number">21.5.4</span> Haz un diagrama para observar la distribución de los datos.<a class="anchor" aria-label="anchor" href="#haz-un-diagrama-para-observar-la-distribuci%C3%B3n-de-los-datos."><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb750"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">drugData</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">sundayBDI</span>, fill<span class="op">=</span><span class="va">drug</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>colour<span class="op">=</span><span class="st">"white"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="op">~</span><span class="va">drug</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c21-7-1.png" alt="" width="672"></div>
+<hr>
+</div>
+<div id="prueba-de-homogeneidad-de-varianzas-de-levene" class="section level3" number="21.5.5">
+<h3>
+<span class="header-section-number">21.5.5</span> Prueba de homogeneidad de varianzas de Levene<a class="anchor" aria-label="anchor" href="#prueba-de-homogeneidad-de-varianzas-de-levene"><i class="fas fa-link"></i></a>
+</h3>
+<p>La prueba de Levene es una prueba estadística utilizada para evaluar la homogeneidad de varianzas entre dos o más grupos. Es una alternativa robusta a la prueba de Bartlett, especialmente cuando los datos no cumplen con la suposición de normalidad.</p>
+</div>
+<div id="cuándo-se-usa" class="section level3" number="21.5.6">
+<h3>
+<span class="header-section-number">21.5.6</span> ¿Cuándo se usa?<a class="anchor" aria-label="anchor" href="#cu%C3%A1ndo-se-usa"><i class="fas fa-link"></i></a>
+</h3>
+<p>Cuando se quiere comparar la variabilidad entre grupos antes de realizar pruebas que asumen varianzas iguales (como ANOVA).
+Cuando los datos no son normales o contienen outliers, ya que la prueba de Levene es menos sensible a estas condiciones.</p>
+<div class="sourceCode" id="cb751"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://andrisignorell.github.io/DescTools/">DescTools</a></span><span class="op">)</span></span>
+<span><span class="co">#leveneTest(drugData$sundayBDI, drugData$drug, center = "mean")</span></span>
+<span><span class="fu">DescTools</span><span class="fu">::</span><span class="fu"><a href="https://andrisignorell.github.io/DescTools/reference/LeveneTest.html">LeveneTest</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">$</span><span class="va">sundayBDI</span>, <span class="va">drugData</span><span class="op">$</span><span class="va">drug</span>, center <span class="op">=</span> <span class="st">"median"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-8">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-8">Table 21.3: </span> </caption>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Df</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">F value</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">Pr(&gt;F)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">1.88</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">0.187</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">   </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">    </td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb752"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#leveneTest(drugData$wedsBDI, drugData$drug, center = "mean")</span></span>
+<span><span class="fu">car</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/car/man/leveneTest.html">leveneTest</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">$</span><span class="va">wedsBDI</span>, <span class="va">drugData</span><span class="op">$</span><span class="va">drug</span>, center <span class="op">=</span> <span class="st">"median"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-8">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-8">Table 21.3: </span> </caption>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Df</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">F value</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">Pr(&gt;F)</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">1</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">0.0911</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">0.766</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">     </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">    </td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+</div>
+</div>
+<div id="prueba-de-suma-de-rangos-de-wilcoxon-mann-whitney-u" class="section level2" number="21.6">
+<h2>
+<span class="header-section-number">21.6</span> Prueba de suma de rangos de Wilcoxon (Mann-Whitney U)<a class="anchor" aria-label="anchor" href="#prueba-de-suma-de-rangos-de-wilcoxon-mann-whitney-u"><i class="fas fa-link"></i></a>
+</h2>
+<p>La prueba de suma de rangos de Wilcoxon (también conocida como prueba de Mann-Whitney U) es una prueba no paramétrica utilizada para comparar dos muestras independientes y determinar si provienen de la misma distribución.</p>
+<div id="cuándo-se-usa-1" class="section level3" number="21.6.1">
+<h3>
+<span class="header-section-number">21.6.1</span> ¿Cuándo se usa?<a class="anchor" aria-label="anchor" href="#cu%C3%A1ndo-se-usa-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Cuando se quiere comparar dos grupos independientes (por ejemplo, grupo control vs. grupo tratado).
+Los datos son ordinales o no cumplen los supuestos de normalidad requeridos por pruebas paramétricas como la t de Student.
+Se busca evaluar si las distribuciones son similares en ubicación (mediana).</p>
+</div>
+<div id="cómo-funciona" class="section level3" number="21.6.2">
+<h3>
+<span class="header-section-number">21.6.2</span> Cómo funciona:<a class="anchor" aria-label="anchor" href="#c%C3%B3mo-funciona"><i class="fas fa-link"></i></a>
+</h3>
+<p>Combina los datos de ambos grupos y asigna rangos a todos los valores.
+Calcula la suma de rangos para cada grupo.
+El estadístico de prueba se basa en estas sumas y se compara con una distribución conocida para obtener el valor p.</p>
+</div>
+<div id="ejemplo-de-uso" class="section level3" number="21.6.3">
+<h3>
+<span class="header-section-number">21.6.3</span> Ejemplo de uso:<a class="anchor" aria-label="anchor" href="#ejemplo-de-uso"><i class="fas fa-link"></i></a>
+</h3>
+<p>Comparar niveles de glucosa entre dos grupos de pacientes (tratamiento vs. placebo) cuando los datos no son normales.
+Evaluar diferencias en tiempos de reacción entre dos poblaciones.</p>
+<p>wilcox.test(x, y = NULL, alternative = c(“two.sided”, “less”, “greater”),
+mu = 0, paired = FALSE, exact = FALSE,
+correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
+</div>
+</div>
+<div id="cómo-asignar-los-rangos-a-mano-ejemplo-los-scripts-lo-hacen-automáticamente" class="section level2" number="21.7">
+<h2>
+<span class="header-section-number">21.7</span> Cómo asignar los rangos a mano (ejemplo; los scripts lo hacen automáticamente)<a class="anchor" aria-label="anchor" href="#c%C3%B3mo-asignar-los-rangos-a-mano-ejemplo-los-scripts-lo-hacen-autom%C3%A1ticamente"><i class="fas fa-link"></i></a>
+</h2>
+<p>Busca el valor más pequeño… en wedsBDI…</p>
+<div class="sourceCode" id="cb753"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">drugData</span><span class="op">$</span><span class="va">wedsRank</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/rank.html">rank</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">$</span><span class="va">wedsBDI</span><span class="op">)</span></span>
+<span><span class="va">drugData</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-9">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-9">Table 21.4: </span> </caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Gender</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">drug</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">sundayBDI</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">wedsBDI</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">wedsRank</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">28</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">12  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">17  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">17  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">24</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">10  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">19</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">39</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">20  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">32</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">15  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">27</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">27</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">11  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">29</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">13  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">13</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">36</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">19  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">20</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">17  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">2  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">6</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">3.5</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">20</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">30</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">14  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">8</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">6  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">9</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">7  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">13</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">7</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">5  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">14</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">6</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">3.5</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">19</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">9  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">3</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">1  </td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">10</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">8  </td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+</div>
+<div id="prueba-de-wilcoxon-una-prueba-no-paramétrica" class="section level2" number="21.8">
+<h2>
+<span class="header-section-number">21.8</span> Prueba de Wilcoxon: una prueba no paramétrica<a class="anchor" aria-label="anchor" href="#prueba-de-wilcoxon-una-prueba-no-param%C3%A9trica"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb754"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "Gender"    "drug"      "sundayBDI" "wedsBDI"   "wedsRank"</code></pre>
+<div class="sourceCode" id="cb756"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-10">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-10">Table 21.5: </span> </caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Gender</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">drug</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">sundayBDI</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">wedsBDI</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">wedsRank</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">28</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">12</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">17</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">17</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">24</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">10</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">19</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">39</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">20</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">32</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">15</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb757"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sunModel</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">sundayBDI</span> <span class="op">~</span> <span class="va">drug</span>, data <span class="op">=</span> <span class="va">drugData</span><span class="op">)</span></span>
+<span><span class="va">sunModel</span></span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum exact test
+## 
+## data:  sundayBDI by drug
+## W = 64.5, p-value = 0.2882
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<div class="sourceCode" id="cb759"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wedModel</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">wedsBDI</span> <span class="op">~</span> <span class="va">drug</span>, data <span class="op">=</span> <span class="va">drugData</span><span class="op">)</span></span>
+<span><span class="va">wedModel</span></span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum exact test
+## 
+## data:  wedsBDI by drug
+## W = 96, p-value = 0.0001299
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<hr>
+</div>
+<div id="el-siguiente-acercamiento-es-mejor-porque-puede-manejar-empates-valores-iguales" class="section level2" number="21.9">
+<h2>
+<span class="header-section-number">21.9</span> El siguiente acercamiento es mejor porque puede manejar empates (valores iguales)<a class="anchor" aria-label="anchor" href="#el-siguiente-acercamiento-es-mejor-porque-puede-manejar-empates-valores-iguales"><i class="fas fa-link"></i></a>
+</h2>
+<div class="consejo">
+<p>Cuando hay <strong>empates</strong> (valores iguales) en los datos, R no puede calcular el valor-p exacto y muestra una advertencia. En esos casos se añade <code>exact = FALSE</code> a <code><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test()</a></code> para usar la aproximación normal.</p>
+</div>
+<div class="sourceCode" id="cb761"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">sunModel2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">sundayBDI</span> <span class="op">~</span> <span class="va">drug</span>, data <span class="op">=</span> <span class="va">drugData</span>, exact <span class="op">=</span> <span class="cn">FALSE</span>, correct<span class="op">=</span> <span class="cn">FALSE</span>, conf.int<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">sunModel2</span></span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum test
+## 
+## data:  sundayBDI by drug
+## W = 64.5, p-value = 0.2692
+## alternative hypothesis: true location shift is not equal to 0
+## 95 percent confidence interval:
+##  -1.000049  5.000033
+## sample estimates:
+## difference in location 
+##               1.000023</code></pre>
+<div class="sourceCode" id="cb763"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">wedModel2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">wedsBDI</span> <span class="op">~</span> <span class="va">drug</span>, data <span class="op">=</span> <span class="va">drugData</span>, exact <span class="op">=</span> <span class="cn">FALSE</span>, correct<span class="op">=</span> <span class="cn">FALSE</span>, conf.int<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span>
+<span><span class="va">wedModel2</span></span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum test
+## 
+## data:  wedsBDI by drug
+## W = 96, p-value = 0.0004943
+## alternative hypothesis: true location shift is not equal to 0
+## 95 percent confidence interval:
+##  18.00001 28.99996
+## sample estimates:
+## difference in location 
+##               23.55281</code></pre>
+<hr>
+</div>
+<div id="ejercicio-de-clase-1" class="section level2" number="21.10">
+<h2>
+<span class="header-section-number">21.10</span> Ejercicio de clase<a class="anchor" aria-label="anchor" href="#ejercicio-de-clase-1"><i class="fas fa-link"></i></a>
+</h2>
+</div>
+<div id="cuántas-veces-has-ido-a-disney-hay-diferencia-entre-géneros" class="section level2" number="21.11">
+<h2>
+<span class="header-section-number">21.11</span> ¿Cuántas veces has ido a Disney? ¿Hay diferencia entre géneros?<a class="anchor" aria-label="anchor" href="#cu%C3%A1ntas-veces-has-ido-a-disney-hay-diferencia-entre-g%C3%A9neros"><i class="fas fa-link"></i></a>
+</h2>
+<p>Usa la prueba de Wilcoxon.</p>
+<div class="sourceCode" id="cb765"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Disney</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">0</span>,<span class="fl">1</span>,<span class="fl">2</span>,</span>
+<span>         <span class="fl">0</span>,<span class="fl">2</span>,<span class="fl">0</span>,<span class="fl">2</span>,<span class="fl">3</span>,</span>
+<span>         <span class="fl">2</span>,<span class="fl">1</span>,<span class="fl">4</span>, <span class="fl">3</span>, </span>
+<span>         <span class="fl">2</span>, <span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">6</span>,<span class="fl">7</span>,</span>
+<span>         <span class="fl">11</span>, <span class="fl">7</span>, <span class="fl">9</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Gender</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,</span>
+<span>         <span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,</span>
+<span>         <span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,<span class="st">"F"</span>,</span>
+<span>        <span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"M"</span>,</span>
+<span>        <span class="st">"M"</span>,<span class="st">"M"</span>,<span class="st">"M"</span><span class="op">)</span></span>
+<span><span class="va">DF</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">Disney</span>,<span class="va">Gender</span><span class="op">)</span></span>
+<span><span class="va">DF</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-12">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-12">Table 21.6: </span> </caption>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Disney</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">Gender</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">3</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">5</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">0</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">1</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">0</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">0</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">3</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">1</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">4</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">3</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">F</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">M</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">1</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">M</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">2</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">M</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">6</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">M</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">7</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">M</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">11</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">M</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">7</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">M</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">9</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">M</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<div class="sourceCode" id="cb766"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">DF</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="va">Disney</span>, x<span class="op">=</span><span class="va">Gender</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c21-13-1.png" alt="" width="672"></div>
+<div class="sourceCode" id="cb767"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">DF</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Disney</span>, fill<span class="op">=</span><span class="va">Gender</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_grid.html">facet_grid</a></span><span class="op">(</span><span class="op">~</span><span class="va">Gender</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c21-13-2.png" alt="" width="672"></div>
+<div class="sourceCode" id="cb768"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">Disney</span> <span class="op">~</span> <span class="va">Gender</span>, data <span class="op">=</span> <span class="va">DF</span>,exact <span class="op">=</span> <span class="cn">FALSE</span>, correct<span class="op">=</span> <span class="cn">FALSE</span>, conf.int<span class="op">=</span><span class="cn">T</span> <span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon rank sum test
+## 
+## data:  Disney by Gender
+## W = 24, p-value = 0.02681
+## alternative hypothesis: true location shift is not equal to 0
+## 95 percent confidence interval:
+##  -6.999942e+00 -2.032046e-05
+## sample estimates:
+## difference in location 
+##              -3.999936</code></pre>
+<hr>
+</div>
+<div id="comparar-dos-condiciones-relacionadas-la-prueba-de-rangos-con-signo-de-wilcoxon-similar-a-la-prueba-de-t-pareada" class="section level2" number="21.12">
+<h2>
+<span class="header-section-number">21.12</span> Comparar dos condiciones relacionadas: la <strong>prueba de rangos con signo de Wilcoxon</strong> (similar a la prueba de t pareada)<a class="anchor" aria-label="anchor" href="#comparar-dos-condiciones-relacionadas-la-prueba-de-rangos-con-signo-de-wilcoxon-similar-a-la-prueba-de-t-pareada"><i class="fas fa-link"></i></a>
+</h2>
+<div id="no-confundir-con-la-prueba-de-suma-de-rangos-de-wilcoxon-mann-whitney-u-que-es-similar-a-la-prueba-de-t-no-pareada" class="section level3" number="21.12.1">
+<h3>
+<span class="header-section-number">21.12.1</span> No confundir con la <strong>prueba de suma de rangos de Wilcoxon</strong> (Mann-Whitney U), que es similar a la prueba de t no pareada<a class="anchor" aria-label="anchor" href="#no-confundir-con-la-prueba-de-suma-de-rangos-de-wilcoxon-mann-whitney-u-que-es-similar-a-la-prueba-de-t-no-pareada"><i class="fas fa-link"></i></a>
+</h3>
+<p>La prueba no paramétrica más común para datos pareados es la Prueba de rangos con signo de Wilcoxon.</p>
+</div>
+<div id="qué-es-y-cuándo-se-usa" class="section level3" number="21.12.2">
+<h3>
+<span class="header-section-number">21.12.2</span> ¿Qué es y cuándo se usa?<a class="anchor" aria-label="anchor" href="#qu%C3%A9-es-y-cu%C3%A1ndo-se-usa"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Se utiliza para comparar dos muestras relacionadas (por ejemplo, mediciones antes y después en los mismos individuos).</li>
+<li>Es una alternativa a la t de Student para muestras dependientes cuando los datos no cumplen normalidad o son ordinales.</li>
+<li>Evalúa si la mediana de las diferencias entre los pares es cero.</li>
+</ul>
+</div>
+<div id="características-principales" class="section level3" number="21.12.3">
+<h3>
+<span class="header-section-number">21.12.3</span> Características principales:<a class="anchor" aria-label="anchor" href="#caracter%C3%ADsticas-principales"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Ordena las diferencias absolutas entre pares y les asigna rangos.</li>
+<li>Considera el signo (+/-) de cada diferencia.</li>
+<li>Calcula la suma de rangos positivos y negativos para determinar si hay diferencia significativa.</li>
+</ul>
+</div>
+<div id="ejemplo-típico" class="section level3" number="21.12.4">
+<h3>
+<span class="header-section-number">21.12.4</span> Ejemplo típico:<a class="anchor" aria-label="anchor" href="#ejemplo-t%C3%ADpico"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Comparar presión arterial antes y después de un tratamiento en los mismos pacientes.</li>
+<li>Evaluar el efecto de una intervención educativa en el mismo grupo.</li>
+</ul>
+<p>Ahora queremos comparar los resultados del domingo y del miércoles, pero esta vez los datos provienen de los mismos individuos.</p>
+</div>
+</div>
+<div id="cambio-en-el-bdi-índice-de-depresión-de-beck" class="section level2" number="21.13">
+<h2>
+<span class="header-section-number">21.13</span> Cambio en el BDI (Índice de Depresión de Beck)<a class="anchor" aria-label="anchor" href="#cambio-en-el-bdi-%C3%ADndice-de-depresi%C3%B3n-de-beck"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb770"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">drugData</span><span class="op">$</span><span class="va">BDIchange</span><span class="op">&lt;-</span><span class="va">drugData</span><span class="op">$</span><span class="va">wedsBDI</span><span class="op">-</span><span class="va">drugData</span><span class="op">$</span><span class="va">sundayBDI</span> <span class="co"># calculate differences</span></span>
+<span></span>
+<span></span>
+<span></span>
+<span><span class="va">drugData</span><span class="op">$</span><span class="va">BDIchange</span></span></code></pre></div>
+<pre><code>##  [1]  13   0  19   6  20  15   0  13  23  15 -11  -9  10  -7  -7  -6  -8  -2 -15
+## [20]  -8</code></pre>
+<div class="sourceCode" id="cb772"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-14">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-14">Table 21.7: </span> </caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Gender</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">drug</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">sundayBDI</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">wedsBDI</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">wedsRank</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">BDIchange</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">28</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">12</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">13</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">0</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">19</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">24</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">10</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">6</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">19</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">39</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">20</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">20</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">32</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">15</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb773"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">drugData</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-14">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-14">Table 21.7: </span> </caption>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Gender</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">drug</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">sundayBDI</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">wedsBDI</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">wedsRank</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">BDIchange</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">28</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">12  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">13</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">17  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">0</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">17  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">19</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">24</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">10  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">6</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">19</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">39</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">20  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">20</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">32</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">15  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">15</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">27</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">27</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">11  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">0</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">29</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">13  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">13</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">13</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">36</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">19  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">23</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Male</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Ecstasy</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">20</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">35</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">17  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">15</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">2  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">-11</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">6</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">3.5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">-9</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">20</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">30</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">14  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">10</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">15</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">8</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">6  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">-7</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">16</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">9</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">7  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">-7</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">13</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">7</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">5  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">-6</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">14</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">6</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">3.5</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">-8</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">19</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">17</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">9  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">-2</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">3</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">1  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">-15</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">Female</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">Alcohol</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">18</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">10</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">8  </td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">-8</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb774"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/by.html">by</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">$</span><span class="va">BDIchange</span>, <span class="va">drugData</span><span class="op">$</span><span class="va">drug</span>, <span class="va">stat.desc</span>, basic <span class="op">=</span> <span class="cn">FALSE</span>, norm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## drugData$drug: Ecstasy
+##       median         mean      SE.mean CI.mean.0.95          var      std.dev 
+##   14.0000000   12.4000000    2.5307004    5.7248420   64.0444444    8.0027773 
+##     coef.var     skewness     skew.2SE     kurtosis     kurt.2SE   normtest.W 
+##    0.6453853   -0.4140842   -0.3013525   -1.3686700   -0.5128991    0.9087803 
+##   normtest.p 
+##    0.2727175 
+## ------------------------------------------------------------ 
+## drugData$drug: Alcohol
+##       median         mean      SE.mean CI.mean.0.95          var      std.dev 
+##  -7.50000000  -6.30000000   2.09788253   4.74573999  44.01111111   6.63408706 
+##     coef.var     skewness     skew.2SE     kurtosis     kurt.2SE   normtest.W 
+##  -1.05302969   1.23907117   0.90174219   0.98664006   0.36973617   0.82795980 
+##   normtest.p 
+##   0.03161929</code></pre>
+<div class="sourceCode" id="cb776"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">$</span><span class="va">BDIchange</span><span class="op">[</span><span class="va">drugData</span><span class="op">$</span><span class="va">drug</span><span class="op">==</span><span class="st">"Alcohol"</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  drugData$BDIchange[drugData$drug == "Alcohol"]
+## W = 0.82796, p-value = 0.03162</code></pre>
+<div class="sourceCode" id="cb778"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">drugData</span><span class="op">$</span><span class="va">BDIchange</span><span class="op">[</span><span class="va">drugData</span><span class="op">$</span><span class="va">drug</span><span class="op">==</span><span class="st">"Ecstasy"</span><span class="op">]</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  drugData$BDIchange[drugData$drug == "Ecstasy"]
+## W = 0.90878, p-value = 0.2727</code></pre>
+<div class="sourceCode" id="cb780"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">boxplot</span><span class="op">&lt;-</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">drugData</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">drug</span>, <span class="va">BDIchange</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">boxplot</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c21-15-1.png" alt="" width="672"></div>
+<div class="sourceCode" id="cb781"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#alcoholData&lt;-subset(drugData, drug == "Alcohol") # subset the data for alcohol</span></span>
+<span><span class="co">#ecstasyData&lt;-subset(drugData, drug == "Ecstasy") # subset the data for ecstasy</span></span></code></pre></div>
+<div class="sourceCode" id="cb782"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">alcoholData</span> <span class="op">=</span> <span class="va">drugData</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">drug</span> <span class="op">==</span> <span class="st">"Alcohol"</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">ecstasyData</span> <span class="op">=</span> <span class="va">drugData</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">drug</span> <span class="op">==</span> <span class="st">"Ecstasy"</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb783"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">alcoholModel</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">alcoholData</span><span class="op">$</span><span class="va">wedsBDI</span>, <span class="va">alcoholData</span><span class="op">$</span><span class="va">sundayBDI</span>,  paired <span class="op">=</span> <span class="cn">TRUE</span>, exact <span class="op">=</span> <span class="cn">TRUE</span>, correct<span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="va">alcoholModel</span></span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon signed rank exact test
+## 
+## data:  alcoholData$wedsBDI and alcoholData$sundayBDI
+## V = 8, p-value = 0.04492
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<div class="sourceCode" id="cb785"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ecstasyModel</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/wilcox.test.html">wilcox.test</a></span><span class="op">(</span><span class="va">ecstasyData</span><span class="op">$</span><span class="va">wedsBDI</span>, <span class="va">ecstasyData</span><span class="op">$</span><span class="va">sundayBDI</span>, paired <span class="op">=</span> <span class="cn">TRUE</span>, exact <span class="op">=</span> <span class="cn">FALSE</span>,correct<span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>   <span class="co"># Note that the option "exact=FALSE" has to be added becase there are ties.  </span></span>
+<span><span class="va">ecstasyModel</span></span></code></pre></div>
+<pre><code>## 
+##  Wilcoxon signed rank test
+## 
+## data:  ecstasyData$wedsBDI and ecstasyData$sundayBDI
+## V = 36, p-value = 0.01151
+## alternative hypothesis: true location shift is not equal to 0</code></pre>
+<hr>
+</div>
+<div id="prueba-de-kruskal-wallis" class="section level2" number="21.14">
+<h2>
+<span class="header-section-number">21.14</span> Prueba de Kruskal-Wallis<a class="anchor" aria-label="anchor" href="#prueba-de-kruskal-wallis"><i class="fas fa-link"></i></a>
+</h2>
+<div class="nota">
+<p><strong>Equivalencias no paramétricas:</strong> la prueba de suma de rangos de Wilcoxon (Mann-Whitney U) es la alternativa a la <em>t</em> independiente; la prueba de rangos con signo de Wilcoxon es la alternativa a la <em>t</em> pareada; y la prueba de Kruskal-Wallis es la alternativa al ANOVA de una vía.</p>
+</div>
+<p>Es una prueba similar al ANOVA, para múltiples grupos (3 o más).</p>
+<p>Sin embargo, se evalúan las diferencias para determinar si el rango entre los grupos es diferente (no la media).</p>
+<p>La hipótesis nula es que la suma (o el promedio) de los rangos es igual entre los grupos, Ho: G1 = G2 = G3 … Gk.
+La hipótesis alterna es que por lo menos el “rango promedio” de uno de los grupos es diferente del de otro.</p>
+<p>La prueba de Kruskal-Wallis es una prueba no paramétrica que se utiliza para comparar tres o más grupos independientes y determinar si provienen de la misma distribución. Es la alternativa no paramétrica al ANOVA de una vía cuando los datos:</p>
+<div id="no-tiene-que-cumplir-el-supuesto-de-normalidad-o-igualdad-de-varianza." class="section level3" number="21.14.1">
+<h3>
+<span class="header-section-number">21.14.1</span> No tiene que cumplir el supuesto de normalidad o igualdad de varianza.<a class="anchor" aria-label="anchor" href="#no-tiene-que-cumplir-el-supuesto-de-normalidad-o-igualdad-de-varianza."><i class="fas fa-link"></i></a>
+</h3>
+<p>Son ordinales o no se puede asumir homogeneidad de varianzas.</p>
+</div>
+<div id="cómo-funciona-1" class="section level3" number="21.14.2">
+<h3>
+<span class="header-section-number">21.14.2</span> ¿Cómo funciona?<a class="anchor" aria-label="anchor" href="#c%C3%B3mo-funciona-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Combina todos los datos y les asigna rangos.
+Calcula la suma de rangos para cada grupo.
+Usa un estadístico basado en estas sumas para evaluar si las medianas de los grupos son iguales.</p>
+</div>
+<div id="hipótesis-1" class="section level3" number="21.14.3">
+<h3>
+<span class="header-section-number">21.14.3</span> Hipótesis:<a class="anchor" aria-label="anchor" href="#hip%C3%B3tesis-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>H₀: Las distribuciones (o medianas) de todos los grupos son iguales.
+H₁: Al menos un grupo difiere.</p>
+</div>
+<div id="ejemplo-de-uso-1" class="section level3" number="21.14.4">
+<h3>
+<span class="header-section-number">21.14.4</span> Ejemplo de uso:<a class="anchor" aria-label="anchor" href="#ejemplo-de-uso-1"><i class="fas fa-link"></i></a>
+</h3>
+<p>Comparar niveles de glucosa en tres dietas diferentes.
+Evaluar diferencias en tiempo de recuperación entre varios tratamientos.</p>
+<hr>
+</div>
+</div>
+<div id="la-soya-y-su-efecto-sobre-la-producción-de-esperma-en-varones-humanos" class="section level2" number="21.15">
+<h2>
+<span class="header-section-number">21.15</span> La soya y su efecto sobre la producción de esperma en varones humanos<a class="anchor" aria-label="anchor" href="#la-soya-y-su-efecto-sobre-la-producci%C3%B3n-de-esperma-en-varones-humanos"><i class="fas fa-link"></i></a>
+</h2>
+<div id="soy-food-and-isoflavone-intake-in-relation-to-semen-quality-parameters-among-men-from-an-infertility-clinic" class="section level3" number="21.15.1">
+<h3>
+<span class="header-section-number">21.15.1</span> Soy food and isoflavone intake in relation to semen quality parameters among men from an infertility clinic<a class="anchor" aria-label="anchor" href="#soy-food-and-isoflavone-intake-in-relation-to-semen-quality-parameters-among-men-from-an-infertility-clinic"><i class="fas fa-link"></i></a>
+</h3>
+<p>Jorge E. Chavarro Thomas L. Toth Sonita M. Sadio Russ Hauser
+Hum Reprod. 2008 Nov;23(11):2584-90. doi: 10.1093/humrep/den243. Epub 2008 Jul 23.</p>
+<p>El estudio encontró que la concentración de esperma es menor en los varones que consumen más soya. A continuación se reproduce el resumen (Abstract) original del artículo.</p>
+</div>
+</div>
+<div id="abstract" class="section level2" number="21.16">
+<h2>
+<span class="header-section-number">21.16</span> Abstract<a class="anchor" aria-label="anchor" href="#abstract"><i class="fas fa-link"></i></a>
+</h2>
+<div id="background" class="section level3" number="21.16.1">
+<h3>
+<span class="header-section-number">21.16.1</span> BACKGROUND:<a class="anchor" aria-label="anchor" href="#background"><i class="fas fa-link"></i></a>
+</h3>
+<p>High isoflavone intake has been related to decreased fertility in animal studies, but data in humans are scarce. Thus, we examined the association of soy foods and isoflavones intake with semen quality parameters.</p>
+</div>
+<div id="methods" class="section level3" number="21.16.2">
+<h3>
+<span class="header-section-number">21.16.2</span> METHODS:<a class="anchor" aria-label="anchor" href="#methods"><i class="fas fa-link"></i></a>
+</h3>
+<p>The intake of 15 soy-based foods in the previous 3 months was assessed for 99 male partners of subfertile couples who presented for semen analyses to the Massachusetts General Hospital Fertility Center. Linear and quantile regression were used to determine the association of soy foods and isoflavones intake with semen quality parameters while adjusting for personal characteristics.</p>
+</div>
+<div id="results" class="section level3" number="21.16.3">
+<h3>
+<span class="header-section-number">21.16.3</span> RESULTS:<a class="anchor" aria-label="anchor" href="#results"><i class="fas fa-link"></i></a>
+</h3>
+<p>There was an inverse association between soy food intake and sperm concentration that remained significant after accounting for age, abstinence time, body mass index, caffeine and alcohol intake and smoking. In the multivariate-adjusted analyses, men in the highest category of soy food intake had 41 million sperm/ml less than men who did not consume soy foods (95% confidence interval = -74, -8; P, trend = 0.02). Results for individual soy isoflavones were similar to the results for soy foods and were strongest for glycitein, but did not reach statistical significance. The inverse relation between soy food intake and sperm concentration was more pronounced in the high end of the distribution (90th and 75th percentile) and among overweight or obese men. Soy food and soy isoflavone intake were unrelated to sperm motility, sperm morphology or ejaculate volume.</p>
+</div>
+<div id="conclusions" class="section level3" number="21.16.4">
+<h3>
+<span class="header-section-number">21.16.4</span> CONCLUSIONS:<a class="anchor" aria-label="anchor" href="#conclusions"><i class="fas fa-link"></i></a>
+</h3>
+<p>These data suggest that higher intake of soy foods and soy isoflavones is associated with lower sperm concentration.</p>
+<p>Ahora veamos los datos de Field, soya.csv.</p>
+<div class="sourceCode" id="cb787"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">Soyadf</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"Data_files_csv/Soya.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">Soyadf</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-20">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-20">Table 21.8: </span> </caption>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Soya</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">Sperm</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">0.35</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">0.58</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">0.88</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">0.92</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">1.22</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">1.51</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb788"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">Soyadf</span><span class="op">$</span><span class="va">Soya</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "No Soya Meals"          "1 Soya Meal Per Week"   "4 Soyal Meals Per Week"
+## [4] "7 Soya Meals Per Week"</code></pre>
+</div>
+</div>
+<div id="hacer-un-boxplot-de-los-datos-en-un-nuevo-chunk" class="section level2" number="21.17">
+<h2>
+<span class="header-section-number">21.17</span> Hacer un boxplot de los datos en un nuevo chunk<a class="anchor" aria-label="anchor" href="#hacer-un-boxplot-de-los-datos-en-un-nuevo-chunk"><i class="fas fa-link"></i></a>
+</h2>
+<p>Reordena el eje x para que los niveles vayan de menor a mayor consumo de soya (de ninguno a alto).</p>
+<div class="sourceCode" id="cb790"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">Soyadf</span><span class="op">$</span><span class="va">Soya</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] "No Soya Meals"          "1 Soya Meal Per Week"   "4 Soyal Meals Per Week"
+## [4] "7 Soya Meals Per Week"</code></pre>
+<div class="sourceCode" id="cb792"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Soyadf</span><span class="op">$</span><span class="va">Soya2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">Soyadf</span><span class="op">$</span><span class="va">Soya</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"No Soya Meals"</span>,</span>
+<span>                                               <span class="st">"1 Soya Meal Per Week"</span>,</span>
+<span>                                               <span class="st">"4 Soyal Meals Per Week"</span>,</span>
+<span>                                               <span class="st">"7 Soya Meals Per Week"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">Soyadf</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">Soya2</span>, y<span class="op">=</span><span class="va">Sperm</span>, fill<span class="op">=</span><span class="va">Soya2</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>axis.text.x <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_text</a></span><span class="op">(</span>angle <span class="op">=</span> <span class="fl">90</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c21-21-1.png" alt="" width="672"></div>
+<hr>
+<p>Estadística descriptiva</p>
+<p>Usa la función by() para obtener las estadísticas de cada grupo.
+Al añadir “norm=TRUE” se realiza la prueba de normalidad de Shapiro-Wilk.</p>
+<div class="sourceCode" id="cb793"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SciViews/pastecs">pastecs</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/by.html">by</a></span><span class="op">(</span><span class="va">Soyadf</span><span class="op">$</span><span class="va">Sperm</span>, <span class="va">Soyadf</span><span class="op">$</span><span class="va">Soya</span>, <span class="va">stat.desc</span>, basic <span class="op">=</span> <span class="cn">FALSE</span>, norm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Soyadf$Soya: 1 Soya Meal Per Week
+##       median         mean      SE.mean CI.mean.0.95          var      std.dev 
+##  2.595000000  4.606000000  1.044821919  2.186837409 21.833056842  4.672585670 
+##     coef.var     skewness     skew.2SE     kurtosis     kurt.2SE   normtest.W 
+##  1.014456290  1.350565932  1.318645901  1.422731699  0.716825470  0.825831600 
+##   normtest.p 
+##  0.002153894 
+## ------------------------------------------------------------ 
+## Soyadf$Soya: 4 Soyal Meals Per Week
+##       median         mean      SE.mean CI.mean.0.95          var      std.dev 
+## 2.945000e+00 4.110500e+00 9.861233e-01 2.063980e+00 1.944878e+01 4.410078e+00 
+##     coef.var     skewness     skew.2SE     kurtosis     kurt.2SE   normtest.W 
+## 1.072881e+00 1.822237e+00 1.779169e+00 2.792615e+00 1.407024e+00 7.427433e-01 
+##   normtest.p 
+## 1.359072e-04 
+## ------------------------------------------------------------ 
+## Soyadf$Soya: 7 Soya Meals Per Week
+##       median         mean      SE.mean CI.mean.0.95          var      std.dev 
+##    1.3350000    1.6535000    0.2479774    0.5190226    1.2298555    1.1089885 
+##     coef.var     skewness     skew.2SE     kurtosis     kurt.2SE   normtest.W 
+##    0.6706916    0.6086712    0.5942855   -0.9161653   -0.4615984    0.9122606 
+##   normtest.p 
+##    0.0703908 
+## ------------------------------------------------------------ 
+## Soyadf$Soya: No Soya Meals
+##       median         mean      SE.mean CI.mean.0.95          var      std.dev 
+##  3.095000000  4.987000000  1.136926165  2.379613812 25.852022105  5.084488382 
+##     coef.var     skewness     skew.2SE     kurtosis     kurt.2SE   normtest.W 
+##  1.019548502  1.546140856  1.509598499  2.328051363  1.172959394  0.805255802 
+##   normtest.p 
+##  0.001035917</code></pre>
+<hr>
+</div>
+<div id="la-prueba-de-kruskal-wallis-es-similar-a-un-anova-sin-asumir-distribución-normal-ni-igualdad-de-varianza" class="section level2" number="21.18">
+<h2>
+<span class="header-section-number">21.18</span> La prueba de Kruskal-Wallis es similar a un ANOVA, sin asumir distribución normal ni igualdad de varianza<a class="anchor" aria-label="anchor" href="#la-prueba-de-kruskal-wallis-es-similar-a-un-anova-sin-asumir-distribuci%C3%B3n-normal-ni-igualdad-de-varianza"><i class="fas fa-link"></i></a>
+</h2>
+<p>HO: R1 = R2 = R3 = R4
+HA: Por lo menos uno de los grupos es diferente.</p>
+<div class="sourceCode" id="cb795"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Traditional approach</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/kruskal.test.html">kruskal.test</a></span><span class="op">(</span><span class="va">Sperm</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Soya</span><span class="op">)</span>, data<span class="op">=</span><span class="va">Soyadf</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Kruskal-Wallis rank sum test
+## 
+## data:  Sperm by as.factor(Soya)
+## Kruskal-Wallis chi-squared = 8.6589, df = 3, p-value = 0.03419</code></pre>
+<hr>
+</div>
+<div id="un-mejor-acercamiento-el-paquete-coin" class="section level2" number="21.19">
+<h2>
+<span class="header-section-number">21.19</span> Un mejor acercamiento: el paquete “coin”<a class="anchor" aria-label="anchor" href="#un-mejor-acercamiento-el-paquete-coin"><i class="fas fa-link"></i></a>
+</h2>
+<p>Este acercamiento es mejor porque usa simulación para calcular la distribución del estadístico de prueba bajo la hipótesis nula.</p>
+<p>La prueba aproximativa (Monte Carlo) de Fisher-Pitman es una prueba no paramétrica basada en permutaciones que se utiliza para comparar dos muestras independientes. Es una alternativa a la prueba de rangos de Wilcoxon o a la prueba t cuando se quiere evitar hacer supuestos sobre la distribución subyacente.</p>
+<div id="características-principales-1" class="section level3" number="21.19.1">
+<h3>
+<span class="header-section-number">21.19.1</span> Características principales<a class="anchor" aria-label="anchor" href="#caracter%C3%ADsticas-principales-1"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Propósito: Verifica si dos grupos provienen de la misma distribución (generalmente se enfoca en la ubicación/media).</li>
+<li>Enfoque: Utiliza permutaciones aleatorias (simulación Monte Carlo) para aproximar la distribución exacta del estadístico bajo la hipótesis nula.</li>
+<li>¿Por qué Monte Carlo? Para tamaños de muestra grandes, calcular todas las permutaciones posibles es inviable, por lo que se toman muchas permutaciones aleatorias para estimar el valor p.</li>
+</ul>
+</div>
+<div id="cómo-funciona-2" class="section level3" number="21.19.2">
+<h3>
+<span class="header-section-number">21.19.2</span> Cómo funciona<a class="anchor" aria-label="anchor" href="#c%C3%B3mo-funciona-2"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Se calcula la diferencia observada entre las medias (u otro estadístico) de los dos grupos.</li>
+<li>Se combinan todas las observaciones y se reordenan aleatoriamente muchas veces (por ejemplo, 10,000 permutaciones).</li>
+<li>En cada permutación, se calcula la diferencia de medias y se construye una distribución.</li>
+<li>El valor p se obtiene como la proporción de permutaciones donde la diferencia simulada es igual o más extrema que la diferencia observada.</li>
+</ul>
+</div>
+<div id="ventajas" class="section level3" number="21.19.3">
+<h3>
+<span class="header-section-number">21.19.3</span> Ventajas<a class="anchor" aria-label="anchor" href="#ventajas"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>No requiere supuestos de normalidad ni varianzas iguales.</li>
+<li>Funciona bien con tamaños de muestra pequeños o moderados.</li>
+<li>Flexible y robusta.</li>
+</ul>
+<div class="sourceCode" id="cb797"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://codeberg.org/thothorn/coin/">coin</a></span><span class="op">)</span></span>
+<span><span class="co">#Approximative (Monte Carlo) Fisher-Pitman test</span></span>
+<span></span>
+<span><span class="va">modelkt</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/coin/man/LocationTests.html">kruskal_test</a></span><span class="op">(</span><span class="va">Sperm</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Soya</span><span class="op">)</span>, data<span class="op">=</span><span class="va">Soyadf</span>, distribution <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/coin/man/NullDistribution.html">approximate</a></span><span class="op">(</span>nresample <span class="op">=</span> <span class="fl">10000</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">modelkt</span></span></code></pre></div>
+<pre><code>## 
+##  Approximative Kruskal-Wallis Test
+## 
+## data:  Sperm by
+##   as.factor(Soya) (1 Soya Meal Per Week, 4 Soyal Meals Per Week, 7 Soya Meals Per Week, No Soya Meals)
+## chi-squared = 8.6589, p-value = 0.0345</code></pre>
+<hr>
+</div>
+</div>
+<div id="para-ver-los-rangos-y-las-medianas-por-grupo" class="section level2" number="21.20">
+<h2>
+<span class="header-section-number">21.20</span> Para ver los rangos y las medianas por grupo<a class="anchor" aria-label="anchor" href="#para-ver-los-rangos-y-las-medianas-por-grupo"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb799"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">Soyadf</span><span class="op">$</span><span class="va">Ranks</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/rank.html">rank</a></span><span class="op">(</span><span class="va">Soyadf</span><span class="op">$</span><span class="va">Sperm</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">Soyadf</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-table"><table class="huxtable" data-quarto-disable-processing="true" style="margin-left: auto; margin-right: auto;" id="tab:c21-25">
+<caption style="caption-side: top; text-align: center;">
+<span id="tab:c21-25">Table 21.9: </span> </caption>
+<col>
+<col>
+<col>
+<col>
+<thead><tr>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0.4pt;">Soya</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">Sperm</th>
+<th class="huxtable-cell huxtable-header" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;">Soya2</th>
+<th class="huxtable-cell huxtable-header" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0.4pt 0pt;">Ranks</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">0.35</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0.4pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">4</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.58</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">9</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">0.88</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">17</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">0.92</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;">18</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0.4pt;     background-color: rgb(242, 242, 242);">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">1.22</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0pt 0pt;     background-color: rgb(242, 242, 242);">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0pt 0pt;     background-color: rgb(242, 242, 242);">22</td>
+</tr>
+<tr>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0.4pt;">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">1.51</td>
+<td class="huxtable-cell" style="border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;">No Soya Meals</td>
+<td class="huxtable-cell" style="text-align: right;  border-style: solid solid solid solid; border-width: 0pt 0.4pt 0.4pt 0pt;">30</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb800"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/by.html">by</a></span><span class="op">(</span><span class="va">Soyadf</span><span class="op">$</span><span class="va">Ranks</span>, <span class="va">Soyadf</span><span class="op">$</span><span class="va">Soya</span>, <span class="va">median</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Soyadf$Soya: 1 Soya Meal Per Week
+## [1] 43
+## ------------------------------------------------------------ 
+## Soyadf$Soya: 4 Soyal Meals Per Week
+## [1] 48.5
+## ------------------------------------------------------------ 
+## Soyadf$Soya: 7 Soya Meals Per Week
+## [1] 25.5
+## ------------------------------------------------------------ 
+## Soyadf$Soya: No Soya Meals
+## [1] 50.5</code></pre>
+<hr>
+<p>Prueba post hoc tipo Tukey (prueba de Nemenyi).
+Los valores que se muestran son los valores-p; el par es significativamente diferente si el p está por debajo de 0.05.</p>
+<div id="nota" class="section level3" number="21.20.1">
+<h3>
+<span class="header-section-number">21.20.1</span> Nota<a class="anchor" aria-label="anchor" href="#nota"><i class="fas fa-link"></i></a>
+</h3>
+<p>La prueba post hoc tipo Tukey (prueba de Nemenyi) es un método no paramétrico utilizado para realizar comparaciones múltiples entre grupos después de aplicar la prueba de Kruskal-Wallis (o Friedman, según el caso).</p>
+</div>
+<div id="para-qué-sirve" class="section level3" number="21.20.2">
+<h3>
+<span class="header-section-number">21.20.2</span> ¿Para qué sirve?<a class="anchor" aria-label="anchor" href="#para-qu%C3%A9-sirve"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Cuando la prueba global (Kruskal-Wallis) indica diferencias significativas entre tres o más grupos, la prueba de Nemenyi permite identificar qué pares de grupos difieren.</li>
+<li>Es la alternativa no paramétrica al Tukey HSD que se usa en ANOVA.</li>
+</ul>
+</div>
+<div id="características-principales-2" class="section level3" number="21.20.3">
+<h3>
+<span class="header-section-number">21.20.3</span> Características principales<a class="anchor" aria-label="anchor" href="#caracter%C3%ADsticas-principales-2"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Se basa en las diferencias de rangos promedio entre los grupos.</li>
+<li>Utiliza una distribución basada en la estadística de Studentizada para calcular el valor crítico.</li>
+<li>Controla el error tipo I en comparaciones múltiples.</li>
+</ul>
+</div>
+<div id="hipótesis-2" class="section level3" number="21.20.4">
+<h3>
+<span class="header-section-number">21.20.4</span> Hipótesis<a class="anchor" aria-label="anchor" href="#hip%C3%B3tesis-2"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>H₀: No hay diferencia entre los grupos comparados.</li>
+<li>H₁: Existe diferencia significativa entre al menos dos grupos.</li>
+</ul>
+</div>
+<div id="cuándo-se-aplica" class="section level3" number="21.20.5">
+<h3>
+<span class="header-section-number">21.20.5</span> Cuándo se aplica<a class="anchor" aria-label="anchor" href="#cu%C3%A1ndo-se-aplica"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Después de una prueba de Kruskal-Wallis significativa.</li>
+<li>Datos ordinales o no normales, con k ≥ 3 grupos independientes.</li>
+</ul>
+<div class="sourceCode" id="cb802"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PMCMRplus</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Alternative 1</span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/PMCMRplus/man/kwAllPairsNemenyiTest.html">kwAllPairsNemenyiTest</a></span><span class="op">(</span><span class="va">Sperm</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Soya</span><span class="op">)</span> , data<span class="op">=</span><span class="va">Soyadf</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##                        1 Soya Meal Per Week 4 Soyal Meals Per Week
+## 4 Soyal Meals Per Week 1.000                -                     
+## 7 Soya Meals Per Week  0.101                0.101                 
+## No Soya Meals          0.991                0.991                 
+##                        7 Soya Meals Per Week
+## 4 Soyal Meals Per Week -                    
+## 7 Soya Meals Per Week  -                    
+## No Soya Meals          0.048</code></pre>
+<div class="sourceCode" id="cb804"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Alternative 2</span></span>
+<span></span>
+<span><span class="va">model1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/PMCMRplus/man/kwAllPairsNemenyiTest.html">kwAllPairsNemenyiTest</a></span><span class="op">(</span><span class="va">Sperm</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Soya</span><span class="op">)</span> , data<span class="op">=</span><span class="va">Soyadf</span><span class="op">)</span> <span class="co"># para más detalles</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">model1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##                                                     q value Pr(&gt;|q|)  
+## 4 Soyal Meals Per Week - 1 Soya Meal Per Week == 0    0.000 1.000000  
+## 7 Soya Meals Per Week - 1 Soya Meal Per Week == 0     3.233 0.101209  
+## No Soya Meals - 1 Soya Meal Per Week == 0             0.423 0.990680  
+## 7 Soya Meals Per Week - 4 Soyal Meals Per Week == 0   3.233 0.101209  
+## No Soya Meals - 4 Soyal Meals Per Week == 0           0.423 0.990680  
+## No Soya Meals - 7 Soya Meals Per Week == 0            3.657 0.047845 *</code></pre>
+<div class="sourceCode" id="cb806"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Try "Chi Square" = Chisq</span></span></code></pre></div>
+
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="selecci%C3%B3n-de-modelos-con-el-criterio-de-akaike.html"><span class="header-section-number">20</span> Selección de Modelos con el Criterio de Akaike</a></div>
+<div class="next"><a href="referencias-1.html">Referencias</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pruebas-no-param%C3%A9tricas"><span class="header-section-number">21</span> Pruebas No Paramétricas</a></li>
+<li><a class="nav-link" href="#pruebas-no-param%C3%A9tricas-1"><span class="header-section-number">21.1</span> Pruebas no paramétricas</a></li>
+<li><a class="nav-link" href="#los-paquetes"><span class="header-section-number">21.2</span> Los paquetes</a></li>
+<li><a class="nav-link" href="#activar-los-paquetes"><span class="header-section-number">21.3</span> Activar los paquetes</a></li>
+<li>
+<a class="nav-link" href="#prueba-de-suma-de-rangos-de-wilcoxon"><span class="header-section-number">21.4</span> Prueba de suma de rangos de Wilcoxon</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#la-hip%C3%B3tesis"><span class="header-section-number">21.4.1</span> La hipótesis:</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#ingresar-los-datos"><span class="header-section-number">21.5</span> Ingresar los datos</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#o-importar-los-datos"><span class="header-section-number">21.5.1</span> O importar los datos</a></li>
+<li><a class="nav-link" href="#an%C3%A1lisis-exploratorio"><span class="header-section-number">21.5.2</span> Análisis exploratorio</a></li>
+<li><a class="nav-link" href="#estad%C3%ADsticas-descriptivas."><span class="header-section-number">21.5.3</span> Estadísticas descriptivas.</a></li>
+<li><a class="nav-link" href="#haz-un-diagrama-para-observar-la-distribuci%C3%B3n-de-los-datos."><span class="header-section-number">21.5.4</span> Haz un diagrama para observar la distribución de los datos.</a></li>
+<li><a class="nav-link" href="#prueba-de-homogeneidad-de-varianzas-de-levene"><span class="header-section-number">21.5.5</span> Prueba de homogeneidad de varianzas de Levene</a></li>
+<li><a class="nav-link" href="#cu%C3%A1ndo-se-usa"><span class="header-section-number">21.5.6</span> ¿Cuándo se usa?</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#prueba-de-suma-de-rangos-de-wilcoxon-mann-whitney-u"><span class="header-section-number">21.6</span> Prueba de suma de rangos de Wilcoxon (Mann-Whitney U)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#cu%C3%A1ndo-se-usa-1"><span class="header-section-number">21.6.1</span> ¿Cuándo se usa?</a></li>
+<li><a class="nav-link" href="#c%C3%B3mo-funciona"><span class="header-section-number">21.6.2</span> Cómo funciona:</a></li>
+<li><a class="nav-link" href="#ejemplo-de-uso"><span class="header-section-number">21.6.3</span> Ejemplo de uso:</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#c%C3%B3mo-asignar-los-rangos-a-mano-ejemplo-los-scripts-lo-hacen-autom%C3%A1ticamente"><span class="header-section-number">21.7</span> Cómo asignar los rangos a mano (ejemplo; los scripts lo hacen automáticamente)</a></li>
+<li><a class="nav-link" href="#prueba-de-wilcoxon-una-prueba-no-param%C3%A9trica"><span class="header-section-number">21.8</span> Prueba de Wilcoxon: una prueba no paramétrica</a></li>
+<li><a class="nav-link" href="#el-siguiente-acercamiento-es-mejor-porque-puede-manejar-empates-valores-iguales"><span class="header-section-number">21.9</span> El siguiente acercamiento es mejor porque puede manejar empates (valores iguales)</a></li>
+<li><a class="nav-link" href="#ejercicio-de-clase-1"><span class="header-section-number">21.10</span> Ejercicio de clase</a></li>
+<li><a class="nav-link" href="#cu%C3%A1ntas-veces-has-ido-a-disney-hay-diferencia-entre-g%C3%A9neros"><span class="header-section-number">21.11</span> ¿Cuántas veces has ido a Disney? ¿Hay diferencia entre géneros?</a></li>
+<li>
+<a class="nav-link" href="#comparar-dos-condiciones-relacionadas-la-prueba-de-rangos-con-signo-de-wilcoxon-similar-a-la-prueba-de-t-pareada"><span class="header-section-number">21.12</span> Comparar dos condiciones relacionadas: la prueba de rangos con signo de Wilcoxon (similar a la prueba de t pareada)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#no-confundir-con-la-prueba-de-suma-de-rangos-de-wilcoxon-mann-whitney-u-que-es-similar-a-la-prueba-de-t-no-pareada"><span class="header-section-number">21.12.1</span> No confundir con la prueba de suma de rangos de Wilcoxon (Mann-Whitney U), que es similar a la prueba de t no pareada</a></li>
+<li><a class="nav-link" href="#qu%C3%A9-es-y-cu%C3%A1ndo-se-usa"><span class="header-section-number">21.12.2</span> ¿Qué es y cuándo se usa?</a></li>
+<li><a class="nav-link" href="#caracter%C3%ADsticas-principales"><span class="header-section-number">21.12.3</span> Características principales:</a></li>
+<li><a class="nav-link" href="#ejemplo-t%C3%ADpico"><span class="header-section-number">21.12.4</span> Ejemplo típico:</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#cambio-en-el-bdi-%C3%ADndice-de-depresi%C3%B3n-de-beck"><span class="header-section-number">21.13</span> Cambio en el BDI (Índice de Depresión de Beck)</a></li>
+<li>
+<a class="nav-link" href="#prueba-de-kruskal-wallis"><span class="header-section-number">21.14</span> Prueba de Kruskal-Wallis</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#no-tiene-que-cumplir-el-supuesto-de-normalidad-o-igualdad-de-varianza."><span class="header-section-number">21.14.1</span> No tiene que cumplir el supuesto de normalidad o igualdad de varianza.</a></li>
+<li><a class="nav-link" href="#c%C3%B3mo-funciona-1"><span class="header-section-number">21.14.2</span> ¿Cómo funciona?</a></li>
+<li><a class="nav-link" href="#hip%C3%B3tesis-1"><span class="header-section-number">21.14.3</span> Hipótesis:</a></li>
+<li><a class="nav-link" href="#ejemplo-de-uso-1"><span class="header-section-number">21.14.4</span> Ejemplo de uso:</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#la-soya-y-su-efecto-sobre-la-producci%C3%B3n-de-esperma-en-varones-humanos"><span class="header-section-number">21.15</span> La soya y su efecto sobre la producción de esperma en varones humanos</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#soy-food-and-isoflavone-intake-in-relation-to-semen-quality-parameters-among-men-from-an-infertility-clinic"><span class="header-section-number">21.15.1</span> Soy food and isoflavone intake in relation to semen quality parameters among men from an infertility clinic</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#abstract"><span class="header-section-number">21.16</span> Abstract</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#background"><span class="header-section-number">21.16.1</span> BACKGROUND:</a></li>
+<li><a class="nav-link" href="#methods"><span class="header-section-number">21.16.2</span> METHODS:</a></li>
+<li><a class="nav-link" href="#results"><span class="header-section-number">21.16.3</span> RESULTS:</a></li>
+<li><a class="nav-link" href="#conclusions"><span class="header-section-number">21.16.4</span> CONCLUSIONS:</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#hacer-un-boxplot-de-los-datos-en-un-nuevo-chunk"><span class="header-section-number">21.17</span> Hacer un boxplot de los datos en un nuevo chunk</a></li>
+<li><a class="nav-link" href="#la-prueba-de-kruskal-wallis-es-similar-a-un-anova-sin-asumir-distribuci%C3%B3n-normal-ni-igualdad-de-varianza"><span class="header-section-number">21.18</span> La prueba de Kruskal-Wallis es similar a un ANOVA, sin asumir distribución normal ni igualdad de varianza</a></li>
+<li>
+<a class="nav-link" href="#un-mejor-acercamiento-el-paquete-coin"><span class="header-section-number">21.19</span> Un mejor acercamiento: el paquete “coin”</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#caracter%C3%ADsticas-principales-1"><span class="header-section-number">21.19.1</span> Características principales</a></li>
+<li><a class="nav-link" href="#c%C3%B3mo-funciona-2"><span class="header-section-number">21.19.2</span> Cómo funciona</a></li>
+<li><a class="nav-link" href="#ventajas"><span class="header-section-number">21.19.3</span> Ventajas</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#para-ver-los-rangos-y-las-medianas-por-grupo"><span class="header-section-number">21.20</span> Para ver los rangos y las medianas por grupo</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#nota"><span class="header-section-number">21.20.1</span> Nota</a></li>
+<li><a class="nav-link" href="#para-qu%C3%A9-sirve"><span class="header-section-number">21.20.2</span> ¿Para qué sirve?</a></li>
+<li><a class="nav-link" href="#caracter%C3%ADsticas-principales-2"><span class="header-section-number">21.20.3</span> Características principales</a></li>
+<li><a class="nav-link" href="#hip%C3%B3tesis-2"><span class="header-section-number">21.20.4</span> Hipótesis</a></li>
+<li><a class="nav-link" href="#cu%C3%A1ndo-se-aplica"><span class="header-section-number">21.20.5</span> Cuándo se aplica</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/RaymondLTremblay/BioEstadistica/blob/master/21-Pruebas_no_parametricas.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/RaymondLTremblay/BioEstadistica/edit/master/21-Pruebas_no_parametricas.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BioEstadística</strong>" was written by . It was last built on 2026-08-01.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

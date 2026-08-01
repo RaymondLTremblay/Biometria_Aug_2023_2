@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Capítulo 12 Distribución Normal | BioEstadística</title>
+<meta name="author" content="">
+<meta name="description" content='Fecha de la última revisión ## [1] "2026-08-01"  12.1 Instalar y activar los siguientes paquetes if (!require("pacman")) install.packages("pacman") pacman::p_load( car, GGally, ggversa, pastecs,...'>
+<meta name="generator" content="bookdown 0.47 with bs4_book()">
+<meta property="og:title" content="Capítulo 12 Distribución Normal | BioEstadística">
+<meta property="og:type" content="book">
+<meta property="og:description" content='Fecha de la última revisión ## [1] "2026-08-01"  12.1 Instalar y activar los siguientes paquetes if (!require("pacman")) install.packages("pacman") pacman::p_load( car, GGally, ggversa, pastecs,...'>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Capítulo 12 Distribución Normal | BioEstadística">
+<meta name="twitter:description" content='Fecha de la última revisión ## [1] "2026-08-01"  12.1 Instalar y activar los siguientes paquetes if (!require("pacman")) install.packages("pacman") pacman::p_load( car, GGally, ggversa, pastecs,...'>
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/Source_Sans_3-0.4.10/font.css" rel="stylesheet">
+<link href="libs/Fira_Code-0.4.10/font.css" rel="stylesheet">
+<link href="libs/Lora-0.4.10/font.css" rel="stylesheet">
+<script src="libs/bs3compat-0.11.0/transition.js"></script><script src="libs/bs3compat-0.11.0/tabs.js"></script><script src="libs/bs3compat-0.11.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link rel="icon" type="image/x-icon" href="favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">BioEstadística</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introducción al curso de BioEstadística</a></li>
+<li><a class="" href="introducci%C3%B3n-a-la-bioestad%C3%ADstica.html"><span class="header-section-number">2</span> Introducción a la BioEstadística</a></li>
+<li><a class="" href="poblaci%C3%B3n-y-muestreo.html"><span class="header-section-number">3</span> Población y Muestreo</a></li>
+<li><a class="" href="inferencias-e-hip%C3%B3tesis.html"><span class="header-section-number">4</span> Inferencias e Hipótesis</a></li>
+<li><a class="" href="historia-breve-de-la-estad%C3%ADstica.html"><span class="header-section-number">5</span> Historia breve de la Estadística</a></li>
+<li><a class="" href="medidas-de-tendencia-central.html"><span class="header-section-number">6</span> Medidas de tendencia central</a></li>
+<li><a class="" href="medidas-de-dispersi%C3%B3n.html"><span class="header-section-number">7</span> Medidas de dispersión</a></li>
+<li><a class="" href="estad%C3%ADstica-descriptiva.html"><span class="header-section-number">8</span> Estadística Descriptiva</a></li>
+<li><a class="" href="gr%C3%A1ficos.html"><span class="header-section-number">9</span> Gráficos</a></li>
+<li><a class="" href="supuestos.html"><span class="header-section-number">10</span> Supuestos</a></li>
+<li><a class="" href="estad%C3%ADstica-frecuentista.html"><span class="header-section-number">11</span> Estadística Frecuentista</a></li>
+<li><a class="active" href="distribuci%C3%B3n-normal.html"><span class="header-section-number">12</span> Distribución Normal</a></li>
+<li><a class="" href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una Muestra</a></li>
+<li><a class="" href="prueba-de-t-para-datos-pareados.html"><span class="header-section-number">14</span> Prueba de t para Datos Pareados</a></li>
+<li><a class="" href="prueba-de-t-con-datos-independientes.html"><span class="header-section-number">15</span> Prueba de t con Datos Independientes</a></li>
+<li><a class="" href="anova.html"><span class="header-section-number">16</span> ANOVA</a></li>
+<li><a class="" href="correlaci%C3%B3n-y-covarianza.html"><span class="header-section-number">17</span> Correlación y Covarianza</a></li>
+<li><a class="" href="regresi%C3%B3n-lineal-1.html"><span class="header-section-number">18</span> Regresión Lineal</a></li>
+<li><a class="" href="regresi%C3%B3n-log%C3%ADstica.html"><span class="header-section-number">19</span> Regresión Logística</a></li>
+<li><a class="" href="selecci%C3%B3n-de-modelos-con-el-criterio-de-akaike.html"><span class="header-section-number">20</span> Selección de Modelos con el Criterio de Akaike</a></li>
+<li><a class="" href="pruebas-no-param%C3%A9tricas.html"><span class="header-section-number">21</span> Pruebas No Paramétricas</a></li>
+<li><a class="" href="referencias-1.html">Referencias</a></li>
+<li class="book-part">Appendix</li>
+<li><a class="" href="ejercicios-a.html"><span class="header-section-number">A</span> Ejercicios A</a></li>
+<li><a class="" href="ejercicios-b.html"><span class="header-section-number">B</span> Ejercicios B</a></li>
+<li><a class="" href="ejercicios-c.html"><span class="header-section-number">C</span> Ejercicios C</a></li>
+<li><a class="" href="ejercicios-d.html"><span class="header-section-number">D</span> Ejercicios D</a></li>
+<li><a class="" href="ejercicios-e.html"><span class="header-section-number">E</span> Ejercicios E</a></li>
+<li><a class="" href="ejercicios-f.html"><span class="header-section-number">F</span> Ejercicios F</a></li>
+<li><a class="" href="ejercicios-g.html"><span class="header-section-number">G</span> Ejercicios G</a></li>
+<li><a class="" href="ejercicios-h.html"><span class="header-section-number">H</span> Ejercicios H</a></li>
+<li><a class="" href="ejercicios-i.html"><span class="header-section-number">I</span> Ejercicios I</a></li>
+<li><a class="" href="ejercicios-j.html"><span class="header-section-number">J</span> Ejercicios J</a></li>
+<li><a class="" href="ejercicios-k.html"><span class="header-section-number">K</span> Ejercicios K</a></li>
+<li><a class="" href="ejercicios-l-prueba-de-t-con-datos-independientes.html"><span class="header-section-number">L</span> Ejercicios L: prueba de t con datos independientes</a></li>
+<li><a class="" href="ejercicios-m.html"><span class="header-section-number">M</span> Ejercicios M</a></li>
+<li><a class="" href="ejercicios-n.html"><span class="header-section-number">N</span> Ejercicios N</a></li>
+<li><a class="" href="ejercicio-o.html"><span class="header-section-number">O</span> Ejercicio O</a></li>
+<li><a class="" href="ejercicios-p.html"><span class="header-section-number">P</span> Ejercicios P</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">Q</span> DATA</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/RaymondLTremblay/BioEstadistica">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="distribución-normal" class="section level1" number="12">
+<h1>
+<span class="header-section-number">Capítulo 12</span> Distribución Normal<a class="anchor" aria-label="anchor" href="#distribuci%C3%B3n-normal"><i class="fas fa-link"></i></a>
+</h1>
+<p>Fecha de la última revisión</p>
+<pre><code>## [1] "2026-08-01"</code></pre>
+<div id="instalar-y-activar-los-siguientes-paquetes" class="section level2" number="12.1">
+<h2>
+<span class="header-section-number">12.1</span> Instalar y activar los siguientes paquetes<a class="anchor" aria-label="anchor" href="#instalar-y-activar-los-siguientes-paquetes"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb405"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span><span class="op">(</span><span class="st"><a href="https://github.com/trinker/pacman">"pacman"</a></span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"pacman"</span><span class="op">)</span></span>
+<span><span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html">p_load</a></span><span class="op">(</span> <span class="va">car</span>, <span class="va">GGally</span>, <span class="va">ggversa</span>, <span class="va">pastecs</span>, <span class="va">psych</span>, <span class="va">pander</span>, <span class="va">ggplot2</span>, <span class="va">nortest</span>, <span class="va">Hmisc</span>, <span class="va">boot</span>, <span class="va">knitr</span>,<span class="va">tidyverse</span>, <span class="va">gt</span>, <span class="va">gridExtra</span><span class="op">)</span></span></code></pre></div>
+<p>Activar los Paquetes</p>
+<div class="sourceCode" id="cb406"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">nortest</span><span class="op">)</span> <span class="co"># paquete para probar la normalidad</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/bprice2652/car_repo">car</a></span><span class="op">)</span> <span class="co"># paquete para análisis de correlación</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>  <span class="co"># paquete para visualizar los datos</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">ggversa</span><span class="op">)</span> <span class="co"># paquete para diferentes conjuntos de datos</span></span>
+<span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggobi.github.io/ggally/">GGally</a></span><span class="op">)</span> <span class="co"># Un paquete basado un ggplot2 para visualizar correlaciones </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SciViews/pastecs">pastecs</a></span><span class="op">)</span> <span class="co"># paquete para análisis tiempo-espacial usado en ecología </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/">psych</a></span><span class="op">)</span> <span class="co"># paquete para análisis psicométrica, psicológica y de personalidad </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://hbiostat.org/R/Hmisc/">Hmisc</a></span><span class="op">)</span> <span class="co"># Un grupo de función prácticos para gráficos y tablas</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">boot</span><span class="op">)</span> <span class="co"># paquete para calcular los intervalos usando "bootstrap" </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span> <span class="co"># un grupo de función para incluyendo tablas bonitas con kable.</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://gt.rstudio.com">gt</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">gridExtra</span><span class="op">)</span></span></code></pre></div>
+<hr>
+</div>
+<div id="la-distribución-normal-1" class="section level2" number="12.2">
+<h2>
+<span class="header-section-number">12.2</span> La distribución normal<a class="anchor" aria-label="anchor" href="#la-distribuci%C3%B3n-normal-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Este módulo está enfocado en entender diferentes aspectos de la distribución normal. Muchas pruebas, como la prueba de <em>t</em>, las correlaciones, las regresiones y el ANOVA, dependen de que algunos de los conjuntos de datos cumplan con una distribución normal. Este tipo de pruebas se conocen como pruebas paramétricas.</p>
+<p>La distribución normal tiene una ecuación que describe su distribución. Lo que se observa es que la ecuación depende solamente de dos valores desconocidos: el promedio universal, <span class="math inline">\(\mu\)</span>, y la desviación universal, <span class="math inline">\(\sigma\)</span>. Nota que aquí estamos considerando todos los datos sobre una variable. Por ejemplo, si estamos hablando del tamaño de una especie de pájaro (el quetzal), tendríamos que tener TODOS los datos de cada uno de ellos. Primero veremos cómo se ve esta distribución y después explicamos por qué, aunque no tenemos todos los datos, una aproximación es suficiente.</p>
+<p><span class="math display">\[P(x)=\frac{1}{{\sigma\sqrt{ 2\pi}}}{e}^{-\frac{(x-\mu)^{2}}{{2\sigma}^{2}}}\]</span></p>
+<div class="formula">
+<p>En la ecuación de la distribución normal, <span class="math inline">\(x\)</span> es el valor de la variable, <span class="math inline">\(\mu\)</span> es la media poblacional, <span class="math inline">\(\sigma\)</span> es la desviación estándar poblacional, <span class="math inline">\(\pi \approx 3.1416\)</span> y <span class="math inline">\(e \approx 2.7183\)</span>. Toda la forma de la curva queda determinada únicamente por <span class="math inline">\(\mu\)</span> (dónde se centra) y <span class="math inline">\(\sigma\)</span> (qué tan ancha es).</p>
+</div>
+<p>El promedio de la población <span class="math inline">\(\mu=\frac{\sum{{x}_{i}}}{{n}_{i}}\)</span>, se usa la letra “mu”, y se refiere al promedio universal. Esto quiere decir que no falta ningún dato. Nota que la distribución tiene forma de campana, donde 50% de los datos están por encima del promedio y 50% están por debajo del promedio. Debido a que la distribución tiene unos parámetros específicos, se puede predecir información cuando los datos cumplen con tal distribución.</p>
+<div class="definicion">
+<p><strong>Distribución normal.</strong> Es una distribución de probabilidad continua, simétrica y con forma de campana, descrita por completo por dos parámetros: la media (<span class="math inline">\(\mu\)</span>) y la desviación estándar (<span class="math inline">\(\sigma\)</span>). El área total bajo la curva es igual a 1, y aproximadamente el 68%, el 95% y el 99.7% de los datos caen a <span class="math inline">\(\pm 1\)</span>, <span class="math inline">\(\pm 2\)</span> y <span class="math inline">\(\pm 3\)</span> desviaciones estándar de la media (la regla empírica).</p>
+</div>
+<div class="sourceCode" id="cb407"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#set.seed(123458)</span></span>
+<span></span>
+<span><span class="va">dfnorm</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span></span>
+<span><span class="va">dfnorm</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">dfnorm</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dfnorm</span>,<span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="va">dfnorm</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>colour<span class="op">=</span><span class="st">"white"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_density.html">geom_density</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html">geom_vline</a></span><span class="op">(</span>xintercept <span class="op">=</span> <span class="fl">0</span>, colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="co">#annotate("text", x=2.8, y = 100000.1, label="50% de los \n valores")+</span></span>
+<span>  <span class="co">#annotate("text", x=-2.8, y = 100000.1, label="50% de los \n valores")+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">xlab</a></span><span class="op">(</span><span class="st">"algun valor"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">ylab</a></span><span class="op">(</span><span class="st">"densidad"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c12-5-1.png" alt="" width="672"></div>
+<hr>
+</div>
+<div id="evaluando-visualmente-la-distribución" class="section level2" number="12.3">
+<h2>
+<span class="header-section-number">12.3</span> Evaluando visualmente la distribución<a class="anchor" aria-label="anchor" href="#evaluando-visualmente-la-distribuci%C3%B3n"><i class="fas fa-link"></i></a>
+</h2>
+<p>El primer paso de cada investigación es evaluar si los supuestos se cumplen. Si las pruebas necesitan tener una distribución normal uno de los métodos más sencillo construir un histograma de los datos.</p>
+<p>Usaremos datos que hemos visto en el modulo T5.</p>
+<p>Se necesita el archivo <strong>DownloadFestival</strong> que se encuentra debajo la pestaña de <strong>Los Datos</strong>. El ejemplo proviene de Field et al. (2014).</p>
+<blockquote>
+<p>Una bióloga estaba preocupada por los posibles efectos sobre la salud de los que participan en un festival de música. Entonces, un año fue al Download Festival en el Reino Unido (Download Festival UK). Ella midió la higiene de los que participaron en el concierto (n = 810) durante el festival de 3 días. Cada día intentaba encontrar a todas las personas que censó el primer día. Los valores asignados fueron de 0 a 4 sobre el nivel de limpieza, según cómo olían los participantes</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>0 = hueles como un cadáver.</li>
+<li>4 = hueles a rosas dulces en un fresco día de primavera</li>
+</ul>
+</blockquote>
+<div class="sourceCode" id="cb408"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span><span class="va">DownloadFestival_No_Outlier_</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"Data_files_csv/DownloadFestival_No_Outlier.csv"</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span></span>
+<span><span class="va">dlf</span><span class="op">=</span><span class="va">DownloadFestival_No_Outlier_</span>  <span class="co">#usamos un nombre más corta para facilitar  </span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">)</span> <span class="co"># ver las 3 primeras filas</span></span></code></pre></div>
+<pre><code>## # A tibble: 6 × 5
+##   ticknumb gender  day1  day2  day3
+##      &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     2111 Male    2.64  1.35  1.61
+## 2     2229 Female  0.97  1.41  0.29
+## 3     2338 Male    0.84 NA    NA   
+## 4     2384 Female  3.03 NA    NA   
+## 5     2401 Female  0.88  0.08 NA   
+## 6     2405 Male    0.85 NA    NA</code></pre>
+<p>Se nota en el histograma que la mayoría de los datos de la higiene de los participantes en el primer día se parece bastante a una distribución normal. Nota que los valores en el eje de <strong>y</strong> es la frecuencia de los valores en el conjunto de datos.</p>
+<div class="sourceCode" id="cb410"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dlf</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">day1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>color<span class="op">=</span><span class="st">"white"</span>, fill<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure">
+<img src="BioEstadistica_files/figure-html/c12-7-1.png" alt="" width="672">
+***</div>
+</div>
+<div id="añadiendo-la-distribución-teórica-al-histograma" class="section level2" number="12.4">
+<h2>
+<span class="header-section-number">12.4</span> Añadiendo la distribución teórica al histograma<a class="anchor" aria-label="anchor" href="#a%C3%B1adiendo-la-distribuci%C3%B3n-te%C3%B3rica-al-histograma"><i class="fas fa-link"></i></a>
+</h2>
+<p>Ahora vamos a añadir la siguiente formula al gráfico <span class="math inline">\(P(x)=\frac{1}{{\sigma\sqrt{ 2\pi}}}{e}^{-\frac{(x-\mu)^{2}}{{2\sigma}^{2}}}\)</span>. De esta forma podemos comparar los datos reales (las barras rojas) con la distribución teórica, suponiendo que el promedio y la desviación estándar son iguales a los de los datos.</p>
+<p>Se añade el promedio y la desviación estándar con las siguientes funciones. La función <strong>stat_function()</strong> es para calcular parámetros.</p>
+<pre><code>            stat_function(fun = dnorm,   # dnorm = la densidad de la distribución normal
+            args = list(
+            mean = mean(dlf$day2, na.rm = TRUE), # mean = el promedio de los datos
+            sd = sd(dlf$day2, na.rm = TRUE))) # sd = la desviación estandar de los datos</code></pre>
+<p>Ahora nota que el eje de <strong>y</strong> ya no son frecuencias, sino densidades. El área total bajo la curva es igual a 1.0. Vea que la línea teórica se acerca bastante a las barras del histograma. Este proceso NO es una prueba para determinar si los datos cumplen con una distribución normal. Aunque, con experiencia visualizando los datos, uno puede tener una buena apreciación de si los datos cumplen suficientemente con la distribución normal para usar las pruebas paramétricas.</p>
+<div class="sourceCode" id="cb412"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">hist.dlfc1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dlf</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">day1</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">density</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"white"</span>, fill<span class="op">=</span><span class="st">"red"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Higiene día 1"</span>, y <span class="op">=</span> <span class="st">"Densidad"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_function.html">stat_function</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="va">dnorm</span>, </span>
+<span>                args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">$</span><span class="va">day1</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, </span>
+<span>                sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">$</span><span class="va">day1</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>                colour <span class="op">=</span> <span class="st">"green"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">hist.dlfc1</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c12-8-1.png" alt="" width="672"></div>
+</div>
+<div id="evaluando-datos-no-normal" class="section level2" number="12.5">
+<h2>
+<span class="header-section-number">12.5</span> Evaluando datos no normal<a class="anchor" aria-label="anchor" href="#evaluando-datos-no-normal"><i class="fas fa-link"></i></a>
+</h2>
+<p>Usamos los datos del segundo día y comparamos con el primer día. En este caso vemos que los datos no siguen una distribución normal están sesgados a la izquierda y vemos que “falta” valores pequeños, en otra palabra en este caso los valores negativos.</p>
+<p>Evalúa y compara con el día tres</p>
+<div class="sourceCode" id="cb413"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">hist.dlfc2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dlf</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">day2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">density</span><span class="op">)</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"white"</span>, fill<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Higiene día 2"</span>, y <span class="op">=</span> <span class="st">"Densidad"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_function.html">stat_function</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="va">dnorm</span>, </span>
+<span>                args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">$</span><span class="va">day2</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, </span>
+<span>                sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">$</span><span class="va">day2</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>                colour <span class="op">=</span> <span class="st">"yellow"</span>, size <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">hist.dlfc2</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c12-9-1.png" alt="" width="672"></div>
+</div>
+<div id="datos-teóricos-con-histograma-y-la-función-de-normalidad" class="section level2" number="12.6">
+<h2>
+<span class="header-section-number">12.6</span> Datos teóricos con histograma y la función de normalidad<a class="anchor" aria-label="anchor" href="#datos-te%C3%B3ricos-con-histograma-y-la-funci%C3%B3n-de-normalidad"><i class="fas fa-link"></i></a>
+</h2>
+<p>Aquí creo una conjunto de datos al azar con la función <strong>rnorm</strong> y se presenta un histograma y se añade la linea teórica de la distribución normal.</p>
+<p>La función <strong>rnorm</strong> crea una lista de datos con un promedio y una dispersión específicos.</p>
+<pre><code>rnorm(n, mean, sd)
+rnorm = (la cantidad de datos generados, promedio, la desviación estándar)</code></pre>
+<p>Es necesario convertir la lista en un <strong>data.frame</strong> o en un <strong>tibble</strong> para usar los datos en <strong>ggplot2</strong>. Como los datos provienen de una distribución normal, la línea teórica sigue (casi) perfectamente las barras de frecuencia. Mientras más datos uno tiene, más similar es la distribución observada (las barras) a la distribución teórica (la línea).</p>
+<p>Haz unos ejercicios reduciendo y aumentando el tamaño de muestra, <strong>n</strong>, y compara las distribuciones. Evalúa qué pasa cuando son muy pequeñas (n de 30 o menos).</p>
+<div class="sourceCode" id="cb415"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#rnorm(10, 100, 10)</span></span>
+<span></span>
+<span><span class="va">x</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">10000</span>, <span class="fl">10</span>, <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dfx</span><span class="op">=</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dfx</span>, n<span class="op">=</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span> <span class="co"># Los primeros 3 datos del tibble </span></span></code></pre></div>
+<div id="wdcnhoffjx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wdcnhoffjx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wdcnhoffjx thead, #wdcnhoffjx tbody, #wdcnhoffjx tfoot, #wdcnhoffjx tr, #wdcnhoffjx td, #wdcnhoffjx th {
+  border-style: none;
+}
+
+#wdcnhoffjx p {
+  margin: 0;
+  padding: 0;
+}
+
+#wdcnhoffjx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#wdcnhoffjx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wdcnhoffjx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wdcnhoffjx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wdcnhoffjx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wdcnhoffjx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wdcnhoffjx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wdcnhoffjx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wdcnhoffjx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wdcnhoffjx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#wdcnhoffjx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wdcnhoffjx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wdcnhoffjx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wdcnhoffjx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wdcnhoffjx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdcnhoffjx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#wdcnhoffjx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#wdcnhoffjx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wdcnhoffjx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdcnhoffjx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#wdcnhoffjx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdcnhoffjx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wdcnhoffjx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdcnhoffjx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wdcnhoffjx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wdcnhoffjx .gt_left {
+  text-align: left;
+}
+
+#wdcnhoffjx .gt_center {
+  text-align: center;
+}
+
+#wdcnhoffjx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wdcnhoffjx .gt_font_normal {
+  font-weight: normal;
+}
+
+#wdcnhoffjx .gt_font_bold {
+  font-weight: bold;
+}
+
+#wdcnhoffjx .gt_font_italic {
+  font-style: italic;
+}
+
+#wdcnhoffjx .gt_super {
+  font-size: 65%;
+}
+
+#wdcnhoffjx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#wdcnhoffjx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#wdcnhoffjx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#wdcnhoffjx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#wdcnhoffjx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#wdcnhoffjx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#wdcnhoffjx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#wdcnhoffjx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#wdcnhoffjx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<div class="inline-table"><table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
+<th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="value">value</th>
+    </tr></thead>
+<tbody class="gt_table_body">
+<tr><td headers="value" class="gt_row gt_right">9.657369</td></tr>
+<tr><td headers="value" class="gt_row gt_right">14.189985</td></tr>
+<tr><td headers="value" class="gt_row gt_right">8.162815</td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="sourceCode" id="cb416"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">hist.x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dfx</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">value</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>legend.position <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>y<span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes_eval.html">after_stat</a></span><span class="op">(</span><span class="va">density</span><span class="op">)</span><span class="op">)</span>, bins<span class="op">=</span><span class="fl">40</span>,colour<span class="op">=</span><span class="st">"black"</span>, fill<span class="op">=</span><span class="st">"white"</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x<span class="op">=</span><span class="st">"Variable"</span>, y <span class="op">=</span> <span class="st">"Densidad"</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_function.html">stat_function</a></span><span class="op">(</span>fun <span class="op">=</span> <span class="va">dnorm</span>, args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>mean <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">dfx</span><span class="op">$</span><span class="va">value</span>, </span>
+<span>                na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, </span>
+<span>                sd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">dfx</span><span class="op">$</span><span class="va">value</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>                colour <span class="op">=</span> <span class="st">"red"</span>, size <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">hist.x</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c12-10-1.png" alt="" width="672"></div>
+</div>
+<div id="qqplot" class="section level2" number="12.7">
+<h2>
+<span class="header-section-number">12.7</span> qqplot<a class="anchor" aria-label="anchor" href="#qqplot"><i class="fas fa-link"></i></a>
+</h2>
+<p>El gráfico Q-Q, o gráfico cuantil-cuantil, es una herramienta gráfica que nos ayuda a evaluar si un conjunto de datos proviene de alguna distribución teórica. Por ejemplo, si ejecutamos un análisis estadístico que asume que nuestra variable dependiente está normalmente distribuida, podemos usar un gráfico Q-Q normal para verificar esa suposición; también se pueden evaluar otras distribuciones. Nota que es solo una verificación visual, no una prueba estadística. Esto nos permite visualizar si los datos cumplen o no con la distribución teórica.</p>
+<p>Un diagrama Q-Q es un diagrama de dispersión y compara dos conjuntos de cuantiles uno observado y el otro teórico. Si ambos conjuntos de cuantiles provienen de una distribución normal, deberíamos ver los puntos formando una línea que es más o menos recta. Usamos los datos del primer y del segundo día de la higiene de los participantes al concierto de rock. Vean que los puntos en el primer gráfico siguen una línea recta y la línea teórica (<span style="color: blue;">color azul</span>) sigue estos puntos. Esto sugiere que los datos siguen una distribución normal. En el segundo gráfico vemos que los datos observados no siguen los datos teóricos (<span style="color: red;">color rojo</span>).</p>
+<div class="sourceCode" id="cb417"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">d</span><span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dlf</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>sample<span class="op">=</span><span class="va">day1</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">geom_qq</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">geom_qq_line</a></span><span class="op">(</span>colour<span class="op">=</span><span class="st">"blue"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">e</span><span class="op">=</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dlf</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>sample<span class="op">=</span><span class="va">day2</span><span class="op">)</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">geom_qq</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_qq.html">geom_qq_line</a></span><span class="op">(</span>colour<span class="op">=</span><span class="st">"red"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/gridExtra/man/arrangeGrob.html">grid.arrange</a></span><span class="op">(</span><span class="va">d</span>,<span class="va">e</span>, ncol<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="BioEstadistica_files/figure-html/c12-11-1.png" alt="" width="672"></div>
+<div class="interpretacion">
+<p><strong>Cómo leer un gráfico Q-Q.</strong> Si los puntos observados caen aproximadamente sobre la línea recta de referencia, los datos son compatibles con la distribución normal. Desviaciones sistemáticas indican falta de normalidad: una curvatura en forma de “S” sugiere colas más pesadas o más ligeras de lo normal, mientras que puntos que se despegan en un extremo sugieren sesgo (asimetría) en esa dirección.</p>
+</div>
+</div>
+<div id="pruebas-de-normalidad." class="section level2" number="12.8">
+<h2>
+<span class="header-section-number">12.8</span> Pruebas de normalidad.<a class="anchor" aria-label="anchor" href="#pruebas-de-normalidad."><i class="fas fa-link"></i></a>
+</h2>
+<p>Los ejemplos arriba no son pruebas, son visualización de los datos y con experiencia uno puede reconocer los con juntos de datos que cumple o no con una distribución normal. Al principio, cuando uno comienza a estudiar la estadística esto puede ser un poco confuso. Hay pruebas que uno puede utilizar para evaluar y decidir si rechazar o no rechazar la hipótesis de que los datos provienen de una distribución normal. Estas pruebas hay que interpretarlas con cuidado porque son muy sensibles al tamaño de muestra. Con muestras grandes tienden a <strong>sobre-rechazar</strong> la hipótesis nula (Ho: los datos provienen de una distribución normal): rechazan Ho —un error de Tipo I— incluso cuando los datos son suficientemente normales para las pruebas paramétricas que se van a usar. Con muestras muy pequeñas ocurre lo contrario: les falta poder y cometen errores de Tipo II (no rechazan Ho aunque los datos no sean normales). Vamos a ver dos de estas pruebas, aunque hay muchas en la literatura.</p>
+<p>Por ejemplo Wikipedia menciona por lo menos 8 diferentes pruebas de normalidad <a href="https://en.wikipedia.org/wiki/Normality_test" class="uri">https://en.wikipedia.org/wiki/Normality_test</a>.</p>
+<div class="advertencia">
+<p>Las pruebas de normalidad son muy sensibles al tamaño de muestra. Con muestras grandes rechazan la hipótesis nula ante desviaciones triviales de la normalidad (que no afectan a las pruebas paramétricas), y con muestras muy pequeñas casi nunca la rechazan por falta de poder. Por eso no conviene depender solo del valor-<em>p</em> de estas pruebas: combínalo siempre con la inspección visual (histograma y gráfico Q-Q).</p>
+</div>
+</div>
+<div id="la-prueba-de-shapiro-wilks" class="section level2" number="12.9">
+<h2>
+<span class="header-section-number">12.9</span> La prueba de Shapiro-Wilks<a class="anchor" aria-label="anchor" href="#la-prueba-de-shapiro-wilks"><i class="fas fa-link"></i></a>
+</h2>
+<p>La prueba de Shapiro-Wilk es un prueba para determinar si un muestreo proviene de una distribución normal. Los datos se ponen en orden de los valores y se calcula el estadística de <strong>W</strong>. Aquí no vamos enseñar como hacer los cálculos los que le interesa pueden ir al a la siguiente pagina de <a href="https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test" class="uri">https://en.wikipedia.org/wiki/Shapiro–Wilk_test</a>. Lo importante es que</p>
+<p>Ho: los datos provienen de una distribución normal.<br>
+Ha: los datos NO provienen de una distribución normal.</p>
+<p>Por consiguiente, si se rechaza la hipótesis nula, uno concluye que los datos no cumplen con una distribución normal.</p>
+<p>Problemas con la prueba: la prueba es sensible al tamaño de muestra. Esto quiere decir que cuando el tamaño de muestra es demasiado pequeño o demasiado grande, tiende a dar errores de Tipo II y de Tipo I, respectivamente.</p>
+<p>Reglas básica.<br>
+1. no utilizar la prueba si el tamaño de muestra es menor de 50
+2. no utilizar la prueba si el tamaño de muestra es muy grande (mayor de 200)
+a. Nota que algunos programas han hecho modificaciones a la fórmula y ahora se puede utilizar con tamaños de muestra de hasta 2000 (Stata, SPSS, SAS).</p>
+<p>La función <strong>shapiro.test()</strong> es para evaluar una variable a la vez. Nota que aquí los datos de higiene del primer día sugieren que no cumplen con una distribución normal, aun cuando en las dos alternativas anteriores (histograma y qqplot) los datos se ven bastante normales.</p>
+<div class="sourceCode" id="cb418"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/shapiro.test.html">shapiro.test</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">$</span><span class="va">day1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  dlf$day1
+## W = 0.99592, p-value = 0.03198</code></pre>
+<div class="sourceCode" id="cb420"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">$</span><span class="va">day1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## [1] 810</code></pre>
+</div>
+<div id="la-prueba-de-normalidad-de-anderson-darling" class="section level2" number="12.10">
+<h2>
+<span class="header-section-number">12.10</span> La prueba de normalidad de Anderson-Darling<a class="anchor" aria-label="anchor" href="#la-prueba-de-normalidad-de-anderson-darling"><i class="fas fa-link"></i></a>
+</h2>
+<p>La prueba de Anderson-Darling es una prueba omnibus (una prueba general) EDF para la hipótesis que los datos provienen de una distribución normal. Las pruebas ómnibus son una especie de prueba estadística. Prueban si la varianza explicada en un conjunto de datos es significativamente mayor que la varianza inexplicada, en general. Para más detalle sobre esta prueba vea <a href="https://en.wikipedia.org/wiki/Anderson%E2%80%93Darling_test" class="uri">https://en.wikipedia.org/wiki/Anderson–Darling_test</a>.</p>
+<p>Se necesita la librería <strong>nortest</strong> y la función <strong>ad.test</strong></p>
+<p>Miren ahora que la prueba de Anderson-Darling sugiere que los datos cumplen con la normalidad, mientras que la de Shapiro-Wilk rechaza la hipótesis nula.<br>
+El mensaje es que es posible que diferentes pruebas le den información distinta y hay que estar claro sobre los supuestos y la sensitividad de estas pruebas.</p>
+<p>La prueba de Anderson Darling es una de las más poderosas para evaluar si los datos provienen de una distribución normal. D’Agostino (1986) sugiere que la prueba puede ser utilizada con tamaño de muestra tan bajo como n=8.</p>
+<pre><code>*Ralph B. D'Agostino (1986). "Tests for the Normal Distribution". In D'Agostino, R.B.; Stephens, M.A. (eds.). Goodness-of-Fit Techniques. New York: Marcel Dekker. ISBN 0-8247-7487-6.* </code></pre>
+<div class="sourceCode" id="cb423"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">nortest</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/pkg/nortest/man/ad.test.html">ad.test</a></span><span class="op">(</span><span class="va">dlf</span><span class="op">$</span><span class="va">day1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## 
+##  Anderson-Darling normality test
+## 
+## data:  dlf$day1
+## A = 0.53944, p-value = 0.1661</code></pre>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="estad%C3%ADstica-frecuentista.html"><span class="header-section-number">11</span> Estadística Frecuentista</a></div>
+<div class="next"><a href="prueba-de-una-muestra.html"><span class="header-section-number">13</span> Prueba de una Muestra</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#distribuci%C3%B3n-normal"><span class="header-section-number">12</span> Distribución Normal</a></li>
+<li><a class="nav-link" href="#instalar-y-activar-los-siguientes-paquetes"><span class="header-section-number">12.1</span> Instalar y activar los siguientes paquetes</a></li>
+<li><a class="nav-link" href="#la-distribuci%C3%B3n-normal-1"><span class="header-section-number">12.2</span> La distribución normal</a></li>
+<li><a class="nav-link" href="#evaluando-visualmente-la-distribuci%C3%B3n"><span class="header-section-number">12.3</span> Evaluando visualmente la distribución</a></li>
+<li><a class="nav-link" href="#a%C3%B1adiendo-la-distribuci%C3%B3n-te%C3%B3rica-al-histograma"><span class="header-section-number">12.4</span> Añadiendo la distribución teórica al histograma</a></li>
+<li><a class="nav-link" href="#evaluando-datos-no-normal"><span class="header-section-number">12.5</span> Evaluando datos no normal</a></li>
+<li><a class="nav-link" href="#datos-te%C3%B3ricos-con-histograma-y-la-funci%C3%B3n-de-normalidad"><span class="header-section-number">12.6</span> Datos teóricos con histograma y la función de normalidad</a></li>
+<li><a class="nav-link" href="#qqplot"><span class="header-section-number">12.7</span> qqplot</a></li>
+<li><a class="nav-link" href="#pruebas-de-normalidad."><span class="header-section-number">12.8</span> Pruebas de normalidad.</a></li>
+<li><a class="nav-link" href="#la-prueba-de-shapiro-wilks"><span class="header-section-number">12.9</span> La prueba de Shapiro-Wilks</a></li>
+<li><a class="nav-link" href="#la-prueba-de-normalidad-de-anderson-darling"><span class="header-section-number">12.10</span> La prueba de normalidad de Anderson-Darling</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/RaymondLTremblay/BioEstadistica/blob/master/12-Distribucion_normal.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/RaymondLTremblay/BioEstadistica/edit/master/12-Distribucion_normal.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>BioEstadística</strong>" was written by . It was last built on 2026-08-01.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

@@ -4,9 +4,9 @@
 
 ## En esta actividad estarán comenzando a utilizar la plataforma R.  
 
-Recuerda que este libro esta disponible gratuitamente en el internet tanto en Español, https://es.r4ds.hadley.nz/index.html como en Ingles https://r4ds.had.co.nz/index.html.
+Recuerda que este libro está disponible gratuitamente en internet, tanto en español (https://es.r4ds.hadley.nz/index.html) como en inglés (https://r4ds.had.co.nz/index.html).
 
-NOTA que si no tiene experiencia esto le va tomar tiempo.   
+NOTA: si no tienes experiencia, esto te va a tomar tiempo.   
 
 ### Primer paso
 
@@ -16,13 +16,13 @@ Haber Instalado RMarkdown en Rstudio
 
 ### Segundo paso
 
-1. Seguir el Capitulo #1, y practicar instalar los paquetes "Packages", por ejemplo el paquete de "tidyverse"
-2. Probar las funciones básica de suma, resta, división y multiplicación en R.
+1. Seguir el Capítulo #1 y practicar cómo instalar los paquetes ("packages"), por ejemplo el paquete "tidyverse".
+2. Probar las funciones básicas de suma, resta, división y multiplicación en R.
 
 
 # Ejercicios B
 
-```{r, eval=TRUE, echo=FALSE}
+```{r apx-1, eval=TRUE, echo=FALSE}
 
 colorize <- function(x, color) {
   if (knitr::is_latex_output()) {
@@ -42,14 +42,16 @@ colorize <- function(x, color) {
 
 
 
-## `r colorize("Tarea para entregar, fecha limite el 24 de agosto a la media noche 11:59pm", "red")`
+## Tarea para entregar
+
+<span style="color:red;">**Fecha límite: 24 de agosto a la medianoche (11:59 pm).**</span>
 
 
 En esta actividad seguirán utilizando la plataforma R para visualizar los datos.  
 Ud someterá su trabajo como un documento .html y lo cargará a Edmodo.
 
 
-Recuerda que este libro esta disponible gratuitamente en el internet tanto en Español Español, <https://es.r4ds.hadley.nz/index.html> como en Ingles, <https://r4ds.had.co.nz/index.html> . En Edmodo ya le envie los enlaces.
+Recuerda que este libro está disponible gratuitamente en internet, tanto en español (<https://es.r4ds.hadley.nz/index.html>) como en inglés (<https://r4ds.had.co.nz/index.html>). En Edmodo ya les envié los enlaces.
 
 
 ## Segundo paso
@@ -60,8 +62,8 @@ Reproducir la **mayoría** de las gráficas y someter el trabajo.
 
 ### Tercer Paso
 
-3. Leer el capitulo #2, entender lo que quiere decir cada uno de los términos en la figura.  
-   Por ejemplo que quiere decir modelos "model" en estadística?
+3. Leer el Capítulo #2 y entender lo que quiere decir cada uno de los términos en la figura.
+   Por ejemplo, ¿qué quiere decir "modelo" (model) en estadística?
   
   
 ### Cuarto Paso
@@ -93,43 +95,43 @@ $1+2(3+4)$
 
 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r apx-2, echo=FALSE, eval=FALSE}
 1+2*(3+4)
 ```
 
 ### Ejercicio #2
-Pon esta fomula en R correctamente y calcula el resultado.
+Pon esta fórmula en R correctamente y calcula el resultado.
 
 $\sqrt{(4+1)(2+1)}$
 
-```{r, echo=FALSE, eval=FALSE}
+```{r apx-3, echo=FALSE, eval=FALSE}
 sqrt((4+1)*(2+1))
 ```
 
 ### Ejercicio #3
-Re-esribir esta fomula en R correctamente y calcula el resultado.
+Reescribe esta fórmula en R correctamente y calcula el resultado.
 
 $(2 + 3) * 4$
 
-```{r, echo=FALSE, eval=FALSE}
+```{r apx-4, echo=FALSE, eval=FALSE}
 (2+3)*4
 ```
 
 ### Ejercicio #4
 
-Calcular lo siguiente en R, enseña el codigo y el resultado
+Calcula lo siguiente en R; enseña el código y el resultado.
 
-$$\frac{0.25-2}{\sqrt{(0.2(1-0.2)/100})}$$ 
+$$\frac{0.25-2}{\sqrt{0.2(1-0.2)/100}}$$
 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r apx-5, echo=FALSE, eval=FALSE}
 (0.25-2)/sqrt(0.2*((1-0.2)/100))
 ```
 
 ### Ejercicio #5
-Asigna una variable a los valores del 2 hasta el 5.  Después usando las variable multiplica todos los valores.
+Asigna una variable a cada uno de los valores del 2 al 5. Después, usando las variables, multiplica todos los valores.
 
-```{r, echo=FALSE, eval=FALSE}
+```{r apx-6, echo=FALSE, eval=FALSE}
 a=2
 b=3
 c=4
@@ -139,18 +141,18 @@ a*b*c*d
 
 ### Ejercicio #6
 
-El data set **rivers** se sube con R.  Escribe **rivers** en un chunk y determina cual es el ultimo valor del archivo y cual es su posición en la lista. 
-```{r, echo=FALSE, eval=FALSE}
+El data set **rivers** viene incluido con R. Escribe **rivers** en un chunk y determina cuál es el último valor del archivo y cuál es su posición en la lista.
+```{r apx-7, echo=FALSE, eval=FALSE}
 rivers
 ```
 
 ### Ejercicio #7
 
-Instala y activa el paquete **UsingR** y evalúa los datos que se encuentra en el archivo/data frame **exe.pay**. Calcula cual es el promedio, mínimo y máximo de los datos usando las funciones *mean, min y max*.  
+Instala y activa el paquete **UsingR** y evalúa los datos que se encuentran en el data frame **exec.pay**. Calcula el promedio, el mínimo y el máximo de los datos usando las funciones *mean, min y max*.
 
 
 
-```{r, echo=FALSE, eval=FALSE}
+```{r apx-8, echo=FALSE, eval=FALSE}
 library(UsingR)
 #exec.pay
 mean(exec.pay)
@@ -161,18 +163,18 @@ max(exec.pay)
 
 ### Ejercicio #8
 
-El data set que se llama **Orange** es un data frame con tres variables. Como se llama las variables?
+El data set que se llama **Orange** es un data frame con tres variables. ¿Cómo se llaman las variables?
 
-```{r, echo=FALSE, eval=FALSE}
+```{r apx-9, echo=FALSE, eval=FALSE}
 Orange
 ```
 
 
 ### Ejercicio #9
 
-Calcula la edad promedia de los arboles de naranja que esta en el archivo **Orange**
+Calcula la edad promedio de los árboles de naranja que están en el archivo **Orange**.
 
-```{r, echo=FALSE, eval=FALSE}
+```{r apx-10, echo=FALSE, eval=FALSE}
 mean(Orange$age)
 ```
 
@@ -180,7 +182,7 @@ mean(Orange$age)
 
 Haz un gráfico de puntos entre la x=circunferencia del árbol y la y=edad, y añadele un color diferente a cada árbol. 
 
-```{r eval=FALSE, include=FALSE}
+```{r apx-11, eval=FALSE, include=FALSE}
 library(ggplot2)
 ggplot(Orange, aes(circumference, age, color=Tree))+
   geom_point()
@@ -192,7 +194,7 @@ ggplot(Orange, aes(circumference, age, color=Tree))+
 
 ## ANOVA exercices
 
-```{r}
+```{r apx-12}
 library(tidyverse)
 library(gt)
 library(Rmisc)
@@ -211,7 +213,7 @@ library(car)
  
  ***
  
-### Los datos se encuentrán en la pestaña del website debajo "Los Datos", "Archivos de Datos". El nombre del archivo se llama 
+### Los datos se encuentran en la pestaña del sitio web bajo "Los Datos", "Archivos de Datos". El nombre del archivo es 
  - "Births In USA since 1933"; USAbirthbymonth_4.csv
 
 
@@ -219,14 +221,14 @@ library(car)
 
 ### Human Birth Database
 
-#### Reliability and Accuracy Matter
+#### La confiabilidad y la exactitud importan
 
-The Human Birth Database (HMD) is the world´s leading scientific data resource on Births in developed countries. The HMD provides detailed high-quality harmonized mortality and population estimates to researchers, students, journalists, policy analysts, and others interested in the human longevity. The HMD follows open data principles.
+La Human Mortality Database (HMD) es uno de los principales recursos científicos de datos sobre mortalidad y natalidad en países desarrollados. La HMD provee estimados detallados y armonizados de mortalidad y población a investigadores, estudiantes, periodistas, analistas de política pública y otras personas interesadas en la longevidad humana. La HMD sigue los principios de datos abiertos.
 
 https://www.mortality.org/Home/Index
 
 
-Usando los datos de natalidad en estados unidos desde 1933 a 2020.  
+Usaremos los datos de natalidad en Estados Unidos desde 1933 hasta 2020.  
 
  - En el archivo encontrarán tres columnas informativas, 
     - Year, 
@@ -238,7 +240,7 @@ Usando los datos de natalidad en estados unidos desde 1933 a 2020.
 El archivo de datos esta incluido en MSTEAM. "USAbirthbymonth_4 months.csv"
 
 
-```{r include=FALSE}
+```{r apx-13, include=FALSE}
 library(readr)
 USAbirthbymonth <- read_csv("Data_files_csv/USAbirthbymonth_4 months.csv")
 birth=USAbirthbymonth
@@ -249,7 +251,7 @@ head(birth)
 ***
 
 ### Aqui los primeras 6 filas del df
-```{r echo=FALSE}
+```{r apx-14, echo=FALSE}
 library(gt)
 
 gt(head(birth))
@@ -264,7 +266,7 @@ gt(head(birth))
  1. Haz un gráfico del promedio de nacimiento y la variación en natalidad por mes. (5 pts)
 
 
-```{r include=FALSE}
+```{r apx-15, include=FALSE}
 library(ggplot2)
 ggplot(birth, aes(x=Month, y=Births, colour=Year))+
 geom_point()+
@@ -279,7 +281,7 @@ geom_point()+
 
 
 
-```{r include=FALSE}
+```{r apx-16, include=FALSE}
 
 library(Rmisc)
 sum = summarySE(birth, 
@@ -292,7 +294,7 @@ sum
  2. Haz un gráfico del promedio y intervalo de 95% por mes (5 pts)
 
 
-```{r include=FALSE}
+```{r apx-17, include=FALSE}
 
 
 ggplot(sum, aes(x=Month, 
@@ -306,37 +308,37 @@ ggplot(sum, aes(x=Month,
 
 
 3. Haz la prueba que corresponde para determinar si los grupos son iguales (8 pts).
-    - Cual es la hipótesis NULA?
-    - Cual es la hipótesis ALTERNA?
+    - ¿Cuál es la hipótesis NULA?
+    - ¿Cuál es la hipótesis ALTERNA?
     
     
 4. Haz la prueba de ANOVA correspondiente (enseñe la resultados) (4 puntos)
 
-5. Interprete los resultados de la prueba de ANOVA (10 puntos)
-    - Cual es el resultado de la prueba?
-    - Cual es el grado de libertad?
-    - Cuantos datos totales hay en el análisis?
+5. Interpreta los resultados de la prueba de ANOVA (10 puntos)
+    - ¿Cuál es el resultado de la prueba?
+    - ¿Cuál es el grado de libertad?
+    - ¿Cuántos datos totales hay en el análisis?
     
 
-```{r include=FALSE}
+```{r apx-18, include=FALSE}
 model_b=aov(Births~Month, data=birth)
 summary(model_b)
 ```
 
 
-6. Evalúa los supuestos de esta prueba, explicando si acepta que los datos cumple con los supuestos (10 pts)
-    - Homogeneidad de Varianza
+6. Evalúa los supuestos de esta prueba, explicando si consideras que los datos cumplen con los supuestos (10 pts)
+    - Homogeneidad de varianza
     - Normalidad
-    - Explica claramente cada prueba y si interpretación
+    - Explica claramente cada prueba y su interpretación
   
 
 
-```{r eval=FALSE, include=FALSE}
+```{r apx-19, eval=FALSE, include=FALSE}
 plot(model_b)
 ```
 
 
-```{r eval=FALSE, include=FALSE}
+```{r apx-20, eval=FALSE, include=FALSE}
 leveneTest(birth$Births, birth$Month)
 ```
 
@@ -344,7 +346,7 @@ leveneTest(birth$Births, birth$Month)
 
 
 
-```{r include=FALSE}
+```{r apx-21, include=FALSE}
 
 #6. Haz la prueba de Post-Hoc de Bonferroni y contesta la siguientes pregunta. (6 pts)
  #  - Cual(es) es/son los mes(es) que la natalidad difiere de enero.
@@ -370,14 +372,14 @@ pairwise.t.test(birth$Births, birth$Month, p.adjust.method = "bonferroni")
 
 ### Superheroes y Lesiones
 
-Los datos representa la gravedad de lesiones que tienen niños que se disfrazan de su superheroes favorito y después llegan a un hospital por alguna lesión.  Los niños son categorizados con un nivel gravedad de lesión, más alto el valor más serio era la lesión. Los datos provienen de Field et al. 
+Los datos representan la gravedad de las lesiones de niños que se disfrazan de su superhéroe favorito y después llegan a un hospital por alguna lesión. Los niños se categorizan con un nivel de gravedad de la lesión: mientras más alto el valor, más seria era la lesión. Los datos provienen de Field et al.
 
 
 
 Subir los datos de **Superhero.csv**
 
 
-```{r data super heroes2}
+```{r apx-22}
 library(readr)
 Superhero <- read_csv("Data_files_csv/Superhero.csv")
 
@@ -388,9 +390,9 @@ unique(Superhero$heronames)
 
 
 
-Renombrar los nombres de las categorías para los tipos de Superheroes. En el archivo como están identificados las categorías de superheroes?  
+Renombrar las categorías de los tipos de superhéroes. En el archivo, ¿cómo están identificadas las categorías de superhéroes?
 
-```{r rename variables2}
+```{r apx-23}
 #Superhero
 Superhero$heronames<-factor(Superhero$hero, levels = c(1:4), 
      labels = c("Spiderman","Superman", "Hulk", "Ninja Turtle"))
@@ -401,7 +403,7 @@ names(Superhero)
 
 Contestar cada una de las siguientes preguntas.
 
-1. Evaluar la distribución de los datos de respuestas (los en Y)
+1. Evaluar la distribución de los datos de respuesta (los de Y)
 2. Evaluar la homogeneidad de varianza
 3. Visualizar los datos Puntos y promedios y intervalo de confianza
 4. Hacer la prueba de ANOVA con aov()
@@ -413,7 +415,7 @@ Contestar cada una de las siguientes preguntas.
 
 # Ejercicios F
 
-## Ejercicio de Corelación: 
+## Ejercicio de Correlación
 
 ### Despues de hacer los ejercicios habrá preguntas en MSTeam para contestar. 
 
@@ -424,7 +426,7 @@ Contestar cada una de las siguientes preguntas.
   + Calcular el coeficiente de determinación
   + Visualizar la correlación
 
-```{r, eval=FALSE, echo=FALSE}
+```{r apx-24, eval=FALSE, echo=FALSE}
 library(MASS)
 # data() # To see all the datasets available 
 
@@ -456,21 +458,21 @@ Las variables en el archivo **urine** en el paquete **boot**
 
 
 
-```{r}
+```{r apx-25}
 library(boot)
 head(urine) 
 ```
 
 ***
 
-1. Evaluar si las 6 variables (excluye la variable "r") cumple con distribución normales. 
+1. Evaluar si las 6 variables (excluye la variable "r") cumplen con una distribución normal.
 
  - Usa dos de los métodos que hemos aprendido para evaluar cada variable si cumple con distribución normal.
   
   - Explicar que prueba utilizas y interpretas los resultados.
   
 
-```{r, eval=FALSE, echo=FALSE}
+```{r apx-26, eval=FALSE, echo=FALSE}
 
 shapiro.test(urine$gravity)
 shapiro.test(urine$ph)
@@ -484,7 +486,7 @@ shapiro.test(urine$calc)
 2. Usando el gráfico de qq-plot gráfica la correlación "menos normal" de las pruebas anteriores.  Salva este gráfico en .png o .jpeg.  
 
 
-```{r eval=FALSE, include=FALSE}
+```{r apx-27, eval=FALSE, include=FALSE}
 library(ggplot2)
 
 ggplot(urine, aes(sample=calc))+
@@ -498,13 +500,13 @@ ggplot(urine, aes(sample=calc))+
 
 2. Estimado de correlación entre las seis variables
 
-+ Tomando en cuenta lo que observaste en la pruebas anterior, selecciona la prueba correcta entre Pearson o Kendall, para evaluar la correlaciones entre las variables.   Tiene que seleccionar la prueba correcta.  
++ Tomando en cuenta lo que observaste en las pruebas anteriores, selecciona la prueba correcta entre Pearson o Kendall para evaluar las correlaciones entre las variables. Tienes que seleccionar la prueba correcta.
 
-    + Cual variables tienen una correlación mayor
-    + Cual variables tiene la correlación menor
+    + ¿Cuáles variables tienen la correlación mayor?
+    + ¿Cuáles variables tienen la correlación menor?
 
 
-```{r, eval=FALSE, echo=FALSE}
+```{r apx-28, eval=FALSE, echo=FALSE}
 cor(urine[, c("gravity", "ph", "cond", "urea", "calc")], use = "pairwise.complete.obs",
     method = 'kendall')
 ```
@@ -520,7 +522,7 @@ cor(urine[, c("gravity", "ph", "cond", "urea", "calc")], use = "pairwise.complet
      
   + Cual de estos pares explica mejor la relación entre una variable y la otra (2 puntos)  
 
-```{r, eval=FALSE, echo=FALSE}
+```{r apx-29, eval=FALSE, echo=FALSE}
 cor(urine$calc, urine$urea)^2
 cor(urine$ph, urine$calc)^2
 ```
@@ -528,11 +530,11 @@ cor(urine$ph, urine$calc)^2
 
 ***
 
-4. ¿Como se interpreta el coeficiente de determinación?
+4. ¿Cómo se interpreta el coeficiente de determinación?
 
 ***
 
-5.  Usa la funcción **ggMarginal** del paquete ggEXTRA
+5.  Usa la función **ggMarginal** del paquete ggExtra
 
 Selecciona un par de variables de la correlación anterior:
 
@@ -540,7 +542,7 @@ Selecciona un par de variables de la correlación anterior:
   + Interpretar el gráfico y compara con la prueba de normalidad que hiciste anteriormente
   + salva el grafico en formato .jpeg o .png
 
-```{r, eval=FALSE, echo=FALSE}
+```{r apx-30, eval=FALSE, echo=FALSE}
 library(ggplot2)
 p <- ggplot(urine, aes(gravity, urea)) + 
   geom_point() + 
@@ -552,7 +554,7 @@ ggExtra::ggMarginal(p, type = "histogram")
 
 ***
 
-6. ¿Cual son los supuestos para usar la correlación de Pearson?
+6. ¿Cuáles son los supuestos para usar la correlación de Pearson?
 
 
 
@@ -563,14 +565,14 @@ ggExtra::ggMarginal(p, type = "histogram")
 
 ##  Regresión Logística
 
-Este ejercicio es para practicar como hacer una Regresión logística
+Este ejercicio es para practicar cómo hacer una regresión logística.
 
 Los temas incluye.
 
 + Construir un modelo de una regresión logística
 + Determinar si los coeficientes son diferentes de cero
 + Construir un gráfico de la relación logística usando ggplot2
-+ Determinar los valores de probabilidades especifico para algunos valores "X"
++ Determinar los valores de probabilidad específicos para algunos valores "X"
 
 
 ### Karn and Penrose data Set
@@ -578,18 +580,18 @@ Los temas incluye.
 
 ### Los Datos
 
-Los datos provienen de un estudio realizado por Mary N. Karn and L. S. Penrose publicado en **Annals of Eugenics**, titulado **Birth Weight and gestation time in relation to maternal age, parity and infant survival** publicado en 1951.  Estaremos usando solamente una parte de los datos. El periodo de gestación y el peso de los bebés varones al nacer y su supervivencia (fallecio= 0 y sobrevivio= 1).  Para facilitar el trabajo he modificado los datos un poco para cumplir con las tareas asignada.
+Los datos provienen de un estudio realizado por Mary N. Karn and L. S. Penrose publicado en **Annals of Eugenics**, titulado **Birth Weight and gestation time in relation to maternal age, parity and infant survival** publicado en 1951.  Estaremos usando solamente una parte de los datos. Incluye el periodo de gestación, el peso de los bebés varones al nacer y su supervivencia (falleció = 0 y sobrevivió = 1). Para facilitar el trabajo he modificado los datos un poco para cumplir con las tareas asignadas.
 
-En el archivo "Karn_Penrose_infant_survivorship.csv" tiene datos sobre 7036 nacimientos entre los años 1935 y 1946. El archivo tiene 4 columnas:
+El archivo "Karn_Penrose_infant_survivorship.csv" tiene datos sobre 7036 nacimientos entre los años 1935 y 1946. El archivo tiene 4 columnas:
 
   - Line_number = la secuencia de los datos
   - Gestation_Time_days  = El periodo de gestación en días
-  - Weigth_lb = El peso del bebe en libras
+  - Weigth_lb = El peso del bebé en libras
   - Surv_Index = "0" o "1"
 
 
 
-```{r}
+```{r apx-31}
 library(ggplot2)
 library(readr)
 Karn_Penrose_infant_survivorship <- read_csv("Data_files_csv/Karn_Penrose_infant_survivorship.csv")
@@ -599,10 +601,10 @@ KPdata=Karn_Penrose_infant_survivorship
 
 ***
 
-1. Pregunta: Explique en sus propias palabras cuales son las hipótesis que se pueden probar. Especificamente mencione si la hipótesis es una hipótesis nula o alterna. (4 puntos)
+1. Pregunta: Explica en tus propias palabras cuáles son las hipótesis que se pueden probar. Específicamente, menciona si cada hipótesis es nula o alterna. (4 puntos)
 
 
-```{r, echo=FALSE}
+```{r apx-32, echo=FALSE}
 #  - Hipótesis Nula: El peso de los varones y el periodo de gestación no afectan el indice de supervivencia. 
   
 #  - Hipótesis Alterna #1: Los varones con un periodo de  mayor gestación tienen mayor probabilidad de supervivencia que los varones con un mayor peso.
@@ -614,7 +616,7 @@ KPdata=Karn_Penrose_infant_survivorship
 
 2. Pregunta: Graficar la variable de respuesta (2 puntos)
 
-```{r variable de respuesta, echo=FALSE, eval=FALSE, message=FALSE}
+```{r apx-33, echo=FALSE, eval=FALSE, message=FALSE}
 names(KPdata)
 library(ggplot2)
 ggplot(KPdata, aes(Survival))+
@@ -631,7 +633,7 @@ ggplot(KPdata, aes(Survival))+
     - Periodo de gestación (2 puntos)
     - Peso de los varones al nacer (2 puntos)
 
-```{r periodo de gestacion, echo=FALSE, eval=FALSE, message=FALSE}
+```{r apx-34, echo=FALSE, eval=FALSE, message=FALSE}
 ggplot(KPdata, aes(Gestation_Time_days))+
   geom_histogram(binwidth= 4, fill="white", colour="red")+
   labs(x= "Duración de Gestación", y="Frecuancia")+
@@ -644,7 +646,7 @@ ggplot(KPdata, aes(Gestation_Time_days))+
 
 Evaluando la distribución de la variable de respuesta
 
-```{r weight-index,  echo=FALSE, eval=FALSE, message=FALSE}
+```{r apx-35, echo=FALSE, eval=FALSE, message=FALSE}
 ggplot(KPdata,aes(Weigth_lb))+
   geom_histogram(fill="white", colour="red")+
   labs(x="Survival")+
@@ -662,7 +664,7 @@ ggplot(KPdata,aes(Weigth_lb))+
   
   
 
-```{r, Periodo de Gestacion y supervivencia, echo=FALSE, eval=FALSE, message=FALSE}
+```{r apx-36, echo=FALSE, eval=FALSE, message=FALSE}
 library(car)
 names(KPdata)
 modelweight<-glm(Survival~Weigth_lb, data= KPdata, family = binomial())
@@ -679,7 +681,7 @@ summary(modelgest)
 
 5. Graficar la Relación entre la supervivencia y el peso de los bebes (2 puntos)
 
-```{r,echo=FALSE, eval=FALSE, message=FALSE}
+```{r apx-37, echo=FALSE, eval=FALSE, message=FALSE}
 
 
 ggplot(KPdata, aes(x=Weigth_lb, y=Survival)) +
@@ -692,7 +694,7 @@ ggplot(KPdata, aes(x=Weigth_lb, y=Survival)) +
 
 6. Cual es la probabilidad de un bebe de 4 lbs sobrevivir (2 puntos)
 7. Cual es la probabilidad de un bebe de 7 lbs sobrevivir (2 puntos)
-8. Preguntar a su familia cual era el peso de nacer cuando Ud. nacio, calcula la probabilidad de sobrevivir (3 puntos)
+8. Pregunta a tu familia cuál era tu peso al nacer y calcula la probabilidad de sobrevivir (3 puntos).
 
 
 # Ejercicios H
@@ -700,7 +702,7 @@ ggplot(KPdata, aes(x=Weigth_lb, y=Survival)) +
 ## Bondad de Ajuste
 ***
 
-```{r message=FALSE}
+```{r apx-38, message=FALSE}
 library(tidyverse)
 library(gt)
 library(gmodels)
@@ -713,16 +715,16 @@ library(gmodels)
 
 ### Musaraña
 
-Un total de 125 individuals de un mamifero pequeño, musaraña fueron localizado dentro de una jaula, con la misma cantidad de 6 diferentes comida, la frequencia de que cada una de las musaraña selecionarón un tipo de comida esta en la tabla
+Un total de 125 individuos de un mamífero pequeño, la musaraña, fueron colocados dentro de una jaula con la misma cantidad de cinco comidas diferentes. La frecuencia con que cada musaraña seleccionó un tipo de comida está en la tabla.
 
-```{r, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
+```{r apx-39, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
 knitr::include_graphics("Graficos/musarana.jpg")
 ```
 
 Photo from: https://www.laguiadelvaron.com/wp-content/uploads/2020/08/reaparece-musarana-elefante-www.laguiadelvaron-1.jpg
 
 
-```{r}
+```{r apx-40}
 musaraña=tribble(
   ~Tipo_comida, ~frecuencia,
   "C1", 13,
@@ -738,12 +740,12 @@ gt(musaraña)
 
 Contesta las siguientes preguntas
 
- - a) Cual es el (son) valor(es) esperado para cada grupo.
- - b) Prueba si hay preferencia o no para una comida
+ - a) ¿Cuál(es) es(son) el(los) valor(es) esperado(s) para cada grupo?
+ - b) Prueba si hay preferencia o no por alguna comida.
 
 
 
-```{r eval=FALSE, include=FALSE}
+```{r apx-41, eval=FALSE, include=FALSE}
 library(gmodels)
 obs<-c(13, 26, 39, 14, 28)
 esp<-c(.2,.2,.2,.2,.2)
@@ -752,14 +754,14 @@ chisq.test(x=obs, p=esp)
 
 ***
 
-### Ejercicio #1 
+### Ejercicio #2
 
 ### Mofetas y rabia
 
-Los siguientes datos son las frecuencias de mofetas encontrada con rabia en dos diferentes región geográficas.
+Los siguientes datos son las frecuencias de mofetas encontradas con rabia en dos regiones geográficas diferentes.
 
 
-```{r, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
+```{r apx-42, echo=FALSE, fig.show = "hold", out.width = "50%", fig.align = "default"}
 knitr::include_graphics("Graficos/Skunk.jpeg")
 
 R.version
@@ -769,7 +771,7 @@ R.version
 Photo from: https://www.britannica.com/animal/skunk
 
 
-```{r}
+```{r apx-43}
 mofetas=tribble(
   ~TRegion, ~con_rabia, ~sin_rabia,
   "Region1", 14, 29,
@@ -780,11 +782,11 @@ gt(mofetas)
 ```
 
 
- - a) Cual es la hipótesis nula?
- - b) Conprueba la hipótesis para determinar si tener rabia es igual en las dos regiones?
- - c) Cual es el valor esperado de la mofetas sin rabia en la region 2? 
+ - a) ¿Cuál es la hipótesis nula?
+ - b) Comprueba la hipótesis para determinar si la proporción con rabia es igual en las dos regiones.
+ - c) ¿Cuál es el valor esperado de las mofetas sin rabia en la región 2?
 
-```{r, eval=FALSE, echo=FALSE}
+```{r apx-44, eval=FALSE, echo=FALSE}
 #Crear la tabla de contingencia
 
 con_rabia <- c(14, 29)
@@ -820,17 +822,17 @@ Este documento tiene algunos ejercicios para evaluar si una distribución es nor
   - construir un histograma de los datos
   - sobreponer una distribución teórica sobre el histograma
   - evaluar si los datos tienen una distribución normal usando qqplot
-  - evaluar se los datos tienen una distribución normal usando la prueba de Shaipro_Wilks y Anderson-Darling
+  - evaluar si los datos tienen una distribución normal usando la prueba de Shapiro-Wilk y Anderson-Darling
     
     
 ### Construir un histograma con los siguientes datos
  
- 1. Usa el paquete **ggversa**, y el archivo **SparrowsElphick** y haga un histograma de los pesos (wt) de los pajaros capturados
+ 1. Usa el paquete **ggversa** y el archivo **SparrowsElphick**, y haz un histograma de los pesos (wt) de los pájaros capturados.
  
 
   
   
-```{r C1, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
+```{r apx-45, echo=FALSE, fig.show = "hold", out.width = "20%", fig.align = "default"}
 knitr::include_graphics("Graficos/sparrow.jpg")
 
 ```
@@ -839,25 +841,25 @@ knitr::include_graphics("Graficos/sparrow.jpg")
  
 
  
-```{r, C2}
+```{r apx-46}
 library(ggversa)
 gt(head(SparrowsElphick))
 ```
 
 ***
  
-### Constuye un histograma de la distribución de los pesos de los pajaros. 
+### Construye un histograma de la distribución de los pesos de los pájaros.
 
-  - las lineas blancas alrededor de las barras
-  - que se cambio el nombre del eje de "x"
-  - que se cambio el nombre del eje de "y"
+  - con líneas blancas alrededor de las barras
+  - que se cambie el nombre del eje "x"
+  - que se cambie el nombre del eje "y"
  
-```{r, C3, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r apx-47, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 
 ggplot(SparrowsElphick, aes(wt))+
          geom_histogram(colour="white")+
-  ylab("Fecuencia")+
-  xlab("Peso en gramos de los ")
+  ylab("Frecuencia")+
+  xlab("Peso en gramos de los pájaros")
 ```
  
 ***
@@ -865,12 +867,12 @@ ggplot(SparrowsElphick, aes(wt))+
 Ahora a esta misma gráfica añádele la distribución normal teórica, el gráfico 
 
 
-```{r, C4, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r apx-48, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 
 ggplot(SparrowsElphick, aes(wt))+
-         geom_histogram(aes(y=..density..),colour="white")+
-  ylab("Fecuencia")+
-  xlab("Peso en gramos de los ")+
+         geom_histogram(aes(y=after_stat(density)),colour="white")+
+  ylab("Frecuencia")+
+  xlab("Peso en gramos de los pájaros")+
     stat_function(fun = dnorm, 
                 args = list(mean = mean(SparrowsElphick$wt, na.rm = TRUE), 
                 sd = sd(SparrowsElphick$wt, na.rm = TRUE)), 
@@ -882,9 +884,9 @@ ggplot(SparrowsElphick, aes(wt))+
 ### QQPLOT
 
 
- - Ahora haz un gráfico de **qqplot** y determina si la distribución de los datos de peso de los finches tienen una distribución normal.
+ - Ahora haz un gráfico **Q-Q** y determina si la distribución de los pesos de los pinzones (finches) es normal.
 
-```{r, C5, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r apx-49, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 ggplot(SparrowsElphick, aes(sample=wt))+
   geom_qq()+
   geom_qq_line(colour="blue")
@@ -894,12 +896,12 @@ ggplot(SparrowsElphick, aes(sample=wt))+
 ### Shapiro-Wilk test
 
 
- - Haz la prueba de Shapiro-Wilks para determinar si la distribución de los datos son significativamente diferente de una distribución normal.
- - Basado en los supuestos de esta prueba ¿Se debería utiliza la "Shapiro-Wilks" para evaluar la distribución normal.
+ - Haz la prueba de Shapiro-Wilk para determinar si la distribución de los datos es significativamente diferente de una distribución normal.
+ - Con base en los supuestos de esta prueba, ¿se debería utilizar la de Shapiro-Wilk para evaluar la normalidad en este caso?
  
  
 #### Lograste tener este resultado?  
-```{r eval=FALSE, message=FALSE, warning=FALSE, C6, echo=FALSE, include=FALSE}
+```{r apx-50, eval=FALSE, message=FALSE, warning=FALSE, echo=FALSE, include=FALSE}
 shapiro.test(SparrowsElphick$wt)
 length(SparrowsElphick$wt)
 ```
@@ -908,13 +910,13 @@ length(SparrowsElphick$wt)
 
 ### Anderson-Darling
 
- - Haz la prueba de Anderson-Darling para determinar si la distribución de los datos son significativamente diferente de una distribución normal.
+ - Haz la prueba de Anderson-Darling para determinar si la distribución de los datos es significativamente diferente de una distribución normal.
 
 - ¿La distribución de los pesos es significativamente diferente de una distribución normal?
 
 
 #### Lograste tener este resultado?
-```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+```{r apx-51, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 library(nortest)
 ad.test(SparrowsElphick$wt)
 ```
@@ -936,9 +938,9 @@ ANTES de abrir el quiz en MSTeam haz todos los ejercicios aqui.
     + En este trabajo evaluaron los ganglios linfáticos de 20 individuos sanos. Encontraron que la media de los ganglios linfáticos mastoideos de los hombres era de 0,9 cm con una desviación estándar de 0,4 cm. 
     + ¿Cuál es el intervalo de confianza al 95% de los ganglios linfáticos mastoideos en hombres? . 
 
-```{r, eval=FALSE, echo=FALSE}
-UL=0.9+qt(0.025, 19)*0.4/sqrt(20)
-LL=0.9-qt(0.025, 19)*0.4/sqrt(20)
+```{r apx-52, eval=FALSE, echo=FALSE}
+UL=0.9+abs(qt(0.025, 19))*0.4/sqrt(20)
+LL=0.9-abs(qt(0.025, 19))*0.4/sqrt(20)
 UL
 LL
 
@@ -952,7 +954,7 @@ LL
     + En este trabajo evaluaron los ganglios linfáticos de 20 individuos sanos. Encontraron que la media de los ganglios linfáticos mastoideos de los hombres era de 0,9 cm con una desviación estándar de 0,4 cm.  Ya se pudo medir el tamaño de los ganglios linfáticos mastoideos de TODOS los hombres del planeta, y se determino que que el promedio es de 0.7 cm con una desviación estándar de 0,2 cm.
     + Usando los siguientes datos haga la prueba correspondiente en R para determinar el valor de t, observado y el valor critico.  
 
-```{r, eval=FALSE, echo=FALSE}
+```{r apx-53, eval=FALSE, echo=FALSE}
 t=abs((0.9-0.7)/((0.4)/sqrt(20)) )
 t # Valor t de observado
 abs(qt(0.025, 19))  # valor de t-critico, de la tabla
@@ -964,19 +966,19 @@ abs(qt(0.025, 19))  # valor de t-critico, de la tabla
 ### Ejercicio de práctica 1: Amigos de Facebook
 
  
- Mucha gente creen que la cantidad promedio de amigos en Facebook es 338 con una desviación estandard de 43.2.  En un muestro al azar de 50 estudiantes universitarios en un pais se calculo que el promedio de estos estudiantes es de 350 amigos.  Al nivel de 5% de error determina si hay evidencia que los estudiante tenga mayor numero de amigos que el promedio anunciado por Facebook  
+ Mucha gente cree que la cantidad promedio de amigos en Facebook es 338, con una desviación estándar de 43.2. En un muestreo al azar de 50 estudiantes universitarios en un país se calculó que el promedio de estos estudiantes es de 350 amigos. A un nivel de 5% de error, determina si hay evidencia de que los estudiantes tengan mayor número de amigos que el promedio anunciado por Facebook.
 
-```{r include=FALSE}
+```{r apx-54, include=FALSE}
 t=abs((328-350)/((43.2)/sqrt(50)) )
 t # Valor t de observado
 abs(qt(0.025, 49))  # valor de t-critico, de la tabla
 ```
 
-4. Cual es valor de t
+4. ¿Cuál es el valor de t?
 
-5. Cual es el valor de t critico
+5. ¿Cuál es el valor de t crítico?
 
-6. ¿Se rechaza o acepta la hipótesis nula?
+6. ¿Se rechaza o no la hipótesis nula?
 
 ***
 
@@ -984,9 +986,9 @@ abs(qt(0.025, 49))  # valor de t-critico, de la tabla
 ### Ejercicio de práctica 2: Dias de enfermedades
 
 
-Un dueño de una impresa dice que su insiste que la cantidad de días promedio de enfermedades de sus empleados es menor que el promedio nacional de 10.  Los datos de 40 empleados sigue.  Determina si hay evidencia para creer el comentario del dueño de esta impresa.
+El dueño de una empresa insiste en que la cantidad promedio de días de enfermedad de sus empleados es menor que el promedio nacional de 10. Los datos de 40 empleados siguen a continuación. Determina si hay evidencia para creer el comentario del dueño de esta empresa.
 
-```{r}
+```{r apx-55}
 dias_E=tribble(
   ~dias_e,
   0,6,12,3,3,5,4,1,
@@ -999,15 +1001,15 @@ dias_E
 ```
 
 
-7. ¿Cual es la hipótesis nula?
+7. ¿Cuál es la hipótesis nula?
 
-8. Cual es el valor de "t"
+8. ¿Cuál es el valor de "t"?
 
-9. Cual es le valor de "p"
+9. ¿Cuál es el valor de "p"?
 
-10. Aceptas o rechazas la hipótesis nula
+10. ¿Rechazas o no la hipótesis nula?
 
-11. ¿Cual es el intervalo de confianza del número de días enfermo de estos trabajadores?
+11. ¿Cuál es el intervalo de confianza del número de días de enfermedad de estos trabajadores?
 
 
 ***
@@ -1034,7 +1036,7 @@ La prueba corta tiene los siguientes objetivos. Evalúa cada pregunta antes de a
 
 
 
-Los datos provienen de una investigación donde se evaluó el impacto del huracán Georges son una pequeña orquídea endémica de Puerto Rico en el Yunque. La especies es *Lepanthes eltoroensis* y crece sobre árboles.  
+Los datos provienen de una investigación donde se evaluó el impacto del huracán Georges sobre una pequeña orquídea endémica de Puerto Rico en El Yunque. La especie es *Lepanthes eltoroensis* y crece sobre los árboles.
 
 ![](Graficos/L_eltoroensis.jpg){width=40%}
 
@@ -1045,11 +1047,11 @@ Usa los datos del archivo "Lepanthes_eltoroensis_Georges_STUDENT.csv"
  
  
 
-En el archivo encontrará datos sobre la cantidad de hojas que tiene cada planta.  Los datos fueron recopilado por 6 años a cada dos meses. El primer muestreo fue la columna T1, y el último muestreo T12 (despues de 6 años). El primer muestreo fue después del huracán Georges. 
+En el archivo encontrarás datos sobre la cantidad de hojas que tiene cada planta. Los datos fueron recopilados durante 6 años, cada dos meses. El primer muestreo es la columna T1 y el último muestreo es T12 (después de 6 años). El primer muestreo fue después del huracán Georges.
 
 Usando estas dos columnas evalúa si las plantas tenían la misma cantidad de hojas al principio y al final de 6 años. 
 
-```{r}
+```{r apx-56}
 library(readr)
 Lepanthes_eltoroensis_Georges_STUDENT <- read_csv("Data_files_csv/Lepanthes_eltoroensis_Georges_STUDENT.csv")
 
@@ -1057,9 +1059,9 @@ Lep=Lepanthes_eltoroensis_Georges_STUDENT
 ```
 ***
 
-### 1. Calcula el promedio y la desviación estandard del número de hoja en cada tiempo.
+### 1. Calcula el promedio y la desviación estándar del número de hojas en cada tiempo.
  
-```{r eval=FALSE, include=FALSE}
+```{r apx-57, eval=FALSE, include=FALSE}
 mean(Lep$T1, na.rm = TRUE)
 sd(Lep$T1, na.rm = TRUE)
 mean(Lep$T12, na.rm = TRUE)
@@ -1070,7 +1072,7 @@ sd(Lep$T12, na.rm = TRUE)
 
 ### 2. Haz la *prueba de t-con datos pareados*
 
-```{r eval=FALSE, include=FALSE}
+```{r apx-58, eval=FALSE, include=FALSE}
 t.test(Lep$T1, Lep$T12, paired=TRUE)
 ```
 
@@ -1082,7 +1084,7 @@ t.test(Lep$T1, Lep$T12, paired=TRUE)
 
   - Ahora su gráfico sera salvado en su proyecto con el nombre que le dio.
 
-```{r eval=FALSE, include=FALSE}
+```{r apx-59, eval=FALSE, include=FALSE}
 library(tidyverse)
 Lep$dif_T12_T1=Lep$T12-Lep$T1
 
@@ -1095,28 +1097,28 @@ ggplot(Lep, aes(dif_T12_T1))+
 
 ### 4. Determina si la prueba cumple con el/los supuesto(s) de una prueba de t con datos pareados?
  
-```{r eval=FALSE, include=FALSE}
+```{r apx-60, eval=FALSE, include=FALSE}
 shapiro.test(Lep$dif_T12_T1)
 ```
 
 ***
 
-# Ejercicios sobre **prueba de t con datos independiente**
+# Ejercicios L: prueba de t con datos independientes
 
-## El siguiente ejercicio es para una prueba corta donde tendrán que contestar en MSTeam.  
+## El siguiente ejercicio es para una prueba corta que tendrán que contestar en MSTeam.
 
-El tema es sobre la **prueba de t con datos independiente**.
+El tema es la **prueba de t con datos independientes**.
 
 
 La prueba corta tiene los siguientes objetivos. Evalúa cada pregunta antes de abrir el documento en MSTeam (Tendrán un tiempo limitado el momento que abré MSTeam)
 
 
-Los datos son de pacientes que tienen Esclorosis muscular (MS).  A cada uno de estos pacientes se evaluó los niveles de IgG, un indicador de anticuerpo.
+Los datos son de pacientes que tienen Esclerosis Múltiple (MS). A cada uno de estos pacientes se le evaluaron los niveles de IgG, un indicador de anticuerpos.
 
-Información básica sobre el anticuerpo, tambien conocido como **Immunoglobin**.
+Información básica sobre el anticuerpo, también conocido como **inmunoglobulina**.
 
 
-```{r include=FALSE}
+```{r apx-61, include=FALSE}
 Tabla= tribble(
   ~Ig, ~"Que es", ~"Posible cause cuando es bajo", ~"Posible cause cuando es alto",
   "IgG", 
@@ -1130,8 +1132,8 @@ Tabla2=as_hux(Tabla)
 
 ***
 
-### Tabla de que es IgG y algunos de sus causas
-```{r echo=FALSE}
+### Tabla de qué es la IgG y algunas de sus causas
+```{r apx-62, echo=FALSE}
 Tabla2 |> set_all_padding(4) %>% 
       set_outer_padding(0) %>% 
       set_number_format(2) %>% 
@@ -1157,7 +1159,7 @@ La prueba corta tiene los siguientes objetivos. Evalúa cada pregunta antes de a
 
 Los datos
 
-```{r}
+```{r apx-63}
 library(readxl)
 Immuno_markers_MS <- read_excel("Data_files_csv/Immuno_markers_MS.xlsx")
 Imm=Immuno_markers_MS
@@ -1169,17 +1171,17 @@ Imm=Immuno_markers_MS
 En este archivo tiene tres columnas. 
 
   - El sexo del paciente, "F" o "M".
-  - Un indice de los IgG, en una mustra de cada paciente con MS
-  - Un indice de IgG synthesis rate : 
+  - Un índice de IgG, en una muestra de cada paciente con MS
+  - Un índice de la tasa de síntesis de IgG (IgG synthesis rate): 
       - The reference interval is –9.9 to +3.3 mg per day. Negative values are considered normal. Multiple sclerosis patients usually have a synthesis rate >8.0.
   
 
 ***
 
-### 1. Calcular el promedio y desviación estandard y el tamaño de muestra de los dos grupos del nivel de IgG  
+### 1. Calcular el promedio, la desviación estándar y el tamaño de muestra de los dos grupos del nivel de IgG
       
       
-```{r eval=FALSE, include=FALSE}
+```{r apx-64, eval=FALSE, include=FALSE}
 
 
 Imm |> dplyr::select(Gender, IgGIdx) |> 
@@ -1196,7 +1198,7 @@ Imm |> dplyr::select(Gender, IgGIdx) |>
 
 ### 2. Hacer la prueba para evaluar si las mujeres y hombres tienen un IgG diferente
 
-```{r eval=FALSE, include=FALSE}
+```{r apx-65, eval=FALSE, include=FALSE}
 
 t.test(IgGIdx~Gender, Imm)
 
@@ -1205,13 +1207,13 @@ t.test(IgGIdx~Gender, Imm)
 
 ***
 
-### 3. Haz un histograma de la variable "IgG" por genero, a) un color diferente por "Gender"
+### 3. Haz un histograma de la variable "IgG" por género, con un color diferente por "Gender"
 
   - Para salvar el gráfico usa ggsave("nombre_de_tu_grafico.png").  Para subir lo a MSTeam.
 
   - Ahora su gráfico sera salvado en su proyecto con el nombre que le dio.
 
-```{r eval=FALSE, include=FALSE}
+```{r apx-66, eval=FALSE, include=FALSE}
 ggplot(Imm, aes(IgGIdx, fill=Gender))+
   geom_histogram(colour="white")+
   facet_wrap(~Gender)
@@ -1223,7 +1225,7 @@ ggplot(Imm, aes(IgGIdx, fill=Gender))+
 ### 4. Determina si la prueba cumple con el/los supuesto(s) de una prueba de t con datos independientes?
 
 
-```{r eval=FALSE, include=FALSE}
+```{r apx-67, eval=FALSE, include=FALSE}
 library(RVAideMemoire)
 byf.shapiro(IgGIdx~Gender, Imm)
 ```
@@ -1231,8 +1233,8 @@ byf.shapiro(IgGIdx~Gender, Imm)
 
 
 
-```{r eval=FALSE, include=FALSE}
-bartlett.test(IgGId¿Cual x~Gender, Imm)
+```{r apx-68, eval=FALSE, include=FALSE}
+bartlett.test(IgGIdx~Gender, Imm)
 ```
 
 ***
@@ -1241,14 +1243,14 @@ bartlett.test(IgGId¿Cual x~Gender, Imm)
 
 ## Ejercicio de Regresión
 
-### Fungal growth
+### Crecimiento de hongos
 
- - Fungal growth from soil samples were cultured in the presence of different concentrations of Cadnium (in µM). The density of fungal growth (x 10^6/ml) in each of the cultures was determined after a period of incubation.  Para conocer más sobre estas interacciones vea el siguiente enlace.  https://bmcmicrobiol.biomedcentral.com/articles/10.1186/s12866-022-02488-z
+ - Se cultivaron hongos a partir de muestras de suelo en presencia de diferentes concentraciones de Cadmio (en µM). La densidad del crecimiento de los hongos ($\times 10^6$/ml) en cada cultivo se determinó después de un periodo de incubación. Para conocer más sobre estas interacciones, vea el siguiente enlace: https://bmcmicrobiol.biomedcentral.com/articles/10.1186/s12866-022-02488-z
 
 
  
  
-```{r}
+```{r apx-69}
 DATA=tribble(~Cadnium, ~Fungal_Growth,
              0, 6.6,
              0, 6.9,
@@ -1282,7 +1284,7 @@ DATA
   - Tenga el gráfico listo para subir a MSTeam
   
 2. Evalúa el modelo de la regresión lineal
-  - Se acepta o rechaza LAS hipótesis
+  - ¿Se rechazan o no LAS hipótesis?
   
 3. Evalúa los supuestos de esta prueba.
 
@@ -1294,11 +1296,11 @@ DATA
 ***
 
 
-### Distancia de las estrellas más brillantes de las que son 100 años luz o menos
+### Distancia de las estrellas más brillantes que están a 100 años luz o menos
 
-### Calcular el promedio, mediana, moda y rango de los datos de las estrellas más cercana a la tierra
+### Calcular el promedio, la mediana, la moda y el rango de las distancias de las estrellas más cercanas a la Tierra
 
-```{r}
+```{r apx-70}
 Distancia_Estrellas=tribble(
   ~Distancia,
   8.6,36.7,42.2,16.8,33.7,87.9,4.4,25.3,11.4,25.1,51.5
@@ -1307,7 +1309,7 @@ Distancia_Estrellas=tribble(
 gt(Distancia_Estrellas)
 ```
 
-```{r, echo=FALSE, eval=FALSE}
+```{r apx-71, echo=FALSE, eval=FALSE}
 Distancia_Estrellas=tribble(
   ~Distancia,
   8.6,36.7,42.2,16.8,33.7,87.9,4.4,25.3,11.4,25.1,51.5
@@ -1327,7 +1329,7 @@ skewness(Distancia_Estrellas$Distancia)
 
 #### Calular los cuantiles mencionado en la pregunta
 
-```{r}
+```{r apx-72}
 PR_poblacion=tribble(
   ~Poblacion,
   18.0, 38.1,55.1,24.2,24.6,25.6,87.7,15.8,22.7,28.9,185.2,47.1,127.2
@@ -1345,29 +1347,29 @@ gt(PR_poblacion)
 
 ## Ejercicios de tendencia central
 
-### Los datos representan la cantidad de dinero ganado por arttistas (fallecidos) en milliones de dollares
+### Los datos representan la cantidad de dinero ganado por artistas (fallecidos), en millones de dólares
 
 
 
-#### Calcular el promedio, mediana, moda de los datos de las estrellas más cercana a la tierra
+#### Calcular el promedio, la mediana y la moda de estos datos
 
 
 
-```{r}
+```{r apx-73}
 Dinero_Artista=tribble(
   ~Artista, ~Dinero,
- "Kurt Corbain", 50,
+ "Kurt Cobain", 50,
  "Elvis Presley",42,
- "Charles Chultz", 35,
+ "Charles Schulz", 35,
  "John Lennon", 24,
  "Ray Charles", 10,
  "Marilyn Monroe",8,
- "Johny Cash",8,
- "J.R.R. Tolkein", 7,
+ "Johnny Cash",8,
+ "J.R.R. Tolkien", 7,
  "George Harrison", 7,
  "Bob Marley",7,
  "Albert Einstein" ,20,
- "And Wharhol",19
+ "Andy Warhol",19
 )
 
 gt(Dinero_Artista)
@@ -1378,13 +1380,13 @@ gt(Dinero_Artista)
 
 ***
 
-### La catidad de personas fallecidos en acidentes de carro en año especifico en los 50 estados.
+### La cantidad de personas fallecidas en accidentes de carro en un año específico en los 50 estados
 
-### Calcular el rango, varianza, desviación estandard y error estandard
+### Calcular el rango, la varianza, la desviación estándar y el error estándar
 ### Haz un histograma de estos datos
 
 
-```{r}
+```{r apx-74}
 Fallecidos_Carro=tribble(
   ~Fallecidos,
   778,309,1110,324,705,1067,826,76,205,152,218,492,
@@ -1405,7 +1407,7 @@ gt(Fallecidos_Carro)
 
 
 
-```{r, one}
+```{r apx-75}
 library(gt)
 library(tidyverse)
 ```
@@ -1420,14 +1422,14 @@ library(tidyverse)
 
 ### Buscar la metadata
 
-```{r, two}
+```{r apx-76}
 codes<-read.csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-codebook.csv')
 ```
 
 ***
 ### Visualizar la meta data
 
-```{r, three}
+```{r apx-77}
 gt(codes)
 ```
 
@@ -1435,7 +1437,7 @@ gt(codes)
 
 ### Buscar los datos
 
-```{r, four}
+```{r apx-78}
 #mydat<- read.csv('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv')
 
 
@@ -1449,7 +1451,7 @@ mydat <- read_excel("Data_files_csv/owid-covid-data.xlsx")
 
 
 
-```{r, five}
+```{r apx-79}
 
 
 head(mydat, 4)
@@ -1461,7 +1463,7 @@ Seleccionar las variables y filtrar los datos para hacer un subgrupo con datos s
 
 
 
-```{r, six}
+```{r apx-80}
 df1=mydat %>%
   dplyr::select(location,date, total_cases, new_cases, life_expectancy)%>%
   filter(location == "Puerto Rico") %>%
@@ -1476,7 +1478,7 @@ df1=mydat %>%
 
 ### Ver el nombre de todos los paises incluido en el archivo
 
-```{r, seven}
+```{r apx-81}
 unique(mydat$location)  # la función "unique" es para saber los valores únicos un una columna
 ```
 ***
@@ -1508,7 +1510,7 @@ Calcula los siguientes parámetros de números de nuevos casos de COVID-19 por d
 
 Selecciona otro país del Caribe y calcula los mismo parámetros
 
-```{r, eight}
+```{r apx-82}
 mydat%>%
   dplyr::select(location,date, total_cases, new_cases, life_expectancy)%>%
   filter(location %in% c("Puerto Rico", "Cuba"))%>%
@@ -1518,7 +1520,7 @@ mydat%>%
 ***
 
 
-```{r, nine}
+```{r apx-83}
 library(statip)
 
 mydat %>%
@@ -1537,7 +1539,7 @@ mydat %>%
 
 
 
-```{r, ten}
+```{r apx-84}
 mydat%>%
   dplyr::select(location,date, total_cases, new_cases, life_expectancy)%>%
   filter(location %in% c("Puerto Rico", "Cuba", "Jamaica", "Costa Rica", "Haiti", "Bahamas"))%>%
@@ -1576,21 +1578,21 @@ cuantiles
 a. Comparando los valores de los dos países considerando la biología de COVID-19 y la diferencias entre estos dos países.  Discute porque cree que hay similitud o diferencia en los parámetros. (4 puntos)
 
 
-Discutir y comparar los datos.  En el pais #1 se observó un promedio diario de xx casos nuevos por dia y el pais #2 se observo tal cantidad.  La mediana en los dos paises eran similar/ diferentes ....., de los valores.  Tanto la desviación estándar y los cuantiles eran más grande en el pais 1 versus el pais 2.   
+Discutir y comparar los datos. En el país #1 se observó un promedio diario de xx casos nuevos por día, y en el país #2 tal cantidad. La mediana en los dos países era similar/diferente. Tanto la desviación estándar como los cuantiles eran más grandes en el país 1 que en el país 2.
 
 Uno ejemplos de temas que se podría haber tomado encuenta
 
 - tamaño poblacional
 - la fecha de cuando comenzó la pandemía en los países
 - la conexión social 
-- la reacción del gobierno a imponer o no componentes sociales a reducir el proceso de contagiosos
+- la reacción del gobierno al imponer o no medidas sociales para reducir el contagio
 - la densidad poblacional
 - la educación de la población
 - el respeto de la población a las reglas impuesto del gobierno
 - la importancia del turismo exterior y interior (movimiento espacial de la gente). 
   
 
-b. Qué otros parámetros pudiese ser considerando en los análisis que no fue tomado en cuenta para entender la biología de propagación este virus.  (1 puntos)
+b. ¿Qué otros parámetros podrían haberse considerado en los análisis y no se tomaron en cuenta para entender la biología de la propagación de este virus? (1 punto)
 
 
 Aquí se debería haber discutido componentes sociales que podría explicar como se propaga el virus.  
@@ -1606,18 +1608,18 @@ Aquí se debería haber discutido componentes sociales que podría explicar como
 
 ### Capitulo 7 
 
-Los ejercicio provienen del Capitulo 7 del libro de la clase Havel et al 2019.  Introductory Biological Ststistics, 4th Edition, Waveland Press, Inc. Long Grove, Illinois. 
+Los ejercicios provienen del Capítulo 7 del libro de la clase, Havel et al. 2019. Introductory Biological Statistics, 4th Edition, Waveland Press, Inc. Long Grove, Illinois.
 
 ### Ejericico de Práctica (no para someter)
 
-Los ejercicio de 7.1 al 7.13. son para practicar. Se encuentra las respuestas al final del libro.
+Los ejercicios del 7.1 al 7.13 son para practicar. Las respuestas se encuentran al final del libro.
 
 
 ### Ejercicio para someter. 
 
-Ud. someterán los las repuestas a los siguientes ejercicios en un documento .html. 
+Ustedes someterán las respuestas a los siguientes ejercicios en un documento .html.
 
- - Para cada ejercicio siempre tiene que aclarar cual son las hipótesis nula y alterna. 
+ - Para cada ejercicio siempre tienes que aclarar cuáles son las hipótesis nula y alterna.
  - Tiene que explicar el concepto biológico si la pregunta menciona uno.  
  - Enseñar los cálculos/script para hacer los análisis. 
  - Interpretar los resultados basado en la pregunta que se hace en el ejercicio.  
@@ -1664,7 +1666,7 @@ Los siguientes datos son de R. L. Tremblay. Estos datos no se pueden usar para p
 
 ## NOAA, USA.gov
 
-Los siguientes datos provienen del "National Weather sservice" en este enlace, https://w2.weather.gov/climate/xmacis.php?wfo=pafc
+Los siguientes datos provienen del "National Weather Service" en este enlace: https://w2.weather.gov/climate/xmacis.php?wfo=pafc
 
 2. [Anchorage_ALASKA](Data/Anchorage_ALASKA.csv)
 
@@ -1703,7 +1705,7 @@ Los datos provienen de un estudio realizado por Mary N. Karn and L. S. Penrose p
 
 Los siguientes archivos son de John E. Havel, Raymond E. Hampton y Scott J. Meiners (2019).
 
->> Agredezco a John E. Havel para el permiso de añadir los archivos de datos en este website, Jul 25th, 2020. 
+>> Agradezco a John E. Havel por el permiso de añadir los archivos de datos en este sitio web, 25 de julio de 2020.
 
 
 Lista de archivos por capítulo

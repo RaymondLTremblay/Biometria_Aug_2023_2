@@ -216,7 +216,21 @@
 <div class="definicion">
 <p><strong>Regresión lineal simple.</strong> Modelo que describe la relación <em>lineal</em> entre una variable predictora (<span class="math inline">\(x\)</span>) y una variable de respuesta (<span class="math inline">\(y\)</span>) mediante una recta, <span class="math inline">\(y=\beta_0+\beta_1 x\)</span>. A diferencia de la correlación (que solo mide la fuerza de la asociación), la regresión permite <strong>predecir</strong> el valor de <span class="math inline">\(y\)</span> a partir de <span class="math inline">\(x\)</span>.</p>
 </div>
+<div class="historia">
+<p>El método de <strong>mínimos cuadrados</strong> para ajustar una recta fue publicado por <strong>Adrien-Marie Legendre</strong> (1805) y <strong>Carl Friedrich Gauss</strong> (quien afirmó haberlo usado desde antes). El término <em>regresión</em> lo introdujo <strong>Francis Galton</strong> en 1886, al observar que los hijos de padres muy altos tendían a “regresar” hacia la estatura promedio (la <em>regresión a la media</em>).</p>
+</div>
 <p>Cómo hacer una regresión lineal (Linear Regression) simple, usando la función <strong>lm()</strong> (de “linear model” = modelo lineal). Una regresión necesita dos variables continuas (vea el módulo de correlación). Es importante que estas variables tengan una distribución normal. La diferencia entre una correlación y una regresión es que la primera es un análisis que describe el patrón, mientras que la segunda no solamente describe el patrón, sino que también hace predicciones sobre la relación entre las variables. Usando la regresión uno calcula también una línea que describe la relación entre las variables. Esta línea se puede describir como <span class="math inline">\(y=mx+b\)</span>, donde la <strong>m</strong> representa la pendiente y la <em>b</em> representa el intercepto. También la pueden ver en los libros de la siguiente forma: <span class="math inline">\(y=\alpha+\beta x\)</span>, donde <span class="math inline">\(\beta\)</span> (<em>beta</em>) representa la pendiente y <span class="math inline">\(\alpha\)</span> el intercepto.</p>
+<div class="funcion">
+<p><strong><code>lm(y ~ x, data)</code></strong> — ajusta un modelo lineal (regresión).</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> estima la recta que mejor predice <code>y</code> a partir de <code>x</code> (por mínimos cuadrados) y guarda el modelo en un objeto que se resume con <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> o <code><a href="https://strengejacke.github.io/sjPlot/reference/tab_model.html">tab_model()</a></code>.</li>
+<li>
+<strong>Interfaz de fórmula:</strong> <code>y ~ x</code>; para varias predictoras, <code>y ~ x1 + x2</code>.</li>
+<li>
+<strong>Cómo leer la salida:</strong> cada coeficiente trae un valor-p (¿es distinto de cero?); el <span class="math inline">\(R^2\)</span> indica qué proporción de la variación de <code>y</code> explica el modelo.</li>
+</ul>
+</div>
 <p>La fórmula de lm() se compone de lm(y ~ x, data = “df”). Nota la tilde <strong>~</strong>. Hay dos pruebas; la primera para determinar si <span class="math inline">\(\alpha\)</span> (el intercepto) es distinto de cero. La hipótesis nula es:</p>
 <p>Ho: el intercepto <span class="math inline">\(\alpha\)</span> es igual a cero.<br>
 Ha: el intercepto <span class="math inline">\(\alpha\)</span> no es igual a cero. Entonces, el punto donde la línea corta el eje puede estar por encima o por debajo de cero.</p>
@@ -601,6 +615,15 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_segment.html">geom_segment</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x<span class="op">=</span><span class="fl">0</span>, y<span class="op">=</span><span class="fl">150</span>, xend<span class="op">=</span><span class="fl">2250</span>, yend<span class="op">=</span><span class="fl">320</span><span class="op">)</span>, colour<span class="op">=</span><span class="st">"purple"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="BioEstadistica_files/figure-html/c18-11-1.png" alt="" width="672"></div>
 <p>El modelo lineal con la función <strong>lm()</strong>. ¿Cómo interpretas los coeficientes? ¿Son significativos? ¿Se rechaza la hipótesis nula?</p>
+<div class="funcion">
+<p><strong><code>tab_model(modelo)</code></strong> (paquete <strong>sjPlot</strong>) — tabla de resultados con formato.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> presenta los coeficientes del modelo (<code>lm</code> o <code>glm</code>) en una tabla HTML ordenada, con sus intervalos de confianza, valores-p y el <span class="math inline">\(R^2\)</span>.</li>
+<li>
+<strong>Alternativa:</strong> <code>summary(modelo)</code> muestra la misma información en texto plano.</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb621"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://strengejacke.github.io/sjPlot/">sjPlot</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">Album_Sales_1_new</span><span class="op">)</span></span></code></pre></div>
@@ -749,6 +772,15 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <strong>Observaciones influyentes:</strong> en el cuarto gráfico, evaluar si hay valores que tienen mucho peso sobre el modelo según se incluyan o no en el análisis (distancia de Cook).</li>
 </ol>
 </div>
+<div class="funcion">
+<p><strong><code>plot(modelo)</code></strong> — gráficos de diagnóstico de un modelo lineal.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> produce cuatro gráficos para revisar los supuestos: (1) residuales vs. ajustados (igualdad de varianza), (2) Q-Q de los residuales (normalidad), (3) escala-localización y (4) residuales vs. influencia (distancia de Cook).</li>
+<li>
+<strong>Cómo usar:</strong> ejecútalo después de <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> y revisa que no haya patrones claros ni puntos muy influyentes.</li>
+</ul>
+</div>
 <p>En el presente gráfico hay tres valores que hay que evaluar (1, 42, 169); hay que asegurarse de que estos valores son correctos. Siempre es bueno reevaluar el análisis con y sin los valores sesgados para observar cuán diferentes son los resultados.</p>
 <div class="sourceCode" id="cb623"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">model1</span><span class="op">)</span>  <span class="co"># Evaluar los supuestos, 1. Igualdad de varianza, 2. Normalidad, 4. Datos sesgados (Cook's Distance)</span></span></code></pre></div>
@@ -760,6 +792,18 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <h2>
 <span class="header-section-number">18.5</span> Cook’s Distance<a class="anchor" aria-label="anchor" href="#cooks-distance"><i class="fas fa-link"></i></a>
 </h2>
+<div class="historia">
+<p>La distancia de Cook fue propuesta por el estadístico <strong>R. Dennis Cook</strong> en 1977. Mide cuánto cambian los resultados de la regresión si se elimina una observación, y sigue siendo la herramienta estándar para detectar puntos influyentes.</p>
+</div>
+<div class="funcion">
+<p><strong><code>cooks.distance(modelo)</code></strong> — distancia de Cook de cada observación.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> para cada punto, calcula cuánto influiría en la regresión si se eliminara.</li>
+<li>
+<strong>Cómo leer:</strong> valores altos señalan observaciones influyentes; reglas comunes son <span class="math inline">\(D_i &gt; 1\)</span> o <span class="math inline">\(D_i &gt; 4/n\)</span>.</li>
+</ul>
+</div>
 <p>Evaluar si hay valores que sesgan los resultados.</p>
 <p>Definición (basada en Wikipedia): los puntos con residuales grandes (atípicos) y/o alto apalancamiento (<em>leverage</em>) pueden distorsionar el resultado y la exactitud de una regresión. La distancia de Cook mide el efecto de eliminar una observación dada. Los puntos con una distancia de Cook grande merecen un examen más cuidadoso en el análisis.</p>
 <p><strong>Cómo detectar observaciones muy influyentes:</strong> hay diferentes opiniones sobre qué valores de corte usar. Una guía sencilla es <span class="math inline">\(D_i &gt; 1\)</span>. Otros sugieren usar <span class="math inline">\(D_i &gt; 4/n\)</span>, donde <span class="math inline">\(n\)</span> es el número de observaciones.</p>

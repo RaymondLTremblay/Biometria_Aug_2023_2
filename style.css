@@ -54,7 +54,7 @@ blockquote {
    CALLOUTS   —  uso:   ::: {.nota}  texto  :::
    ============================================================ */
 div.nota, div.consejo, div.advertencia, div.peligro, div.historia,
-div.definicion, div.formula, div.supuestos, div.interpretacion {
+div.definicion, div.formula, div.supuestos, div.interpretacion, div.funcion {
   border-radius: 6px;
   padding: .8rem 1rem;
   margin: 1.2rem 0;
@@ -63,7 +63,8 @@ div.definicion, div.formula, div.supuestos, div.interpretacion {
 }
 div.nota::before, div.consejo::before, div.advertencia::before,
 div.peligro::before, div.historia::before, div.definicion::before,
-div.formula::before, div.supuestos::before, div.interpretacion::before {
+div.formula::before, div.supuestos::before, div.interpretacion::before,
+div.funcion::before {
   display: block;
   font-weight: 700;
   margin-bottom: .35rem;
@@ -105,6 +106,11 @@ div.supuestos::before { content:"📋 SUPUESTOS"; color:#556130; }
 /* Interpretación (cómo leer el resultado) */
 div.interpretacion         { border-left-color:var(--oro); background:#fbf3df; }
 div.interpretacion::before { content:"🔎 INTERPRETACIÓN"; color:#9a7413; }
+
+/* Función en R (qué hace / argumentos / cómo leer la salida) */
+div.funcion         { border-left-color:#0e7490; background:#e9f5f8; }
+div.funcion::before { content:"⚙️ FUNCIÓN EN R"; color:#0b5a70; }
+div.funcion code    { background:#dceef3; color:#0b5a70; }
 
 /* ============================================================
    Banner de portada (uso: ::: {.banner-cover} ... :::)

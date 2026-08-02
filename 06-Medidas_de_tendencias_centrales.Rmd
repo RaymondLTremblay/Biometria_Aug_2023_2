@@ -40,12 +40,23 @@ Las medidas de tendencia central se llaman así porque su valor tiende a ubicars
 
 ::: {.definicion}
 El **promedio** (media) es la suma de los valores dividida entre $n$. La **mediana** es el valor central de los datos ordenados. La **moda** es el valor que aparece con más frecuencia.
+
+::: {.historia}
+El **promedio aritmético** se usa desde la antigüedad, pero se volvió central en la ciencia con **Gauss** y **Laplace** al promediar mediciones astronómicas. El término **mediana** lo popularizó **Francis Galton** en 1881 como una medida robusta del centro.
+:::
 :::
 
 
 ***
 
 ## Calculando el promedio
+
+::: {.funcion}
+**`mean(x)`** — promedio aritmético.
+
+- **Qué hace:** suma los valores de `x` y los divide entre la cantidad de datos.
+- **Cuidado:** es sensible a los valores atípicos; si hay `NA`, usa `mean(x, na.rm = TRUE)`.
+:::
 
 Aquí creamos una lista de datos con la función **c( )** y con la función **mean** podemos calcular el promedio.   El promedio es la suma de los valores dividida por la cantidad de valores en la lista.  
 $$\bar{x}=\frac{\sum_{i=1}^{n}x_i}n$$
@@ -83,6 +94,13 @@ mean(x)
 ***
 
 ## La mediana
+
+::: {.funcion}
+**`median(x)`** — mediana.
+
+- **Qué hace:** ordena los datos y devuelve el valor central (o el promedio de los dos centrales si `n` es par).
+- **Ventaja:** es **robusta** a los valores atípicos, por eso describe mejor el centro en distribuciones sesgadas.
+:::
 
 ## Con **n** impares
 Cuando el promedio no es un índice adecuado de la tendencia central tenemos dos alternativas: la mediana y la moda.  La mediana es el valor en el centro después de haber organizado los datos del más pequeño al más grande.  

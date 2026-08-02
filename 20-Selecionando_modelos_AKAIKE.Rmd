@@ -114,6 +114,10 @@ Tabla de métodos comunes para selección de modelos
 
 En la siguiente tabla mencionamos cinco métodos de selección de modelos. El primero en desarrollarse fue el **Criterio de Información de Akaike (AIC)**, y es el más utilizado por ser el más conocido. Pero hay muchos otros que no se mencionan aquí, como el Factor de Bayes y el $C_p$ de Mallows. Puedes encontrar más información en el siguiente enlace:
 
+::: {.historia}
+El **Criterio de Información de Akaike (AIC)** fue propuesto por el estadístico japonés **Hirotugu Akaike** en 1973. Conecta la selección de modelos con la **información de Kullback-Leibler** (Solomon Kullback y Richard Leibler, 1951), una medida de cuánta información se "pierde" al aproximar la realidad con un modelo. El criterio de Schwarz (**BIC**) lo propuso **Gideon Schwarz** en 1978.
+:::
+
 <https://en.wikipedia.org/wiki/Model_selection#Criteria>
 
 | Selección de modelos | Fórmula | Criterio de selección |
@@ -278,7 +282,15 @@ set_bottom_border(row = 4, col = everywhere, value = 1) %>%
 set_caption("Criterios de Selección de Modelos")
 ```
 
-Con la función **dredge** del paquete **MuMIn** podemos evaluar todas las combinaciones de modelos
+Con la función **dredge** del paquete **MuMIn** podemos evaluar todas las combinaciones de modelos.
+
+::: {.funcion}
+**`dredge(modelo, rank = "AIC")`** (paquete **MuMIn**) — compara todas las combinaciones de predictoras.
+
+- **Qué hace:** a partir de un modelo "completo", ajusta todos los submodelos posibles y los ordena por AIC (o BIC).
+- **Requisito:** antes hay que fijar `options(na.action = "na.fail")`.
+- **Cómo leer:** cada fila es un modelo (los mejores arriba, con menor AICc); la columna `delta` es $\Delta_i$ y `weight` es el peso de Akaike.
+:::
 
 ```{r c20-13}
 library(MASS)
@@ -312,6 +324,14 @@ formattable(ALL_models, digits=4, format="html")
 ### Seleccionar los modelos 
 
 Seleccionar los modelos que tienen un delta AICc menor de 2 y calcular el promedio de los coeficientes de esos modelos. Nota el conjunto de coeficientes bajo **subset**: estos son los coeficientes de las variables del conjunto de modelos que tienen un delta AICc menor de 2.
+
+::: {.funcion}
+**`get.models(...)`** y **`model.avg(...)`** (paquete **MuMIn**) — promedio de modelos.
+
+- **`get.models(ALL_models, subset = delta < 2)`:** extrae los mejores modelos (los que están a menos de 2 unidades de AIC del mejor).
+- **`model.avg(...)`:** promedia sus coeficientes, ponderados por el peso de Akaike, cuando ningún modelo domina claramente.
+- **Cómo leer:** los coeficientes bajo *subset* son el promedio de las variables presentes en el conjunto de mejores modelos.
+:::
 ```{r c20-15}
 
 # calculate the model average 

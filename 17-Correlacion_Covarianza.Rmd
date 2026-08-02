@@ -153,6 +153,10 @@ Como en la mayoría de los casos las variables se miden en escalas diferentes, t
 
 ### El más común es el coeficiente de correlación producto-momento de Pearson
 
+::: {.historia}
+La idea de correlación surgió con **Francis Galton** en la década de 1880, estudiando la herencia de rasgos como la estatura. Su discípulo **Karl Pearson** le dio su forma matemática moderna (el coeficiente *r*) en los años 1890; por eso se llama coeficiente "producto-momento de Pearson".
+:::
+
 $$r=\frac { cov(x,y) }{ { s }_{ x }{ s }_{ y } } =\frac { \sum { ({ x }_{ i }-\bar { x })({ y }_{ i }-\bar { y }) }  }{ (n-1)\, { s }_{ x }{ s }_{ y } }$$
 
 
@@ -161,6 +165,14 @@ $$r=\frac { cov(x,y) }{ { s }_{ x }{ s }_{ y } } =\frac { \sum { ({ x }_{ i }-\b
 La función para calcular el coeficiente de correlación es **cor()**.
 
 La función para determinar si la correlación entre las 2 variables es significativa (es decir, diferente de cero) es **cor.test()**.
+
+::: {.funcion}
+**`cor(x, y)`** y **`cor.test(x, y)`** — correlación entre dos variables.
+
+- **`cor(x, y)`:** devuelve solo el coeficiente de correlación *r* (entre −1 y 1).
+- **`cor.test(x, y)`:** además prueba si *r* es significativamente distinto de cero (da un valor-p y un intervalo de confianza).
+- **Argumento `method`:** `"pearson"` (por defecto), `"spearman"` o `"kendall"` para las versiones de rango.
+:::
   
 ```{r c17-10, warning=FALSE}
 r=cor(df$x_val, df$y_val)
@@ -231,6 +243,14 @@ include_graphics(img3_path)
 Aquí hay un gráfico muy útil que produce las figuras y la mayor parte del análisis de una sola vez.
 Con el paquete GGally, si omites "ggplot2::aes(colour=Gender)", la figura será en blanco y negro y no estará separada por género.
 
+::: {.funcion}
+**`ggpairs(datos)`** (paquete **GGally**) — matriz de gráficos de correlación.
+
+- **Qué hace:** para varias variables a la vez, muestra en una sola figura los diagramas de dispersión, las distribuciones y los coeficientes de correlación de todos los pares.
+- **Opción útil:** `ggplot2::aes(colour = grupo)` separa todo por un factor.
+- **Consejo:** selecciona solo las columnas numéricas de interés (p. ej. `datos[, c(2:5)]`).
+:::
+
  
 
 ```{r c17-13, warning=FALSE, message=FALSE}
@@ -272,6 +292,14 @@ names(Lep)
 
 Una tabla de los coeficientes de correlación
 
+::: {.funcion}
+**`rcorr(as.matrix(datos))`** (paquete **Hmisc**) — tabla de correlaciones con valores-p.
+
+- **Qué hace:** calcula la matriz de correlaciones de todas las variables **y** una matriz con sus valores-p.
+- **Requisito:** la entrada debe ser una **matriz** numérica (por eso se usa `as.matrix()`).
+- **Argumento `type`:** `"pearson"` o `"spearman"`.
+:::
+
 ```{r c17-16, warning=FALSE}
 library(Hmisc)
 rcorr(as.matrix(examData[,c("Exam","Anxiety","Revise")]))
@@ -288,6 +316,10 @@ Cuando los datos no cumplen con el supuesto de normalidad, hay que usar Spearman
 
 ::: {.consejo}
 Spearman y Kendall son correlaciones **de rango** (usan el orden de los datos, no sus valores), por lo que son robustas ante la no-normalidad y los valores atípicos. Kendall suele preferirse cuando el tamaño de muestra es pequeño o hay muchos empates.
+:::
+
+::: {.historia}
+La correlación de rangos fue propuesta por el psicólogo **Charles Spearman** en 1904. La *tau* (τ) fue desarrollada por **Maurice Kendall** en 1938. Ambas trabajan con el orden (rango) de los datos en lugar de sus valores, lo que las hace robustas a la no-normalidad y a los valores atípicos.
 :::
 
 Elige el conjunto de datos "The Biggest Liar.csv", un concurso que ocurre cada año en un pub.
@@ -330,6 +362,10 @@ cor(liarData$Position, liarData$Creativity, method = "kendall")
 
 ### Correlación por bootstrap
 
+::: {.historia}
+El *bootstrap* fue introducido por **Bradley Efron** en 1979. Es una idea propia de la era de las computadoras: en lugar de depender de fórmulas teóricas, **remuestrea** los propios datos miles de veces (con reemplazo) para estimar la incertidumbre de un estadístico. Requiere poder de cómputo, por eso no era práctico antes.
+:::
+
 Con el bootstrap no hay necesidad de hacer supuestos sobre la distribución: puedes dejar que los datos hablen por sí mismos y construir el coeficiente de correlación y su intervalo de confianza de 95%.
 
 Primero creamos una función:
@@ -341,6 +377,14 @@ bootTau=function(liarData,i)cor(liarData$Position[i],liarData$Creativity[i],
 
 
 Luego se llama y se ejecuta la función:
+
+::: {.funcion}
+**`boot(datos, statistic, R)`** y **`boot.ci(objeto)`** (paquete **boot**) — bootstrap.
+
+- **`boot()`:** repite el cálculo de un estadístico `R` veces sobre remuestras de los datos (aquí R = 1000); necesita una función que reciba los datos y un índice `i`.
+- **`boot.ci()`:** calcula el intervalo de confianza (95%) a partir de esas repeticiones.
+- **Ventaja:** no asume ninguna distribución teórica; deja que los datos "hablen".
+:::
 
 ```{r c17-20, eval=FALSE}
 library(boot)

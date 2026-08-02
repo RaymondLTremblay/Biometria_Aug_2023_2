@@ -144,6 +144,9 @@ estos cálculos.</p>
 <div class="definicion">
 <p><strong>ANOVA (Análisis de Varianza).</strong> Prueba que compara los promedios de 3 o más grupos analizando cómo se reparte la variabilidad total: la variabilidad <em>entre</em> grupos frente a la variabilidad <em>dentro</em> de los grupos. Si la variabilidad entre grupos es grande en relación con la de dentro (un valor de <em>F</em> grande), se rechaza la hipótesis nula de que todos los promedios son iguales.</p>
 </div>
+<div class="historia">
+<p>El análisis de varianza fue desarrollado por <strong>Ronald A. Fisher</strong> en los años 1920, mientras trabajaba en la estación agrícola de <strong>Rothamsted</strong> (Inglaterra) analizando experimentos de cultivos. La distribución que usa la prueba se llama <strong>F</strong> en su honor, nombre propuesto por <strong>George Snedecor</strong>. Fisher introdujo aquí conceptos hoy centrales: la aleatorización, el bloqueo y el diseño experimental.</p>
+</div>
 <p>Primero hay que explicar porque es necesario ANOVA y no hacer múltiples
 prueba de t. Recuerda que típicamente rechazamos la hipótesis nula
 cuando el valor de p es menor de 0.05, el tipo de error I. Cada vez
@@ -735,8 +738,19 @@ tendríamos 3 líneas.
 <h2>
 <span class="header-section-number">16.15</span> La prueba de ANOVA<a class="anchor" aria-label="anchor" href="#la-prueba-de-anova"><i class="fas fa-link"></i></a>
 </h2>
-<p>Finalmente llegamos a la prueba de ANOVA; se usa la función <strong>aov()</strong>.
-En la primera línea vemos el resultado de comparar los tres lagos. Vemos
+<p>Finalmente llegamos a la prueba de ANOVA; se usa la función <strong>aov()</strong>.</p>
+<div class="funcion">
+<p><strong><code>aov(y ~ grupo, data)</code></strong> — ajusta un modelo de análisis de varianza.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> compara los promedios de la variable <code>y</code> entre los niveles de <code>grupo</code> y guarda el modelo en un objeto que luego se resume con <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>.</li>
+<li>
+<strong>Cómo leer la salida:</strong> en la fila del factor mira el valor-p (<code>Pr(&gt;F)</code>); si es &lt; 0.05, al menos un grupo difiere. Los grados de libertad del factor son k − 1 (número de grupos menos uno).</li>
+<li>
+<strong>Después:</strong> usa <code>plot(modelo)</code> para revisar los supuestos y una prueba post-hoc si se rechaza la Ho.</li>
+</ul>
+</div>
+<p>En la primera línea vemos el resultado de comparar los tres lagos. Vemos
 que hay 2 grados de libertad (df=2), lo que quiere decir que están incluidos
 3 grupos en el análisis, porque el grado de libertad se calcula como
 la cantidad de grupos menos uno (k-1), y en este ejercicio tenemos 3-1=2. En
@@ -807,6 +821,9 @@ pruebas.</p>
 <h2>
 <span class="header-section-number">16.17</span> Prueba de Bonferroni<a class="anchor" aria-label="anchor" href="#prueba-de-bonferroni"><i class="fas fa-link"></i></a>
 </h2>
+<div class="historia">
+<p>El ajuste de Bonferroni toma su nombre de <strong>Carlo Emilio Bonferroni</strong> (matemático italiano, 1892–1960), por las desigualdades de probabilidad que publicó en los años 1930. Es el método más sencillo —y más conservador— para corregir por comparaciones múltiples.</p>
+</div>
 <p>Vemos ahora que se hicieron 3 pruebas, y cada una tiene un valor de p menor
 de 5%; por consiguiente, cada grupo es distinto de los otros.</p>
 <div class="sourceCode" id="cb552"><pre class="downlit sourceCode r">
@@ -821,11 +838,34 @@ de 5%; por consiguiente, cada grupo es distinto de los otros.</p>
 ## Guineo   6.6e-07 0.00022 
 ## 
 ## P value adjustment method: bonferroni</code></pre>
+<div class="funcion">
+<p><strong><code>pairwise.t.test(y, grupo, p.adjust.method = "bonferroni")</code></strong> — comparaciones post-hoc por pares.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> hace una prueba de <em>t</em> entre cada par de grupos y <strong>ajusta</strong> los valores-p para controlar el error de tipo I por el número de comparaciones.</li>
+<li>
+<strong>Argumento clave:</strong> <code>p.adjust.method</code> (aquí <code>"bonferroni"</code>; también <code>"holm"</code>, <code>"BH"</code>, etc.).</li>
+<li>
+<strong>Cómo leer:</strong> la salida es una matriz de valores-p; cada par con p &lt; 0.05 es significativamente diferente.</li>
+</ul>
+</div>
 </div>
 <div id="prueba-de-tukey" class="section level2" number="16.18">
 <h2>
 <span class="header-section-number">16.18</span> Prueba de Tukey<a class="anchor" aria-label="anchor" href="#prueba-de-tukey"><i class="fas fa-link"></i></a>
 </h2>
+<div class="historia">
+<p>La prueba “honestly significant difference” (HSD) fue creada por <strong>John W. Tukey</strong> en 1949. Tukey fue una figura enorme de la estadística del siglo XX: también acuñó los términos “bit” y “software” y popularizó el diagrama de caja (<em>boxplot</em>).</p>
+</div>
+<div class="funcion">
+<p><strong><code>glht(modelo, linfct = mcp(factor = "Tukey"))</code></strong> (paquete <strong>multcomp</strong>) — comparaciones múltiples de Tukey.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> compara todos los pares de grupos del modelo de ANOVA controlando el error global (Tukey HSD); se resume con <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code>.</li>
+<li>
+<strong>Cómo leer:</strong> cada fila es un par de grupos con su valor-p ajustado; p &lt; 0.05 indica diferencia significativa.</li>
+</ul>
+</div>
 <p>En la prueba de Tukey vemos el resultado de las pruebas Post-Hoc. El
 resultado es el mismo que el de la prueba anterior: cada grupo es
 significativamente diferente de los otros. En muchas ocasiones el resultado

@@ -226,6 +226,10 @@ La idea de que una hipótesis científica debe ser **falsable** proviene del fil
 
 ## Niveles de mediciones
 
+::: {.historia}
+La clasificación de las variables en escalas **nominal, ordinal, de intervalo y de razón** fue propuesta por el psicólogo **Stanley Smith Stevens** en 1946. Es una de las bases para decidir qué análisis estadístico es apropiado para cada tipo de dato.
+:::
+
 ### Variables continuas
 
 - Las variables con datos continuos:

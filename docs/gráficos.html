@@ -107,6 +107,20 @@
 <span class="header-section-number">9.1</span> Gráficos Básicos con ggplot2<a class="anchor" aria-label="anchor" href="#gr%C3%A1ficos-b%C3%A1sicos-con-ggplot2"><i class="fas fa-link"></i></a>
 </h2>
 <p>Este módulo es una introducción corta a la visualización de los datos. El paquete principal que se usa es <strong>ggplot2</strong>. La visualización de datos es un área especializada y no se le podrá hacer justicia al mismo tiempo que se estudia la estadística; aquí se presenta solo una introducción breve. La visualización ayuda a entender los datos, ya que su dispersión influye en qué prueba se puede utilizar y en el significado de los análisis.</p>
+<div class="historia">
+<p><strong>ggplot2</strong> implementa la <em>gramática de gráficos</em> (<em>Grammar of Graphics</em>), un marco conceptual propuesto por <strong>Leland Wilkinson</strong> en 1999. <strong>Hadley Wickham</strong> lo llevó a R en 2007, con la idea de construir cualquier gráfico por capas: datos + una estética (<code>aes</code>) + geometrías (<code>geom_*</code>). Hoy es uno de los paquetes más usados en R.</p>
+</div>
+<div class="funcion">
+<p><strong><code>ggplot(datos, aes(x, y)) + geom_*()</code></strong> — construye gráficos por capas.</p>
+<ul>
+<li>
+<strong><code>ggplot(datos, aes(...))</code>:</strong> define los datos y qué variable va en cada eje/estética (color, forma, etc.).</li>
+<li>
+<strong><code>+ geom_*()</code>:</strong> añade la geometría: <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> (puntos), <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code> (histograma), <code><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot()</a></code> (cajas), <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> (línea de tendencia), etc.</li>
+<li>
+<strong>Idea clave:</strong> las capas se <strong>suman</strong> con <code>+</code>, apilando elementos sobre el mismo gráfico.</li>
+</ul>
+</div>
 <p>La información utilizada en este documento proviene en parte del libro <em>Discovering Statistics using R</em> por Andy Field, Jeremy Miles y Zoë Field (2014).</p>
 </div>
 <div id="como-crear-una-gráfica-de-regresión-lineal-usando-ggplot" class="section level2" number="9.2">
@@ -199,6 +213,15 @@
 <h2>
 <span class="header-section-number">9.5</span> Salvar gráficos con <strong>ggsave</strong><a class="anchor" aria-label="anchor" href="#salvar-gr%C3%A1ficos-con-ggsave"><i class="fas fa-link"></i></a>
 </h2>
+<div class="funcion">
+<p><strong><code>ggsave("figura.png")</code></strong> — guarda un gráfico en un archivo.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> guarda el <strong>último</strong> gráfico dibujado; el formato lo determina la extensión (<code>.png</code>, <code>.jpeg</code>, <code>.pdf</code>, <code>.tiff</code>).</li>
+<li>
+<strong>Más control:</strong> guarda el gráfico en un objeto (<code>p &lt;- ggplot(...)</code>) y usa <code>ggsave("figura.png", plot = p, width = ..., height = ...)</code>.</li>
+</ul>
+</div>
 <p>Para guardar un gráfico y usarlo en otros programas o presentaciones (por ejemplo, <strong>MS PowerPoint</strong>) se usa la función <strong>ggsave()</strong>. Se pone entre comillas el nombre que se quiere dar a la figura y la extensión indica el tipo de archivo (por ejemplo .tiff, .png, .pdf). Nota que aquí se guarda en una carpeta llamada “Graficos”; esto no es necesario: si no la incluyes, se guardará en la carpeta del proyecto.</p>
 <div class="consejo">
 <p><code><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave()</a></code> guarda el <strong>último</strong> gráfico que se dibujó. Para más control, guarda el gráfico en un objeto (<code>p &lt;- ggplot(...)</code>) y luego usa <code>ggsave("figura.png", plot = p)</code>.</p>

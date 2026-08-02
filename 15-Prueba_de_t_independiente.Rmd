@@ -204,6 +204,10 @@ $${s}^{2}_p = \frac{(n_1-1){s}^{2}_1+(n_2-1){s}^{2}_2}{n_1+n_2-2}$$
 **Importante sobre R.** La fórmula anterior corresponde a la prueba de *t* clásica (de Student), que **asume varianzas iguales**. Sin embargo, la función `t.test()` en R usa por defecto la prueba de **Welch** (`var.equal = FALSE`), que NO asume varianzas iguales y ajusta los grados de libertad. Por eso los grados de libertad en la salida de R pueden no ser enteros. Si quieres la prueba clásica con la fórmula de arriba, usa `t.test(..., var.equal = TRUE)`.
 :::
 
+::: {.historia}
+La corrección para varianzas desiguales que R usa por defecto se debe a **Bernard Lewis Welch**, quien la propuso en 1947. Ajusta los grados de libertad para que la prueba siga siendo válida cuando los dos grupos tienen dispersiones distintas.
+:::
+
 ***
 
 
@@ -214,6 +218,14 @@ Mi primera prueba para comparar el promedio entre dos grupos.  Se usa la prueba 
 La estructura de la prueba es la siguiente (lo mínimo)
 
 t.test(variable_de_respuesta ~ variable_de_grupo, dataframe)
+
+::: {.funcion}
+**`t.test(y ~ grupo, data = ...)`** — prueba de *t* de dos grupos independientes.
+
+- **Qué hace:** compara el promedio de la variable de respuesta `y` entre los dos niveles de `grupo`.
+- **Interfaz de fórmula:** `y ~ grupo` se lee "`y` en función de `grupo`"; `data` es el data frame.
+- **Por defecto:** usa la prueba de **Welch** (`var.equal = FALSE`); añade `var.equal = TRUE` para la *t* clásica de varianzas iguales.
+:::
 
 La hipótesis nula:
  Ho: la distancia viajada por la gente de los dos municipios es igual (el valor de "p" será mayor de 0.05).
@@ -362,6 +374,14 @@ Nota la organización de la prueba, es como la de la t.test( )
 
 byf.shapiro(variable_de_respuesta ~ variable_de_grupo, dataframe)
 
+::: {.funcion}
+**`byf.shapiro(y ~ grupo, data)`** (paquete **RVAideMemoire**) — Shapiro-Wilk por grupo.
+
+- **Qué hace:** aplica la prueba de normalidad de Shapiro-Wilk a `y` dentro de **cada** grupo, de una sola vez.
+- **Por qué:** en la prueba de dos grupos la normalidad se evalúa por grupo, no sobre todos los datos juntos.
+- **Cómo leer:** da un valor-p por grupo; p > 0.05 en cada uno sugiere normalidad.
+:::
+
 
 ```{r c15-18}
 # de la librería de (RVAideMemoire)
@@ -404,6 +424,10 @@ Cuando los datos no cumplen con la igualdad de varianza se dice que los datos so
 
 ***
 
+::: {.historia}
+Las tres pruebas de igualdad de varianza llevan el nombre de sus autores: **Maurice S. Bartlett** (1937), **Howard Levene** (1960) y la de **Fligner-Killeen** (Michael Fligner y Timothy Killeen, 1976). Se pueden ordenar de menor a mayor robustez frente a la no-normalidad: Bartlett exige normalidad, Levene la tolera y Fligner-Killeen es la más robusta ante datos sesgados.
+:::
+
 ## La prueba de Bartlett 
 
 ```{r c15-19}
@@ -412,6 +436,14 @@ bartlett.test(dist_km~muni, data=viajes)
 
 ## Prueba de Levene para igualdad de Varianza
  - similar a la prueba de Bartlett
+
+::: {.funcion}
+**`leveneTest(y ~ grupo, data)`** (paquete **car**) — prueba de igualdad de varianzas de Levene.
+
+- **Qué hace:** prueba si la dispersión (varianza) es igual entre los grupos. `bartlett.test()` y `fligner.test()` usan la misma interfaz de fórmula.
+- **Hipótesis nula:** las varianzas de los grupos son iguales.
+- **Cómo leer:** p > 0.05 → no se rechaza la igualdad de varianzas (se cumple el supuesto).
+:::
 
 ```{r c15-20}
 

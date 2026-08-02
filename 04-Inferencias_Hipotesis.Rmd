@@ -102,6 +102,10 @@ El nivel de significancia $\alpha$ se elige **antes** de recolectar los datos, n
 
 ## Los errores de tipo I y tipo II
 
+::: {.historia}
+La forma moderna de probar hipótesis nació de dos escuelas que rivalizaron en los años 1920-1930. **Ronald A. Fisher** introdujo la **hipótesis nula** y el **valor-p** como medida de evidencia. **Jerzy Neyman** y **Egon Pearson** añadieron la **hipótesis alterna**, los **errores de tipo I y II**, el nivel $\alpha$ fijado de antemano y la **potencia**. Lo que hoy enseñamos es una síntesis (a veces incómoda) de ambos enfoques.
+:::
+
 Vea el módulo anterior.  
 
 

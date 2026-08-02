@@ -764,6 +764,9 @@ NA
 <hr>
 <p>Tabla de métodos comunes para selección de modelos</p>
 <p>En la siguiente tabla mencionamos cinco métodos de selección de modelos. El primero en desarrollarse fue el <strong>Criterio de Información de Akaike (AIC)</strong>, y es el más utilizado por ser el más conocido. Pero hay muchos otros que no se mencionan aquí, como el Factor de Bayes y el <span class="math inline">\(C_p\)</span> de Mallows. Puedes encontrar más información en el siguiente enlace:</p>
+<div class="historia">
+<p>El <strong>Criterio de Información de Akaike (AIC)</strong> fue propuesto por el estadístico japonés <strong>Hirotugu Akaike</strong> en 1973. Conecta la selección de modelos con la <strong>información de Kullback-Leibler</strong> (Solomon Kullback y Richard Leibler, 1951), una medida de cuánta información se “pierde” al aproximar la realidad con un modelo. El criterio de Schwarz (<strong>BIC</strong>) lo propuso <strong>Gideon Schwarz</strong> en 1978.</p>
+</div>
 <p><a href="https://en.wikipedia.org/wiki/Model_selection#Criteria" class="uri">https://en.wikipedia.org/wiki/Model_selection#Criteria</a></p>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -1070,7 +1073,18 @@ NA
 </tr>
 </tbody>
 </table></div>
-<p>Con la función <strong>dredge</strong> del paquete <strong>MuMIn</strong> podemos evaluar todas las combinaciones de modelos</p>
+<p>Con la función <strong>dredge</strong> del paquete <strong>MuMIn</strong> podemos evaluar todas las combinaciones de modelos.</p>
+<div class="funcion">
+<p><strong><code>dredge(modelo, rank = "AIC")</code></strong> (paquete <strong>MuMIn</strong>) — compara todas las combinaciones de predictoras.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> a partir de un modelo “completo”, ajusta todos los submodelos posibles y los ordena por AIC (o BIC).</li>
+<li>
+<strong>Requisito:</strong> antes hay que fijar <code>options(na.action = "na.fail")</code>.</li>
+<li>
+<strong>Cómo leer:</strong> cada fila es un modelo (los mejores arriba, con menor AICc); la columna <code>delta</code> es <span class="math inline">\(\Delta_i\)</span> y <code>weight</code> es el peso de Akaike.</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb719"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://www.stats.ox.ac.uk/pub/MASS4/">MASS</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">MuMIn</span><span class="op">)</span></span>
@@ -1804,6 +1818,17 @@ NA
 <span class="header-section-number">20.10.4</span> Seleccionar los modelos<a class="anchor" aria-label="anchor" href="#seleccionar-los-modelos"><i class="fas fa-link"></i></a>
 </h3>
 <p>Seleccionar los modelos que tienen un delta AICc menor de 2 y calcular el promedio de los coeficientes de esos modelos. Nota el conjunto de coeficientes bajo <strong>subset</strong>: estos son los coeficientes de las variables del conjunto de modelos que tienen un delta AICc menor de 2.</p>
+<div class="funcion">
+<p><strong><code>get.models(...)</code></strong> y <strong><code>model.avg(...)</code></strong> (paquete <strong>MuMIn</strong>) — promedio de modelos.</p>
+<ul>
+<li>
+<strong><code>get.models(ALL_models, subset = delta &lt; 2)</code>:</strong> extrae los mejores modelos (los que están a menos de 2 unidades de AIC del mejor).</li>
+<li>
+<strong><code>model.avg(...)</code>:</strong> promedia sus coeficientes, ponderados por el peso de Akaike, cuando ningún modelo domina claramente.</li>
+<li>
+<strong>Cómo leer:</strong> los coeficientes bajo <em>subset</em> son el promedio de las variables presentes en el conjunto de mejores modelos.</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb721"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># calculate the model average </span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/MuMIn/man/model.avg.html">model.avg</a></span><span class="op">(</span><span class="va">ALL_models</span>, subset <span class="op">=</span> <span class="va">delta</span> <span class="op">&lt;</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>

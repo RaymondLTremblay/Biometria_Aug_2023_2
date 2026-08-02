@@ -81,6 +81,10 @@ Cuando uno hace una investigación está buscando la "verdad"; en otras palabras
 
 ## Muestreos al azar
 
+::: {.historia}
+Un ejemplo clásico del peligro del muestreo sesgado es la encuesta de la revista **Literary Digest** en 1936: con 2.4 millones de respuestas predijo que Landon ganaría las elecciones de EE. UU., pero su muestra (tomada de listas de teléfonos y automóviles) sobrerrepresentaba a la gente rica. **George Gallup**, con una muestra mucho más pequeña pero **representativa**, predijo correctamente la victoria de Roosevelt. La lección: importa más *cómo* se toma la muestra que su tamaño.
+:::
+
 Una de las áreas de estudio importante es saber organizar un estudio para responder a unas preguntas y que no sea sesgado (en inglés "bias"). Cuando se seleccionan los datos necesitamos asegurar que los datos sean representativos de la población de interés, el $\mu$.   Si por ejemplo queremos saber el nivel de colesterol en la población de puertoriqueños que viven en Puerto Rico el diseño del muestreo tiene que tomar en cuenta ese grupo y la muestra tiene que representar ese grupo.  
 
 

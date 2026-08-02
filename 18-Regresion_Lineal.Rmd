@@ -84,7 +84,19 @@ pubs=pubs%>%
 **Regresión lineal simple.** Modelo que describe la relación *lineal* entre una variable predictora ($x$) y una variable de respuesta ($y$) mediante una recta, $y=\beta_0+\beta_1 x$. A diferencia de la correlación (que solo mide la fuerza de la asociación), la regresión permite **predecir** el valor de $y$ a partir de $x$.
 :::
 
+::: {.historia}
+El método de **mínimos cuadrados** para ajustar una recta fue publicado por **Adrien-Marie Legendre** (1805) y **Carl Friedrich Gauss** (quien afirmó haberlo usado desde antes). El término *regresión* lo introdujo **Francis Galton** en 1886, al observar que los hijos de padres muy altos tendían a "regresar" hacia la estatura promedio (la *regresión a la media*).
+:::
+
 Cómo hacer una regresión lineal (Linear Regression) simple, usando la función **lm()** (de "linear model" = modelo lineal). Una regresión necesita dos variables continuas (vea el módulo de correlación). Es importante que estas variables tengan una distribución normal. La diferencia entre una correlación y una regresión es que la primera es un análisis que describe el patrón, mientras que la segunda no solamente describe el patrón, sino que también hace predicciones sobre la relación entre las variables. Usando la regresión uno calcula también una línea que describe la relación entre las variables. Esta línea se puede describir como $y=mx+b$, donde la **m** representa la pendiente y la *b* representa el intercepto. También la pueden ver en los libros de la siguiente forma: $y=\alpha+\beta x$, donde $\beta$ (*beta*) representa la pendiente y $\alpha$ el intercepto.
+
+::: {.funcion}
+**`lm(y ~ x, data)`** — ajusta un modelo lineal (regresión).
+
+- **Qué hace:** estima la recta que mejor predice `y` a partir de `x` (por mínimos cuadrados) y guarda el modelo en un objeto que se resume con `summary()` o `tab_model()`.
+- **Interfaz de fórmula:** `y ~ x`; para varias predictoras, `y ~ x1 + x2`.
+- **Cómo leer la salida:** cada coeficiente trae un valor-p (¿es distinto de cero?); el $R^2$ indica qué proporción de la variación de `y` explica el modelo.
+:::
 
 La fórmula de lm() se compone de lm(y ~ x, data = "df"). Nota la tilde **~**. Hay dos pruebas; la primera para determinar si $\alpha$ (el intercepto) es distinto de cero. La hipótesis nula es:
 
@@ -231,6 +243,13 @@ ggplot(Album_Sales_1_new,aes(x=adverts, y=sales))+
 
 El modelo lineal con la función **lm()**. ¿Cómo interpretas los coeficientes? ¿Son significativos? ¿Se rechaza la hipótesis nula?
 
+::: {.funcion}
+**`tab_model(modelo)`** (paquete **sjPlot**) — tabla de resultados con formato.
+
+- **Qué hace:** presenta los coeficientes del modelo (`lm` o `glm`) en una tabla HTML ordenada, con sus intervalos de confianza, valores-p y el $R^2$.
+- **Alternativa:** `summary(modelo)` muestra la misma información en texto plano.
+:::
+
 ```{r c18-12}
 library(sjPlot)
 head(Album_Sales_1_new)
@@ -264,6 +283,13 @@ Los supuestos de la regresión lineal se evalúan con `plot(modelo)`:
 4. **Observaciones influyentes:** en el cuarto gráfico, evaluar si hay valores que tienen mucho peso sobre el modelo según se incluyan o no en el análisis (distancia de Cook).
 :::
 
+::: {.funcion}
+**`plot(modelo)`** — gráficos de diagnóstico de un modelo lineal.
+
+- **Qué hace:** produce cuatro gráficos para revisar los supuestos: (1) residuales vs. ajustados (igualdad de varianza), (2) Q-Q de los residuales (normalidad), (3) escala-localización y (4) residuales vs. influencia (distancia de Cook).
+- **Cómo usar:** ejecútalo después de `lm()` y revisa que no haya patrones claros ni puntos muy influyentes.
+:::
+
 En el presente gráfico hay tres valores que hay que evaluar (1, 42, 169); hay que asegurarse de que estos valores son correctos. Siempre es bueno reevaluar el análisis con y sin los valores sesgados para observar cuán diferentes son los resultados.
 
 ```{r c18-13}
@@ -273,6 +299,17 @@ plot(model1)  # Evaluar los supuestos, 1. Igualdad de varianza, 2. Normalidad, 4
 ------------------------------------------------------------------------
 
 ## Cook's Distance
+
+::: {.historia}
+La distancia de Cook fue propuesta por el estadístico **R. Dennis Cook** en 1977. Mide cuánto cambian los resultados de la regresión si se elimina una observación, y sigue siendo la herramienta estándar para detectar puntos influyentes.
+:::
+
+::: {.funcion}
+**`cooks.distance(modelo)`** — distancia de Cook de cada observación.
+
+- **Qué hace:** para cada punto, calcula cuánto influiría en la regresión si se eliminara.
+- **Cómo leer:** valores altos señalan observaciones influyentes; reglas comunes son $D_i > 1$ o $D_i > 4/n$.
+:::
 
 Evaluar si hay valores que sesgan los resultados.
 

@@ -127,7 +127,19 @@ ggplot(father.son, aes(fheight, sheight))+
 
 ## La prueba de t-pareado
 
+::: {.historia}
+La prueba pareada es una variante de la *t* de **Student** (Gosset, 1908). La idea de **emparejar** observaciones (medir al mismo individuo antes y después, o comparar unidades apareadas) es un principio de diseño experimental que **Ronald A. Fisher** formalizó en los años 1920 como *bloqueo* (*blocking*): al comparar dentro de cada par se elimina la variación entre individuos y la prueba gana poder.
+:::
+
 La prueba de t-con datos pareados es la misma que la prueba de t con un grupo, **t.test()**.  
+
+::: {.funcion}
+**`t.test(x, y, paired = TRUE)`** — prueba de *t* para datos pareados.
+
+- **Qué hace:** compara dos mediciones relacionadas (`x` e `y`) calculando la diferencia de cada par y probando si su promedio es cero.
+- **Argumento clave:** `paired = TRUE` es lo que la distingue de la prueba independiente; el orden de `x` e `y` determina el signo de la diferencia.
+- **Cómo leer la salida:** el valor-p indica si la diferencia promedio es significativa; el intervalo de confianza es el rango probable de esa diferencia.
+:::
 
 La hipótesis nula es que la diferencia entre los datos dependientes es igual a cero. La **d** se refiere a la diferencia entre los pares de datos.  Nota entonces que el análisis se hace evaluando si el promedio de las diferencias es igual a cero.  Nota que el valor de t es absoluto $\left|t\right|$, un valor negativo es igual que un valor positivo. 
 

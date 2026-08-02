@@ -62,6 +62,18 @@ colorize <- function(x, color) {
 
 Este módulo es una introducción corta a la visualización de los datos. El paquete principal que se usa es **ggplot2**. La visualización de datos es un área especializada y no se le podrá hacer justicia al mismo tiempo que se estudia la estadística; aquí se presenta solo una introducción breve. La visualización ayuda a entender los datos, ya que su dispersión influye en qué prueba se puede utilizar y en el significado de los análisis.
 
+::: {.historia}
+**ggplot2** implementa la *gramática de gráficos* (*Grammar of Graphics*), un marco conceptual propuesto por **Leland Wilkinson** en 1999. **Hadley Wickham** lo llevó a R en 2007, con la idea de construir cualquier gráfico por capas: datos + una estética (`aes`) + geometrías (`geom_*`). Hoy es uno de los paquetes más usados en R.
+:::
+
+::: {.funcion}
+**`ggplot(datos, aes(x, y)) + geom_*()`** — construye gráficos por capas.
+
+- **`ggplot(datos, aes(...))`:** define los datos y qué variable va en cada eje/estética (color, forma, etc.).
+- **`+ geom_*()`:** añade la geometría: `geom_point()` (puntos), `geom_histogram()` (histograma), `geom_boxplot()` (cajas), `geom_smooth()` (línea de tendencia), etc.
+- **Idea clave:** las capas se **suman** con `+`, apilando elementos sobre el mismo gráfico.
+:::
+
 La información utilizada en este documento proviene en parte del libro *Discovering Statistics using R* por Andy Field, Jeremy Miles y Zoë Field (2014).
 
 ## Como crear una gráfica de regresión lineal usando ggplot
@@ -131,6 +143,13 @@ ggplot(iris, aes(Sepal.Length, Petal.Length,colour=Species)) +
 ***
 
 ## Salvar gráficos con **ggsave**
+
+::: {.funcion}
+**`ggsave("figura.png")`** — guarda un gráfico en un archivo.
+
+- **Qué hace:** guarda el **último** gráfico dibujado; el formato lo determina la extensión (`.png`, `.jpeg`, `.pdf`, `.tiff`).
+- **Más control:** guarda el gráfico en un objeto (`p <- ggplot(...)`) y usa `ggsave("figura.png", plot = p, width = ..., height = ...)`.
+:::
 
 Para guardar un gráfico y usarlo en otros programas o presentaciones (por ejemplo, **MS PowerPoint**) se usa la función **ggsave()**. Se pone entre comillas el nombre que se quiere dar a la figura y la extensión indica el tipo de archivo (por ejemplo .tiff, .png, .pdf). Nota que aquí se guarda en una carpeta llamada "Graficos"; esto no es necesario: si no la incluyes, se guardará en la carpeta del proyecto.
 

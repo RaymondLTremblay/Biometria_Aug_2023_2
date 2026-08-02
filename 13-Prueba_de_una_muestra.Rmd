@@ -106,6 +106,10 @@ Lean estos dos ejercicios y consideren cuáles son los valores del universo, $\m
 
 Cuando queremos inferir información sobre el promedio o la desviación del universo a partir de un muestreo, hay que utilizar la distribución de *t*. La razón es que la forma de la distribución cambia con el tamaño de muestra cuando no sabemos cuál es la desviación estándar del universo. A medida que uno reduce el tamaño de muestra, la distribución se desvía de una distribución normal. Para tomar esto en cuenta no usamos la distribución normal, sino la distribución de *t*, también llamada la distribución *t* de Student.  
 
+::: {.historia}
+La distribución *t* fue publicada en 1908 por **William Sealy Gosset**, un químico y estadístico que trabajaba en la cervecería **Guinness** en Dublín. Como Guinness prohibía a sus empleados publicar, Gosset firmó con el seudónimo **"Student"**; por eso hoy se le llama la *t* de Student. La desarrolló para trabajar con las **muestras pequeñas** típicas del control de calidad de la cerveza.
+:::
+
 
 ```{r c13-7, include=FALSE}
 x <- seq(from=-5, to=5, by=0.1)
@@ -279,7 +283,15 @@ Queremos calcular el intervalo que incluye el 95%; por consiguiente, es el rango
 ## Los limites del intervalo
 
 
-Para calcular el intervalo se necesita solamente el valor de *t* con el tipo de error I del 5% (95% de confianza) que corresponde a un tamaño de muestra de 20, $t_{0.05,\ n-1}$. Para conocer este valor hay que ir a una tabla de la distribución de t (vea p. 217 en el libro) o usar R para calcular el valor.  En la tabla busca el error I deseado (0.05) y se busca el grado de libertad *n-1*, $t_{0.05,\ 19}$. El valor del libro es $t = 2.093$. Si se quisiera un tipo de error I de solamente 1%, el valor sería $t=2.8609$ (busca la información en la tabla o usa la función **qt()**).  
+Para calcular el intervalo se necesita solamente el valor de *t* con el tipo de error I del 5% (95% de confianza) que corresponde a un tamaño de muestra de 20, $t_{0.05,\ n-1}$. Para conocer este valor hay que ir a una tabla de la distribución de t (vea p. 217 en el libro) o usar R para calcular el valor.  En la tabla busca el error I deseado (0.05) y se busca el grado de libertad *n-1*, $t_{0.05,\ 19}$. El valor del libro es $t = 2.093$. Si se quisiera un tipo de error I de solamente 1%, el valor sería $t=2.8609$ (busca la información en la tabla o usa la función **qt()**).
+
+::: {.funcion}
+**`qt(p, df)`** — cuantil de la distribución *t* (el "valor crítico").
+
+- **Qué hace:** devuelve el valor de *t* que deja una probabilidad `p` acumulada a su izquierda, con `df` grados de libertad.
+- **Uso aquí:** `qt(0.025, 19)` da el valor crítico para una prueba de dos colas al 95% con 19 gl (por eso se usa 0.025 y su valor absoluto).
+- **Familia:** `dt` (densidad), `pt` (probabilidad acumulada) y `rt` (datos aleatorios).
+:::  
  
 ```{r c13-14}
 abs(qt(0.025, 19)) # nota que se usa la mitad de 0.05, por que es una prueba de dos lados. 
@@ -461,6 +473,14 @@ head(tips)
 ***
 
 Con la función **t.test()** es muy sencillo hacer la prueba; no hay que calcular a mano, solamente hay que añadir la información.  
+
+::: {.funcion}
+**`t.test(x, mu = ..., alternative = ...)`** — prueba de *t* de una muestra.
+
+- **Qué hace:** compara el promedio de la variable `x` con un valor de referencia `mu` (el de la hipótesis nula).
+- **Argumentos clave:** `mu` (valor a probar), `alternative` (`"two.sided"`, `"less"` o `"greater"`) y `conf.level` (nivel de confianza; 0.95 por defecto).
+- **Cómo leer la salida:** el valor-p indica si se rechaza la Ho; el intervalo de confianza da el rango probable del promedio real.
+:::
 
 Las opciones para esta prueba son las siguientes (en rojo)
 

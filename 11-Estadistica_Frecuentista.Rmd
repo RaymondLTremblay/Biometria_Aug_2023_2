@@ -77,6 +77,10 @@ library(gt) ## "Grammer of Tables", tablas más bonitas
 
 ## Gregory Mendel y sus guisantes
 
+::: {.historia}
+**Gregor Mendel**, un monje agustino, sentó las bases de la genética moderna con sus experimentos con guisantes (publicados en 1866). Las proporciones que predijo (como 3:1) son el ejemplo clásico para la prueba de bondad de ajuste, que compara las frecuencias observadas con las esperadas por una teoría.
+:::
+
 Gregor Mendel (1822–1884), el padre de la herencia "mendeliana", estaba interesado en determinar cómo se heredan las características de los organismos. En clases de biología y genética uno de los primeros ejemplos de herencia mendeliana es evaluar si cumple con lo que Mendel sugerió que es la razón de herencia. Si un fenotipo es heredado por un mecanismo sencillo de un gen con solamente dos alelos donde uno de los alelos es dominante y el otro es recesivo entonces hay solamente dos fenotipos posible. Por consecuencia lo más básico es determinar si la frecuencia de los fenotipos en una población sigue una razón mendeliana de 3:1, en otra palabra por cada 3 individuos de un fenotipo "x" hay un individuo del fenotipo "y".
 
 Los datos que usaremos provienen directamente de los trabajos de Mendel. Aquí está la publicación original en alemán y la referencia a la traducción en inglés.
@@ -104,6 +108,10 @@ En la pagina número 10 del articulo observamos los resultados de diferentes exp
 ------------------------------------------------------------------------
 
 ## Bondad de Ajuste.
+
+::: {.historia}
+La prueba de ji-cuadrado ($\chi^2$) fue creada por **Karl Pearson** en 1900 y es una de las primeras pruebas estadísticas formales de la historia. Sirvió de base para gran parte de la estadística moderna de frecuencias.
+:::
 
 ::: {.definicion}
 La prueba **ji-cuadrado ($\chi^2$)** compara las frecuencias **observadas** con las **esperadas** bajo la hipótesis nula. La **bondad de ajuste** compara una variable con proporciones teóricas; la **tabla de contingencia** evalúa si dos variables categóricas son independientes.
@@ -159,6 +167,14 @@ No hay ninguna razón de hacer los cálculos a mano si tenemos a R para hacerlo.
 ## Primer ejemplo
 
 Lo que uno observa es el valor de la prueba de Bondad de ajuste tiene un Chi Cuadrado de 0.48, p =.49. Como el valor de *p* es mayor a 0.05, no se rechaza la hipótesis nula y que la frecuencia no es diferente de una proporción de 3:1.
+
+::: {.funcion}
+**`chisq.test(x, p)`** — prueba de ji-cuadrado.
+
+- **Bondad de ajuste:** `x` es un vector de frecuencias observadas y `p` las proporciones esperadas por la teoría (deben sumar 1).
+- **Independencia:** si `x` es una tabla de contingencia (matriz), prueba si dos variables categóricas están asociadas.
+- **Cómo leer:** el valor-p indica si las frecuencias observadas se apartan de las esperadas; p < 0.05 → sí difieren.
+:::
 
 ```{r c11-6}
 obs<-c(45,12) # los valores observado
@@ -362,6 +378,13 @@ qchisq(.95,1 )
 ------------------------------------------------------------------------
 
 ## La función *CrossTable*
+
+::: {.funcion}
+**`CrossTable(tabla, chisq = TRUE, fisher = TRUE, expected = TRUE)`** (paquete **gmodels**).
+
+- **Qué hace:** para una tabla de contingencia, muestra las frecuencias observadas y esperadas y realiza las pruebas de ji-cuadrado y exacta de Fisher a la vez.
+- **Útil:** `expected = TRUE` permite ver si se cumple el supuesto de frecuencias esperadas ≥ 5.
+:::
 
 Con esta función se calcula el chi cuadrado con los valores esperados. Nota la leyenda al principio para poder entender la organización de los datos. El grado de liberta se calcula con la siguiente formula, el numero de filas -1 multiplicado por la cantidad de columnas -1, df= (R-1)(C-1). df = es para grado de libertad. Si tiene solamente 1 grado de libertad hay que usar el resultado de la prueba de **Yates de continuidad**, que hace una corrección para la poca cantidad de grados de libertad.
 

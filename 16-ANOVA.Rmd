@@ -83,6 +83,10 @@ estos cálculos.
 **ANOVA (Análisis de Varianza).** Prueba que compara los promedios de 3 o más grupos analizando cómo se reparte la variabilidad total: la variabilidad *entre* grupos frente a la variabilidad *dentro* de los grupos. Si la variabilidad entre grupos es grande en relación con la de dentro (un valor de *F* grande), se rechaza la hipótesis nula de que todos los promedios son iguales.
 :::
 
+::: {.historia}
+El análisis de varianza fue desarrollado por **Ronald A. Fisher** en los años 1920, mientras trabajaba en la estación agrícola de **Rothamsted** (Inglaterra) analizando experimentos de cultivos. La distribución que usa la prueba se llama **F** en su honor, nombre propuesto por **George Snedecor**. Fisher introdujo aquí conceptos hoy centrales: la aleatorización, el bloqueo y el diseño experimental.
+:::
+
 Primero hay que explicar porque es necesario ANOVA y no hacer múltiples
 prueba de t. Recuerda que típicamente rechazamos la hipótesis nula
 cuando el valor de p es menor de 0.05, el tipo de error I. Cada vez
@@ -466,6 +470,14 @@ ggplot(fosforo, aes(sample = Cant_Fos)) +
 ## La prueba de ANOVA
 
 Finalmente llegamos a la prueba de ANOVA; se usa la función **aov()**.
+
+::: {.funcion}
+**`aov(y ~ grupo, data)`** — ajusta un modelo de análisis de varianza.
+
+- **Qué hace:** compara los promedios de la variable `y` entre los niveles de `grupo` y guarda el modelo en un objeto que luego se resume con `summary()`.
+- **Cómo leer la salida:** en la fila del factor mira el valor-p (`Pr(>F)`); si es < 0.05, al menos un grupo difiere. Los grados de libertad del factor son k − 1 (número de grupos menos uno).
+- **Después:** usa `plot(modelo)` para revisar los supuestos y una prueba post-hoc si se rechaza la Ho.
+:::
 En la primera línea vemos el resultado de comparar los tres lagos. Vemos
 que hay 2 grados de libertad (df=2), lo que quiere decir que están incluidos
 3 grupos en el análisis, porque el grado de libertad se calcula como
@@ -537,16 +549,37 @@ Las pruebas Post-Hoc (Bonferroni, Tukey) se hacen **solo si el ANOVA rechaza la 
 
 ## Prueba de Bonferroni
 
+::: {.historia}
+El ajuste de Bonferroni toma su nombre de **Carlo Emilio Bonferroni** (matemático italiano, 1892–1960), por las desigualdades de probabilidad que publicó en los años 1930. Es el método más sencillo —y más conservador— para corregir por comparaciones múltiples.
+:::
+
 Vemos ahora que se hicieron 3 pruebas, y cada una tiene un valor de p menor
 de 5%; por consiguiente, cada grupo es distinto de los otros.
 
 ```{r c16-22}
 pairwise.t.test(fosforo$Cant_Fos, fosforo$Lagos, p.adjust.method = "bonferroni") # Nota aqui se usa los datos originales, el error de todos las pruebas se limita a 5%.  
-
-
 ```
 
+::: {.funcion}
+**`pairwise.t.test(y, grupo, p.adjust.method = "bonferroni")`** — comparaciones post-hoc por pares.
+
+- **Qué hace:** hace una prueba de *t* entre cada par de grupos y **ajusta** los valores-p para controlar el error de tipo I por el número de comparaciones.
+- **Argumento clave:** `p.adjust.method` (aquí `"bonferroni"`; también `"holm"`, `"BH"`, etc.).
+- **Cómo leer:** la salida es una matriz de valores-p; cada par con p < 0.05 es significativamente diferente.
+:::
+
 ## Prueba de Tukey
+
+::: {.historia}
+La prueba "honestly significant difference" (HSD) fue creada por **John W. Tukey** en 1949. Tukey fue una figura enorme de la estadística del siglo XX: también acuñó los términos "bit" y "software" y popularizó el diagrama de caja (*boxplot*).
+:::
+
+::: {.funcion}
+**`glht(modelo, linfct = mcp(factor = "Tukey"))`** (paquete **multcomp**) — comparaciones múltiples de Tukey.
+
+- **Qué hace:** compara todos los pares de grupos del modelo de ANOVA controlando el error global (Tukey HSD); se resume con `summary()`.
+- **Cómo leer:** cada fila es un par de grupos con su valor-p ajustado; p < 0.05 indica diferencia significativa.
+:::
 
 En la prueba de Tukey vemos el resultado de las pruebas Post-Hoc. El
 resultado es el mismo que el de la prueba anterior: cada grupo es

@@ -232,7 +232,7 @@ evaluando-datos-no-normal
 datos-teóricos-con-histograma-y-la-función-de-normalidad
 qqplot
 pruebas-de-normalidad.
-la-prueba-de-shapiro-wilks
+la-prueba-de-shapiro-wilk
 la-prueba-de-normalidad-de-anderson-darling
 prueba-de-una-muestra
 el-promedio-un-estimado

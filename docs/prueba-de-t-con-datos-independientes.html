@@ -216,6 +216,9 @@
 <div class="nota">
 <p><strong>Importante sobre R.</strong> La fórmula anterior corresponde a la prueba de <em>t</em> clásica (de Student), que <strong>asume varianzas iguales</strong>. Sin embargo, la función <code><a href="https://rdrr.io/r/stats/t.test.html">t.test()</a></code> en R usa por defecto la prueba de <strong>Welch</strong> (<code>var.equal = FALSE</code>), que NO asume varianzas iguales y ajusta los grados de libertad. Por eso los grados de libertad en la salida de R pueden no ser enteros. Si quieres la prueba clásica con la fórmula de arriba, usa <code>t.test(..., var.equal = TRUE)</code>.</p>
 </div>
+<div class="historia">
+<p>La corrección para varianzas desiguales que R usa por defecto se debe a <strong>Bernard Lewis Welch</strong>, quien la propuso en 1947. Ajusta los grados de libertad para que la prueba siga siendo válida cuando los dos grupos tienen dispersiones distintas.</p>
+</div>
 <hr>
 <div id="la-prueba-t" class="section level3" number="15.3.1">
 <h3>
@@ -224,6 +227,17 @@
 <p>Mi primera prueba para comparar el promedio entre dos grupos. Se usa la prueba de “t.test” (t-test).</p>
 <p>La estructura de la prueba es la siguiente (lo mínimo)</p>
 <p>t.test(variable_de_respuesta ~ variable_de_grupo, dataframe)</p>
+<div class="funcion">
+<p><strong><code>t.test(y ~ grupo, data = ...)</code></strong> — prueba de <em>t</em> de dos grupos independientes.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> compara el promedio de la variable de respuesta <code>y</code> entre los dos niveles de <code>grupo</code>.</li>
+<li>
+<strong>Interfaz de fórmula:</strong> <code>y ~ grupo</code> se lee “<code>y</code> en función de <code>grupo</code>”; <code>data</code> es el data frame.</li>
+<li>
+<strong>Por defecto:</strong> usa la prueba de <strong>Welch</strong> (<code>var.equal = FALSE</code>); añade <code>var.equal = TRUE</code> para la <em>t</em> clásica de varianzas iguales.</li>
+</ul>
+</div>
 <p>La hipótesis nula:
 Ho: la distancia viajada por la gente de los dos municipios es igual (el valor de “p” será mayor de 0.05).</p>
 <p>La hipótesis alterna:
@@ -400,6 +414,17 @@ Ahora vemos la distribución de frecuencia por municipio. Si los datos tuviesen 
 <p>Recuerda, que si el valor de p es mayor de 0.05, se asume que los datos tienen una distribución normal, si es menor de 0.05 se asume que no es normal.</p>
 <p>Nota la organización de la prueba, es como la de la t.test( )</p>
 <p>byf.shapiro(variable_de_respuesta ~ variable_de_grupo, dataframe)</p>
+<div class="funcion">
+<p><strong><code>byf.shapiro(y ~ grupo, data)</code></strong> (paquete <strong>RVAideMemoire</strong>) — Shapiro-Wilk por grupo.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> aplica la prueba de normalidad de Shapiro-Wilk a <code>y</code> dentro de <strong>cada</strong> grupo, de una sola vez.</li>
+<li>
+<strong>Por qué:</strong> en la prueba de dos grupos la normalidad se evalúa por grupo, no sobre todos los datos juntos.</li>
+<li>
+<strong>Cómo leer:</strong> da un valor-p por grupo; p &gt; 0.05 en cada uno sugiere normalidad.</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb515"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># de la librería de (RVAideMemoire)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">RVAideMemoire</span><span class="op">)</span></span>
@@ -436,6 +461,9 @@ En la prueba de Levene los datos no son tan sensibles a la distribución normal,
 En la prueba de Fligner-Killeen los datos NO tienen que cumplir con la distribución normal, y es una prueba robusta cuando hay datos sesgados o valores atípicos (outliers).</p></li>
 </ol>
 <hr>
+<div class="historia">
+<p>Las tres pruebas de igualdad de varianza llevan el nombre de sus autores: <strong>Maurice S. Bartlett</strong> (1937), <strong>Howard Levene</strong> (1960) y la de <strong>Fligner-Killeen</strong> (Michael Fligner y Timothy Killeen, 1976). Se pueden ordenar de menor a mayor robustez frente a la no-normalidad: Bartlett exige normalidad, Levene la tolera y Fligner-Killeen es la más robusta ante datos sesgados.</p>
+</div>
 </div>
 <div id="la-prueba-de-bartlett" class="section level2" number="15.9">
 <h2>
@@ -456,6 +484,17 @@ En la prueba de Fligner-Killeen los datos NO tienen que cumplir con la distribuc
 <ul>
 <li>similar a la prueba de Bartlett</li>
 </ul>
+<div class="funcion">
+<p><strong><code>leveneTest(y ~ grupo, data)</code></strong> (paquete <strong>car</strong>) — prueba de igualdad de varianzas de Levene.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> prueba si la dispersión (varianza) es igual entre los grupos. <code><a href="https://rdrr.io/r/stats/bartlett.test.html">bartlett.test()</a></code> y <code><a href="https://rdrr.io/r/stats/fligner.test.html">fligner.test()</a></code> usan la misma interfaz de fórmula.</li>
+<li>
+<strong>Hipótesis nula:</strong> las varianzas de los grupos son iguales.</li>
+<li>
+<strong>Cómo leer:</strong> p &gt; 0.05 → no se rechaza la igualdad de varianzas (se cumple el supuesto).</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb519"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/car/man/leveneTest.html">leveneTest</a></span><span class="op">(</span><span class="va">dist_km</span><span class="op">~</span><span class="va">muni</span>, data<span class="op">=</span><span class="va">viajes</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Levene's Test for Homogeneity of Variance (center = median)

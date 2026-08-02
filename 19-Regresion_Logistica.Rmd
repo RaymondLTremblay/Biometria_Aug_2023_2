@@ -186,6 +186,18 @@ Se evalúan tres modelos:
 ***
 ### Modelo Lineal Generalizado (glm)
 
+::: {.historia}
+La **curva logística** fue descrita por el matemático belga **Pierre François Verhulst** (~1838) para modelar el crecimiento poblacional. El término *logit* y su uso para modelar probabilidades se deben a **Joseph Berkson** (1944), y **David Cox** popularizó la regresión logística en 1958. En 1972, **John Nelder** y **Robert Wedderburn** unificaron esta y otras técnicas bajo el marco de los **Modelos Lineales Generalizados (GLM)**.
+:::
+
+::: {.funcion}
+**`glm(y ~ x, data, family = binomial())`** — modelo lineal generalizado.
+
+- **Qué hace:** ajusta un modelo cuando la respuesta no es normal; con `family = binomial()` realiza una **regresión logística** para una `y` binaria (0/1).
+- **Diferencia con `lm()`:** modela el *logit* de la probabilidad, no la respuesta directamente.
+- **Cómo leer la salida:** los coeficientes están en escala logit; un coeficiente positivo aumenta la probabilidad de "1" al crecer `x`. Revisa el valor-p de cada uno.
+:::
+
 ```{r c19-11}
 
 names(completeBrass)
@@ -214,6 +226,14 @@ summary(model1)
 
 
 Hagamos una figura del modelo anterior.
+
+::: {.funcion}
+**`stat_smooth(method = "glm", method.args = list(family = binomial))`** — curva logística en ggplot2.
+
+- **Qué hace:** superpone la curva ajustada de la regresión logística sobre el diagrama de puntos.
+- **Argumento clave:** `method.args = list(family = binomial)` le indica que use un GLM binomial (en lugar de una recta).
+- **Opción:** `se = TRUE` muestra la banda del intervalo de confianza; `se = FALSE` la oculta.
+:::
 
 ```{r c19-13}
 library(ggplot2)

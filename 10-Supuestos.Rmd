@@ -217,6 +217,13 @@ ResEst
 
 ## Valores sesgados con la Distancia de Cook, Di
 
+::: {.funcion}
+**`cooks.distance(modelo)`** — distancia de Cook.
+
+- **Qué hace:** mide cuánto cambiaría el modelo si se eliminara cada observación; sirve para detectar puntos muy influyentes.
+- **Cómo leer:** valores altos ($D_i > 1$ o $D_i > 4/n$) señalan observaciones que conviene revisar.
+:::
+
 Continuando con el tema de evaluar si hay valores que podrían influenciar mucho el análisis, podemos utilizar una de las herramientas para evaluar el peso de cada valor sobre una regresión lineal basada en métodos de los mínimos cuadrados, llamada la **Distancia de Cook**. Este análisis fue desarrollado por R. Dennis Cook en 1977 y tiene como objetivo evaluar cada valor en la matriz de datos y el peso que tiene sobre el resultado (cuando esté este incluido o no en el análisis).  Produce un índice para cada uno de los valores sobre el resultado basándose en los valores residuales que se llama la Distancia de Cook.  Por lo tanto, ese análisis evalúa el impacto relativo de cada valor sobre el índice.  Desafortunadamente no está claro cuál es el valor crítico; o sea, qué valor nos puede indicar que se tiene exceso de peso sobre los resultados.  Las dos principales sugerencias son: **Distancia de Cook**, Di, es mayor a 1 (sugerido por el propio R. Dennis Cook en 1982); y que la **Di > 4/n**, donde **n** es el número de observaciones (Bollen *et al*. 1990). 
 
 Para hacer una ilustración, continuaremos con el modelo **modelflower** usando los valores calculados en el modelo anterior. El gráfico se construirá utilizando la opción **seq_along**, para que los valores en el eje de **X** se basen en la secuencia de datos en el archivo y los valores en el eje de **Y** se basen en los valores de la **Distancia de Cook**.  En este caso, vemos que todos los valores están muy por debajo de 1, lo que sugiere que ninguno de los valores individuales influenciaría mucho en los resultados aún si estos fuesen excluidos.  Si utilizáramos la segunda alternativa de **Di > 4/n**, entonces nos deberían preocupar los 8 valores de Di que son mayores a 4/181=0.022, donde 181 es la cantidad de datos en el archivo.  Si se considera esta segunda alternativa, sería necesario evaluar 8 valores en la tabla de datos que pudiesen ser sospechosos (los valores encima de la línea roja). Note que no es que están incorrectos; más bien, este resultado es solamente una herramienta para evaluar valores que **parecen** tener un impacto considerable sobre los resultados.
@@ -282,6 +289,13 @@ ggplot(BecasaDeMar, aes(sample=mgconsumed))+
 ***
 
 ## geom_qq y geom_qq_line
+
+::: {.funcion}
+**`geom_qq()` + `geom_qq_line()`** — gráfico Q-Q en ggplot2.
+
+- **Qué hacen:** dibujan los cuantiles observados frente a los teóricos (`geom_qq`) y la línea de referencia (`geom_qq_line`).
+- **Cómo leer:** si los puntos siguen la línea, los datos son compatibles con la distribución normal.
+:::
 
 A pesar de lo fácil de este enfoque, apreciar si los datos quedan nítidamente alineados sobre una línea no es tan evidente en algunos casos.  Por lo tanto, en la siguiente versión del gráfico de QQ producida con la función **geom_qq** y **geom_qq_line** se le añade una línea para mostrar dónde debería estar localizada la gran mayoría de los datos si estos tuvieran una distribución normal. Ahora vemos que claramente muchos de los datos no yacen en la línea.  Evidentemente, el trazar la línea teórica ayuda a visualizar la conclusión; en este caso, se podría concluir que el consumo de comida por este pájaro no sigue una distribución normal `r colorize("la linea azul", "blue")`.  En el segundo ejemplo se crea un conjunto de datos con distribución normal y, en ese caso, la gran mayoría de los datos se solapan con la línea, `r colorize("la línea roja", "red")`
 
@@ -415,6 +429,13 @@ grid.arrange(a,b,ncol=2)
 
 ## Visualizando la distribuciones con **geom_density**
 
+::: {.funcion}
+**`geom_density()`** — curva de densidad suavizada.
+
+- **Qué hace:** en lugar de barras (histograma), dibuja una curva continua que estima la forma de la distribución de una variable.
+- **Útil:** para ver de un vistazo si la distribución es simétrica, sesgada o tiene varias modas.
+:::
+
 A continuación se muestra otra alternativa para observar los datos anteriores.  Nada más que estos ahora se representan sustituyendo las funciones **geom_histogram** y **stat_function** por **geom_density** para la construcción de curvas de densidad.  Otra vez utilizaremos la base de datos **SparrowsElphick**.  La curva normal que se genera es tipo gausiana (gaussian en inglés). Note que para el segundo conjunto de gráficos, (b), no se le especificó la opción en **kernel** igual a **gaussian** ya que de forma predeterminada la función **geom_density** usa el parámetro **gaussian**; o sea, no es necesario especificarla si eso es lo que se quiere. Una distribución en donde el pico es más alto significa que hay mayor densidad de datos en esa región de la variable en el eje de **X**. Podemos apreciar que la curva de densidad no sigue claramente una distribución normal con respecto a los valores en **X**.
 
 ```{r c10-14, message=FALSE}
@@ -448,6 +469,13 @@ grid.arrange(a,b,ncol=1)
 
 
 ## Colinealidad entre covariables con **ggpairs**
+
+::: {.funcion}
+**`ggpairs(datos)`** (paquete **GGally**) — matriz de correlaciones.
+
+- **Qué hace:** muestra en una sola figura los diagramas de dispersión, las distribuciones y los coeficientes de correlación de todos los pares de variables.
+- **Uso aquí:** detectar **colinealidad** (predictoras muy correlacionadas entre sí) antes de ajustar un modelo.
+:::
 
 Hoy en día la cantidad de datos que se obtienen en diferentes estudios puede ser muy impresionante. Muchas veces el objetivo es detectar si unas variables, entre muchas otras, podrían predecir la variable de respuesta.  A consecuencia de eso, el problema mayor es tomar en cuenta la colinealidad entre variables explicativas.  La colinealidad es simplemente la correlación entre variables en un modelo de análisis de regresión múltiple, en donde las variables predictivas están altamente correlacionadas.
 

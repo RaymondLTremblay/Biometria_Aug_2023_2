@@ -148,7 +148,21 @@
 <h2>
 <span class="header-section-number">14.3</span> La prueba de t-pareado<a class="anchor" aria-label="anchor" href="#la-prueba-de-t-pareado"><i class="fas fa-link"></i></a>
 </h2>
+<div class="historia">
+<p>La prueba pareada es una variante de la <em>t</em> de <strong>Student</strong> (Gosset, 1908). La idea de <strong>emparejar</strong> observaciones (medir al mismo individuo antes y después, o comparar unidades apareadas) es un principio de diseño experimental que <strong>Ronald A. Fisher</strong> formalizó en los años 1920 como <em>bloqueo</em> (<em>blocking</em>): al comparar dentro de cada par se elimina la variación entre individuos y la prueba gana poder.</p>
+</div>
 <p>La prueba de t-con datos pareados es la misma que la prueba de t con un grupo, <strong>t.test()</strong>.</p>
+<div class="funcion">
+<p><strong><code>t.test(x, y, paired = TRUE)</code></strong> — prueba de <em>t</em> para datos pareados.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> compara dos mediciones relacionadas (<code>x</code> e <code>y</code>) calculando la diferencia de cada par y probando si su promedio es cero.</li>
+<li>
+<strong>Argumento clave:</strong> <code>paired = TRUE</code> es lo que la distingue de la prueba independiente; el orden de <code>x</code> e <code>y</code> determina el signo de la diferencia.</li>
+<li>
+<strong>Cómo leer la salida:</strong> el valor-p indica si la diferencia promedio es significativa; el intervalo de confianza es el rango probable de esa diferencia.</li>
+</ul>
+</div>
 <p>La hipótesis nula es que la diferencia entre los datos dependientes es igual a cero. La <strong>d</strong> se refiere a la diferencia entre los pares de datos. Nota entonces que el análisis se hace evaluando si el promedio de las diferencias es igual a cero. Nota que el valor de t es absoluto <span class="math inline">\(\left|t\right|\)</span>, un valor negativo es igual que un valor positivo.</p>
 <ul>
 <li>Ho: <span class="math inline">\(\overline{x_d}=0\)</span>

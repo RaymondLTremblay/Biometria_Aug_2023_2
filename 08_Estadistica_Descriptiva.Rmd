@@ -175,6 +175,13 @@ median(dlf$day1, na.rm=TRUE)
 
 Para ver los estadísticos mencionados arriba (menos la moda, la oblicuidad y la curtosis) se puede usar la función **stat.desc()** del paquete **pastecs**. Para facilitar la lectura se usa la función `round(x, 3)`; el 3 indica la cantidad de decimales que se muestran. Si no usamos **round()**, los valores aparecen en notación científica.  
 
+::: {.funcion}
+**`stat.desc(x)`** (paquete **pastecs**) — resumen estadístico completo.
+
+- **Qué hace:** para una o varias columnas numéricas, devuelve de una vez el n, la media, la mediana, la varianza, la desviación estándar, el error estándar, el intervalo de confianza y más.
+- **Consejo:** envuélvela en `round(stat.desc(...), 3)` para evitar la notación científica.
+:::
+
 Nota que hay muchos más parámetros calculados.  Aparece en la lista en orden el valor mínimo: min(), el valor máximo: max(), la mediana: median, el promedio: mean, la desviación estándar; std.dev entre otros.  
 
 ```{r c08-11, warning=FALSE}
@@ -228,6 +235,10 @@ describe(dlf$day1)
 ***
 
 ## El índice de oblicuidad (Skewness)
+
+::: {.historia}
+Los términos **oblicuidad** (*skewness*) y **curtosis** (*kurtosis*), junto con el "método de los momentos" para describir la forma de una distribución, fueron introducidos por **Karl Pearson** a finales del siglo XIX. Pearson fue uno de los fundadores de la estadística moderna.
+:::
 
 ::: {.definicion}
 La **oblicuidad** (*skewness*) mide la **asimetría** de una distribución. Es **positiva** cuando la cola larga está a la derecha, **negativa** cuando está a la izquierda, y ≈ 0 cuando la distribución es simétrica.
@@ -300,6 +311,13 @@ Ahora se calcula el índice de oblicuidad y comparamos los valores. Como regla, 
 
 
 Ahora evaluamos la oblicuidad de las tres distribuciones usando la función **skewness** del paquete **e1071**.
+
+::: {.funcion}
+**`skewness(x)`** (paquete **e1071**) — índice de oblicuidad (asimetría).
+
+- **Qué hace:** cuantifica la asimetría de la variable `x`.
+- **Cómo leer:** ≈ 0 → simétrica; **positiva** → cola larga a la derecha; **negativa** → cola larga a la izquierda.
+:::
 
 Para una distribución normal (simétrica) el valor es muy cercano a cero. Los datos **sesgados a la derecha** (con cola hacia la derecha) tienen oblicuidad **positiva**, y los **sesgados a la izquierda**, oblicuidad **negativa**.  
 
@@ -422,6 +440,13 @@ Ahora se calcula el índice de curtosis (en exceso) y comparamos los valores. Cu
 
 
 Ahora evaluamos la curtosis de las distribuciones usando la función **kurtosis** del paquete **e1071**.
+
+::: {.funcion}
+**`kurtosis(x)`** (paquete **e1071**) — índice de curtosis (peso de las colas).
+
+- **Qué hace:** mide qué tan pesadas son las colas de la variable `x` (curtosis en exceso).
+- **Cómo leer:** ≈ 0 → como la normal; **positiva** → colas pesadas (más atípicos); **negativa** → colas ligeras.
+:::
 
 Para una distribución normal el valor es muy cercano a cero. Cuando hay **exceso de colas** (colas pesadas, como en Laplace) la curtosis es **positiva**; cuando las colas son ligeras (como en la uniforme) la curtosis es **negativa**.
 

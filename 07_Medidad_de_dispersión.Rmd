@@ -95,6 +95,13 @@ knitr::include_graphics("Graficos/dispersion.png")
 
 ## El rango
 
+::: {.funcion}
+**`range(x)`** — rango de los datos.
+
+- **Qué hace:** devuelve el valor mínimo y el máximo de `x` (dos números).
+- **Relacionadas:** `min(x)` y `max(x)` los dan por separado; `diff(range(x))` da la amplitud.
+:::
+
 El rango está definido por el valor mínimo y el valor máximo de un conjunto de datos.  Se usa la función **range()**.  Usamos los dos conjuntos de datos ya creado anteriormente para visualizar los rangos de la distribuciones de los gráficos. Lo que uno observa es que el valor mínimo del primer conjunto de datos es 59.17 y el máximo es 137.12.  Para el segundo conjunto de datos el valor mínimo es 1.86 y el máximo es 203.88.  
 
 
@@ -226,6 +233,10 @@ Limite_superior_a
 
 ## La varianza
 
+::: {.historia}
+El término **desviación estándar** fue acuñado por **Karl Pearson** en 1893, y el de **varianza** por **Ronald A. Fisher** en 1918. Ambos conceptos son la base para medir cuánto se dispersan los datos alrededor de su promedio.
+:::
+
 ::: {.definicion}
 La **varianza** ($s^2$) es el promedio de las diferencias al cuadrado entre cada valor y la media (dividido entre $n-1$). La **desviación estándar** ($s$) es su raíz cuadrada, y tiene las mismas unidades que los datos.
 :::
@@ -265,6 +276,13 @@ sum(Data_df$SS)
 
 ## Calcular la varianza con **var()**
 
+::: {.funcion}
+**`var(x)`** — varianza muestral.
+
+- **Qué hace:** calcula el promedio de las diferencias al cuadrado respecto a la media, dividido entre $n-1$.
+- **Nota:** está en unidades **al cuadrado**; para volver a las unidades originales se usa `sd()`.
+:::
+
 Ahora la manera fácil de hacer los análisis, usar la función **var**, y no hay que hacer ninguno de los pasos anteriores.   Pero es importante que sepa como es el procedimiento de calcular la varianza. Nota que la varianza es un índice de la diferencia entre el promedio y cada valor. Es importante elevar al cuadrado las diferencias; de lo contrario, la suma sería cero. La varianza es más informativa cuando los datos provienen de una distribución aproximadamente normal y no están muy sesgados.   
 
 ```{r c07-19}
@@ -275,6 +293,13 @@ var(Data)
 
 
 ## La desviación estándar
+
+::: {.funcion}
+**`sd(x)`** — desviación estándar muestral.
+
+- **Qué hace:** es la raíz cuadrada de la varianza (`sqrt(var(x))`); mide la dispersión en las **mismas unidades** que los datos.
+- **Uso:** junto con la media resume la distribución; también entra en el cálculo del error estándar ($s/\sqrt{n}$).
+:::
 
 La varianza es un índice que no está en la misma unidad que los valores recolectados; por ejemplo, si se recolectan los datos en centímetros, la varianza está en centímetros cuadrados. Por eso no siempre es la mejor para describir la dispersión. Para resolver esto, sacamos la raíz cuadrada de la varianza. La desviación estándar se usa para describir la dispersión; en otras palabras, cuán diferentes son los datos entre sí. Es más informativa cuando los datos provienen de una distribución aproximadamente normal y no están muy sesgados.   
   
@@ -294,6 +319,13 @@ sd(Data_df$Data)  # deviación estandard
 ***
 
 ## El rango intercuartil
+
+::: {.funcion}
+**`quantile(x, probs = ...)`** — cuantiles y rango intercuartil.
+
+- **Qué hace:** por defecto devuelve los cuartiles (0%, 25%, 50%, 75%, 100%); con `probs` pides percentiles específicos (p. ej. `c(0.025, 0.975)`).
+- **Relacionada:** `IQR(x)` da el rango intercuartil (Q3 − Q1), una medida de dispersión robusta a los valores atípicos.
+:::
 
 La función básica es **quantile**; si la dejamos sin más instrucciones, calcula las siguientes probabilidades: 0%, 25%, 50% (mediana), 75% y 100%. Pero si uno quiere los valores que se encuentran en una posición específica hay que usar **type = 1**, como se ve en el segundo ejemplo. Hay 9 tipos de cuantiles con esta función, definidos en RStudio. Escribe **?quantile** en la consola o en el área de **help** para ver las otras alternativas.   
 

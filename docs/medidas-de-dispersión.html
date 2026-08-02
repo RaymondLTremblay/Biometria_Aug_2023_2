@@ -164,6 +164,15 @@
 <h2>
 <span class="header-section-number">7.3</span> El rango<a class="anchor" aria-label="anchor" href="#el-rango"><i class="fas fa-link"></i></a>
 </h2>
+<div class="funcion">
+<p><strong><code>range(x)</code></strong> — rango de los datos.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> devuelve el valor mínimo y el máximo de <code>x</code> (dos números).</li>
+<li>
+<strong>Relacionadas:</strong> <code>min(x)</code> y <code>max(x)</code> los dan por separado; <code>diff(range(x))</code> da la amplitud.</li>
+</ul>
+</div>
 <p>El rango está definido por el valor mínimo y el valor máximo de un conjunto de datos. Se usa la función <strong>range()</strong>. Usamos los dos conjuntos de datos ya creado anteriormente para visualizar los rangos de la distribuciones de los gráficos. Lo que uno observa es que el valor mínimo del primer conjunto de datos es 59.17 y el máximo es 137.12. Para el segundo conjunto de datos el valor mínimo es 1.86 y el máximo es 203.88.</p>
 <div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/range.html">range</a></span><span class="op">(</span><span class="va">dfa</span><span class="op">$</span><span class="va">a</span><span class="op">)</span> </span></code></pre></div>
@@ -338,6 +347,9 @@
 <h2>
 <span class="header-section-number">7.6</span> La varianza<a class="anchor" aria-label="anchor" href="#la-varianza"><i class="fas fa-link"></i></a>
 </h2>
+<div class="historia">
+<p>El término <strong>desviación estándar</strong> fue acuñado por <strong>Karl Pearson</strong> en 1893, y el de <strong>varianza</strong> por <strong>Ronald A. Fisher</strong> en 1918. Ambos conceptos son la base para medir cuánto se dispersan los datos alrededor de su promedio.</p>
+</div>
 <div class="definicion">
 <p>La <strong>varianza</strong> (<span class="math inline">\(s^2\)</span>) es el promedio de las diferencias al cuadrado entre cada valor y la media (dividido entre <span class="math inline">\(n-1\)</span>). La <strong>desviación estándar</strong> (<span class="math inline">\(s\)</span>) es su raíz cuadrada, y tiene las mismas unidades que los datos.</p>
 </div>
@@ -403,6 +415,15 @@
 <h2>
 <span class="header-section-number">7.7</span> Calcular la varianza con <strong>var()</strong><a class="anchor" aria-label="anchor" href="#calcular-la-varianza-con-var"><i class="fas fa-link"></i></a>
 </h2>
+<div class="funcion">
+<p><strong><code>var(x)</code></strong> — varianza muestral.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> calcula el promedio de las diferencias al cuadrado respecto a la media, dividido entre <span class="math inline">\(n-1\)</span>.</li>
+<li>
+<strong>Nota:</strong> está en unidades <strong>al cuadrado</strong>; para volver a las unidades originales se usa <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code>.</li>
+</ul>
+</div>
 <p>Ahora la manera fácil de hacer los análisis, usar la función <strong>var</strong>, y no hay que hacer ninguno de los pasos anteriores. Pero es importante que sepa como es el procedimiento de calcular la varianza. Nota que la varianza es un índice de la diferencia entre el promedio y cada valor. Es importante elevar al cuadrado las diferencias; de lo contrario, la suma sería cero. La varianza es más informativa cuando los datos provienen de una distribución aproximadamente normal y no están muy sesgados.</p>
 <div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">var</a></span><span class="op">(</span><span class="va">Data</span><span class="op">)</span></span></code></pre></div>
@@ -413,6 +434,15 @@
 <h2>
 <span class="header-section-number">7.8</span> La desviación estándar<a class="anchor" aria-label="anchor" href="#la-desviaci%C3%B3n-est%C3%A1ndar"><i class="fas fa-link"></i></a>
 </h2>
+<div class="funcion">
+<p><strong><code>sd(x)</code></strong> — desviación estándar muestral.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> es la raíz cuadrada de la varianza (<code>sqrt(var(x))</code>); mide la dispersión en las <strong>mismas unidades</strong> que los datos.</li>
+<li>
+<strong>Uso:</strong> junto con la media resume la distribución; también entra en el cálculo del error estándar (<span class="math inline">\(s/\sqrt{n}\)</span>).</li>
+</ul>
+</div>
 <p>La varianza es un índice que no está en la misma unidad que los valores recolectados; por ejemplo, si se recolectan los datos en centímetros, la varianza está en centímetros cuadrados. Por eso no siempre es la mejor para describir la dispersión. Para resolver esto, sacamos la raíz cuadrada de la varianza. La desviación estándar se usa para describir la dispersión; en otras palabras, cuán diferentes son los datos entre sí. Es más informativa cuando los datos provienen de una distribución aproximadamente normal y no están muy sesgados.</p>
 <p><span class="math display">\[{ s }=\sqrt { \frac { \sum { { ({ x }_{ i }-\bar { x }  })^{ 2 } }  }{ n-1 }  }\]</span>
 o más sencillo</p>
@@ -427,6 +457,15 @@ o más sencillo</p>
 <h2>
 <span class="header-section-number">7.9</span> El rango intercuartil<a class="anchor" aria-label="anchor" href="#el-rango-intercuartil"><i class="fas fa-link"></i></a>
 </h2>
+<div class="funcion">
+<p><strong><code>quantile(x, probs = ...)</code></strong> — cuantiles y rango intercuartil.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> por defecto devuelve los cuartiles (0%, 25%, 50%, 75%, 100%); con <code>probs</code> pides percentiles específicos (p. ej. <code>c(0.025, 0.975)</code>).</li>
+<li>
+<strong>Relacionada:</strong> <code>IQR(x)</code> da el rango intercuartil (Q3 − Q1), una medida de dispersión robusta a los valores atípicos.</li>
+</ul>
+</div>
 <p>La función básica es <strong>quantile</strong>; si la dejamos sin más instrucciones, calcula las siguientes probabilidades: 0%, 25%, 50% (mediana), 75% y 100%. Pero si uno quiere los valores que se encuentran en una posición específica hay que usar <strong>type = 1</strong>, como se ve en el segundo ejemplo. Hay 9 tipos de cuantiles con esta función, definidos en RStudio. Escribe <strong>?quantile</strong> en la consola o en el área de <strong>help</strong> para ver las otras alternativas.</p>
 <div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/quantile.html">quantile</a></span><span class="op">(</span><span class="va">Data</span><span class="op">)</span> <span class="co"># la función básica (0%, 25%, 50% (mediana), 75%, 100%)</span></span></code></pre></div>

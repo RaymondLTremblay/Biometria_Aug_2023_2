@@ -67,6 +67,10 @@ Aquí dos sitios donde pueden conseguir el libro
 ***
 
 ### Programados
+
+::: {.historia}
+**R** es un lenguaje libre y de código abierto para estadística y gráficos. Fue creado a inicios de los años 1990 por **Ross Ihaka** y **Robert Gentleman** en la Universidad de Auckland (Nueva Zelanda), como una implementación libre del lenguaje **S** que **John Chambers** había desarrollado en los Bell Labs. Hoy lo mantiene una comunidad mundial de voluntarios.
+:::
 - [R- free statistical programming language](https://cran.r-project.org/) 
 - [RStudio](https://rstudio.com)
 - MSExcel, Numbers o Google Sheet 

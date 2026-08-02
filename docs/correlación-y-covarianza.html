@@ -543,9 +543,23 @@
 <h3>
 <span class="header-section-number">17.2.1</span> El más común es el coeficiente de correlación producto-momento de Pearson<a class="anchor" aria-label="anchor" href="#el-m%C3%A1s-com%C3%BAn-es-el-coeficiente-de-correlaci%C3%B3n-producto-momento-de-pearson"><i class="fas fa-link"></i></a>
 </h3>
+<div class="historia">
+<p>La idea de correlación surgió con <strong>Francis Galton</strong> en la década de 1880, estudiando la herencia de rasgos como la estatura. Su discípulo <strong>Karl Pearson</strong> le dio su forma matemática moderna (el coeficiente <em>r</em>) en los años 1890; por eso se llama coeficiente “producto-momento de Pearson”.</p>
+</div>
 <p><span class="math display">\[r=\frac { cov(x,y) }{ { s }_{ x }{ s }_{ y } } =\frac { \sum { ({ x }_{ i }-\bar { x })({ y }_{ i }-\bar { y }) }  }{ (n-1)\, { s }_{ x }{ s }_{ y } }\]</span></p>
 <p>La función para calcular el coeficiente de correlación es <strong>cor()</strong>.</p>
 <p>La función para determinar si la correlación entre las 2 variables es significativa (es decir, diferente de cero) es <strong>cor.test()</strong>.</p>
+<div class="funcion">
+<p><strong><code>cor(x, y)</code></strong> y <strong><code>cor.test(x, y)</code></strong> — correlación entre dos variables.</p>
+<ul>
+<li>
+<strong><code>cor(x, y)</code>:</strong> devuelve solo el coeficiente de correlación <em>r</em> (entre −1 y 1).</li>
+<li>
+<strong><code>cor.test(x, y)</code>:</strong> además prueba si <em>r</em> es significativamente distinto de cero (da un valor-p y un intervalo de confianza).</li>
+<li>
+<strong>Argumento <code>method</code>:</strong> <code>"pearson"</code> (por defecto), <code>"spearman"</code> o <code>"kendall"</code> para las versiones de rango.</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb571"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">r</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">df</span><span class="op">$</span><span class="va">x_val</span>, <span class="va">df</span><span class="op">$</span><span class="va">y_val</span><span class="op">)</span></span>
 <span><span class="co">#cor.test(df$x_val, df$y_val)</span></span>
@@ -682,6 +696,17 @@
 </h2>
 <p>Aquí hay un gráfico muy útil que produce las figuras y la mayor parte del análisis de una sola vez.
 Con el paquete GGally, si omites “ggplot2::aes(colour=Gender)”, la figura será en blanco y negro y no estará separada por género.</p>
+<div class="funcion">
+<p><strong><code>ggpairs(datos)</code></strong> (paquete <strong>GGally</strong>) — matriz de gráficos de correlación.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> para varias variables a la vez, muestra en una sola figura los diagramas de dispersión, las distribuciones y los coeficientes de correlación de todos los pares.</li>
+<li>
+<strong>Opción útil:</strong> <code>ggplot2::aes(colour = grupo)</code> separa todo por un factor.</li>
+<li>
+<strong>Consejo:</strong> selecciona solo las columnas numéricas de interés (p. ej. <code>datos[, c(2:5)]</code>).</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb582"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggobi.github.io/ggally/">GGally</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">examData</span><span class="op">)</span></span></code></pre></div>
@@ -780,6 +805,17 @@ Con el paquete GGally, si omites “ggplot2::aes(colour=Gender)”, la figura se
 ## [29] "w_mf"             "ST_L_column2"     "Sqrt_Num_Fl0.5"   "Log_flower size" 
 ## [33] "Arcsin_Perc_FR"</code></pre>
 <p>Una tabla de los coeficientes de correlación</p>
+<div class="funcion">
+<p><strong><code>rcorr(as.matrix(datos))</code></strong> (paquete <strong>Hmisc</strong>) — tabla de correlaciones con valores-p.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> calcula la matriz de correlaciones de todas las variables <strong>y</strong> una matriz con sus valores-p.</li>
+<li>
+<strong>Requisito:</strong> la entrada debe ser una <strong>matriz</strong> numérica (por eso se usa <code><a href="https://rdrr.io/r/base/matrix.html">as.matrix()</a></code>).</li>
+<li>
+<strong>Argumento <code>type</code>:</strong> <code>"pearson"</code> o <code>"spearman"</code>.</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb588"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://hbiostat.org/R/Hmisc/">Hmisc</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/Hmisc/man/rcorr.html">rcorr</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span><span class="op">(</span><span class="va">examData</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Exam"</span>,<span class="st">"Anxiety"</span>,<span class="st">"Revise"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -800,6 +836,9 @@ Con el paquete GGally, si omites “ggplot2::aes(colour=Gender)”, la figura se
 <p>Cuando los datos no cumplen con el supuesto de normalidad, hay que usar Spearman o Kendall.</p>
 <div class="consejo">
 <p>Spearman y Kendall son correlaciones <strong>de rango</strong> (usan el orden de los datos, no sus valores), por lo que son robustas ante la no-normalidad y los valores atípicos. Kendall suele preferirse cuando el tamaño de muestra es pequeño o hay muchos empates.</p>
+</div>
+<div class="historia">
+<p>La correlación de rangos fue propuesta por el psicólogo <strong>Charles Spearman</strong> en 1904. La <em>tau</em> (τ) fue desarrollada por <strong>Maurice Kendall</strong> en 1938. Ambas trabajan con el orden (rango) de los datos en lugar de sus valores, lo que las hace robustas a la no-normalidad y a los valores atípicos.</p>
 </div>
 <p>Elige el conjunto de datos “The Biggest Liar.csv”, un concurso que ocurre cada año en un pub.</p>
 <p>El “World’s Biggest Liar” (El mentiroso más grande del mundo) es una competencia anual para decir mentiras, celebrada en Cumbria, Inglaterra, en el Stanton Inn Bridge Pub.</p>
@@ -879,12 +918,26 @@ Con el paquete GGally, si omites “ggplot2::aes(colour=Gender)”, la figura se
 <h3>
 <span class="header-section-number">17.4.1</span> Correlación por bootstrap<a class="anchor" aria-label="anchor" href="#correlaci%C3%B3n-por-bootstrap"><i class="fas fa-link"></i></a>
 </h3>
+<div class="historia">
+<p>El <em>bootstrap</em> fue introducido por <strong>Bradley Efron</strong> en 1979. Es una idea propia de la era de las computadoras: en lugar de depender de fórmulas teóricas, <strong>remuestrea</strong> los propios datos miles de veces (con reemplazo) para estimar la incertidumbre de un estadístico. Requiere poder de cómputo, por eso no era práctico antes.</p>
+</div>
 <p>Con el bootstrap no hay necesidad de hacer supuestos sobre la distribución: puedes dejar que los datos hablen por sí mismos y construir el coeficiente de correlación y su intervalo de confianza de 95%.</p>
 <p>Primero creamos una función:</p>
 <div class="sourceCode" id="cb598"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bootTau</span><span class="op">=</span><span class="kw">function</span><span class="op">(</span><span class="va">liarData</span>,<span class="va">i</span><span class="op">)</span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html">cor</a></span><span class="op">(</span><span class="va">liarData</span><span class="op">$</span><span class="va">Position</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>,<span class="va">liarData</span><span class="op">$</span><span class="va">Creativity</span><span class="op">[</span><span class="va">i</span><span class="op">]</span>,</span>
 <span>                                use<span class="op">=</span><span class="st">"complete.obs"</span>,method <span class="op">=</span> <span class="st">"kendall"</span><span class="op">)</span></span></code></pre></div>
 <p>Luego se llama y se ejecuta la función:</p>
+<div class="funcion">
+<p><strong><code>boot(datos, statistic, R)</code></strong> y <strong><code>boot.ci(objeto)</code></strong> (paquete <strong>boot</strong>) — bootstrap.</p>
+<ul>
+<li>
+<strong><code><a href="https://rdrr.io/pkg/boot/man/boot.html">boot()</a></code>:</strong> repite el cálculo de un estadístico <code>R</code> veces sobre remuestras de los datos (aquí R = 1000); necesita una función que reciba los datos y un índice <code>i</code>.</li>
+<li>
+<strong><code><a href="https://rdrr.io/pkg/boot/man/boot.ci.html">boot.ci()</a></code>:</strong> calcula el intervalo de confianza (95%) a partir de esas repeticiones.</li>
+<li>
+<strong>Ventaja:</strong> no asume ninguna distribución teórica; deja que los datos “hablen”.</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb599"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">boot</span><span class="op">)</span></span>
 <span><span class="va">boot_kendall</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/boot/man/boot.html">boot</a></span><span class="op">(</span><span class="va">liarData</span>,<span class="va">bootTau</span>, <span class="fl">1000</span><span class="op">)</span></span>

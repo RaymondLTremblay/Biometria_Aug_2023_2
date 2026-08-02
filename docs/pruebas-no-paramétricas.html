@@ -544,6 +544,9 @@ Cuando los datos no son normales o contienen outliers, ya que la prueba de Leven
 <h2>
 <span class="header-section-number">21.6</span> Prueba de suma de rangos de Wilcoxon (Mann-Whitney U)<a class="anchor" aria-label="anchor" href="#prueba-de-suma-de-rangos-de-wilcoxon-mann-whitney-u"><i class="fas fa-link"></i></a>
 </h2>
+<div class="historia">
+<p>Esta prueba tiene dos orígenes. <strong>Frank Wilcoxon</strong> —químico y estadístico— publicó las pruebas de rangos en 1945. Dos años después, <strong>Henry Mann</strong> y <strong>Donald Whitney</strong> (1947) desarrollaron una versión equivalente, la <em>U</em>. Por eso hoy se conoce con ambos nombres.</p>
+</div>
 <p>La prueba de suma de rangos de Wilcoxon (también conocida como prueba de Mann-Whitney U) es una prueba no paramétrica utilizada para comparar dos muestras independientes y determinar si provienen de la misma distribución.</p>
 <div id="cuándo-se-usa-1" class="section level3" number="21.6.1">
 <h3>
@@ -570,6 +573,17 @@ Evaluar diferencias en tiempos de reacción entre dos poblaciones.</p>
 <p>wilcox.test(x, y = NULL, alternative = c(“two.sided”, “less”, “greater”),
 mu = 0, paired = FALSE, exact = FALSE,
 correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
+<div class="funcion">
+<p><strong><code>wilcox.test(y ~ grupo, data)</code></strong> — prueba de Wilcoxon / Mann-Whitney.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> compara dos grupos usando los <strong>rangos</strong> de los datos, sin asumir normalidad. Con <code>paired = TRUE</code> hace la versión para datos pareados (rangos con signo).</li>
+<li>
+<strong>Argumentos útiles:</strong> <code>exact = FALSE</code> (necesario cuando hay empates) y <code>conf.int = TRUE</code> (añade el intervalo de confianza).</li>
+<li>
+<strong>Cómo leer:</strong> el valor-p indica si las distribuciones (ubicación/mediana) difieren.</li>
+</ul>
+</div>
 </div>
 </div>
 <div id="cómo-asignar-los-rangos-a-mano-ejemplo-los-scripts-lo-hacen-automáticamente" class="section level2" number="21.7">
@@ -1396,6 +1410,9 @@ correct = FALSE, conf.level = 0.95, na.action = na.exclude)</p>
 <div class="nota">
 <p><strong>Equivalencias no paramétricas:</strong> la prueba de suma de rangos de Wilcoxon (Mann-Whitney U) es la alternativa a la <em>t</em> independiente; la prueba de rangos con signo de Wilcoxon es la alternativa a la <em>t</em> pareada; y la prueba de Kruskal-Wallis es la alternativa al ANOVA de una vía.</p>
 </div>
+<div class="historia">
+<p>La prueba fue publicada en 1952 por <strong>William Kruskal</strong> y <strong>W. Allen Wallis</strong>. Extiende la idea de Wilcoxon a tres o más grupos y es la alternativa no paramétrica al ANOVA de una vía.</p>
+</div>
 <p>Es una prueba similar al ANOVA, para múltiples grupos (3 o más).</p>
 <p>Sin embargo, se evalúan las diferencias para determinar si el rango entre los grupos es diferente (no la media).</p>
 <p>La hipótesis nula es que la suma (o el promedio) de los rangos es igual entre los grupos, Ho: G1 = G2 = G3 … Gk.
@@ -1588,6 +1605,15 @@ Al añadir “norm=TRUE” se realiza la prueba de normalidad de Shapiro-Wilk.</
 </h2>
 <p>HO: R1 = R2 = R3 = R4
 HA: Por lo menos uno de los grupos es diferente.</p>
+<div class="funcion">
+<p><strong><code>kruskal.test(y ~ grupo, data)</code></strong> — prueba de Kruskal-Wallis.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> compara la distribución (mediana/rangos) de <code>y</code> entre <strong>tres o más</strong> grupos, sin asumir normalidad ni igualdad de varianza.</li>
+<li>
+<strong>Cómo leer:</strong> el valor-p indica si al menos un grupo difiere; si es &lt; 0.05, se hace una prueba post-hoc (Nemenyi) para ver cuáles.</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb795"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Traditional approach</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/kruskal.test.html">kruskal.test</a></span><span class="op">(</span><span class="va">Sperm</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">Soya</span><span class="op">)</span>, data<span class="op">=</span><span class="va">Soyadf</span><span class="op">)</span></span></code></pre></div>
@@ -1602,6 +1628,18 @@ HA: Por lo menos uno de los grupos es diferente.</p>
 <h2>
 <span class="header-section-number">21.19</span> Un mejor acercamiento: el paquete “coin”<a class="anchor" aria-label="anchor" href="#un-mejor-acercamiento-el-paquete-coin"><i class="fas fa-link"></i></a>
 </h2>
+<div class="historia">
+<p>Las pruebas de <strong>permutación</strong> (calcular la significancia reordenando los datos de todas las formas posibles) se remontan a <strong>R. A. Fisher</strong> en los años 1930. Cuando hay demasiadas permutaciones para enumerarlas, se aproximan con simulación <strong>Monte Carlo</strong>, método bautizado así por <strong>Stanisław Ulam</strong>, <strong>John von Neumann</strong> y <strong>Nicholas Metropolis</strong> en los años 1940, en la era de las primeras computadoras.</p>
+</div>
+<div class="funcion">
+<p><strong><code>kruskal_test(y ~ grupo, data, distribution = approximate(nresample = ...))</code></strong> (paquete <strong>coin</strong>).</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> versión de Kruskal-Wallis que estima el valor-p por <strong>simulación</strong> (permutaciones Monte Carlo) en lugar de una fórmula teórica.</li>
+<li>
+<strong>Argumento clave:</strong> <code>nresample</code> es el número de permutaciones (aquí 10 000): más permutaciones = estimación más precisa.</li>
+</ul>
+</div>
 <p>Este acercamiento es mejor porque usa simulación para calcular la distribución del estadístico de prueba bajo la hipótesis nula.</p>
 <p>La prueba aproximativa (Monte Carlo) de Fisher-Pitman es una prueba no paramétrica basada en permutaciones que se utiliza para comparar dos muestras independientes. Es una alternativa a la prueba de rangos de Wilcoxon o a la prueba t cuando se quiere evitar hacer supuestos sobre la distribución subyacente.</p>
 <div id="características-principales-1" class="section level3" number="21.19.1">
@@ -1729,6 +1767,9 @@ Los valores que se muestran son los valores-p; el par es significativamente dife
 <span class="header-section-number">21.20.1</span> Nota<a class="anchor" aria-label="anchor" href="#nota"><i class="fas fa-link"></i></a>
 </h3>
 <p>La prueba post hoc tipo Tukey (prueba de Nemenyi) es un método no paramétrico utilizado para realizar comparaciones múltiples entre grupos después de aplicar la prueba de Kruskal-Wallis (o Friedman, según el caso).</p>
+<div class="historia">
+<p>Esta prueba de comparaciones múltiples fue desarrollada por <strong>Peter Nemenyi</strong> en 1963 como el equivalente no paramétrico de la prueba de Tukey.</p>
+</div>
 </div>
 <div id="para-qué-sirve" class="section level3" number="21.20.2">
 <h3>
@@ -1766,6 +1807,15 @@ Los valores que se muestran son los valores-p; el par es significativamente dife
 <li>Después de una prueba de Kruskal-Wallis significativa.</li>
 <li>Datos ordinales o no normales, con k ≥ 3 grupos independientes.</li>
 </ul>
+<div class="funcion">
+<p><strong><code>kwAllPairsNemenyiTest(y ~ grupo, data)</code></strong> (paquete <strong>PMCMRplus</strong>) — post-hoc de Nemenyi.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> tras un Kruskal-Wallis significativo, compara todos los pares de grupos ajustando por comparaciones múltiples.</li>
+<li>
+<strong>Cómo leer:</strong> la salida es una matriz de valores-p; cada par con p &lt; 0.05 difiere significativamente.</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb802"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PMCMRplus</span><span class="op">)</span></span>
 <span></span>

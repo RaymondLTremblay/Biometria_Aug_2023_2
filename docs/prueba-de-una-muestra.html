@@ -124,6 +124,9 @@
 <span class="header-section-number">13.3</span> La distribución de t<a class="anchor" aria-label="anchor" href="#la-distribuci%C3%B3n-de-t"><i class="fas fa-link"></i></a>
 </h2>
 <p>Cuando queremos inferir información sobre el promedio o la desviación del universo a partir de un muestreo, hay que utilizar la distribución de <em>t</em>. La razón es que la forma de la distribución cambia con el tamaño de muestra cuando no sabemos cuál es la desviación estándar del universo. A medida que uno reduce el tamaño de muestra, la distribución se desvía de una distribución normal. Para tomar esto en cuenta no usamos la distribución normal, sino la distribución de <em>t</em>, también llamada la distribución <em>t</em> de Student.</p>
+<div class="historia">
+<p>La distribución <em>t</em> fue publicada en 1908 por <strong>William Sealy Gosset</strong>, un químico y estadístico que trabajaba en la cervecería <strong>Guinness</strong> en Dublín. Como Guinness prohibía a sus empleados publicar, Gosset firmó con el seudónimo <strong>“Student”</strong>; por eso hoy se le llama la <em>t</em> de Student. La desarrolló para trabajar con las <strong>muestras pequeñas</strong> típicas del control de calidad de la cerveza.</p>
+</div>
 <div class="sourceCode" id="cb427"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">out</span>,<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">df1x</span>, <span class="va">val</span>, colour<span class="op">=</span><span class="va">df</span><span class="op">)</span> <span class="op">)</span><span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line</a></span><span class="op">(</span><span class="op">)</span><span class="op">+</span></span>
@@ -195,6 +198,17 @@
 <span class="header-section-number">13.7</span> Los limites del intervalo<a class="anchor" aria-label="anchor" href="#los-limites-del-intervalo"><i class="fas fa-link"></i></a>
 </h2>
 <p>Para calcular el intervalo se necesita solamente el valor de <em>t</em> con el tipo de error I del 5% (95% de confianza) que corresponde a un tamaño de muestra de 20, <span class="math inline">\(t_{0.05,\ n-1}\)</span>. Para conocer este valor hay que ir a una tabla de la distribución de t (vea p. 217 en el libro) o usar R para calcular el valor. En la tabla busca el error I deseado (0.05) y se busca el grado de libertad <em>n-1</em>, <span class="math inline">\(t_{0.05,\ 19}\)</span>. El valor del libro es <span class="math inline">\(t = 2.093\)</span>. Si se quisiera un tipo de error I de solamente 1%, el valor sería <span class="math inline">\(t=2.8609\)</span> (busca la información en la tabla o usa la función <strong>qt()</strong>).</p>
+<div class="funcion">
+<p><strong><code>qt(p, df)</code></strong> — cuantil de la distribución <em>t</em> (el “valor crítico”).</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> devuelve el valor de <em>t</em> que deja una probabilidad <code>p</code> acumulada a su izquierda, con <code>df</code> grados de libertad.</li>
+<li>
+<strong>Uso aquí:</strong> <code>qt(0.025, 19)</code> da el valor crítico para una prueba de dos colas al 95% con 19 gl (por eso se usa 0.025 y su valor absoluto).</li>
+<li>
+<strong>Familia:</strong> <code>dt</code> (densidad), <code>pt</code> (probabilidad acumulada) y <code>rt</code> (datos aleatorios).</li>
+</ul>
+</div>
 <div class="sourceCode" id="cb431"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/TDist.html">qt</a></span><span class="op">(</span><span class="fl">0.025</span>, <span class="fl">19</span><span class="op">)</span><span class="op">)</span> <span class="co"># nota que se usa la mitad de 0.05, por que es una prueba de dos lados. </span></span></code></pre></div>
 <pre><code>## [1] 2.093024</code></pre>
@@ -356,6 +370,17 @@ Usamos un conjunto de datos en el paquete <strong>reshape</strong>, que llama <s
 ## 6      25.29 4.71   Male     No Sun Dinner    4</code></pre>
 <hr>
 <p>Con la función <strong>t.test()</strong> es muy sencillo hacer la prueba; no hay que calcular a mano, solamente hay que añadir la información.</p>
+<div class="funcion">
+<p><strong><code>t.test(x, mu = ..., alternative = ...)</code></strong> — prueba de <em>t</em> de una muestra.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> compara el promedio de la variable <code>x</code> con un valor de referencia <code>mu</code> (el de la hipótesis nula).</li>
+<li>
+<strong>Argumentos clave:</strong> <code>mu</code> (valor a probar), <code>alternative</code> (<code>"two.sided"</code>, <code>"less"</code> o <code>"greater"</code>) y <code>conf.level</code> (nivel de confianza; 0.95 por defecto).</li>
+<li>
+<strong>Cómo leer la salida:</strong> el valor-p indica si se rechaza la Ho; el intervalo de confianza da el rango probable del promedio real.</li>
+</ul>
+</div>
 <p>Las opciones para esta prueba son las siguientes (en rojo)</p>
 <ul>
 <li>t.test(<span style="color: red;">x</span>, y = NULL,

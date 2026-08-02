@@ -77,6 +77,10 @@ El promedio de la población $\mu=\frac{\sum{{x}_{i}}}{{n}_{i}}$, se usa la letr
 
 ::: {.definicion}
 **Distribución normal.** Es una distribución de probabilidad continua, simétrica y con forma de campana, descrita por completo por dos parámetros: la media ($\mu$) y la desviación estándar ($\sigma$). El área total bajo la curva es igual a 1, y aproximadamente el 68%, el 95% y el 99.7% de los datos caen a $\pm 1$, $\pm 2$ y $\pm 3$ desviaciones estándar de la media (la regla empírica).
+:::
+
+::: {.historia}
+La distribución normal fue descrita por primera vez por **Abraham de Moivre** (1733) como una aproximación a la distribución binomial. **Pierre-Simon Laplace** y **Carl Friedrich Gauss** la desarrollaron a principios del siglo XIX en el contexto de la teoría de errores de medición astronómica; por el trabajo de Gauss también se le conoce como *distribución gaussiana*. El nombre "normal" se popularizó a finales del siglo XIX con **Francis Galton** y **Karl Pearson**.
 :::      
 
 
@@ -145,6 +149,14 @@ Se añade el promedio y la desviación estándar con las siguientes funciones. L
                 mean = mean(dlf$day2, na.rm = TRUE), # mean = el promedio de los datos
                 sd = sd(dlf$day2, na.rm = TRUE))) # sd = la desviación estandar de los datos
 
+::: {.funcion}
+**`stat_function(fun = dnorm, args = list(mean, sd))`** — superpone una curva teórica sobre un gráfico de ggplot2.
+
+- **Qué hace:** dibuja la función indicada en `fun`; con `dnorm` traza la curva de densidad de la distribución normal.
+- **Argumentos:** `fun` es la función a graficar; `args` es una lista con sus parámetros (aquí `mean` y `sd`, calculados de los datos).
+- **Cómo usarla:** para poder compararla con el histograma, este debe estar en escala de **densidad** (`aes(y = after_stat(density))`), no de frecuencia.
+:::
+
 
 Ahora nota que el eje de **y** ya no son frecuencias, sino densidades. El área total bajo la curva es igual a 1.0. Vea que la línea teórica se acerca bastante a las barras del histograma. Este proceso NO es una prueba para determinar si los datos cumplen con una distribución normal. Aunque, con experiencia visualizando los datos, uno puede tener una buena apreciación de si los datos cumplen suficientemente con la distribución normal para usar las pruebas paramétricas.   
 
@@ -197,6 +209,14 @@ La función **rnorm** crea una lista de datos con un promedio y una dispersión 
     rnorm(n, mean, sd)
     rnorm = (la cantidad de datos generados, promedio, la desviación estándar)
 
+::: {.funcion}
+**`rnorm(n, mean, sd)`** — genera datos aleatorios de una distribución normal.
+
+- **Qué hace:** devuelve `n` valores simulados de una normal con media `mean` y desviación estándar `sd`.
+- **Familia:** sus parientes son `dnorm` (densidad), `pnorm` (probabilidad acumulada) y `qnorm` (cuantiles).
+- **Consejo:** usa `set.seed()` antes si quieres que los números aleatorios sean reproducibles.
+:::
+
 Es necesario convertir la lista en un **data.frame** o en un **tibble** para usar los datos en **ggplot2**. Como los datos provienen de una distribución normal, la línea teórica sigue (casi) perfectamente las barras de frecuencia. Mientras más datos uno tiene, más similar es la distribución observada (las barras) a la distribución teórica (la línea). 
 
 Haz unos ejercicios reduciendo y aumentando el tamaño de muestra, **n**, y compara las distribuciones. Evalúa qué pasa cuando son muy pequeñas (n de 30 o menos). 
@@ -231,7 +251,15 @@ hist.x
 
 El gráfico Q-Q, o gráfico cuantil-cuantil, es una herramienta gráfica que nos ayuda a evaluar si un conjunto de datos proviene de alguna distribución teórica. Por ejemplo, si ejecutamos un análisis estadístico que asume que nuestra variable dependiente está normalmente distribuida, podemos usar un gráfico Q-Q normal para verificar esa suposición; también se pueden evaluar otras distribuciones. Nota que es solo una verificación visual, no una prueba estadística. Esto nos permite visualizar si los datos cumplen o no con la distribución teórica.  
 
-Un diagrama Q-Q es un diagrama de dispersión y compara dos conjuntos de cuantiles uno observado y el otro teórico. Si ambos conjuntos de cuantiles provienen de una distribución normal, deberíamos ver los puntos formando una línea que es más o menos recta. Usamos los datos del primer y del segundo día de la higiene de los participantes al concierto de rock. Vean que los puntos en el primer gráfico siguen una línea recta y la línea teórica (`r colorize("color azul", "blue")`) sigue estos puntos.  Esto sugiere que los datos siguen una distribución normal.  En el segundo gráfico vemos que los datos observados no siguen los datos teóricos (`r colorize("color rojo", "red")`). 
+Un diagrama Q-Q es un diagrama de dispersión y compara dos conjuntos de cuantiles uno observado y el otro teórico. Si ambos conjuntos de cuantiles provienen de una distribución normal, deberíamos ver los puntos formando una línea que es más o menos recta. Usamos los datos del primer y del segundo día de la higiene de los participantes al concierto de rock. Vean que los puntos en el primer gráfico siguen una línea recta y la línea teórica (`r colorize("color azul", "blue")`) sigue estos puntos.  Esto sugiere que los datos siguen una distribución normal.  En el segundo gráfico vemos que los datos observados no siguen los datos teóricos (`r colorize("color rojo", "red")`).
+
+::: {.funcion}
+**`geom_qq()` + `geom_qq_line()`** — construyen un gráfico Q-Q en ggplot2.
+
+- **Qué hacen:** `geom_qq()` dibuja los puntos (cuantiles observados vs. teóricos) y `geom_qq_line()` añade la línea de referencia.
+- **Argumento clave:** dentro de `aes()` se indica `sample = variable`.
+- **Cómo leer:** si los puntos siguen la línea, los datos son compatibles con la distribución teórica (normal por defecto).
+:::
 
 
 ```{r c12-11, warning=FALSE}
@@ -268,7 +296,11 @@ Por ejemplo Wikipedia menciona por lo menos 8 diferentes pruebas de normalidad <
 Las pruebas de normalidad son muy sensibles al tamaño de muestra. Con muestras grandes rechazan la hipótesis nula ante desviaciones triviales de la normalidad (que no afectan a las pruebas paramétricas), y con muestras muy pequeñas casi nunca la rechazan por falta de poder. Por eso no conviene depender solo del valor-*p* de estas pruebas: combínalo siempre con la inspección visual (histograma y gráfico Q-Q).
 :::
 
-## La prueba de Shapiro-Wilks
+## La prueba de Shapiro-Wilk
+
+::: {.historia}
+La prueba fue publicada en 1965 por los estadísticos **Samuel S. Shapiro** y **Martin B. Wilk**. Fue una de las primeras pruebas de normalidad potentes para muestras pequeñas y sigue siendo la más utilizada hoy en día.
+:::
 
 La prueba de Shapiro-Wilk es un prueba para determinar si un muestreo proviene de una distribución normal. Los datos se ponen en orden de los valores y se calcula el estadística de **W**. Aquí no vamos enseñar como hacer los cálculos los que le interesa pueden ir al a la siguiente pagina de <https://en.wikipedia.org/wiki/Shapiro–Wilk_test>.  Lo importante es que 
 
@@ -287,6 +319,14 @@ Reglas básica.
 
  La función **shapiro.test()** es para evaluar una variable a la vez.  Nota que aquí los datos de higiene del primer día sugieren que no cumplen con una distribución normal, aun cuando en las dos alternativas anteriores (histograma y qqplot) los datos se ven bastante normales.
 
+::: {.funcion}
+**`shapiro.test(x)`** — prueba de normalidad de Shapiro-Wilk.
+
+- **Qué hace:** evalúa si el vector numérico `x` (una sola variable) proviene de una distribución normal.
+- **Cómo leer la salida:** fíjate en el valor-p (`p-value`). Si p > 0.05 no se rechaza la normalidad; si p < 0.05 hay evidencia de que los datos NO son normales.
+- **Límite:** acepta una sola variable a la vez y es muy sensible al tamaño de muestra.
+:::
+
 ```{r c12-12, warning=FALSE}
 shapiro.test(dlf$day1)
 length(dlf$day1)
@@ -294,11 +334,23 @@ length(dlf$day1)
 
 ## La prueba de normalidad de Anderson-Darling
 
+::: {.historia}
+La prueba fue desarrollada en 1952 por **Theodore W. Anderson** y **Donald A. Darling**. Pertenece a la familia de pruebas basadas en la función de distribución empírica (EDF) y es especialmente sensible a las diferencias en las **colas** de la distribución.
+:::
+
 
 
 La prueba de Anderson-Darling es una prueba omnibus (una prueba general) EDF para la hipótesis que los datos provienen de una distribución normal. Las pruebas ómnibus son una especie de prueba estadística. Prueban si la varianza explicada en un conjunto de datos es significativamente mayor que la varianza inexplicada, en general. Para más detalle sobre esta prueba vea <https://en.wikipedia.org/wiki/Anderson–Darling_test>. 
 
 Se necesita la librería **nortest** y la función **ad.test**
+
+::: {.funcion}
+**`ad.test(x)`** (paquete **nortest**) — prueba de normalidad de Anderson-Darling.
+
+- **Qué hace:** evalúa si el vector `x` proviene de una distribución normal, dando más peso a las colas.
+- **Cómo leer la salida:** igual que Shapiro-Wilk, mira el valor-p (p > 0.05 → no se rechaza la normalidad).
+- **Ventaja:** funciona bien incluso con muestras pequeñas (n ≥ 8).
+:::
 
 Miren ahora que la prueba de Anderson-Darling sugiere que los datos cumplen con la normalidad, mientras que la de Shapiro-Wilk rechaza la hipótesis nula.  
 El mensaje es que es posible que diferentes pruebas le den información distinta y hay que estar claro sobre los supuestos y la sensitividad de estas pruebas. 

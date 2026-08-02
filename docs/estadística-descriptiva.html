@@ -278,6 +278,15 @@ Usa R y construye una lista o data frame con los siguientes datos y calcular el 
 <span class="header-section-number">8.4</span> Resumen estadístico de una variable<a class="anchor" aria-label="anchor" href="#resumen-estad%C3%ADstico-de-una-variable"><i class="fas fa-link"></i></a>
 </h2>
 <p>Para ver los estadísticos mencionados arriba (menos la moda, la oblicuidad y la curtosis) se puede usar la función <strong>stat.desc()</strong> del paquete <strong>pastecs</strong>. Para facilitar la lectura se usa la función <code>round(x, 3)</code>; el 3 indica la cantidad de decimales que se muestran. Si no usamos <strong>round()</strong>, los valores aparecen en notación científica.</p>
+<div class="funcion">
+<p><strong><code>stat.desc(x)</code></strong> (paquete <strong>pastecs</strong>) — resumen estadístico completo.</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> para una o varias columnas numéricas, devuelve de una vez el n, la media, la mediana, la varianza, la desviación estándar, el error estándar, el intervalo de confianza y más.</li>
+<li>
+<strong>Consejo:</strong> envuélvela en <code>round(stat.desc(...), 3)</code> para evitar la notación científica.</li>
+</ul>
+</div>
 <p>Nota que hay muchos más parámetros calculados. Aparece en la lista en orden el valor mínimo: min(), el valor máximo: max(), la mediana: median, el promedio: mean, la desviación estándar; std.dev entre otros.</p>
 <div class="sourceCode" id="cb220"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SciViews/pastecs">pastecs</a></span><span class="op">)</span></span>
@@ -369,6 +378,9 @@ Usa R usa el data.frame <strong>Camas_Hospital</strong> en el paquete <strong>gg
 <h2>
 <span class="header-section-number">8.7</span> El índice de oblicuidad (Skewness)<a class="anchor" aria-label="anchor" href="#el-%C3%ADndice-de-oblicuidad-skewness"><i class="fas fa-link"></i></a>
 </h2>
+<div class="historia">
+<p>Los términos <strong>oblicuidad</strong> (<em>skewness</em>) y <strong>curtosis</strong> (<em>kurtosis</em>), junto con el “método de los momentos” para describir la forma de una distribución, fueron introducidos por <strong>Karl Pearson</strong> a finales del siglo XIX. Pearson fue uno de los fundadores de la estadística moderna.</p>
+</div>
 <div class="definicion">
 <p>La <strong>oblicuidad</strong> (<em>skewness</em>) mide la <strong>asimetría</strong> de una distribución. Es <strong>positiva</strong> cuando la cola larga está a la derecha, <strong>negativa</strong> cuando está a la izquierda, y ≈ 0 cuando la distribución es simétrica.</p>
 </div>
@@ -432,6 +444,15 @@ Usa R usa el data.frame <strong>Camas_Hospital</strong> en el paquete <strong>gg
 <li>Menor de -1.0 o mayor de 1.0 los datos tienen una oblicuidad grande.</li>
 </ul>
 <p>Ahora evaluamos la oblicuidad de las tres distribuciones usando la función <strong>skewness</strong> del paquete <strong>e1071</strong>.</p>
+<div class="funcion">
+<p><strong><code>skewness(x)</code></strong> (paquete <strong>e1071</strong>) — índice de oblicuidad (asimetría).</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> cuantifica la asimetría de la variable <code>x</code>.</li>
+<li>
+<strong>Cómo leer:</strong> ≈ 0 → simétrica; <strong>positiva</strong> → cola larga a la derecha; <strong>negativa</strong> → cola larga a la izquierda.</li>
+</ul>
+</div>
 <p>Para una distribución normal (simétrica) el valor es muy cercano a cero. Los datos <strong>sesgados a la derecha</strong> (con cola hacia la derecha) tienen oblicuidad <strong>positiva</strong>, y los <strong>sesgados a la izquierda</strong>, oblicuidad <strong>negativa</strong>.</p>
 <div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">e1071</span><span class="op">)</span></span>
@@ -542,6 +563,15 @@ Usa R usa el data.frame <strong>Camas_Hospital</strong> en el paquete <strong>gg
 <li>Mayor de 1.0 (la distribución de Laplace).</li>
 </ul>
 <p>Ahora evaluamos la curtosis de las distribuciones usando la función <strong>kurtosis</strong> del paquete <strong>e1071</strong>.</p>
+<div class="funcion">
+<p><strong><code>kurtosis(x)</code></strong> (paquete <strong>e1071</strong>) — índice de curtosis (peso de las colas).</p>
+<ul>
+<li>
+<strong>Qué hace:</strong> mide qué tan pesadas son las colas de la variable <code>x</code> (curtosis en exceso).</li>
+<li>
+<strong>Cómo leer:</strong> ≈ 0 → como la normal; <strong>positiva</strong> → colas pesadas (más atípicos); <strong>negativa</strong> → colas ligeras.</li>
+</ul>
+</div>
 <p>Para una distribución normal el valor es muy cercano a cero. Cuando hay <strong>exceso de colas</strong> (colas pesadas, como en Laplace) la curtosis es <strong>positiva</strong>; cuando las colas son ligeras (como en la uniforme) la curtosis es <strong>negativa</strong>.</p>
 <div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">e1071</span><span class="op">)</span></span>
